@@ -1,0 +1,2758 @@
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  
+    
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-TZ3RQGX');</script>
+    
+  
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <title>Mercedes-Benz Documentation — TimelineLabels ML Backend for Mercedes-Benz</title>
+  
+  <meta charset="utf-8">
+  <meta name="description" content="Tutorial on how to use an example ML backend for Mercedes-Benz with TimelineLabels">
+
+  <meta property="og:type" content="article">
+  
+  <meta property="og:title" content="Mercedes-Benz Documentation — TimelineLabels ML Backend for Mercedes-Benz">
+  
+  <meta property="og:description" content="Tutorial on how to use an example ML backend for Mercedes-Benz with TimelineLabels">
+
+  <meta name="twitter:card" content="summary">
+  
+  <meta property="twitter:title" content="Mercedes-Benz Documentation — TimelineLabels ML Backend for Mercedes-Benz">
+  
+  <meta name="twitter:description" content="Tutorial on how to use an example ML backend for Mercedes-Benz with TimelineLabels">
+
+  
+    <meta name="twitter:image" content="http://mercedes-benz.com/open-graph-image?title=TimelineLabels%20ML%20Backend%20for%20Label%20Studio&category=guide">
+    <meta property="og:image" content="http://mercedes-benz.com/open-graph-image?title=TimelineLabels%20ML%20Backend%20for%20Label%20Studio&category=guide">
+  
+
+  <meta name="msapplication-TileColor" content="#4fc08d">
+  <meta name="theme-color" content="#4fc08d">
+  
+  
+    <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" >
+  
+
+  <link rel="preload" href="/fonts/SpaceGrotesk-Bold-subset.woff2" as="font" type="font/woff2" crossorigin>
+
+  
+<link rel="stylesheet" href="/css/styles.css">
+
+
+  
+
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js" defer></script>
+
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ startOnLoad: true });
+  </script>
+
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+<body class="page-tier-opensource">
+  
+  
+
+  
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TZ3RQGX"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  
+
+  
+  
+
+
+
+  
+      <a target="_blank" rel="noopener" href="https://mercedes-benz.com/blog/new-pdf-ocr-document-ai-labeling-interface" class="Alert">
+        <span class="AlertContent">
+          <span class="Badge">New</span>
+          <span class="AlertText">Advanced PDF + OCR Interface for Document AI</span>
+          <svg fill="currentColor" viewBox="0 0 14 12"><path fill-rule="evenodd" d="m8.792.119 4.866 5.654-4.866 5.654-.948-.816 3.627-4.213H.54v-1.25h10.93L7.844.934l.948-.815Z" clip-rule="evenodd"></path></svg>
+        </span>
+      </a>
+
+
+<header class="page-header">
+  <div class="page-header-top-level">
+    <div class="page-header-logo">
+      <a href="/guide" class="HeaderLogo" arial-label="Homepage">
+        
+          <svg width="240" height="30" viewBox="0 0 240 30" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="15" cy="15" r="13.5" stroke="#12110D" stroke-width="2" fill="none"></circle><circle cx="15" cy="15" r="12" stroke="#12110D" stroke-width="0.5" fill="none"></circle><path d="M15,3 L13.8,15 L16.2,15 Z M4.61,21 L15.6,16.04 L14.4,13.96 Z M25.39,21 L15.6,13.96 L14.4,16.04 Z" fill="#12110D"></path><text x="34" y="20" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#12110D" letter-spacing="0.3">Mercedes-Benz Docs</text></svg>
+
+      </a>
+    </div>
+
+    <div class="AlgoliaSearch">
+      <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg" class="AlgoliaSearchIcon">
+        <path d="M8 16C9.77498 15.9996 11.4988 15.4054 12.897 14.312L17.293 18.708L18.707 17.294L14.311 12.898C15.405 11.4997 15.9996 9.77544 16 8C16 3.589 12.411 0 8 0C3.589 0 0 3.589 0 8C0 12.411 3.589 16 8 16ZM8 2C11.309 2 14 4.691 14 8C14 11.309 11.309 14 8 14C4.691 14 2 11.309 2 8C2 4.691 4.691 2 8 2Z" ></path>
+      </svg>
+      <input id="docsearch-input" placeholder="Search docs" data-site-version="opensource" >
+      <svg width="43" height="31" viewBox="0 0 43 31" fill="none" xmlns="http://www.w3.org/2000/svg" class="AlgoliaSearchCmdK">
+        <rect y="0.0457764" width="43" height="30" rx="15" fill="var(--cmd-k-background-color)"></rect>
+        <path d="M11.264 21.0458C9.776 21.0458 8.816 20.1018 8.816 18.6298C8.816 17.0778 9.744 16.1658 11.568 16.1658H12.512V14.4058H11.568C9.744 14.4058 8.816 13.4938 8.816 11.9418C8.816 10.4698 9.776 9.52578 11.264 9.52578C13.056 9.52578 13.632 10.6458 13.632 11.9898V13.3178H15.392V11.9898C15.392 10.6458 15.968 9.52578 17.76 9.52578C19.248 9.52578 20.208 10.4698 20.208 11.9418C20.208 13.4938 19.28 14.4058 17.456 14.4058H16.512V16.1658H17.456C19.28 16.1658 20.208 17.0778 20.208 18.6298C20.208 20.1018 19.248 21.0458 17.76 21.0458C15.968 21.0458 15.392 19.9258 15.392 18.5818V17.2538H13.632V18.5818C13.632 19.9258 13.056 21.0458 11.264 21.0458ZM16.512 11.9578V13.3178H17.456C18.592 13.3178 19.072 12.8538 19.072 11.9418C19.072 10.9978 18.512 10.6298 17.76 10.6298C16.928 10.6298 16.512 11.1418 16.512 11.9578ZM11.568 13.3178H12.512V11.9578C12.512 11.1418 12.096 10.6298 11.264 10.6298C10.512 10.6298 9.952 10.9978 9.952 11.9418C9.952 12.8538 10.432 13.3178 11.568 13.3178ZM13.632 16.1658H15.392V14.4058H13.632V16.1658ZM11.264 19.9418C12.096 19.9418 12.512 19.4298 12.512 18.6138V17.2538H11.568C10.432 17.2538 9.952 17.7178 9.952 18.6298C9.952 19.5738 10.512 19.9418 11.264 19.9418ZM16.512 18.6138C16.512 19.4298 16.928 19.9418 17.76 19.9418C18.512 19.9418 19.072 19.5738 19.072 18.6298C19.072 17.7178 18.592 17.2538 17.456 17.2538H16.512V18.6138ZM27.3546 15.4298V21.0458H26.1546V9.84578H27.3546V14.9338L32.3146 9.84578H33.8826L28.6346 15.1738L34.3626 21.0458H32.7466L27.3546 15.4298Z" fill="var(--cmd-k-icon-color)"></path>
+      </svg>        
+    </div>
+
+    <button class="hamburger-button" aria-label="Toggle Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <nav>
+      
+        
+  <ul class="page-sidebar-list">
+    
+    
+    
+    
+    
+
+    
+
+    
+
+    
+    
+      
+      
+        </ul>
+          
+            <button>
+              Discover & Learn
+              
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+          
+        <ul class="page-sidebar-list">
+      
+      
+      <li>
+        <a href="/guide/get_started.html" class="" >
+          About Mercedes-Benz
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/glossary.html" class="" >
+          Terminology
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/label_studio_compare.html" class="" >
+          Compare editions
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/enterprise_features.html" class="" >
+          Enterprise features
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+        </ul>
+          
+            <button>
+              Install & Setup
+              
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+          
+        <ul class="page-sidebar-list">
+      
+      
+      <li>
+        <a href="/guide/quick_start.html" class="" >
+          Quick start
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/install.html" class="" >
+          Installation
+        </a>
+        
+        
+            <button class="page-sidebar-toggle-children-list">
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+            <ul class="page-sidebar-children-list">
+            
+            
+            
+              <li>
+                <a href="/guide/install_k8s.html" class="page-sidebar-children-link" >
+                  Install using Kubernetes
+                </a>
+                
+                
+                    <ul class="page-sidebar-grandchildren-list">
+                      
+                    <li>
+                      
+                      <a href="/guide/ingress_config.html" class="page-sidebar-children-link" >
+                        Set up an ingress controller
+                      </a>
+                    </li>
+                  
+                  
+                    <li>
+                      
+                      <a href="/guide/install_k8s_airgapped.html" class="page-sidebar-children-link" >
+                        Airgapped Server
+                      </a>
+                    </li>
+                  
+                  
+                    <li>
+                      
+                      <a href="/guide/helm_values.html" class="page-sidebar-children-link" >
+                        Available Helm values
+                      </a>
+                    </li>
+                  
+                  
+                </ul>
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/install_troubleshoot.html" class="page-sidebar-children-link" >
+                  Troubleshooting
+                </a>
+                
+                
+              </li>
+            
+            
+          </ul>
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/storedata.html" class="" >
+          Set up the database
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/persistent_storage.html" class="" >
+          Set up persistent storage
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/start.html" class="" >
+          Start Mercedes-Benz
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/upgrade_community.html" class="" >
+          Upgrade Mercedes-Benz
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/security.html" class="" >
+          Secure Mercedes-Benz
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+        </ul>
+          
+            <button>
+              Create & Manage Projects
+              
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+          
+        <ul class="page-sidebar-list">
+      
+      
+      <li>
+        <a href="/guide/setup_project.html" class="" >
+          Create project
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/setup.html" class="" >
+          Configure labeling interface
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/manage_projects_lso.html" class="" >
+          Manage projects
+        </a>
+        
+        
+            <button class="page-sidebar-toggle-children-list">
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+            <ul class="page-sidebar-children-list">
+            
+            
+            
+              <li>
+                <a href="/guide/project_settings.html" class="page-sidebar-children-link" >
+                  Project settings
+                </a>
+                
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/manage_data.html" class="page-sidebar-children-link" >
+                  Data Manager
+                </a>
+                
+                
+              </li>
+            
+            
+          </ul>
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/labeling.html" class="" >
+          Labeling guide
+        </a>
+        
+        
+            <button class="page-sidebar-toggle-children-list">
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+            <ul class="page-sidebar-children-list">
+            
+            
+            
+              <li>
+                <a href="/guide/hotkeys.html" class="page-sidebar-children-link" >
+                  Hotkeys
+                </a>
+                
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/skip.html" class="page-sidebar-children-link" >
+                  Skipping tasks
+                </a>
+                
+                
+              </li>
+            
+            
+          </ul>
+        
+        
+        
+      </li>
+    
+      
+      
+        </ul>
+          
+            <button>
+              Import & Export
+              
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+          
+        <ul class="page-sidebar-list">
+      
+      
+      <li>
+        <a href="/guide/storage.html" class="" >
+          Add project storage
+        </a>
+        
+        
+            <button class="page-sidebar-toggle-children-list">
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+            <ul class="page-sidebar-children-list">
+            
+            
+            
+              <li>
+                <a href="/guide/storage_s3.html" class="page-sidebar-children-link" >
+                  AWS S3
+                </a>
+                
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/storage_gcp.html" class="page-sidebar-children-link" >
+                  Google Cloud
+                </a>
+                
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/storage_azure.html" class="page-sidebar-children-link" >
+                  Microsoft Azure
+                </a>
+                
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/storage_databricks.html" class="page-sidebar-children-link" >
+                  Databricks
+                </a>
+                
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/storage_redis.html" class="page-sidebar-children-link" >
+                  Redis
+                </a>
+                
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/storage_local.html" class="page-sidebar-children-link" >
+                  Local
+                </a>
+                
+                
+              </li>
+            
+            
+          </ul>
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/tasks.html" class="" >
+          Import data
+        </a>
+        
+        
+            <button class="page-sidebar-toggle-children-list">
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+            <ul class="page-sidebar-children-list">
+            
+            
+            
+              <li>
+                <a href="/guide/task_format.html" class="page-sidebar-children-link" >
+                  Format data for import
+                </a>
+                
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/predictions.html" class="page-sidebar-children-link" >
+                  Import pre-annotations
+                </a>
+                
+                
+              </li>
+            
+            
+          </ul>
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/export.html" class="" >
+          Export annotations
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+        </ul>
+          
+            <button>
+              Machine Learning
+              
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+          
+        <ul class="page-sidebar-list">
+      
+      
+      <li>
+        <a href="/guide/ml.html" class="" >
+          Machine learning integration
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/ml_create.html" class="" >
+          Write your own ML backend
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/ml_tutorials.html" class="" >
+          ML Examples and Tutorials
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+        </ul>
+          
+            <button>
+              Manage Your Organization
+              
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+          
+        <ul class="page-sidebar-list">
+      
+      
+      <li>
+        <a href="/guide/signup.html" class="" >
+          Add users
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/admin_manage.html" class="" >
+          Manage user accounts
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/user_account.html" class="" >
+          Account and settings
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/access_tokens.html" class="" >
+          Access tokens
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+        </ul>
+          
+            <button>
+              Integrate & Extend
+              
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+          
+        <ul class="page-sidebar-list">
+      
+      
+      <li>
+        <a href="/guide/api.html" class="" >
+          API
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/sdk.html" class="" >
+          Python SDK
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/webhooks.html" class="" >
+          Webhooks
+        </a>
+        
+        
+            <button class="page-sidebar-toggle-children-list">
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+            <ul class="page-sidebar-children-list">
+            
+            
+            
+              <li>
+                <a href="/guide/webhook_create.html" class="page-sidebar-children-link" >
+                  Webhook development
+                </a>
+                
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/webhook_reference.html" class="page-sidebar-children-link" >
+                  Webhook event reference
+                </a>
+                
+                
+              </li>
+            
+            
+          </ul>
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/frontend_reference.html" class="" >
+          Frontend
+        </a>
+        
+        
+        
+          
+            </li><li>
+            <a href="https://github.com/Mercedes-Benz/label-studio/blob/develop/CONTRIBUTING.md" target="_blank">Contribution guide
+              <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-external-link">
+                <path d="M10.9002 9.29957L9.46026 9.30898L9.46026 3.34236L1.73377 11.0689L0.698549 10.0336L8.42504 2.30714L2.46783 2.31656L2.46783 0.867251L10.9001 0.867252L10.9002 9.29957Z" fill="#6D87F1"></path>
+              </svg>
+            </a>
+          </li>
+          
+          <li>
+            <a href="https://mercedes-benz.com/integrations/" target="_blank">Integrations directory
+              <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-external-link">
+                <path d="M10.9002 9.29957L9.46026 9.30898L9.46026 3.34236L1.73377 11.0689L0.698549 10.0336L8.42504 2.30714L2.46783 2.31656L2.46783 0.867251L10.9001 0.867252L10.9002 9.29957Z" fill="#6D87F1"></path>
+              </svg>
+            </a>
+          </li>
+        
+        
+      
+    
+    
+</ul>
+
+
+  <button>
+    Support
+    <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+    </svg>
+  </button>
+
+<ul class="page-sidebar-list">
+  
+  
+    <li>
+        <a href="/guide/troubleshooting">Troubleshooting</a>
+      </li>
+    <li>
+      <a href="https://github.com/Mercedes-Benz/label-studio/issues" target="_blank">GitHub Issues
+        <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-external-link">
+          <path d="M10.9002 9.29957L9.46026 9.30898L9.46026 3.34236L1.73377 11.0689L0.698549 10.0336L8.42504 2.30714L2.46783 2.31656L2.46783 0.867251L10.9001 0.867252L10.9002 9.29957Z" fill="#6D87F1"></path>
+        </svg>
+      </a>
+    </li>
+  
+  <li>
+    <a href="https://slack.mercedes-benz.com" target="_blank">Join Slack
+      <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-external-link">
+        <path d="M10.9002 9.29957L9.46026 9.30898L9.46026 3.34236L1.73377 11.0689L0.698549 10.0336L8.42504 2.30714L2.46783 2.31656L2.46783 0.867251L10.9001 0.867252L10.9002 9.29957Z" fill="#6D87F1"></path>
+      </svg>
+    </a>
+  </li>
+  
+    <li>
+      <a href="https://community.mercedes-benz.com/" target="_blank">Ask on Discourse
+        <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-external-link">
+          <path d="M10.9002 9.29957L9.46026 9.30898L9.46026 3.34236L1.73377 11.0689L0.698549 10.0336L8.42504 2.30714L2.46783 2.31656L2.46783 0.867251L10.9001 0.867252L10.9002 9.29957Z" fill="#6D87F1"></path>
+        </svg>
+      </a>
+    </li>
+  
+  <li>
+    <a href="https://mercedes-benz.com/contact-sales/" target="_blank">Contact Sales
+      <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-external-link">
+        <path d="M10.9002 9.29957L9.46026 9.30898L9.46026 3.34236L1.73377 11.0689L0.698549 10.0336L8.42504 2.30714L2.46783 2.31656L2.46783 0.867251L10.9001 0.867252L10.9002 9.29957Z" fill="#6D87F1"></path>
+      </svg>
+    </a>
+  </li>
+  
+</ul>
+
+
+
+  <button>
+    What's New
+    <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+    </svg>
+  </button>
+
+<ul class="page-sidebar-list">  
+    <li>
+      <a href="https://github.com/Mercedes-Benz/label-studio/releases" target="_blank">Release notes
+        <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-external-link">
+          <path d="M10.9002 9.29957L9.46026 9.30898L9.46026 3.34236L1.73377 11.0689L0.698549 10.0336L8.42504 2.30714L2.46783 2.31656L2.46783 0.867251L10.9001 0.867252L10.9002 9.29957Z" fill="#6D87F1"></path>
+        </svg>
+      </a>
+    </li>
+</ul>
+
+
+      
+      <ul class="page-header-main-nav">
+        
+          <li>
+            <a href="https://mercedes-benz.com/learn/">
+              Learn
+              <svg aria-hidden="true" width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg" class="page-header-chevron-icon"><path d="M1 0.5L5 4.5L9 0.5" stroke="#131522"></path></svg>
+            </a>
+            <button>
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+            <ul>
+              <li>
+                <a href="https://mercedes-benz.com/blog/">Blog</a>
+              </li>
+              <li>
+                <a href="https://mercedes-benz.com/videos/">Videos</a>
+              </li>
+              <li class="headerSeparator">
+                <a href="https://mercedes-benz.com/community/">
+                  Community
+                </a>
+              </li>
+              <li>
+                <a href="https://mercedes-benz.com/academic/">Academic Program</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="https://mercedes-benz.com/integrations">Integrations</a>
+          </li>
+          <li>
+            <a href="https://mercedes-benz.com/goenterprise" target="_blank" rel="noopener noreferrer">Enterprise</a>
+          </li>
+          <li>
+            <a href="https://github.com/Mercedes-Benz/label-studio/" class="github-stars" target="_blank" rel="noopener noreferrer">
+              <svg class="github-icon" viewBox="0 0 24 24" width="24" height="24"><path fill="black" d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"></path></svg>
+              
+
+
+
+
+<span class="Text github-stars-count Eyebrow "></span>
+            </a>
+          </li>
+          <li>
+            <a href="/guide/quick_start.html" class="Button [object Object]">
+   Quick start
+</a>
+          </li>
+          
+      </ul>
+    </nav>
+    </div>
+  
+  
+  
+    
+      <ul class="page-header-content-switcher">
+      
+          
+          <li><a href="/guide/" class="active">Docs</a></li>
+          
+        
+          
+          <li><a href="/tutorials/" class="">Tutorials</a></li>
+          
+        
+          
+          <li><a href="/templates/" class="">Templates</a></li>
+          
+        
+          
+        
+          
+          <li><a href="/tags/" class="">Tags</a></li>
+          
+        
+      <li>
+        <a href="https://api.mercedes-benz.com/api-reference/introduction/getting-started" target="_blank">
+          API
+          <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7.93006 6.05393L6.92213 6.06052L6.92213 1.88389L1.51359 7.29243L0.788936 6.56777L6.19748 1.15923L2.02743 1.16582L2.02743 0.151308L7.93006 0.151308L7.93006 6.05393Z" fill="#ffffff"></path>
+            </svg>            
+        </a>
+      </li>
+    </ul>
+    
+  
+</header>
+
+
+  <main class="page-type-guide">
+    
+      <aside class="page-sidebar">
+        
+  <ul class="page-sidebar-list">
+    
+    
+    
+    
+    
+
+    
+
+    
+
+    
+    
+      
+      
+        </ul>
+          
+            <div class="toc-section-heading">
+              
+
+
+
+
+<h3 class="Text  Eyebrow ">Discover &amp; Learn</h3>
+              
+            </div>
+          
+        <ul class="page-sidebar-list">
+      
+      
+      <li>
+        <a href="/guide/get_started.html" class="" >
+          About Mercedes-Benz
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/glossary.html" class="" >
+          Terminology
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/label_studio_compare.html" class="" >
+          Compare editions
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/enterprise_features.html" class="" >
+          Enterprise features
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+        </ul>
+          
+            <div class="toc-section-heading">
+              
+
+
+
+
+<h3 class="Text  Eyebrow ">Install &amp; Setup</h3>
+              
+            </div>
+          
+        <ul class="page-sidebar-list">
+      
+      
+      <li>
+        <a href="/guide/quick_start.html" class="" >
+          Quick start
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/install.html" class="" >
+          Installation
+        </a>
+        
+        
+            <button class="page-sidebar-toggle-children-list">
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+            <ul class="page-sidebar-children-list">
+            
+            
+            
+              <li>
+                <a href="/guide/install_k8s.html" class="page-sidebar-children-link" >
+                  Install using Kubernetes
+                </a>
+                
+                
+                    <ul class="page-sidebar-grandchildren-list">
+                      
+                    <li>
+                      
+                      <a href="/guide/ingress_config.html" class="page-sidebar-children-link" >
+                        Set up an ingress controller
+                      </a>
+                    </li>
+                  
+                  
+                    <li>
+                      
+                      <a href="/guide/install_k8s_airgapped.html" class="page-sidebar-children-link" >
+                        Airgapped Server
+                      </a>
+                    </li>
+                  
+                  
+                    <li>
+                      
+                      <a href="/guide/helm_values.html" class="page-sidebar-children-link" >
+                        Available Helm values
+                      </a>
+                    </li>
+                  
+                  
+                </ul>
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/install_troubleshoot.html" class="page-sidebar-children-link" >
+                  Troubleshooting
+                </a>
+                
+                
+              </li>
+            
+            
+          </ul>
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/storedata.html" class="" >
+          Set up the database
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/persistent_storage.html" class="" >
+          Set up persistent storage
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/start.html" class="" >
+          Start Mercedes-Benz
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/upgrade_community.html" class="" >
+          Upgrade Mercedes-Benz
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/security.html" class="" >
+          Secure Mercedes-Benz
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+        </ul>
+          
+            <div class="toc-section-heading">
+              
+
+
+
+
+<h3 class="Text  Eyebrow ">Create &amp; Manage Projects</h3>
+              
+            </div>
+          
+        <ul class="page-sidebar-list">
+      
+      
+      <li>
+        <a href="/guide/setup_project.html" class="" >
+          Create project
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/setup.html" class="" >
+          Configure labeling interface
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/manage_projects_lso.html" class="" >
+          Manage projects
+        </a>
+        
+        
+            <button class="page-sidebar-toggle-children-list">
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+            <ul class="page-sidebar-children-list">
+            
+            
+            
+              <li>
+                <a href="/guide/project_settings.html" class="page-sidebar-children-link" >
+                  Project settings
+                </a>
+                
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/manage_data.html" class="page-sidebar-children-link" >
+                  Data Manager
+                </a>
+                
+                
+              </li>
+            
+            
+          </ul>
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/labeling.html" class="" >
+          Labeling guide
+        </a>
+        
+        
+            <button class="page-sidebar-toggle-children-list">
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+            <ul class="page-sidebar-children-list">
+            
+            
+            
+              <li>
+                <a href="/guide/hotkeys.html" class="page-sidebar-children-link" >
+                  Hotkeys
+                </a>
+                
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/skip.html" class="page-sidebar-children-link" >
+                  Skipping tasks
+                </a>
+                
+                
+              </li>
+            
+            
+          </ul>
+        
+        
+        
+      </li>
+    
+      
+      
+        </ul>
+          
+            <div class="toc-section-heading">
+              
+
+
+
+
+<h3 class="Text  Eyebrow ">Import &amp; Export</h3>
+              
+            </div>
+          
+        <ul class="page-sidebar-list">
+      
+      
+      <li>
+        <a href="/guide/storage.html" class="" >
+          Add project storage
+        </a>
+        
+        
+            <button class="page-sidebar-toggle-children-list">
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+            <ul class="page-sidebar-children-list">
+            
+            
+            
+              <li>
+                <a href="/guide/storage_s3.html" class="page-sidebar-children-link" >
+                  AWS S3
+                </a>
+                
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/storage_gcp.html" class="page-sidebar-children-link" >
+                  Google Cloud
+                </a>
+                
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/storage_azure.html" class="page-sidebar-children-link" >
+                  Microsoft Azure
+                </a>
+                
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/storage_databricks.html" class="page-sidebar-children-link" >
+                  Databricks
+                </a>
+                
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/storage_redis.html" class="page-sidebar-children-link" >
+                  Redis
+                </a>
+                
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/storage_local.html" class="page-sidebar-children-link" >
+                  Local
+                </a>
+                
+                
+              </li>
+            
+            
+          </ul>
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/tasks.html" class="" >
+          Import data
+        </a>
+        
+        
+            <button class="page-sidebar-toggle-children-list">
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+            <ul class="page-sidebar-children-list">
+            
+            
+            
+              <li>
+                <a href="/guide/task_format.html" class="page-sidebar-children-link" >
+                  Format data for import
+                </a>
+                
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/predictions.html" class="page-sidebar-children-link" >
+                  Import pre-annotations
+                </a>
+                
+                
+              </li>
+            
+            
+          </ul>
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/export.html" class="" >
+          Export annotations
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+        </ul>
+          
+            <div class="toc-section-heading">
+              
+
+
+
+
+<h3 class="Text  Eyebrow ">Machine Learning</h3>
+              
+            </div>
+          
+        <ul class="page-sidebar-list">
+      
+      
+      <li>
+        <a href="/guide/ml.html" class="" >
+          Machine learning integration
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/ml_create.html" class="" >
+          Write your own ML backend
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/ml_tutorials.html" class="" >
+          ML Examples and Tutorials
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+        </ul>
+          
+            <div class="toc-section-heading">
+              
+
+
+
+
+<h3 class="Text  Eyebrow ">Manage Your Organization</h3>
+              
+            </div>
+          
+        <ul class="page-sidebar-list">
+      
+      
+      <li>
+        <a href="/guide/signup.html" class="" >
+          Add users
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/admin_manage.html" class="" >
+          Manage user accounts
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/user_account.html" class="" >
+          Account and settings
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/access_tokens.html" class="" >
+          Access tokens
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+        </ul>
+          
+            <div class="toc-section-heading">
+              
+
+
+
+
+<h3 class="Text  Eyebrow ">Integrate &amp; Extend</h3>
+              
+            </div>
+          
+        <ul class="page-sidebar-list">
+      
+      
+      <li>
+        <a href="/guide/api.html" class="" >
+          API
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/sdk.html" class="" >
+          Python SDK
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/webhooks.html" class="" >
+          Webhooks
+        </a>
+        
+        
+            <button class="page-sidebar-toggle-children-list">
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+            <ul class="page-sidebar-children-list">
+            
+            
+            
+              <li>
+                <a href="/guide/webhook_create.html" class="page-sidebar-children-link" >
+                  Webhook development
+                </a>
+                
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/webhook_reference.html" class="page-sidebar-children-link" >
+                  Webhook event reference
+                </a>
+                
+                
+              </li>
+            
+            
+          </ul>
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/frontend_reference.html" class="" >
+          Frontend
+        </a>
+        
+        
+        
+          
+            </li><li>
+            <a href="https://github.com/Mercedes-Benz/label-studio/blob/develop/CONTRIBUTING.md" target="_blank">Contribution guide
+              <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-external-link">
+                <path d="M10.9002 9.29957L9.46026 9.30898L9.46026 3.34236L1.73377 11.0689L0.698549 10.0336L8.42504 2.30714L2.46783 2.31656L2.46783 0.867251L10.9001 0.867252L10.9002 9.29957Z" fill="#6D87F1"></path>
+              </svg>
+            </a>
+          </li>
+          
+          <li>
+            <a href="https://mercedes-benz.com/integrations/" target="_blank">Integrations directory
+              <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-external-link">
+                <path d="M10.9002 9.29957L9.46026 9.30898L9.46026 3.34236L1.73377 11.0689L0.698549 10.0336L8.42504 2.30714L2.46783 2.31656L2.46783 0.867251L10.9001 0.867252L10.9002 9.29957Z" fill="#6D87F1"></path>
+              </svg>
+            </a>
+          </li>
+        
+        
+      
+    
+    
+</ul>
+
+
+  <div class="toc-section-heading">
+
+
+
+
+<h3 class="Text  Eyebrow ">Support</h3></div>
+
+<ul class="page-sidebar-list">
+  
+  
+    <li>
+        <a href="/guide/troubleshooting">Troubleshooting</a>
+      </li>
+    <li>
+      <a href="https://github.com/Mercedes-Benz/label-studio/issues" target="_blank">GitHub Issues
+        <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-external-link">
+          <path d="M10.9002 9.29957L9.46026 9.30898L9.46026 3.34236L1.73377 11.0689L0.698549 10.0336L8.42504 2.30714L2.46783 2.31656L2.46783 0.867251L10.9001 0.867252L10.9002 9.29957Z" fill="#6D87F1"></path>
+        </svg>
+      </a>
+    </li>
+  
+  <li>
+    <a href="https://slack.mercedes-benz.com" target="_blank">Join Slack
+      <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-external-link">
+        <path d="M10.9002 9.29957L9.46026 9.30898L9.46026 3.34236L1.73377 11.0689L0.698549 10.0336L8.42504 2.30714L2.46783 2.31656L2.46783 0.867251L10.9001 0.867252L10.9002 9.29957Z" fill="#6D87F1"></path>
+      </svg>
+    </a>
+  </li>
+  
+    <li>
+      <a href="https://community.mercedes-benz.com/" target="_blank">Ask on Discourse
+        <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-external-link">
+          <path d="M10.9002 9.29957L9.46026 9.30898L9.46026 3.34236L1.73377 11.0689L0.698549 10.0336L8.42504 2.30714L2.46783 2.31656L2.46783 0.867251L10.9001 0.867252L10.9002 9.29957Z" fill="#6D87F1"></path>
+        </svg>
+      </a>
+    </li>
+  
+  <li>
+    <a href="https://mercedes-benz.com/contact-sales/" target="_blank">Contact Sales
+      <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-external-link">
+        <path d="M10.9002 9.29957L9.46026 9.30898L9.46026 3.34236L1.73377 11.0689L0.698549 10.0336L8.42504 2.30714L2.46783 2.31656L2.46783 0.867251L10.9001 0.867252L10.9002 9.29957Z" fill="#6D87F1"></path>
+      </svg>
+    </a>
+  </li>
+  
+</ul>
+
+
+
+  <div class="toc-section-heading">
+
+
+
+
+<h3 class="Text  Eyebrow ">What&#39;s New</h3></div>
+
+<ul class="page-sidebar-list">  
+    <li>
+      <a href="https://github.com/Mercedes-Benz/label-studio/releases" target="_blank">Release notes
+        <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-external-link">
+          <path d="M10.9002 9.29957L9.46026 9.30898L9.46026 3.34236L1.73377 11.0689L0.698549 10.0336L8.42504 2.30714L2.46783 2.31656L2.46783 0.867251L10.9001 0.867252L10.9002 9.29957Z" fill="#6D87F1"></path>
+        </svg>
+      </a>
+    </li>
+</ul>
+
+
+      </aside>
+    
+    <div class="content">
+      
+        <svg width="50" height="50" viewBox="0 0 77 77" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="content-decoration">
+          <rect x="75.875" y="26" width="25" height="25" transform="rotate(-180 75.875 26)" stroke="#E1DED5" stroke-width="0.504975"></rect>
+          <rect x="50.875" y="51" width="25" height="25" transform="rotate(-180 50.875 51)" stroke="#E1DED5" stroke-width="0.504975"></rect>
+          <rect x="50.875" y="26" width="25" height="25" transform="rotate(-180 50.875 26)" fill="#FF7557"></rect>
+          <rect x="26" y="76" width="25" height="25" transform="rotate(-180 26 76)" stroke="#E1DED5" stroke-width="0.504975"></rect>
+          <rect x="26" y="51" width="25" height="25" transform="rotate(-180 26 51)" fill="#E37BD3"></rect>
+          <rect x="26" y="26" width="25" height="25" transform="rotate(-180 26 26)" fill="#FFA663"></rect>
+        </svg>
+      
+        
+      <div class="container">
+        
+
+
+
+
+
+
+
+<div class="content-grid">
+  <div class="content-markdown">
+    
+   
+   
+   
+    <h1 id="TimelineLabels-Model-for-Temporal-Video-Multi-Label-Classification-in-Label-Studio"><a href="#TimelineLabels-Model-for-Temporal-Video-Multi-Label-Classification-in-Label-Studio" class="headerlink" title="TimelineLabels Model for Temporal Video Multi-Label Classification in Mercedes-Benz"></a>TimelineLabels Model for Temporal Video Multi-Label Classification in Mercedes-Benz</h1><p>This documentation provides a clear and comprehensive guide on how to use the TimelineLabels model 
+for temporal multi-label classification of video data in Mercedes-Benz. </p>
+<p>By integrating an LSTM neural network on top of YOLO’s classification capabilities — 
+specifically utilizing features from YOLO’s last layer — the model handles temporal labeling tasks. 
+Users can easily customize neural network parameters directly within the labeling configuration 
+to tailor the model to their specific use cases or use this model as a foundation for further development.</p>
+<p>In trainable mode, you’ll begin by annotating a few samples by hand. Each time you click <strong>Submit</strong>, the model will retrain on the new annotation that you’ve provided. Once the model begins predicting your trained labels on new tasks, it will automatically populate the timeline with the labels that it has predicted. You can validate or change these labels, and updating them will again retrain the model, helping you to iteratively improve.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/UyaecID1iG8?si=RHPYDfYgIWea1Odq" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<br>
+
+<p><strong>Tip:</strong> If you’re looking for a more advanced approach to temporal classification, check out the <a target="_blank" rel="noopener" href="https://huggingface.co/docs/transformers/en/model_doc/videomae">VideoMAE model</a>. While we don’t provide an example backend for VideoMAE, you can <a target="_blank" rel="noopener" href="https://labelstud.io/guide/ml_create">integrate it as your own ML backend</a>. </p>
+<h2 id="Installation-and-quickstart"><a href="#Installation-and-quickstart" class="headerlink" title="Installation and quickstart"></a>Installation and quickstart</h2><p>Before you begin, you need to install the <a target="_blank" rel="noopener" href="https://github.com/Mercedes-Benz/label-studio-ml-backend/blob/master/README.md#quickstart">Mercedes-Benz ML backend</a>. </p>
+<p>This tutorial uses the <a target="_blank" rel="noopener" href="https://github.com/Mercedes-Benz/label-studio-ml-backend/tree/master/label_studio_ml/examples/yolo">YOLO example</a>. See the <a target="_blank" rel="noopener" href="https://github.com/Mercedes-Benz/label-studio-ml-backend/blob/master/label_studio_ml/examples/yolo/README.md#quick-start">main README</a> for detailed instructions on setting up the YOLO-models family in Mercedes-Benz.</p>
+<h2 id="Labeling-configuration"><a href="#Labeling-configuration" class="headerlink" title="Labeling configuration"></a>Labeling configuration</h2><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">View</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">TimelineLabels</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;label&quot;</span> <span class="hljs-attr">toName</span>=<span class="hljs-string">&quot;video&quot;</span> </span>
+<span class="hljs-tag">        <span class="hljs-attr">model_trainable</span>=<span class="hljs-string">&quot;true&quot;</span></span>
+<span class="hljs-tag">        <span class="hljs-attr">model_classifier_epochs</span>=<span class="hljs-string">&quot;1000&quot;</span></span>
+<span class="hljs-tag">        <span class="hljs-attr">model_classifier_sequence_size</span>=<span class="hljs-string">&quot;16&quot;</span></span>
+<span class="hljs-tag">        <span class="hljs-attr">model_classifier_hidden_size</span>=<span class="hljs-string">&quot;32&quot;</span></span>
+<span class="hljs-tag">        <span class="hljs-attr">model_classifier_num_layers</span>=<span class="hljs-string">&quot;1&quot;</span></span>
+<span class="hljs-tag">        <span class="hljs-attr">model_classifier_f1_threshold</span>=<span class="hljs-string">&quot;0.95&quot;</span></span>
+<span class="hljs-tag">        <span class="hljs-attr">model_classifier_accuracy_threshold</span>=<span class="hljs-string">&quot;0.99&quot;</span></span>
+<span class="hljs-tag">        <span class="hljs-attr">model_score_threshold</span>=<span class="hljs-string">&quot;0.5&quot;</span></span>
+<span class="hljs-tag">    &gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Label</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;Ball touch&quot;</span> <span class="hljs-attr">background</span>=<span class="hljs-string">&quot;red&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Label</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;Ball in frame&quot;</span> <span class="hljs-attr">background</span>=<span class="hljs-string">&quot;blue&quot;</span>/&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">TimelineLabels</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">Video</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;video&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;$video&quot;</span> <span class="hljs-attr">height</span>=<span class="hljs-string">&quot;700&quot;</span> <span class="hljs-attr">frameRate</span>=<span class="hljs-string">&quot;25.0&quot;</span> <span class="hljs-attr">timelineHeight</span>=<span class="hljs-string">&quot;200&quot;</span> /&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">View</span>&gt;</span></code></pre>
+
+<p><span style="color:red"><b>IMPORTANT:</b></span> You must set the <strong><code>frameRate</code></strong> attribute in the <code>Video</code> tag to the correct value. 
+<span style="color:red">All your videos should have the same frame rate.</span> Otherwise, the submitted annotations will be <strong>misaligned</strong> with videos.</p>
+<h2 id="Parameters"><a href="#Parameters" class="headerlink" title="Parameters"></a>Parameters</h2><table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>model_trainable</code></td>
+<td>bool</td>
+<td>False</td>
+<td>Enables the trainable mode, allowing the model to learn from your annotations incrementally.</td>
+</tr>
+<tr>
+<td><code>model_classifier_epochs</code></td>
+<td>int</td>
+<td>1000</td>
+<td>Number of training epochs for the LSTM neural network.</td>
+</tr>
+<tr>
+<td><code>model_classifier_sequence_size</code></td>
+<td>int</td>
+<td>16</td>
+<td>Size of the LSTM sequence in frames. Adjust to capture longer or shorter temporal dependencies, 16 frames are about ~0.6 sec with 25 frame rate.</td>
+</tr>
+<tr>
+<td><code>model_classifier_hidden_size</code></td>
+<td>int</td>
+<td>32</td>
+<td>Size of the LSTM hidden state. Modify to change the capacity of the LSTM.</td>
+</tr>
+<tr>
+<td><code>model_classifier_num_layers</code></td>
+<td>int</td>
+<td>1</td>
+<td>Number of LSTM layers. Increase for a deeper LSTM network.</td>
+</tr>
+<tr>
+<td><code>model_classifier_f1_threshold</code></td>
+<td>float</td>
+<td>0.95</td>
+<td>F1 score threshold for early stopping during training. Set to prevent overfitting.</td>
+</tr>
+<tr>
+<td><code>model_classifier_accuracy_threshold</code></td>
+<td>float</td>
+<td>1.00</td>
+<td>Accuracy threshold for early stopping during training. Set to prevent overfitting.</td>
+</tr>
+<tr>
+<td><code>model_score_threshold</code></td>
+<td>float</td>
+<td>0.5</td>
+<td>Minimum confidence threshold for predictions. Labels with confidence below this threshold will be disregarded.</td>
+</tr>
+<tr>
+<td><code>model_path</code></td>
+<td>string</td>
+<td>None</td>
+<td>Path to the custom YOLO model. See more in the section <a target="_blank" rel="noopener" href="https://github.com/Mercedes-Benz/label-studio-ml-backend/blob/master/label_studio_ml/examples/yolo/README.md#your-own-custom-yolo-models">Your own custom models</a></td>
+</tr>
+</tbody></table>
+<p><strong>Note:</strong> You can customize the neural network parameters directly in the labeling configuration by adjusting the attributes in the <code>&lt;TimelineLabels&gt;</code> tag.</p>
+<h2 id="Using-the-model"><a href="#Using-the-model" class="headerlink" title="Using the model"></a>Using the model</h2><h3 id="Simple-mode"><a href="#Simple-mode" class="headerlink" title="Simple mode"></a>Simple mode</h3><p>In the simple mode, the model uses pre-trained YOLO classes to generate predictions without additional training.</p>
+<ul>
+<li><p><strong>When to Use</strong>: Quick setup without the need for custom training. It starts generating predictions immediately.</p>
+</li>
+<li><p><strong>Configuration</strong>: Set <code>model_trainable=&quot;false&quot;</code> in the labeling config (or omit it as <code>false</code> is the default).</p>
+</li>
+<li><p><strong>Example</strong>:</p>
+<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">View</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">Video</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;video&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;$video&quot;</span> <span class="hljs-attr">height</span>=<span class="hljs-string">&quot;700&quot;</span> <span class="hljs-attr">frameRate</span>=<span class="hljs-string">&quot;25.0&quot;</span> <span class="hljs-attr">timelineHeight</span>=<span class="hljs-string">&quot;200&quot;</span> /&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">TimelineLabels</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;label&quot;</span> <span class="hljs-attr">toName</span>=<span class="hljs-string">&quot;video&quot;</span> <span class="hljs-attr">model_trainable</span>=<span class="hljs-string">&quot;false&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Label</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;Ball&quot;</span> <span class="hljs-attr">predicted_values</span>=<span class="hljs-string">&quot;soccer_ball&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Label</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;tiger_shark&quot;</span> /&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">TimelineLabels</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">View</span>&gt;</span></code></pre></li>
+</ul>
+<h3 id="Trainable-mode"><a href="#Trainable-mode" class="headerlink" title="Trainable mode"></a>Trainable mode</h3><p>The trainable mode enables the model to learn from your annotations incrementally.</p>
+<p>It uses the pre-trained YOLO classification model and a custom LSTM neural network on the top 
+to capture temporal dependencies in video data. The LSTM model works from scratch, 
+so it requires about 10-20 well-annotated videos 500 frames each (~20 seconds) to start making meaningful predictions.</p>
+<ul>
+<li><strong>When to Use</strong>: When custom labels or improved accuracy are needed relative to simple mode.</li>
+<li><strong>Configuration</strong>: Set <code>model_trainable=&quot;true&quot;</code> in the labeling config.</li>
+<li><strong>Training Process</strong>:<ul>
+<li>Start annotating videos using the <code>TimelineLabels</code> tag.</li>
+<li>After submitting the first annotation, the model begins training.</li>
+<li>The <code>partial_fit()</code> method allows the model to train incrementally with each new annotation.</li>
+</ul>
+</li>
+<li><strong>Requirements</strong>: Approximately 10-20 annotated tasks are needed to achieve reasonable performance.</li>
+</ul>
+<p><strong>Note</strong>: The <code>predicted_values</code> attribute in the <code>&lt;Label&gt;</code> tag doesn’t make sense for trainable models.</p>
+<p><strong>Example</strong>:</p>
+<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">View</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Video</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;video&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;$video&quot;</span> <span class="hljs-attr">height</span>=<span class="hljs-string">&quot;700&quot;</span> <span class="hljs-attr">frameRate</span>=<span class="hljs-string">&quot;25.0&quot;</span> <span class="hljs-attr">timelineHeight</span>=<span class="hljs-string">&quot;200&quot;</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">TimelineLabels</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;label&quot;</span> <span class="hljs-attr">toName</span>=<span class="hljs-string">&quot;video&quot;</span> </span>
+<span class="hljs-tag">                    <span class="hljs-attr">model_trainable</span>=<span class="hljs-string">&quot;true&quot;</span></span>
+<span class="hljs-tag">                    <span class="hljs-attr">model_classifier_epochs</span>=<span class="hljs-string">&quot;1000&quot;</span></span>
+<span class="hljs-tag">                    <span class="hljs-attr">model_classifier_sequence_size</span>=<span class="hljs-string">&quot;16&quot;</span></span>
+<span class="hljs-tag">                    <span class="hljs-attr">model_classifier_hidden_size</span>=<span class="hljs-string">&quot;32&quot;</span></span>
+<span class="hljs-tag">                    <span class="hljs-attr">model_classifier_num_layers</span>=<span class="hljs-string">&quot;1&quot;</span></span>
+<span class="hljs-tag">                    <span class="hljs-attr">model_classifier_f1_threshold</span>=<span class="hljs-string">&quot;0.95&quot;</span></span>
+<span class="hljs-tag">                    <span class="hljs-attr">model_classifier_accuracy_threshold</span>=<span class="hljs-string">&quot;0.99&quot;</span></span>
+<span class="hljs-tag">                    <span class="hljs-attr">model_score_threshold</span>=<span class="hljs-string">&quot;0.5&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Label</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;Ball in frame&quot;</span>/&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Label</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;Ball touch&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">TimelineLabels</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">View</span>&gt;</span></code></pre>
+
+<h2 id="How-the-trainable-model-works"><a href="#How-the-trainable-model-works" class="headerlink" title="How the trainable model works"></a>How the trainable model works</h2><p>The trainable mode uses a custom implementation of the temporal LSTM classification model. 
+The model is trained incrementally with each new annotation submit or update, 
+and it generates predictions for each frame in the video.</p>
+<h3 id="1-Feature-extraction-with-YOLO"><a href="#1-Feature-extraction-with-YOLO" class="headerlink" title="1. Feature extraction with YOLO"></a>1. Feature extraction with YOLO</h3><ul>
+<li><strong>Pre-trained YOLO model</strong>: Uses a YOLO classification model (e.g. <code>yolov8n-cls.pt</code>) to extract features from video frames.</li>
+<li><strong>Layer modification</strong>: The model removes the last classification layer to use the feature representations from the penultimate layer (see <code>utils/neural_nets.py::cached_feature_extraction()</code>).</li>
+<li><strong>Cached predictions</strong>: Uses caching to store YOLO intermediate feature extractions for efficiency and incremental training on the fly.</li>
+</ul>
+<h4 id="Custom-YOLO-models-for-feature-extraction"><a href="#Custom-YOLO-models-for-feature-extraction" class="headerlink" title="Custom YOLO models for feature extraction"></a>Custom YOLO models for feature extraction</h4><p>You can load your own YOLO models using the steps described in the <a target="_blank" rel="noopener" href="https://github.com/Mercedes-Benz/label-studio-ml-backend/blob/master/label_studio_ml/examples/yolo/README.md#your-own-custom-yolo-models">main README</a>.
+However, it should have similar architecture as <code>yolov8-cls</code> models. See <code>utils/neural_nets.py::cached_feature_extraction()</code> for more details.</p>
+<h4 id="Cache-folder"><a href="#Cache-folder" class="headerlink" title="Cache folder"></a>Cache folder</h4><p>It’s located in <code>/app/cache_dir</code> and stores the cached intermediate features from the last layer of the YOLO model. 
+The cache is used for incremental training on the fly and prediction speedup.</p>
+<h3 id="2-LSTM-Neural-Network"><a href="#2-LSTM-Neural-Network" class="headerlink" title="2. LSTM Neural Network"></a>2. LSTM Neural Network</h3><ul>
+<li><strong>Purpose</strong>: Captures temporal dependencies in video data by processing sequences of feature vectors from the last layer of YOLO.</li>
+<li><strong>Architecture</strong>:<ul>
+<li><strong>Input layer</strong>: Takes feature vectors from YOLO.</li>
+<li><strong>Fully connected layer</strong>: Reduces dimensionality.</li>
+<li><strong>Layer normalization and dropout</strong>: Improves training stability and prevents overfitting.</li>
+<li><strong>LSTM layer</strong>: Processes sequences to model temporal relationships.</li>
+<li><strong>Output layer</strong>: Generates multi-label predictions for each time step.</li>
+</ul>
+</li>
+<li><strong>Loss function</strong>: Uses binary cross-entropy loss with logits for multi-label classification and the weight decay for L2 regularization.</li>
+</ul>
+<h3 id="3-Incremental-training-with-partial-fit"><a href="#3-Incremental-training-with-partial-fit" class="headerlink" title="3. Incremental training with partial_fit()"></a>3. Incremental training with <code>partial_fit()</code></h3><ul>
+<li><strong>Functionality</strong>: Allows the model to update its parameters with each new annotation.</li>
+<li><strong>Process</strong>:<ul>
+<li>Extracts features and labels from the annotated video using <code>utils/converter.py::convert_timelinelabels_to_probs()</code>.</li>
+<li>Pre-processes data into sequences suitable for LSTM input split by <code>model_classifier_sequence_size</code> chunks.</li>
+<li>Trains the model incrementally, using early stopping based on F1 score and accuracy thresholds.</li>
+</ul>
+</li>
+<li><strong>Advantages</strong>:<ul>
+<li><strong>Few-shot learning</strong>: Capable of learning from a small number of examples.</li>
+<li><strong>Avoids overfitting</strong>: Early stopping using F1 score and accuracy prevents the model from overfitting on limited data.</li>
+</ul>
+</li>
+</ul>
+<h3 id="Limitations-and-considerations"><a href="#Limitations-and-considerations" class="headerlink" title="Limitations and considerations"></a>Limitations and considerations</h3><ul>
+<li><strong>Not a final production model</strong>: While promising, the model is primarily a demo and may require further validation for production use.</li>
+<li><strong>Performance depends on data</strong>: Requires sufficient and diverse annotations (at least 10-20 annotated tasks) to start performing.</li>
+<li><strong>Parameter sensitivity</strong>: Adjusting neural network parameters may significantly impact performance.</li>
+<li><strong>Early stop on training data</strong>: The model uses early stopping based on the F1 score and accuracy on the training data. This may lead to overfitting on the training data. It was made because of the lack of validation data when updating on one annotation.</li>
+<li><strong>YOLO model limitations</strong>: The model uses a pre-trained YOLO model trained on object classification tasks for feature extraction, which may not be optimal for all use cases such as event detection. This approach doesn’t tune the YOLO model, it trains only the LSTM piece upon the YOLO last layer.</li>
+<li><strong>Label balance</strong>: The model may struggle with imbalanced labels. Ensure that the labels are well-distributed in the training data. Consider modifying the loss function (<code>BCEWithLogitsLoss</code>) and using class pos weights to address this issue.</li>
+<li><strong>Training on all daa</strong>: Training on all data is not yet implemented, so the model trains only on the last annotation. See <code>timeline_labels.py::fit()</code> for more details.</li>
+</ul>
+<h2 id="Example-use-case-detecting-a-ball-in-football-videos"><a href="#Example-use-case-detecting-a-ball-in-football-videos" class="headerlink" title="Example use case: detecting a ball in football videos"></a>Example use case: detecting a ball in football videos</h2><h3 id="Setup"><a href="#Setup" class="headerlink" title="Setup"></a>Setup</h3><ol>
+<li><p><strong>Labeling configuration</strong>:</p>
+<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">View</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">TimelineLabels</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;videoLabels&quot;</span> <span class="hljs-attr">toName</span>=<span class="hljs-string">&quot;video&quot;</span>&gt;</span>
+     <span class="hljs-tag">&lt;<span class="hljs-name">Label</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;Ball touch&quot;</span> <span class="hljs-attr">background</span>=<span class="hljs-string">&quot;red&quot;</span>/&gt;</span>
+     <span class="hljs-tag">&lt;<span class="hljs-name">Label</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;Ball in frame&quot;</span> <span class="hljs-attr">background</span>=<span class="hljs-string">&quot;blue&quot;</span>/&gt;</span>
+   <span class="hljs-tag">&lt;/<span class="hljs-name">TimelineLabels</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">Video</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;video&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;$video&quot;</span> <span class="hljs-attr">height</span>=<span class="hljs-string">&quot;700&quot;</span> <span class="hljs-attr">timelineHeight</span>=<span class="hljs-string">&quot;200&quot;</span> <span class="hljs-attr">frameRate</span>=<span class="hljs-string">&quot;25.0&quot;</span> /&gt;</span>
+ <span class="hljs-tag">&lt;/<span class="hljs-name">View</span>&gt;</span></code></pre>
+</li>
+<li><p><strong>Connect the model Backend</strong>:</p>
+<p> Create a new project, go to <strong>Settings &gt; Model</strong> and add the YOLO backend.</p>
+<ol>
+<li>Navigate to the <code>yolo</code> folder in this repository in your terminal.</li>
+<li>Update your <code>docker-compose.yml</code> file.</li>
+<li>Execute <code>docker compose up</code> to run the backend. </li>
+<li>Connect this backend to your Mercedes-Benz project in the project settings. Make sure that <strong>Interactive Preannotations</strong> is OFF (this is the default).</li>
+</ol>
+</li>
+</ol>
+<h3 id="Annotation-and-training"><a href="#Annotation-and-training" class="headerlink" title="Annotation and training"></a>Annotation and training</h3><ol>
+<li><p><strong>Annotate videos</strong>:</p>
+<ul>
+<li>Upload football videos to the project.</li>
+<li>Use the <a target="_blank" rel="noopener" href="https://labelstud.io/tags/timelinelabels"><code>&lt;TimelineLabels&gt;</code> control tag</a> to label time intervals where the ball is visible in the frame.</li>
+</ul>
+</li>
+<li><p><strong>Model training</strong>:</p>
+<ul>
+<li>After submitting annotations, the model begins training incrementally.</li>
+<li>Continue annotating until the model starts making accurate predictions.</li>
+</ul>
+</li>
+<li><p><strong>Review predictions</strong>:</p>
+<ul>
+<li>The model suggests labels for unannotated videos.</li>
+<li>Validate and correct predictions to further improve the model.</li>
+</ul>
+</li>
+</ol>
+<h2 id="Adjusting-training-parameters-and-resetting-the-model"><a href="#Adjusting-training-parameters-and-resetting-the-model" class="headerlink" title="Adjusting training parameters and resetting the model"></a>Adjusting training parameters and resetting the model</h2><p>If the model is not performing well, consider modifying the LSTM and classifier training parameters in the labeling config. These parameters
+start with the <code>model_classifier_</code> prefix.</p>
+<p>The model will be <strong>reset</strong> after changing these parameters:</p>
+<ul>
+<li><code>model_classifier_sequence_size</code></li>
+<li><code>model_classifier_hidden_size</code></li>
+<li><code>model_classifier_num_layers</code></li>
+<li>New labels added or removed from the labeling config</li>
+</ul>
+<p>So you may need to update (click <strong>Update</strong>) on annotations to see improvements.</p>
+<p>If you want to modify more parameters, you can do it directly in the code in <code>utils/neural_nets.py::MultiLabelLSTM</code>.</p>
+<p>If you need to reset the model completely, you can remove the model file from <code>/app/models</code>. 
+See <code>timeline_labels.py::get_classifier_path()</code> for the model path. Usually it starts with the <code>timelinelabels-</code> prefix.  </p>
+<h2 id="Debug"><a href="#Debug" class="headerlink" title="Debug"></a>Debug</h2><p>To debug the model, you should run it with the <code>LOG_LEVEL=DEBUG</code> environment variable (see <code>docker-compose.yml</code>),
+then check the logs in the (docker) console. </p>
+<h2 id="Convert-TimelineLabels-regions-to-label-arrays-and-back"><a href="#Convert-TimelineLabels-regions-to-label-arrays-and-back" class="headerlink" title="Convert TimelineLabels regions to label arrays and back"></a>Convert TimelineLabels regions to label arrays and back</h2><p>There are two main functions to convert the TimelineLabels regions to label arrays and back:</p>
+<ul>
+<li><code>utils/converter.py::convert_timelinelabels_to_probs()</code> - Converts TimelineLabels regions to label arrays</li>
+<li><code>utils/converter.py::convert_probs_to_timelinelabels()</code> - Converts label arrays to TimelineLabels regions</li>
+</ul>
+<p>Each row in the label array corresponds to a frame in the video. 
+The label array is a binary matrix where each column corresponds to a label. 
+If the label is present in the frame, the corresponding cell is set to <code>1</code>, otherwise <code>0</code>.</p>
+<p>For example: </p>
+<pre><code class="hljs plaintext">[
+    [0, 0, 1], 
+    [0, 1, 0], 
+    [1, 0, 0]
+]</code></pre>
+
+<p>This corresponds to the labels <code>[label3, label2, label1]</code> in the frames 1, 2, 3.</p>
+<p>See <code>tests/test_timeline_labels.py::test_convert_probs_to_timelinelabels()</code> for more examples.</p>
+<br>
+<br>
+
+<hr>
+<br>
+<br>
+
+<h2 id="For-developers"><a href="#For-developers" class="headerlink" title="For developers"></a>For developers</h2><p>This guide provides an in-depth look at the architecture and code flow of the TimelineLabels ML backend for Mercedes-Benz. It includes class inheritance diagrams and method call flowcharts to help developers understand how the components interact. Additionally, it offers explanations of key methods and classes, highlighting starting points and their roles in the overall workflow.</p>
+<h3 id="Class-inheritance-diagram"><a href="#Class-inheritance-diagram" class="headerlink" title="Class inheritance diagram"></a>Class inheritance diagram</h3><p>The following diagram illustrates the class inheritance hierarchy in the TimelineLabels ML backend.</p>
+<pre><code class="hljs mermaid">classDiagram
+    class ControlModel
+    class TimelineLabelsModel
+    class TorchNNModule
+    class BaseNN
+    class MultiLabelLSTM
+
+    ControlModel &lt;|-- TimelineLabelsModel
+    TorchNNModule &lt;|-- BaseNN
+    BaseNN &lt;|-- MultiLabelLSTM</code></pre>
+
+<ul>
+<li><strong><code>ControlModel</code></strong>: Base class for control tags in Mercedes-Benz.</li>
+<li><strong><code>TimelineLabelsModel</code></strong>: Inherits from <code>ControlModel</code> and implements specific functionality for the <code>&lt;TimelineLabels&gt;</code> tag.</li>
+<li><strong><code>torch.nn.Module</code></strong>: Base class for all neural network modules in PyTorch.</li>
+<li><strong><code>BaseNN</code></strong>: Custom base class for neural networks, inherits from <code>torch.nn.Module</code>.</li>
+<li><strong><code>MultiLabelLSTM</code></strong>: Inherits from <code>BaseNN</code>, implements an LSTM neural network for multi-label classification.</li>
+</ul>
+<h3 id="Method-call-flowcharts"><a href="#Method-call-flowcharts" class="headerlink" title="Method call flowcharts"></a>Method call flowcharts</h3><h4 id="Prediction-workflow"><a href="#Prediction-workflow" class="headerlink" title="Prediction workflow"></a>Prediction workflow</h4><p>The following flowchart depicts the method calls during the prediction process.</p>
+<pre><code class="hljs mermaid">flowchart TD
+    A[TimelineLabelsModel.predict_regions]
+    A --&gt; B&#123;Is self.trainable?&#125;
+    B --&gt;|Yes| C[create_timelines_trainable]
+    B --&gt;|No| D[create_timelines_simple]
+    
+    C --&gt; E[cached_feature_extraction]
+    C --&gt; F[Load classifier using BaseNN.load_cached_model]
+    C --&gt; G[classifier.predict]
+    C --&gt; H[convert_probs_to_timelinelabels]
+    C --&gt; I[Return predicted regions]
+    
+    D --&gt; J[cached_yolo_predict]
+    D --&gt; K[Process frame results]
+    D --&gt; L[convert_probs_to_timelinelabels]
+    D --&gt; M[Return predicted regions]</code></pre>
+
+<h4 id="Training-workflow"><a href="#Training-workflow" class="headerlink" title="Training workflow"></a>Training workflow</h4><p>The following flowchart shows the method calls during the training process.</p>
+<pre><code class="hljs mermaid">flowchart TD
+    N[TimelineLabelsModel.fit]
+    N --&gt; O&#123;Event is &#x27;ANNOTATION_CREATED&#x27; or &#x27;ANNOTATION_UPDATED&#x27;?&#125;
+    O --&gt;|Yes| P[Extract task and regions]
+    P --&gt; Q[Get model parameters]
+    Q --&gt; R[Get video path]
+    R --&gt; S[cached_feature_extraction]
+    S --&gt; T[Prepare features and labels]
+    T --&gt; U[Load or create classifier]
+    U --&gt; V[classifier.partial_fit]
+    V --&gt; W[classifier.save]
+    W --&gt; X[Return True]
+    O --&gt;|No| Y[Return False]</code></pre>
+
+<h3 id="Code-structure-and-explanations"><a href="#Code-structure-and-explanations" class="headerlink" title="Code structure and explanations"></a>Code structure and explanations</h3><h4 id="TimelineLabelsModel-class"><a href="#TimelineLabelsModel-class" class="headerlink" title="TimelineLabelsModel class"></a>TimelineLabelsModel class</h4><p><strong>File</strong>: <code>timeline_labels.py</code></p>
+<p>The <code>TimelineLabelsModel</code> class extends the <code>ControlModel</code> base class and implements functionality specific to the <code>&lt;TimelineLabels&gt;</code> control tag.</p>
+<p><strong>Key methods:</strong></p>
+<ul>
+<li><p><strong><code>is_control_matched(cls, control)</code></strong>: Class method that checks if the provided control tag matches the <code>&lt;TimelineLabels&gt;</code> tag.</p>
+</li>
+<li><p><strong><code>create(cls, *args, **kwargs)</code></strong>: Class method that creates an instance of the model, initializing attributes like <code>trainable</code> and <code>label_map</code>.</p>
+</li>
+<li><p><strong><code>predict_regions(self, video_path)</code></strong>: Main method called during prediction. Determines whether to use the simple or trainable prediction method based on the <code>trainable</code> attribute.</p>
+<ul>
+<li><p><strong><code>create_timelines_simple(self, video_path)</code></strong>: Uses pre-trained YOLO classes for prediction without additional training.</p>
+<ul>
+<li>Calls <code>cached_yolo_predict</code> to get predictions from the YOLO model.</li>
+<li>Processes frame results to extract probabilities.</li>
+<li>Converts probabilities to timeline labels.</li>
+</ul>
+</li>
+<li><p><strong><code>create_timelines_trainable(self, video_path)</code></strong>: Uses the custom-trained LSTM neural network for prediction.</p>
+<ul>
+<li>Calls <code>cached_feature_extraction</code> to extract features from the video.</li>
+<li>Loads the trained classifier model.</li>
+<li>Uses the classifier to predict probabilities.</li>
+<li>Converts probabilities to timeline labels.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong><code>fit(self, event, data, **kwargs)</code></strong>: Called when new annotations are created or updated. Handles the incremental training of the LSTM model.</p>
+<ul>
+<li>Extracts features and labels from the annotated video.</li>
+<li>Preprocesses data for LSTM input.</li>
+<li>Loads or initializes the classifier.</li>
+<li>Calls <code>partial_fit</code> on the classifier to update model parameters.</li>
+<li>Saves the updated classifier model.</li>
+</ul>
+</li>
+<li><p><strong><code>get_classifier_path(self, project_id)</code></strong>: Generates the file path for storing the classifier model based on the project ID and model name.</p>
+</li>
+</ul>
+<h4 id="Neural-network-classes"><a href="#Neural-network-classes" class="headerlink" title="Neural network classes"></a>Neural network classes</h4><h5 id="BaseNN-class"><a href="#BaseNN-class" class="headerlink" title="BaseNN class"></a>BaseNN class</h5><p><strong>File</strong>: <code>neural_nets.py</code></p>
+<p>The <code>BaseNN</code> class serves as a base class for neural network models, providing common methods for saving, loading, and managing label mappings.</p>
+<p><strong>Key methods:</strong></p>
+<ul>
+<li><p><strong><code>set_label_map(self, label_map)</code></strong>: Stores the label mapping dictionary.</p>
+</li>
+<li><p><strong><code>get_label_map(self)</code></strong>: Retrieves the label mapping dictionary.</p>
+</li>
+<li><p><strong><code>save(self, path)</code></strong>: Saves the model to the specified path using <code>torch.save</code>.</p>
+</li>
+<li><p><strong><code>load(cls, path)</code></strong>: Class method to load a saved model from the specified path.</p>
+</li>
+<li><p><strong><code>load_cached_model(cls, model_path)</code></strong>: Loads a cached model if it exists, otherwise returns <code>None</code>.</p>
+</li>
+</ul>
+<h5 id="MultiLabelLSTM-class"><a href="#MultiLabelLSTM-class" class="headerlink" title="MultiLabelLSTM class"></a>MultiLabelLSTM class</h5><p><strong>File</strong>: <code>neural_nets.py</code></p>
+<p>The <code>MultiLabelLSTM</code> class inherits from <code>BaseNN</code> and implements an LSTM neural network for multi-label classification.</p>
+<p><strong>Key methods:</strong></p>
+<ul>
+<li><p><strong><code>__init__(...)</code></strong>: Initializes the neural network layers and parameters, including input size, hidden layers, dropout, and optimizer settings.</p>
+</li>
+<li><p><strong><code>forward(self, x)</code></strong>: Defines the forward pass of the network.</p>
+<ul>
+<li>Reduces input dimensionality using a fully connected layer.</li>
+<li>Applies layer normalization and dropout.</li>
+<li>Passes data through the LSTM layer.</li>
+<li>Applies a fully connected layer to generate output predictions.</li>
+</ul>
+</li>
+<li><p><strong><code>preprocess_sequence(self, sequence, labels=None, overlap=2)</code></strong>: Prepares input sequences and labels for training by splitting and padding them.</p>
+</li>
+<li><p><strong><code>partial_fit(self, sequence, labels, ...)</code></strong>: Trains the model incrementally on new data.</p>
+<ul>
+<li>Pre-processes the input sequence.</li>
+<li>Creates a DataLoader for batching.</li>
+<li>Runs the training loop with early stopping based on accuracy and F1 score thresholds.</li>
+</ul>
+</li>
+<li><p><strong><code>predict(self, sequence)</code></strong>: Generates predictions for a given input sequence.</p>
+<ul>
+<li>Splits the sequence into chunks.</li>
+<li>Passes data through the model in evaluation mode.</li>
+<li>Concatenates outputs to match the original sequence length.</li>
+</ul>
+</li>
+</ul>
+<h3 id="Starting-points-and-execution-flow"><a href="#Starting-points-and-execution-flow" class="headerlink" title="Starting points and execution flow"></a>Starting points and execution flow</h3><h4 id="Prediction-process"><a href="#Prediction-process" class="headerlink" title="Prediction process"></a>Prediction process</h4><ol>
+<li><p><strong>Prediction request</strong>: When a prediction is requested for a video, <code>TimelineLabelsModel.predict_regions(video_path)</code> is called.</p>
+</li>
+<li><p><strong>Determine mode</strong>:</p>
+<ul>
+<li><p><strong>Trainable mode</strong> (<code>self.trainable == True</code>): Calls <code>create_timelines_trainable(video_path)</code>.</p>
+<ul>
+<li>Extracts features using <code>cached_feature_extraction</code>.</li>
+<li>Loads the trained classifier model using <code>BaseNN.load_cached_model</code>.</li>
+<li>Predicts probabilities with <code>classifier.predict(yolo_probs)</code>.</li>
+<li>Converts probabilities to timeline labels using <code>convert_probs_to_timelinelabels</code>.</li>
+</ul>
+</li>
+<li><p><strong>Simple mode</strong> (<code>self.trainable == False</code>): Calls <code>create_timelines_simple(video_path)</code>.</p>
+<ul>
+<li>Gets YOLO predictions using <code>cached_yolo_predict</code>.</li>
+<li>Processes frame results to extract probabilities.</li>
+<li>Converts probabilities to timeline labels using <code>convert_probs_to_timelinelabels</code>.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>Return predictions</strong>: The method returns a list of predicted regions with labels and timestamps.</p>
+</li>
+</ol>
+<h4 id="Training-process"><a href="#Training-process" class="headerlink" title="Training process"></a>Training process</h4><ol>
+<li><p><strong>Event Trigger</strong>: The <code>fit(event, data, **kwargs)</code> method is called when an annotation event occurs (e.g., ‘ANNOTATION_CREATED’ or ‘ANNOTATION_UPDATED’).</p>
+</li>
+<li><p><strong>Event Handling</strong>:</p>
+<ul>
+<li>Checks if the event is relevant for training.</li>
+<li>Extracts the task and annotation data.</li>
+</ul>
+</li>
+<li><p><strong>Parameter Extraction</strong>: Retrieves model parameters from the control tag attributes, such as epochs, sequence size, hidden size, and thresholds.</p>
+</li>
+<li><p><strong>Data Preparation</strong>:</p>
+<ul>
+<li>Gets the video path associated with the task.</li>
+<li>Extracts features from the video using <code>cached_feature_extraction</code>.</li>
+<li>Converts annotations to labels suitable for training.</li>
+</ul>
+</li>
+<li><p><strong>Model Loading or Initialization</strong>:</p>
+<ul>
+<li>Attempts to load an existing classifier model using <code>BaseNN.load_cached_model</code>.</li>
+<li>If no model exists or parameters have changed, initializes a new <code>MultiLabelLSTM</code> model.</li>
+</ul>
+</li>
+<li><p><strong>Training</strong>:</p>
+<ul>
+<li>Calls <code>classifier.partial_fit(features, labels, ...)</code> to train the model incrementally.</li>
+<li>Training includes early stopping based on accuracy and F1 score thresholds to prevent overfitting.</li>
+</ul>
+</li>
+<li><p><strong>Model Saving</strong>: Saves the trained model to disk using <code>classifier.save(path)</code>.</p>
+</li>
+</ol>
+<h2 id="Utilities-and-helper-functions"><a href="#Utilities-and-helper-functions" class="headerlink" title="Utilities and helper functions"></a>Utilities and helper functions</h2><p><strong>Cached Prediction and Feature Extraction</strong>:</p>
+<ul>
+<li><p><strong><code>cached_yolo_predict(yolo_model, video_path, cache_params)</code></strong>: Uses joblib’s <code>Memory</code> to cache YOLO predictions, avoiding redundant computations.</p>
+</li>
+<li><p><strong><code>cached_feature_extraction(yolo_model, video_path, cache_params)</code></strong>: Extracts features from the YOLO model by hooking into the penultimate layer and caches the results.</p>
+</li>
+</ul>
+<p><strong>Data Conversion Functions</strong>:</p>
+<ul>
+<li><p><strong><code>convert_probs_to_timelinelabels(probs, label_map, threshold)</code></strong>: Converts probability outputs to timeline labels suitable for Mercedes-Benz.</p>
+</li>
+<li><p><strong><code>convert_timelinelabels_to_probs(regions, label_map, max_frame)</code></strong>: Converts annotated regions back into a sequence of probabilities for training.</p>
+</li>
+</ul>
+<h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p>The TimelineLabels ML backend integrates seamlessly with Mercedes-Benz to provide temporal multi-label classification capabilities for video data. The architecture leverages pre-trained YOLO models for feature extraction and enhances them with an LSTM neural network for capturing temporal dependencies.</p>
+<p>Understanding the class hierarchies and method flows is crucial for developers looking to extend or modify the backend. By following the starting points and execution flows outlined in this guide, developers can navigate the codebase more effectively and implement custom features or optimizations.</p>
+<p><strong>Note</strong>: For further development or contributions, please refer to the <a target="_blank" rel="noopener" href="https://github.com/Mercedes-Benz/label-studio-ml-backend/blob/master/label_studio_ml/examples/yolo/README_DEVELOP.md"><code>README_DEVELOP.md</code></a> file, which provides additional guidelines and architectural details.</p>
+
+    
+  </div>
+  <div class="page-rightsidebar">
+    
+      <div class="toc">
+        
+
+
+
+
+<h3 class="Text  Eyebrow ">In this article</h3>
+        <ol class="toc-list"><li class="toc-list-level-1"><a href="#TimelineLabels-Model-for-Temporal-Video-Multi-Label-Classification-in-Label-Studio">TimelineLabels Model for Temporal Video Multi-Label Classification in Mercedes-Benz</a></li><li class="toc-list-level-2"><a href="#Installation-and-quickstart">Installation and quickstart</a></li><li class="toc-list-level-2"><a href="#Labeling-configuration">Labeling configuration</a></li><li class="toc-list-level-2"><a href="#Parameters">Parameters</a></li><li class="toc-list-level-2"><a href="#Using-the-model">Using the model</a></li><li class="toc-list-level-3"><a href="#Simple-mode">Simple mode</a></li><li class="toc-list-level-3"><a href="#Trainable-mode">Trainable mode</a></li><li class="toc-list-level-2"><a href="#How-the-trainable-model-works">How the trainable model works</a></li><li class="toc-list-level-3"><a href="#1-Feature-extraction-with-YOLO">1. Feature extraction with YOLO</a></li><li class="toc-list-level-3"><a href="#2-LSTM-Neural-Network">2. LSTM Neural Network</a></li><li class="toc-list-level-3"><a href="#3-Incremental-training-with-partial-fit">3. Incremental training with partial_fit()</a></li><li class="toc-list-level-3"><a href="#Limitations-and-considerations">Limitations and considerations</a></li><li class="toc-list-level-2"><a href="#Example-use-case-detecting-a-ball-in-football-videos">Example use case: detecting a ball in football videos</a></li><li class="toc-list-level-3"><a href="#Setup">Setup</a></li><li class="toc-list-level-3"><a href="#Annotation-and-training">Annotation and training</a></li><li class="toc-list-level-2"><a href="#Adjusting-training-parameters-and-resetting-the-model">Adjusting training parameters and resetting the model</a></li><li class="toc-list-level-2"><a href="#Debug">Debug</a></li><li class="toc-list-level-2"><a href="#Convert-TimelineLabels-regions-to-label-arrays-and-back">Convert TimelineLabels regions to label arrays and back</a></li><li class="toc-list-level-2"><a href="#For-developers">For developers</a></li><li class="toc-list-level-3"><a href="#Class-inheritance-diagram">Class inheritance diagram</a></li><li class="toc-list-level-3"><a href="#Method-call-flowcharts">Method call flowcharts</a></li><li class="toc-list-level-3"><a href="#Code-structure-and-explanations">Code structure and explanations</a></li><li class="toc-list-level-3"><a href="#Starting-points-and-execution-flow">Starting points and execution flow</a></li><li class="toc-list-level-2"><a href="#Utilities-and-helper-functions">Utilities and helper functions</a></li><li class="toc-list-level-2"><a href="#Conclusion">Conclusion</a></li></ol>
+      </div>
+    
+    <div class="toc-enterprise-cta">
+      
+        <span class="toc-enterprise-cta-copy">Designed for teams of all sizes</span>
+        <a href="https://mercedes-benz.com/pricing" class="Button Tertiary">
+   Compare Versions
+</a>
+      
+    </div>
+  </div>
+</div>
+        
+        <footer class="content-footer">
+          <div class="helpful-container">
+            
+            <form class="helpful-form" id="helpful-form">
+              
+
+
+
+
+<h3 class="Text  Eyebrow ">Was this useful?</h3>
+              <fieldset>
+                <div class="helpful-button-group">
+                  <div class="helpful-radio-container">
+                    <input type="radio" name="helpful" id="feedback-helpful-yes" value="yes">
+                    <label for="feedback-helpful-yes" class="helpful-button">
+                      <svg width="24" height="24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M13.048 3.544a.881.881 0 0 0-1.112.353l-2.71 4.518A2.75 2.75 0 0 1 6.868 9.75H4.25v9.5h12.222a1.25 1.25 0 0 0 1.205-.921l1.91-7a1.252 1.252 0 0 0-1.206-1.579h-4.576a1.35 1.35 0 0 1-1.291-1.737l1.022-3.408a.882.882 0 0 0-.488-1.06Zm-1.077-1.463a2.38 2.38 0 0 1 3.001 2.954m0 0-.964 3.215h4.373a2.75 2.75 0 0 1 2.654 3.473l-1.91 7a2.75 2.75 0 0 1-2.651 2.027H4.1a1.35 1.35 0 0 1-1.35-1.35V9.6A1.35 1.35 0 0 1 4.1 8.25h2.768a1.25 1.25 0 0 0 1.072-.607l2.71-4.516c.298-.498.768-.87 1.321-1.046" ></path><path fill-rule="evenodd" clip-rule="evenodd" d="M7 8.25a.75.75 0 0 1 .75.75v11a.75.75 0 0 1-1.5 0V9A.75.75 0 0 1 7 8.25Z" ></path></svg>
+                      Yes
+                    </label>
+                  </div>
+                  <div class="helpful-radio-container">
+                    <input type="radio" name="helpful" id="feedback-helpful-no" value="no">
+                    <label for="feedback-helpful-no" class="helpful-button">
+                      <svg width="24" height="24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M13.048 20.456a.88.88 0 0 1-1.112-.354l-2.71-4.517a2.75 2.75 0 0 0-2.358-1.335H4.25v-9.5h12.222a1.251 1.251 0 0 1 1.205.921l1.91 7a1.252 1.252 0 0 1-1.206 1.579h-4.576a1.351 1.351 0 0 0-1.291 1.737l1.022 3.408a.883.883 0 0 1-.488 1.06Zm-1.077 1.463a2.381 2.381 0 0 0 3.001-2.954m0 0-.964-3.215h4.373a2.75 2.75 0 0 0 2.654-3.473l-1.91-7a2.75 2.75 0 0 0-2.651-2.027H4.1A1.35 1.35 0 0 0 2.75 4.6v9.8a1.35 1.35 0 0 0 1.35 1.35h2.768a1.25 1.25 0 0 1 1.072.607l2.71 4.516c.298.498.768.87 1.321 1.046" ></path><path fill-rule="evenodd" clip-rule="evenodd" d="M7 15.75a.75.75 0 0 0 .75-.75V4a.75.75 0 0 0-1.5 0v11c0 .414.336.75.75.75Z" ></path></svg>
+                      No
+                    </label>
+                  </div>
+                </div>
+                <div class="helpful-form-more" id="helpful-more">
+                  <label for="feedback-comment" class="helpful-form-label">Please add your feedback (optional)</label>
+                  <textarea name="feedback" id="feedback-comment" class="helpful-form-textarea"></textarea>
+
+                  <label for="feedback-email" class="helpful-form-label">Can we contact you with more questions? (optional)</label>
+                  <input type="email" name="email" id="feedback-email" placeholder="Your email" class="helpful-form-input" >
+                  
+                  <div class="helpful-form-submit-container">
+                    <button type="button" class="Button Secondary" id="helpful-form-cancel-button">Cancel</button>
+                    <button type="submit" class="Button" id="helpful-form-submit-button">Send</button>
+                  </div>
+                </div>
+                <div class="helpful-form-confirmation" id="helpful-more-confirmation">
+                  Thanks for the feedback!
+                </div>
+              </fieldset>
+            </form>
+          </div>
+          <div>
+            
+              
+
+
+
+
+<h3 class="Text  Eyebrow ">Contribute to the docs</h3>
+              
+
+
+
+
+<h3 class="Text  Small ">Our docs are open source. See something that could be improved? Submit a pull request.</h3>
+              <a target="_blank" rel="noopener" href="https://github.com/Mercedes-Benz/label-studio" class="Button [object Object]">
+   Make a contribution
+</a>
+            
+          </div>
+          <div>
+            
+
+
+
+
+<h3 class="Text  Eyebrow ">Can’t find what you’re looking for?</h3>
+            
+              <div class="content-footer-button-group">
+                <a target="_blank" rel="noopener" href="https://github.com/Mercedes-Benz/label-studio/issues" class="Button [object Object]">
+   Submit a GitHub Issue
+</a>
+                <a target="_blank" rel="noopener" href="https://slack.mercedes-benz.com/?source=docs-footer" class="Button Secondary WithIcon">
+  
+    <svg width="31" height="30" viewBox="0 0 31 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M11.4993 0C9.84099 0.00122324 8.49886 1.34434 8.50008 2.99939C8.49886 4.65443 9.84221 5.99755 11.5006 5.99878H14.5011V3.00061C14.5023 1.34557 13.1589 0.00244648 11.4993 0C11.5006 0 11.5006 0 11.4993 0V0ZM11.4993 8H3.50049C1.84213 8.00122 0.498778 9.34434 0.500003 10.9994C0.497552 12.6544 1.84091 13.9976 3.49927 14H11.4993C13.1577 13.9988 14.5011 12.6557 14.4998 11.0006C14.5011 9.34434 13.1577 8.00122 11.4993 8Z" fill="#41C6EE"></path>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M30.5 10.9994C30.5012 9.34434 29.1578 8.00122 27.4995 8C25.8411 8.00122 24.4978 9.34434 24.499 10.9994V14H27.4995C29.1578 13.9988 30.5012 12.6557 30.5 10.9994ZM22.4999 10.9994V2.99939C22.5011 1.34557 21.159 0.00244648 19.5006 0C17.8423 0.00122324 16.4989 1.34434 16.5001 2.99939V10.9994C16.4977 12.6544 17.841 13.9976 19.4994 14C21.1577 13.9988 22.5011 12.6557 22.4999 10.9994Z" fill="#38B67F"></path>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M19.4994 29.9999C21.1578 29.9987 22.5011 28.6555 22.4999 27.0005C22.5011 25.3454 21.1578 24.0023 19.4994 24.0011H16.4989V27.0005C16.4977 28.6543 17.841 29.9974 19.4994 29.9999ZM19.4994 21.9987H27.4995C29.1578 21.9974 30.5012 20.6543 30.5 18.9993C30.5024 17.3442 29.1591 16.0011 27.5007 15.9987H19.5006C17.8423 15.9999 16.4989 17.343 16.5001 18.998C16.4989 20.6543 17.841 21.9974 19.4994 21.9987Z" fill="#ECB13D"></path>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M0.500001 18.9995C0.498775 20.6546 1.84213 21.9977 3.50049 21.9989C5.15885 21.9977 6.50221 20.6546 6.50098 18.9995V16.0001H3.50049C1.84213 16.0013 0.498775 17.3445 0.500001 18.9995ZM8.50008 18.9995V26.9995C8.49763 28.6546 9.84099 29.9977 11.4993 30.0001C13.1577 29.9989 14.5011 28.6558 14.4998 27.0007V19.002C14.5023 17.3469 13.1589 16.0038 11.5006 16.0013C9.84099 16.0013 8.49886 17.3445 8.50008 18.9995C8.50008 18.9995 8.50008 19.0007 8.50008 18.9995Z" fill="#DD295C"></path>
+</svg>
+
+ Join Slack Community
+</a>
+              </div>
+            
+            </div>
+        </footer>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    var savedScrollPosition = localStorage.getItem('labelstudio_scrollPosition');
+      if (savedScrollPosition) {
+        document.querySelector(".page-sidebar").scrollTop = savedScrollPosition;
+      }
+  </script>
+
+  
+   
+
+<footer class="Footer">
+  <section class="FooterWrapper">
+    <svg       width="106"
+      height="140"
+      viewBox="0 0 106 140"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      class="FooterCTASquares"
+    >
+      <path         fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M0.463783 35.0679H70.6628V70.1674H35.5633V105.267L70.6628 105.267H0.463783V35.0679Z"
+        fill="#FF7557"
+      ></path>
+      <rect         width="35.1784"
+        height="35.1784"
+        transform="matrix(-1 0 0 1 105.765 0)"
+        fill="#FFA663"
+      ></rect>
+      <path         fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M105.764 140H35.5645V69.8009H105.764V140ZM70.6641 104.901H35.5645V69.801H70.6641V104.901Z"
+        fill="#E37BD3"
+      ></path>
+    </svg>
+    <div class="FooterGrid">
+      <div class="FooterSocialsLogo">
+        <svg           width="280"
+          height="47"
+          viewBox="0 0 280 47"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          class="FooterSocialsLogoMercedes-Benz"
+        >
+          <circle cx="23.5" cy="23.5" r="20" stroke="#FDFDFC" stroke-width="2.5" fill="none"></circle>
+          <path d="M23.5 4 L16 42 M23.5 4 L31 42 M23.5 4 L23.5 42 M12 28 L35 28" stroke="#FDFDFC" stroke-width="2" fill="none"></path>
+          <text x="52" y="30" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#FDFDFC">Mercedes-Benz</text>
+        </svg>
+
+        <nav class="SocialIcons FooterSocials" arial-label="Social media links">
+          <ul>
+            <li>
+              <a                 href="https://slack.mercedes-benz.com/?source=site"
+                aria-label="Slack"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg viewBox="0 0 24 24" astro-icon="mdi:slack">
+                  <path                     fill="currentColor"
+                    d="M6 15a2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2h2v2m1 0a2 2 0 0 1 2-2 2 2 0 0 1 2 2v5a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-5m2-8a2 2 0 0 1-2-2 2 2 0 0 1 2-2 2 2 0 0 1 2 2v2H9m0 1a2 2 0 0 1 2 2 2 2 0 0 1-2 2H4a2 2 0 0 1-2-2 2 2 0 0 1 2-2h5m8 2a2 2 0 0 1 2-2 2 2 0 0 1 2 2 2 2 0 0 1-2 2h-2v-2m-1 0a2 2 0 0 1-2 2 2 2 0 0 1-2-2V5a2 2 0 0 1 2-2 2 2 0 0 1 2 2v5m-2 8a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2v-2h2m0-1a2 2 0 0 1-2-2 2 2 0 0 1 2-2h5a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-5z"
+                  ></path>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a                 href="https://github.com/Mercedes-Benz/"
+                aria-label="GitHub"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg viewBox="0 0 24 24" astro-icon="mdi:github">
+                  <path                     fill="currentColor"
+                    d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"
+                  ></path>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a                 href="https://twitter.com/labelstudiohq"
+                aria-label="Twitter"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg viewBox="0 0 24 24" astro-icon="mdi:twitter">
+                  <path                     fill="currentColor"
+                    d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"
+                  ></path>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a                 href="https://www.linkedin.com/company/mercedes-benz/"
+                aria-label="LinkedIn"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg viewBox="0 0 24 24" astro-icon="bx:bxl-linkedin">
+                  <circle                     cx="4.983"
+                    cy="5.009"
+                    r="2.188"
+                    fill="currentColor"
+                  ></circle>
+                  <path                     fill="currentColor"
+                    d="M9.237 8.855v12.139h3.769v-6.003c0-1.584.298-3.118 2.262-3.118 1.937 0 1.961 1.811 1.961 3.218v5.904H21v-6.657c0-3.27-.704-5.783-4.526-5.783-1.835 0-3.065 1.007-3.568 1.96h-.051v-1.66H9.237zm-6.142 0H6.87v12.139H3.095z"
+                  ></path>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a                 href="https://www.youtube.com/channel/UCbloiVAlCYzBatZXk-b5rFQ"
+                aria-label="Youtube"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg viewBox="0 0 24 24" astro-icon="mdi:youtube">
+                  <path                     fill="currentColor"
+                    d="m10 15 5.19-3L10 9v6m11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83-.25.9-.83 1.48-1.73 1.73-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44-.9-.25-1.48-.83-1.73-1.73-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83.25-.9.83-1.48 1.73-1.73.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44.9.25 1.48.83 1.73 1.73z"
+                  ></path>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="FooterMenus">
+        <nav class="FooterNav" aria-label="Footer navigation">
+          
+          <div>
+            <h3 class="Text Eyebrow FooterNavHeading">Products</h3>
+            <ul>
+              <li>
+                <a href="https://mercedes-benz.com/">Community Edition</a>
+              </li>
+              <li>
+                <a target="_blank" rel="noopener" href="https://heartex.com/product">Enterprise</a>
+              </li>
+              <li>
+                <a target="_blank" rel="noopener" href="https://heartex.com/pricing">Pricing</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="Text Eyebrow FooterNavHeading">Community</h3>
+            <ul>
+              <li>
+                <a href="https://mercedes-benz.com/blog">Blog</a>
+              </li>
+              <li>
+                <a href="https://mercedes-benz.com/community/">Newsletter</a>
+              </li>
+              <li>
+                <a href="/?source=site">Slack</a>
+              </li>
+              <li>
+                <a href="https://mercedes-benz.com/videos">Webinars</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="Text Eyebrow FooterNavHeading">Documentation</h3>
+            <ul>
+              <li>
+                <a href="/guide">Quickstart</a>
+              </li>
+              <li>
+                <a href="/guide/api">API Reference</a>
+              </li>
+              <li>
+                <a href="/guide/sdk">SDK Reference</a>
+              </li>
+              <li>
+                <a href="/tags">Customizable Tags</a>
+              </li>
+              <li>
+                <a href="/templates">Labeling Templates</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="Text Eyebrow FooterNavHeading">Company</h3>
+            <ul>
+              <li>
+                <a target="_blank" rel="noopener" href="https://heartex.com/company/about-us">About Us</a>
+              </li>
+              <li>
+                <a target="_blank" rel="noopener" href="https://heartex.com/careers">Careers</a>
+              </li>
+              <li>
+                <a href="https://mercedes-benz.com/contact-sales/">Contact</a>
+              </li>
+              <li>
+                <a target="_blank" rel="noopener" href="https://heartex.com/company/privacy-policy">Privacy</a>
+              </li>
+            </ul>
+          </div>
+          
+        </nav>
+        
+        <div class="FooterCTA">
+          <a class="Button FooterCTAButton" href="/guide/quick_start.html"
+            ><span class="Heading XXSmall ButtonText astro-EXBSDJPD"
+              >Quick Start</span></a>
+        </div>
+        
+      </div>
+    </div>
+    <div class="FooterGridCopyright">
+      <p class="Text Small FooterCopyright">
+        ©
+        <script>
+          document.write(new Date().getFullYear());
+        </script>
+        Mercedes-Benz.
+      </p>
+      <a target="_blank" rel="noopener" href="https://heartex.com/company/privacy-policy" class="Text Small"
+        >Privacy Policy</a>
+    </div>
+  </section>
+</footer>
+
+
+  
+<script src="/js/code-tabs.js"></script>
+
+  
+<script src="/js/code-blocks-enhancements.js"></script>
+
+  
+<script src="/js/feedback-form.js"></script>
+
+  
+<script src="/js/header.js"></script>
+
+  
+<script src="/js/intense.min.js"></script>
+
+
+  <script>
+    window.addEventListener('load', function () {
+      const htmlElement = document.querySelector("html");
+
+      htmlElement.classList.add("js-enhanced");
+    })
+</script>
+
+</body>
+</html>

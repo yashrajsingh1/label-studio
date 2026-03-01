@@ -1,0 +1,156 @@
+<% const tier = theme.tier || "all" %>
+<% const isEnterpriseTheme = tier === "enterprise" %>
+
+<% if (file_exists('partials/alert-enterprise.ejs') && isEnterpriseTheme) { %>
+  <%- partial('partials/alert-enterprise') %>
+<% } else if (file_exists('partials/alert.ejs')) { %>
+  <%- partial('partials/alert') %>
+<% } %>
+
+<header class="page-header">
+  <div class="page-header-top-level">
+    <div class="page-header-logo">
+      <a href="<% if(isEnterpriseTheme) { %>/guide/<% } else { %>/guide<% } %>" class="HeaderLogo" arial-label="Homepage">
+        <% if(isEnterpriseTheme) { %>
+          <svg width="280" height="30" viewBox="0 0 280 30" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="15" cy="15" r="13.5" stroke="#FDFDFC" stroke-width="2" fill="none"/><circle cx="15" cy="15" r="12" stroke="#FDFDFC" stroke-width="0.5" fill="none"/><path d="M15,3 L13.8,15 L16.2,15 Z M4.61,21 L15.6,16.04 L14.4,13.96 Z M25.39,21 L15.6,13.96 L14.4,16.04 Z" fill="#FDFDFC"/><text x="34" y="20" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#FDFDFC" letter-spacing="0.3">Mercedes-Benz Enterprise Docs</text></svg>
+        <% } else { %>
+          <svg width="240" height="30" viewBox="0 0 240 30" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="15" cy="15" r="13.5" stroke="#12110D" stroke-width="2" fill="none"/><circle cx="15" cy="15" r="12" stroke="#12110D" stroke-width="0.5" fill="none"/><path d="M15,3 L13.8,15 L16.2,15 Z M4.61,21 L15.6,16.04 L14.4,13.96 Z M25.39,21 L15.6,13.96 L14.4,16.04 Z" fill="#12110D"/><text x="34" y="20" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#12110D" letter-spacing="0.3">Mercedes-Benz Docs</text></svg>
+<% } %>
+      </a>
+    </div>
+
+    <div class="AlgoliaSearch">
+      <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg" class="AlgoliaSearchIcon">
+        <path d="M8 16C9.77498 15.9996 11.4988 15.4054 12.897 14.312L17.293 18.708L18.707 17.294L14.311 12.898C15.405 11.4997 15.9996 9.77544 16 8C16 3.589 12.411 0 8 0C3.589 0 0 3.589 0 8C0 12.411 3.589 16 8 16ZM8 2C11.309 2 14 4.691 14 8C14 11.309 11.309 14 8 14C4.691 14 2 11.309 2 8C2 4.691 4.691 2 8 2Z" />
+      </svg>
+      <input id="docsearch-input" placeholder="Search docs" data-site-version="<%- tier %>" />
+      <svg width="43" height="31" viewBox="0 0 43 31" fill="none" xmlns="http://www.w3.org/2000/svg" class="AlgoliaSearchCmdK">
+        <rect y="0.0457764" width="43" height="30" rx="15" fill="var(--cmd-k-background-color)"/>
+        <path d="M11.264 21.0458C9.776 21.0458 8.816 20.1018 8.816 18.6298C8.816 17.0778 9.744 16.1658 11.568 16.1658H12.512V14.4058H11.568C9.744 14.4058 8.816 13.4938 8.816 11.9418C8.816 10.4698 9.776 9.52578 11.264 9.52578C13.056 9.52578 13.632 10.6458 13.632 11.9898V13.3178H15.392V11.9898C15.392 10.6458 15.968 9.52578 17.76 9.52578C19.248 9.52578 20.208 10.4698 20.208 11.9418C20.208 13.4938 19.28 14.4058 17.456 14.4058H16.512V16.1658H17.456C19.28 16.1658 20.208 17.0778 20.208 18.6298C20.208 20.1018 19.248 21.0458 17.76 21.0458C15.968 21.0458 15.392 19.9258 15.392 18.5818V17.2538H13.632V18.5818C13.632 19.9258 13.056 21.0458 11.264 21.0458ZM16.512 11.9578V13.3178H17.456C18.592 13.3178 19.072 12.8538 19.072 11.9418C19.072 10.9978 18.512 10.6298 17.76 10.6298C16.928 10.6298 16.512 11.1418 16.512 11.9578ZM11.568 13.3178H12.512V11.9578C12.512 11.1418 12.096 10.6298 11.264 10.6298C10.512 10.6298 9.952 10.9978 9.952 11.9418C9.952 12.8538 10.432 13.3178 11.568 13.3178ZM13.632 16.1658H15.392V14.4058H13.632V16.1658ZM11.264 19.9418C12.096 19.9418 12.512 19.4298 12.512 18.6138V17.2538H11.568C10.432 17.2538 9.952 17.7178 9.952 18.6298C9.952 19.5738 10.512 19.9418 11.264 19.9418ZM16.512 18.6138C16.512 19.4298 16.928 19.9418 17.76 19.9418C18.512 19.9418 19.072 19.5738 19.072 18.6298C19.072 17.7178 18.592 17.2538 17.456 17.2538H16.512V18.6138ZM27.3546 15.4298V21.0458H26.1546V9.84578H27.3546V14.9338L32.3146 9.84578H33.8826L28.6346 15.1738L34.3626 21.0458H32.7466L27.3546 15.4298Z" fill="var(--cmd-k-icon-color)"/>
+      </svg>        
+    </div>
+
+    <button class="hamburger-button" aria-label="Toggle Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <nav>
+      <% if(page.type !== "playground" && page.type !== "blog") { %>
+        <%- partial("partials/toc", { type: page.type, tier: tier, component: "nav" }) %>
+      <% } %>
+      <ul class="page-header-main-nav">
+        <% if(isEnterpriseTheme) { %>
+          <li>
+            <a href="https://mercedes-benz.com/platform">Platform</a>
+          </li>
+          <li>
+            <a href="https://mercedes-benz.com/pricing">Pricing</a>
+          </li>
+          <li>
+            <a href="https://mercedes-benz.com/blog">Blog</a>
+          </li>
+          <li>
+            <a href="http://app.heartex.com/" target="_blank" rel="noopener noreferrer">Log In</a>
+          </li>
+          <li>
+            <%- partial("component/button", { url: "https://app.heartex.com/user/trial", label: "Free Trial", }) %>
+          </li>
+        <% } else { %>
+          <li>
+            <a href="https://mercedes-benz.com/learn/">
+              Learn
+              <svg aria-hidden="true" width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg" class="page-header-chevron-icon"><path d="M1 0.5L5 4.5L9 0.5" stroke="#131522"></path></svg>
+            </a>
+            <button>
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" />
+              </svg>
+            </button>
+            <ul>
+              <li>
+                <a href="https://mercedes-benz.com/blog/">Blog</a>
+              </li>
+              <li>
+                <a href="https://mercedes-benz.com/videos/">Videos</a>
+              </li>
+              <li class="headerSeparator">
+                <a href="https://mercedes-benz.com/community/">
+                  Community
+                </a>
+              </li>
+              <li>
+                <a href="https://mercedes-benz.com/academic/">Academic Program</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="https://mercedes-benz.com/integrations">Integrations</a>
+          </li>
+          <li>
+            <a href="https://mercedes-benz.com/goenterprise" target="_blank" rel="noopener noreferrer">Enterprise</a>
+          </li>
+          <li>
+            <a href="https://github.com/Mercedes-Benz/label-studio/" class="github-stars" target="_blank" rel="noopener noreferrer">
+              <svg class="github-icon" viewBox="0 0 24 24" width="24" height="24"><path fill="black" d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"></path></svg>
+              <%- partial("component/text", {text: "", size: "Eyebrow", tag: "span", customClass: "github-stars-count"}) %>
+            </a>
+          </li>
+          <li>
+            <%- partial("component/button", { url: "/guide/quick_start.html", label: "Quick start", }) %>
+          </li>
+          <% } %>
+      </ul>
+    </nav>
+    </div>
+  </div>
+  
+  <% const quickLinks = [
+      {
+        label: "Docs",
+        href: "/guide/",
+        tier: "all"
+      },
+      {
+        label: "Tutorials",
+        href: "/tutorials/",
+        tier: "all"
+      },
+      {
+        label: "Templates",
+        href: "/templates/",
+        tier: "all"
+      },
+      {
+        label: "Plugins",
+        href: "/plugins/",
+        tier: "enterprise"
+      },
+      {
+        label: "Tags",
+        href: "/tags/",
+        tier: "all"
+      }
+    ];
+      const currentQuickLink = quickLinks.find(link => link.href.includes(page.type));
+
+    %>
+    <% if(quickLinks && quickLinks.length > 0) {%>
+      <ul class="page-header-content-switcher">
+      <% quickLinks.forEach(function(link) { %>
+          <% if(link.tier === "all" || link.tier === tier) { %>
+          <li><a href="<%- link.href %>" class="<%- link.href === currentQuickLink?.href ? 'active' : '' %>"><%- link.label %></a></li>
+          <% }; %>
+        <% }); %>
+      <li>
+        <a href="https://api.mercedes-benz.com/api-reference/introduction/getting-started" target="_blank">
+          API
+          <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7.93006 6.05393L6.92213 6.06052L6.92213 1.88389L1.51359 7.29243L0.788936 6.56777L6.19748 1.15923L2.02743 1.16582L2.02743 0.151308L7.93006 0.151308L7.93006 6.05393Z" fill="#ffffff"/>
+            </svg>            
+        </a>
+      </li>
+    </ul>
+    <% } %>
+  
+</header>

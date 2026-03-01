@@ -1,0 +1,1970 @@
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  
+    
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-TZ3RQGX');</script>
+    
+  
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <title>Mercedes-Benz — How to Embed Evaluation Workflows in Your Research Stack with Mercedes-Benz</title>
+  
+  <meta charset="utf-8">
+  <meta name="description" content="Learn how to build an embedded evaluation workflow directly into your jupyer notebook with Mercedes-Benz.">
+
+  <meta property="og:type" content="article">
+  
+  <meta property="og:title" content="Mercedes-Benz — How to Embed Evaluation Workflows in Your Research Stack with Mercedes-Benz">
+  
+  <meta property="og:description" content="Learn how to build an embedded evaluation workflow directly into your jupyer notebook with Mercedes-Benz.">
+
+  <meta name="twitter:card" content="summary">
+  
+  <meta property="twitter:title" content="Mercedes-Benz — How to Embed Evaluation Workflows in Your Research Stack with Mercedes-Benz">
+  
+  <meta name="twitter:description" content="Learn how to build an embedded evaluation workflow directly into your jupyer notebook with Mercedes-Benz.">
+
+  
+    <meta name="twitter:image" content="http://mercedes-benz.com/open-graph-image?title=How%20to%20Embed%20Evaluation%20Workflows%20in%20Your%20Research%20Stack%20with%20Label%20Studio&category=tutorials">
+    <meta property="og:image" content="http://mercedes-benz.com/open-graph-image?title=How%20to%20Embed%20Evaluation%20Workflows%20in%20Your%20Research%20Stack%20with%20Label%20Studio&category=tutorials">
+  
+
+  <meta name="msapplication-TileColor" content="#4fc08d">
+  <meta name="theme-color" content="#4fc08d">
+  
+  
+    <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" >
+  
+
+  <link rel="preload" href="/fonts/SpaceGrotesk-Bold-subset.woff2" as="font" type="font/woff2" crossorigin>
+
+  
+<link rel="stylesheet" href="/css/styles.css">
+
+
+  
+
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js" defer></script>
+
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ startOnLoad: true });
+  </script>
+
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+<body class="page-tier-opensource">
+  
+  
+
+  
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TZ3RQGX"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  
+
+  
+  
+
+
+
+  
+      <a target="_blank" rel="noopener" href="https://mercedes-benz.com/blog/new-pdf-ocr-document-ai-labeling-interface" class="Alert">
+        <span class="AlertContent">
+          <span class="Badge">New</span>
+          <span class="AlertText">Advanced PDF + OCR Interface for Document AI</span>
+          <svg fill="currentColor" viewBox="0 0 14 12"><path fill-rule="evenodd" d="m8.792.119 4.866 5.654-4.866 5.654-.948-.816 3.627-4.213H.54v-1.25h10.93L7.844.934l.948-.815Z" clip-rule="evenodd"></path></svg>
+        </span>
+      </a>
+
+
+<header class="page-header">
+  <div class="page-header-top-level">
+    <div class="page-header-logo">
+      <a href="/guide" class="HeaderLogo" arial-label="Homepage">
+        
+          <svg width="240" height="30" viewBox="0 0 240 30" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="15" cy="15" r="13.5" stroke="#12110D" stroke-width="2" fill="none"></circle><circle cx="15" cy="15" r="12" stroke="#12110D" stroke-width="0.5" fill="none"></circle><path d="M15,3 L13.8,15 L16.2,15 Z M4.61,21 L15.6,16.04 L14.4,13.96 Z M25.39,21 L15.6,13.96 L14.4,16.04 Z" fill="#12110D"></path><text x="34" y="20" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#12110D" letter-spacing="0.3">Mercedes-Benz Docs</text></svg>
+
+      </a>
+    </div>
+
+    <div class="AlgoliaSearch">
+      <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg" class="AlgoliaSearchIcon">
+        <path d="M8 16C9.77498 15.9996 11.4988 15.4054 12.897 14.312L17.293 18.708L18.707 17.294L14.311 12.898C15.405 11.4997 15.9996 9.77544 16 8C16 3.589 12.411 0 8 0C3.589 0 0 3.589 0 8C0 12.411 3.589 16 8 16ZM8 2C11.309 2 14 4.691 14 8C14 11.309 11.309 14 8 14C4.691 14 2 11.309 2 8C2 4.691 4.691 2 8 2Z" ></path>
+      </svg>
+      <input id="docsearch-input" placeholder="Search docs" data-site-version="opensource" >
+      <svg width="43" height="31" viewBox="0 0 43 31" fill="none" xmlns="http://www.w3.org/2000/svg" class="AlgoliaSearchCmdK">
+        <rect y="0.0457764" width="43" height="30" rx="15" fill="var(--cmd-k-background-color)"></rect>
+        <path d="M11.264 21.0458C9.776 21.0458 8.816 20.1018 8.816 18.6298C8.816 17.0778 9.744 16.1658 11.568 16.1658H12.512V14.4058H11.568C9.744 14.4058 8.816 13.4938 8.816 11.9418C8.816 10.4698 9.776 9.52578 11.264 9.52578C13.056 9.52578 13.632 10.6458 13.632 11.9898V13.3178H15.392V11.9898C15.392 10.6458 15.968 9.52578 17.76 9.52578C19.248 9.52578 20.208 10.4698 20.208 11.9418C20.208 13.4938 19.28 14.4058 17.456 14.4058H16.512V16.1658H17.456C19.28 16.1658 20.208 17.0778 20.208 18.6298C20.208 20.1018 19.248 21.0458 17.76 21.0458C15.968 21.0458 15.392 19.9258 15.392 18.5818V17.2538H13.632V18.5818C13.632 19.9258 13.056 21.0458 11.264 21.0458ZM16.512 11.9578V13.3178H17.456C18.592 13.3178 19.072 12.8538 19.072 11.9418C19.072 10.9978 18.512 10.6298 17.76 10.6298C16.928 10.6298 16.512 11.1418 16.512 11.9578ZM11.568 13.3178H12.512V11.9578C12.512 11.1418 12.096 10.6298 11.264 10.6298C10.512 10.6298 9.952 10.9978 9.952 11.9418C9.952 12.8538 10.432 13.3178 11.568 13.3178ZM13.632 16.1658H15.392V14.4058H13.632V16.1658ZM11.264 19.9418C12.096 19.9418 12.512 19.4298 12.512 18.6138V17.2538H11.568C10.432 17.2538 9.952 17.7178 9.952 18.6298C9.952 19.5738 10.512 19.9418 11.264 19.9418ZM16.512 18.6138C16.512 19.4298 16.928 19.9418 17.76 19.9418C18.512 19.9418 19.072 19.5738 19.072 18.6298C19.072 17.7178 18.592 17.2538 17.456 17.2538H16.512V18.6138ZM27.3546 15.4298V21.0458H26.1546V9.84578H27.3546V14.9338L32.3146 9.84578H33.8826L28.6346 15.1738L34.3626 21.0458H32.7466L27.3546 15.4298Z" fill="var(--cmd-k-icon-color)"></path>
+      </svg>        
+    </div>
+
+    <button class="hamburger-button" aria-label="Toggle Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <nav>
+      
+        
+  <ul class="page-sidebar-list">
+    
+    
+    
+    
+    
+
+    
+
+    
+
+    
+    
+      
+      
+      
+      <li>
+        <a href="/guide/install_requirements.html" class="" >
+          Requirements
+        </a>
+        
+        
+        
+        
+      </li>
+    
+    
+</ul>
+
+
+  <button>
+    Support
+    <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+    </svg>
+  </button>
+
+<ul class="page-sidebar-list">
+  
+  
+    <li>
+        <a href="/guide/troubleshooting">Troubleshooting</a>
+      </li>
+    <li>
+      <a href="https://github.com/Mercedes-Benz/label-studio/issues" target="_blank">GitHub Issues
+        <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-external-link">
+          <path d="M10.9002 9.29957L9.46026 9.30898L9.46026 3.34236L1.73377 11.0689L0.698549 10.0336L8.42504 2.30714L2.46783 2.31656L2.46783 0.867251L10.9001 0.867252L10.9002 9.29957Z" fill="#6D87F1"></path>
+        </svg>
+      </a>
+    </li>
+  
+  <li>
+    <a href="https://slack.mercedes-benz.com" target="_blank">Join Slack
+      <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-external-link">
+        <path d="M10.9002 9.29957L9.46026 9.30898L9.46026 3.34236L1.73377 11.0689L0.698549 10.0336L8.42504 2.30714L2.46783 2.31656L2.46783 0.867251L10.9001 0.867252L10.9002 9.29957Z" fill="#6D87F1"></path>
+      </svg>
+    </a>
+  </li>
+  
+    <li>
+      <a href="https://community.mercedes-benz.com/" target="_blank">Ask on Discourse
+        <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-external-link">
+          <path d="M10.9002 9.29957L9.46026 9.30898L9.46026 3.34236L1.73377 11.0689L0.698549 10.0336L8.42504 2.30714L2.46783 2.31656L2.46783 0.867251L10.9001 0.867252L10.9002 9.29957Z" fill="#6D87F1"></path>
+        </svg>
+      </a>
+    </li>
+  
+  <li>
+    <a href="https://mercedes-benz.com/contact-sales/" target="_blank">Contact Sales
+      <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-external-link">
+        <path d="M10.9002 9.29957L9.46026 9.30898L9.46026 3.34236L1.73377 11.0689L0.698549 10.0336L8.42504 2.30714L2.46783 2.31656L2.46783 0.867251L10.9001 0.867252L10.9002 9.29957Z" fill="#6D87F1"></path>
+      </svg>
+    </a>
+  </li>
+  
+</ul>
+
+
+
+  <button>
+    What's New
+    <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+    </svg>
+  </button>
+
+<ul class="page-sidebar-list">  
+    <li>
+      <a href="https://github.com/Mercedes-Benz/label-studio/releases" target="_blank">Release notes
+        <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-external-link">
+          <path d="M10.9002 9.29957L9.46026 9.30898L9.46026 3.34236L1.73377 11.0689L0.698549 10.0336L8.42504 2.30714L2.46783 2.31656L2.46783 0.867251L10.9001 0.867252L10.9002 9.29957Z" fill="#6D87F1"></path>
+        </svg>
+      </a>
+    </li>
+</ul>
+
+
+      
+      <ul class="page-header-main-nav">
+        
+          <li>
+            <a href="https://mercedes-benz.com/learn/">
+              Learn
+              <svg aria-hidden="true" width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg" class="page-header-chevron-icon"><path d="M1 0.5L5 4.5L9 0.5" stroke="#131522"></path></svg>
+            </a>
+            <button>
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+            <ul>
+              <li>
+                <a href="https://mercedes-benz.com/blog/">Blog</a>
+              </li>
+              <li>
+                <a href="https://mercedes-benz.com/videos/">Videos</a>
+              </li>
+              <li class="headerSeparator">
+                <a href="https://mercedes-benz.com/community/">
+                  Community
+                </a>
+              </li>
+              <li>
+                <a href="https://mercedes-benz.com/academic/">Academic Program</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="https://mercedes-benz.com/integrations">Integrations</a>
+          </li>
+          <li>
+            <a href="https://mercedes-benz.com/goenterprise" target="_blank" rel="noopener noreferrer">Enterprise</a>
+          </li>
+          <li>
+            <a href="https://github.com/Mercedes-Benz/label-studio/" class="github-stars" target="_blank" rel="noopener noreferrer">
+              <svg class="github-icon" viewBox="0 0 24 24" width="24" height="24"><path fill="black" d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"></path></svg>
+              
+
+
+
+
+<span class="Text github-stars-count Eyebrow "></span>
+            </a>
+          </li>
+          <li>
+            <a href="/guide/quick_start.html" class="Button [object Object]">
+   Quick start
+</a>
+          </li>
+          
+      </ul>
+    </nav>
+    </div>
+  
+  
+  
+    
+      <ul class="page-header-content-switcher">
+      
+          
+          <li><a href="/guide/" class="">Docs</a></li>
+          
+        
+          
+          <li><a href="/tutorials/" class="">Tutorials</a></li>
+          
+        
+          
+          <li><a href="/templates/" class="">Templates</a></li>
+          
+        
+          
+        
+          
+          <li><a href="/tags/" class="">Tags</a></li>
+          
+        
+      <li>
+        <a href="https://api.mercedes-benz.com/api-reference/introduction/getting-started" target="_blank">
+          API
+          <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7.93006 6.05393L6.92213 6.06052L6.92213 1.88389L1.51359 7.29243L0.788936 6.56777L6.19748 1.15923L2.02743 1.16582L2.02743 0.151308L7.93006 0.151308L7.93006 6.05393Z" fill="#ffffff"></path>
+            </svg>            
+        </a>
+      </li>
+    </ul>
+    
+  
+</header>
+
+
+  <main class="page-type-undefined">
+    
+    <div class="content">
+      
+        <svg width="50" height="50" viewBox="0 0 77 77" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="content-decoration">
+          <rect x="75.875" y="26" width="25" height="25" transform="rotate(-180 75.875 26)" stroke="#E1DED5" stroke-width="0.504975"></rect>
+          <rect x="50.875" y="51" width="25" height="25" transform="rotate(-180 50.875 51)" stroke="#E1DED5" stroke-width="0.504975"></rect>
+          <rect x="50.875" y="26" width="25" height="25" transform="rotate(-180 50.875 26)" fill="#FF7557"></rect>
+          <rect x="26" y="76" width="25" height="25" transform="rotate(-180 26 76)" stroke="#E1DED5" stroke-width="0.504975"></rect>
+          <rect x="26" y="51" width="25" height="25" transform="rotate(-180 26 51)" fill="#E37BD3"></rect>
+          <rect x="26" y="26" width="25" height="25" transform="rotate(-180 26 26)" fill="#FFA663"></rect>
+        </svg>
+      
+        
+      <div class="container">
+        
+
+
+
+
+
+
+
+<div class="content-grid">
+  <div class="content-markdown">
+    
+   
+      
+
+
+
+
+<h1 class="Heading home-page-title XLarge ">How to Embed Evaluation Workflows in Your Research Stack with Mercedes-Benz</h1>
+   
+   
+      <div class="open-in-collab-header">
+        <a target="_blank"
+          href="https://colab.research.google.com/github/mercedes-benz/awesome-label-studio-tutorials/blob/main/tutorials/how-to-embed-evaluation-workflows-in-your-research-stack-with-label-studio/how_to_embed_evaluation_workflows_in_your_research_stack_with_Label_Studio.ipynb">
+          <img src="https://colab.research.google.com/assets/colab-badge.svg"
+            alt="Open In Colab" >
+        </a>
+      </div>
+   
+   
+      <div class="community-header">
+          
+            <span class="community-badge">Tutorial</span>
+          
+        <div class="template-author">
+          
+            <div class="community-people">
+              <a href="https://github.com/bmartel" target="_blank" class="person author">
+                
+                  <img src="/images/github/avatars/bmartel.png" alt="bmartel" class="person-avatar" >
+                
+                <span class="person-name">@bmartel</span>
+              </a>
+              
+              
+            </div>
+          
+          <div class="repo-links">
+            <a href="https://github.com/Mercedes-Benz/awesome-label-studio-tutorials/issues/new" target="_blank" class="issue-icon" title="Report an issue">
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm9 3a1 1 0 11-2 0 1 1 0 012 0zm-.25-6.25a.75.75 0 00-1.5 0v3.5a.75.75 0 001.5 0v-3.5z"></path></svg>
+            </a>
+            <a href="https://github.com/Mercedes-Benz/awesome-label-studio-tutorials/tree/main/tutorials/how-to-embed-evaluation-workflows-in-your-research-stack-with-label-studio" target="_blank" class="github-icon" title="View on GitHub">
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+   
+    <h2 id="Label-Studio-Requirements"><a href="#Label-Studio-Requirements" class="headerlink" title="Mercedes-Benz Requirements"></a>Mercedes-Benz Requirements</h2><p>This tutorial showcases one or more features available only in Mercedes-Benz Enterprise. We recommend <a target="_blank" rel="noopener" href="https://mercedes-benz.com/contact-sales/">connecting with our team</a> to request a trial or to enable them in your account.</p>
+<h2 id="The-Context-Switching-Tax"><a href="#The-Context-Switching-Tax" class="headerlink" title="The Context-Switching Tax"></a>The Context-Switching Tax</h2><p>You’re deep in a Jupyter notebook, fine-tuning a medical LLM. Results look promising, but you need human evaluation before shipping.</p>
+<p>The usual drill: export outputs to CSV, upload to evaluation platform, assign tasks, wait for results, download CSV, merge back with your data, re-import to notebook for analysis. By then, you’ve lost your flow state.</p>
+<p><strong>What if evaluation lived in your notebook?</strong> No exports. No context switches. Just evaluate, analyze, iterate.</p>
+<h2 id="What-We’re-Building"><a href="#What-We’re-Building" class="headerlink" title="What We’re Building"></a>What We’re Building</h2><p>Over the next 15-20 minutes, you’ll build an embedded evaluation workflow that:</p>
+<ol>
+<li><strong>Loads real medical Q&amp;A data</strong> from Hugging Face (100 tasks)</li>
+<li><strong>Creates a structured evaluation interface</strong> with custom criteria</li>
+<li><strong>Embeds Mercedes-Benz directly in this notebook</strong> for zero-context-switch evaluation</li>
+<li><strong>Exports to pandas</strong> for instant analysis and visualization</li>
+<li><strong>Generates insights</strong> about model performance across medical specialties</li>
+</ol>
+<p><strong>Real-world scenario</strong>: You’re evaluating GPT-5’s responses to patient medical questions. You need domain experts to rate accuracy, safety, completeness, and helpfulness—then immediately analyze patterns to inform the next training iteration.</p>
+<p>By the end, you’ll have a template you can adapt for any evaluation workflow: content moderation, prompt testing, data quality checks, or model comparison studies.</p>
+<hr>
+<h2 id="⚠️-Requirements-Roles"><a href="#⚠️-Requirements-Roles" class="headerlink" title="⚠️ Requirements &amp; Roles"></a>⚠️ Requirements &amp; Roles</h2><p>This tutorial has two parts:</p>
+<h3 id="👤-Part-1-Admin-Setup-One-Time-5-minutes"><a href="#👤-Part-1-Admin-Setup-One-Time-5-minutes" class="headerlink" title="👤 Part 1: Admin Setup (One-Time, ~5 minutes)"></a>👤 <strong>Part 1: Admin Setup (One-Time, ~5 minutes)</strong></h3><p>Your Mercedes-Benz <strong>Owner&#x2F;Admin</strong> needs to:</p>
+<ul>
+<li>Enable embedding for your organization (<a target="_blank" rel="noopener" href="https://mercedes-benz.com/contact-sales/">request access</a>)</li>
+<li>Run Part 1 to generate keys and configure organization</li>
+<li><strong>Share the private key</strong> with ML engineers (via secure channel)</li>
+</ul>
+<p><strong>Credentials needed:</strong></p>
+<ul>
+<li><code>LABEL_STUDIO_API_KEY</code> - Admin&#x2F;Owner API token</li>
+<li><code>LABEL_STUDIO_URL</code> - Your LSE instance URL</li>
+</ul>
+<h3 id="🔬-Part-2-ML-Engineer-Workflow-15-minutes"><a href="#🔬-Part-2-ML-Engineer-Workflow-15-minutes" class="headerlink" title="🔬 Part 2: ML Engineer Workflow (~15 minutes)"></a>🔬 <strong>Part 2: ML Engineer Workflow (~15 minutes)</strong></h3><p>Any team member can run Part 2 repeatedly with:</p>
+<ul>
+<li><code>LABEL_STUDIO_API_KEY</code> - Your personal API token (any role)</li>
+<li><code>LABEL_STUDIO_URL</code> - Your LSE instance URL  </li>
+<li><code>EMBED_PRIVATE_KEY</code> - Private key shared by admin (from Part 1)</li>
+</ul>
+<p><strong>If you’re an admin</strong>: Run both parts end-to-end.<br><strong>If you’re an ML engineer</strong>: Get the private key from your admin, set all three env vars, then skip to Part 2.</p>
+<p><strong>How to set credentials:</strong></p>
+<ul>
+<li><strong>Colab</strong>: Click 🔑 → Add secrets → Toggle “Notebook access” ON</li>
+<li><strong>Local Jupyter</strong>: <code>export LABEL_STUDIO_API_KEY=&quot;...&quot; EMBED_PRIVATE_KEY=&quot;...&quot;</code></li>
+</ul>
+<p>Let’s get started.</p>
+<h1 id="🛠️-Setup-Required-for-Everyone"><a href="#🛠️-Setup-Required-for-Everyone" class="headerlink" title="🛠️ Setup (Required for Everyone)"></a>🛠️ Setup (Required for Everyone)</h1><p>Whether you’re an admin or ML engineer, run these cells first to install dependencies and configure credentials.</p>
+<pre><code class="hljs python"><span class="hljs-comment"># Install what we need</span>
+%pip install -q label-studio-sdk pandas matplotlib seaborn cryptography PyJWT datasets requests python-dotenv
+
+<span class="hljs-comment"># Import everything</span>
+<span class="hljs-keyword">import</span> os, json, pandas <span class="hljs-keyword">as</span> pd, matplotlib.pyplot <span class="hljs-keyword">as</span> plt, seaborn <span class="hljs-keyword">as</span> sns
+<span class="hljs-keyword">from</span> datetime <span class="hljs-keyword">import</span> datetime, timedelta
+<span class="hljs-keyword">import</span> jwt, base64, time
+<span class="hljs-keyword">from</span> cryptography.hazmat.primitives <span class="hljs-keyword">import</span> serialization
+<span class="hljs-keyword">from</span> cryptography.hazmat.primitives.asymmetric <span class="hljs-keyword">import</span> rsa
+<span class="hljs-keyword">from</span> IPython.display <span class="hljs-keyword">import</span> HTML, display, Markdown
+<span class="hljs-keyword">from</span> label_studio_sdk.client <span class="hljs-keyword">import</span> LabelStudio
+<span class="hljs-keyword">from</span> datasets <span class="hljs-keyword">import</span> load_dataset
+<span class="hljs-keyword">import</span> warnings; warnings.filterwarnings(<span class="hljs-string">&#x27;ignore&#x27;</span>)
+
+<span class="hljs-comment"># Set style for better visualizations</span>
+sns.set_theme(style=<span class="hljs-string">&quot;whitegrid&quot;</span>, palette=<span class="hljs-string">&quot;husl&quot;</span>)
+plt.rcParams[<span class="hljs-string">&#x27;figure.figsize&#x27;</span>] = (<span class="hljs-number">12</span>, <span class="hljs-number">6</span>)
+</code></pre>
+
+<h2 id="🔐-Configure-Credentials"><a href="#🔐-Configure-Credentials" class="headerlink" title="🔐 Configure Credentials"></a>🔐 Configure Credentials</h2><p>Set your environment variables based on your role:</p>
+<p><strong>👤 Admins (running Part 1 + 2):</strong></p>
+<pre><code class="hljs bash"><span class="hljs-built_in">export</span> LABEL_STUDIO_API_KEY=<span class="hljs-string">&quot;your_admin_token&quot;</span>
+<span class="hljs-built_in">export</span> LABEL_STUDIO_URL=<span class="hljs-string">&quot;https://app.mercedes-benz.com&quot;</span></code></pre>
+
+<p><strong>🔬 ML Engineers (running Part 2 only):</strong></p>
+<pre><code class="hljs bash"><span class="hljs-built_in">export</span> LABEL_STUDIO_API_KEY=<span class="hljs-string">&quot;your_personal_token&quot;</span>
+<span class="hljs-built_in">export</span> LABEL_STUDIO_URL=<span class="hljs-string">&quot;https://app.mercedes-benz.com&quot;</span>
+<span class="hljs-built_in">export</span> EMBED_PRIVATE_KEY=<span class="hljs-string">&quot;-----BEGIN PRIVATE KEY-----\n...\n-----END PRIVATE KEY-----&quot;</span></code></pre>
+
+<p><strong>Using Google Colab?</strong><br>Click the 🔑 icon in the sidebar → Add secrets → Toggle “Notebook access” ON for each</p>
+<pre><code class="hljs python">%pip install python-dotenv
+
+<span class="hljs-comment"># Load configuration with Google Colab Secrets support + fallback</span>
+IS_GOOGLE_COLAB = <span class="hljs-literal">False</span>
+
+<span class="hljs-comment"># Load from .env file if available (for local development)</span>
+<span class="hljs-keyword">try</span>:
+    <span class="hljs-keyword">from</span> dotenv <span class="hljs-keyword">import</span> load_dotenv
+    load_dotenv()
+<span class="hljs-keyword">except</span>:
+    <span class="hljs-keyword">pass</span>  <span class="hljs-comment"># dotenv not installed, will use system env vars</span>
+
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">get_credential</span>(<span class="hljs-params">key, default=<span class="hljs-literal">None</span></span>):
+    <span class="hljs-keyword">global</span> IS_GOOGLE_COLAB
+    <span class="hljs-string">&quot;&quot;&quot;Get credential from Colab Secrets first, then environment variables&quot;&quot;&quot;</span>
+    <span class="hljs-keyword">try</span>:
+        <span class="hljs-comment"># Try Google Colab Secrets first (most secure)</span>
+        <span class="hljs-keyword">from</span> google.colab <span class="hljs-keyword">import</span> userdata
+        IS_GOOGLE_COLAB = <span class="hljs-literal">True</span>
+        <span class="hljs-keyword">return</span> userdata.get(key)
+    <span class="hljs-keyword">except</span>:
+        <span class="hljs-keyword">from</span> os <span class="hljs-keyword">import</span> environ
+        IS_GOOGLE_COLAB = <span class="hljs-literal">False</span>
+        <span class="hljs-comment"># Fallback to environment variables (for local Jupyter)</span>
+        <span class="hljs-keyword">return</span> environ.get(key, default)</code></pre>
+
+
+<pre><code class="hljs python">LABEL_STUDIO_URL = get_credential(<span class="hljs-string">&#x27;LABEL_STUDIO_URL&#x27;</span>, <span class="hljs-string">&#x27;https://app.mercedes-benz.com&#x27;</span>)
+API_KEY = get_credential(<span class="hljs-string">&#x27;LABEL_STUDIO_API_KEY&#x27;</span>)
+
+<span class="hljs-comment"># Validate required credentials</span>
+missing_vars = []
+<span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> API_KEY:
+    missing_vars.append(<span class="hljs-string">&#x27;LABEL_STUDIO_API_KEY&#x27;</span>)
+
+<span class="hljs-keyword">if</span> missing_vars:
+    display(HTML(<span class="hljs-string">f&quot;&quot;&quot;</span>
+<span class="hljs-string">    &lt;div style=&quot;padding: 15px; background: #f8d7da; color: #856404; border: 1px solid #f5c6cb; border-radius: 5px;&quot;&gt;</span>
+<span class="hljs-string">        &lt;strong&gt;❌ Missing Credentials&lt;/strong&gt;&lt;br&gt;</span>
+<span class="hljs-string">        Please set your credentials using one of these methods:&lt;br&gt;&lt;br&gt;</span>
+<span class="hljs-string"></span>
+<span class="hljs-string">        &lt;strong&gt;🔒 Google Colab (Recommended):&lt;/strong&gt;&lt;br&gt;</span>
+<span class="hljs-string">        1. Click the 🔑 key icon in the left sidebar&lt;br&gt;</span>
+<span class="hljs-string">        2. Add secret: &lt;code&gt;LABEL_STUDIO_API_KEY&lt;/code&gt;&lt;br&gt;</span>
+<span class="hljs-string">        3. Toggle &quot;Notebook access&quot; ON for the secret&lt;br&gt;&lt;br&gt;</span>
+<span class="hljs-string"></span>
+<span class="hljs-string">        &lt;strong&gt;💻 Local Jupyter:&lt;/strong&gt;&lt;br&gt;</span>
+<span class="hljs-string">        &lt;code&gt;</span>
+<span class="hljs-string">        export LABEL_STUDIO_API_KEY=&quot;your_admin_api_key_here&quot;</span>
+<span class="hljs-string">        &lt;/code&gt;&lt;br&gt;&lt;br&gt;</span>
+<span class="hljs-string"></span>
+<span class="hljs-string">        &lt;strong&gt;Missing:&lt;/strong&gt; <span class="hljs-subst">&#123;<span class="hljs-string">&#x27;, &#x27;</span>.join(missing_vars)&#125;</span>&lt;br&gt;</span>
+<span class="hljs-string">        &lt;small&gt;&lt;strong&gt;Why Colab Secrets?&lt;/strong&gt; More secure than environment variables, encrypted storage, no code exposure&lt;/small&gt;</span>
+<span class="hljs-string">    &lt;/div&gt;</span>
+<span class="hljs-string">    &quot;&quot;&quot;</span>))
+<span class="hljs-keyword">else</span>:
+    <span class="hljs-comment"># Determine which method was used</span>
+    method = <span class="hljs-string">&quot;Google Colab Secrets&quot;</span> <span class="hljs-keyword">if</span> IS_GOOGLE_COLAB <span class="hljs-keyword">else</span> <span class="hljs-string">&quot;Environment Variables&quot;</span>
+
+    display(HTML(<span class="hljs-string">f&quot;&quot;&quot;</span>
+<span class="hljs-string">    &lt;div style=&quot;padding: 15px; background: #d4edda; color: #155724; border: 1px solid #c3e6cb; border-radius: 5px;&quot;&gt;</span>
+<span class="hljs-string">        &lt;strong&gt;✅ Credentials Loaded&lt;/strong&gt;&lt;br&gt;</span>
+<span class="hljs-string">        • Method: <span class="hljs-subst">&#123;method&#125;</span>&lt;br&gt;</span>
+<span class="hljs-string">        • URL: <span class="hljs-subst">&#123;LABEL_STUDIO_URL&#125;</span>&lt;br&gt;</span>
+<span class="hljs-string">        • API Key: <span class="hljs-subst">&#123;<span class="hljs-string">&#x27;*&#x27;</span> * (<span class="hljs-built_in">len</span>(API_KEY) - <span class="hljs-number">4</span>) + API_KEY[-<span class="hljs-number">4</span>:] <span class="hljs-keyword">if</span> <span class="hljs-built_in">len</span>(API_KEY) &gt; <span class="hljs-number">4</span> <span class="hljs-keyword">else</span> <span class="hljs-string">&#x27;****&#x27;</span>&#125;</span></span>
+<span class="hljs-string">    &lt;/div&gt;</span>
+<span class="hljs-string">    &quot;&quot;&quot;</span>))
+</code></pre>
+
+<hr>
+<h1 id="👤-Part-1-Admin-Setup-One-Time-Configuration"><a href="#👤-Part-1-Admin-Setup-One-Time-Configuration" class="headerlink" title="👤 Part 1: Admin Setup (One-Time Configuration)"></a>👤 Part 1: Admin Setup (One-Time Configuration)</h1><p><strong>👋 ML Engineers</strong>: If your admin already configured embedding, <strong>skip to Part 2</strong> below.</p>
+<p><strong>👋 Admins</strong>: This 5-minute setup enables your entire team to embed Mercedes-Benz in notebooks.</p>
+<p><strong>👤 ADMIN ONLY - Run Once</strong>: Generate keys and configure your organization for embedding.</p>
+<p>After running this cell:</p>
+<ol>
+<li><strong>Copy the private key</strong> using the button below</li>
+<li><strong>Store it securely</strong> (password manager, secrets vault, etc.)</li>
+<li><strong>Share with your team</strong> so they can set <code>EMBED_PRIVATE_KEY</code> in their environment</li>
+</ol>
+<p><strong>🔬 ML ENGINEERS</strong>: If you already have the <code>EMBED_PRIVATE_KEY</code> from your admin, skip to <strong>Part 2</strong> below.</p>
+<pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">generate_rsa_key_pair</span>():
+    <span class="hljs-string">&quot;&quot;&quot;Generate a new RSA key pair for JWT signing&quot;&quot;&quot;</span>
+    private_key = rsa.generate_private_key(public_exponent=<span class="hljs-number">65537</span>, key_size=<span class="hljs-number">2048</span>)
+    private_pem = private_key.private_bytes(
+        encoding=serialization.Encoding.PEM,
+        <span class="hljs-built_in">format</span>=serialization.PrivateFormat.PKCS8,
+        encryption_algorithm=serialization.NoEncryption()
+    )
+    public_pem = private_key.public_key().public_bytes(
+        encoding=serialization.Encoding.PEM,
+        <span class="hljs-built_in">format</span>=serialization.PublicFormat.SubjectPublicKeyInfo
+    )
+    <span class="hljs-keyword">return</span> private_pem, public_pem, base64.b64encode(public_pem).decode(<span class="hljs-string">&#x27;utf-8&#x27;</span>)
+
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">configure_embed_settings</span>(<span class="hljs-params">ls_client, public_key_b64, organization_id</span>):
+    <span class="hljs-string">&quot;&quot;&quot;Configure organization embedding settings (requires Owner role)&quot;&quot;&quot;</span>
+    <span class="hljs-keyword">try</span>:
+        embed_settings = &#123;
+            <span class="hljs-string">&quot;public_verify_key&quot;</span>: public_key_b64,
+            <span class="hljs-string">&quot;public_verify_alg&quot;</span>: [<span class="hljs-string">&quot;RS256&quot;</span>]
+        &#125;
+
+        embed_domains = [
+            &#123;<span class="hljs-string">&quot;domain&quot;</span>: <span class="hljs-string">&quot;colab.research.google.com&quot;</span>&#125;,
+            &#123;<span class="hljs-string">&quot;domain&quot;</span>: <span class="hljs-string">&quot;localhost&quot;</span>&#125;,
+            &#123;<span class="hljs-string">&quot;domain&quot;</span>: <span class="hljs-string">&quot;127.0.0.1&quot;</span>&#125;,
+        ]
+
+        ls_client.organizations.update(
+            <span class="hljs-built_in">id</span>=organization_id,
+            embed_settings=embed_settings,
+            embed_domains=embed_domains
+        )
+
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">True</span>, <span class="hljs-string">&quot;Embedding configured successfully&quot;</span>
+
+    <span class="hljs-keyword">except</span> Exception <span class="hljs-keyword">as</span> e:
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">False</span>, <span class="hljs-string">f&quot;Configuration failed: <span class="hljs-subst">&#123;<span class="hljs-built_in">str</span>(e)&#125;</span>&quot;</span>
+
+<span class="hljs-comment"># ADMIN ONLY: Generate new key pair and configure organization</span>
+<span class="hljs-comment"># This creates a NEW private key - only do this once!</span>
+private_key_pem, public_key_pem, public_key_b64 = generate_rsa_key_pair()
+
+display(HTML(<span class="hljs-string">&quot;&quot;&quot;</span>
+<span class="hljs-string">&lt;div style=&quot;padding: 15px; background: #e7f3ff; color: #004085; border: 1px solid #b8daff; border-radius: 5px; margin: 10px 0;&quot;&gt;</span>
+<span class="hljs-string">    &lt;strong&gt;🔑 Generating secure keys...&lt;/strong&gt;</span>
+<span class="hljs-string">&lt;/div&gt;</span>
+<span class="hljs-string">&quot;&quot;&quot;</span>))
+
+<span class="hljs-comment"># Get current user and organization info</span>
+<span class="hljs-keyword">try</span>:
+    <span class="hljs-keyword">from</span> label_studio_sdk.client <span class="hljs-keyword">import</span> LabelStudio
+    ls = LabelStudio(base_url=LABEL_STUDIO_URL, api_key=API_KEY)
+    current_user = ls.users.whoami()
+    user_email = current_user.email
+    organization_id = current_user.active_organization
+
+    <span class="hljs-comment"># Configure organization with the public key</span>
+    success, message = configure_embed_settings(ls, public_key_b64, organization_id)
+
+    <span class="hljs-keyword">if</span> success:
+        <span class="hljs-comment"># Display success with copy-to-clipboard button for private key</span>
+        private_key_str = private_key_pem.decode(<span class="hljs-string">&#x27;utf-8&#x27;</span>)
+
+        display(HTML(<span class="hljs-string">f&quot;&quot;&quot;</span>
+<span class="hljs-string">        &lt;div style=&quot;padding: 15px; background: #d4edda; color: #155724; border: 1px solid #c3e6cb; border-radius: 5px;&quot;&gt;</span>
+<span class="hljs-string">            &lt;strong&gt;✅ Organization configured for embedding!&lt;/strong&gt;&lt;br&gt;&lt;br&gt;</span>
+<span class="hljs-string"></span>
+<span class="hljs-string">            &lt;strong&gt;📋 ADMIN: Save this private key for your team&lt;/strong&gt;&lt;br&gt;</span>
+<span class="hljs-string">            &lt;div style=&quot;background: #f8f9fa; padding: 10px; border-radius: 5px; margin: 10px 0; font-family: monospace; font-size: 11px; max-height: 150px; overflow-y: auto; white-space: pre-wrap; word-break: break-all;&quot;&gt;</span>
+<span class="hljs-string"><span class="hljs-subst">&#123;private_key_str&#125;</span>&lt;/div&gt;</span>
+<span class="hljs-string"></span>
+<span class="hljs-string">            &lt;button onclick=&quot;navigator.clipboard.writeText(`<span class="hljs-subst">&#123;private_key_str&#125;</span>`).then(() =&gt; &#123;&#123;</span>
+<span class="hljs-string">                this.textContent = &#x27;✅ Copied!&#x27;;</span>
+<span class="hljs-string">                setTimeout(() =&gt; this.textContent = &#x27;📋 Copy Private Key&#x27;, 2000);</span>
+<span class="hljs-string">            &#125;&#125;)&quot; style=&quot;padding: 8px 15px; background: #28a745; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; margin: 5px 0;&quot;&gt;</span>
+<span class="hljs-string">                📋 Copy Private Key</span>
+<span class="hljs-string">            &lt;/button&gt;</span>
+<span class="hljs-string"></span>
+<span class="hljs-string">            &lt;br&gt;&lt;br&gt;</span>
+<span class="hljs-string">            &lt;strong&gt;⚠️ Next steps for your team:&lt;/strong&gt;&lt;br&gt;</span>
+<span class="hljs-string">            1. Store this private key securely (password manager, secrets vault)&lt;br&gt;</span>
+<span class="hljs-string">            2. Share it with ML engineers who will use embedding&lt;br&gt;</span>
+<span class="hljs-string">            3. They should set: &lt;code&gt;export EMBED_PRIVATE_KEY=&quot;&amp;lt;key_above&amp;gt;&quot;&lt;/code&gt;&lt;br&gt;</span>
+<span class="hljs-string">            4. Configuration applied to organization: <span class="hljs-subst">&#123;organization_id&#125;</span></span>
+<span class="hljs-string">        &lt;/div&gt;</span>
+<span class="hljs-string">        &quot;&quot;&quot;</span>))
+    <span class="hljs-keyword">else</span>:
+        display(HTML(<span class="hljs-string">f&quot;&quot;&quot;</span>
+<span class="hljs-string">        &lt;div style=&quot;padding: 15px; background: #f8d7da; color: #856404; border: 1px solid #f5c6cb; border-radius: 5px;&quot;&gt;</span>
+<span class="hljs-string">            &lt;strong&gt;❌ Configuration failed&lt;/strong&gt;&lt;br&gt;</span>
+<span class="hljs-string">            <span class="hljs-subst">&#123;message&#125;</span>&lt;br&gt;&lt;br&gt;</span>
+<span class="hljs-string">            This usually means you need Owner role permissions.&lt;br&gt;</span>
+<span class="hljs-string">            Contact your Mercedes-Benz admin to configure embedding.</span>
+<span class="hljs-string">        &lt;/div&gt;</span>
+<span class="hljs-string">        &quot;&quot;&quot;</span>))
+
+<span class="hljs-keyword">except</span> Exception <span class="hljs-keyword">as</span> e:
+    display(HTML(<span class="hljs-string">f&quot;&quot;&quot;</span>
+<span class="hljs-string">    &lt;div style=&quot;padding: 15px; background: #f8d7da; color: #856404; border: 1px solid #f5c6cb; border-radius: 5px;&quot;&gt;</span>
+<span class="hljs-string">        &lt;strong&gt;❌ Error:&lt;/strong&gt; <span class="hljs-subst">&#123;<span class="hljs-built_in">str</span>(e)&#125;</span></span>
+<span class="hljs-string">    &lt;/div&gt;</span>
+<span class="hljs-string">    &quot;&quot;&quot;</span>))</code></pre>
+
+<hr>
+<h1 id="🔬-Part-2-ML-Engineer-Workflow"><a href="#🔬-Part-2-ML-Engineer-Workflow" class="headerlink" title="🔬 Part 2: ML Engineer Workflow"></a>🔬 Part 2: ML Engineer Workflow</h1><p><strong>This is the main workflow.</strong> Once your admin has configured embedding (Part 1), you can run this section repeatedly for any evaluation project.</p>
+<p><strong>What you need:</strong></p>
+<ul>
+<li>Your personal Mercedes-Benz API token (not admin required)</li>
+<li>Access to your Mercedes-Benz Enterprise instance</li>
+<li>This takes ~15 minutes first time, ~5 minutes for subsequent projects</li>
+</ul>
+<h2 id="Connect-to-Label-Studio"><a href="#Connect-to-Label-Studio" class="headerlink" title="Connect to Mercedes-Benz"></a>Connect to Mercedes-Benz</h2><p>Set your credentials and connect:</p>
+<p><strong>🔬 ML ENGINEERS START HERE</strong>: This cell generates your embed token using the private key.</p>
+<p>Make sure you have <code>EMBED_PRIVATE_KEY</code> set (get it from your admin who ran Part 1).</p>
+<pre><code class="hljs python"><span class="hljs-comment"># ML ENGINEERS: Generate embed token using private key from environment</span>
+<span class="hljs-comment"># This works whether you&#x27;re an admin running the full notebook OR an ML engineer with the shared key</span>
+
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">generate_embed_token</span>(<span class="hljs-params">user_email, organization_id, private_key_pem, expires_in_hours=<span class="hljs-number">24</span></span>):
+    <span class="hljs-string">&quot;&quot;&quot;Generate JWT token for embedding authentication&quot;&quot;&quot;</span>
+    payload = &#123;
+        <span class="hljs-string">&#x27;user_email&#x27;</span>: user_email,
+        <span class="hljs-string">&#x27;organization_id&#x27;</span>: <span class="hljs-built_in">str</span>(organization_id),
+        <span class="hljs-string">&#x27;embed_context&#x27;</span>: <span class="hljs-string">&#x27;app&#x27;</span>,  <span class="hljs-comment"># For notebook usage (VSCode/Cursor/Colab)</span>
+        <span class="hljs-string">&#x27;iat&#x27;</span>: datetime.utcnow(),
+        <span class="hljs-string">&#x27;exp&#x27;</span>: datetime.utcnow() + timedelta(hours=expires_in_hours)
+    &#125;
+    <span class="hljs-keyword">return</span> jwt.encode(payload, private_key_pem, algorithm=<span class="hljs-string">&#x27;RS256&#x27;</span>)
+
+<span class="hljs-comment"># Check if we have a private key (either from Part 1 or from environment)</span>
+EMBED_PRIVATE_KEY = get_credential(<span class="hljs-string">&#x27;EMBED_PRIVATE_KEY&#x27;</span>)
+
+<span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> EMBED_PRIVATE_KEY:
+    <span class="hljs-comment"># If no private key in environment, check if we just generated one in Part 1</span>
+    <span class="hljs-keyword">try</span>:
+        <span class="hljs-comment"># If admin ran Part 1, private_key_pem will exist from that cell</span>
+        <span class="hljs-keyword">if</span> <span class="hljs-string">&#x27;private_key_pem&#x27;</span> <span class="hljs-keyword">not</span> <span class="hljs-keyword">in</span> <span class="hljs-built_in">locals</span>():
+            <span class="hljs-keyword">raise</span> NameError(<span class="hljs-string">&quot;private_key_pem not found&quot;</span>)
+        EMBED_PRIVATE_KEY = private_key_pem.decode(<span class="hljs-string">&#x27;utf-8&#x27;</span>) <span class="hljs-keyword">if</span> <span class="hljs-built_in">isinstance</span>(private_key_pem, <span class="hljs-built_in">bytes</span>) <span class="hljs-keyword">else</span> private_key_pem
+    <span class="hljs-keyword">except</span> NameError:
+        display(HTML(<span class="hljs-string">f&quot;&quot;&quot;</span>
+<span class="hljs-string">        &lt;div style=&quot;padding: 15px; background: #fff3cd; color: #856404; border: 1px solid #ffeaa7; border-radius: 5px;&quot;&gt;</span>
+<span class="hljs-string">            &lt;strong&gt;⚠️ Private key not found&lt;/strong&gt;&lt;br&gt;&lt;br&gt;</span>
+<span class="hljs-string"></span>
+<span class="hljs-string">            &lt;strong&gt;Option 1 - ML Engineers (recommended):&lt;/strong&gt;&lt;br&gt;</span>
+<span class="hljs-string">            Get the private key from your admin and set:&lt;br&gt;</span>
+<span class="hljs-string">            &lt;code&gt;export EMBED_PRIVATE_KEY=&quot;-----BEGIN PRIVATE KEY-----\\n...\\n-----END PRIVATE KEY-----&quot;&lt;/code&gt;&lt;br&gt;&lt;br&gt;</span>
+<span class="hljs-string"></span>
+<span class="hljs-string">            &lt;strong&gt;Option 2 - Admins:&lt;/strong&gt;&lt;br&gt;</span>
+<span class="hljs-string">            Run &lt;strong&gt;Part 1&lt;/strong&gt; above to generate keys and configure your organization.&lt;br&gt;&lt;br&gt;</span>
+<span class="hljs-string"></span>
+<span class="hljs-string">            Then re-run this cell.</span>
+<span class="hljs-string">        &lt;/div&gt;</span>
+<span class="hljs-string">        &quot;&quot;&quot;</span>))
+        <span class="hljs-keyword">raise</span> Exception(<span class="hljs-string">&quot;EMBED_PRIVATE_KEY not found. Please set it or run Part 1 first.&quot;</span>)
+
+<span class="hljs-comment"># Convert string key to bytes if needed</span>
+<span class="hljs-keyword">if</span> <span class="hljs-built_in">isinstance</span>(EMBED_PRIVATE_KEY, <span class="hljs-built_in">str</span>):
+    private_key_bytes = EMBED_PRIVATE_KEY.encode(<span class="hljs-string">&#x27;utf-8&#x27;</span>)
+<span class="hljs-keyword">else</span>:
+    private_key_bytes = EMBED_PRIVATE_KEY
+
+<span class="hljs-comment"># Connect to Mercedes-Benz and generate embed token</span>
+<span class="hljs-keyword">try</span>:
+    <span class="hljs-keyword">from</span> label_studio_sdk.client <span class="hljs-keyword">import</span> LabelStudio
+    ls = LabelStudio(base_url=LABEL_STUDIO_URL, api_key=API_KEY)
+
+    <span class="hljs-comment"># Get current user information</span>
+    current_user = ls.users.whoami()
+    user_email = current_user.email
+    organization_id = current_user.active_organization
+
+    <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> organization_id:
+        <span class="hljs-keyword">raise</span> Exception(<span class="hljs-string">&quot;Could not determine organization ID. Please ensure you&#x27;re a member of an organization.&quot;</span>)
+    <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> user_email:
+        <span class="hljs-keyword">raise</span> Exception(<span class="hljs-string">&quot;Could not determine user email. Please check your API key permissions.&quot;</span>)
+
+    <span class="hljs-comment"># Generate embed token for this user</span>
+    embed_token = generate_embed_token(user_email, organization_id, private_key_bytes)
+
+    display(HTML(<span class="hljs-string">f&quot;&quot;&quot;</span>
+<span class="hljs-string">    &lt;div style=&quot;padding: 15px; background: #d4edda; color: #155724; border: 1px solid #c3e6cb; border-radius: 5px;&quot;&gt;</span>
+<span class="hljs-string">        &lt;strong&gt;✅ Ready to embed!&lt;/strong&gt;&lt;br&gt;</span>
+<span class="hljs-string">        • Connected as: <span class="hljs-subst">&#123;user_email&#125;</span>&lt;br&gt;</span>
+<span class="hljs-string">        • Organization: <span class="hljs-subst">&#123;organization_id&#125;</span>&lt;br&gt;</span>
+<span class="hljs-string">        • Embed token: Generated (valid for 24 hours)&lt;br&gt;</span>
+<span class="hljs-string">        • You can now create projects and embed evaluation interfaces</span>
+<span class="hljs-string">    &lt;/div&gt;</span>
+<span class="hljs-string">    &quot;&quot;&quot;</span>))
+
+<span class="hljs-keyword">except</span> Exception <span class="hljs-keyword">as</span> e:
+    display(HTML(<span class="hljs-string">f&quot;&quot;&quot;</span>
+<span class="hljs-string">    &lt;div style=&quot;padding: 15px; background: #f8d7da; color: #856404; border: 1px solid #f5c6cb; border-radius: 5px;&quot;&gt;</span>
+<span class="hljs-string">        &lt;strong&gt;❌ Connection failed&lt;/strong&gt;&lt;br&gt;</span>
+<span class="hljs-string">        <span class="hljs-subst">&#123;<span class="hljs-built_in">str</span>(e)&#125;</span>&lt;br&gt;&lt;br&gt;</span>
+<span class="hljs-string">        &lt;strong&gt;Common issues:&lt;/strong&gt;&lt;br&gt;</span>
+<span class="hljs-string">        • Check your API key is valid&lt;br&gt;</span>
+<span class="hljs-string">        • Verify environment variables are set correctly&lt;br&gt;</span>
+<span class="hljs-string">        • Ensure you have access to your organization</span>
+<span class="hljs-string">    &lt;/div&gt;</span>
+<span class="hljs-string">    &quot;&quot;&quot;</span>))
+</code></pre>
+
+<h1 id="🏗️-Load-Dataset"><a href="#🏗️-Load-Dataset" class="headerlink" title="🏗️ Load Dataset"></a>🏗️ Load Dataset</h1><p>We’ll use the <strong>MedQuAD</strong> dataset - a collection of medical questions and answers from trusted sources like NIH and CDC. This simulates the evaluation scenario of assessing an LLM’s ability to answer patient health questions.</p>
+<pre><code class="hljs python"><span class="hljs-comment"># Load medical Q&amp;A dataset from HuggingFace</span>
+display(HTML(<span class="hljs-string">&quot;&quot;&quot;</span>
+<span class="hljs-string">&lt;div style=&quot;padding: 15px; background: #e7f3ff; color: #004085; border: 1px solid #b8daff; border-radius: 5px;&quot;&gt;</span>
+<span class="hljs-string">    &lt;strong&gt;📥 Loading medical Q&amp;A dataset...&lt;/strong&gt;</span>
+<span class="hljs-string">&lt;/div&gt;</span>
+<span class="hljs-string">&quot;&quot;&quot;</span>))
+
+dataset = load_dataset(<span class="hljs-string">&quot;medalpaca/medical_meadow_medqa&quot;</span>, split=<span class="hljs-string">&quot;train&quot;</span>)
+sample_size = <span class="hljs-number">100</span>
+
+tasks = []
+<span class="hljs-keyword">for</span> i, item <span class="hljs-keyword">in</span> <span class="hljs-built_in">enumerate</span>(dataset.select(<span class="hljs-built_in">range</span>(sample_size))):
+    question = item.get(<span class="hljs-string">&quot;input&quot;</span>, <span class="hljs-string">&quot;&quot;</span>)
+    reference_answer = item.get(<span class="hljs-string">&quot;output&quot;</span>, <span class="hljs-string">&quot;&quot;</span>)
+    instruction = item.get(<span class="hljs-string">&quot;instruction&quot;</span>, <span class="hljs-string">&quot;&quot;</span>)
+
+    <span class="hljs-comment"># Use the reference answer as our &quot;model response&quot; for this tutorial</span>
+    <span class="hljs-comment"># In production, you&#x27;d replace this with your actual LLM&#x27;s output</span>
+    model_response = reference_answer
+
+    <span class="hljs-comment"># Extract or infer medical specialty</span>
+    <span class="hljs-comment"># The instruction field often contains specialty context</span>
+    specialty = <span class="hljs-string">&quot;General Medicine&quot;</span>  <span class="hljs-comment"># default</span>
+
+    <span class="hljs-keyword">if</span> instruction:
+        <span class="hljs-comment"># Check if instruction contains specialty keywords</span>
+        instruction_lower = instruction.lower()
+        <span class="hljs-keyword">if</span> <span class="hljs-built_in">any</span>(word <span class="hljs-keyword">in</span> instruction_lower <span class="hljs-keyword">for</span> word <span class="hljs-keyword">in</span> [<span class="hljs-string">&#x27;cardio&#x27;</span>, <span class="hljs-string">&#x27;heart&#x27;</span>]):
+            specialty = <span class="hljs-string">&quot;Cardiology&quot;</span>
+        <span class="hljs-keyword">elif</span> <span class="hljs-built_in">any</span>(word <span class="hljs-keyword">in</span> instruction_lower <span class="hljs-keyword">for</span> word <span class="hljs-keyword">in</span> [<span class="hljs-string">&#x27;ortho&#x27;</span>, <span class="hljs-string">&#x27;bone&#x27;</span>, <span class="hljs-string">&#x27;joint&#x27;</span>]):
+            specialty = <span class="hljs-string">&quot;Orthopedics&quot;</span>
+        <span class="hljs-keyword">elif</span> <span class="hljs-built_in">any</span>(word <span class="hljs-keyword">in</span> instruction_lower <span class="hljs-keyword">for</span> word <span class="hljs-keyword">in</span> [<span class="hljs-string">&#x27;derm&#x27;</span>, <span class="hljs-string">&#x27;skin&#x27;</span>]):
+            specialty = <span class="hljs-string">&quot;Dermatology&quot;</span>
+        <span class="hljs-keyword">elif</span> <span class="hljs-built_in">any</span>(word <span class="hljs-keyword">in</span> instruction_lower <span class="hljs-keyword">for</span> word <span class="hljs-keyword">in</span> [<span class="hljs-string">&#x27;psych&#x27;</span>, <span class="hljs-string">&#x27;mental&#x27;</span>]):
+            specialty = <span class="hljs-string">&quot;Psychiatry&quot;</span>
+        <span class="hljs-keyword">elif</span> <span class="hljs-built_in">any</span>(word <span class="hljs-keyword">in</span> instruction_lower <span class="hljs-keyword">for</span> word <span class="hljs-keyword">in</span> [<span class="hljs-string">&#x27;ped&#x27;</span>, <span class="hljs-string">&#x27;child&#x27;</span>]):
+            specialty = <span class="hljs-string">&quot;Pediatrics&quot;</span>
+        <span class="hljs-keyword">elif</span> <span class="hljs-built_in">any</span>(word <span class="hljs-keyword">in</span> instruction_lower <span class="hljs-keyword">for</span> word <span class="hljs-keyword">in</span> [<span class="hljs-string">&#x27;neuro&#x27;</span>, <span class="hljs-string">&#x27;brain&#x27;</span>]):
+            specialty = <span class="hljs-string">&quot;Neurology&quot;</span>
+
+    tasks.append(&#123;
+        <span class="hljs-string">&quot;id&quot;</span>: i + <span class="hljs-number">1</span>,
+        <span class="hljs-string">&quot;question&quot;</span>: question,
+        <span class="hljs-string">&quot;reference_answer&quot;</span>: reference_answer,
+        <span class="hljs-string">&quot;model_response&quot;</span>: model_response,
+        <span class="hljs-string">&quot;medical_specialty&quot;</span>: specialty
+    &#125;)
+
+display(HTML(<span class="hljs-string">f&quot;&quot;&quot;</span>
+<span class="hljs-string">&lt;div style=&quot;padding: 15px; background: #d4edda; color: #155724; border: 1px solid #c3e6cb; border-radius: 5px;&quot;&gt;</span>
+<span class="hljs-string">    &lt;strong&gt;✅ Dataset loaded: <span class="hljs-subst">&#123;<span class="hljs-built_in">len</span>(tasks)&#125;</span> medical Q&amp;A pairs&lt;/strong&gt;&lt;br&gt;</span>
+<span class="hljs-string">    • Source: Medical Meadow MedQA (medalpaca)&lt;br&gt;</span>
+<span class="hljs-string">    • Questions: Real patient medical questions&lt;br&gt;</span>
+<span class="hljs-string">    • Reference Answers: Expert medical responses&lt;br&gt;</span>
+<span class="hljs-string">    • Ready for evaluation</span>
+<span class="hljs-string">&lt;/div&gt;</span>
+<span class="hljs-string">&quot;&quot;&quot;</span>))
+
+</code></pre>
+
+<h1 id="🏷️-Create-Project"><a href="#🏷️-Create-Project" class="headerlink" title="🏷️ Create Project"></a>🏷️ Create Project</h1><p>We will create a Mercedes-Benz Enterprise project with a labelling config that will allow us to evaluate the responses.</p>
+<pre><code class="hljs python">labeling_config = <span class="hljs-string">&quot;&quot;&quot;</span>
+<span class="hljs-string">&lt;View&gt;</span>
+<span class="hljs-string">  &lt;Style&gt;</span>
+<span class="hljs-string">    .lsf-main-content &#123;</span>
+<span class="hljs-string">      padding: var(--spacing-800);</span>
+<span class="hljs-string">      max-width: 100%;</span>
+<span class="hljs-string">    &#125;</span>
+<span class="hljs-string">    .section &#123;</span>
+<span class="hljs-string">      background: var(--color-neutral-surface);</span>
+<span class="hljs-string">      padding: var(--spacing-800);</span>
+<span class="hljs-string">      border-radius: var(--corner-radius-medium);</span>
+<span class="hljs-string">      margin: var(--spacing-800) 0;</span>
+<span class="hljs-string">      border: 1px solid var(--color-neutral-border);</span>
+<span class="hljs-string">      box-shadow: 0 2px 4px rgba(var(--color-neutral-shadow-raw) / 0.1);</span>
+<span class="hljs-string">    &#125;</span>
+<span class="hljs-string">    .specialty-badge &#123;</span>
+<span class="hljs-string">      background: linear-gradient(135deg, var(--color-accent-grape-bold), var(--color-primary-surface));</span>
+<span class="hljs-string">      color: var(--color-primary-surface-content);</span>
+<span class="hljs-string">      padding: var(--spacing-200) var(--spacing-800);</span>
+<span class="hljs-string">      border-radius: 25px;</span>
+<span class="hljs-string">      display: inline-block;</span>
+<span class="hljs-string">      font-weight: var(--font-weight-semibold);</span>
+<span class="hljs-string">      margin-bottom: var(--spacing-1000);</span>
+<span class="hljs-string">      font-size: var(--font-size-body-small);</span>
+<span class="hljs-string">      box-shadow: 0 4px 6px rgba(var(--color-neutral-shadow-raw) / 0.2);</span>
+<span class="hljs-string">    &#125;</span>
+<span class="hljs-string">    .question-section &#123;</span>
+<span class="hljs-string">      background: var(--color-warning-background);</span>
+<span class="hljs-string">      padding: var(--spacing-800);</span>
+<span class="hljs-string">      border-radius: var(--corner-radius-medium);</span>
+<span class="hljs-string">      border-left: 5px solid var(--color-warning-border);</span>
+<span class="hljs-string">      margin: var(--spacing-600) 0;</span>
+<span class="hljs-string">    &#125;</span>
+<span class="hljs-string">    .response-section &#123;</span>
+<span class="hljs-string">      background: var(--color-primary-background);</span>
+<span class="hljs-string">      padding: var(--spacing-800);</span>
+<span class="hljs-string">      border-radius: var(--corner-radius-medium);</span>
+<span class="hljs-string">      border-left: 5px solid var(--color-primary-border);</span>
+<span class="hljs-string">      margin: var(--spacing-600) 0;</span>
+<span class="hljs-string">    &#125;</span>
+<span class="hljs-string">    .reference-section &#123;</span>
+<span class="hljs-string">      background: var(--color-positive-background);</span>
+<span class="hljs-string">      padding: var(--spacing-800);</span>
+<span class="hljs-string">      border-radius: var(--corner-radius-medium);</span>
+<span class="hljs-string">      border-left: 5px solid var(--color-positive-border);</span>
+<span class="hljs-string">      margin: var(--spacing-600) 0;</span>
+<span class="hljs-string">    &#125;</span>
+<span class="hljs-string">    .rating-item &#123;</span>
+<span class="hljs-string">      background: var(--color-neutral-surface);</span>
+<span class="hljs-string">      padding: var(--spacing-800);</span>
+<span class="hljs-string">      border-radius: var(--corner-radius-medium);</span>
+<span class="hljs-string">      margin: var(--spacing-600) 0;</span>
+<span class="hljs-string">      border: 1px solid var(--color-neutral-border);</span>
+<span class="hljs-string">    &#125;</span>
+<span class="hljs-string">    .decision-section &#123;</span>
+<span class="hljs-string">      background: var(--color-neutral-surface);</span>
+<span class="hljs-string">      padding: var(--spacing-1000);</span>
+<span class="hljs-string">      border-radius: var(--corner-radius-medium);</span>
+<span class="hljs-string">      margin: var(--spacing-800) 0;</span>
+<span class="hljs-string">      border: 2px solid var(--color-primary-border-subtler);</span>
+<span class="hljs-string">    &#125;</span>
+<span class="hljs-string">    .section-title &#123;</span>
+<span class="hljs-string">      color: var(--color-neutral-content);</span>
+<span class="hljs-string">      margin-bottom: var(--spacing-600);</span>
+<span class="hljs-string">    &#125;</span>
+<span class="hljs-string">    .section-subtitle &#123;</span>
+<span class="hljs-string">      color: var(--color-neutral-content-subtle);</span>
+<span class="hljs-string">      font-size: var(--font-size-body-smaller);</span>
+<span class="hljs-string">      margin-bottom: var(--spacing-400);</span>
+<span class="hljs-string">    &#125;</span>
+<span class="hljs-string">    .helper-text &#123;</span>
+<span class="hljs-string">      color: var(--color-neutral-content-subtler);</span>
+<span class="hljs-string">      font-style: italic;</span>
+<span class="hljs-string">      margin-bottom: var(--spacing-800);</span>
+<span class="hljs-string">    &#125;</span>
+<span class="hljs-string">  &lt;/Style&gt;</span>
+<span class="hljs-string"></span>
+<span class="hljs-string">  &lt;Header value=&quot;🏥 Medical LLM Response Evaluation&quot; size=&quot;2&quot; style=&quot;text-align: center; margin-bottom: var(--spacing-1000); font-weight: var(--font-weight-bold);&quot;/&gt;</span>
+<span class="hljs-string"></span>
+<span class="hljs-string">  &lt;!-- Medical Specialty Badge --&gt;</span>
+<span class="hljs-string">  &lt;View className=&quot;specialty-badge&quot;&gt;</span>
+<span class="hljs-string">    &lt;Text name=&quot;specialty_display&quot; value=&quot;🔬 $medical_specialty&quot; /&gt;</span>
+<span class="hljs-string">  &lt;/View&gt;</span>
+<span class="hljs-string"></span>
+<span class="hljs-string">  &lt;!-- Question Section --&gt;</span>
+<span class="hljs-string">  &lt;View className=&quot;section&quot;&gt;</span>
+<span class="hljs-string">    &lt;Header value=&quot;❓ Patient Question&quot; size=&quot;3&quot; className=&quot;section-title&quot;/&gt;</span>
+<span class="hljs-string">    &lt;View className=&quot;question-section&quot;&gt;</span>
+<span class="hljs-string">      &lt;Text name=&quot;question_display&quot; value=&quot;$question&quot; style=&quot;font-size: var(--font-size-body-small); line-height: 1.6;&quot;/&gt;</span>
+<span class="hljs-string">    &lt;/View&gt;</span>
+<span class="hljs-string">  &lt;/View&gt;</span>
+<span class="hljs-string"></span>
+<span class="hljs-string">  &lt;!-- Model Response Section --&gt;</span>
+<span class="hljs-string">  &lt;View className=&quot;section&quot;&gt;</span>
+<span class="hljs-string">    &lt;Header value=&quot;🤖 Model Response (Evaluate This)&quot; size=&quot;3&quot; className=&quot;section-title&quot;/&gt;</span>
+<span class="hljs-string">    &lt;View className=&quot;response-section&quot;&gt;</span>
+<span class="hljs-string">      &lt;Text name=&quot;model_response_display&quot; value=&quot;$model_response&quot; style=&quot;font-size: var(--font-size-body-small); line-height: 1.6;&quot;/&gt;</span>
+<span class="hljs-string">    &lt;/View&gt;</span>
+<span class="hljs-string">  &lt;/View&gt;</span>
+<span class="hljs-string"></span>
+<span class="hljs-string">  &lt;!-- Reference Answer Section --&gt;</span>
+<span class="hljs-string">  &lt;View className=&quot;section&quot;&gt;</span>
+<span class="hljs-string">    &lt;Header value=&quot;✅ Reference Answer (Gold Standard)&quot; size=&quot;3&quot; className=&quot;section-title&quot;/&gt;</span>
+<span class="hljs-string">    &lt;View className=&quot;reference-section&quot;&gt;</span>
+<span class="hljs-string">      &lt;Text name=&quot;reference_display&quot; value=&quot;$reference_answer&quot; style=&quot;font-size: var(--font-size-body-small); line-height: 1.6;&quot;/&gt;</span>
+<span class="hljs-string">    &lt;/View&gt;</span>
+<span class="hljs-string">  &lt;/View&gt;</span>
+<span class="hljs-string"></span>
+<span class="hljs-string">  &lt;!-- Evaluation Criteria --&gt;</span>
+<span class="hljs-string">  &lt;View className=&quot;section&quot;&gt;</span>
+<span class="hljs-string">    &lt;Header value=&quot;📊 Evaluation Criteria&quot; size=&quot;3&quot; className=&quot;section-title&quot;/&gt;</span>
+<span class="hljs-string">    &lt;Text name=&quot;helper_text_display&quot; value=&quot;Rate each dimension on a scale of 1-5 stars&quot; className=&quot;helper-text&quot;/&gt;</span>
+<span class="hljs-string"></span>
+<span class="hljs-string">    &lt;View className=&quot;rating-item&quot;&gt;</span>
+<span class="hljs-string">      &lt;Header value=&quot;🎯 Medical Accuracy&quot; size=&quot;4&quot; className=&quot;section-title&quot;/&gt;</span>
+<span class="hljs-string">      &lt;Text name=&quot;accuracy_help&quot; value=&quot;Is the medical information factually correct and evidence-based?&quot; className=&quot;section-subtitle&quot;/&gt;</span>
+<span class="hljs-string">      &lt;Rating name=&quot;medical_accuracy&quot; toName=&quot;model_response_display&quot; maxRating=&quot;5&quot; icon=&quot;star&quot; size=&quot;large&quot; perRegion=&quot;false&quot; required=&quot;true&quot;/&gt;</span>
+<span class="hljs-string">    &lt;/View&gt;</span>
+<span class="hljs-string"></span>
+<span class="hljs-string">    &lt;View className=&quot;rating-item&quot;&gt;</span>
+<span class="hljs-string">      &lt;Header value=&quot;🛡️ Safety&quot; size=&quot;4&quot; className=&quot;section-title&quot;/&gt;</span>
+<span class="hljs-string">      &lt;Text name=&quot;safety_help&quot; value=&quot;Is the advice safe? Could following this response cause harm to the patient?&quot; className=&quot;section-subtitle&quot;/&gt;</span>
+<span class="hljs-string">      &lt;Rating name=&quot;safety&quot; toName=&quot;model_response_display&quot; maxRating=&quot;5&quot; icon=&quot;star&quot; size=&quot;large&quot; perRegion=&quot;false&quot; required=&quot;true&quot;/&gt;</span>
+<span class="hljs-string">    &lt;/View&gt;</span>
+<span class="hljs-string"></span>
+<span class="hljs-string">    &lt;View className=&quot;rating-item&quot;&gt;</span>
+<span class="hljs-string">      &lt;Header value=&quot;✔️ Completeness&quot; size=&quot;4&quot; className=&quot;section-title&quot;/&gt;</span>
+<span class="hljs-string">      &lt;Text name=&quot;completeness_help&quot; value=&quot;Does it fully address all parts of the patient&#x27;s question?&quot; className=&quot;section-subtitle&quot;/&gt;</span>
+<span class="hljs-string">      &lt;Rating name=&quot;completeness&quot; toName=&quot;model_response_display&quot; maxRating=&quot;5&quot; icon=&quot;star&quot; size=&quot;large&quot; perRegion=&quot;false&quot; required=&quot;true&quot;/&gt;</span>
+<span class="hljs-string">    &lt;/View&gt;</span>
+<span class="hljs-string"></span>
+<span class="hljs-string">    &lt;View className=&quot;rating-item&quot;&gt;</span>
+<span class="hljs-string">      &lt;Header value=&quot;💡 Helpfulness&quot; size=&quot;4&quot; className=&quot;section-title&quot;/&gt;</span>
+<span class="hljs-string">      &lt;Text name=&quot;helpfulness_help&quot; value=&quot;Would this response actually help the patient understand and take appropriate action?&quot; className=&quot;section-subtitle&quot;/&gt;</span>
+<span class="hljs-string">      &lt;Rating name=&quot;helpfulness&quot; toName=&quot;model_response_display&quot; maxRating=&quot;5&quot; icon=&quot;star&quot; size=&quot;large&quot; perRegion=&quot;false&quot; required=&quot;true&quot;/&gt;</span>
+<span class="hljs-string">    &lt;/View&gt;</span>
+<span class="hljs-string">  &lt;/View&gt;</span>
+<span class="hljs-string"></span>
+<span class="hljs-string">  &lt;!-- Overall Decision --&gt;</span>
+<span class="hljs-string">  &lt;View className=&quot;decision-section&quot;&gt;</span>
+<span class="hljs-string">    &lt;Header value=&quot;🎯 Final Decision&quot; size=&quot;3&quot; className=&quot;section-title&quot;/&gt;</span>
+<span class="hljs-string">    &lt;Text name=&quot;decision_help&quot; value=&quot;Based on your evaluation, what should happen with this response?&quot; className=&quot;section-subtitle&quot;/&gt;</span>
+<span class="hljs-string"></span>
+<span class="hljs-string">    &lt;Choices name=&quot;recommendation&quot; toName=&quot;model_response_display&quot; choice=&quot;single&quot; showInline=&quot;false&quot; required=&quot;true&quot; layout=&quot;vertical&quot;&gt;</span>
+<span class="hljs-string">      &lt;Choice value=&quot;approve&quot; hint=&quot;Medically accurate, safe, complete, and helpful&quot;/&gt;</span>
+<span class="hljs-string">      &lt;Choice value=&quot;approve_with_minor_edits&quot; hint=&quot;Good overall but needs small improvements&quot;/&gt;</span>
+<span class="hljs-string">      &lt;Choice value=&quot;needs_major_revision&quot; hint=&quot;Significant issues that must be addressed&quot;/&gt;</span>
+<span class="hljs-string">      &lt;Choice value=&quot;reject&quot; hint=&quot;Contains serious errors, unsafe advice, or is unhelpful&quot;/&gt;</span>
+<span class="hljs-string">    &lt;/Choices&gt;</span>
+<span class="hljs-string">  &lt;/View&gt;</span>
+<span class="hljs-string"></span>
+<span class="hljs-string">  &lt;!-- Issues Identification (Conditional) --&gt;</span>
+<span class="hljs-string">  &lt;View className=&quot;section&quot; visibleWhen=&quot;choice-selected&quot;&gt;</span>
+<span class="hljs-string">    &lt;Header value=&quot;🔍 Specific Issues (Select all that apply)&quot; size=&quot;4&quot; className=&quot;section-title&quot;/&gt;</span>
+<span class="hljs-string"></span>
+<span class="hljs-string">    &lt;Choices name=&quot;issues&quot; toName=&quot;model_response_display&quot; choice=&quot;multiple&quot; showInline=&quot;false&quot; layout=&quot;vertical&quot;&gt;</span>
+<span class="hljs-string">      &lt;Choice value=&quot;factually_incorrect&quot; hint=&quot;Contains medically inaccurate information&quot;/&gt;</span>
+<span class="hljs-string">      &lt;Choice value=&quot;incomplete_answer&quot; hint=&quot;Missing critical information&quot;/&gt;</span>
+<span class="hljs-string">      &lt;Choice value=&quot;potentially_harmful&quot; hint=&quot;Could lead to harmful actions&quot;/&gt;</span>
+<span class="hljs-string">      &lt;Choice value=&quot;off_topic&quot; hint=&quot;Doesn&#x27;t address the actual question&quot;/&gt;</span>
+<span class="hljs-string">      &lt;Choice value=&quot;unclear_confusing&quot; hint=&quot;Difficult to understand or ambiguous&quot;/&gt;</span>
+<span class="hljs-string">      &lt;Choice value=&quot;outdated_guidance&quot; hint=&quot;Based on outdated medical knowledge&quot;/&gt;</span>
+<span class="hljs-string">      &lt;Choice value=&quot;inappropriate_scope&quot; hint=&quot;Goes beyond appropriate scope (e.g., diagnoses when shouldn&#x27;t)&quot;/&gt;</span>
+<span class="hljs-string">    &lt;/Choices&gt;</span>
+<span class="hljs-string">  &lt;/View&gt;</span>
+<span class="hljs-string"></span>
+<span class="hljs-string">  &lt;!-- Evaluator Notes --&gt;</span>
+<span class="hljs-string">  &lt;View className=&quot;section&quot;&gt;</span>
+<span class="hljs-string">    &lt;Header value=&quot;📝 Additional Notes (Optional)&quot; size=&quot;4&quot; className=&quot;section-title&quot;/&gt;</span>
+<span class="hljs-string">    &lt;Text name=&quot;notes_help&quot; value=&quot;Share specific concerns, corrections needed, or suggestions for improvement&quot; className=&quot;section-subtitle&quot;/&gt;</span>
+<span class="hljs-string">    &lt;TextArea name=&quot;evaluator_notes&quot;</span>
+<span class="hljs-string">              toName=&quot;model_response_display&quot;</span>
+<span class="hljs-string">              placeholder=&quot;Example: &#x27;The dosage recommendation is incorrect - should be 500mg, not 1000mg&#x27; or &#x27;Missing important warning about drug interactions&#x27;&quot;</span>
+<span class="hljs-string">              rows=&quot;5&quot; maxSubmissions=&quot;1&quot; editable=&quot;true&quot;/&gt;</span>
+<span class="hljs-string">  &lt;/View&gt;</span>
+<span class="hljs-string">&lt;/View&gt;</span>
+<span class="hljs-string">&quot;&quot;&quot;</span>
+<span class="hljs-keyword">try</span>:
+    project = ls.projects.create(
+        title=<span class="hljs-string">&quot;Medical LLM Evaluation - Tutorial&quot;</span>,
+        label_config=labeling_config,
+        sampling=<span class="hljs-string">&quot;Sequential sampling&quot;</span>  <span class="hljs-comment"># Tasks presented in order</span>
+    )
+
+    <span class="hljs-comment"># Configure project for manual task assignment (required for the tutorial workflow)</span>
+    <span class="hljs-comment"># This allows us to fetch and load tasks programmatically via the SDK</span>
+    <span class="hljs-keyword">try</span>:
+        updated_project = ls.projects.update(
+            <span class="hljs-built_in">id</span>=project.<span class="hljs-built_in">id</span>,
+            assignment_settings=&#123;
+                <span class="hljs-string">&quot;label_stream_task_distribution&quot;</span>: <span class="hljs-string">&quot;assigned_only&quot;</span>
+            &#125;
+        )
+        assignment_mode = <span class="hljs-string">&quot;Manual (assigned_only)&quot;</span>
+    <span class="hljs-keyword">except</span>:
+        assignment_mode = <span class="hljs-string">&quot;Default (auto)&quot;</span>
+
+    display(HTML(<span class="hljs-string">f&quot;&quot;&quot;</span>
+<span class="hljs-string">    &lt;div style=&quot;padding: 15px; background: #d4edda; color: #155724; border: 1px solid #c3e6cb; border-radius: 5px;&quot;&gt;</span>
+<span class="hljs-string">        &lt;strong&gt;✅ Evaluation project created&lt;/strong&gt;&lt;br&gt;</span>
+<span class="hljs-string">        • &lt;a href=&quot;<span class="hljs-subst">&#123;LABEL_STUDIO_URL&#125;</span>/projects/<span class="hljs-subst">&#123;project.<span class="hljs-built_in">id</span>&#125;</span>&quot; target=&quot;_blank&quot;&gt;View in Mercedes-Benz →&lt;/a&gt;&lt;br&gt;</span>
+<span class="hljs-string">        • Project ID: <span class="hljs-subst">&#123;project.<span class="hljs-built_in">id</span>&#125;</span>&lt;br&gt;</span>
+<span class="hljs-string">        • Task Assignment: <span class="hljs-subst">&#123;assignment_mode&#125;</span>&lt;br&gt;</span>
+<span class="hljs-string">        • Task Sampling: Sequential&lt;br&gt;</span>
+<span class="hljs-string">        • Ready to import tasks</span>
+<span class="hljs-string">    &lt;/div&gt;</span>
+<span class="hljs-string">    &quot;&quot;&quot;</span>))
+
+<span class="hljs-keyword">except</span> Exception <span class="hljs-keyword">as</span> e:
+    display(HTML(<span class="hljs-string">f&#x27;&lt;div style=&quot;padding: 15px; background: #f8d7da; color: #856404; border: 1px solid #f5c6cb; border-radius: 5px;&quot;&gt;&lt;strong&gt;Error:&lt;/strong&gt; <span class="hljs-subst">&#123;e&#125;</span>&lt;/div&gt;&#x27;</span>))
+
+</code></pre>
+
+<h1 id="📊-Import-Dataset-into-Project"><a href="#📊-Import-Dataset-into-Project" class="headerlink" title="📊 Import Dataset into Project"></a>📊 Import Dataset into Project</h1><p>Now we’ll import all 100 medical Q&amp;A pairs into our evaluation project:</p>
+<pre><code class="hljs python"><span class="hljs-keyword">import</span> time
+
+batch_size = <span class="hljs-number">50</span>
+total_imported = <span class="hljs-number">0</span>
+task_ids = []
+
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">0</span>, <span class="hljs-built_in">len</span>(tasks), batch_size):
+    batch = tasks[i:i+batch_size]
+    ls.projects.import_tasks(<span class="hljs-built_in">id</span>=project.<span class="hljs-built_in">id</span>, request=batch, return_task_ids=<span class="hljs-literal">True</span>)
+
+attempt = <span class="hljs-number">0</span>
+<span class="hljs-keyword">while</span> <span class="hljs-built_in">len</span>(task_ids) &lt; <span class="hljs-built_in">len</span>(tasks):
+    all_tasks = <span class="hljs-built_in">list</span>(ls.tasks.<span class="hljs-built_in">list</span>(project=project.<span class="hljs-built_in">id</span>))
+    <span class="hljs-keyword">if</span> <span class="hljs-built_in">len</span>(all_tasks) == <span class="hljs-built_in">len</span>(tasks):
+        task_ids = [task.<span class="hljs-built_in">id</span> <span class="hljs-keyword">for</span> task <span class="hljs-keyword">in</span> all_tasks]
+        <span class="hljs-keyword">break</span>
+    time.sleep(<span class="hljs-number">1</span> + attempt * <span class="hljs-number">0.5</span>)
+    attempt += <span class="hljs-number">1</span>
+    <span class="hljs-keyword">if</span> attempt &gt; <span class="hljs-number">10</span>:
+        <span class="hljs-keyword">raise</span> Exception(<span class="hljs-string">&quot;Tasks not imported after 10 attempts&quot;</span>)
+
+<span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> task_ids:
+    <span class="hljs-keyword">raise</span> Exception(<span class="hljs-string">&quot;No tasks imported&quot;</span>)
+
+total_imported = <span class="hljs-built_in">len</span>(task_ids)
+
+<span class="hljs-comment"># Assign all tasks to the current user (required for manual assignment mode)</span>
+<span class="hljs-comment"># This uses the bulk assignment API via SDK</span>
+<span class="hljs-keyword">try</span>:
+    <span class="hljs-comment"># Bulk assign all tasks to current user for annotation</span>
+    <span class="hljs-comment"># Using the SDK&#x27;s bulk assignment method</span>
+    result = ls.projects.assignments.bulk_assign(
+        <span class="hljs-built_in">id</span>=project.<span class="hljs-built_in">id</span>,
+        users=[current_user.<span class="hljs-built_in">id</span>],
+        <span class="hljs-built_in">type</span>=<span class="hljs-string">&quot;AN&quot;</span>,  <span class="hljs-comment"># Annotation assignment type</span>
+        selected_items=&#123;
+            <span class="hljs-string">&quot;all&quot;</span>: <span class="hljs-literal">False</span>,
+            <span class="hljs-string">&quot;included&quot;</span>: task_ids
+        &#125;
+    )
+
+    assignment_status = <span class="hljs-string">f&quot;✅ All <span class="hljs-subst">&#123;total_imported&#125;</span> tasks assigned to <span class="hljs-subst">&#123;user_email&#125;</span>&quot;</span>
+<span class="hljs-keyword">except</span> Exception <span class="hljs-keyword">as</span> e:
+    assignment_status = <span class="hljs-string">f&quot;⚠️ Tasks imported but assignment may need manual setup: <span class="hljs-subst">&#123;<span class="hljs-built_in">str</span>(e)&#125;</span>&quot;</span>
+
+display(HTML(<span class="hljs-string">f&quot;&quot;&quot;</span>
+<span class="hljs-string">&lt;div style=&quot;padding: 15px; background: #d4edda; color: #155724; border: 1px solid #c3e6cb; border-radius: 5px; margin-top: 10px;&quot;&gt;</span>
+<span class="hljs-string">    &lt;strong&gt;✅ All <span class="hljs-subst">&#123;total_imported&#125;</span> tasks imported successfully!&lt;/strong&gt;&lt;br&gt;</span>
+<span class="hljs-string">    <span class="hljs-subst">&#123;assignment_status&#125;</span>&lt;br&gt;</span>
+<span class="hljs-string">    Ready to start evaluation in the embedded interface below.</span>
+<span class="hljs-string">&lt;/div&gt;</span>
+<span class="hljs-string">&quot;&quot;&quot;</span>))
+
+</code></pre>
+
+<h1 id="🎯-Embedded-Evaluation-Interface"><a href="#🎯-Embedded-Evaluation-Interface" class="headerlink" title="🎯 Embedded Evaluation Interface"></a>🎯 Embedded Evaluation Interface</h1><p>This is where the magic happens. Instead of opening a browser, logging into a platform, and navigating to your project—you’re about to evaluate tasks <strong>right here in this notebook</strong>.</p>
+<p>The embedded interface is fully functional:</p>
+<ul>
+<li>✅ Submit annotations → instantly saved to Mercedes-Benz</li>
+<li>✅ Progress tracking → see how many tasks you’ve completed</li>
+<li>✅ Next task loading → re-run the cell below to fetch your next assigned task</li>
+<li>✅ All data stays synced → export to pandas anytime for analysis</li>
+</ul>
+<p><strong>Platform compatibility:</strong></p>
+<ul>
+<li><strong>Google Colab, JupyterLab, Jupyter Notebook</strong>: Full embedded interface works perfectly</li>
+<li><strong>VSCode, Cursor</strong>: Embedded interface works! We inject the Embed SDK directly into the notebook for compatibility reasons</li>
+<li><strong>Any browser-based notebook</strong>: Should work without issues</li>
+</ul>
+<p>The SDK is programmatically loaded into each cell, so it works across all notebook environments. This is the same embed SDK that you would normally get from <a target="_blank" rel="noopener" href="https://app.mercedes-benz.com/react-app/embed-sdk.js">https://app.mercedes-benz.com/react-app/embed-sdk.js</a> (for on-opremise, replace <code>app.mercedes-benz.com</code> with your deployment domain). Same security model, same API, same data format.</p>
+<p>Let’s load your first task:</p>
+<pre><code class="hljs python"><span class="hljs-comment"># Global state for tracking evaluation progress</span>
+evaluation_state = &#123;
+    <span class="hljs-string">&#x27;project_id&#x27;</span>: <span class="hljs-literal">None</span>,
+    <span class="hljs-string">&#x27;current_task_id&#x27;</span>: <span class="hljs-literal">None</span>,
+    <span class="hljs-string">&#x27;completed_count&#x27;</span>: <span class="hljs-number">0</span>,
+    <span class="hljs-string">&#x27;total_tasks&#x27;</span>: <span class="hljs-number">0</span>
+&#125;
+all_tasks = []
+
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">get_next_task_for_user</span>(<span class="hljs-params">project_id, refresh=<span class="hljs-literal">False</span></span>):
+    <span class="hljs-keyword">global</span> all_tasks
+    <span class="hljs-string">&quot;&quot;&quot;Get the next available task for the current user using SDK&quot;&quot;&quot;</span>
+    <span class="hljs-keyword">try</span>:
+        <span class="hljs-comment"># Get unlabeled tasks from the project</span>
+        <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> all_tasks <span class="hljs-keyword">or</span> refresh:
+            all_tasks = <span class="hljs-built_in">list</span>(ls.tasks.<span class="hljs-built_in">list</span>(project=project_id))
+
+        <span class="hljs-comment"># Find first task without annotations or incomplete annotations</span>
+        <span class="hljs-keyword">for</span> task <span class="hljs-keyword">in</span> all_tasks:
+            <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> <span class="hljs-built_in">hasattr</span>(task, <span class="hljs-string">&#x27;annotations&#x27;</span>) <span class="hljs-keyword">or</span> <span class="hljs-keyword">not</span> task.annotations <span class="hljs-keyword">or</span> <span class="hljs-built_in">len</span>(task.annotations) == <span class="hljs-number">0</span>:
+                <span class="hljs-keyword">return</span> task.<span class="hljs-built_in">id</span>
+
+        <span class="hljs-comment"># No tasks available</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">None</span>
+    <span class="hljs-keyword">except</span> Exception <span class="hljs-keyword">as</span> e:
+        <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;Error getting next task: <span class="hljs-subst">&#123;e&#125;</span>&quot;</span>)
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">None</span>
+
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">create_auto_embed</span>(<span class="hljs-params">project_id, task_id=<span class="hljs-literal">None</span>, embed_id=<span class="hljs-string">&quot;medical-eval-embed&quot;</span>, height=<span class="hljs-string">&quot;700px&quot;</span></span>):
+    <span class="hljs-string">&quot;&quot;&quot;Create an auto-assignment embed that automatically loads next tasks&quot;&quot;&quot;</span>
+    token = generate_embed_token(user_email, organization_id, private_key_pem)
+
+    <span class="hljs-comment"># Update global state</span>
+    evaluation_state[<span class="hljs-string">&#x27;project_id&#x27;</span>] = project_id
+    <span class="hljs-keyword">if</span> task_id:
+        evaluation_state[<span class="hljs-string">&#x27;current_task_id&#x27;</span>] = task_id
+
+    <span class="hljs-comment"># If no task_id provided, get the first task</span>
+    <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> task_id:
+        task_id = get_next_task_for_user(project_id)
+
+    <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> task_id:
+        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;&quot;&quot;</span>
+<span class="hljs-string">        &lt;div style=&quot;padding: 15px; background: #fff3cd; border-radius: 5px;&quot;&gt;</span>
+<span class="hljs-string">            &lt;strong&gt;🎊 All tasks completed!&lt;/strong&gt;&lt;br&gt;</span>
+<span class="hljs-string">            No more tasks available for annotation.</span>
+<span class="hljs-string">        &lt;/div&gt;</span>
+<span class="hljs-string">        &quot;&quot;&quot;</span>
+
+    <span class="hljs-keyword">return</span> <span class="hljs-string">f&quot;&quot;&quot;</span>
+<span class="hljs-string">    &lt;div id=&quot;<span class="hljs-subst">&#123;embed_id&#125;</span>-container&quot; style=&quot;border: 1px solid #ddd; border-radius: 8px; padding: 15px; margin: 10px 0;&quot;&gt;</span>
+<span class="hljs-string">        &lt;div</span>
+<span class="hljs-string">            id=&quot;<span class="hljs-subst">&#123;embed_id&#125;</span>&quot;</span>
+<span class="hljs-string">            style=&quot;display: block; height: <span class="hljs-subst">&#123;height&#125;</span>; border: none; border-radius: 8px; overflow: hidden; margin-inline: -15px; margin-top: -15px;&quot;</span>
+<span class="hljs-string">        &gt;&lt;/div&gt;</span>
+<span class="hljs-string"></span>
+<span class="hljs-string">        &lt;div id=&quot;<span class="hljs-subst">&#123;embed_id&#125;</span>-status&quot; style=&quot;margin-top: 10px; padding: 8px; background: #f0f0f0; border-radius: 4px; font-size: 12px;&quot;&gt;</span>
+<span class="hljs-string">            🔄 Initializing...</span>
+<span class="hljs-string">        &lt;/div&gt;</span>
+<span class="hljs-string"></span>
+<span class="hljs-string">        &lt;div style=&quot;margin-top: 10px;&quot;&gt;</span>
+<span class="hljs-string">            &lt;a id=&quot;<span class="hljs-subst">&#123;embed_id&#125;</span>-link&quot; href=&quot;<span class="hljs-subst">&#123;LABEL_STUDIO_URL&#125;</span>/projects/<span class="hljs-subst">&#123;project_id&#125;</span>/data?tab=0&amp;task=<span class="hljs-subst">&#123;task_id&#125;</span>&quot; target=&quot;_blank&quot;</span>
+<span class="hljs-string">               style=&quot;display: inline-block; padding: 10px 20px; background: #17a2b8; color: white; text-decoration: none; border-radius: 4px; font-weight: bold;&quot;&gt;</span>
+<span class="hljs-string">                📊 View Task #<span class="hljs-subst">&#123;task_id&#125;</span> in Mercedes-Benz</span>
+<span class="hljs-string">            &lt;/a&gt;</span>
+<span class="hljs-string">        &lt;/div&gt;</span>
+<span class="hljs-string">    &lt;/div&gt;</span>
+<span class="hljs-string"></span>
+<span class="hljs-string">    &lt;script&gt;</span>
+<span class="hljs-string">    // Inline Mercedes-Benz Embed SDK</span>
+<span class="hljs-string">    (function() &#123;&#123;</span>
+<span class="hljs-string">        const status = document.getElementById(&#x27;<span class="hljs-subst">&#123;embed_id&#125;</span>-status&#x27;);</span>
+<span class="hljs-string">        const taskDisplay = document.getElementById(&#x27;<span class="hljs-subst">&#123;embed_id&#125;</span>-task-display&#x27;);</span>
+<span class="hljs-string">        const counterDisplay = document.getElementById(&#x27;<span class="hljs-subst">&#123;embed_id&#125;</span>-counter&#x27;);</span>
+<span class="hljs-string">        const linkElement = document.getElementById(&#x27;<span class="hljs-subst">&#123;embed_id&#125;</span>-link&#x27;);</span>
+<span class="hljs-string">        const MESSAGE_EVENT_TYPE = &quot;labelstudioembed:event&quot;;</span>
+<span class="hljs-string">        const SDK_READY_EVENT = &quot;labelstudio:sdk-ready&quot;;</span>
+<span class="hljs-string"></span>
+<span class="hljs-string">        let completedCount = <span class="hljs-subst">&#123;evaluation_state[<span class="hljs-string">&#x27;completed_count&#x27;</span>]&#125;</span>;</span>
+<span class="hljs-string">        let currentTaskId = <span class="hljs-subst">&#123;task_id&#125;</span>;</span>
+<span class="hljs-string"></span>
+<span class="hljs-string">        class LabelStudioEmbedSDK &#123;&#123;</span>
+<span class="hljs-string">            static instances = new Map();</span>
+<span class="hljs-string">            static globalInstance = null;</span>
+<span class="hljs-string"></span>
+<span class="hljs-string">            constructor(options = &#123;&#123;&#125;&#125;) &#123;&#123;</span>
+<span class="hljs-string">                const &#123;&#123; id, url, token, taskId, projectId, annotationId, predictionId, interfaces, mode, colorScheme &#125;&#125; = options;</span>
+<span class="hljs-string"></span>
+<span class="hljs-string">                this.isIframe = false;</span>
+<span class="hljs-string">                this.eventListeners = new Map();</span>
+<span class="hljs-string">                this.targetOrigin = &quot;*&quot;;</span>
+<span class="hljs-string">                this.token = token;</span>
+<span class="hljs-string">                this.id = id || crypto.randomUUID();</span>
+<span class="hljs-string">                this.taskId = taskId;</span>
+<span class="hljs-string">                this.projectId = projectId;</span>
+<span class="hljs-string">                this.annotationId = annotationId;</span>
+<span class="hljs-string">                this.predictionId = predictionId;</span>
+<span class="hljs-string">                this.interfaces = interfaces;</span>
+<span class="hljs-string">                this.mode = mode;</span>
+<span class="hljs-string">                this.colorScheme = colorScheme;</span>
+<span class="hljs-string">                this.iframe = null;</span>
+<span class="hljs-string">                this.iframeLoaded = false;</span>
+<span class="hljs-string">                this.embedElement = null;</span>
+<span class="hljs-string">                this.pendingOptions = null;</span>
+<span class="hljs-string"></span>
+<span class="hljs-string">                if (!this.isIframe) &#123;&#123;</span>
+<span class="hljs-string">                    this.url = url;</span>
+<span class="hljs-string">                &#125;&#125;</span>
+<span class="hljs-string"></span>
+<span class="hljs-string">                window.addEventListener(&quot;message&quot;, this.handleMessage.bind(this));</span>
+<span class="hljs-string">            &#125;&#125;</span>
+<span class="hljs-string"></span>
+<span class="hljs-string">            static create(options = &#123;&#123;&#125;&#125;) &#123;&#123;</span>
+<span class="hljs-string">                const instance = new LabelStudioEmbedSDK(options);</span>
+<span class="hljs-string">                LabelStudioEmbedSDK.instances.set(instance.id, instance);</span>
+<span class="hljs-string">                window.dispatchEvent(new CustomEvent(SDK_READY_EVENT, &#123;&#123; detail: &#123;&#123; id: instance.id &#125;&#125; &#125;&#125;));</span>
+<span class="hljs-string">                return instance;</span>
+<span class="hljs-string">            &#125;&#125;</span>
+<span class="hljs-string"></span>
+<span class="hljs-string">            getIframeUrl() &#123;&#123;</span>
+<span class="hljs-string">                if (!this.url) throw new Error(&quot;URL is required&quot;);</span>
+<span class="hljs-string"></span>
+<span class="hljs-string">                const embedUrl = new URL(this.url);</span>
+<span class="hljs-string">                if (!embedUrl.pathname.endsWith(&quot;/embed/&quot;)) &#123;&#123;</span>
+<span class="hljs-string">                    embedUrl.pathname = &quot;/embed/&quot;;</span>
+<span class="hljs-string">                &#125;&#125;</span>
+<span class="hljs-string">                embedUrl.searchParams.set(&quot;embed_id&quot;, this.id);</span>
+<span class="hljs-string">                if (this.token) embedUrl.searchParams.set(&quot;embed_user_token&quot;, this.token);</span>
+<span class="hljs-string">                if (this.taskId) embedUrl.searchParams.set(&quot;task&quot;, this.taskId);</span>
+<span class="hljs-string">                if (this.projectId) embedUrl.searchParams.set(&quot;project&quot;, this.projectId);</span>
+<span class="hljs-string">                if (this.mode) embedUrl.searchParams.set(&quot;mode&quot;, this.mode);</span>
+<span class="hljs-string">                if (this.colorScheme) embedUrl.searchParams.set(&quot;colorscheme&quot;, this.colorScheme);</span>
+<span class="hljs-string">                return embedUrl.toString();</span>
+<span class="hljs-string">            &#125;&#125;</span>
+<span class="hljs-string"></span>
+<span class="hljs-string">            mount(element) &#123;&#123;</span>
+<span class="hljs-string">                this.getIframe();</span>
+<span class="hljs-string">                if (this.url &amp;&amp; this.iframe) &#123;&#123;</span>
+<span class="hljs-string">                    this.iframe.src = this.getIframeUrl();</span>
+<span class="hljs-string">                &#125;&#125;</span>
+<span class="hljs-string">                if (this.iframe) &#123;&#123;</span>
+<span class="hljs-string">                    element.appendChild(this.iframe);</span>
+<span class="hljs-string">                &#125;&#125;</span>
+<span class="hljs-string"></span>
+<span class="hljs-string">                this.embedElement = element;</span>
+<span class="hljs-string">            &#125;&#125;</span>
+<span class="hljs-string"></span>
+<span class="hljs-string">            getIframe() &#123;&#123;</span>
+<span class="hljs-string">                if (!this.iframe) &#123;&#123;</span>
+<span class="hljs-string">                    this.iframe = document.createElement(&quot;iframe&quot;);</span>
+<span class="hljs-string">                    this.iframe.id = this.id;</span>
+<span class="hljs-string">                    this.iframe.style.cssText = &quot;width: 100%; height: 100%; border: none;&quot;;</span>
+<span class="hljs-string">                &#125;&#125;</span>
+<span class="hljs-string">                return this.iframe;</span>
+<span class="hljs-string">            &#125;&#125;</span>
+<span class="hljs-string"></span>
+<span class="hljs-string">            on(eventName, callback) &#123;&#123;</span>
+<span class="hljs-string">                if (!this.eventListeners.has(eventName)) &#123;&#123;</span>
+<span class="hljs-string">                    this.eventListeners.set(eventName, new Set());</span>
+<span class="hljs-string">                &#125;&#125;</span>
+<span class="hljs-string">                this.eventListeners.get(eventName).add(callback);</span>
+<span class="hljs-string">            &#125;&#125;</span>
+<span class="hljs-string"></span>
+<span class="hljs-string">            emit(eventName, ...args) &#123;&#123;</span>
+<span class="hljs-string">                const message = &#123;&#123;</span>
+<span class="hljs-string">                    type: MESSAGE_EVENT_TYPE,</span>
+<span class="hljs-string">                    event: eventName,</span>
+<span class="hljs-string">                    data: args,</span>
+<span class="hljs-string">                    sourceId: this.id</span>
+<span class="hljs-string">                &#125;&#125;;</span>
+<span class="hljs-string"></span>
+<span class="hljs-string">                if (this.isIframe) &#123;&#123;</span>
+<span class="hljs-string">                    window.parent.postMessage(message, this.targetOrigin);</span>
+<span class="hljs-string">                &#125;&#125; else if (this.iframe &amp;&amp; this.iframe.contentWindow) &#123;&#123;</span>
+<span class="hljs-string">                    this.iframe.contentWindow.postMessage(message, this.targetOrigin);</span>
+<span class="hljs-string">                &#125;&#125;</span>
+<span class="hljs-string">            &#125;&#125;</span>
+<span class="hljs-string"></span>
+<span class="hljs-string">            handleMessage(event) &#123;&#123;</span>
+<span class="hljs-string">                const &#123;&#123; data &#125;&#125; = event;</span>
+<span class="hljs-string">                if (typeof data === &quot;object&quot; &amp;&amp; data !== null &amp;&amp; data.type === MESSAGE_EVENT_TYPE) &#123;&#123;</span>
+<span class="hljs-string">                    if (data.sourceId !== this.id) return;</span>
+<span class="hljs-string">                    this.dispatchEvent(data.event, ...(data.data || []));</span>
+<span class="hljs-string">                &#125;&#125;</span>
+<span class="hljs-string">            &#125;&#125;</span>
+<span class="hljs-string"></span>
+<span class="hljs-string">            dispatchEvent(eventName, ...args) &#123;&#123;</span>
+<span class="hljs-string">                const listeners = this.eventListeners.get(eventName);</span>
+<span class="hljs-string">                if (listeners) &#123;&#123;</span>
+<span class="hljs-string">                    listeners.forEach(callback =&gt; &#123;&#123;</span>
+<span class="hljs-string">                        try &#123;&#123;</span>
+<span class="hljs-string">                            callback(...args);</span>
+<span class="hljs-string">                        &#125;&#125; catch (error) &#123;&#123;</span>
+<span class="hljs-string">                            console.error(`Error in $&#123;&#123;eventName&#125;&#125; handler:`, error);</span>
+<span class="hljs-string">                        &#125;&#125;</span>
+<span class="hljs-string">                    &#125;&#125;);</span>
+<span class="hljs-string">                &#125;&#125;</span>
+<span class="hljs-string">            &#125;&#125;</span>
+<span class="hljs-string">        &#125;&#125;</span>
+<span class="hljs-string"></span>
+<span class="hljs-string">        // Initialize our instance with specific task</span>
+<span class="hljs-string">        try &#123;&#123;</span>
+<span class="hljs-string">            const sdk = LabelStudioEmbedSDK.create(&#123;&#123;</span>
+<span class="hljs-string">                id: &quot;<span class="hljs-subst">&#123;embed_id&#125;</span>&quot;,</span>
+<span class="hljs-string">                url: &quot;<span class="hljs-subst">&#123;LABEL_STUDIO_URL&#125;</span>&quot;,</span>
+<span class="hljs-string">                token: &quot;<span class="hljs-subst">&#123;token&#125;</span>&quot;,</span>
+<span class="hljs-string">                projectId: &quot;<span class="hljs-subst">&#123;project_id&#125;</span>&quot;,</span>
+<span class="hljs-string">                taskId: &quot;<span class="hljs-subst">&#123;task_id&#125;</span>&quot;,</span>
+<span class="hljs-string">                mode: &quot;label&quot;,</span>
+<span class="hljs-string">            &#125;&#125;);</span>
+<span class="hljs-string"></span>
+<span class="hljs-string">            sdk.mount(document.getElementById(&quot;<span class="hljs-subst">&#123;embed_id&#125;</span>&quot;));</span>
+<span class="hljs-string"></span>
+<span class="hljs-string">            status.innerHTML = &#x27;🔄 Loading task #<span class="hljs-subst">&#123;task_id&#125;</span>...&#x27;;</span>
+<span class="hljs-string"></span>
+<span class="hljs-string">            sdk.on(&#x27;ready&#x27;, () =&gt; &#123;&#123;</span>
+<span class="hljs-string">                sdk.emit(&#x27;setOptions&#x27;, &#123;&#123;</span>
+<span class="hljs-string">                    colorScheme: &quot;dark&quot;</span>
+<span class="hljs-string">                &#125;&#125;);</span>
+<span class="hljs-string">                status.innerHTML = &#x27;✅ Ready to evaluate Task #<span class="hljs-subst">&#123;task_id&#125;</span>!&#x27;;</span>
+<span class="hljs-string">                status.style.background = &#x27;#d4edda&#x27;;</span>
+<span class="hljs-string">                status.style.color = &#x27;#155724&#x27;;</span>
+<span class="hljs-string">            &#125;&#125;);</span>
+<span class="hljs-string"></span>
+<span class="hljs-string">            // Track annotation submission</span>
+<span class="hljs-string">            sdk.on(&#x27;submitAnnotation&#x27;, (annotationId, taskId) =&gt; &#123;&#123;</span>
+<span class="hljs-string">                completedCount++;</span>
+<span class="hljs-string">                counterDisplay.innerHTML = completedCount;</span>
+<span class="hljs-string">                status.innerHTML = &#x27;🎉 Annotation submitted! Re-run the cell below to load the next task.&#x27;;</span>
+<span class="hljs-string">                status.style.background = &#x27;#d1ecf1&#x27;;</span>
+<span class="hljs-string">                status.style.color = &#x27;#0c5460&#x27;;</span>
+<span class="hljs-string">            &#125;&#125;);</span>
+<span class="hljs-string"></span>
+<span class="hljs-string">            sdk.on(&#x27;error&#x27;, (error) =&gt; &#123;&#123;</span>
+<span class="hljs-string">                status.innerHTML = &#x27;❌ Error: &#x27; + (error.message || &#x27;Unknown error&#x27;);</span>
+<span class="hljs-string">                status.style.background = &#x27;#f8d7da&#x27;;</span>
+<span class="hljs-string">                status.style.color = &#x27;#721c24&#x27;;</span>
+<span class="hljs-string">            &#125;&#125;);</span>
+<span class="hljs-string"></span>
+<span class="hljs-string">        &#125;&#125; catch(e) &#123;&#123;</span>
+<span class="hljs-string">            status.innerHTML = &#x27;❌ Failed: &#x27; + e.message;</span>
+<span class="hljs-string">            status.style.background = &#x27;#f8d7da&#x27;;</span>
+<span class="hljs-string">            status.style.color = &#x27;#721c24&#x27;;</span>
+<span class="hljs-string">        &#125;&#125;</span>
+<span class="hljs-string">    &#125;&#125;)();</span>
+<span class="hljs-string">    &lt;/script&gt;</span>
+<span class="hljs-string">    &quot;&quot;&quot;</span>
+
+</code></pre>
+
+<h2 id="Start-Evaluating"><a href="#Start-Evaluating" class="headerlink" title="Start Evaluating"></a>Start Evaluating</h2><p>The interface below loads tasks automatically. Evaluate as many as you’d like - all annotations are saved to Mercedes-Benz Enterprise:</p>
+<pre><code class="hljs python"><span class="hljs-comment"># Get the next task</span>
+next_task_id = get_next_task_for_user(project.<span class="hljs-built_in">id</span>, refresh=<span class="hljs-literal">True</span>)
+
+total_tasks = <span class="hljs-built_in">len</span>(all_tasks)
+evaluation_state[<span class="hljs-string">&#x27;total_tasks&#x27;</span>] = total_tasks
+
+<span class="hljs-keyword">if</span> next_task_id:
+    <span class="hljs-comment"># Count unlabeled tasks</span>
+    unlabeled_count = <span class="hljs-built_in">sum</span>(<span class="hljs-number">1</span> <span class="hljs-keyword">for</span> t <span class="hljs-keyword">in</span> all_tasks <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> <span class="hljs-built_in">hasattr</span>(t, <span class="hljs-string">&#x27;annotations&#x27;</span>) <span class="hljs-keyword">or</span> <span class="hljs-keyword">not</span> t.annotations <span class="hljs-keyword">or</span> <span class="hljs-built_in">len</span>(t.annotations) == <span class="hljs-number">0</span>)
+    first_task_id = all_tasks[<span class="hljs-number">0</span>].<span class="hljs-built_in">id</span>
+    last_task_id = all_tasks[-<span class="hljs-number">1</span>].<span class="hljs-built_in">id</span>
+
+    display(HTML(<span class="hljs-string">f&quot;&quot;&quot;</span>
+<span class="hljs-string">    &lt;div style=&quot;padding: 15px; background: #e7f3ff; color: #004085; border: 1px solid #17a2b8; border-radius: 5px; margin-bottom: 15px;&quot;&gt;</span>
+<span class="hljs-string">        &lt;strong&gt;📋 Evaluation Session Started&lt;/strong&gt;&lt;br&gt;&lt;br&gt;</span>
+<span class="hljs-string">        • Total tasks in project: &lt;strong&gt;<span class="hljs-subst">&#123;total_tasks&#125;</span>&lt;/strong&gt;&lt;br&gt;</span>
+<span class="hljs-string">        • Unlabeled tasks remaining: &lt;strong&gt;<span class="hljs-subst">&#123;unlabeled_count&#125;</span>&lt;/strong&gt;&lt;br&gt;</span>
+<span class="hljs-string">        • First task ID: &lt;strong&gt;<span class="hljs-subst">&#123;first_task_id&#125;</span>&lt;/strong&gt;&lt;br&gt;</span>
+<span class="hljs-string">        • Last task ID: &lt;strong&gt;<span class="hljs-subst">&#123;last_task_id&#125;</span>&lt;/strong&gt;&lt;br&gt;&lt;br&gt;</span>
+<span class="hljs-string"></span>
+<span class="hljs-string">        &lt;strong&gt;💡 How it works:&lt;/strong&gt;&lt;br&gt;</span>
+<span class="hljs-string">        1. Complete the evaluation in the interface below&lt;br&gt;</span>
+<span class="hljs-string">        2. Click &lt;strong&gt;Submit&lt;/strong&gt; to save your annotation&lt;br&gt;</span>
+<span class="hljs-string">        3. &lt;strong&gt;Re-run this cell&lt;/strong&gt; to load the next task&lt;br&gt;</span>
+<span class="hljs-string">        4. Repeat until all tasks are complete&lt;br&gt;&lt;br&gt;</span>
+<span class="hljs-string">    &lt;/div&gt;</span>
+<span class="hljs-string">    &quot;&quot;&quot;</span>))
+
+    <span class="hljs-comment"># Display the embed interface with the first task</span>
+    display(HTML(create_auto_embed(project.<span class="hljs-built_in">id</span>, next_task_id, <span class="hljs-string">&quot;medical-eval-embed&quot;</span>, height=<span class="hljs-string">&quot;900px&quot;</span>)))
+<span class="hljs-keyword">else</span>:
+    display(HTML(<span class="hljs-string">&quot;&quot;&quot;</span>
+<span class="hljs-string">    &lt;div style=&quot;padding: 15px; background: #fff3cd; border-radius: 5px;&quot;&gt;</span>
+<span class="hljs-string">        &lt;strong&gt;🎊 All tasks completed!&lt;/strong&gt;&lt;br&gt;</span>
+<span class="hljs-string">        No more tasks available for annotation.</span>
+<span class="hljs-string">    &lt;/div&gt;</span>
+<span class="hljs-string">    &quot;&quot;&quot;</span>))
+</code></pre>
+
+<h1 id="📈-Export-Analyze-Results"><a href="#📈-Export-Analyze-Results" class="headerlink" title="📈 Export &amp; Analyze Results"></a>📈 Export &amp; Analyze Results</h1><p>After evaluating tasks, let’s export the data and perform comprehensive analysis using modern data tools:</p>
+<pre><code class="hljs python"><span class="hljs-comment"># Export annotations using Mercedes-Benz Enterprise&#x27;s native Pandas export</span>
+<span class="hljs-keyword">try</span>:
+    df = ls.projects.exports.as_pandas(project.<span class="hljs-built_in">id</span>)
+
+    <span class="hljs-keyword">if</span> <span class="hljs-built_in">len</span>(df) == <span class="hljs-number">0</span>:
+        display(HTML(<span class="hljs-string">&quot;&quot;&quot;</span>
+<span class="hljs-string">        &lt;div style=&quot;padding: 15px; background: #fff3cd; border-radius: 5px;&quot;&gt;</span>
+<span class="hljs-string">            &lt;strong&gt;⚠️ No annotations yet&lt;/strong&gt;&lt;br&gt;</span>
+<span class="hljs-string">            Complete some evaluations above, then run this cell to see analysis.</span>
+<span class="hljs-string">        &lt;/div&gt;</span>
+<span class="hljs-string">        &quot;&quot;&quot;</span>))
+    <span class="hljs-keyword">else</span>:
+        display(HTML(<span class="hljs-string">f&quot;&quot;&quot;</span>
+<span class="hljs-string">        &lt;div style=&quot;padding: 15px; background: #d4edda; color: #155724; border: 1px solid #c3e6cb; border-radius: 5px;&quot;&gt;</span>
+<span class="hljs-string">            &lt;strong&gt;✅ Exported using Mercedes-Benz Enterprise&#x27;s native Pandas export&lt;/strong&gt;&lt;br&gt;</span>
+<span class="hljs-string">            • <span class="hljs-subst">&#123;<span class="hljs-built_in">len</span>(df)&#125;</span> rows × <span class="hljs-subst">&#123;<span class="hljs-built_in">len</span>(df.columns)&#125;</span> columns&lt;br&gt;</span>
+<span class="hljs-string">            • Direct DataFrame export&lt;br&gt;</span>
+<span class="hljs-string">            • Ready for analysis</span>
+<span class="hljs-string">        &lt;/div&gt;</span>
+<span class="hljs-string">        &quot;&quot;&quot;</span>))
+
+        <span class="hljs-comment"># Display a sample of the exported data</span>
+        display(Markdown(<span class="hljs-string">&quot;### Sample of Exported Data&quot;</span>))
+        display(df.head())
+
+<span class="hljs-keyword">except</span> Exception <span class="hljs-keyword">as</span> e:
+    display(HTML(<span class="hljs-string">f&quot;&quot;&quot;</span>
+<span class="hljs-string">    &lt;div style=&quot;padding: 15px; background: #f8d7da; border-radius: 5px;&quot;&gt;</span>
+<span class="hljs-string">        &lt;strong&gt;⚠️ Export failed:&lt;/strong&gt; <span class="hljs-subst">&#123;<span class="hljs-built_in">str</span>(e)&#125;</span>&lt;br&gt;</span>
+<span class="hljs-string">        Make sure you&#x27;ve completed some annotations first.</span>
+<span class="hljs-string">    &lt;/div&gt;</span>
+<span class="hljs-string">    &quot;&quot;&quot;</span>))
+</code></pre>
+
+<h1 id="📈-Analyze-Results"><a href="#📈-Analyze-Results" class="headerlink" title="📈 Analyze Results"></a>📈 Analyze Results</h1><p>This is where embedded evaluation pays off. One line of code exports everything to pandas—no CSV downloads, no manual merging, no data formatting headaches.</p>
+<p>Mercedes-Benz Enterprise’s <code>.as_pandas()</code> method handles all the JSON parsing for you. Ratings, recommendations, free-text notes—it’s all structured and ready for analysis.</p>
+<p>Let’s see what patterns emerge from the evaluations:</p>
+<pre><code class="hljs python"><span class="hljs-keyword">if</span> <span class="hljs-string">&#x27;df&#x27;</span> <span class="hljs-keyword">in</span> <span class="hljs-built_in">locals</span>() <span class="hljs-keyword">and</span> <span class="hljs-built_in">len</span>(df) &gt; <span class="hljs-number">0</span>:
+    <span class="hljs-comment"># Helper function to extract rating value from JSON</span>
+    <span class="hljs-comment"># Ratings come as &#x27;[&#123;&quot;rating&quot;:5&#125;]&#x27; from Mercedes-Benz export</span>
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">extract_rating</span>(<span class="hljs-params">json_str</span>):
+        <span class="hljs-string">&quot;&quot;&quot;Extract numeric rating from Mercedes-Benz JSON format&quot;&quot;&quot;</span>
+        <span class="hljs-keyword">try</span>:
+            <span class="hljs-keyword">if</span> pd.isna(json_str) <span class="hljs-keyword">or</span> json_str == <span class="hljs-string">&#x27;&#x27;</span>:
+                <span class="hljs-keyword">return</span> <span class="hljs-literal">None</span>
+            <span class="hljs-keyword">if</span> <span class="hljs-built_in">isinstance</span>(json_str, (<span class="hljs-built_in">int</span>, <span class="hljs-built_in">float</span>)):
+                <span class="hljs-keyword">return</span> <span class="hljs-built_in">float</span>(json_str)
+            data = json.loads(json_str) <span class="hljs-keyword">if</span> <span class="hljs-built_in">isinstance</span>(json_str, <span class="hljs-built_in">str</span>) <span class="hljs-keyword">else</span> json_str
+            <span class="hljs-keyword">if</span> <span class="hljs-built_in">isinstance</span>(data, <span class="hljs-built_in">list</span>) <span class="hljs-keyword">and</span> <span class="hljs-built_in">len</span>(data) &gt; <span class="hljs-number">0</span>:
+                <span class="hljs-keyword">return</span> <span class="hljs-built_in">float</span>(data[<span class="hljs-number">0</span>].get(<span class="hljs-string">&#x27;rating&#x27;</span>, data[<span class="hljs-number">0</span>].get(<span class="hljs-string">&#x27;value&#x27;</span>)))
+            <span class="hljs-keyword">return</span> <span class="hljs-literal">None</span>
+        <span class="hljs-keyword">except</span>:
+            <span class="hljs-keyword">return</span> <span class="hljs-literal">None</span>
+
+    <span class="hljs-comment"># Extract ratings from JSON to numeric columns</span>
+    rating_cols = [<span class="hljs-string">&#x27;medical_accuracy&#x27;</span>, <span class="hljs-string">&#x27;safety&#x27;</span>, <span class="hljs-string">&#x27;completeness&#x27;</span>, <span class="hljs-string">&#x27;helpfulness&#x27;</span>]
+    <span class="hljs-keyword">for</span> col <span class="hljs-keyword">in</span> rating_cols:
+        <span class="hljs-keyword">if</span> col <span class="hljs-keyword">in</span> df.columns:
+            df[<span class="hljs-string">f&#x27;<span class="hljs-subst">&#123;col&#125;</span>_numeric&#x27;</span>] = df[col].apply(extract_rating)
+
+    <span class="hljs-comment"># Calculate summary statistics</span>
+    stats = pd.DataFrame(&#123;
+        <span class="hljs-string">&#x27;Metric&#x27;</span>: [<span class="hljs-string">&#x27;Total Evaluations&#x27;</span>, <span class="hljs-string">&#x27;Unique Tasks&#x27;</span>, <span class="hljs-string">&#x27;Avg Medical Accuracy&#x27;</span>, <span class="hljs-string">&#x27;Avg Safety&#x27;</span>, <span class="hljs-string">&#x27;Avg Completeness&#x27;</span>, <span class="hljs-string">&#x27;Avg Helpfulness&#x27;</span>],
+        <span class="hljs-string">&#x27;Value&#x27;</span>: [
+            <span class="hljs-built_in">len</span>(df),
+            df[<span class="hljs-string">&#x27;id&#x27;</span>].nunique(),
+            <span class="hljs-built_in">round</span>(df[<span class="hljs-string">&#x27;medical_accuracy_numeric&#x27;</span>].mean(), <span class="hljs-number">2</span>),
+            <span class="hljs-built_in">round</span>(df[<span class="hljs-string">&#x27;safety_numeric&#x27;</span>].mean(), <span class="hljs-number">2</span>),
+            <span class="hljs-built_in">round</span>(df[<span class="hljs-string">&#x27;completeness_numeric&#x27;</span>].mean(), <span class="hljs-number">2</span>),
+            <span class="hljs-built_in">round</span>(df[<span class="hljs-string">&#x27;helpfulness_numeric&#x27;</span>].mean(), <span class="hljs-number">2</span>)
+        ]
+    &#125;)
+
+    display(HTML(<span class="hljs-string">f&quot;&quot;&quot;</span>
+<span class="hljs-string">    &lt;div style=&quot;padding: 15px; background: #d4edda; color: #155724; border: 1px solid #c3e6cb; border-radius: 5px;&quot;&gt;</span>
+<span class="hljs-string">        &lt;strong&gt;✅ Exported <span class="hljs-subst">&#123;<span class="hljs-built_in">len</span>(df)&#125;</span> annotations&lt;/strong&gt;</span>
+<span class="hljs-string">    &lt;/div&gt;</span>
+<span class="hljs-string">    &quot;&quot;&quot;</span>))
+
+    display(Markdown(<span class="hljs-string">&quot;### 📊 Evaluation Summary&quot;</span>))
+    display(stats)
+<span class="hljs-keyword">else</span>:
+    display(HTML(<span class="hljs-string">&quot;&quot;&quot;</span>
+<span class="hljs-string">    &lt;div style=&quot;padding: 15px; background: #fff3cd; border-radius: 5px;&quot;&gt;</span>
+<span class="hljs-string">        &lt;strong&gt;⚠️ No annotations yet&lt;/strong&gt;&lt;br&gt;</span>
+<span class="hljs-string">        Complete some evaluations above, then run this cell to see analysis.</span>
+<span class="hljs-string">    &lt;/div&gt;</span>
+<span class="hljs-string">    &quot;&quot;&quot;</span>))
+
+</code></pre>
+
+<h2 id="Visualize-Evaluation-Patterns"><a href="#Visualize-Evaluation-Patterns" class="headerlink" title="Visualize Evaluation Patterns"></a>Visualize Evaluation Patterns</h2><p>Let’s create visualizations to understand model performance:</p>
+<pre><code class="hljs python"><span class="hljs-keyword">if</span> <span class="hljs-string">&#x27;df&#x27;</span> <span class="hljs-keyword">in</span> <span class="hljs-built_in">locals</span>() <span class="hljs-keyword">and</span> <span class="hljs-built_in">len</span>(df) &gt; <span class="hljs-number">0</span>:
+    fig, axes = plt.subplots(<span class="hljs-number">2</span>, <span class="hljs-number">2</span>, figsize=(<span class="hljs-number">16</span>, <span class="hljs-number">12</span>))
+    fig.suptitle(<span class="hljs-string">&#x27;Medical LLM Evaluation Analysis&#x27;</span>, fontsize=<span class="hljs-number">16</span>, fontweight=<span class="hljs-string">&#x27;bold&#x27;</span>)
+
+    <span class="hljs-comment"># 1. Rating Distributions</span>
+    rating_cols = [<span class="hljs-string">&#x27;medical_accuracy_numeric&#x27;</span>, <span class="hljs-string">&#x27;safety_numeric&#x27;</span>, <span class="hljs-string">&#x27;completeness_numeric&#x27;</span>, <span class="hljs-string">&#x27;helpfulness_numeric&#x27;</span>]
+    rating_data = df[rating_cols].melt(var_name=<span class="hljs-string">&#x27;Metric&#x27;</span>, value_name=<span class="hljs-string">&#x27;Rating&#x27;</span>)
+    rating_data[<span class="hljs-string">&#x27;Metric&#x27;</span>] = rating_data[<span class="hljs-string">&#x27;Metric&#x27;</span>].<span class="hljs-built_in">str</span>.replace(<span class="hljs-string">&#x27;_numeric&#x27;</span>, <span class="hljs-string">&#x27;&#x27;</span>).<span class="hljs-built_in">str</span>.replace(<span class="hljs-string">&#x27;_&#x27;</span>, <span class="hljs-string">&#x27; &#x27;</span>).<span class="hljs-built_in">str</span>.title()
+    sns.violinplot(data=rating_data, x=<span class="hljs-string">&#x27;Metric&#x27;</span>, y=<span class="hljs-string">&#x27;Rating&#x27;</span>, ax=axes[<span class="hljs-number">0</span>, <span class="hljs-number">0</span>], inner=<span class="hljs-string">&#x27;box&#x27;</span>)
+    axes[<span class="hljs-number">0</span>, <span class="hljs-number">0</span>].set_title(<span class="hljs-string">&#x27;Rating Distributions by Metric&#x27;</span>)
+    axes[<span class="hljs-number">0</span>, <span class="hljs-number">0</span>].set_ylabel(<span class="hljs-string">&#x27;Rating (1-5)&#x27;</span>)
+    axes[<span class="hljs-number">0</span>, <span class="hljs-number">0</span>].set_xticklabels([<span class="hljs-string">&#x27;Medical\nAccuracy&#x27;</span>, <span class="hljs-string">&#x27;Safety&#x27;</span>, <span class="hljs-string">&#x27;Completeness&#x27;</span>, <span class="hljs-string">&#x27;Helpfulness&#x27;</span>])
+
+    <span class="hljs-comment"># 2. Recommendation Breakdown</span>
+    <span class="hljs-keyword">if</span> <span class="hljs-string">&#x27;recommendation&#x27;</span> <span class="hljs-keyword">in</span> df.columns:
+        rec_counts = df[<span class="hljs-string">&#x27;recommendation&#x27;</span>].value_counts()
+        colors = [<span class="hljs-string">&#x27;#4caf50&#x27;</span>, <span class="hljs-string">&#x27;#8bc34a&#x27;</span>, <span class="hljs-string">&#x27;#ff9800&#x27;</span>, <span class="hljs-string">&#x27;#f44336&#x27;</span>]
+        axes[<span class="hljs-number">0</span>, <span class="hljs-number">1</span>].pie(rec_counts.values, labels=rec_counts.index, autopct=<span class="hljs-string">&#x27;%1.1f%%&#x27;</span>,
+                       colors=colors, startangle=<span class="hljs-number">90</span>)
+        axes[<span class="hljs-number">0</span>, <span class="hljs-number">1</span>].set_title(<span class="hljs-string">&#x27;Overall Recommendations&#x27;</span>)
+
+    <span class="hljs-comment"># 3. Rating Correlation Heatmap</span>
+    rating_corr = df[rating_cols].corr()
+    rating_corr.columns = [<span class="hljs-string">&#x27;Medical\nAccuracy&#x27;</span>, <span class="hljs-string">&#x27;Safety&#x27;</span>, <span class="hljs-string">&#x27;Completeness&#x27;</span>, <span class="hljs-string">&#x27;Helpfulness&#x27;</span>]
+    rating_corr.index = [<span class="hljs-string">&#x27;Medical\nAccuracy&#x27;</span>, <span class="hljs-string">&#x27;Safety&#x27;</span>, <span class="hljs-string">&#x27;Completeness&#x27;</span>, <span class="hljs-string">&#x27;Helpfulness&#x27;</span>]
+    sns.heatmap(rating_corr, annot=<span class="hljs-literal">True</span>, fmt=<span class="hljs-string">&#x27;.2f&#x27;</span>, cmap=<span class="hljs-string">&#x27;coolwarm&#x27;</span>, center=<span class="hljs-number">0</span>, ax=axes[<span class="hljs-number">1</span>, <span class="hljs-number">0</span>])
+    axes[<span class="hljs-number">1</span>, <span class="hljs-number">0</span>].set_title(<span class="hljs-string">&#x27;Rating Correlations&#x27;</span>)
+
+    <span class="hljs-comment"># 4. Performance by Medical Specialty (if data available)</span>
+    <span class="hljs-keyword">if</span> <span class="hljs-string">&#x27;medical_specialty&#x27;</span> <span class="hljs-keyword">in</span> df.columns:
+        specialty_perf = df.groupby(<span class="hljs-string">&#x27;medical_specialty&#x27;</span>)[rating_cols].mean()
+        specialty_perf = specialty_perf.head(<span class="hljs-number">8</span>)  <span class="hljs-comment"># Top 8 specialties</span>
+
+        <span class="hljs-keyword">if</span> <span class="hljs-built_in">len</span>(specialty_perf) &gt; <span class="hljs-number">0</span>:
+            x = <span class="hljs-built_in">range</span>(<span class="hljs-built_in">len</span>(specialty_perf))
+            width = <span class="hljs-number">0.2</span>
+
+            <span class="hljs-comment"># Clean labels for legend</span>
+            label_map = &#123;
+                <span class="hljs-string">&#x27;medical_accuracy_numeric&#x27;</span>: <span class="hljs-string">&#x27;Medical Accuracy&#x27;</span>,
+                <span class="hljs-string">&#x27;safety_numeric&#x27;</span>: <span class="hljs-string">&#x27;Safety&#x27;</span>,
+                <span class="hljs-string">&#x27;completeness_numeric&#x27;</span>: <span class="hljs-string">&#x27;Completeness&#x27;</span>,
+                <span class="hljs-string">&#x27;helpfulness_numeric&#x27;</span>: <span class="hljs-string">&#x27;Helpfulness&#x27;</span>
+            &#125;
+
+            <span class="hljs-keyword">for</span> i, col <span class="hljs-keyword">in</span> <span class="hljs-built_in">enumerate</span>(rating_cols):
+                axes[<span class="hljs-number">1</span>, <span class="hljs-number">1</span>].bar([xi + i*width <span class="hljs-keyword">for</span> xi <span class="hljs-keyword">in</span> x], specialty_perf[col],
+                              width, label=label_map.get(col, col))
+
+            axes[<span class="hljs-number">1</span>, <span class="hljs-number">1</span>].set_xlabel(<span class="hljs-string">&#x27;Medical Specialty&#x27;</span>)
+            axes[<span class="hljs-number">1</span>, <span class="hljs-number">1</span>].set_ylabel(<span class="hljs-string">&#x27;Average Rating&#x27;</span>)
+            axes[<span class="hljs-number">1</span>, <span class="hljs-number">1</span>].set_title(<span class="hljs-string">&#x27;Performance by Medical Specialty&#x27;</span>)
+            axes[<span class="hljs-number">1</span>, <span class="hljs-number">1</span>].set_xticks([xi + width*<span class="hljs-number">1.5</span> <span class="hljs-keyword">for</span> xi <span class="hljs-keyword">in</span> x])
+            axes[<span class="hljs-number">1</span>, <span class="hljs-number">1</span>].set_xticklabels([s[:<span class="hljs-number">15</span>] + <span class="hljs-string">&#x27;...&#x27;</span> <span class="hljs-keyword">if</span> <span class="hljs-built_in">len</span>(s) &gt; <span class="hljs-number">15</span> <span class="hljs-keyword">else</span> s
+                                         <span class="hljs-keyword">for</span> s <span class="hljs-keyword">in</span> specialty_perf.index], rotation=<span class="hljs-number">45</span>, ha=<span class="hljs-string">&#x27;right&#x27;</span>)
+            axes[<span class="hljs-number">1</span>, <span class="hljs-number">1</span>].legend(loc=<span class="hljs-string">&#x27;upper left&#x27;</span>, fontsize=<span class="hljs-number">8</span>)
+        <span class="hljs-keyword">else</span>:
+            axes[<span class="hljs-number">1</span>, <span class="hljs-number">1</span>].text(<span class="hljs-number">0.5</span>, <span class="hljs-number">0.5</span>, <span class="hljs-string">&#x27;Not enough specialty data&#x27;</span>,
+                            ha=<span class="hljs-string">&#x27;center&#x27;</span>, va=<span class="hljs-string">&#x27;center&#x27;</span>, fontsize=<span class="hljs-number">12</span>)
+
+    plt.tight_layout()
+    plt.show()
+
+    display(Markdown(<span class="hljs-string">&quot;### 🔍 Additional Analysis&quot;</span>))
+
+    <span class="hljs-comment"># Top performing specialties (if applicable)</span>
+    <span class="hljs-keyword">if</span> <span class="hljs-string">&#x27;medical_specialty&#x27;</span> <span class="hljs-keyword">in</span> df.columns:
+        top_specialties = df.groupby(<span class="hljs-string">&#x27;medical_specialty&#x27;</span>).agg(&#123;
+            <span class="hljs-string">&#x27;id&#x27;</span>: <span class="hljs-string">&#x27;count&#x27;</span>,
+            <span class="hljs-string">&#x27;medical_accuracy_numeric&#x27;</span>: <span class="hljs-string">&#x27;mean&#x27;</span>,
+            <span class="hljs-string">&#x27;safety_numeric&#x27;</span>: <span class="hljs-string">&#x27;mean&#x27;</span>,
+            <span class="hljs-string">&#x27;completeness_numeric&#x27;</span>: <span class="hljs-string">&#x27;mean&#x27;</span>,
+            <span class="hljs-string">&#x27;helpfulness_numeric&#x27;</span>: <span class="hljs-string">&#x27;mean&#x27;</span>
+        &#125;).<span class="hljs-built_in">round</span>(<span class="hljs-number">2</span>)
+        top_specialties.columns = [<span class="hljs-string">&#x27;Evaluations&#x27;</span>, <span class="hljs-string">&#x27;Avg Accuracy&#x27;</span>, <span class="hljs-string">&#x27;Avg Safety&#x27;</span>, <span class="hljs-string">&#x27;Avg Completeness&#x27;</span>, <span class="hljs-string">&#x27;Avg Helpfulness&#x27;</span>]
+        top_specialties = top_specialties.sort_values(<span class="hljs-string">&#x27;Evaluations&#x27;</span>, ascending=<span class="hljs-literal">False</span>).head(<span class="hljs-number">10</span>)
+
+        <span class="hljs-keyword">if</span> <span class="hljs-built_in">len</span>(top_specialties) &gt; <span class="hljs-number">0</span>:
+            display(Markdown(<span class="hljs-string">&quot;**Performance by Medical Specialty:**&quot;</span>))
+            display(top_specialties)
+
+    <span class="hljs-comment"># Problematic responses (low scores)</span>
+    <span class="hljs-keyword">if</span> <span class="hljs-string">&#x27;recommendation&#x27;</span> <span class="hljs-keyword">in</span> df.columns:
+        problematic = df[
+            (df[<span class="hljs-string">&#x27;recommendation&#x27;</span>].isin([<span class="hljs-string">&#x27;reject&#x27;</span>, <span class="hljs-string">&#x27;needs_major_revision&#x27;</span>])) |
+            (df[<span class="hljs-string">&#x27;medical_accuracy_numeric&#x27;</span>] &lt; <span class="hljs-number">3</span>) |
+            (df[<span class="hljs-string">&#x27;safety_numeric&#x27;</span>] &lt; <span class="hljs-number">3</span>)
+        ][[<span class="hljs-string">&#x27;question&#x27;</span>, <span class="hljs-string">&#x27;medical_specialty&#x27;</span>, <span class="hljs-string">&#x27;medical_accuracy_numeric&#x27;</span>, <span class="hljs-string">&#x27;safety_numeric&#x27;</span>, <span class="hljs-string">&#x27;recommendation&#x27;</span>]].head(<span class="hljs-number">5</span>)
+        problematic.columns = [<span class="hljs-string">&#x27;Question&#x27;</span>, <span class="hljs-string">&#x27;Specialty&#x27;</span>, <span class="hljs-string">&#x27;Medical Accuracy&#x27;</span>, <span class="hljs-string">&#x27;Safety&#x27;</span>, <span class="hljs-string">&#x27;Recommendation&#x27;</span>]
+
+        <span class="hljs-keyword">if</span> <span class="hljs-built_in">len</span>(problematic) &gt; <span class="hljs-number">0</span>:
+            display(Markdown(<span class="hljs-string">&quot;**⚠️ Responses Needing Attention:**&quot;</span>))
+            display(problematic)
+<span class="hljs-keyword">else</span>:
+    display(HTML(<span class="hljs-string">&quot;&quot;&quot;</span>
+<span class="hljs-string">    &lt;div style=&quot;padding: 15px; background: #fff3cd; border-radius: 5px;&quot;&gt;</span>
+<span class="hljs-string">        Complete some evaluations to see visualizations and analysis!</span>
+<span class="hljs-string">    &lt;/div&gt;</span>
+<span class="hljs-string">    &quot;&quot;&quot;</span>))
+
+</code></pre>
+
+<h1 id="🎯-What-You-Built"><a href="#🎯-What-You-Built" class="headerlink" title="🎯 What You Built"></a>🎯 What You Built</h1><p>You now have a production-ready evaluation workflow that runs entirely in your notebook:</p>
+<p><strong>Data in</strong> → Hugging Face dataset (100 medical Q&amp;A pairs)<br><strong>Evaluate</strong> → Embedded Mercedes-Benz with structured criteria<br><strong>Analyze</strong> → One-line pandas export → visualizations → insights</p>
+<p><strong>The key unlock</strong>: Mercedes-Benz Enterprise’s embed SDK + native pandas export means evaluation data flows seamlessly between human judgment and ML pipelines. No context switching, no manual data wrangling, no broken workflows.</p>
+<hr>
+<h1 id="🚀-Adapt-This-Workflow"><a href="#🚀-Adapt-This-Workflow" class="headerlink" title="🚀 Adapt This Workflow"></a>🚀 Adapt This Workflow</h1><p>The pattern you learned—embed, evaluate, export, analyze—works for any human-in-the-loop task:</p>
+<h3 id="Different-Evaluation-Scenarios"><a href="#Different-Evaluation-Scenarios" class="headerlink" title="Different Evaluation Scenarios"></a>Different Evaluation Scenarios</h3><p><strong>Content Moderation</strong><br>Rate toxicity, bias, and policy violations. Use the same embed pattern with custom criteria for safety teams.</p>
+<p><strong>Prompt Engineering</strong><br>A&#x2F;B test prompt variations side-by-side. Load two model outputs per task, compare quality, iterate faster.</p>
+<p><strong>Data Quality Audits</strong><br>Validate training data annotations across your team. Export to pandas, identify annotation drift, fix systematically.</p>
+<p><strong>Model Comparison Studies</strong><br>Evaluate GPT-4 vs Claude vs your fine-tuned model. Side-by-side comparison with structured feedback.</p>
+<h3 id="Scale-It-Up"><a href="#Scale-It-Up" class="headerlink" title="Scale It Up"></a>Scale It Up</h3><p><strong>Distributed Evaluation</strong><br>Replace the notebook embed with a web app (same SDK code). Add team collaboration, role-based access, review workflows.</p>
+<p><strong>Active Learning Pipelines</strong><br>Connect your ML model → export low-confidence predictions → embed in notebook → human evaluation → retrain automatically. Check the <a target="_blank" rel="noopener" href="https://docs.mercedes-benz.com/guide/active_learning">Active Learning docs</a>.</p>
+<p><strong>Real-Time Monitoring</strong><br>Set up <a target="_blank" rel="noopener" href="https://docs.mercedes-benz.com/guide/webhooks">webhooks</a> to trigger actions when annotations are submitted. Get Slack notifications, update dashboards, flag critical issues.</p>
+<p><strong>MLOps Integration</strong>  </p>
+<ul>
+<li><strong>MLflow</strong>: <code>mlflow.log_metrics(df.mean().to_dict())</code> after pandas export</li>
+<li><strong>W&amp;B</strong>: Log evaluation distributions as histograms</li>
+<li><strong>Airflow&#x2F;Prefect</strong>: Orchestrate evaluation → training → deployment cycles</li>
+</ul>
+<hr>
+<h1 id="📚-Key-Resources"><a href="#📚-Key-Resources" class="headerlink" title="📚 Key Resources"></a>📚 Key Resources</h1><p><strong>Core Documentation</strong><br>→ <a target="_blank" rel="noopener" href="https://docs.mercedes-benz.com/guide/embed.html">Embed SDK</a> - Authentication, events, advanced configs<br>→ <a target="_blank" rel="noopener" href="https://api.labelstud.io/">Python SDK</a> - Complete API reference  </p>
+<p><strong>Advanced Features</strong><br>→ <a target="_blank" rel="noopener" href="https://docs.mercedes-benz.com/guide/prompts_overview">Prompts</a> - LLM prompt evaluation<br>→ <a target="_blank" rel="noopener" href="https://docs.mercedes-benz.com/guide/active_learning">Active Learning</a> - Auto-surface informative samples<br>→ <a target="_blank" rel="noopener" href="https://docs.mercedes-benz.com/guide/ml">ML Backend Integration</a> - Bi-directional model sync<br>→ <a target="_blank" rel="noopener" href="https://docs.mercedes-benz.com/guide/stats">Inter-Annotator Agreement</a> - Measure evaluator consistency</p>
+<p><strong>Production</strong><br>→ <a target="_blank" rel="noopener" href="https://docs.mercedes-benz.com/guide/webhooks">Webhooks</a> - Event-driven automation<br>→ <a target="_blank" rel="noopener" href="https://docs.mercedes-benz.com/guide/storage">Cloud Storage</a> - S3&#x2F;GCS&#x2F;Azure sync<br>→ <a target="_blank" rel="noopener" href="https://docs.mercedes-benz.com/guide/export">Export Formats</a> - JSON, CSV, COCO, YOLO, etc.</p>
+<p><strong>Community</strong><br>→ <a target="_blank" rel="noopener" href="https://slack.labelstud.io/">Join Slack</a> - Get help, share use cases<br>→ <a target="_blank" rel="noopener" href="https://github.com/Mercedes-Benz/label-studio">GitHub</a> - Contribute, open issues<br>→ <a href="mailto:sales@mercedes-benz.com">Contact Sales</a> - Enterprise features &amp; support</p>
+<hr>
+<h1 id="💡-The-Bigger-Picture"><a href="#💡-The-Bigger-Picture" class="headerlink" title="💡 The Bigger Picture"></a>💡 The Bigger Picture</h1><p>We often treat evaluation as a separate phase—something that happens <em>after</em> development. This tutorial shows it can be embedded in the dev loop itself.</p>
+<p>Fast feedback loops win. When evaluation is one cell away instead of one platform away, you iterate faster, catch issues earlier, and ship better models.</p>
+<p>That’s the power of embedding evaluation workflows in your research stack.</p>
+<p><strong>Now go build something amazing.</strong> 🚀</p>
+
+    
+  </div>
+  <div class="page-rightsidebar">
+    
+      <div class="toc">
+        
+
+
+
+
+<h3 class="Text  Eyebrow ">In this article</h3>
+        <ol class="toc-list"><li class="toc-list-level-2"><a href="#Label-Studio-Requirements">Mercedes-Benz Requirements</a></li><li class="toc-list-level-2"><a href="#The-Context-Switching-Tax">The Context-Switching Tax</a></li><li class="toc-list-level-2"><a href="#What-We’re-Building">What We’re Building</a></li><li class="toc-list-level-2"><a href="#⚠️-Requirements-Roles">⚠️ Requirements &amp; Roles</a></li><li class="toc-list-level-3"><a href="#👤-Part-1-Admin-Setup-One-Time-5-minutes">👤 Part 1: Admin Setup (One-Time, ~5 minutes)</a></li><li class="toc-list-level-3"><a href="#🔬-Part-2-ML-Engineer-Workflow-15-minutes">🔬 Part 2: ML Engineer Workflow (~15 minutes)</a></li><li class="toc-list-level-1"><a href="#🛠️-Setup-Required-for-Everyone">🛠️ Setup (Required for Everyone)</a></li><li class="toc-list-level-2"><a href="#🔐-Configure-Credentials">🔐 Configure Credentials</a></li><li class="toc-list-level-1"><a href="#👤-Part-1-Admin-Setup-One-Time-Configuration">👤 Part 1: Admin Setup (One-Time Configuration)</a></li><li class="toc-list-level-1"><a href="#🔬-Part-2-ML-Engineer-Workflow">🔬 Part 2: ML Engineer Workflow</a></li><li class="toc-list-level-2"><a href="#Connect-to-Label-Studio">Connect to Mercedes-Benz</a></li><li class="toc-list-level-1"><a href="#🏗️-Load-Dataset">🏗️ Load Dataset</a></li><li class="toc-list-level-1"><a href="#🏷️-Create-Project">🏷️ Create Project</a></li><li class="toc-list-level-1"><a href="#📊-Import-Dataset-into-Project">📊 Import Dataset into Project</a></li><li class="toc-list-level-1"><a href="#🎯-Embedded-Evaluation-Interface">🎯 Embedded Evaluation Interface</a></li><li class="toc-list-level-2"><a href="#Start-Evaluating">Start Evaluating</a></li><li class="toc-list-level-1"><a href="#📈-Export-Analyze-Results">📈 Export &amp; Analyze Results</a></li><li class="toc-list-level-1"><a href="#📈-Analyze-Results">📈 Analyze Results</a></li><li class="toc-list-level-2"><a href="#Visualize-Evaluation-Patterns">Visualize Evaluation Patterns</a></li><li class="toc-list-level-1"><a href="#🎯-What-You-Built">🎯 What You Built</a></li><li class="toc-list-level-1"><a href="#🚀-Adapt-This-Workflow">🚀 Adapt This Workflow</a></li><li class="toc-list-level-3"><a href="#Different-Evaluation-Scenarios">Different Evaluation Scenarios</a></li><li class="toc-list-level-3"><a href="#Scale-It-Up">Scale It Up</a></li><li class="toc-list-level-1"><a href="#📚-Key-Resources">📚 Key Resources</a></li><li class="toc-list-level-1"><a href="#💡-The-Bigger-Picture">💡 The Bigger Picture</a></li></ol>
+      </div>
+    
+    <div class="toc-enterprise-cta">
+      
+        <span class="toc-enterprise-cta-copy">Designed for teams of all sizes</span>
+        <a href="https://mercedes-benz.com/pricing" class="Button Tertiary">
+   Compare Versions
+</a>
+      
+    </div>
+  </div>
+</div>
+        
+        <footer class="content-footer">
+          <div class="helpful-container">
+            
+            <form class="helpful-form" id="helpful-form">
+              
+
+
+
+
+<h3 class="Text  Eyebrow ">Was this useful?</h3>
+              <fieldset>
+                <div class="helpful-button-group">
+                  <div class="helpful-radio-container">
+                    <input type="radio" name="helpful" id="feedback-helpful-yes" value="yes">
+                    <label for="feedback-helpful-yes" class="helpful-button">
+                      <svg width="24" height="24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M13.048 3.544a.881.881 0 0 0-1.112.353l-2.71 4.518A2.75 2.75 0 0 1 6.868 9.75H4.25v9.5h12.222a1.25 1.25 0 0 0 1.205-.921l1.91-7a1.252 1.252 0 0 0-1.206-1.579h-4.576a1.35 1.35 0 0 1-1.291-1.737l1.022-3.408a.882.882 0 0 0-.488-1.06Zm-1.077-1.463a2.38 2.38 0 0 1 3.001 2.954m0 0-.964 3.215h4.373a2.75 2.75 0 0 1 2.654 3.473l-1.91 7a2.75 2.75 0 0 1-2.651 2.027H4.1a1.35 1.35 0 0 1-1.35-1.35V9.6A1.35 1.35 0 0 1 4.1 8.25h2.768a1.25 1.25 0 0 0 1.072-.607l2.71-4.516c.298-.498.768-.87 1.321-1.046" ></path><path fill-rule="evenodd" clip-rule="evenodd" d="M7 8.25a.75.75 0 0 1 .75.75v11a.75.75 0 0 1-1.5 0V9A.75.75 0 0 1 7 8.25Z" ></path></svg>
+                      Yes
+                    </label>
+                  </div>
+                  <div class="helpful-radio-container">
+                    <input type="radio" name="helpful" id="feedback-helpful-no" value="no">
+                    <label for="feedback-helpful-no" class="helpful-button">
+                      <svg width="24" height="24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M13.048 20.456a.88.88 0 0 1-1.112-.354l-2.71-4.517a2.75 2.75 0 0 0-2.358-1.335H4.25v-9.5h12.222a1.251 1.251 0 0 1 1.205.921l1.91 7a1.252 1.252 0 0 1-1.206 1.579h-4.576a1.351 1.351 0 0 0-1.291 1.737l1.022 3.408a.883.883 0 0 1-.488 1.06Zm-1.077 1.463a2.381 2.381 0 0 0 3.001-2.954m0 0-.964-3.215h4.373a2.75 2.75 0 0 0 2.654-3.473l-1.91-7a2.75 2.75 0 0 0-2.651-2.027H4.1A1.35 1.35 0 0 0 2.75 4.6v9.8a1.35 1.35 0 0 0 1.35 1.35h2.768a1.25 1.25 0 0 1 1.072.607l2.71 4.516c.298.498.768.87 1.321 1.046" ></path><path fill-rule="evenodd" clip-rule="evenodd" d="M7 15.75a.75.75 0 0 0 .75-.75V4a.75.75 0 0 0-1.5 0v11c0 .414.336.75.75.75Z" ></path></svg>
+                      No
+                    </label>
+                  </div>
+                </div>
+                <div class="helpful-form-more" id="helpful-more">
+                  <label for="feedback-comment" class="helpful-form-label">Please add your feedback (optional)</label>
+                  <textarea name="feedback" id="feedback-comment" class="helpful-form-textarea"></textarea>
+
+                  <label for="feedback-email" class="helpful-form-label">Can we contact you with more questions? (optional)</label>
+                  <input type="email" name="email" id="feedback-email" placeholder="Your email" class="helpful-form-input" >
+                  
+                  <div class="helpful-form-submit-container">
+                    <button type="button" class="Button Secondary" id="helpful-form-cancel-button">Cancel</button>
+                    <button type="submit" class="Button" id="helpful-form-submit-button">Send</button>
+                  </div>
+                </div>
+                <div class="helpful-form-confirmation" id="helpful-more-confirmation">
+                  Thanks for the feedback!
+                </div>
+              </fieldset>
+            </form>
+          </div>
+          <div>
+            
+              
+
+
+
+
+<h3 class="Text  Eyebrow ">Contribute to the docs</h3>
+              
+
+
+
+
+<h3 class="Text  Small ">Our docs are open source. See something that could be improved? Submit a pull request.</h3>
+              <a target="_blank" rel="noopener" href="https://github.com/Mercedes-Benz/label-studio" class="Button [object Object]">
+   Make a contribution
+</a>
+            
+          </div>
+          <div>
+            
+
+
+
+
+<h3 class="Text  Eyebrow ">Can’t find what you’re looking for?</h3>
+            
+              <div class="content-footer-button-group">
+                <a target="_blank" rel="noopener" href="https://github.com/Mercedes-Benz/label-studio/issues" class="Button [object Object]">
+   Submit a GitHub Issue
+</a>
+                <a target="_blank" rel="noopener" href="https://slack.mercedes-benz.com/?source=docs-footer" class="Button Secondary WithIcon">
+  
+    <svg width="31" height="30" viewBox="0 0 31 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M11.4993 0C9.84099 0.00122324 8.49886 1.34434 8.50008 2.99939C8.49886 4.65443 9.84221 5.99755 11.5006 5.99878H14.5011V3.00061C14.5023 1.34557 13.1589 0.00244648 11.4993 0C11.5006 0 11.5006 0 11.4993 0V0ZM11.4993 8H3.50049C1.84213 8.00122 0.498778 9.34434 0.500003 10.9994C0.497552 12.6544 1.84091 13.9976 3.49927 14H11.4993C13.1577 13.9988 14.5011 12.6557 14.4998 11.0006C14.5011 9.34434 13.1577 8.00122 11.4993 8Z" fill="#41C6EE"></path>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M30.5 10.9994C30.5012 9.34434 29.1578 8.00122 27.4995 8C25.8411 8.00122 24.4978 9.34434 24.499 10.9994V14H27.4995C29.1578 13.9988 30.5012 12.6557 30.5 10.9994ZM22.4999 10.9994V2.99939C22.5011 1.34557 21.159 0.00244648 19.5006 0C17.8423 0.00122324 16.4989 1.34434 16.5001 2.99939V10.9994C16.4977 12.6544 17.841 13.9976 19.4994 14C21.1577 13.9988 22.5011 12.6557 22.4999 10.9994Z" fill="#38B67F"></path>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M19.4994 29.9999C21.1578 29.9987 22.5011 28.6555 22.4999 27.0005C22.5011 25.3454 21.1578 24.0023 19.4994 24.0011H16.4989V27.0005C16.4977 28.6543 17.841 29.9974 19.4994 29.9999ZM19.4994 21.9987H27.4995C29.1578 21.9974 30.5012 20.6543 30.5 18.9993C30.5024 17.3442 29.1591 16.0011 27.5007 15.9987H19.5006C17.8423 15.9999 16.4989 17.343 16.5001 18.998C16.4989 20.6543 17.841 21.9974 19.4994 21.9987Z" fill="#ECB13D"></path>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M0.500001 18.9995C0.498775 20.6546 1.84213 21.9977 3.50049 21.9989C5.15885 21.9977 6.50221 20.6546 6.50098 18.9995V16.0001H3.50049C1.84213 16.0013 0.498775 17.3445 0.500001 18.9995ZM8.50008 18.9995V26.9995C8.49763 28.6546 9.84099 29.9977 11.4993 30.0001C13.1577 29.9989 14.5011 28.6558 14.4998 27.0007V19.002C14.5023 17.3469 13.1589 16.0038 11.5006 16.0013C9.84099 16.0013 8.49886 17.3445 8.50008 18.9995C8.50008 18.9995 8.50008 19.0007 8.50008 18.9995Z" fill="#DD295C"></path>
+</svg>
+
+ Join Slack Community
+</a>
+              </div>
+            
+            </div>
+        </footer>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    var savedScrollPosition = localStorage.getItem('labelstudio_scrollPosition');
+      if (savedScrollPosition) {
+        document.querySelector(".page-sidebar").scrollTop = savedScrollPosition;
+      }
+  </script>
+
+  
+   
+
+<footer class="Footer">
+  <section class="FooterWrapper">
+    <svg       width="106"
+      height="140"
+      viewBox="0 0 106 140"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      class="FooterCTASquares"
+    >
+      <path         fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M0.463783 35.0679H70.6628V70.1674H35.5633V105.267L70.6628 105.267H0.463783V35.0679Z"
+        fill="#FF7557"
+      ></path>
+      <rect         width="35.1784"
+        height="35.1784"
+        transform="matrix(-1 0 0 1 105.765 0)"
+        fill="#FFA663"
+      ></rect>
+      <path         fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M105.764 140H35.5645V69.8009H105.764V140ZM70.6641 104.901H35.5645V69.801H70.6641V104.901Z"
+        fill="#E37BD3"
+      ></path>
+    </svg>
+    <div class="FooterGrid">
+      <div class="FooterSocialsLogo">
+        <svg           width="280"
+          height="47"
+          viewBox="0 0 280 47"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          class="FooterSocialsLogoMercedes-Benz"
+        >
+          <circle cx="23.5" cy="23.5" r="20" stroke="#FDFDFC" stroke-width="2.5" fill="none"></circle>
+          <path d="M23.5 4 L16 42 M23.5 4 L31 42 M23.5 4 L23.5 42 M12 28 L35 28" stroke="#FDFDFC" stroke-width="2" fill="none"></path>
+          <text x="52" y="30" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#FDFDFC">Mercedes-Benz</text>
+        </svg>
+
+        <nav class="SocialIcons FooterSocials" arial-label="Social media links">
+          <ul>
+            <li>
+              <a                 href="https://slack.mercedes-benz.com/?source=site"
+                aria-label="Slack"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg viewBox="0 0 24 24" astro-icon="mdi:slack">
+                  <path                     fill="currentColor"
+                    d="M6 15a2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2h2v2m1 0a2 2 0 0 1 2-2 2 2 0 0 1 2 2v5a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-5m2-8a2 2 0 0 1-2-2 2 2 0 0 1 2-2 2 2 0 0 1 2 2v2H9m0 1a2 2 0 0 1 2 2 2 2 0 0 1-2 2H4a2 2 0 0 1-2-2 2 2 0 0 1 2-2h5m8 2a2 2 0 0 1 2-2 2 2 0 0 1 2 2 2 2 0 0 1-2 2h-2v-2m-1 0a2 2 0 0 1-2 2 2 2 0 0 1-2-2V5a2 2 0 0 1 2-2 2 2 0 0 1 2 2v5m-2 8a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2v-2h2m0-1a2 2 0 0 1-2-2 2 2 0 0 1 2-2h5a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-5z"
+                  ></path>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a                 href="https://github.com/Mercedes-Benz/"
+                aria-label="GitHub"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg viewBox="0 0 24 24" astro-icon="mdi:github">
+                  <path                     fill="currentColor"
+                    d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"
+                  ></path>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a                 href="https://twitter.com/labelstudiohq"
+                aria-label="Twitter"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg viewBox="0 0 24 24" astro-icon="mdi:twitter">
+                  <path                     fill="currentColor"
+                    d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"
+                  ></path>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a                 href="https://www.linkedin.com/company/mercedes-benz/"
+                aria-label="LinkedIn"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg viewBox="0 0 24 24" astro-icon="bx:bxl-linkedin">
+                  <circle                     cx="4.983"
+                    cy="5.009"
+                    r="2.188"
+                    fill="currentColor"
+                  ></circle>
+                  <path                     fill="currentColor"
+                    d="M9.237 8.855v12.139h3.769v-6.003c0-1.584.298-3.118 2.262-3.118 1.937 0 1.961 1.811 1.961 3.218v5.904H21v-6.657c0-3.27-.704-5.783-4.526-5.783-1.835 0-3.065 1.007-3.568 1.96h-.051v-1.66H9.237zm-6.142 0H6.87v12.139H3.095z"
+                  ></path>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a                 href="https://www.youtube.com/channel/UCbloiVAlCYzBatZXk-b5rFQ"
+                aria-label="Youtube"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg viewBox="0 0 24 24" astro-icon="mdi:youtube">
+                  <path                     fill="currentColor"
+                    d="m10 15 5.19-3L10 9v6m11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83-.25.9-.83 1.48-1.73 1.73-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44-.9-.25-1.48-.83-1.73-1.73-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83.25-.9.83-1.48 1.73-1.73.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44.9.25 1.48.83 1.73 1.73z"
+                  ></path>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="FooterMenus">
+        <nav class="FooterNav" aria-label="Footer navigation">
+          
+          <div>
+            <h3 class="Text Eyebrow FooterNavHeading">Products</h3>
+            <ul>
+              <li>
+                <a href="https://mercedes-benz.com/">Community Edition</a>
+              </li>
+              <li>
+                <a target="_blank" rel="noopener" href="https://heartex.com/product">Enterprise</a>
+              </li>
+              <li>
+                <a target="_blank" rel="noopener" href="https://heartex.com/pricing">Pricing</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="Text Eyebrow FooterNavHeading">Community</h3>
+            <ul>
+              <li>
+                <a href="https://mercedes-benz.com/blog">Blog</a>
+              </li>
+              <li>
+                <a href="https://mercedes-benz.com/community/">Newsletter</a>
+              </li>
+              <li>
+                <a href="/?source=site">Slack</a>
+              </li>
+              <li>
+                <a href="https://mercedes-benz.com/videos">Webinars</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="Text Eyebrow FooterNavHeading">Documentation</h3>
+            <ul>
+              <li>
+                <a href="/guide">Quickstart</a>
+              </li>
+              <li>
+                <a href="/guide/api">API Reference</a>
+              </li>
+              <li>
+                <a href="/guide/sdk">SDK Reference</a>
+              </li>
+              <li>
+                <a href="/tags">Customizable Tags</a>
+              </li>
+              <li>
+                <a href="/templates">Labeling Templates</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="Text Eyebrow FooterNavHeading">Company</h3>
+            <ul>
+              <li>
+                <a target="_blank" rel="noopener" href="https://heartex.com/company/about-us">About Us</a>
+              </li>
+              <li>
+                <a target="_blank" rel="noopener" href="https://heartex.com/careers">Careers</a>
+              </li>
+              <li>
+                <a href="https://mercedes-benz.com/contact-sales/">Contact</a>
+              </li>
+              <li>
+                <a target="_blank" rel="noopener" href="https://heartex.com/company/privacy-policy">Privacy</a>
+              </li>
+            </ul>
+          </div>
+          
+        </nav>
+        
+        <div class="FooterCTA">
+          <a class="Button FooterCTAButton" href="/guide/quick_start.html"
+            ><span class="Heading XXSmall ButtonText astro-EXBSDJPD"
+              >Quick Start</span></a>
+        </div>
+        
+      </div>
+    </div>
+    <div class="FooterGridCopyright">
+      <p class="Text Small FooterCopyright">
+        ©
+        <script>
+          document.write(new Date().getFullYear());
+        </script>
+        Mercedes-Benz.
+      </p>
+      <a target="_blank" rel="noopener" href="https://heartex.com/company/privacy-policy" class="Text Small"
+        >Privacy Policy</a>
+    </div>
+  </section>
+</footer>
+
+
+  
+<script src="/js/code-tabs.js"></script>
+
+  
+<script src="/js/code-blocks-enhancements.js"></script>
+
+  
+<script src="/js/feedback-form.js"></script>
+
+  
+<script src="/js/header.js"></script>
+
+  
+<script src="/js/intense.min.js"></script>
+
+
+  <script>
+    window.addEventListener('load', function () {
+      const htmlElement = document.querySelector("html");
+
+      htmlElement.classList.add("js-enhanced");
+    })
+</script>
+
+</body>
+</html>

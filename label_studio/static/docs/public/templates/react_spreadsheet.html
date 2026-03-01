@@ -1,0 +1,4953 @@
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  
+    
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-TZ3RQGX');</script>
+    
+  
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <title>Mercedes-Benz — Template for spreadsheet editing</title>
+  
+  <meta charset="utf-8">
+  <meta name="description" content="Template that uses a custom UI to edit a spreadsheet and then output any changes.">
+
+  <meta property="og:type" content="article">
+  
+  <meta property="og:title" content="Mercedes-Benz — Template for spreadsheet editing">
+  
+  <meta property="og:description" content="Template that uses a custom UI to edit a spreadsheet and then output any changes.">
+
+  <meta name="twitter:card" content="summary">
+  
+  <meta property="twitter:title" content="Mercedes-Benz — Template for spreadsheet editing">
+  
+  <meta name="twitter:description" content="Template that uses a custom UI to edit a spreadsheet and then output any changes.">
+
+  
+    <meta name="twitter:image" content="http://mercedes-benz.com/open-graph-image?title=Spreadsheet%20Editor%20%F0%9F%94%92&category=templates">
+    <meta property="og:image" content="http://mercedes-benz.com/open-graph-image?title=Spreadsheet%20Editor%20%F0%9F%94%92&category=templates">
+  
+
+  <meta name="msapplication-TileColor" content="#4fc08d">
+  <meta name="theme-color" content="#4fc08d">
+  
+  
+    <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" >
+  
+
+  <link rel="preload" href="/fonts/SpaceGrotesk-Bold-subset.woff2" as="font" type="font/woff2" crossorigin>
+
+  
+<link rel="stylesheet" href="/css/styles.css">
+
+
+  
+
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js" defer></script>
+
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ startOnLoad: true });
+  </script>
+
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+<body class="page-tier-opensource">
+  
+  
+
+  
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TZ3RQGX"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  
+
+  
+  
+
+
+
+  
+      <a target="_blank" rel="noopener" href="https://mercedes-benz.com/blog/new-pdf-ocr-document-ai-labeling-interface" class="Alert">
+        <span class="AlertContent">
+          <span class="Badge">New</span>
+          <span class="AlertText">Advanced PDF + OCR Interface for Document AI</span>
+          <svg fill="currentColor" viewBox="0 0 14 12"><path fill-rule="evenodd" d="m8.792.119 4.866 5.654-4.866 5.654-.948-.816 3.627-4.213H.54v-1.25h10.93L7.844.934l.948-.815Z" clip-rule="evenodd"></path></svg>
+        </span>
+      </a>
+
+
+<header class="page-header">
+  <div class="page-header-top-level">
+    <div class="page-header-logo">
+      <a href="/guide" class="HeaderLogo" arial-label="Homepage">
+        
+          <svg width="240" height="30" viewBox="0 0 240 30" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="15" cy="15" r="13.5" stroke="#12110D" stroke-width="2" fill="none"></circle><circle cx="15" cy="15" r="12" stroke="#12110D" stroke-width="0.5" fill="none"></circle><path d="M15,3 L13.8,15 L16.2,15 Z M4.61,21 L15.6,16.04 L14.4,13.96 Z M25.39,21 L15.6,13.96 L14.4,16.04 Z" fill="#12110D"></path><text x="34" y="20" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#12110D" letter-spacing="0.3">Mercedes-Benz Docs</text></svg>
+
+      </a>
+    </div>
+
+    <div class="AlgoliaSearch">
+      <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg" class="AlgoliaSearchIcon">
+        <path d="M8 16C9.77498 15.9996 11.4988 15.4054 12.897 14.312L17.293 18.708L18.707 17.294L14.311 12.898C15.405 11.4997 15.9996 9.77544 16 8C16 3.589 12.411 0 8 0C3.589 0 0 3.589 0 8C0 12.411 3.589 16 8 16ZM8 2C11.309 2 14 4.691 14 8C14 11.309 11.309 14 8 14C4.691 14 2 11.309 2 8C2 4.691 4.691 2 8 2Z" ></path>
+      </svg>
+      <input id="docsearch-input" placeholder="Search docs" data-site-version="opensource" >
+      <svg width="43" height="31" viewBox="0 0 43 31" fill="none" xmlns="http://www.w3.org/2000/svg" class="AlgoliaSearchCmdK">
+        <rect y="0.0457764" width="43" height="30" rx="15" fill="var(--cmd-k-background-color)"></rect>
+        <path d="M11.264 21.0458C9.776 21.0458 8.816 20.1018 8.816 18.6298C8.816 17.0778 9.744 16.1658 11.568 16.1658H12.512V14.4058H11.568C9.744 14.4058 8.816 13.4938 8.816 11.9418C8.816 10.4698 9.776 9.52578 11.264 9.52578C13.056 9.52578 13.632 10.6458 13.632 11.9898V13.3178H15.392V11.9898C15.392 10.6458 15.968 9.52578 17.76 9.52578C19.248 9.52578 20.208 10.4698 20.208 11.9418C20.208 13.4938 19.28 14.4058 17.456 14.4058H16.512V16.1658H17.456C19.28 16.1658 20.208 17.0778 20.208 18.6298C20.208 20.1018 19.248 21.0458 17.76 21.0458C15.968 21.0458 15.392 19.9258 15.392 18.5818V17.2538H13.632V18.5818C13.632 19.9258 13.056 21.0458 11.264 21.0458ZM16.512 11.9578V13.3178H17.456C18.592 13.3178 19.072 12.8538 19.072 11.9418C19.072 10.9978 18.512 10.6298 17.76 10.6298C16.928 10.6298 16.512 11.1418 16.512 11.9578ZM11.568 13.3178H12.512V11.9578C12.512 11.1418 12.096 10.6298 11.264 10.6298C10.512 10.6298 9.952 10.9978 9.952 11.9418C9.952 12.8538 10.432 13.3178 11.568 13.3178ZM13.632 16.1658H15.392V14.4058H13.632V16.1658ZM11.264 19.9418C12.096 19.9418 12.512 19.4298 12.512 18.6138V17.2538H11.568C10.432 17.2538 9.952 17.7178 9.952 18.6298C9.952 19.5738 10.512 19.9418 11.264 19.9418ZM16.512 18.6138C16.512 19.4298 16.928 19.9418 17.76 19.9418C18.512 19.9418 19.072 19.5738 19.072 18.6298C19.072 17.7178 18.592 17.2538 17.456 17.2538H16.512V18.6138ZM27.3546 15.4298V21.0458H26.1546V9.84578H27.3546V14.9338L32.3146 9.84578H33.8826L28.6346 15.1738L34.3626 21.0458H32.7466L27.3546 15.4298Z" fill="var(--cmd-k-icon-color)"></path>
+      </svg>        
+    </div>
+
+    <button class="hamburger-button" aria-label="Toggle Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <nav>
+      
+        
+  <ul class="page-sidebar-list">
+    
+    
+    
+    
+    
+
+    
+
+    
+
+    
+    
+      
+      
+      
+      <li>
+        <a href="/templates/index.html" class="" >
+          Template Gallery
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/get_started.html" class="" >
+          Get Started with Mercedes-Benz Templates
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+        </ul>
+          
+            <button>
+              Computer Vision
+              
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+          
+        <ul class="page-sidebar-list">
+      
+      
+      <li>
+        <a href="/templates/image_polygons.html" class="" >
+          Semantic Segmentation with Polygons
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/image_segmentation.html" class="" >
+          Semantic Segmentation with Masks
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/image_bbox.html" class="" >
+          Object Detection with Bounding Boxes
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/image_ellipse.html" class="" >
+          Object Detection with Ellipses
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/image_keypoints.html" class="" >
+          Keypoint Labeling
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/optical_character_recognition.html" class="" >
+          Optical Character Recognition (OCR)
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/pdf_ocr.html" class="" >
+          OCR Labeling for PDFs 🔒
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/multi-page-document-annotation.html" class="" >
+          Multi-Page Document Annotation
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/image_captioning.html" class="" >
+          Image Captioning
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/image_classification.html" class="" >
+          Image Classification
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/multi-image_classification.html" class="" >
+          Multi-Image Classification
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/visual_question_answering.html" class="" >
+          Visual Question Answering
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/inventory_tracking.html" class="" >
+          Inventory Tracking
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/visual_genome.html" class="" >
+          Visual Genome
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/medical_imaging_classification.html" class="" >
+          Medical Image Classification with Bounding Boxes
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+        </ul>
+          
+            <button>
+              Natural Language Processing
+              
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+          
+        <ul class="page-sidebar-list">
+      
+      
+      <li>
+        <a href="/templates/named_entity.html" class="" >
+          Named Entity Recognition
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/sentiment_analysis.html" class="" >
+          Sentiment Analysis Text Classification
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/taxonomy.html" class="" >
+          Taxonomy
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/relation_extraction.html" class="" >
+          Relation Extraction
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/text_summarization.html" class="" >
+          Text Summarization
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/machine_translation.html" class="" >
+          Machine Translation
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/question_answering.html" class="" >
+          Question Answering
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/content_moderation.html" class="" >
+          Content Moderation
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+        </ul>
+          
+            <button>
+              Audio/Speech Processing
+              
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+          
+        <ul class="page-sidebar-list">
+      
+      
+      <li>
+        <a href="/templates/contextual_scrolling.html" class="" >
+          Contextual Scrolling
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/transcribe_audio.html" class="" >
+          Automatic Speech Recognition
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/automatic_speech_recognition_segments.html" class="" >
+          Automatic Speech Recognition using Segments
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/signal_quality_detection.html" class="" >
+          Signal Quality Detection
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/sound_event_detection.html" class="" >
+          Sound Event Detection
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/voice_activity_detection.html" class="" >
+          Voice Activity Detection
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/speaker_segmentation.html" class="" >
+          Speaker Diarization
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/audio_classification.html" class="" >
+          Audio Classification
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/audio_regions.html" class="" >
+          Audio Classification with Segments
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/intent_classification.html" class="" >
+          Intent Classification
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+        </ul>
+          
+            <button>
+              Programmable Interfaces
+              
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+          
+        <ul class="page-sidebar-list">
+      
+      
+      <li>
+        <a href="/templates/react_spreadsheet.html" class=" new" aria-current="page">
+          Spreadsheet Editor 🔒
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/react_audio.html" class=" new" >
+          Multi-Channel Audio Transcription 🔒
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/react_claims.html" class=" new" >
+          Agentic Tracing for Claims 🔒
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+        </ul>
+          
+            <button>
+              Ranking and Scoring
+              
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+          
+        <ul class="page-sidebar-list">
+      
+      
+      <li>
+        <a href="/templates/generative-visual-ranker.html" class=" new" >
+          Visual Ranker
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/serp_ranking.html" class="" >
+          Search Page Ranking
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/website_rating.html" class="" >
+          Website Rating
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/pairwise_regression.html" class="" >
+          Pairwise Regression
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/pairwise_comparison.html" class="" >
+          Pairwise Classification
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/content_image_retrieval.html" class="" >
+          Content-based Image Retrieval
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/document_retrieval.html" class="" >
+          Document Retrieval
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/text_to_image.html" class="" >
+          Text-to-Image Generation
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/asr_hypotheses.html" class="" >
+          ASR Hypotheses Selection
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+        </ul>
+          
+            <button>
+              Structured Data Parsing
+              
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+          
+        <ul class="page-sidebar-list">
+      
+      
+      <li>
+        <a href="/templates/freeform_metadata.html" class="" >
+          Freeform Metadata
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/tabular_data.html" class="" >
+          Tabular Data
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/pdf_classification.html" class="" >
+          PDF Classification
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/html_document.html" class="" >
+          HTML Entity Recognition
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/html_classification.html" class="" >
+          HTML Classification
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+        </ul>
+          
+            <button>
+              Time Series Analysis
+              
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+          
+        <ul class="page-sidebar-list">
+      
+      
+      <li>
+        <a href="/templates/time_series.html" class="" >
+          Time Series Labeling
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/time_series_classification.html" class="" >
+          Time Series Classification
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/time_series_forecasting.html" class="" >
+          Time Series Forecasting
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/timeseries_audio_video.html" class="" >
+          Time Series Labeling with Audio and Video Synchronization
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/change_point_detection.html" class="" >
+          Change Point Detection
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/activity_recognition.html" class="" >
+          Activity Recognition
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/signal_quality.html" class="" >
+          Signal Quality
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/outliers_anomaly_detection.html" class="" >
+          Outliers and Anomaly Detection
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+        </ul>
+          
+            <button>
+              Videos
+              
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+          
+        <ul class="page-sidebar-list">
+      
+      
+      <li>
+        <a href="/templates/video_classification.html" class="" >
+          Video Classification
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/video_frame_classification.html" class=" new" >
+          Video Frame Classification
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/video_timeline_segmentation.html" class="" >
+          Video Timeline Segmentation
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/video_object_detector.html" class=" new" >
+          Video Object Detection and Tracking
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+        </ul>
+          
+            <button>
+              Conversational AI
+              
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+          
+        <ul class="page-sidebar-list">
+      
+      
+      <li>
+        <a href="/templates/response_generation.html" class="" >
+          Response Generation
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/response_selection.html" class="" >
+          Response Selection
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/coreference_entity_linking.html" class="" >
+          Coreference Resolution and Entity Linking
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/dialogue_analysis.html" class="" >
+          Dialogue Analysis
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/slot_filling.html" class="" >
+          Slot Filling and Intent Classification
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+        </ul>
+          
+            <button>
+              Chat
+              
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+          
+        <ul class="page-sidebar-list">
+      
+      
+      <li>
+        <a href="/templates/chatbot.html" class="" >
+          Chatbot Evaluation 🔒
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/chat_llm_eval.html" class="" >
+          Fine-Tune an Agent with an LLM 🔒
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/chat_eval.html" class="" >
+          Fine-tune an Agent without an LLM 🔒
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/chat_red_team.html" class="" >
+          Red-Teaming in Chat 🔒
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/chat_rlhf.html" class="" >
+          Evaluate Production Conversations for RLHF 🔒
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+        </ul>
+          
+            <button>
+              LLM Fine-tuning
+              
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+          
+        <ul class="page-sidebar-list">
+      
+      
+      <li>
+        <a href="/templates/generative-supervised-llm.html" class=" new" >
+          Supervised LLM Fine-Tuning
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/generative-pairwise-human-preference.html" class=" new" >
+          Human Preferences collection for RLHF
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/generative-llm-ranker.html" class=" new" >
+          RAG Retrieval
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+        </ul>
+          
+            <button>
+              LLM Evaluations
+              
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+          
+        <ul class="page-sidebar-list">
+      
+      
+      <li>
+        <a href="/templates/llm_response_moderation.html" class=" new" >
+          LLM Response Moderation
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/llm_response_grading.html" class=" new" >
+          LLM Response Grading
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/llm_side_by_side.html" class=" new" >
+          Side-by-Side LLM Output Comparison
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/llm_rag_human_feedback.html" class=" new" >
+          Evaluate RAG with Human Feedback
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/llm_ragas.html" class=" new" >
+          Evaluate RAG with Ragas
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/multi_turn_chat.html" class="" >
+          Multi-Turn Chat Evaluation
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+        </ul>
+          
+            <button>
+              Community Contributions
+              
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+          
+        <ul class="page-sidebar-list">
+      
+      
+      <li>
+        <a href="/templates/breast_cancer_mammogram_classification.html" class="" >
+          Breast Cancer Mammogram Classification
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/html_ner_tagging_person_and_organization.html" class="" >
+          HTML NER Tagging
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/ner_tagging_invoices_bio_format.html" class="" >
+          NER Tagging for Invoices (BIO Format)
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/ocr_invoices_pre_ner_bio_format.html" class="" >
+          OCR Invoices Pre-NER BIO Format
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/two_level_sentiment_analysis_of_x_twitter_posts.html" class="" >
+          Two-Level Sentiment Analysis of X / Twitter posts
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+        </ul>
+          
+            <button>
+              Template Galleries
+              
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+          
+        <ul class="page-sidebar-list">
+      
+      
+      <li>
+        <a href="/templates/gallery_cv.html" class="" >
+          Computer Vision
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/gallery_nlp.html" class="" >
+          Natural Language Processing
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/gallery_asr.html" class="" >
+          Audio/Speech Processing
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/gallery_rns.html" class="" >
+          Ranking & Scoring
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/gallery_data_parsing.html" class="" >
+          Structured Data Parsing
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/gallery_timeseries.html" class="" >
+          Time Series Analysis
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/gallery_videos.html" class="" >
+          Videos
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/gallery_react.html" class="" >
+          Programmable Interfaces with ReactCode
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/gallery_conversational_ai.html" class="" >
+          Conversational AI
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/gallery_chat.html" class="" >
+          Chat
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/gallery_generative_ai.html" class="" >
+          LLM Fine-tuning
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/gallery_llm_evals.html" class="" >
+          LLM Evaluations
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/gallery_community_contributions.html" class="" >
+          Community Contributions
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/gallery_dynamic_labels.html" class="" >
+          Dynamic Labels
+        </a>
+        
+        
+        
+        
+      </li>
+    
+    
+</ul>
+
+
+  <button>
+    Support
+    <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+    </svg>
+  </button>
+
+<ul class="page-sidebar-list">
+  
+  
+    <li>
+        <a href="/guide/troubleshooting">Troubleshooting</a>
+      </li>
+    <li>
+      <a href="https://github.com/Mercedes-Benz/label-studio/issues" target="_blank">GitHub Issues
+        <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-external-link">
+          <path d="M10.9002 9.29957L9.46026 9.30898L9.46026 3.34236L1.73377 11.0689L0.698549 10.0336L8.42504 2.30714L2.46783 2.31656L2.46783 0.867251L10.9001 0.867252L10.9002 9.29957Z" fill="#6D87F1"></path>
+        </svg>
+      </a>
+    </li>
+  
+  <li>
+    <a href="https://slack.mercedes-benz.com" target="_blank">Join Slack
+      <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-external-link">
+        <path d="M10.9002 9.29957L9.46026 9.30898L9.46026 3.34236L1.73377 11.0689L0.698549 10.0336L8.42504 2.30714L2.46783 2.31656L2.46783 0.867251L10.9001 0.867252L10.9002 9.29957Z" fill="#6D87F1"></path>
+      </svg>
+    </a>
+  </li>
+  
+    <li>
+      <a href="https://community.mercedes-benz.com/" target="_blank">Ask on Discourse
+        <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-external-link">
+          <path d="M10.9002 9.29957L9.46026 9.30898L9.46026 3.34236L1.73377 11.0689L0.698549 10.0336L8.42504 2.30714L2.46783 2.31656L2.46783 0.867251L10.9001 0.867252L10.9002 9.29957Z" fill="#6D87F1"></path>
+        </svg>
+      </a>
+    </li>
+  
+  <li>
+    <a href="https://mercedes-benz.com/contact-sales/" target="_blank">Contact Sales
+      <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-external-link">
+        <path d="M10.9002 9.29957L9.46026 9.30898L9.46026 3.34236L1.73377 11.0689L0.698549 10.0336L8.42504 2.30714L2.46783 2.31656L2.46783 0.867251L10.9001 0.867252L10.9002 9.29957Z" fill="#6D87F1"></path>
+      </svg>
+    </a>
+  </li>
+  
+</ul>
+
+
+
+  <button>
+    What's New
+    <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+    </svg>
+  </button>
+
+<ul class="page-sidebar-list">  
+    <li>
+      <a href="https://github.com/Mercedes-Benz/label-studio/releases" target="_blank">Release notes
+        <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-external-link">
+          <path d="M10.9002 9.29957L9.46026 9.30898L9.46026 3.34236L1.73377 11.0689L0.698549 10.0336L8.42504 2.30714L2.46783 2.31656L2.46783 0.867251L10.9001 0.867252L10.9002 9.29957Z" fill="#6D87F1"></path>
+        </svg>
+      </a>
+    </li>
+</ul>
+
+
+      
+      <ul class="page-header-main-nav">
+        
+          <li>
+            <a href="https://mercedes-benz.com/learn/">
+              Learn
+              <svg aria-hidden="true" width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg" class="page-header-chevron-icon"><path d="M1 0.5L5 4.5L9 0.5" stroke="#131522"></path></svg>
+            </a>
+            <button>
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+            <ul>
+              <li>
+                <a href="https://mercedes-benz.com/blog/">Blog</a>
+              </li>
+              <li>
+                <a href="https://mercedes-benz.com/videos/">Videos</a>
+              </li>
+              <li class="headerSeparator">
+                <a href="https://mercedes-benz.com/community/">
+                  Community
+                </a>
+              </li>
+              <li>
+                <a href="https://mercedes-benz.com/academic/">Academic Program</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="https://mercedes-benz.com/integrations">Integrations</a>
+          </li>
+          <li>
+            <a href="https://mercedes-benz.com/goenterprise" target="_blank" rel="noopener noreferrer">Enterprise</a>
+          </li>
+          <li>
+            <a href="https://github.com/Mercedes-Benz/label-studio/" class="github-stars" target="_blank" rel="noopener noreferrer">
+              <svg class="github-icon" viewBox="0 0 24 24" width="24" height="24"><path fill="black" d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"></path></svg>
+              
+
+
+
+
+<span class="Text github-stars-count Eyebrow "></span>
+            </a>
+          </li>
+          <li>
+            <a href="/guide/quick_start.html" class="Button [object Object]">
+   Quick start
+</a>
+          </li>
+          
+      </ul>
+    </nav>
+    </div>
+  
+  
+  
+    
+      <ul class="page-header-content-switcher">
+      
+          
+          <li><a href="/guide/" class="">Docs</a></li>
+          
+        
+          
+          <li><a href="/tutorials/" class="">Tutorials</a></li>
+          
+        
+          
+          <li><a href="/templates/" class="active">Templates</a></li>
+          
+        
+          
+        
+          
+          <li><a href="/tags/" class="">Tags</a></li>
+          
+        
+      <li>
+        <a href="https://api.mercedes-benz.com/api-reference/introduction/getting-started" target="_blank">
+          API
+          <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7.93006 6.05393L6.92213 6.06052L6.92213 1.88389L1.51359 7.29243L0.788936 6.56777L6.19748 1.15923L2.02743 1.16582L2.02743 0.151308L7.93006 0.151308L7.93006 6.05393Z" fill="#ffffff"></path>
+            </svg>            
+        </a>
+      </li>
+    </ul>
+    
+  
+</header>
+
+
+  <main class="page-type-templates">
+    
+      <aside class="page-sidebar">
+        
+  <ul class="page-sidebar-list">
+    
+    
+    
+    
+    
+
+    
+
+    
+
+    
+    
+      
+      
+      
+      <li>
+        <a href="/templates/index.html" class="" >
+          Template Gallery
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/get_started.html" class="" >
+          Get Started with Mercedes-Benz Templates
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+        </ul>
+          
+            <div class="toc-section-heading">
+              
+
+
+
+
+<h3 class="Text  Eyebrow ">Computer Vision</h3>
+              
+            </div>
+          
+        <ul class="page-sidebar-list">
+      
+      
+      <li>
+        <a href="/templates/image_polygons.html" class="" >
+          Semantic Segmentation with Polygons
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/image_segmentation.html" class="" >
+          Semantic Segmentation with Masks
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/image_bbox.html" class="" >
+          Object Detection with Bounding Boxes
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/image_ellipse.html" class="" >
+          Object Detection with Ellipses
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/image_keypoints.html" class="" >
+          Keypoint Labeling
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/optical_character_recognition.html" class="" >
+          Optical Character Recognition (OCR)
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/pdf_ocr.html" class="" >
+          OCR Labeling for PDFs 🔒
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/multi-page-document-annotation.html" class="" >
+          Multi-Page Document Annotation
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/image_captioning.html" class="" >
+          Image Captioning
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/image_classification.html" class="" >
+          Image Classification
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/multi-image_classification.html" class="" >
+          Multi-Image Classification
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/visual_question_answering.html" class="" >
+          Visual Question Answering
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/inventory_tracking.html" class="" >
+          Inventory Tracking
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/visual_genome.html" class="" >
+          Visual Genome
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/medical_imaging_classification.html" class="" >
+          Medical Image Classification with Bounding Boxes
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+        </ul>
+          
+            <div class="toc-section-heading">
+              
+
+
+
+
+<h3 class="Text  Eyebrow ">Natural Language Processing</h3>
+              
+            </div>
+          
+        <ul class="page-sidebar-list">
+      
+      
+      <li>
+        <a href="/templates/named_entity.html" class="" >
+          Named Entity Recognition
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/sentiment_analysis.html" class="" >
+          Sentiment Analysis Text Classification
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/taxonomy.html" class="" >
+          Taxonomy
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/relation_extraction.html" class="" >
+          Relation Extraction
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/text_summarization.html" class="" >
+          Text Summarization
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/machine_translation.html" class="" >
+          Machine Translation
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/question_answering.html" class="" >
+          Question Answering
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/content_moderation.html" class="" >
+          Content Moderation
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+        </ul>
+          
+            <div class="toc-section-heading">
+              
+
+
+
+
+<h3 class="Text  Eyebrow ">Audio/Speech Processing</h3>
+              
+            </div>
+          
+        <ul class="page-sidebar-list">
+      
+      
+      <li>
+        <a href="/templates/contextual_scrolling.html" class="" >
+          Contextual Scrolling
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/transcribe_audio.html" class="" >
+          Automatic Speech Recognition
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/automatic_speech_recognition_segments.html" class="" >
+          Automatic Speech Recognition using Segments
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/signal_quality_detection.html" class="" >
+          Signal Quality Detection
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/sound_event_detection.html" class="" >
+          Sound Event Detection
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/voice_activity_detection.html" class="" >
+          Voice Activity Detection
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/speaker_segmentation.html" class="" >
+          Speaker Diarization
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/audio_classification.html" class="" >
+          Audio Classification
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/audio_regions.html" class="" >
+          Audio Classification with Segments
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/intent_classification.html" class="" >
+          Intent Classification
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+        </ul>
+          
+            <div class="toc-section-heading">
+              
+
+
+
+
+<h3 class="Text  Eyebrow ">Programmable Interfaces</h3>
+              
+            </div>
+          
+        <ul class="page-sidebar-list">
+      
+      
+      <li>
+        <a href="/templates/react_spreadsheet.html" class=" new" aria-current="page">
+          Spreadsheet Editor 🔒
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/react_audio.html" class=" new" >
+          Multi-Channel Audio Transcription 🔒
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/react_claims.html" class=" new" >
+          Agentic Tracing for Claims 🔒
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+        </ul>
+          
+            <div class="toc-section-heading">
+              
+
+
+
+
+<h3 class="Text  Eyebrow ">Ranking and Scoring</h3>
+              
+            </div>
+          
+        <ul class="page-sidebar-list">
+      
+      
+      <li>
+        <a href="/templates/generative-visual-ranker.html" class=" new" >
+          Visual Ranker
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/serp_ranking.html" class="" >
+          Search Page Ranking
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/website_rating.html" class="" >
+          Website Rating
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/pairwise_regression.html" class="" >
+          Pairwise Regression
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/pairwise_comparison.html" class="" >
+          Pairwise Classification
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/content_image_retrieval.html" class="" >
+          Content-based Image Retrieval
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/document_retrieval.html" class="" >
+          Document Retrieval
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/text_to_image.html" class="" >
+          Text-to-Image Generation
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/asr_hypotheses.html" class="" >
+          ASR Hypotheses Selection
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+        </ul>
+          
+            <div class="toc-section-heading">
+              
+
+
+
+
+<h3 class="Text  Eyebrow ">Structured Data Parsing</h3>
+              
+            </div>
+          
+        <ul class="page-sidebar-list">
+      
+      
+      <li>
+        <a href="/templates/freeform_metadata.html" class="" >
+          Freeform Metadata
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/tabular_data.html" class="" >
+          Tabular Data
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/pdf_classification.html" class="" >
+          PDF Classification
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/html_document.html" class="" >
+          HTML Entity Recognition
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/html_classification.html" class="" >
+          HTML Classification
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+        </ul>
+          
+            <div class="toc-section-heading">
+              
+
+
+
+
+<h3 class="Text  Eyebrow ">Time Series Analysis</h3>
+              
+            </div>
+          
+        <ul class="page-sidebar-list">
+      
+      
+      <li>
+        <a href="/templates/time_series.html" class="" >
+          Time Series Labeling
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/time_series_classification.html" class="" >
+          Time Series Classification
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/time_series_forecasting.html" class="" >
+          Time Series Forecasting
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/timeseries_audio_video.html" class="" >
+          Time Series Labeling with Audio and Video Synchronization
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/change_point_detection.html" class="" >
+          Change Point Detection
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/activity_recognition.html" class="" >
+          Activity Recognition
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/signal_quality.html" class="" >
+          Signal Quality
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/outliers_anomaly_detection.html" class="" >
+          Outliers and Anomaly Detection
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+        </ul>
+          
+            <div class="toc-section-heading">
+              
+
+
+
+
+<h3 class="Text  Eyebrow ">Videos</h3>
+              
+            </div>
+          
+        <ul class="page-sidebar-list">
+      
+      
+      <li>
+        <a href="/templates/video_classification.html" class="" >
+          Video Classification
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/video_frame_classification.html" class=" new" >
+          Video Frame Classification
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/video_timeline_segmentation.html" class="" >
+          Video Timeline Segmentation
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/video_object_detector.html" class=" new" >
+          Video Object Detection and Tracking
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+        </ul>
+          
+            <div class="toc-section-heading">
+              
+
+
+
+
+<h3 class="Text  Eyebrow ">Conversational AI</h3>
+              
+            </div>
+          
+        <ul class="page-sidebar-list">
+      
+      
+      <li>
+        <a href="/templates/response_generation.html" class="" >
+          Response Generation
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/response_selection.html" class="" >
+          Response Selection
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/coreference_entity_linking.html" class="" >
+          Coreference Resolution and Entity Linking
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/dialogue_analysis.html" class="" >
+          Dialogue Analysis
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/slot_filling.html" class="" >
+          Slot Filling and Intent Classification
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+        </ul>
+          
+            <div class="toc-section-heading">
+              
+
+
+
+
+<h3 class="Text  Eyebrow ">Chat</h3>
+              
+            </div>
+          
+        <ul class="page-sidebar-list">
+      
+      
+      <li>
+        <a href="/templates/chatbot.html" class="" >
+          Chatbot Evaluation 🔒
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/chat_llm_eval.html" class="" >
+          Fine-Tune an Agent with an LLM 🔒
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/chat_eval.html" class="" >
+          Fine-tune an Agent without an LLM 🔒
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/chat_red_team.html" class="" >
+          Red-Teaming in Chat 🔒
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/chat_rlhf.html" class="" >
+          Evaluate Production Conversations for RLHF 🔒
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+        </ul>
+          
+            <div class="toc-section-heading">
+              
+
+
+
+
+<h3 class="Text  Eyebrow ">LLM Fine-tuning</h3>
+              
+            </div>
+          
+        <ul class="page-sidebar-list">
+      
+      
+      <li>
+        <a href="/templates/generative-supervised-llm.html" class=" new" >
+          Supervised LLM Fine-Tuning
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/generative-pairwise-human-preference.html" class=" new" >
+          Human Preferences collection for RLHF
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/generative-llm-ranker.html" class=" new" >
+          RAG Retrieval
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+        </ul>
+          
+            <div class="toc-section-heading">
+              
+
+
+
+
+<h3 class="Text  Eyebrow ">LLM Evaluations</h3>
+              
+            </div>
+          
+        <ul class="page-sidebar-list">
+      
+      
+      <li>
+        <a href="/templates/llm_response_moderation.html" class=" new" >
+          LLM Response Moderation
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/llm_response_grading.html" class=" new" >
+          LLM Response Grading
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/llm_side_by_side.html" class=" new" >
+          Side-by-Side LLM Output Comparison
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/llm_rag_human_feedback.html" class=" new" >
+          Evaluate RAG with Human Feedback
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/llm_ragas.html" class=" new" >
+          Evaluate RAG with Ragas
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/multi_turn_chat.html" class="" >
+          Multi-Turn Chat Evaluation
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+        </ul>
+          
+            <div class="toc-section-heading">
+              
+
+
+
+
+<h3 class="Text  Eyebrow ">Community Contributions</h3>
+              
+            </div>
+          
+        <ul class="page-sidebar-list">
+      
+      
+      <li>
+        <a href="/templates/breast_cancer_mammogram_classification.html" class="" >
+          Breast Cancer Mammogram Classification
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/html_ner_tagging_person_and_organization.html" class="" >
+          HTML NER Tagging
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/ner_tagging_invoices_bio_format.html" class="" >
+          NER Tagging for Invoices (BIO Format)
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/ocr_invoices_pre_ner_bio_format.html" class="" >
+          OCR Invoices Pre-NER BIO Format
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/two_level_sentiment_analysis_of_x_twitter_posts.html" class="" >
+          Two-Level Sentiment Analysis of X / Twitter posts
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+        </ul>
+          
+            <div class="toc-section-heading">
+              
+
+
+
+
+<h3 class="Text  Eyebrow ">Template Galleries</h3>
+              
+            </div>
+          
+        <ul class="page-sidebar-list">
+      
+      
+      <li>
+        <a href="/templates/gallery_cv.html" class="" >
+          Computer Vision
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/gallery_nlp.html" class="" >
+          Natural Language Processing
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/gallery_asr.html" class="" >
+          Audio/Speech Processing
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/gallery_rns.html" class="" >
+          Ranking & Scoring
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/gallery_data_parsing.html" class="" >
+          Structured Data Parsing
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/gallery_timeseries.html" class="" >
+          Time Series Analysis
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/gallery_videos.html" class="" >
+          Videos
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/gallery_react.html" class="" >
+          Programmable Interfaces with ReactCode
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/gallery_conversational_ai.html" class="" >
+          Conversational AI
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/gallery_chat.html" class="" >
+          Chat
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/gallery_generative_ai.html" class="" >
+          LLM Fine-tuning
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/gallery_llm_evals.html" class="" >
+          LLM Evaluations
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/gallery_community_contributions.html" class="" >
+          Community Contributions
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/templates/gallery_dynamic_labels.html" class="" >
+          Dynamic Labels
+        </a>
+        
+        
+        
+        
+      </li>
+    
+    
+</ul>
+
+
+  <div class="toc-section-heading">
+
+
+
+
+<h3 class="Text  Eyebrow ">Support</h3></div>
+
+<ul class="page-sidebar-list">
+  
+  
+    <li>
+        <a href="/guide/troubleshooting">Troubleshooting</a>
+      </li>
+    <li>
+      <a href="https://github.com/Mercedes-Benz/label-studio/issues" target="_blank">GitHub Issues
+        <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-external-link">
+          <path d="M10.9002 9.29957L9.46026 9.30898L9.46026 3.34236L1.73377 11.0689L0.698549 10.0336L8.42504 2.30714L2.46783 2.31656L2.46783 0.867251L10.9001 0.867252L10.9002 9.29957Z" fill="#6D87F1"></path>
+        </svg>
+      </a>
+    </li>
+  
+  <li>
+    <a href="https://slack.mercedes-benz.com" target="_blank">Join Slack
+      <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-external-link">
+        <path d="M10.9002 9.29957L9.46026 9.30898L9.46026 3.34236L1.73377 11.0689L0.698549 10.0336L8.42504 2.30714L2.46783 2.31656L2.46783 0.867251L10.9001 0.867252L10.9002 9.29957Z" fill="#6D87F1"></path>
+      </svg>
+    </a>
+  </li>
+  
+    <li>
+      <a href="https://community.mercedes-benz.com/" target="_blank">Ask on Discourse
+        <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-external-link">
+          <path d="M10.9002 9.29957L9.46026 9.30898L9.46026 3.34236L1.73377 11.0689L0.698549 10.0336L8.42504 2.30714L2.46783 2.31656L2.46783 0.867251L10.9001 0.867252L10.9002 9.29957Z" fill="#6D87F1"></path>
+        </svg>
+      </a>
+    </li>
+  
+  <li>
+    <a href="https://mercedes-benz.com/contact-sales/" target="_blank">Contact Sales
+      <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-external-link">
+        <path d="M10.9002 9.29957L9.46026 9.30898L9.46026 3.34236L1.73377 11.0689L0.698549 10.0336L8.42504 2.30714L2.46783 2.31656L2.46783 0.867251L10.9001 0.867252L10.9002 9.29957Z" fill="#6D87F1"></path>
+      </svg>
+    </a>
+  </li>
+  
+</ul>
+
+
+
+  <div class="toc-section-heading">
+
+
+
+
+<h3 class="Text  Eyebrow ">What&#39;s New</h3></div>
+
+<ul class="page-sidebar-list">  
+    <li>
+      <a href="https://github.com/Mercedes-Benz/label-studio/releases" target="_blank">Release notes
+        <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-external-link">
+          <path d="M10.9002 9.29957L9.46026 9.30898L9.46026 3.34236L1.73377 11.0689L0.698549 10.0336L8.42504 2.30714L2.46783 2.31656L2.46783 0.867251L10.9001 0.867252L10.9002 9.29957Z" fill="#6D87F1"></path>
+        </svg>
+      </a>
+    </li>
+</ul>
+
+
+      </aside>
+    
+    <div class="content">
+      
+        <svg width="50" height="50" viewBox="0 0 77 77" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="content-decoration">
+          <rect x="75.875" y="26" width="25" height="25" transform="rotate(-180 75.875 26)" stroke="#E1DED5" stroke-width="0.504975"></rect>
+          <rect x="50.875" y="51" width="25" height="25" transform="rotate(-180 50.875 51)" stroke="#E1DED5" stroke-width="0.504975"></rect>
+          <rect x="50.875" y="26" width="25" height="25" transform="rotate(-180 50.875 26)" fill="#FF7557"></rect>
+          <rect x="26" y="76" width="25" height="25" transform="rotate(-180 26 76)" stroke="#E1DED5" stroke-width="0.504975"></rect>
+          <rect x="26" y="51" width="25" height="25" transform="rotate(-180 26 51)" fill="#E37BD3"></rect>
+          <rect x="26" y="26" width="25" height="25" transform="rotate(-180 26 26)" fill="#FFA663"></rect>
+        </svg>
+      
+        
+      <div class="container">
+        
+
+
+
+
+
+
+
+<div class="content-grid">
+  <div class="content-markdown">
+    
+   
+      
+
+
+
+
+<h1 class="Heading home-page-title XLarge ">Spreadsheet Editor 🔒</h1>
+   
+   
+   
+    <p>This template creates a custom spreadsheet editor built with <code>ReactCode</code> and allows users to view, edit, and manage product data in a table format. </p>
+<p>The labeling interface provides a full-featured spreadsheet experience with capabilities that include:</p>
+<ul>
+<li>Adding and deleting rows and columns</li>
+<li>Filtering data across all columns or by specific columns</li>
+<li>Resizing column widths</li>
+<li>Reordering columns by dragging</li>
+<li>Editing individual cells</li>
+</ul>
+<p><img src="/images/templates-misc/react-spreadsheet.png" alt="Screenshot"></p>
+<div class="admonition error"><p class="admonition-title">Enterprise
+</p><p>This template and the <code>ReactCode</code> tag can only be used in Mercedes-Benz Enterprise.</p>
+<p>For more information, see <a target="_blank" rel="noopener" href="https://mercedes-benz.com/programmable-ui/">Programmable &amp; Embeddable Interfaces</a>.</p>
+</div>
+
+<h2 id="Labeling-configuration"><a href="#Labeling-configuration" class="headerlink" title="Labeling configuration"></a>Labeling configuration</h2><p>This labeling configuration creates a spreadsheet editor that tracks and exports only the changes made to the original data, rather than saving the entire spreadsheet state. </p>
+<p>The <code>ReactCode</code> follows a <strong>change-tracking pattern</strong> where:</p>
+<ol>
+<li>Original data is stored separately and never modified</li>
+<li>Changes (edits, additions, deletions) are tracked in a dedicated <code>changes</code> object</li>
+<li>Current view is computed by applying changes to the original data</li>
+<li>Exported region contains only the changes, not the full dataset</li>
+</ol>
+<details><summary><b>Click to expand</b></summary><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">View</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ReactCode</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;spreadsheet_editor&quot;</span> <span class="hljs-attr">toName</span>=<span class="hljs-string">&quot;spreadsheet_editor&quot;</span> <span class="hljs-attr">data</span>=<span class="hljs-string">&quot;$attributes_data&quot;</span>&gt;</span>
+&lt;![CDATA[
+(&#123; React, data, regions, addRegion &#125;) =&gt; &#123;
+  // Parse the data structure
+  const [spreadsheetData, setSpreadsheetData] = React.useState([]);
+  const [originalRows, setOriginalRows] = React.useState([]); // Store original data for comparison
+  const [columns, setColumns] = React.useState([]);
+  const [originalColumns, setOriginalColumns] = React.useState([]);
+  const [newColumnName, setNewColumnName] = React.useState(&#x27;&#x27;);
+  const [filterText, setFilterText] = React.useState(&#x27;&#x27;);
+  const [columnFilters, setColumnFilters] = React.useState(&#123;&#125;);
+  const [columnWidths, setColumnWidths] = React.useState(&#123;&#125;);
+  const [draggedColumn, setDraggedColumn] = React.useState(null);
+  const [editingCell, setEditingCell] = React.useState(null);
+  const [resizingColumn, setResizingColumn] = React.useState(null);
+  const [resizeStartX, setResizeStartX] = React.useState(0);
+  const [resizeStartWidth, setResizeStartWidth] = React.useState(0);
+
+  // Track changes separately - only this will be saved to regions
+  const [changes, setChanges] = React.useState(&#123;
+    cellEdits: [],      // Array of &#123;rowIndex, column, oldValue, newValue, productId&#125;
+    addedRows: [],      // Array of new row objects with temporary IDs
+    deletedRows: [],    // Array of &#123;productId, rowData&#125; for deleted rows
+    addedColumns: [],   // Array of new column names
+    deletedColumns: []  // Array of deleted column names
+  &#125;);
+
+  const defaultState = &#123;
+    changes: &#123;
+      cellEdits: [],
+      addedRows: [],
+      deletedRows: [],
+      addedColumns: [],
+      deletedColumns: []
+    &#125;
+  &#125;;
+
+  const state = regions[0]?.value ?? defaultState;
+  
+  // Initialize changes from existing region if present
+  React.useEffect(() =&gt; &#123;
+    if (regions[0]?.value?.changes) &#123;
+      setChanges(regions[0].value.changes);
+    &#125;
+  &#125;, [regions]);
+
+  // Helper function to extract data from nested structure
+  const extractRows = (data) =&gt; &#123;
+    try &#123;
+      const parsed = typeof data === &#x27;string&#x27; ? JSON.parse(data) : data;
+      
+      // Handle the nested structure: [&#123; data: &#123; attributes_data: [...] &#125; &#125;]
+      if (Array.isArray(parsed) &amp;&amp; parsed.length &gt; 0) &#123;
+        const firstItem = parsed[0];
+        if (firstItem.data &amp;&amp; Array.isArray(firstItem.data.attributes_data)) &#123;
+          return firstItem.data.attributes_data;
+        &#125;
+      &#125;
+      
+      // Handle direct array of rows
+      if (Array.isArray(parsed)) &#123;
+        return parsed;
+      &#125;
+      
+      // Handle object with attributes_data
+      if (parsed &amp;&amp; Array.isArray(parsed.attributes_data)) &#123;
+        return parsed.attributes_data;
+      &#125;
+      
+      // Handle object with data.attributes_data
+      if (parsed &amp;&amp; parsed.data &amp;&amp; Array.isArray(parsed.data.attributes_data)) &#123;
+        return parsed.data.attributes_data;
+      &#125;
+      
+      return [];
+    &#125; catch (e) &#123;
+      console.error(&#x27;Error parsing data:&#x27;, e);
+      return [];
+    &#125;
+  &#125;;
+
+  // Initialize data and columns
+  React.useEffect(() =&gt; &#123;
+    const rows = extractRows(data);
+    
+    if (rows.length &gt; 0) &#123;
+      setSpreadsheetData(rows);
+      // Store original rows for comparison (only on first load)
+      if (originalRows.length === 0) &#123;
+        setOriginalRows(JSON.parse(JSON.stringify(rows))); // Deep copy
+      &#125;
+      
+      // Extract all unique column names from all rows (including all_attributes)
+      const allColumns = new Set();
+      rows.forEach(row =&gt; &#123;
+        Object.keys(row).forEach(key =&gt; &#123;
+          allColumns.add(key); // Include all_attributes now
+        &#125;);
+      &#125;);
+      
+      const columnList = Array.from(allColumns);
+      
+      // Default columns if none exist
+      const defaultColumns = [
+        &#x27;product_id&#x27;,
+        &#x27;name&#x27;,
+        &#x27;norm_value&#x27;,
+        &#x27;current_value&#x27;,
+        &#x27;has_change&#x27;,
+        &#x27;rationales&#x27;,
+        &#x27;link&#x27;,
+        &#x27;all_attributes&#x27;
+      ];
+      
+      // Merge default columns with found columns, ensuring all_attributes is included
+      const mergedColumns = [...new Set([...defaultColumns, ...columnList])];
+      setColumns(mergedColumns);
+      setOriginalColumns(mergedColumns); // Track original columns
+      
+      // Initialize default column widths
+      const defaultWidths = &#123;
+        &#x27;product_id&#x27;: 120,
+        &#x27;name&#x27;: 200,
+        &#x27;norm_value&#x27;: 150,
+        &#x27;current_value&#x27;: 150,
+        &#x27;has_change&#x27;: 100,
+        &#x27;rationales&#x27;: 300,
+        &#x27;link&#x27;: 200,
+        &#x27;all_attributes&#x27;: 300
+      &#125;;
+      
+      // Initialize region if it doesn&#x27;t exist - only save empty changes object
+      if (!regions[0]) &#123;
+        addRegion(&#123;
+          changes: &#123;
+            cellEdits: [],
+            addedRows: [],
+            deletedRows: [],
+            addedColumns: [],
+            deletedColumns: []
+          &#125;
+        &#125;);
+        setColumnWidths(defaultWidths);
+      &#125; else &#123;
+        // Restore changes from existing region
+        const existingState = regions[0].value || &#123;&#125;;
+        if (existingState.changes) &#123;
+          setChanges(existingState.changes);
+        &#125;
+        const origCols = existingState.originalColumns || mergedColumns;
+        const existingWidths = existingState.columnWidths || &#123;&#125;;
+        const mergedWidths = &#123; ...defaultWidths, ...existingWidths &#125;;
+        setOriginalColumns(origCols);
+        setColumnWidths(mergedWidths);
+        setColumnFilters(existingState.columnFilters || &#123;&#125;);
+      &#125;
+    &#125; else &#123;
+      // Initialize with empty state
+      const defaultCols = [&#x27;product_id&#x27;, &#x27;name&#x27;, &#x27;norm_value&#x27;, &#x27;current_value&#x27;, &#x27;has_change&#x27;, &#x27;rationales&#x27;, &#x27;link&#x27;, &#x27;all_attributes&#x27;];
+      const defaultWidths = &#123;
+        &#x27;product_id&#x27;: 120,
+        &#x27;name&#x27;: 200,
+        &#x27;norm_value&#x27;: 150,
+        &#x27;current_value&#x27;: 150,
+        &#x27;has_change&#x27;: 100,
+        &#x27;rationales&#x27;: 300,
+        &#x27;link&#x27;: 200,
+        &#x27;all_attributes&#x27;: 300
+      &#125;;
+      setColumns(defaultCols);
+      setOriginalColumns(defaultCols);
+      setSpreadsheetData([]);
+      setColumnWidths(defaultWidths);
+      
+      if (!regions[0]) &#123;
+        addRegion(&#123;
+          changes: &#123;
+            cellEdits: [],
+            addedRows: [],
+            deletedRows: [],
+            addedColumns: [],
+            deletedColumns: []
+          &#125;
+        &#125;);
+      &#125;
+    &#125;
+  &#125;, [data]);
+
+  // Get current rows by applying changes to original rows
+  const currentRows = React.useMemo(() =&gt; &#123;
+    let rows = [...originalRows];
+    
+    // Remove deleted rows first
+    const deletedProductIds = new Set(changes.deletedRows.map(d =&gt; d.productId));
+    rows = rows.filter(row =&gt; !deletedProductIds.has(row.product_id));
+    
+    // Add new rows first
+    rows = [...rows, ...changes.addedRows];
+    
+    // Apply cell edits (using product_id or _tempId to find the row)
+    changes.cellEdits.forEach(edit =&gt; &#123;
+      const rowIndex = rows.findIndex(r =&gt; 
+        (r.product_id &amp;&amp; r.product_id === edit.productId) || 
+        (r._tempId &amp;&amp; r._tempId === edit.productId)
+      );
+      if (rowIndex &gt;= 0) &#123;
+        rows[rowIndex] = &#123; ...rows[rowIndex], [edit.column]: edit.newValue &#125;;
+      &#125;
+    &#125;);
+    
+    return rows;
+  &#125;, [originalRows, changes]);
+  
+  const currentColumns = state.columns &amp;&amp; state.columns.length &gt; 0 ? state.columns : columns;
+  const currentOriginalColumns = state.originalColumns &amp;&amp; state.originalColumns.length &gt; 0 ? state.originalColumns : originalColumns;
+  const currentColumnWidths = state.columnWidths || columnWidths;
+  const currentColumnFilters = state.columnFilters || columnFilters;
+  
+  // Helper function to save only changes to region
+  const saveChanges = (updatedChanges) =&gt; &#123;
+    const changesToSave = &#123;
+      changes: updatedChanges
+    &#125;;
+    
+    if (regions[0]) &#123;
+      regions[0].update(changesToSave);
+    &#125; else &#123;
+      addRegion(changesToSave);
+    &#125;
+    setChanges(updatedChanges);
+  &#125;;
+
+  // Filter rows based on filter text and column-specific filters
+  const filteredRows = React.useMemo(() =&gt; &#123;
+    let filtered = currentRows;
+    
+    // Apply global filter if present
+    if (filterText.trim()) &#123;
+      const searchText = filterText.toLowerCase();
+      filtered = filtered.filter(row =&gt; &#123;
+        return currentColumns.some(col =&gt; &#123;
+          const value = row[col];
+          if (value === null || value === undefined) return false;
+          const valueStr = typeof value === &#x27;object&#x27; ? JSON.stringify(value) : String(value);
+          return valueStr.toLowerCase().includes(searchText);
+        &#125;);
+      &#125;);
+    &#125;
+    
+    // Apply column-specific filters
+    const activeColumnFilters = Object.entries(currentColumnFilters).filter(([_, filterValue]) =&gt; filterValue &amp;&amp; filterValue.trim());
+    if (activeColumnFilters.length &gt; 0) &#123;
+      filtered = filtered.filter(row =&gt; &#123;
+        return activeColumnFilters.every(([colName, filterValue]) =&gt; &#123;
+          const value = row[colName];
+          if (value === null || value === undefined) return false;
+          const valueStr = typeof value === &#x27;object&#x27; ? JSON.stringify(value) : String(value);
+          return valueStr.toLowerCase().includes(filterValue.toLowerCase());
+        &#125;);
+      &#125;);
+    &#125;
+    
+    return filtered;
+  &#125;, [currentRows, filterText, currentColumns, currentColumnFilters]);
+
+  // Add new row
+  const addRow = () =&gt; &#123;
+    const newRow = &#123;&#125;;
+    currentColumns.forEach(col =&gt; &#123;
+      newRow[col] = &#x27;&#x27;;
+    &#125;);
+    // Add temporary ID for tracking
+    newRow._tempId = `temp_$&#123;Date.now()&#125;_$&#123;Math.random()&#125;`;
+    
+    const updatedChanges = &#123;
+      ...changes,
+      addedRows: [...changes.addedRows, newRow]
+    &#125;;
+    
+    saveChanges(updatedChanges);
+    setSpreadsheetData([...currentRows, newRow]);
+  &#125;;
+
+  // Delete row
+  const deleteRow = (rowIndex) =&gt; &#123;
+    const rowToDelete = currentRows[rowIndex];
+    
+    // Check if it&#x27;s a newly added row (has temp ID)
+    if (rowToDelete._tempId) &#123;
+      // Remove from addedRows
+      const updatedChanges = &#123;
+        ...changes,
+        addedRows: changes.addedRows.filter(r =&gt; r._tempId !== rowToDelete._tempId)
+      &#125;;
+      saveChanges(updatedChanges);
+    &#125; else &#123;
+      // It&#x27;s an original row - add to deletedRows
+      const updatedChanges = &#123;
+        ...changes,
+        deletedRows: [...changes.deletedRows, &#123;
+          productId: rowToDelete.product_id,
+          rowData: &#123; ...rowToDelete &#125;
+        &#125;]
+      &#125;;
+      saveChanges(updatedChanges);
+    &#125;
+    
+    const newRows = currentRows.filter((_, idx) =&gt; idx !== rowIndex);
+    setSpreadsheetData(newRows);
+  &#125;;
+
+  // Add new column
+  const addColumn = () =&gt; &#123;
+    if (!newColumnName.trim()) &#123;
+      alert(&#x27;Please enter a column name&#x27;);
+      return;
+    &#125;
+    
+    if (currentColumns.includes(newColumnName.trim())) &#123;
+      alert(&#x27;Column already exists&#x27;);
+      return;
+    &#125;
+    
+    const newCols = [...currentColumns, newColumnName.trim()];
+    
+    // Add empty value for this column to all existing rows
+    const newRows = currentRows.map(row =&gt; (&#123;
+      ...row,
+      [newColumnName.trim()]: &#x27;&#x27;
+    &#125;));
+    
+    // Add default width for new column
+    const newWidths = &#123; ...currentColumnWidths, [newColumnName.trim()]: 150 &#125;;
+    
+    // Track new column addition
+    const updatedChanges = &#123;
+      ...changes,
+      addedColumns: [...changes.addedColumns, newColumnName.trim()]
+    &#125;;
+    saveChanges(updatedChanges);
+    
+    setColumns(newCols);
+    setColumnWidths(newWidths);
+    setSpreadsheetData(newRows);
+    setNewColumnName(&#x27;&#x27;);
+  &#125;;
+
+  // Delete column (only for new columns)
+  const deleteColumn = (colName) =&gt; &#123;
+    // Check if it&#x27;s an original column
+    if (currentOriginalColumns.includes(colName)) &#123;
+      alert(&#x27;Cannot delete original columns. Only newly added columns can be deleted.&#x27;);
+      return;
+    &#125;
+    
+    if (currentColumns.length &lt;= 1) &#123;
+      alert(&#x27;Cannot delete the last column&#x27;);
+      return;
+    &#125;
+    
+    const newCols = currentColumns.filter(col =&gt; col !== colName);
+    const newRows = currentRows.map(row =&gt; &#123;
+      const newRow = &#123; ...row &#125;;
+      delete newRow[colName];
+      return newRow;
+    &#125;);
+    
+    // Remove width and filter for deleted column
+    const newWidths = &#123; ...currentColumnWidths &#125;;
+    delete newWidths[colName];
+    const newFilters = &#123; ...currentColumnFilters &#125;;
+    delete newFilters[colName];
+    
+    // Track column deletion
+    const updatedChanges = &#123;
+      ...changes,
+      deletedColumns: [...changes.deletedColumns, colName],
+      // Also remove any cell edits for this column
+      cellEdits: changes.cellEdits.filter(e =&gt; e.column !== colName)
+    &#125;;
+    saveChanges(updatedChanges);
+    
+    setColumns(newCols);
+    setColumnWidths(newWidths);
+    setColumnFilters(newFilters);
+    setSpreadsheetData(newRows);
+  &#125;;
+
+  // Update cell value
+  const updateCell = (rowIndex, colName, value) =&gt; &#123;
+    const row = currentRows[rowIndex];
+    const oldValue = row[colName];
+    const rowId = row.product_id || row._tempId;
+    
+    // Find original value for this cell
+    let originalValue = oldValue;
+    if (row.product_id &amp;&amp; !row._tempId) &#123;
+      // It&#x27;s an original row - find it in originalRows
+      const originalRow = originalRows.find(r =&gt; r.product_id === row.product_id);
+      if (originalRow) &#123;
+        originalValue = originalRow[colName];
+      &#125;
+    &#125;
+    
+    // Check if this is actually a change from original
+    const isNewRow = row._tempId !== undefined;
+    const isActualChange = !isNewRow &amp;&amp; JSON.stringify(originalValue) !== JSON.stringify(value);
+    
+    if (isNewRow || isActualChange) &#123;
+      // Check if we already have an edit for this cell (using productId/tempId)
+      const existingEditIndex = changes.cellEdits.findIndex(
+        e =&gt; e.productId === rowId &amp;&amp; e.column === colName
+      );
+      
+      let updatedEdits = [...changes.cellEdits];
+      if (existingEditIndex &gt;= 0) &#123;
+        // Update existing edit
+        updatedEdits[existingEditIndex] = &#123;
+          ...updatedEdits[existingEditIndex],
+          newValue: value
+        &#125;;
+      &#125; else &#123;
+        // Add new edit
+        updatedEdits.push(&#123;
+          column: colName,
+          oldValue: isNewRow ? oldValue : originalValue,
+          newValue: value,
+          productId: rowId
+        &#125;);
+      &#125;
+      
+      const updatedChanges = &#123;
+        ...changes,
+        cellEdits: updatedEdits
+      &#125;;
+      
+      saveChanges(updatedChanges);
+    &#125;
+    
+    const newRows = [...currentRows];
+    if (!newRows[rowIndex]) &#123;
+      newRows[rowIndex] = &#123;&#125;;
+    &#125;
+    newRows[rowIndex] = &#123; ...newRows[rowIndex], [colName]: value &#125;;
+    setSpreadsheetData(newRows);
+  &#125;;
+
+  // Handle column reordering
+  const handleColumnDragStart = (colIndex) =&gt; &#123;
+    setDraggedColumn(colIndex);
+  &#125;;
+
+  const handleColumnDragOver = (e, colIndex) =&gt; &#123;
+    e.preventDefault();
+    if (draggedColumn === null || draggedColumn === colIndex) return;
+    
+    const newColumns = [...currentColumns];
+    const draggedCol = newColumns[draggedColumn];
+    newColumns.splice(draggedColumn, 1);
+    newColumns.splice(colIndex, 0, draggedCol);
+    
+    setColumns(newColumns);
+    setDraggedColumn(colIndex);
+  &#125;;
+
+  const handleColumnDragEnd = () =&gt; &#123;
+    // Column reordering is UI-only, doesn&#x27;t need to be saved as a change
+    setDraggedColumn(null);
+  &#125;;
+
+  // Handle column width resizing
+  const handleResizeStart = (e, colName) =&gt; &#123;
+    e.preventDefault();
+    e.stopPropagation();
+    setResizingColumn(colName);
+    setResizeStartX(e.clientX);
+    setResizeStartWidth(currentColumnWidths[colName] || 150);
+  &#125;;
+
+  React.useEffect(() =&gt; &#123;
+    if (!resizingColumn) return;
+
+    const handleResize = (e) =&gt; &#123;
+      const diff = e.clientX - resizeStartX;
+      const newWidth = Math.max(50, resizeStartWidth + diff);
+      setColumnWidths(prev =&gt; (&#123; ...prev, [resizingColumn]: newWidth &#125;));
+    &#125;;
+
+    const handleResizeEnd = () =&gt; &#123;
+      // Column width resizing is UI-only, doesn&#x27;t need to be saved as a change
+      setResizingColumn(null);
+    &#125;;
+
+    document.addEventListener(&#x27;mousemove&#x27;, handleResize);
+    document.addEventListener(&#x27;mouseup&#x27;, handleResizeEnd);
+    document.body.style.cursor = &#x27;col-resize&#x27;;
+    document.body.style.userSelect = &#x27;none&#x27;;
+    
+    return () =&gt; &#123;
+      document.removeEventListener(&#x27;mousemove&#x27;, handleResize);
+      document.removeEventListener(&#x27;mouseup&#x27;, handleResizeEnd);
+      document.body.style.cursor = &#x27;&#x27;;
+      document.body.style.userSelect = &#x27;&#x27;;
+    &#125;;
+  &#125;, [resizingColumn, resizeStartX, resizeStartWidth, state, currentColumnFilters, regions]);
+
+  // Update column filter
+  const updateColumnFilter = (colName, filterValue) =&gt; &#123;
+    // Filtering is UI-only, doesn&#x27;t need to be saved as a change
+    const newFilters = &#123; ...currentColumnFilters, [colName]: filterValue &#125;;
+    setColumnFilters(newFilters);
+  &#125;;
+
+  // Handle submit
+  const handleSubmit = () =&gt; &#123;
+    // Final submission - save changes with metadata
+    const submission = &#123;
+      changes: &#123;
+        ...changes,
+        submittedAt: new Date().toISOString(),
+        submitted: true
+      &#125;
+    &#125;;
+    
+    if (regions[0]) &#123;
+      regions[0].update(submission);
+    &#125; else &#123;
+      addRegion(submission);
+    &#125;
+    
+    const changeCount = changes.cellEdits.length + changes.addedRows.length + changes.deletedRows.length;
+    alert(`Spreadsheet submitted successfully! $&#123;changeCount&#125; change(s) recorded.`);
+  &#125;;
+
+  // Styles
+  const containerStyle = &#123;
+    padding: &#x27;20px&#x27;,
+    fontFamily: &#x27;Arial, sans-serif&#x27;,
+    maxWidth: &#x27;100%&#x27;,
+    overflowX: &#x27;auto&#x27;
+  &#125;;
+
+  const headerStyle = &#123;
+    marginBottom: &#x27;20px&#x27;,
+    display: &#x27;flex&#x27;,
+    justifyContent: &#x27;space-between&#x27;,
+    alignItems: &#x27;center&#x27;,
+    flexWrap: &#x27;wrap&#x27;,
+    gap: &#x27;10px&#x27;
+  &#125;;
+
+  const titleStyle = &#123;
+    fontSize: &#x27;24px&#x27;,
+    fontWeight: &#x27;bold&#x27;,
+    color: &#x27;#333&#x27;,
+    margin: 0
+  &#125;;
+
+  const buttonStyle = &#123;
+    padding: &#x27;10px 20px&#x27;,
+    fontSize: &#x27;14px&#x27;,
+    fontWeight: &#x27;bold&#x27;,
+    border: &#x27;none&#x27;,
+    borderRadius: &#x27;6px&#x27;,
+    cursor: &#x27;pointer&#x27;,
+    marginRight: &#x27;10px&#x27;,
+    backgroundColor: &#x27;#2196F3&#x27;,
+    color: &#x27;white&#x27;
+  &#125;;
+
+  const addColumnStyle = &#123;
+    ...buttonStyle,
+    backgroundColor: &#x27;#4CAF50&#x27;
+  &#125;;
+
+  const deleteButtonStyle = &#123;
+    ...buttonStyle,
+    backgroundColor: &#x27;#f44336&#x27;,
+    padding: &#x27;5px 10px&#x27;,
+    fontSize: &#x27;12px&#x27;,
+    marginRight: &#x27;5px&#x27;
+  &#125;;
+
+  const submitButtonStyle = &#123;
+    ...buttonStyle,
+    backgroundColor: &#x27;#4CAF50&#x27;,
+    fontSize: &#x27;16px&#x27;,
+    padding: &#x27;12px 24px&#x27;
+  &#125;;
+
+  const tableContainerStyle = &#123;
+    overflowX: &#x27;auto&#x27;,
+    border: &#x27;1px solid #ddd&#x27;,
+    borderRadius: &#x27;8px&#x27;,
+    marginBottom: &#x27;20px&#x27;
+  &#125;;
+
+  const tableStyle = &#123;
+    width: &#x27;100%&#x27;,
+    borderCollapse: &#x27;collapse&#x27;,
+    backgroundColor: &#x27;white&#x27;,
+    minWidth: &#x27;800px&#x27;
+  &#125;;
+
+  const thStyle = &#123;
+    backgroundColor: &#x27;#f5f5f5&#x27;,
+    padding: &#x27;12px&#x27;,
+    textAlign: &#x27;left&#x27;,
+    borderBottom: &#x27;2px solid #ddd&#x27;,
+    borderRight: &#x27;1px solid #ddd&#x27;,
+    fontWeight: &#x27;bold&#x27;,
+    color: &#x27;#333&#x27;,
+    position: &#x27;sticky&#x27;,
+    top: 0,
+    zIndex: 10
+  &#125;;
+
+  const tdStyle = &#123;
+    padding: &#x27;10px&#x27;,
+    borderBottom: &#x27;1px solid #eee&#x27;,
+    borderRight: &#x27;1px solid #eee&#x27;,
+    fontSize: &#x27;14px&#x27;
+  &#125;;
+
+  const inputStyle = &#123;
+    width: &#x27;100%&#x27;,
+    padding: &#x27;8px&#x27;,
+    border: &#x27;1px solid #ccc&#x27;,
+    borderRadius: &#x27;4px&#x27;,
+    fontSize: &#x27;14px&#x27;,
+    boxSizing: &#x27;border-box&#x27;
+  &#125;;
+
+  const textareaStyle = &#123;
+    ...inputStyle,
+    minHeight: &#x27;60px&#x27;,
+    resize: &#x27;vertical&#x27;,
+    fontFamily: &#x27;inherit&#x27;
+  &#125;;
+
+  const addColumnContainerStyle = &#123;
+    display: &#x27;flex&#x27;,
+    gap: &#x27;10px&#x27;,
+    alignItems: &#x27;center&#x27;,
+    marginBottom: &#x27;20px&#x27;,
+    padding: &#x27;15px&#x27;,
+    backgroundColor: &#x27;#f9f9f9&#x27;,
+    borderRadius: &#x27;6px&#x27;
+  &#125;;
+
+  const columnInputStyle = &#123;
+    padding: &#x27;8px&#x27;,
+    border: &#x27;1px solid #ccc&#x27;,
+    borderRadius: &#x27;4px&#x27;,
+    fontSize: &#x27;14px&#x27;,
+    flex: &#x27;1&#x27;,
+    maxWidth: &#x27;300px&#x27;
+  &#125;;
+
+  const rowActionsStyle = &#123;
+    display: &#x27;flex&#x27;,
+    gap: &#x27;5px&#x27;
+  &#125;;
+
+  const emptyStateStyle = &#123;
+    textAlign: &#x27;center&#x27;,
+    padding: &#x27;40px&#x27;,
+    color: &#x27;#999&#x27;
+  &#125;;
+
+  const filterContainerStyle = &#123;
+    marginBottom: &#x27;20px&#x27;,
+    padding: &#x27;15px&#x27;,
+    backgroundColor: &#x27;#f9f9f9&#x27;,
+    borderRadius: &#x27;6px&#x27;,
+    display: &#x27;flex&#x27;,
+    gap: &#x27;10px&#x27;,
+    alignItems: &#x27;center&#x27;
+  &#125;;
+
+  const filterInputStyle = &#123;
+    padding: &#x27;10px&#x27;,
+    border: &#x27;1px solid #ccc&#x27;,
+    borderRadius: &#x27;4px&#x27;,
+    fontSize: &#x27;14px&#x27;,
+    flex: &#x27;1&#x27;,
+    maxWidth: &#x27;400px&#x27;
+  &#125;;
+
+  return React.createElement(&quot;div&quot;, &#123; style: containerStyle &#125;,
+    // Header
+    React.createElement(&quot;div&quot;, &#123; style: headerStyle &#125;,
+      React.createElement(&quot;h1&quot;, &#123; style: titleStyle &#125;, &quot;Spreadsheet Editor&quot;),
+      React.createElement(&quot;div&quot;, &#123;&#125;,
+        React.createElement(&quot;button&quot;, &#123;
+          onClick: addRow,
+          style: buttonStyle
+        &#125;, &quot;+ Add Row&quot;),
+        React.createElement(&quot;button&quot;, &#123;
+          onClick: handleSubmit,
+          style: submitButtonStyle
+        &#125;, &quot;Submit&quot;)
+      )
+    ),
+
+    // Filter Section
+    currentRows.length &gt; 0 &amp;&amp; React.createElement(&quot;div&quot;, &#123; style: filterContainerStyle &#125;,
+      React.createElement(&quot;label&quot;, &#123; style: &#123; fontWeight: &#x27;bold&#x27;, fontSize: &#x27;14px&#x27;, color: &#x27;#555&#x27; &#125; &#125;, &quot;Global Filter:&quot;),
+      React.createElement(&quot;input&quot;, &#123;
+        type: &quot;text&quot;,
+        value: filterText,
+        onChange: (e) =&gt; setFilterText(e.target.value),
+        placeholder: &quot;Search across all columns...&quot;,
+        style: filterInputStyle
+      &#125;),
+      filterText &amp;&amp; React.createElement(&quot;button&quot;, &#123;
+        onClick: () =&gt; setFilterText(&#x27;&#x27;),
+        style: &#123; ...buttonStyle, backgroundColor: &#x27;#999&#x27;, padding: &#x27;10px 15px&#x27; &#125;
+      &#125;, &quot;Clear&quot;)
+    ),
+
+    // Add Column Section
+    React.createElement(&quot;div&quot;, &#123; style: addColumnContainerStyle &#125;,
+      React.createElement(&quot;input&quot;, &#123;
+        type: &quot;text&quot;,
+        value: newColumnName,
+        onChange: (e) =&gt; setNewColumnName(e.target.value),
+        placeholder: &quot;Enter new column name&quot;,
+        style: columnInputStyle,
+        onKeyPress: (e) =&gt; &#123;
+          if (e.key === &#x27;Enter&#x27;) &#123;
+            addColumn();
+          &#125;
+        &#125;
+      &#125;),
+      React.createElement(&quot;button&quot;, &#123;
+        onClick: addColumn,
+        style: addColumnStyle
+      &#125;, &quot;+ Add Column&quot;)
+    ),
+
+    // Spreadsheet Table
+    currentRows.length &gt; 0 ? React.createElement(&quot;div&quot;, &#123; style: tableContainerStyle &#125;,
+      React.createElement(&quot;table&quot;, &#123; style: tableStyle &#125;,
+        // Header Row
+        React.createElement(&quot;thead&quot;, &#123;&#125;,
+          React.createElement(&quot;tr&quot;, &#123;&#125;,
+            React.createElement(&quot;th&quot;, &#123; style: &#123; ...thStyle, width: &#x27;80px&#x27; &#125; &#125;, &quot;Actions&quot;),
+            currentColumns.map((col, colIdx) =&gt;
+              React.createElement(&quot;th&quot;, &#123; 
+                key: colIdx, 
+                style: &#123; 
+                  ...thStyle, 
+                  width: currentColumnWidths[col] || 150,
+                  minWidth: currentColumnWidths[col] || 150,
+                  maxWidth: currentColumnWidths[col] || 150,
+                  position: &#x27;relative&#x27;,
+                  userSelect: &#x27;none&#x27;,
+                  opacity: draggedColumn === colIdx ? 0.5 : 1,
+                  backgroundColor: draggedColumn === colIdx ? &#x27;#e3f2fd&#x27; : thStyle.backgroundColor
+                &#125;,
+                draggable: true,
+                onDragStart: () =&gt; handleColumnDragStart(colIdx),
+                onDragOver: (e) =&gt; handleColumnDragOver(e, colIdx),
+                onDragEnd: handleColumnDragEnd
+              &#125;,
+                React.createElement(&quot;div&quot;, &#123; style: &#123; display: &#x27;flex&#x27;, flexDirection: &#x27;column&#x27;, gap: &#x27;5px&#x27; &#125; &#125;,
+                  // Column header with drag handle
+                  React.createElement(&quot;div&quot;, &#123; style: &#123; display: &#x27;flex&#x27;, justifyContent: &#x27;space-between&#x27;, alignItems: &#x27;center&#x27; &#125; &#125;,
+                    React.createElement(&quot;div&quot;, &#123; style: &#123; display: &#x27;flex&#x27;, alignItems: &#x27;center&#x27;, gap: &#x27;5px&#x27;, flex: 1, cursor: &#x27;move&#x27; &#125; &#125;,
+                      React.createElement(&quot;span&quot;, &#123; style: &#123; fontSize: &#x27;10px&#x27;, color: &#x27;#999&#x27;, cursor: &#x27;grab&#x27; &#125; &#125;, &quot;⋮⋮&quot;),
+                      React.createElement(&quot;span&quot;, &#123;&#125;, col)
+                    ),
+                    // Only show delete button for new columns (not original columns)
+                    !currentOriginalColumns.includes(col) &amp;&amp; React.createElement(&quot;button&quot;, &#123;
+                      onClick: () =&gt; deleteColumn(col),
+                      style: &#123; ...deleteButtonStyle, padding: &#x27;2px 8px&#x27;, fontSize: &#x27;10px&#x27; &#125;,
+                      title: &quot;Delete column&quot;
+                    &#125;, &quot;×&quot;)
+                  ),
+                  // Column filter input
+                  React.createElement(&quot;input&quot;, &#123;
+                    type: &quot;text&quot;,
+                    value: currentColumnFilters[col] || &#x27;&#x27;,
+                    onChange: (e) =&gt; updateColumnFilter(col, e.target.value),
+                    placeholder: `Filter $&#123;col&#125;...`,
+                    style: &#123;
+                      padding: &#x27;4px 8px&#x27;,
+                      border: &#x27;1px solid #ccc&#x27;,
+                      borderRadius: &#x27;4px&#x27;,
+                      fontSize: &#x27;12px&#x27;,
+                      width: &#x27;100%&#x27;,
+                      boxSizing: &#x27;border-box&#x27;
+                    &#125;,
+                    onClick: (e) =&gt; e.stopPropagation()
+                  &#125;)
+                ),
+                // Resize handle
+                React.createElement(&quot;div&quot;, &#123;
+                  onMouseDown: (e) =&gt; handleResizeStart(e, col),
+                  style: &#123;
+                    position: &#x27;absolute&#x27;,
+                    right: 0,
+                    top: 0,
+                    bottom: 0,
+                    width: &#x27;5px&#x27;,
+                    cursor: &#x27;col-resize&#x27;,
+                    backgroundColor: resizingColumn === col ? &#x27;#2196F3&#x27; : &#x27;transparent&#x27;,
+                    zIndex: 20
+                  &#125;,
+                  title: &quot;Drag to resize column&quot;
+                &#125;)
+              )
+            )
+          )
+        ),
+        // Data Rows (using filtered rows)
+        React.createElement(&quot;tbody&quot;, &#123;&#125;,
+          filteredRows.map((row, filteredIdx) =&gt; &#123;
+            // Find the actual index in currentRows by matching the row object reference or key fields
+            let actualRowIndex = currentRows.findIndex(r =&gt; r === row);
+            
+            // If reference match fails, try matching by key fields
+            if (actualRowIndex &lt; 0 &amp;&amp; row.product_id &amp;&amp; row.name) &#123;
+              actualRowIndex = currentRows.findIndex(r =&gt; 
+                r.product_id === row.product_id &amp;&amp; r.name === row.name
+              );
+            &#125;
+            
+            // Final fallback: use filtered index (shouldn&#x27;t happen in normal cases)
+            const rowIdx = actualRowIndex &gt;= 0 ? actualRowIndex : filteredIdx;
+            
+            return React.createElement(&quot;tr&quot;, &#123; key: filteredIdx &#125;,
+              // Actions column
+              React.createElement(&quot;td&quot;, &#123; style: tdStyle &#125;,
+                React.createElement(&quot;div&quot;, &#123; style: rowActionsStyle &#125;,
+                  React.createElement(&quot;button&quot;, &#123;
+                    onClick: () =&gt; deleteRow(rowIdx),
+                    style: deleteButtonStyle,
+                    title: &quot;Delete row&quot;
+                  &#125;, &quot;Delete&quot;)
+                )
+              ),
+              // Data cells
+              currentColumns.map((col, colIdx) =&gt; &#123;
+                let cellValue = row[col];
+                // Handle all_attributes field - display as JSON
+                if (col === &#x27;all_attributes&#x27;) &#123;
+                  if (cellValue === null || cellValue === undefined) &#123;
+                    cellValue = &#x27;&#x27;;
+                  &#125; else if (typeof cellValue === &#x27;object&#x27;) &#123;
+                    cellValue = JSON.stringify(cellValue, null, 2);
+                  &#125; else &#123;
+                    cellValue = String(cellValue);
+                  &#125;
+                &#125; else &#123;
+                  cellValue = cellValue || &#x27;&#x27;;
+                &#125;
+                const isEditing = editingCell &amp;&amp; editingCell.row === rowIdx &amp;&amp; editingCell.col === col;
+                
+                return React.createElement(&quot;td&quot;, &#123; 
+                  key: colIdx, 
+                  style: &#123; 
+                    ...tdStyle, 
+                    width: currentColumnWidths[col] || 150,
+                    minWidth: currentColumnWidths[col] || 150,
+                    maxWidth: currentColumnWidths[col] || 150
+                  &#125; 
+                &#125;,
+                  (col === &#x27;rationales&#x27; || col === &#x27;all_attributes&#x27;) ? (
+                    React.createElement(&quot;textarea&quot;, &#123;
+                      value: typeof cellValue === &#x27;object&#x27; ? JSON.stringify(cellValue, null, 2) : (cellValue || &#x27;&#x27;),
+                      onChange: (e) =&gt; &#123;
+                        if (col === &#x27;all_attributes&#x27;) &#123;
+                          try &#123;
+                            const parsed = JSON.parse(e.target.value);
+                            updateCell(rowIdx, col, parsed);
+                          &#125; catch (err) &#123;
+                            updateCell(rowIdx, col, e.target.value);
+                          &#125;
+                        &#125; else &#123;
+                          try &#123;
+                            const parsed = JSON.parse(e.target.value);
+                            updateCell(rowIdx, col, parsed);
+                          &#125; catch (err) &#123;
+                            updateCell(rowIdx, col, e.target.value);
+                          &#125;
+                        &#125;
+                      &#125;,
+                      style: textareaStyle,
+                      placeholder: &quot;Enter value&quot;
+                    &#125;)
+                  ) : (
+                    React.createElement(&quot;input&quot;, &#123;
+                      type: &quot;text&quot;,
+                      value: cellValue || &#x27;&#x27;,
+                      onChange: (e) =&gt; updateCell(rowIdx, col, e.target.value),
+                      style: inputStyle,
+                      placeholder: &quot;Enter value&quot;
+                    &#125;)
+                  )
+                );
+              &#125;)
+            );
+          &#125;)
+        )
+      )
+    ) : React.createElement(&quot;div&quot;, &#123; style: emptyStateStyle &#125;,
+      currentRows.length === 0 ? (
+        React.createElement(React.Fragment, &#123;&#125;,
+          React.createElement(&quot;p&quot;, &#123; style: &#123; fontSize: &#x27;18px&#x27;, marginBottom: &#x27;10px&#x27; &#125; &#125;, &quot;No data available&quot;),
+          React.createElement(&quot;p&quot;, &#123; style: &#123; fontSize: &#x27;14px&#x27;, color: &#x27;#999&#x27; &#125; &#125;, &quot;Click &#x27;Add Row&#x27; to start adding data&quot;)
+        )
+      ) : (
+        React.createElement(React.Fragment, &#123;&#125;,
+          React.createElement(&quot;p&quot;, &#123; style: &#123; fontSize: &#x27;18px&#x27;, marginBottom: &#x27;10px&#x27; &#125; &#125;, &quot;No rows match the filter&quot;),
+          React.createElement(&quot;p&quot;, &#123; style: &#123; fontSize: &#x27;14px&#x27;, color: &#x27;#999&#x27; &#125; &#125;, `Try adjusting your search. Total rows: $&#123;currentRows.length&#125;`)
+        )
+      )
+    ),
+
+    // Summary
+    currentRows.length &gt; 0 &amp;&amp; React.createElement(&quot;div&quot;, &#123; style: &#123; marginTop: &#x27;20px&#x27;, padding: &#x27;15px&#x27;, backgroundColor: &#x27;#f9f9f9&#x27;, borderRadius: &#x27;6px&#x27; &#125; &#125;,
+      React.createElement(&quot;p&quot;, &#123; style: &#123; margin: 0, fontSize: &#x27;14px&#x27;, color: &#x27;#666&#x27; &#125; &#125;,
+        filterText ? 
+          `Showing $&#123;filteredRows.length&#125; of $&#123;currentRows.length&#125; rows | Total Columns: $&#123;currentColumns.length&#125;` :
+          `Total Rows: $&#123;currentRows.length&#125; | Total Columns: $&#123;currentColumns.length&#125;`
+      )
+    )
+  );
+&#125;
+]]&gt;
+  <span class="hljs-tag">&lt;/<span class="hljs-name">ReactCode</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">View</span>&gt;</span></code></pre>
+</details>
+
+
+
+<h2 id="Example-input"><a href="#Example-input" class="headerlink" title="Example input"></a>Example input</h2><p>Copy this into a JSON file and then import it into a project with the example code above. </p>
+<p>This will create three rows in your spreadsheet editor. </p>
+<details><summary><b>Click to expand</b></summary><pre><code class="hljs json"><span class="hljs-punctuation">&#123;</span>
+<span class="hljs-attr">&quot;data&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span>
+    <span class="hljs-attr">&quot;attributes_data&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+      <span class="hljs-punctuation">&#123;</span>
+        <span class="hljs-attr">&quot;link&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;https://www.example-store.com/products/WM-2024-001&quot;</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">&quot;name&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Wireless Connectivity Range&quot;</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">&quot;product_id&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;WM-2024-001&quot;</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">&quot;has_change&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">false</span></span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">&quot;norm_value&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">null</span></span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">&quot;rationales&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;&#123;\&quot;input_attributes\&quot;: [&#123;\&quot;Wireless Connectivity Range\&quot;: \&quot;10 meters\&quot;&#125;], \&quot;input_rules\&quot;: [\&quot;Wireless Connectivity Range: The maximum distance the device can maintain a stable connection from the receiver.\&quot;], \&quot;other\&quot;: \&quot;The input explicitly states the Wireless Connectivity Range as &#x27;10 meters&#x27;.\&quot;&#125;&quot;</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">&quot;current_value&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;10 meters&quot;</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">&quot;all_attributes&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span>
+          <span class="hljs-attr">&quot;Item&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Wireless Mouse&quot;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;Connectivity&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;2.4GHz Wireless&quot;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;Battery Life&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;12 months&quot;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;For Use With&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Desktop, Laptop&quot;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;Standards&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;CE, FCC Certified&quot;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;Mouse Type&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Optical&quot;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;Buttons&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;3-Button&quot;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;Body Material&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Plastic&quot;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;Grip Material&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Rubber&quot;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;Scroll Wheel&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Yes, with tilt&quot;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;Operation Type&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Wireless&quot;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;Overall Height&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;1.5 in&quot;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;Overall Length&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;4.2 in&quot;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;Overall Width&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;2.5 in&quot;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;Weight&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;85g&quot;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;Mounting Orientation&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Right or Left Hand&quot;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;DPI Range&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;800-1600&quot;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;Connection Type&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;USB Receiver&quot;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;Compatibility&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Windows, macOS, Linux&quot;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;Wireless Range&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;10 meters&quot;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;Battery Type&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;AA&quot;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;Color&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Black&quot;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;Package Contents&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Mouse, USB Receiver, Battery&quot;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;Warranty Period&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;2 years&quot;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;Operating Temperature - Maximum&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;40°C&quot;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;Operating Temperature - Minimum&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;0°C&quot;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;Storage Humidity - Maximum&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;85%&quot;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;Storage Humidity - Minimum&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;10%&quot;</span>
+        <span class="hljs-punctuation">&#125;</span>
+      <span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-punctuation">&#123;</span>
+        <span class="hljs-attr">&quot;link&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;https://www.example-store.com/products/WM-2024-002&quot;</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">&quot;name&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Battery Life Duration&quot;</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">&quot;product_id&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;WM-2024-002&quot;</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">&quot;has_change&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">false</span></span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">&quot;norm_value&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">null</span></span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">&quot;rationales&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;&#123;\&quot;input_attributes\&quot;: [&#123;\&quot;Battery Life Duration\&quot;: \&quot;18 months\&quot;&#125;], \&quot;input_rules\&quot;: [\&quot;Battery Life Duration: The expected operating time before battery replacement is needed under normal usage.\&quot;], \&quot;other\&quot;: \&quot;The input explicitly states the Battery Life Duration as &#x27;18 months&#x27;.\&quot;&#125;&quot;</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">&quot;current_value&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;18 months&quot;</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">&quot;all_attributes&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span>
+          <span class="hljs-attr">&quot;Item&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Ergonomic Wireless Mouse&quot;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;Connectivity&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Bluetooth 5.0&quot;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;Battery Life&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;18 months&quot;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;For Use With&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Desktop, Laptop, Tablet&quot;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;Standards&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;CE, FCC, RoHS Certified&quot;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;Mouse Type&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Laser&quot;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;Buttons&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;5-Button&quot;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;Body Material&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;ABS Plastic&quot;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;Grip Material&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Silicone&quot;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;Scroll Wheel&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Yes, with horizontal tilt&quot;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;Operation Type&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Wireless&quot;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;Overall Height&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;1.8 in&quot;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;Overall Length&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;4.8 in&quot;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;Overall Width&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;3.0 in&quot;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;Weight&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;105g&quot;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;Mounting Orientation&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Right Hand&quot;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;DPI Range&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;1000-3200&quot;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;Connection Type&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Bluetooth or USB Receiver&quot;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;Compatibility&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Windows, macOS, Linux, Android&quot;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;Wireless Range&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;15 meters&quot;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;Battery Type&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Rechargeable Lithium&quot;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;Color&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Silver&quot;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;Package Contents&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Mouse, USB-C Cable, USB Receiver, Quick Start Guide&quot;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;Warranty Period&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;3 years&quot;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;Operating Temperature - Maximum&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;45°C&quot;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;Operating Temperature - Minimum&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;-5°C&quot;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;Storage Humidity - Maximum&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;90%&quot;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;Storage Humidity - Minimum&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;5%&quot;</span>
+        <span class="hljs-punctuation">&#125;</span>
+      <span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-punctuation">&#123;</span>
+        <span class="hljs-attr">&quot;link&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;https://www.example-store.com/products/WM-2024-003&quot;</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">&quot;name&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;DPI Sensitivity Setting&quot;</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">&quot;product_id&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;WM-2024-003&quot;</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">&quot;has_change&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">true</span></span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">&quot;norm_value&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;1600&quot;</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">&quot;rationales&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;&#123;\&quot;input_attributes\&quot;: [&#123;\&quot;DPI Sensitivity Setting\&quot;: \&quot;2400\&quot;&#125;], \&quot;input_rules\&quot;: [\&quot;DPI Sensitivity Setting: The dots per inch sensitivity level for cursor movement precision.\&quot;], \&quot;other\&quot;: \&quot;The input shows a DPI setting of &#x27;2400&#x27;, which differs from the normalized value of &#x27;1600&#x27;.\&quot;&#125;&quot;</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">&quot;current_value&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;2400&quot;</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">&quot;all_attributes&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span>
+          <span class="hljs-attr">&quot;Item&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Gaming Wireless Mouse&quot;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;Connectivity&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;2.4GHz Wireless + Bluetooth&quot;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;Battery Life&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;6 months&quot;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;For Use With&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Gaming PC, Laptop&quot;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;Standards&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;CE, FCC Certified&quot;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;Mouse Type&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Optical Gaming Sensor&quot;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;Buttons&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;6-Button Programmable&quot;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;Body Material&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Matte Plastic&quot;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;Grip Material&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Textured Rubber&quot;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;Scroll Wheel&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Yes, RGB Backlit&quot;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;Operation Type&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Wireless&quot;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;Overall Height&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;1.6 in&quot;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;Overall Length&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;5.0 in&quot;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;Overall Width&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;2.8 in&quot;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;Weight&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;120g&quot;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;Mounting Orientation&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Right Hand&quot;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;DPI Range&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;800-4000&quot;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;Connection Type&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;USB Receiver&quot;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;Compatibility&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Windows, macOS&quot;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;Wireless Range&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;12 meters&quot;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;Battery Type&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;AA&quot;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;Color&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;RGB Customizable&quot;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;Package Contents&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Mouse, USB Receiver, Battery, Software CD&quot;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;Warranty Period&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;1 year&quot;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;Operating Temperature - Maximum&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;50°C&quot;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;Operating Temperature - Minimum&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;0°C&quot;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;Storage Humidity - Maximum&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;80%&quot;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;Storage Humidity - Minimum&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;10%&quot;</span>
+        <span class="hljs-punctuation">&#125;</span>
+      <span class="hljs-punctuation">&#125;</span>
+    <span class="hljs-punctuation">]</span>
+<span class="hljs-punctuation">&#125;</span>
+<span class="hljs-punctuation">&#125;</span></code></pre>
+</details>
+
+<h2 id="Example-output"><a href="#Example-output" class="headerlink" title="Example output"></a>Example output</h2><p>The output only reflects edits made to the spreadsheet. For example, in this annotation the user added values to the previously empty <code>norm_value</code> cells:</p>
+<pre><code class="hljs json"><span class="hljs-punctuation">&#123;</span>
+  <span class="hljs-attr">&quot;result&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+    <span class="hljs-punctuation">&#123;</span>
+      <span class="hljs-attr">&quot;id&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;eRb3JW4K72&quot;</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">&quot;type&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;reactcode&quot;</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">&quot;value&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span>
+        <span class="hljs-attr">&quot;reactcode&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span>
+          <span class="hljs-attr">&quot;changes&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span>
+            <span class="hljs-attr">&quot;addedRows&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">&quot;cellEdits&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+              <span class="hljs-punctuation">&#123;</span>
+                <span class="hljs-attr">&quot;column&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;norm_value&quot;</span><span class="hljs-punctuation">,</span>
+                <span class="hljs-attr">&quot;newValue&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;1200&quot;</span><span class="hljs-punctuation">,</span>
+                <span class="hljs-attr">&quot;oldValue&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">null</span></span><span class="hljs-punctuation">,</span>
+                <span class="hljs-attr">&quot;productId&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;WM-2024-001&quot;</span>
+              <span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span>
+              <span class="hljs-punctuation">&#123;</span>
+                <span class="hljs-attr">&quot;column&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;norm_value&quot;</span><span class="hljs-punctuation">,</span>
+                <span class="hljs-attr">&quot;newValue&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;1400&quot;</span><span class="hljs-punctuation">,</span>
+                <span class="hljs-attr">&quot;oldValue&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">null</span></span><span class="hljs-punctuation">,</span>
+                <span class="hljs-attr">&quot;productId&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;WM-2024-002&quot;</span>
+              <span class="hljs-punctuation">&#125;</span>
+            <span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">&quot;deletedRows&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">&quot;addedColumns&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">&quot;deletedColumns&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-punctuation">]</span>
+          <span class="hljs-punctuation">&#125;</span>
+        <span class="hljs-punctuation">&#125;</span>
+      <span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">&quot;origin&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;manual&quot;</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">&quot;to_name&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;spreadsheet_editor&quot;</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">&quot;from_name&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;spreadsheet_editor&quot;</span>
+    <span class="hljs-punctuation">&#125;</span>
+  <span class="hljs-punctuation">]</span>
+<span class="hljs-punctuation">&#125;</span></code></pre>
+    
+  </div>
+  <div class="page-rightsidebar">
+    
+      <div class="toc">
+        
+
+
+
+
+<h3 class="Text  Eyebrow ">In this article</h3>
+        <ol class="toc-list"><li class="toc-list-level-2"><a href="#Labeling-configuration">Labeling configuration</a></li><li class="toc-list-level-2"><a href="#Example-input">Example input</a></li><li class="toc-list-level-2"><a href="#Example-output">Example output</a></li></ol>
+      </div>
+    
+    <div class="toc-enterprise-cta">
+      
+        <span class="toc-enterprise-cta-copy">Designed for teams of all sizes</span>
+        <a href="https://mercedes-benz.com/pricing" class="Button Tertiary">
+   Compare Versions
+</a>
+      
+    </div>
+  </div>
+</div>
+        
+        <div class="column-wrapper">
+          <div class="columns">
+            <a href="https://github.com/Mercedes-Benz/awesome-label-studio-configs" target="_blank" class="card card-link">
+              <div class="card-text">
+                <svg fill="none" height="30" viewBox="0 0 30 30" width="30" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="card-icon"><linearGradient id="a" gradientUnits="userSpaceOnUse" x1="0" x2="36.0944" y1="0" y2="12.7577"><stop offset="0" stop-color="#ffa663"></stop><stop offset=".515625" stop-color="#ff7557"></stop><stop offset="1" stop-color="#e37bd3"></stop></linearGradient><clipPath id="b"><path d="m0 0h30v30h-30z"></path></clipPath><g clip-path="url(#b)"><path d="m15 30c8.2843 0 15-6.7157 15-15 0-8.28427-6.7157-15-15-15-8.28427 0-15 6.71573-15 15 0 8.2843 6.71573 15 15 15z" fill="url(#a)"></path><path d="m9.66667 7.1039c.70723 0 1.38553.27912 1.88563.77597s.781 1.17073.781 1.87338c0 1.15685-.7377 2.13715-1.7777 2.49925v4.5989c1.04.3621 1.7777 1.3424 1.7777 2.4992 0 .7027-.2809 1.3766-.781 1.8734-.5001.4969-1.1784.776-1.88563.776-.70725 0-1.38552-.2791-1.88562-.776-.5001-.4968-.78105-1.1707-.78105-1.8734 0-1.1568.73778-2.1371 1.77778-2.4992v-4.5989c-1.04-.3621-1.77778-1.3424-1.77778-2.49925 0-.70265.28095-1.37653.78105-1.87338s1.17837-.77597 1.88562-.77597zm0 1.76623c-.23575 0-.46184.09304-.62854.25866s-.26035.39024-.26035.62446c0 .23421.09365.45885.26035.62445s.39279.2587.62854.2587c.23574 0 .46183-.0931.62853-.2587s.2604-.39024.2604-.62445c0-.23422-.0937-.45884-.2604-.62446s-.39279-.25866-.62853-.25866zm0 9.59737c-.23575 0-.46184.0931-.62854.2587s-.26035.3902-.26035.6244c0 .2343.09365.4589.26035.6245s.39279.2587.62854.2587c.23574 0 .46183-.0931.62853-.2587s.2604-.3902.2604-.6245c0-.2342-.0937-.4588-.2604-.6244s-.39279-.2587-.62853-.2587zm13.33333.8831c0 .7027-.281 1.3766-.781 1.8734-.5001.4969-1.1784.776-1.8857.776-.7072 0-1.3855-.2791-1.8856-.776-.5001-.4968-.781-1.1707-.781-1.8734 0-1.1568.7377-2.1371 1.7777-2.4992v-6.215h-1.7777v2.8701l-3.7778-3.75325 3.7778-3.75325v2.87013h1.7777c.4715 0 .9237.18608 1.2571.51732.3334.33123.5207.78045.5207 1.24895v6.215c1.04.3621 1.7778 1.3424 1.7778 2.4992zm-2.6667-.8831c-.2357 0-.4618.0931-.6285.2587s-.2604.3902-.2604.6244c0 .2343.0937.4589.2604.6245s.3928.2587.6285.2587c.2358 0 .4619-.0931.6286-.2587s.2603-.3902.2603-.6245c0-.2342-.0936-.4588-.2603-.6244s-.3928-.2587-.6286-.2587z" fill="#fff"></path></g></svg>         
+                
+
+
+
+
+<h2 class="Heading card-title Medium ">Share Your Mercedes-Benz Configs!</h2>
+                <p class="Text">Inspire the community by sharing your unique Mercedes-Benz configurations in the Awesome Mercedes-Benz Configs repository!</p>
+                <div class="Link">Contribute now!<svg width="14" height="13" fill="#131522" xmlns="http://www.w3.org/2000/svg"><path d="M7.441 12.236 6.291 11.1l3.995-3.995H.25V5.442h10.036L6.29 1.453 7.441.31l5.964 5.964-5.964 5.963Z" ></path></svg></div>
+              </div>
+            </a>
+          </div>
+        </div>
+        
+        <footer class="content-footer">
+          <div class="helpful-container">
+            
+            <form class="helpful-form" id="helpful-form">
+              
+
+
+
+
+<h3 class="Text  Eyebrow ">Was this useful?</h3>
+              <fieldset>
+                <div class="helpful-button-group">
+                  <div class="helpful-radio-container">
+                    <input type="radio" name="helpful" id="feedback-helpful-yes" value="yes">
+                    <label for="feedback-helpful-yes" class="helpful-button">
+                      <svg width="24" height="24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M13.048 3.544a.881.881 0 0 0-1.112.353l-2.71 4.518A2.75 2.75 0 0 1 6.868 9.75H4.25v9.5h12.222a1.25 1.25 0 0 0 1.205-.921l1.91-7a1.252 1.252 0 0 0-1.206-1.579h-4.576a1.35 1.35 0 0 1-1.291-1.737l1.022-3.408a.882.882 0 0 0-.488-1.06Zm-1.077-1.463a2.38 2.38 0 0 1 3.001 2.954m0 0-.964 3.215h4.373a2.75 2.75 0 0 1 2.654 3.473l-1.91 7a2.75 2.75 0 0 1-2.651 2.027H4.1a1.35 1.35 0 0 1-1.35-1.35V9.6A1.35 1.35 0 0 1 4.1 8.25h2.768a1.25 1.25 0 0 0 1.072-.607l2.71-4.516c.298-.498.768-.87 1.321-1.046" ></path><path fill-rule="evenodd" clip-rule="evenodd" d="M7 8.25a.75.75 0 0 1 .75.75v11a.75.75 0 0 1-1.5 0V9A.75.75 0 0 1 7 8.25Z" ></path></svg>
+                      Yes
+                    </label>
+                  </div>
+                  <div class="helpful-radio-container">
+                    <input type="radio" name="helpful" id="feedback-helpful-no" value="no">
+                    <label for="feedback-helpful-no" class="helpful-button">
+                      <svg width="24" height="24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M13.048 20.456a.88.88 0 0 1-1.112-.354l-2.71-4.517a2.75 2.75 0 0 0-2.358-1.335H4.25v-9.5h12.222a1.251 1.251 0 0 1 1.205.921l1.91 7a1.252 1.252 0 0 1-1.206 1.579h-4.576a1.351 1.351 0 0 0-1.291 1.737l1.022 3.408a.883.883 0 0 1-.488 1.06Zm-1.077 1.463a2.381 2.381 0 0 0 3.001-2.954m0 0-.964-3.215h4.373a2.75 2.75 0 0 0 2.654-3.473l-1.91-7a2.75 2.75 0 0 0-2.651-2.027H4.1A1.35 1.35 0 0 0 2.75 4.6v9.8a1.35 1.35 0 0 0 1.35 1.35h2.768a1.25 1.25 0 0 1 1.072.607l2.71 4.516c.298.498.768.87 1.321 1.046" ></path><path fill-rule="evenodd" clip-rule="evenodd" d="M7 15.75a.75.75 0 0 0 .75-.75V4a.75.75 0 0 0-1.5 0v11c0 .414.336.75.75.75Z" ></path></svg>
+                      No
+                    </label>
+                  </div>
+                </div>
+                <div class="helpful-form-more" id="helpful-more">
+                  <label for="feedback-comment" class="helpful-form-label">Please add your feedback (optional)</label>
+                  <textarea name="feedback" id="feedback-comment" class="helpful-form-textarea"></textarea>
+
+                  <label for="feedback-email" class="helpful-form-label">Can we contact you with more questions? (optional)</label>
+                  <input type="email" name="email" id="feedback-email" placeholder="Your email" class="helpful-form-input" >
+                  
+                  <div class="helpful-form-submit-container">
+                    <button type="button" class="Button Secondary" id="helpful-form-cancel-button">Cancel</button>
+                    <button type="submit" class="Button" id="helpful-form-submit-button">Send</button>
+                  </div>
+                </div>
+                <div class="helpful-form-confirmation" id="helpful-more-confirmation">
+                  Thanks for the feedback!
+                </div>
+              </fieldset>
+            </form>
+          </div>
+          <div>
+            
+              
+
+
+
+
+<h3 class="Text  Eyebrow ">Contribute to the docs</h3>
+              
+
+
+
+
+<h3 class="Text  Small ">Our docs are open source. See something that could be improved? Submit a pull request.</h3>
+              <a target="_blank" rel="noopener" href="https://github.com/Mercedes-Benz/label-studio" class="Button [object Object]">
+   Make a contribution
+</a>
+            
+          </div>
+          <div>
+            
+
+
+
+
+<h3 class="Text  Eyebrow ">Can’t find what you’re looking for?</h3>
+            
+              <div class="content-footer-button-group">
+                <a target="_blank" rel="noopener" href="https://github.com/Mercedes-Benz/label-studio/issues" class="Button [object Object]">
+   Submit a GitHub Issue
+</a>
+                <a target="_blank" rel="noopener" href="https://slack.mercedes-benz.com/?source=docs-footer" class="Button Secondary WithIcon">
+  
+    <svg width="31" height="30" viewBox="0 0 31 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M11.4993 0C9.84099 0.00122324 8.49886 1.34434 8.50008 2.99939C8.49886 4.65443 9.84221 5.99755 11.5006 5.99878H14.5011V3.00061C14.5023 1.34557 13.1589 0.00244648 11.4993 0C11.5006 0 11.5006 0 11.4993 0V0ZM11.4993 8H3.50049C1.84213 8.00122 0.498778 9.34434 0.500003 10.9994C0.497552 12.6544 1.84091 13.9976 3.49927 14H11.4993C13.1577 13.9988 14.5011 12.6557 14.4998 11.0006C14.5011 9.34434 13.1577 8.00122 11.4993 8Z" fill="#41C6EE"></path>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M30.5 10.9994C30.5012 9.34434 29.1578 8.00122 27.4995 8C25.8411 8.00122 24.4978 9.34434 24.499 10.9994V14H27.4995C29.1578 13.9988 30.5012 12.6557 30.5 10.9994ZM22.4999 10.9994V2.99939C22.5011 1.34557 21.159 0.00244648 19.5006 0C17.8423 0.00122324 16.4989 1.34434 16.5001 2.99939V10.9994C16.4977 12.6544 17.841 13.9976 19.4994 14C21.1577 13.9988 22.5011 12.6557 22.4999 10.9994Z" fill="#38B67F"></path>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M19.4994 29.9999C21.1578 29.9987 22.5011 28.6555 22.4999 27.0005C22.5011 25.3454 21.1578 24.0023 19.4994 24.0011H16.4989V27.0005C16.4977 28.6543 17.841 29.9974 19.4994 29.9999ZM19.4994 21.9987H27.4995C29.1578 21.9974 30.5012 20.6543 30.5 18.9993C30.5024 17.3442 29.1591 16.0011 27.5007 15.9987H19.5006C17.8423 15.9999 16.4989 17.343 16.5001 18.998C16.4989 20.6543 17.841 21.9974 19.4994 21.9987Z" fill="#ECB13D"></path>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M0.500001 18.9995C0.498775 20.6546 1.84213 21.9977 3.50049 21.9989C5.15885 21.9977 6.50221 20.6546 6.50098 18.9995V16.0001H3.50049C1.84213 16.0013 0.498775 17.3445 0.500001 18.9995ZM8.50008 18.9995V26.9995C8.49763 28.6546 9.84099 29.9977 11.4993 30.0001C13.1577 29.9989 14.5011 28.6558 14.4998 27.0007V19.002C14.5023 17.3469 13.1589 16.0038 11.5006 16.0013C9.84099 16.0013 8.49886 17.3445 8.50008 18.9995C8.50008 18.9995 8.50008 19.0007 8.50008 18.9995Z" fill="#DD295C"></path>
+</svg>
+
+ Join Slack Community
+</a>
+              </div>
+            
+            </div>
+        </footer>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    var savedScrollPosition = localStorage.getItem('labelstudio_scrollPosition');
+      if (savedScrollPosition) {
+        document.querySelector(".page-sidebar").scrollTop = savedScrollPosition;
+      }
+  </script>
+
+  
+   
+
+<footer class="Footer">
+  <section class="FooterWrapper">
+    <svg       width="106"
+      height="140"
+      viewBox="0 0 106 140"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      class="FooterCTASquares"
+    >
+      <path         fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M0.463783 35.0679H70.6628V70.1674H35.5633V105.267L70.6628 105.267H0.463783V35.0679Z"
+        fill="#FF7557"
+      ></path>
+      <rect         width="35.1784"
+        height="35.1784"
+        transform="matrix(-1 0 0 1 105.765 0)"
+        fill="#FFA663"
+      ></rect>
+      <path         fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M105.764 140H35.5645V69.8009H105.764V140ZM70.6641 104.901H35.5645V69.801H70.6641V104.901Z"
+        fill="#E37BD3"
+      ></path>
+    </svg>
+    <div class="FooterGrid">
+      <div class="FooterSocialsLogo">
+        <svg           width="280"
+          height="47"
+          viewBox="0 0 280 47"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          class="FooterSocialsLogoMercedes-Benz"
+        >
+          <circle cx="23.5" cy="23.5" r="20" stroke="#FDFDFC" stroke-width="2.5" fill="none"></circle>
+          <path d="M23.5 4 L16 42 M23.5 4 L31 42 M23.5 4 L23.5 42 M12 28 L35 28" stroke="#FDFDFC" stroke-width="2" fill="none"></path>
+          <text x="52" y="30" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#FDFDFC">Mercedes-Benz</text>
+        </svg>
+
+        <nav class="SocialIcons FooterSocials" arial-label="Social media links">
+          <ul>
+            <li>
+              <a                 href="https://slack.mercedes-benz.com/?source=site"
+                aria-label="Slack"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg viewBox="0 0 24 24" astro-icon="mdi:slack">
+                  <path                     fill="currentColor"
+                    d="M6 15a2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2h2v2m1 0a2 2 0 0 1 2-2 2 2 0 0 1 2 2v5a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-5m2-8a2 2 0 0 1-2-2 2 2 0 0 1 2-2 2 2 0 0 1 2 2v2H9m0 1a2 2 0 0 1 2 2 2 2 0 0 1-2 2H4a2 2 0 0 1-2-2 2 2 0 0 1 2-2h5m8 2a2 2 0 0 1 2-2 2 2 0 0 1 2 2 2 2 0 0 1-2 2h-2v-2m-1 0a2 2 0 0 1-2 2 2 2 0 0 1-2-2V5a2 2 0 0 1 2-2 2 2 0 0 1 2 2v5m-2 8a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2v-2h2m0-1a2 2 0 0 1-2-2 2 2 0 0 1 2-2h5a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-5z"
+                  ></path>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a                 href="https://github.com/Mercedes-Benz/"
+                aria-label="GitHub"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg viewBox="0 0 24 24" astro-icon="mdi:github">
+                  <path                     fill="currentColor"
+                    d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"
+                  ></path>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a                 href="https://twitter.com/labelstudiohq"
+                aria-label="Twitter"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg viewBox="0 0 24 24" astro-icon="mdi:twitter">
+                  <path                     fill="currentColor"
+                    d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"
+                  ></path>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a                 href="https://www.linkedin.com/company/mercedes-benz/"
+                aria-label="LinkedIn"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg viewBox="0 0 24 24" astro-icon="bx:bxl-linkedin">
+                  <circle                     cx="4.983"
+                    cy="5.009"
+                    r="2.188"
+                    fill="currentColor"
+                  ></circle>
+                  <path                     fill="currentColor"
+                    d="M9.237 8.855v12.139h3.769v-6.003c0-1.584.298-3.118 2.262-3.118 1.937 0 1.961 1.811 1.961 3.218v5.904H21v-6.657c0-3.27-.704-5.783-4.526-5.783-1.835 0-3.065 1.007-3.568 1.96h-.051v-1.66H9.237zm-6.142 0H6.87v12.139H3.095z"
+                  ></path>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a                 href="https://www.youtube.com/channel/UCbloiVAlCYzBatZXk-b5rFQ"
+                aria-label="Youtube"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg viewBox="0 0 24 24" astro-icon="mdi:youtube">
+                  <path                     fill="currentColor"
+                    d="m10 15 5.19-3L10 9v6m11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83-.25.9-.83 1.48-1.73 1.73-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44-.9-.25-1.48-.83-1.73-1.73-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83.25-.9.83-1.48 1.73-1.73.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44.9.25 1.48.83 1.73 1.73z"
+                  ></path>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="FooterMenus">
+        <nav class="FooterNav" aria-label="Footer navigation">
+          
+          <div>
+            <h3 class="Text Eyebrow FooterNavHeading">Products</h3>
+            <ul>
+              <li>
+                <a href="https://mercedes-benz.com/">Community Edition</a>
+              </li>
+              <li>
+                <a target="_blank" rel="noopener" href="https://heartex.com/product">Enterprise</a>
+              </li>
+              <li>
+                <a target="_blank" rel="noopener" href="https://heartex.com/pricing">Pricing</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="Text Eyebrow FooterNavHeading">Community</h3>
+            <ul>
+              <li>
+                <a href="https://mercedes-benz.com/blog">Blog</a>
+              </li>
+              <li>
+                <a href="https://mercedes-benz.com/community/">Newsletter</a>
+              </li>
+              <li>
+                <a href="/?source=site">Slack</a>
+              </li>
+              <li>
+                <a href="https://mercedes-benz.com/videos">Webinars</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="Text Eyebrow FooterNavHeading">Documentation</h3>
+            <ul>
+              <li>
+                <a href="/guide">Quickstart</a>
+              </li>
+              <li>
+                <a href="/guide/api">API Reference</a>
+              </li>
+              <li>
+                <a href="/guide/sdk">SDK Reference</a>
+              </li>
+              <li>
+                <a href="/tags">Customizable Tags</a>
+              </li>
+              <li>
+                <a href="/templates">Labeling Templates</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="Text Eyebrow FooterNavHeading">Company</h3>
+            <ul>
+              <li>
+                <a target="_blank" rel="noopener" href="https://heartex.com/company/about-us">About Us</a>
+              </li>
+              <li>
+                <a target="_blank" rel="noopener" href="https://heartex.com/careers">Careers</a>
+              </li>
+              <li>
+                <a href="https://mercedes-benz.com/contact-sales/">Contact</a>
+              </li>
+              <li>
+                <a target="_blank" rel="noopener" href="https://heartex.com/company/privacy-policy">Privacy</a>
+              </li>
+            </ul>
+          </div>
+          
+        </nav>
+        
+        <div class="FooterCTA">
+          <a class="Button FooterCTAButton" href="/guide/quick_start.html"
+            ><span class="Heading XXSmall ButtonText astro-EXBSDJPD"
+              >Quick Start</span></a>
+        </div>
+        
+      </div>
+    </div>
+    <div class="FooterGridCopyright">
+      <p class="Text Small FooterCopyright">
+        ©
+        <script>
+          document.write(new Date().getFullYear());
+        </script>
+        Mercedes-Benz.
+      </p>
+      <a target="_blank" rel="noopener" href="https://heartex.com/company/privacy-policy" class="Text Small"
+        >Privacy Policy</a>
+    </div>
+  </section>
+</footer>
+
+
+  
+<script src="/js/code-tabs.js"></script>
+
+  
+<script src="/js/code-blocks-enhancements.js"></script>
+
+  
+<script src="/js/feedback-form.js"></script>
+
+  
+<script src="/js/header.js"></script>
+
+  
+<script src="/js/intense.min.js"></script>
+
+
+  <script>
+    window.addEventListener('load', function () {
+      const htmlElement = document.querySelector("html");
+
+      htmlElement.classList.add("js-enhanced");
+    })
+</script>
+
+</body>
+</html>

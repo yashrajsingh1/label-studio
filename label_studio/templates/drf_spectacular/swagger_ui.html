@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mercedes-Benz API - Swagger</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/svg+xml" href="/static/icons/favicon.svg">
+    <link rel="stylesheet" href="{{ swagger_ui_css }}">
+    <style>
+      body { margin: 0; padding: 0; }
+      .mb-api-header {
+        background: #000000;
+        padding: 12px 24px;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        border-bottom: 1px solid #333;
+      }
+      .mb-api-header svg {
+        flex-shrink: 0;
+      }
+      .mb-api-header-title {
+        color: #FFFFFF;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 18px;
+        font-weight: 700;
+        letter-spacing: 0.3px;
+      }
+      /* Override Swagger header */
+      .swagger-ui .topbar { display: none !important; }
+    </style>
+  </head>
+  <body>
+    <div class="mb-api-header">
+      <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="15" cy="15" r="13.5" stroke="#FFFFFF" stroke-width="2" fill="none"/>
+        <circle cx="15" cy="15" r="12" stroke="#FFFFFF" stroke-width="0.5" fill="none"/>
+        <path d="M15,3 L13.8,15 L16.2,15 Z M4.61,21 L15.6,16.04 L14.4,13.96 Z M25.39,21 L15.6,13.96 L14.4,16.04 Z" fill="#FFFFFF"/>
+      </svg>
+      <span class="mb-api-header-title">Mercedes-Benz API</span>
+    </div>
+    <div id="swagger-ui"></div>
+    <script src="{{ swagger_ui_bundle }}"></script>
+    <script src="{{ swagger_ui_standalone }}"></script>
+    {% include template_name_js %}
+  </body>
+</html>

@@ -1,0 +1,11 @@
+url: https://mercedes-benz.com/
+
+theme_config:
+  tier: opensource
+  root_domain: "mercedes-benz.com"
+
+# Deployment
+deploy:
+  type: aws-s3
+  region: us-east-1
+  bucket: mercedes-benz.com

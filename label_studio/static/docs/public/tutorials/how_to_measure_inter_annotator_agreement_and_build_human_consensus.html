@@ -1,0 +1,1093 @@
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  
+    
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-TZ3RQGX');</script>
+    
+  
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <title>Mercedes-Benz — How to Measure Inter-Annotator Agreement and Build Human Consensus with Mercedes-Benz</title>
+  
+  <meta charset="utf-8">
+  <meta name="description" content="Learn how to measure inter-annotator agreement, build human consensus, establish ground truth and compare model predictions using the Mercedes-Benz SDK.">
+
+  <meta property="og:type" content="article">
+  
+  <meta property="og:title" content="Mercedes-Benz — How to Measure Inter-Annotator Agreement and Build Human Consensus with Mercedes-Benz">
+  
+  <meta property="og:description" content="Learn how to measure inter-annotator agreement, build human consensus, establish ground truth and compare model predictions using the Mercedes-Benz SDK.">
+
+  <meta name="twitter:card" content="summary">
+  
+  <meta property="twitter:title" content="Mercedes-Benz — How to Measure Inter-Annotator Agreement and Build Human Consensus with Mercedes-Benz">
+  
+  <meta name="twitter:description" content="Learn how to measure inter-annotator agreement, build human consensus, establish ground truth and compare model predictions using the Mercedes-Benz SDK.">
+
+  
+    <meta name="twitter:image" content="http://mercedes-benz.com/open-graph-image?title=How%20to%20Measure%20Inter-Annotator%20Agreement%20and%20Build%20Human%20Consensus%20with%20Label%20Studio&category=tutorials">
+    <meta property="og:image" content="http://mercedes-benz.com/open-graph-image?title=How%20to%20Measure%20Inter-Annotator%20Agreement%20and%20Build%20Human%20Consensus%20with%20Label%20Studio&category=tutorials">
+  
+
+  <meta name="msapplication-TileColor" content="#4fc08d">
+  <meta name="theme-color" content="#4fc08d">
+  
+  
+    <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" >
+  
+
+  <link rel="preload" href="/fonts/SpaceGrotesk-Bold-subset.woff2" as="font" type="font/woff2" crossorigin>
+
+  
+<link rel="stylesheet" href="/css/styles.css">
+
+
+  
+
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js" defer></script>
+
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ startOnLoad: true });
+  </script>
+
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+<body class="page-tier-opensource">
+  
+  
+
+  
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TZ3RQGX"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  
+
+  
+  
+
+
+
+  
+      <a target="_blank" rel="noopener" href="https://mercedes-benz.com/blog/new-pdf-ocr-document-ai-labeling-interface" class="Alert">
+        <span class="AlertContent">
+          <span class="Badge">New</span>
+          <span class="AlertText">Advanced PDF + OCR Interface for Document AI</span>
+          <svg fill="currentColor" viewBox="0 0 14 12"><path fill-rule="evenodd" d="m8.792.119 4.866 5.654-4.866 5.654-.948-.816 3.627-4.213H.54v-1.25h10.93L7.844.934l.948-.815Z" clip-rule="evenodd"></path></svg>
+        </span>
+      </a>
+
+
+<header class="page-header">
+  <div class="page-header-top-level">
+    <div class="page-header-logo">
+      <a href="/guide" class="HeaderLogo" arial-label="Homepage">
+        
+          <svg width="240" height="30" viewBox="0 0 240 30" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="15" cy="15" r="13.5" stroke="#12110D" stroke-width="2" fill="none"></circle><circle cx="15" cy="15" r="12" stroke="#12110D" stroke-width="0.5" fill="none"></circle><path d="M15,3 L13.8,15 L16.2,15 Z M4.61,21 L15.6,16.04 L14.4,13.96 Z M25.39,21 L15.6,13.96 L14.4,16.04 Z" fill="#12110D"></path><text x="34" y="20" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#12110D" letter-spacing="0.3">Mercedes-Benz Docs</text></svg>
+
+      </a>
+    </div>
+
+    <div class="AlgoliaSearch">
+      <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg" class="AlgoliaSearchIcon">
+        <path d="M8 16C9.77498 15.9996 11.4988 15.4054 12.897 14.312L17.293 18.708L18.707 17.294L14.311 12.898C15.405 11.4997 15.9996 9.77544 16 8C16 3.589 12.411 0 8 0C3.589 0 0 3.589 0 8C0 12.411 3.589 16 8 16ZM8 2C11.309 2 14 4.691 14 8C14 11.309 11.309 14 8 14C4.691 14 2 11.309 2 8C2 4.691 4.691 2 8 2Z" ></path>
+      </svg>
+      <input id="docsearch-input" placeholder="Search docs" data-site-version="opensource" >
+      <svg width="43" height="31" viewBox="0 0 43 31" fill="none" xmlns="http://www.w3.org/2000/svg" class="AlgoliaSearchCmdK">
+        <rect y="0.0457764" width="43" height="30" rx="15" fill="var(--cmd-k-background-color)"></rect>
+        <path d="M11.264 21.0458C9.776 21.0458 8.816 20.1018 8.816 18.6298C8.816 17.0778 9.744 16.1658 11.568 16.1658H12.512V14.4058H11.568C9.744 14.4058 8.816 13.4938 8.816 11.9418C8.816 10.4698 9.776 9.52578 11.264 9.52578C13.056 9.52578 13.632 10.6458 13.632 11.9898V13.3178H15.392V11.9898C15.392 10.6458 15.968 9.52578 17.76 9.52578C19.248 9.52578 20.208 10.4698 20.208 11.9418C20.208 13.4938 19.28 14.4058 17.456 14.4058H16.512V16.1658H17.456C19.28 16.1658 20.208 17.0778 20.208 18.6298C20.208 20.1018 19.248 21.0458 17.76 21.0458C15.968 21.0458 15.392 19.9258 15.392 18.5818V17.2538H13.632V18.5818C13.632 19.9258 13.056 21.0458 11.264 21.0458ZM16.512 11.9578V13.3178H17.456C18.592 13.3178 19.072 12.8538 19.072 11.9418C19.072 10.9978 18.512 10.6298 17.76 10.6298C16.928 10.6298 16.512 11.1418 16.512 11.9578ZM11.568 13.3178H12.512V11.9578C12.512 11.1418 12.096 10.6298 11.264 10.6298C10.512 10.6298 9.952 10.9978 9.952 11.9418C9.952 12.8538 10.432 13.3178 11.568 13.3178ZM13.632 16.1658H15.392V14.4058H13.632V16.1658ZM11.264 19.9418C12.096 19.9418 12.512 19.4298 12.512 18.6138V17.2538H11.568C10.432 17.2538 9.952 17.7178 9.952 18.6298C9.952 19.5738 10.512 19.9418 11.264 19.9418ZM16.512 18.6138C16.512 19.4298 16.928 19.9418 17.76 19.9418C18.512 19.9418 19.072 19.5738 19.072 18.6298C19.072 17.7178 18.592 17.2538 17.456 17.2538H16.512V18.6138ZM27.3546 15.4298V21.0458H26.1546V9.84578H27.3546V14.9338L32.3146 9.84578H33.8826L28.6346 15.1738L34.3626 21.0458H32.7466L27.3546 15.4298Z" fill="var(--cmd-k-icon-color)"></path>
+      </svg>        
+    </div>
+
+    <button class="hamburger-button" aria-label="Toggle Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <nav>
+      
+        
+  <ul class="page-sidebar-list">
+    
+    
+    
+    
+    
+
+    
+
+    
+
+    
+    
+      
+      
+      
+      <li>
+        <a href="/guide/install_requirements.html" class="" >
+          Requirements
+        </a>
+        
+        
+        
+        
+      </li>
+    
+    
+</ul>
+
+
+  <button>
+    Support
+    <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+    </svg>
+  </button>
+
+<ul class="page-sidebar-list">
+  
+  
+    <li>
+        <a href="/guide/troubleshooting">Troubleshooting</a>
+      </li>
+    <li>
+      <a href="https://github.com/Mercedes-Benz/label-studio/issues" target="_blank">GitHub Issues
+        <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-external-link">
+          <path d="M10.9002 9.29957L9.46026 9.30898L9.46026 3.34236L1.73377 11.0689L0.698549 10.0336L8.42504 2.30714L2.46783 2.31656L2.46783 0.867251L10.9001 0.867252L10.9002 9.29957Z" fill="#6D87F1"></path>
+        </svg>
+      </a>
+    </li>
+  
+  <li>
+    <a href="https://slack.mercedes-benz.com" target="_blank">Join Slack
+      <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-external-link">
+        <path d="M10.9002 9.29957L9.46026 9.30898L9.46026 3.34236L1.73377 11.0689L0.698549 10.0336L8.42504 2.30714L2.46783 2.31656L2.46783 0.867251L10.9001 0.867252L10.9002 9.29957Z" fill="#6D87F1"></path>
+      </svg>
+    </a>
+  </li>
+  
+    <li>
+      <a href="https://community.mercedes-benz.com/" target="_blank">Ask on Discourse
+        <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-external-link">
+          <path d="M10.9002 9.29957L9.46026 9.30898L9.46026 3.34236L1.73377 11.0689L0.698549 10.0336L8.42504 2.30714L2.46783 2.31656L2.46783 0.867251L10.9001 0.867252L10.9002 9.29957Z" fill="#6D87F1"></path>
+        </svg>
+      </a>
+    </li>
+  
+  <li>
+    <a href="https://mercedes-benz.com/contact-sales/" target="_blank">Contact Sales
+      <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-external-link">
+        <path d="M10.9002 9.29957L9.46026 9.30898L9.46026 3.34236L1.73377 11.0689L0.698549 10.0336L8.42504 2.30714L2.46783 2.31656L2.46783 0.867251L10.9001 0.867252L10.9002 9.29957Z" fill="#6D87F1"></path>
+      </svg>
+    </a>
+  </li>
+  
+</ul>
+
+
+
+  <button>
+    What's New
+    <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+    </svg>
+  </button>
+
+<ul class="page-sidebar-list">  
+    <li>
+      <a href="https://github.com/Mercedes-Benz/label-studio/releases" target="_blank">Release notes
+        <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-external-link">
+          <path d="M10.9002 9.29957L9.46026 9.30898L9.46026 3.34236L1.73377 11.0689L0.698549 10.0336L8.42504 2.30714L2.46783 2.31656L2.46783 0.867251L10.9001 0.867252L10.9002 9.29957Z" fill="#6D87F1"></path>
+        </svg>
+      </a>
+    </li>
+</ul>
+
+
+      
+      <ul class="page-header-main-nav">
+        
+          <li>
+            <a href="https://mercedes-benz.com/learn/">
+              Learn
+              <svg aria-hidden="true" width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg" class="page-header-chevron-icon"><path d="M1 0.5L5 4.5L9 0.5" stroke="#131522"></path></svg>
+            </a>
+            <button>
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+            <ul>
+              <li>
+                <a href="https://mercedes-benz.com/blog/">Blog</a>
+              </li>
+              <li>
+                <a href="https://mercedes-benz.com/videos/">Videos</a>
+              </li>
+              <li class="headerSeparator">
+                <a href="https://mercedes-benz.com/community/">
+                  Community
+                </a>
+              </li>
+              <li>
+                <a href="https://mercedes-benz.com/academic/">Academic Program</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="https://mercedes-benz.com/integrations">Integrations</a>
+          </li>
+          <li>
+            <a href="https://mercedes-benz.com/goenterprise" target="_blank" rel="noopener noreferrer">Enterprise</a>
+          </li>
+          <li>
+            <a href="https://github.com/Mercedes-Benz/label-studio/" class="github-stars" target="_blank" rel="noopener noreferrer">
+              <svg class="github-icon" viewBox="0 0 24 24" width="24" height="24"><path fill="black" d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"></path></svg>
+              
+
+
+
+
+<span class="Text github-stars-count Eyebrow "></span>
+            </a>
+          </li>
+          <li>
+            <a href="/guide/quick_start.html" class="Button [object Object]">
+   Quick start
+</a>
+          </li>
+          
+      </ul>
+    </nav>
+    </div>
+  
+  
+  
+    
+      <ul class="page-header-content-switcher">
+      
+          
+          <li><a href="/guide/" class="">Docs</a></li>
+          
+        
+          
+          <li><a href="/tutorials/" class="">Tutorials</a></li>
+          
+        
+          
+          <li><a href="/templates/" class="">Templates</a></li>
+          
+        
+          
+        
+          
+          <li><a href="/tags/" class="">Tags</a></li>
+          
+        
+      <li>
+        <a href="https://api.mercedes-benz.com/api-reference/introduction/getting-started" target="_blank">
+          API
+          <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7.93006 6.05393L6.92213 6.06052L6.92213 1.88389L1.51359 7.29243L0.788936 6.56777L6.19748 1.15923L2.02743 1.16582L2.02743 0.151308L7.93006 0.151308L7.93006 6.05393Z" fill="#ffffff"></path>
+            </svg>            
+        </a>
+      </li>
+    </ul>
+    
+  
+</header>
+
+
+  <main class="page-type-undefined">
+    
+    <div class="content">
+      
+        <svg width="50" height="50" viewBox="0 0 77 77" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="content-decoration">
+          <rect x="75.875" y="26" width="25" height="25" transform="rotate(-180 75.875 26)" stroke="#E1DED5" stroke-width="0.504975"></rect>
+          <rect x="50.875" y="51" width="25" height="25" transform="rotate(-180 50.875 51)" stroke="#E1DED5" stroke-width="0.504975"></rect>
+          <rect x="50.875" y="26" width="25" height="25" transform="rotate(-180 50.875 26)" fill="#FF7557"></rect>
+          <rect x="26" y="76" width="25" height="25" transform="rotate(-180 26 76)" stroke="#E1DED5" stroke-width="0.504975"></rect>
+          <rect x="26" y="51" width="25" height="25" transform="rotate(-180 26 51)" fill="#E37BD3"></rect>
+          <rect x="26" y="26" width="25" height="25" transform="rotate(-180 26 26)" fill="#FFA663"></rect>
+        </svg>
+      
+        
+      <div class="container">
+        
+
+
+
+
+
+
+
+<div class="content-grid">
+  <div class="content-markdown">
+    
+   
+      
+
+
+
+
+<h1 class="Heading home-page-title XLarge ">How to Measure Inter-Annotator Agreement and Build Human Consensus with Mercedes-Benz</h1>
+   
+   
+      <div class="open-in-collab-header">
+        <a target="_blank"
+          href="https://colab.research.google.com/github/mercedes-benz/awesome-label-studio-tutorials/blob/main/tutorials/how-to-measure-inter-annotator-agreement-and-build-human-consensus/how_to_measure_inter_annotator_agreement_and_build_human_consensus.ipynb">
+          <img src="https://colab.research.google.com/assets/colab-badge.svg"
+            alt="Open In Colab" >
+        </a>
+      </div>
+   
+   
+      <div class="community-header">
+          
+            <span class="community-badge">Tutorial</span>
+          
+        <div class="template-author">
+          
+            <div class="community-people">
+              <a href="https://github.com/hakan458" target="_blank" class="person author">
+                
+                  <img src="/images/github/avatars/hakan458.png" alt="hakan458" class="person-avatar" >
+                
+                <span class="person-name">@hakan458</span>
+              </a>
+              
+              
+            </div>
+          
+          <div class="repo-links">
+            <a href="https://github.com/Mercedes-Benz/awesome-label-studio-tutorials/issues/new" target="_blank" class="issue-icon" title="Report an issue">
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm9 3a1 1 0 11-2 0 1 1 0 012 0zm-.25-6.25a.75.75 0 00-1.5 0v3.5a.75.75 0 001.5 0v-3.5z"></path></svg>
+            </a>
+            <a href="https://github.com/Mercedes-Benz/awesome-label-studio-tutorials/tree/main/tutorials/how-to-measure-inter-annotator-agreement-and-build-human-consensus" target="_blank" class="github-icon" title="View on GitHub">
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+   
+    <p>This tutorial walks through a practical workflow to measure inter-annotator agreement, build human consensus, establish ground truth and
+compare model predictions to that consensus using the Mercedes-Benz SDK.</p>
+<p>Being able to measure agreement between different annotators, ground truth and models can help you get a sense of annotator&#x2F;model performance, and help you make informed decisions to ultimately get higher quality labels in your project.</p>
+<p><strong>Why This Matters</strong></p>
+<ul>
+<li>Reduce ambiguity: Low agreement reveals unclear instructions and subjective edge cases to fix.</li>
+<li>Improve label quality: Consensus strength is a practical confidence signal for ground truth.</li>
+<li>Target QA: Focus review on contentious tasks and annotator pairs instead of boiling the ocean.</li>
+<li>Fair model eval: Compare models to human consensus, not a single rater, to avoid evaluator bias.</li>
+<li>Faster iteration: Quantify reliability, prioritize fixes, and measure improvements over time.</li>
+</ul>
+<p><strong>In this tutorial you will</strong></p>
+<ul>
+<li>Import data with overlap and (for demo) simulate multiple annotators.</li>
+<li>Compute IAA and per‑task consensus (majority vote) to establish ground truth.</li>
+<li>Compare a model to human consensus, flag low‑agreement and disagreement items, and bulk‑assign them for QA.</li>
+<li>Visualize results and summarize reliability to inform next steps.</li>
+</ul>
+<p><strong>Outputs</strong></p>
+<ul>
+<li>Per‑task consensus + agreement ratio (confidence proxy)</li>
+<li>Model alignment score vs human consensus</li>
+<li>Targeted QA task lists for re‑annotation&#x2F;review</li>
+</ul>
+<p><strong>Notes:</strong></p>
+<ul>
+<li>We provide steps here to create a dataset from scratch, but you can skip these steps and use an existing project as well.</li>
+<li>Fill in your Mercedes-Benz URL and API key.</li>
+</ul>
+<h2 id="Label-Studio-Requirements"><a href="#Label-Studio-Requirements" class="headerlink" title="Mercedes-Benz Requirements"></a>Mercedes-Benz Requirements</h2><p>This tutorial showcases one or more features available only in Mercedes-Benz paid products. We recommend <a target="_blank" rel="noopener" href="https://app.mercedes-benz.com/user/cloud-trial?offer=d9a5&">creating a Starter Cloud trial</a> to follow the tutorial.</p>
+<h2 id="Install-dependencies"><a href="#Install-dependencies" class="headerlink" title="Install dependencies"></a>Install dependencies</h2><pre><code class="hljs python">!pip install -q label-studio-sdk pandas numpy seaborn scikit-learn matplotlib</code></pre>
+
+<h2 id="Import-Libraries"><a href="#Import-Libraries" class="headerlink" title="Import Libraries"></a>Import Libraries</h2><pre><code class="hljs python"><span class="hljs-keyword">import</span> os
+<span class="hljs-keyword">import</span> json
+<span class="hljs-keyword">import</span> random
+<span class="hljs-keyword">from</span> typing <span class="hljs-keyword">import</span> <span class="hljs-type">Dict</span>, <span class="hljs-type">List</span>, <span class="hljs-type">Any</span>, <span class="hljs-type">Tuple</span>
+<span class="hljs-keyword">from</span> collections <span class="hljs-keyword">import</span> Counter, defaultdict
+
+<span class="hljs-keyword">import</span> pandas <span class="hljs-keyword">as</span> pd
+<span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
+
+<span class="hljs-keyword">import</span> matplotlib.pyplot <span class="hljs-keyword">as</span> plt
+<span class="hljs-keyword">import</span> seaborn <span class="hljs-keyword">as</span> sns
+
+<span class="hljs-keyword">from</span> label_studio_sdk <span class="hljs-keyword">import</span> LabelStudio
+<span class="hljs-keyword">from</span> label_studio_sdk.types <span class="hljs-keyword">import</span> ImportApiRequest, PredictionRequest
+<span class="hljs-keyword">from</span> label_studio_sdk.projects.assignments <span class="hljs-keyword">import</span> AssignmentsBulkAssignRequestSelectedItemsIncluded</code></pre>
+
+<h2 id="1-Connect-to-Label-Studio"><a href="#1-Connect-to-Label-Studio" class="headerlink" title="1) Connect to Mercedes-Benz"></a>1) Connect to Mercedes-Benz</h2><p>Replace placeholders with your details</p>
+<pre><code class="hljs python"><span class="hljs-comment"># URL of your Mercedes-Benz instance</span>
+BASE_URL = <span class="hljs-string">&quot;https://app.mercedes-benz.com&quot;</span>
+
+<span class="hljs-comment"># Your API key (find it in Account &amp; Settings &gt; Personal Access Token)</span>
+API_KEY = <span class="hljs-string">&quot;YOUR API KEY&quot;</span>
+
+ls = LabelStudio(base_url=BASE_URL, api_key=API_KEY)</code></pre>
+
+<h2 id="2-Create-a-Project-or-use-existing"><a href="#2-Create-a-Project-or-use-existing" class="headerlink" title="2) Create a Project (or use existing)"></a>2) Create a Project (or use existing)</h2><p>We’ll create a project with subjective tasks (toxicity severity) that benefits from multiple human judgments.
+You can swap this labeling config for another subjective task, e.g., sarcasm detection, humor rating, or topic relevance.</p>
+<pre><code class="hljs python">LABEL_CONFIG = <span class="hljs-string">&quot;&quot;&quot;</span>
+<span class="hljs-string">&lt;View&gt;</span>
+<span class="hljs-string">  &lt;Text name=&quot;text&quot; value=&quot;$text&quot;/&gt;</span>
+<span class="hljs-string">  &lt;Choices name=&quot;toxicity&quot; toName=&quot;text&quot; choice=&quot;single&quot; showInLine=&quot;true&quot;&gt;</span>
+<span class="hljs-string">    &lt;Choice value=&quot;Non-toxic&quot;/&gt;</span>
+<span class="hljs-string">    &lt;Choice value=&quot;Somewhat toxic&quot;/&gt;</span>
+<span class="hljs-string">    &lt;Choice value=&quot;Very toxic&quot;/&gt;</span>
+<span class="hljs-string">  &lt;/Choices&gt;</span>
+<span class="hljs-string">  &lt;Style&gt; .lsf-labels .lsf-choices__item &#123; padding: 6px 10px; &#125; &lt;/Style&gt;</span>
+<span class="hljs-string">  &lt;Choices name=&quot;flag&quot; toName=&quot;text&quot; choice=&quot;single&quot; showInLine=&quot;true&quot; visibleWhen=&quot;region-selected=false&quot; perRegion=&quot;false&quot;&gt;</span>
+<span class="hljs-string">    &lt;Choice value=&quot;Needs QA&quot;/&gt;</span>
+<span class="hljs-string">  &lt;/Choices&gt;</span>
+<span class="hljs-string">&lt;/View&gt;</span>
+<span class="hljs-string">&quot;&quot;&quot;</span>
+
+PROJECT_TITLE = <span class="hljs-string">&quot;Agreement &amp; Consensus Tutorial&quot;</span></code></pre>
+
+<h3 id="Create-Project"><a href="#Create-Project" class="headerlink" title="Create Project"></a>Create Project</h3><pre><code class="hljs python">project = ls.projects.create(
+    title=PROJECT_TITLE,
+    label_config=LABEL_CONFIG,
+    description=(
+        <span class="hljs-string">&quot;Subjective toxicity severity labeling with multiple annotators to measure agreement and build consensus.&quot;</span>
+    ),
+    show_collab_predictions=<span class="hljs-literal">True</span>,
+    maximum_annotations=<span class="hljs-number">3</span>,  <span class="hljs-comment"># allow up to 3 annotations per task</span>
+    is_published=<span class="hljs-literal">True</span>,
+)</code></pre>
+
+<h3 id="Alternatively-Get-Project-by-ID"><a href="#Alternatively-Get-Project-by-ID" class="headerlink" title="Alternatively Get Project by ID"></a>Alternatively Get Project by ID</h3><pre><code class="hljs python"><span class="hljs-comment"># Uncomment and replace project ID with the one you wish to use</span>
+<span class="hljs-comment"># project = ls.projects.get(id=1)</span></code></pre>
+
+<h3 id="Confirm-We-Are-Using-Correct-Project"><a href="#Confirm-We-Are-Using-Correct-Project" class="headerlink" title="Confirm We Are Using Correct Project"></a>Confirm We Are Using Correct Project</h3><pre><code class="hljs python"><span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;Using project ID <span class="hljs-subst">&#123;project.<span class="hljs-built_in">id</span>&#125;</span>: <span class="hljs-subst">&#123;project.title&#125;</span>&quot;</span>)</code></pre>
+
+<h2 id="3-Import-Data-If-creating-new-project"><a href="#3-Import-Data-If-creating-new-project" class="headerlink" title="3) Import Data (If creating new project)"></a>3) Import Data (If creating new project)</h2><pre><code class="hljs python">texts = [
+    <span class="hljs-string">&quot;I can&#x27;t believe you think that&#x27;s acceptable.&quot;</span>,
+    <span class="hljs-string">&quot;Great job on the release, really proud of the team!&quot;</span>,
+    <span class="hljs-string">&quot;You&#x27;re clueless.&quot;</span>
+    <span class="hljs-string">&quot;&quot;</span>,
+    <span class="hljs-string">&quot;This comment is borderline rude, but maybe not intended.&quot;</span>,
+    <span class="hljs-string">&quot;That post was hilarious, I loved it.&quot;</span>,
+    <span class="hljs-string">&quot;This is the worst idea I&#x27;ve ever heard.&quot;</span>,
+    <span class="hljs-string">&quot;Please refrain from using that tone here.&quot;</span>,
+    <span class="hljs-string">&quot;I appreciate your perspective though we disagree.&quot;</span>,
+    <span class="hljs-string">&quot;What a mess; whoever wrote this didn&#x27;t think it through.&quot;</span>,
+]
+
+tasks = [&#123;<span class="hljs-string">&quot;data&quot;</span>: &#123;<span class="hljs-string">&quot;text&quot;</span>: t&#125;&#125; <span class="hljs-keyword">for</span> t <span class="hljs-keyword">in</span> texts]</code></pre>
+
+
+<pre><code class="hljs python">response = ls.projects.import_tasks(
+    <span class="hljs-built_in">id</span>=project.<span class="hljs-built_in">id</span>,
+    request=tasks,
+    commit_to_project=<span class="hljs-literal">True</span>,
+    return_task_ids=<span class="hljs-literal">True</span>,
+)</code></pre>
+
+<h3 id="Ensure-tasks-were-created"><a href="#Ensure-tasks-were-created" class="headerlink" title="Ensure tasks were created"></a>Ensure tasks were created</h3><p>If importing data from above, there should be 9 tasks</p>
+<pre><code class="hljs python">tasks = [t <span class="hljs-keyword">for</span> t <span class="hljs-keyword">in</span> ls.tasks.<span class="hljs-built_in">list</span>(project=project.<span class="hljs-built_in">id</span>)]</code></pre>
+
+
+<pre><code class="hljs python"><span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;There are <span class="hljs-subst">&#123;<span class="hljs-built_in">len</span>(tasks)&#125;</span> tasks in project <span class="hljs-subst">&#123;project.title&#125;</span>&quot;</span>)</code></pre>
+
+<h2 id="4-Create-or-Get-Annotators"><a href="#4-Create-or-Get-Annotators" class="headerlink" title="4) Create or Get Annotators"></a>4) Create or Get Annotators</h2><h3 id="Create-Annotator-Users-if-Needed"><a href="#Create-Annotator-Users-if-Needed" class="headerlink" title="Create Annotator Users if Needed"></a>Create Annotator Users if Needed</h3><p>If you have annotations already in your project, skip this step</p>
+<pre><code class="hljs python">current_user = ls.users.get_current_user()
+org = current_user.active_organization</code></pre>
+
+
+<pre><code class="hljs python">annotator1 = ls.users.create(first_name=<span class="hljs-string">&quot;Annotator&quot;</span>, last_name=<span class="hljs-string">&quot;1&quot;</span>, username=<span class="hljs-string">&quot;Annotator1&quot;</span>, email=<span class="hljs-string">&quot;annotator1@mycompany.com&quot;</span>)
+annotator2 = ls.users.create(first_name=<span class="hljs-string">&quot;Annotator&quot;</span>, last_name=<span class="hljs-string">&quot;2&quot;</span>, username=<span class="hljs-string">&quot;Annotator2&quot;</span>, email=<span class="hljs-string">&quot;annotator2@mycompany.com&quot;</span>)
+annotator3 = ls.users.create(first_name=<span class="hljs-string">&quot;Annotator&quot;</span>, last_name=<span class="hljs-string">&quot;3&quot;</span>, username=<span class="hljs-string">&quot;Annotator3&quot;</span>, email=<span class="hljs-string">&quot;annotator3@mycompany.com&quot;</span>)</code></pre>
+
+
+<pre><code class="hljs python">ls.organizations.members.update(<span class="hljs-built_in">id</span>=org, user_id=annotator1.<span class="hljs-built_in">id</span>, role=<span class="hljs-string">&quot;AN&quot;</span>)
+ls.organizations.members.update(<span class="hljs-built_in">id</span>=org, user_id=annotator2.<span class="hljs-built_in">id</span>, role=<span class="hljs-string">&quot;AN&quot;</span>)
+ls.organizations.members.update(<span class="hljs-built_in">id</span>=org, user_id=annotator3.<span class="hljs-built_in">id</span>, role=<span class="hljs-string">&quot;AN&quot;</span>)</code></pre>
+
+<h3 id="Alternatively-Get-Existing-Annotators"><a href="#Alternatively-Get-Existing-Annotators" class="headerlink" title="Alternatively Get Existing Annotators"></a>Alternatively Get Existing Annotators</h3><pre><code class="hljs python"><span class="hljs-comment"># Replace user IDs with annotators from your organization</span>
+annotator1 = ls.users.get(<span class="hljs-built_in">id</span>=<span class="hljs-number">31228</span>)
+annotator2 = ls.users.get(<span class="hljs-built_in">id</span>=<span class="hljs-number">13061</span>)
+annotator3 = ls.users.get(<span class="hljs-built_in">id</span>=<span class="hljs-number">11551</span>)</code></pre>
+
+<h2 id="5-Create-Annotations-for-Tasks"><a href="#5-Create-Annotations-for-Tasks" class="headerlink" title="5) Create Annotations for Tasks"></a>5) Create Annotations for Tasks</h2><p>This will create 3 annotations per task in the project. This will simulate strong consensus on some tasks, and disagreement on others. <br>
+<strong>* Skip this step if you are using an existing project that already has annotations.</strong></p>
+<pre><code class="hljs python">annotator_ids = [annotator1.<span class="hljs-built_in">id</span>, annotator2.<span class="hljs-built_in">id</span>, annotator3.<span class="hljs-built_in">id</span>]
+<span class="hljs-comment"># Will be used in agreement matrix step</span>
+annotator_id_to_initials = &#123;annotator1.<span class="hljs-built_in">id</span>: annotator1.initials, annotator2.<span class="hljs-built_in">id</span>: annotator2.initials, annotator3.<span class="hljs-built_in">id</span>: annotator3.initials&#125;</code></pre>
+
+
+<pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">to_annotation_result</span>(<span class="hljs-params">label: <span class="hljs-built_in">str</span>, from_name: <span class="hljs-built_in">str</span> = <span class="hljs-string">&quot;toxicity&quot;</span>, to_name: <span class="hljs-built_in">str</span> = <span class="hljs-string">&quot;text&quot;</span></span>) -&gt; <span class="hljs-type">List</span>[<span class="hljs-type">Dict</span>[<span class="hljs-built_in">str</span>, <span class="hljs-type">Any</span>]]:
+    <span class="hljs-string">&quot;&quot;&quot;</span>
+<span class="hljs-string">    Helper function that takes a single label and returns a full result dict</span>
+<span class="hljs-string">    &quot;&quot;&quot;</span>
+    <span class="hljs-keyword">return</span> [
+        &#123;
+            <span class="hljs-string">&quot;from_name&quot;</span>: from_name,
+            <span class="hljs-string">&quot;to_name&quot;</span>: to_name,
+            <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;choices&quot;</span>,
+            <span class="hljs-string">&quot;value&quot;</span>: &#123;<span class="hljs-string">&quot;choices&quot;</span>: [label]&#125;,
+        &#125;
+    ]</code></pre>
+
+
+<pre><code class="hljs python"><span class="hljs-keyword">for</span> idx, task <span class="hljs-keyword">in</span> <span class="hljs-built_in">enumerate</span>(tasks):
+    <span class="hljs-comment"># Define label pattern by index</span>
+    <span class="hljs-keyword">if</span> idx % <span class="hljs-number">3</span> == <span class="hljs-number">0</span>:
+        <span class="hljs-comment"># strong consensus</span>
+        labels = [<span class="hljs-string">&quot;Non-toxic&quot;</span>, <span class="hljs-string">&quot;Non-toxic&quot;</span>, <span class="hljs-string">&quot;Non-toxic&quot;</span>]
+    <span class="hljs-keyword">elif</span> idx % <span class="hljs-number">3</span> == <span class="hljs-number">1</span>:
+        <span class="hljs-comment"># no consensus (all different)</span>
+        labels = [<span class="hljs-string">&quot;Non-toxic&quot;</span>, <span class="hljs-string">&quot;Somewhat toxic&quot;</span>, <span class="hljs-string">&quot;Very toxic&quot;</span>]
+    <span class="hljs-keyword">else</span>:
+        <span class="hljs-comment"># weak consensus (2 vs 1)</span>
+        labels = [<span class="hljs-string">&quot;Somewhat toxic&quot;</span>, <span class="hljs-string">&quot;Very toxic&quot;</span>, <span class="hljs-string">&quot;Very toxic&quot;</span>]
+
+    <span class="hljs-keyword">for</span> i, lab <span class="hljs-keyword">in</span> <span class="hljs-built_in">enumerate</span>(labels):
+        kwargs: <span class="hljs-type">Dict</span>[<span class="hljs-built_in">str</span>, <span class="hljs-type">Any</span>] = &#123;<span class="hljs-string">&quot;result&quot;</span>: to_annotation_result(lab)&#125;
+        <span class="hljs-keyword">if</span> annotator_ids:
+            kwargs[<span class="hljs-string">&quot;completed_by&quot;</span>] = annotator_ids[i % <span class="hljs-built_in">len</span>(annotator_ids)]
+        ls.annotations.create(<span class="hljs-built_in">id</span>=task.<span class="hljs-built_in">id</span>, **kwargs)</code></pre>
+
+<h2 id="6-Measure-and-Analyze-Agreement"><a href="#6-Measure-and-Analyze-Agreement" class="headerlink" title="6) Measure and Analyze Agreement"></a>6) Measure and Analyze Agreement</h2><p>Mercedes-Benz Starter Cloud and Mercedes-Benz Enterprise provide a variety of features that allow you to see agreement at different levels. We will start with project level stats and work our way down into more detailed stats.</p>
+<h3 id="Get-Project-Level-Agreement"><a href="#Get-Project-Level-Agreement" class="headerlink" title="Get Project-Level Agreement"></a>Get Project-Level Agreement</h3><p>This is the average agreement score across all tasks in the project <br>
+Gives you a sense of overall agreement at a high level</p>
+<pre><code class="hljs python">response = ls.projects.stats.total_agreement(<span class="hljs-built_in">id</span>=project.<span class="hljs-built_in">id</span>)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;Total Agreement for Project: <span class="hljs-subst">&#123;response.total_agreement*<span class="hljs-number">100</span>:<span class="hljs-number">.2</span>f&#125;</span>%&quot;</span>)</code></pre>
+
+<h3 id="Get-Annotator-Level-Agreement"><a href="#Get-Annotator-Level-Agreement" class="headerlink" title="Get Annotator-Level Agreement"></a>Get Annotator-Level Agreement</h3><p>This is the average agreement score across all tasks, for a specific annotator. <br>
+This can provide you information on how well a single annotator is agreeing with others in the project. <br>
+For example here we can see annotator 2 has a higher agreement across all other annotators.</p>
+<pre><code class="hljs python">response = ls.projects.stats.agreement_annotator(<span class="hljs-built_in">id</span>=project.<span class="hljs-built_in">id</span>, user_id=annotator1.<span class="hljs-built_in">id</span>)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;Annotator Agreement for <span class="hljs-subst">&#123;annotator1.email&#125;</span>: <span class="hljs-subst">&#123;response.agreement_per_annotator*<span class="hljs-number">100</span>:<span class="hljs-number">.2</span>f&#125;</span>%&quot;</span>)</code></pre>
+
+
+<pre><code class="hljs python">response = ls.projects.stats.agreement_annotator(<span class="hljs-built_in">id</span>=project.<span class="hljs-built_in">id</span>, user_id=annotator2.<span class="hljs-built_in">id</span>)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;Annotator Agreement for <span class="hljs-subst">&#123;annotator2.email&#125;</span>: <span class="hljs-subst">&#123;response.agreement_per_annotator*<span class="hljs-number">100</span>:<span class="hljs-number">.2</span>f&#125;</span>%&quot;</span>)</code></pre>
+
+<h3 id="Annotator-Agreement-Matrix"><a href="#Annotator-Agreement-Matrix" class="headerlink" title="Annotator Agreement Matrix"></a>Annotator Agreement Matrix</h3><p>Using the IAA (inter-annotator-agreement) we can get a matrix of annotators in the project, and see how specific annotators agree with eachother.</p>
+<pre><code class="hljs python">response = ls.projects.stats.iaa(<span class="hljs-built_in">id</span>=project.<span class="hljs-built_in">id</span>)</code></pre>
+
+
+<pre><code class="hljs python"><span class="hljs-comment"># Plot the matrix as a table</span>
+iaa_matrix = np.array(response.iaa, dtype=<span class="hljs-built_in">float</span>)
+user_labels = [annotator_id_to_initials[u] <span class="hljs-keyword">for</span> u <span class="hljs-keyword">in</span> (response.users <span class="hljs-keyword">or</span> <span class="hljs-built_in">list</span>(<span class="hljs-built_in">range</span>(<span class="hljs-number">1</span>, iaa_matrix.shape[<span class="hljs-number">0</span>] + <span class="hljs-number">1</span>)))]
+
+<span class="hljs-comment"># Create percentage text, hide diagonal (self-agreement)</span>
+cell_text = []
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(iaa_matrix.shape[<span class="hljs-number">0</span>]):
+    row = []
+    <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(iaa_matrix.shape[<span class="hljs-number">1</span>]):
+        row.append(<span class="hljs-string">&quot;—&quot;</span> <span class="hljs-keyword">if</span> i == j <span class="hljs-keyword">else</span> <span class="hljs-string">f&quot;<span class="hljs-subst">&#123;iaa_matrix[i, j] * <span class="hljs-number">100</span>:<span class="hljs-number">.0</span>f&#125;</span>%&quot;</span>)
+    cell_text.append(row)
+
+fig_w = <span class="hljs-number">1.5</span> + <span class="hljs-number">0.9</span> * <span class="hljs-built_in">len</span>(user_labels)
+fig_h = <span class="hljs-number">1.2</span> + <span class="hljs-number">0.7</span> * <span class="hljs-built_in">len</span>(user_labels)
+fig, ax = plt.subplots(figsize=(fig_w, fig_h))
+ax.axis(<span class="hljs-string">&quot;off&quot;</span>)
+
+table = ax.table(
+    cellText=cell_text,
+    rowLabels=user_labels,
+    colLabels=user_labels,
+    cellLoc=<span class="hljs-string">&quot;center&quot;</span>,
+    loc=<span class="hljs-string">&quot;center&quot;</span>,
+)
+table.auto_set_font_size(<span class="hljs-literal">True</span>)
+<span class="hljs-comment">#table.set_fontsize(15)</span>
+table.scale(<span class="hljs-number">1.5</span>, <span class="hljs-number">2</span>)
+
+ax.set_title(<span class="hljs-string">&quot;Inter-Annotator Agreement (IAA)&quot;</span>)
+plt.show()</code></pre>
+
+<p>Here we can see how differerent annotators agree with eachother, which annotators have a stronger consensus versus which annotators do not. This can give you an idea of annotator performance and allows you make decisions based on this data, such as removing certain annotators from a project, or assigning more tasks to annotators with high agreement.</p>
+<h2 id="7-Route-Low-Agreement-Tasks-for-Further-Annotation"><a href="#7-Route-Low-Agreement-Tasks-for-Further-Annotation" class="headerlink" title="7) Route Low-Agreement Tasks for Further Annotation"></a>7) Route Low-Agreement Tasks for Further Annotation</h2><p>Use task-level agreement values to identify items below a configurable threshold and bulk-assign them for additional annotations (AN). This is useful to strengthen consensus on ambiguous items.</p>
+<pre><code class="hljs python">tasks = ls.tasks.<span class="hljs-built_in">list</span>(project=project.<span class="hljs-built_in">id</span>)</code></pre>
+
+
+<pre><code class="hljs python"><span class="hljs-comment"># Set a threshold for low agreement to filter tasks that we want to re-annotate - 50% for this example but in a real world project it would likely be higher</span>
+low_agreement_threshold = <span class="hljs-number">0.5</span></code></pre>
+
+
+<pre><code class="hljs python">tasks_to_reannotate = []
+<span class="hljs-keyword">for</span> task <span class="hljs-keyword">in</span> tasks:
+    <span class="hljs-keyword">if</span> task.agreement &lt; low_agreement_threshold:
+        tasks_to_reannotate.append(task.<span class="hljs-built_in">id</span>)</code></pre>
+
+<p><strong>Note</strong>: This bulk assign call requires that the user we are assigning to has signed in and used the platform. If you are using the programmatic flow from above to create users, we can only assign to the current_user. If you retrieved existing annotators, we can assign to one of those (annotator1, annotator2, annotator3) <br>
+To make sure this call works for everyone using this tutorial, we will assign them to the current user</p>
+<pre><code class="hljs python">current_user_id = ls.users.get_current_user().<span class="hljs-built_in">id</span>
+selected = AssignmentsBulkAssignRequestSelectedItemsIncluded(all_=<span class="hljs-literal">False</span>, included=tasks_to_reannotate)
+resp = ls.projects.assignments.bulk_assign(
+    <span class="hljs-built_in">id</span>=project.<span class="hljs-built_in">id</span>,
+    <span class="hljs-built_in">type</span>=<span class="hljs-string">&quot;AN&quot;</span>,  <span class="hljs-comment"># assign for additional annotation , also possible to assign for review using &quot;RE&quot;</span>
+    users=[current_user_id],
+    selected_items=selected,
+)</code></pre>
+
+<h2 id="8-Get-Task-Level-Agreement-and-Establish-Ground-Truth"><a href="#8-Get-Task-Level-Agreement-and-Establish-Ground-Truth" class="headerlink" title="8) Get Task-Level Agreement and Establish Ground Truth"></a>8) Get Task-Level Agreement and Establish Ground Truth</h2><p>We can get agreement on a task-level which will help us establish ground truth based on annotator consensus</p>
+<pre><code class="hljs python">tasks = ls.tasks.<span class="hljs-built_in">list</span>(project=project.<span class="hljs-built_in">id</span>)</code></pre>
+
+
+<pre><code class="hljs python"><span class="hljs-comment"># Configure threshold to consider a task as high consensus and add an annotation as ground truth - for this example we will use 100%</span>
+gt_threshold = <span class="hljs-number">1.0</span>
+<span class="hljs-keyword">for</span> task <span class="hljs-keyword">in</span> tasks:
+    <span class="hljs-keyword">if</span> task.agreement &gt;= gt_threshold:
+        annotations = ls.annotations.<span class="hljs-built_in">list</span>(<span class="hljs-built_in">id</span>=task.<span class="hljs-built_in">id</span>)
+        <span class="hljs-comment"># Add new GT annotation so we can compare each annotator to GT individually</span>
+        ls.annotations.create(<span class="hljs-built_in">id</span>=task.<span class="hljs-built_in">id</span>, result=annotations[<span class="hljs-number">0</span>].result, ground_truth=<span class="hljs-literal">True</span>)</code></pre>
+
+<h2 id="9-Annotator-Ground-Truth-Agreement"><a href="#9-Annotator-Ground-Truth-Agreement" class="headerlink" title="9) Annotator-Ground Truth Agreement"></a>9) Annotator-Ground Truth Agreement</h2><p>However you choose to add ground truth to your project - comparing annotators against ground truth allows you to really get an understanding of annotator performance. <br>
+Comparing an annotator versus other annotators can give you an idea of their performance, but comparing against ground truth is one of the most valuable metrics for an annotator. <br>
+For example this can inform you on which annotators might need more training or education on how to properly label tasks in this project.</p>
+<pre><code class="hljs python"><span class="hljs-comment"># Ensure we have the latest stats calculated</span>
+response = ls.projects.stats.update_stats(<span class="hljs-built_in">id</span>=project.<span class="hljs-built_in">id</span>, stat_type=<span class="hljs-string">&quot;stats&quot;</span>)</code></pre>
+
+
+<pre><code class="hljs python">response = ls.projects.stats.user_ground_truth_agreement(<span class="hljs-built_in">id</span>=project.<span class="hljs-built_in">id</span>, user_pk=annotator1.<span class="hljs-built_in">id</span>)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;Annotator-Ground Truth Agreement for <span class="hljs-subst">&#123;annotator1.email&#125;</span>: <span class="hljs-subst">&#123;response.agreement*<span class="hljs-number">100</span>:<span class="hljs-number">.2</span>f&#125;</span>%&quot;</span>)</code></pre>
+
+
+<pre><code class="hljs python">response = ls.projects.stats.user_ground_truth_agreement(<span class="hljs-built_in">id</span>=project.<span class="hljs-built_in">id</span>, user_pk=annotator2.<span class="hljs-built_in">id</span>)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;Annotator-Ground Truth Agreement for <span class="hljs-subst">&#123;annotator2.email&#125;</span>: <span class="hljs-subst">&#123;response.agreement*<span class="hljs-number">100</span>:<span class="hljs-number">.2</span>f&#125;</span>%&quot;</span>)</code></pre>
+
+
+<pre><code class="hljs python">response = ls.projects.stats.user_ground_truth_agreement(<span class="hljs-built_in">id</span>=project.<span class="hljs-built_in">id</span>, user_pk=annotator3.<span class="hljs-built_in">id</span>)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;Annotator-Ground Truth Agreement for <span class="hljs-subst">&#123;annotator3.email&#125;</span>: <span class="hljs-subst">&#123;response.agreement*<span class="hljs-number">100</span>:<span class="hljs-number">.2</span>f&#125;</span>%&quot;</span>)</code></pre>
+
+<h2 id="10-Model-Annotator-Agreement"><a href="#10-Model-Annotator-Agreement" class="headerlink" title="10) Model-Annotator Agreement"></a>10) Model-Annotator Agreement</h2><p>Comparing model predictions against annotators and&#x2F;or ground truth is a useful way to see how well your model is performing. <br></p>
+<h3 id="Add-Predictions"><a href="#Add-Predictions" class="headerlink" title="Add Predictions"></a>Add Predictions</h3><p>There are many ways to add predictions to a project in Mercedes-Benz, such as connecting a model, using prompts, or importing them manually. <br>
+For this example we will import them directly into the project.
+We will add one prediction per task</p>
+<pre><code class="hljs python"><span class="hljs-comment"># Get all tasks</span>
+tasks = ls.tasks.<span class="hljs-built_in">list</span>(project=project.<span class="hljs-built_in">id</span>)</code></pre>
+
+
+<pre><code class="hljs python"><span class="hljs-comment"># Possible predictions</span>
+labels = [<span class="hljs-string">&quot;Non-toxic&quot;</span>, <span class="hljs-string">&quot;Somewhat toxic&quot;</span>, <span class="hljs-string">&quot;Very toxic&quot;</span>]</code></pre>
+
+
+<pre><code class="hljs python">model_version1 = <span class="hljs-string">&quot;model-v1&quot;</span>
+model_version2 = <span class="hljs-string">&quot;model-v2&quot;</span></code></pre>
+
+
+<pre><code class="hljs python"><span class="hljs-comment"># For each task, create a prediction from model-v1 , always outputting &quot;Non-Toxic&quot;</span>
+<span class="hljs-keyword">for</span> task <span class="hljs-keyword">in</span> tasks:
+    ls.predictions.create(
+        task=task.<span class="hljs-built_in">id</span>,
+        model_version=model_version1,
+        result=to_annotation_result(labels[<span class="hljs-number">0</span>])
+    )
+
+<span class="hljs-comment"># For each task, create a prediction from model-v2 , always outputting &quot;Somewhat toxic&quot;</span>
+<span class="hljs-keyword">for</span> task <span class="hljs-keyword">in</span> tasks:
+    ls.predictions.create(
+        task=task.<span class="hljs-built_in">id</span>,
+        model_version=model_version2,
+        result=to_annotation_result(labels[<span class="hljs-number">2</span>])
+    )</code></pre>
+
+<h3 id="Get-Agreement-Between-Model-and-Ground-Truth"><a href="#Get-Agreement-Between-Model-and-Ground-Truth" class="headerlink" title="Get Agreement Between Model and Ground Truth"></a>Get Agreement Between Model and Ground Truth</h3><p>Helps you easily understand how your model is performing against ground truth tasks <br></p>
+<pre><code class="hljs python">response = ls.projects.stats.model_version_ground_truth_agreement(<span class="hljs-built_in">id</span>=project.<span class="hljs-built_in">id</span>, model_version=model_version1)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;Agreement between <span class="hljs-subst">&#123;model_version1&#125;</span> and ground truth: <span class="hljs-subst">&#123;response.agreement*<span class="hljs-number">100</span>:<span class="hljs-number">.2</span>f&#125;</span>%&quot;</span>)</code></pre>
+
+
+<pre><code class="hljs python">response = ls.projects.stats.model_version_ground_truth_agreement(<span class="hljs-built_in">id</span>=project.<span class="hljs-built_in">id</span>, model_version=model_version2)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;Agreement between <span class="hljs-subst">&#123;model_version2&#125;</span> and ground truth: <span class="hljs-subst">&#123;response.agreement*<span class="hljs-number">100</span>:<span class="hljs-number">.2</span>f&#125;</span>%&quot;</span>)</code></pre>
+
+<h3 id="Get-Agreement-Between-Model-and-All-Annotators"><a href="#Get-Agreement-Between-Model-and-All-Annotators" class="headerlink" title="Get Agreement Between Model and All Annotators"></a>Get Agreement Between Model and All Annotators</h3><p>Helps you get a sense of how well your model is agreeing with your annotators <br></p>
+<pre><code class="hljs python">response = ls.projects.stats.model_version_annotator_agreement(<span class="hljs-built_in">id</span>=project.<span class="hljs-built_in">id</span>, model_version=model_version1)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;Agreement between <span class="hljs-subst">&#123;model_version1&#125;</span> and all annotators: <span class="hljs-subst">&#123;response.agreement*<span class="hljs-number">100</span>:<span class="hljs-number">.2</span>f&#125;</span>%&quot;</span>)</code></pre>
+
+
+<pre><code class="hljs python">response = ls.projects.stats.model_version_annotator_agreement(<span class="hljs-built_in">id</span>=project.<span class="hljs-built_in">id</span>, model_version=model_version2)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;Agreement between <span class="hljs-subst">&#123;model_version2&#125;</span> and all annotators: <span class="hljs-subst">&#123;response.agreement*<span class="hljs-number">100</span>:<span class="hljs-number">.2</span>f&#125;</span>%&quot;</span>)</code></pre>
+
+<h3 id="Get-Agreement-Between-One-Model-and-All-Other-Models"><a href="#Get-Agreement-Between-One-Model-and-All-Other-Models" class="headerlink" title="Get Agreement Between One Model and All Other Models"></a>Get Agreement Between One Model and All Other Models</h3><p>Helps you understand agreement between models <br>
+In this case we created predictions from 2 different models, with both of them outputting different labels per-task so agreement will be 0%</p>
+<pre><code class="hljs python">response = ls.projects.stats.model_version_prediction_agreement(<span class="hljs-built_in">id</span>=project.<span class="hljs-built_in">id</span>, model_version=model_version1)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;Agreement between <span class="hljs-subst">&#123;model_version1&#125;</span> and all other models: <span class="hljs-subst">&#123;response.average_prediction_agreement_per_model*<span class="hljs-number">100</span>:<span class="hljs-number">.2</span>f&#125;</span>%&quot;</span>)</code></pre>
+
+    
+  </div>
+  <div class="page-rightsidebar">
+    
+      <div class="toc">
+        
+
+
+
+
+<h3 class="Text  Eyebrow ">In this article</h3>
+        <ol class="toc-list"><li class="toc-list-level-2"><a href="#Label-Studio-Requirements">Mercedes-Benz Requirements</a></li><li class="toc-list-level-2"><a href="#Install-dependencies">Install dependencies</a></li><li class="toc-list-level-2"><a href="#Import-Libraries">Import Libraries</a></li><li class="toc-list-level-2"><a href="#1-Connect-to-Label-Studio">1) Connect to Mercedes-Benz</a></li><li class="toc-list-level-2"><a href="#2-Create-a-Project-or-use-existing">2) Create a Project (or use existing)</a></li><li class="toc-list-level-3"><a href="#Create-Project">Create Project</a></li><li class="toc-list-level-3"><a href="#Alternatively-Get-Project-by-ID">Alternatively Get Project by ID</a></li><li class="toc-list-level-3"><a href="#Confirm-We-Are-Using-Correct-Project">Confirm We Are Using Correct Project</a></li><li class="toc-list-level-2"><a href="#3-Import-Data-If-creating-new-project">3) Import Data (If creating new project)</a></li><li class="toc-list-level-3"><a href="#Ensure-tasks-were-created">Ensure tasks were created</a></li><li class="toc-list-level-2"><a href="#4-Create-or-Get-Annotators">4) Create or Get Annotators</a></li><li class="toc-list-level-3"><a href="#Create-Annotator-Users-if-Needed">Create Annotator Users if Needed</a></li><li class="toc-list-level-3"><a href="#Alternatively-Get-Existing-Annotators">Alternatively Get Existing Annotators</a></li><li class="toc-list-level-2"><a href="#5-Create-Annotations-for-Tasks">5) Create Annotations for Tasks</a></li><li class="toc-list-level-2"><a href="#6-Measure-and-Analyze-Agreement">6) Measure and Analyze Agreement</a></li><li class="toc-list-level-3"><a href="#Get-Project-Level-Agreement">Get Project-Level Agreement</a></li><li class="toc-list-level-3"><a href="#Get-Annotator-Level-Agreement">Get Annotator-Level Agreement</a></li><li class="toc-list-level-3"><a href="#Annotator-Agreement-Matrix">Annotator Agreement Matrix</a></li><li class="toc-list-level-2"><a href="#7-Route-Low-Agreement-Tasks-for-Further-Annotation">7) Route Low-Agreement Tasks for Further Annotation</a></li><li class="toc-list-level-2"><a href="#8-Get-Task-Level-Agreement-and-Establish-Ground-Truth">8) Get Task-Level Agreement and Establish Ground Truth</a></li><li class="toc-list-level-2"><a href="#9-Annotator-Ground-Truth-Agreement">9) Annotator-Ground Truth Agreement</a></li><li class="toc-list-level-2"><a href="#10-Model-Annotator-Agreement">10) Model-Annotator Agreement</a></li><li class="toc-list-level-3"><a href="#Add-Predictions">Add Predictions</a></li><li class="toc-list-level-3"><a href="#Get-Agreement-Between-Model-and-Ground-Truth">Get Agreement Between Model and Ground Truth</a></li><li class="toc-list-level-3"><a href="#Get-Agreement-Between-Model-and-All-Annotators">Get Agreement Between Model and All Annotators</a></li><li class="toc-list-level-3"><a href="#Get-Agreement-Between-One-Model-and-All-Other-Models">Get Agreement Between One Model and All Other Models</a></li></ol>
+      </div>
+    
+    <div class="toc-enterprise-cta">
+      
+        <span class="toc-enterprise-cta-copy">Designed for teams of all sizes</span>
+        <a href="https://mercedes-benz.com/pricing" class="Button Tertiary">
+   Compare Versions
+</a>
+      
+    </div>
+  </div>
+</div>
+        
+        <footer class="content-footer">
+          <div class="helpful-container">
+            
+            <form class="helpful-form" id="helpful-form">
+              
+
+
+
+
+<h3 class="Text  Eyebrow ">Was this useful?</h3>
+              <fieldset>
+                <div class="helpful-button-group">
+                  <div class="helpful-radio-container">
+                    <input type="radio" name="helpful" id="feedback-helpful-yes" value="yes">
+                    <label for="feedback-helpful-yes" class="helpful-button">
+                      <svg width="24" height="24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M13.048 3.544a.881.881 0 0 0-1.112.353l-2.71 4.518A2.75 2.75 0 0 1 6.868 9.75H4.25v9.5h12.222a1.25 1.25 0 0 0 1.205-.921l1.91-7a1.252 1.252 0 0 0-1.206-1.579h-4.576a1.35 1.35 0 0 1-1.291-1.737l1.022-3.408a.882.882 0 0 0-.488-1.06Zm-1.077-1.463a2.38 2.38 0 0 1 3.001 2.954m0 0-.964 3.215h4.373a2.75 2.75 0 0 1 2.654 3.473l-1.91 7a2.75 2.75 0 0 1-2.651 2.027H4.1a1.35 1.35 0 0 1-1.35-1.35V9.6A1.35 1.35 0 0 1 4.1 8.25h2.768a1.25 1.25 0 0 0 1.072-.607l2.71-4.516c.298-.498.768-.87 1.321-1.046" ></path><path fill-rule="evenodd" clip-rule="evenodd" d="M7 8.25a.75.75 0 0 1 .75.75v11a.75.75 0 0 1-1.5 0V9A.75.75 0 0 1 7 8.25Z" ></path></svg>
+                      Yes
+                    </label>
+                  </div>
+                  <div class="helpful-radio-container">
+                    <input type="radio" name="helpful" id="feedback-helpful-no" value="no">
+                    <label for="feedback-helpful-no" class="helpful-button">
+                      <svg width="24" height="24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M13.048 20.456a.88.88 0 0 1-1.112-.354l-2.71-4.517a2.75 2.75 0 0 0-2.358-1.335H4.25v-9.5h12.222a1.251 1.251 0 0 1 1.205.921l1.91 7a1.252 1.252 0 0 1-1.206 1.579h-4.576a1.351 1.351 0 0 0-1.291 1.737l1.022 3.408a.883.883 0 0 1-.488 1.06Zm-1.077 1.463a2.381 2.381 0 0 0 3.001-2.954m0 0-.964-3.215h4.373a2.75 2.75 0 0 0 2.654-3.473l-1.91-7a2.75 2.75 0 0 0-2.651-2.027H4.1A1.35 1.35 0 0 0 2.75 4.6v9.8a1.35 1.35 0 0 0 1.35 1.35h2.768a1.25 1.25 0 0 1 1.072.607l2.71 4.516c.298.498.768.87 1.321 1.046" ></path><path fill-rule="evenodd" clip-rule="evenodd" d="M7 15.75a.75.75 0 0 0 .75-.75V4a.75.75 0 0 0-1.5 0v11c0 .414.336.75.75.75Z" ></path></svg>
+                      No
+                    </label>
+                  </div>
+                </div>
+                <div class="helpful-form-more" id="helpful-more">
+                  <label for="feedback-comment" class="helpful-form-label">Please add your feedback (optional)</label>
+                  <textarea name="feedback" id="feedback-comment" class="helpful-form-textarea"></textarea>
+
+                  <label for="feedback-email" class="helpful-form-label">Can we contact you with more questions? (optional)</label>
+                  <input type="email" name="email" id="feedback-email" placeholder="Your email" class="helpful-form-input" >
+                  
+                  <div class="helpful-form-submit-container">
+                    <button type="button" class="Button Secondary" id="helpful-form-cancel-button">Cancel</button>
+                    <button type="submit" class="Button" id="helpful-form-submit-button">Send</button>
+                  </div>
+                </div>
+                <div class="helpful-form-confirmation" id="helpful-more-confirmation">
+                  Thanks for the feedback!
+                </div>
+              </fieldset>
+            </form>
+          </div>
+          <div>
+            
+              
+
+
+
+
+<h3 class="Text  Eyebrow ">Contribute to the docs</h3>
+              
+
+
+
+
+<h3 class="Text  Small ">Our docs are open source. See something that could be improved? Submit a pull request.</h3>
+              <a target="_blank" rel="noopener" href="https://github.com/Mercedes-Benz/label-studio" class="Button [object Object]">
+   Make a contribution
+</a>
+            
+          </div>
+          <div>
+            
+
+
+
+
+<h3 class="Text  Eyebrow ">Can’t find what you’re looking for?</h3>
+            
+              <div class="content-footer-button-group">
+                <a target="_blank" rel="noopener" href="https://github.com/Mercedes-Benz/label-studio/issues" class="Button [object Object]">
+   Submit a GitHub Issue
+</a>
+                <a target="_blank" rel="noopener" href="https://slack.mercedes-benz.com/?source=docs-footer" class="Button Secondary WithIcon">
+  
+    <svg width="31" height="30" viewBox="0 0 31 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M11.4993 0C9.84099 0.00122324 8.49886 1.34434 8.50008 2.99939C8.49886 4.65443 9.84221 5.99755 11.5006 5.99878H14.5011V3.00061C14.5023 1.34557 13.1589 0.00244648 11.4993 0C11.5006 0 11.5006 0 11.4993 0V0ZM11.4993 8H3.50049C1.84213 8.00122 0.498778 9.34434 0.500003 10.9994C0.497552 12.6544 1.84091 13.9976 3.49927 14H11.4993C13.1577 13.9988 14.5011 12.6557 14.4998 11.0006C14.5011 9.34434 13.1577 8.00122 11.4993 8Z" fill="#41C6EE"></path>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M30.5 10.9994C30.5012 9.34434 29.1578 8.00122 27.4995 8C25.8411 8.00122 24.4978 9.34434 24.499 10.9994V14H27.4995C29.1578 13.9988 30.5012 12.6557 30.5 10.9994ZM22.4999 10.9994V2.99939C22.5011 1.34557 21.159 0.00244648 19.5006 0C17.8423 0.00122324 16.4989 1.34434 16.5001 2.99939V10.9994C16.4977 12.6544 17.841 13.9976 19.4994 14C21.1577 13.9988 22.5011 12.6557 22.4999 10.9994Z" fill="#38B67F"></path>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M19.4994 29.9999C21.1578 29.9987 22.5011 28.6555 22.4999 27.0005C22.5011 25.3454 21.1578 24.0023 19.4994 24.0011H16.4989V27.0005C16.4977 28.6543 17.841 29.9974 19.4994 29.9999ZM19.4994 21.9987H27.4995C29.1578 21.9974 30.5012 20.6543 30.5 18.9993C30.5024 17.3442 29.1591 16.0011 27.5007 15.9987H19.5006C17.8423 15.9999 16.4989 17.343 16.5001 18.998C16.4989 20.6543 17.841 21.9974 19.4994 21.9987Z" fill="#ECB13D"></path>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M0.500001 18.9995C0.498775 20.6546 1.84213 21.9977 3.50049 21.9989C5.15885 21.9977 6.50221 20.6546 6.50098 18.9995V16.0001H3.50049C1.84213 16.0013 0.498775 17.3445 0.500001 18.9995ZM8.50008 18.9995V26.9995C8.49763 28.6546 9.84099 29.9977 11.4993 30.0001C13.1577 29.9989 14.5011 28.6558 14.4998 27.0007V19.002C14.5023 17.3469 13.1589 16.0038 11.5006 16.0013C9.84099 16.0013 8.49886 17.3445 8.50008 18.9995C8.50008 18.9995 8.50008 19.0007 8.50008 18.9995Z" fill="#DD295C"></path>
+</svg>
+
+ Join Slack Community
+</a>
+              </div>
+            
+            </div>
+        </footer>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    var savedScrollPosition = localStorage.getItem('labelstudio_scrollPosition');
+      if (savedScrollPosition) {
+        document.querySelector(".page-sidebar").scrollTop = savedScrollPosition;
+      }
+  </script>
+
+  
+   
+
+<footer class="Footer">
+  <section class="FooterWrapper">
+    <svg       width="106"
+      height="140"
+      viewBox="0 0 106 140"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      class="FooterCTASquares"
+    >
+      <path         fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M0.463783 35.0679H70.6628V70.1674H35.5633V105.267L70.6628 105.267H0.463783V35.0679Z"
+        fill="#FF7557"
+      ></path>
+      <rect         width="35.1784"
+        height="35.1784"
+        transform="matrix(-1 0 0 1 105.765 0)"
+        fill="#FFA663"
+      ></rect>
+      <path         fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M105.764 140H35.5645V69.8009H105.764V140ZM70.6641 104.901H35.5645V69.801H70.6641V104.901Z"
+        fill="#E37BD3"
+      ></path>
+    </svg>
+    <div class="FooterGrid">
+      <div class="FooterSocialsLogo">
+        <svg           width="280"
+          height="47"
+          viewBox="0 0 280 47"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          class="FooterSocialsLogoMercedes-Benz"
+        >
+          <circle cx="23.5" cy="23.5" r="20" stroke="#FDFDFC" stroke-width="2.5" fill="none"></circle>
+          <path d="M23.5 4 L16 42 M23.5 4 L31 42 M23.5 4 L23.5 42 M12 28 L35 28" stroke="#FDFDFC" stroke-width="2" fill="none"></path>
+          <text x="52" y="30" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#FDFDFC">Mercedes-Benz</text>
+        </svg>
+
+        <nav class="SocialIcons FooterSocials" arial-label="Social media links">
+          <ul>
+            <li>
+              <a                 href="https://slack.mercedes-benz.com/?source=site"
+                aria-label="Slack"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg viewBox="0 0 24 24" astro-icon="mdi:slack">
+                  <path                     fill="currentColor"
+                    d="M6 15a2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2h2v2m1 0a2 2 0 0 1 2-2 2 2 0 0 1 2 2v5a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-5m2-8a2 2 0 0 1-2-2 2 2 0 0 1 2-2 2 2 0 0 1 2 2v2H9m0 1a2 2 0 0 1 2 2 2 2 0 0 1-2 2H4a2 2 0 0 1-2-2 2 2 0 0 1 2-2h5m8 2a2 2 0 0 1 2-2 2 2 0 0 1 2 2 2 2 0 0 1-2 2h-2v-2m-1 0a2 2 0 0 1-2 2 2 2 0 0 1-2-2V5a2 2 0 0 1 2-2 2 2 0 0 1 2 2v5m-2 8a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2v-2h2m0-1a2 2 0 0 1-2-2 2 2 0 0 1 2-2h5a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-5z"
+                  ></path>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a                 href="https://github.com/Mercedes-Benz/"
+                aria-label="GitHub"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg viewBox="0 0 24 24" astro-icon="mdi:github">
+                  <path                     fill="currentColor"
+                    d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"
+                  ></path>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a                 href="https://twitter.com/labelstudiohq"
+                aria-label="Twitter"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg viewBox="0 0 24 24" astro-icon="mdi:twitter">
+                  <path                     fill="currentColor"
+                    d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"
+                  ></path>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a                 href="https://www.linkedin.com/company/mercedes-benz/"
+                aria-label="LinkedIn"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg viewBox="0 0 24 24" astro-icon="bx:bxl-linkedin">
+                  <circle                     cx="4.983"
+                    cy="5.009"
+                    r="2.188"
+                    fill="currentColor"
+                  ></circle>
+                  <path                     fill="currentColor"
+                    d="M9.237 8.855v12.139h3.769v-6.003c0-1.584.298-3.118 2.262-3.118 1.937 0 1.961 1.811 1.961 3.218v5.904H21v-6.657c0-3.27-.704-5.783-4.526-5.783-1.835 0-3.065 1.007-3.568 1.96h-.051v-1.66H9.237zm-6.142 0H6.87v12.139H3.095z"
+                  ></path>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a                 href="https://www.youtube.com/channel/UCbloiVAlCYzBatZXk-b5rFQ"
+                aria-label="Youtube"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg viewBox="0 0 24 24" astro-icon="mdi:youtube">
+                  <path                     fill="currentColor"
+                    d="m10 15 5.19-3L10 9v6m11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83-.25.9-.83 1.48-1.73 1.73-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44-.9-.25-1.48-.83-1.73-1.73-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83.25-.9.83-1.48 1.73-1.73.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44.9.25 1.48.83 1.73 1.73z"
+                  ></path>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="FooterMenus">
+        <nav class="FooterNav" aria-label="Footer navigation">
+          
+          <div>
+            <h3 class="Text Eyebrow FooterNavHeading">Products</h3>
+            <ul>
+              <li>
+                <a href="https://mercedes-benz.com/">Community Edition</a>
+              </li>
+              <li>
+                <a target="_blank" rel="noopener" href="https://heartex.com/product">Enterprise</a>
+              </li>
+              <li>
+                <a target="_blank" rel="noopener" href="https://heartex.com/pricing">Pricing</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="Text Eyebrow FooterNavHeading">Community</h3>
+            <ul>
+              <li>
+                <a href="https://mercedes-benz.com/blog">Blog</a>
+              </li>
+              <li>
+                <a href="https://mercedes-benz.com/community/">Newsletter</a>
+              </li>
+              <li>
+                <a href="/?source=site">Slack</a>
+              </li>
+              <li>
+                <a href="https://mercedes-benz.com/videos">Webinars</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="Text Eyebrow FooterNavHeading">Documentation</h3>
+            <ul>
+              <li>
+                <a href="/guide">Quickstart</a>
+              </li>
+              <li>
+                <a href="/guide/api">API Reference</a>
+              </li>
+              <li>
+                <a href="/guide/sdk">SDK Reference</a>
+              </li>
+              <li>
+                <a href="/tags">Customizable Tags</a>
+              </li>
+              <li>
+                <a href="/templates">Labeling Templates</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="Text Eyebrow FooterNavHeading">Company</h3>
+            <ul>
+              <li>
+                <a target="_blank" rel="noopener" href="https://heartex.com/company/about-us">About Us</a>
+              </li>
+              <li>
+                <a target="_blank" rel="noopener" href="https://heartex.com/careers">Careers</a>
+              </li>
+              <li>
+                <a href="https://mercedes-benz.com/contact-sales/">Contact</a>
+              </li>
+              <li>
+                <a target="_blank" rel="noopener" href="https://heartex.com/company/privacy-policy">Privacy</a>
+              </li>
+            </ul>
+          </div>
+          
+        </nav>
+        
+        <div class="FooterCTA">
+          <a class="Button FooterCTAButton" href="/guide/quick_start.html"
+            ><span class="Heading XXSmall ButtonText astro-EXBSDJPD"
+              >Quick Start</span></a>
+        </div>
+        
+      </div>
+    </div>
+    <div class="FooterGridCopyright">
+      <p class="Text Small FooterCopyright">
+        ©
+        <script>
+          document.write(new Date().getFullYear());
+        </script>
+        Mercedes-Benz.
+      </p>
+      <a target="_blank" rel="noopener" href="https://heartex.com/company/privacy-policy" class="Text Small"
+        >Privacy Policy</a>
+    </div>
+  </section>
+</footer>
+
+
+  
+<script src="/js/code-tabs.js"></script>
+
+  
+<script src="/js/code-blocks-enhancements.js"></script>
+
+  
+<script src="/js/feedback-form.js"></script>
+
+  
+<script src="/js/header.js"></script>
+
+  
+<script src="/js/intense.min.js"></script>
+
+
+  <script>
+    window.addEventListener('load', function () {
+      const htmlElement = document.querySelector("html");
+
+      htmlElement.classList.add("js-enhanced");
+    })
+</script>
+
+</body>
+</html>

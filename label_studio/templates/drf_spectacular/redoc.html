@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mercedes-Benz API</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/svg+xml" href="/static/icons/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Roboto:wght@300;400;700&display=swap">
+    <style>
+      body { margin: 0; padding: 0; }
+      .mb-api-header {
+        background: #000000;
+        padding: 12px 24px;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        border-bottom: 1px solid #333;
+      }
+      .mb-api-header svg {
+        flex-shrink: 0;
+      }
+      .mb-api-header-title {
+        color: #FFFFFF;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 18px;
+        font-weight: 700;
+        letter-spacing: 0.3px;
+      }
+      /* Hide Redoc's default logo/title since we have our own header */
+      [role="navigation"] > div:first-child > a[href] > img,
+      .api-info > h1 { }
+    </style>
+  </head>
+  <body>
+    <div class="mb-api-header">
+      <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="15" cy="15" r="13.5" stroke="#FFFFFF" stroke-width="2" fill="none"/>
+        <circle cx="15" cy="15" r="12" stroke="#FFFFFF" stroke-width="0.5" fill="none"/>
+        <path d="M15,3 L13.8,15 L16.2,15 Z M4.61,21 L15.6,16.04 L14.4,13.96 Z M25.39,21 L15.6,13.96 L14.4,16.04 Z" fill="#FFFFFF"/>
+      </svg>
+      <span class="mb-api-header-title">Mercedes-Benz API</span>
+    </div>
+    {% if settings %}
+    <div id="redoc-container"></div>
+    <script src="{{ redoc_standalone }}"></script>
+    <script>
+      const redocSettings = {{ settings|safe }};
+      Redoc.init("{{ schema_url }}", redocSettings, document.getElementById('redoc-container'))
+    </script>
+    {% else %}
+    <redoc spec-url="{{ schema_url }}"></redoc>
+    <script src="{{ redoc_standalone }}"></script>
+    {% endif %}
+  </body>
+</html>

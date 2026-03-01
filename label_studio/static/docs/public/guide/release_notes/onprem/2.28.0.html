@@ -1,0 +1,880 @@
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  
+    
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-TZ3RQGX');</script>
+    
+  
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <title>Mercedes-Benz — Data Labeling</title>
+  
+  <meta charset="utf-8">
+  <meta name="description" content="Get started with Mercedes-Benz by creating projects to label and annotate data for machine learning and data science models.">
+
+  <meta property="og:type" content="article">
+  
+  <meta property="og:title" content="Mercedes-Benz">
+  
+  <meta property="og:description" content="Get started with Mercedes-Benz by creating projects to label and annotate data for machine learning and data science models.">
+
+  <meta name="twitter:card" content="summary">
+  
+  <meta property="twitter:title" content="Mercedes-Benz">
+  
+  <meta name="twitter:description" content="Get started with Mercedes-Benz by creating projects to label and annotate data for machine learning and data science models.">
+
+  
+    <meta property="og:image" content="https://mercedes-benz.com/images/og-default-ls.png" >
+    <meta name="twitter:image" content="https://mercedes-benz.com/images/og-default-ls.png">
+  
+
+  <meta name="msapplication-TileColor" content="#4fc08d">
+  <meta name="theme-color" content="#4fc08d">
+  
+  
+    <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" >
+  
+
+  <link rel="preload" href="/fonts/SpaceGrotesk-Bold-subset.woff2" as="font" type="font/woff2" crossorigin>
+
+  
+<link rel="stylesheet" href="/css/styles.css">
+
+
+  
+
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js" defer></script>
+
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ startOnLoad: true });
+  </script>
+
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+<body class="page-tier-opensource">
+  
+  
+
+  
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TZ3RQGX"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  
+
+  
+  
+
+
+
+  
+      <a target="_blank" rel="noopener" href="https://mercedes-benz.com/blog/new-pdf-ocr-document-ai-labeling-interface" class="Alert">
+        <span class="AlertContent">
+          <span class="Badge">New</span>
+          <span class="AlertText">Advanced PDF + OCR Interface for Document AI</span>
+          <svg fill="currentColor" viewBox="0 0 14 12"><path fill-rule="evenodd" d="m8.792.119 4.866 5.654-4.866 5.654-.948-.816 3.627-4.213H.54v-1.25h10.93L7.844.934l.948-.815Z" clip-rule="evenodd"></path></svg>
+        </span>
+      </a>
+
+
+<header class="page-header">
+  <div class="page-header-top-level">
+    <div class="page-header-logo">
+      <a href="/guide" class="HeaderLogo" arial-label="Homepage">
+        
+          <svg width="240" height="30" viewBox="0 0 240 30" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="15" cy="15" r="13.5" stroke="#12110D" stroke-width="2" fill="none"></circle><circle cx="15" cy="15" r="12" stroke="#12110D" stroke-width="0.5" fill="none"></circle><path d="M15,3 L13.8,15 L16.2,15 Z M4.61,21 L15.6,16.04 L14.4,13.96 Z M25.39,21 L15.6,13.96 L14.4,16.04 Z" fill="#12110D"></path><text x="34" y="20" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#12110D" letter-spacing="0.3">Mercedes-Benz Docs</text></svg>
+
+      </a>
+    </div>
+
+    <div class="AlgoliaSearch">
+      <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg" class="AlgoliaSearchIcon">
+        <path d="M8 16C9.77498 15.9996 11.4988 15.4054 12.897 14.312L17.293 18.708L18.707 17.294L14.311 12.898C15.405 11.4997 15.9996 9.77544 16 8C16 3.589 12.411 0 8 0C3.589 0 0 3.589 0 8C0 12.411 3.589 16 8 16ZM8 2C11.309 2 14 4.691 14 8C14 11.309 11.309 14 8 14C4.691 14 2 11.309 2 8C2 4.691 4.691 2 8 2Z" ></path>
+      </svg>
+      <input id="docsearch-input" placeholder="Search docs" data-site-version="opensource" >
+      <svg width="43" height="31" viewBox="0 0 43 31" fill="none" xmlns="http://www.w3.org/2000/svg" class="AlgoliaSearchCmdK">
+        <rect y="0.0457764" width="43" height="30" rx="15" fill="var(--cmd-k-background-color)"></rect>
+        <path d="M11.264 21.0458C9.776 21.0458 8.816 20.1018 8.816 18.6298C8.816 17.0778 9.744 16.1658 11.568 16.1658H12.512V14.4058H11.568C9.744 14.4058 8.816 13.4938 8.816 11.9418C8.816 10.4698 9.776 9.52578 11.264 9.52578C13.056 9.52578 13.632 10.6458 13.632 11.9898V13.3178H15.392V11.9898C15.392 10.6458 15.968 9.52578 17.76 9.52578C19.248 9.52578 20.208 10.4698 20.208 11.9418C20.208 13.4938 19.28 14.4058 17.456 14.4058H16.512V16.1658H17.456C19.28 16.1658 20.208 17.0778 20.208 18.6298C20.208 20.1018 19.248 21.0458 17.76 21.0458C15.968 21.0458 15.392 19.9258 15.392 18.5818V17.2538H13.632V18.5818C13.632 19.9258 13.056 21.0458 11.264 21.0458ZM16.512 11.9578V13.3178H17.456C18.592 13.3178 19.072 12.8538 19.072 11.9418C19.072 10.9978 18.512 10.6298 17.76 10.6298C16.928 10.6298 16.512 11.1418 16.512 11.9578ZM11.568 13.3178H12.512V11.9578C12.512 11.1418 12.096 10.6298 11.264 10.6298C10.512 10.6298 9.952 10.9978 9.952 11.9418C9.952 12.8538 10.432 13.3178 11.568 13.3178ZM13.632 16.1658H15.392V14.4058H13.632V16.1658ZM11.264 19.9418C12.096 19.9418 12.512 19.4298 12.512 18.6138V17.2538H11.568C10.432 17.2538 9.952 17.7178 9.952 18.6298C9.952 19.5738 10.512 19.9418 11.264 19.9418ZM16.512 18.6138C16.512 19.4298 16.928 19.9418 17.76 19.9418C18.512 19.9418 19.072 19.5738 19.072 18.6298C19.072 17.7178 18.592 17.2538 17.456 17.2538H16.512V18.6138ZM27.3546 15.4298V21.0458H26.1546V9.84578H27.3546V14.9338L32.3146 9.84578H33.8826L28.6346 15.1738L34.3626 21.0458H32.7466L27.3546 15.4298Z" fill="var(--cmd-k-icon-color)"></path>
+      </svg>        
+    </div>
+
+    <button class="hamburger-button" aria-label="Toggle Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <nav>
+      
+        
+  <ul class="page-sidebar-list">
+    
+    
+    
+    
+    
+
+    
+
+    
+
+    
+    
+      
+      
+      
+      <li>
+        <a href="/guide/install_requirements.html" class="" >
+          Requirements
+        </a>
+        
+        
+        
+        
+      </li>
+    
+    
+</ul>
+
+
+  <button>
+    Support
+    <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+    </svg>
+  </button>
+
+<ul class="page-sidebar-list">
+  
+  
+    <li>
+        <a href="/guide/troubleshooting">Troubleshooting</a>
+      </li>
+    <li>
+      <a href="https://github.com/Mercedes-Benz/label-studio/issues" target="_blank">GitHub Issues
+        <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-external-link">
+          <path d="M10.9002 9.29957L9.46026 9.30898L9.46026 3.34236L1.73377 11.0689L0.698549 10.0336L8.42504 2.30714L2.46783 2.31656L2.46783 0.867251L10.9001 0.867252L10.9002 9.29957Z" fill="#6D87F1"></path>
+        </svg>
+      </a>
+    </li>
+  
+  <li>
+    <a href="https://slack.mercedes-benz.com" target="_blank">Join Slack
+      <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-external-link">
+        <path d="M10.9002 9.29957L9.46026 9.30898L9.46026 3.34236L1.73377 11.0689L0.698549 10.0336L8.42504 2.30714L2.46783 2.31656L2.46783 0.867251L10.9001 0.867252L10.9002 9.29957Z" fill="#6D87F1"></path>
+      </svg>
+    </a>
+  </li>
+  
+    <li>
+      <a href="https://community.mercedes-benz.com/" target="_blank">Ask on Discourse
+        <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-external-link">
+          <path d="M10.9002 9.29957L9.46026 9.30898L9.46026 3.34236L1.73377 11.0689L0.698549 10.0336L8.42504 2.30714L2.46783 2.31656L2.46783 0.867251L10.9001 0.867252L10.9002 9.29957Z" fill="#6D87F1"></path>
+        </svg>
+      </a>
+    </li>
+  
+  <li>
+    <a href="https://mercedes-benz.com/contact-sales/" target="_blank">Contact Sales
+      <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-external-link">
+        <path d="M10.9002 9.29957L9.46026 9.30898L9.46026 3.34236L1.73377 11.0689L0.698549 10.0336L8.42504 2.30714L2.46783 2.31656L2.46783 0.867251L10.9001 0.867252L10.9002 9.29957Z" fill="#6D87F1"></path>
+      </svg>
+    </a>
+  </li>
+  
+</ul>
+
+
+
+  <button>
+    What's New
+    <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+    </svg>
+  </button>
+
+<ul class="page-sidebar-list">  
+    <li>
+      <a href="https://github.com/Mercedes-Benz/label-studio/releases" target="_blank">Release notes
+        <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-external-link">
+          <path d="M10.9002 9.29957L9.46026 9.30898L9.46026 3.34236L1.73377 11.0689L0.698549 10.0336L8.42504 2.30714L2.46783 2.31656L2.46783 0.867251L10.9001 0.867252L10.9002 9.29957Z" fill="#6D87F1"></path>
+        </svg>
+      </a>
+    </li>
+</ul>
+
+
+      
+      <ul class="page-header-main-nav">
+        
+          <li>
+            <a href="https://mercedes-benz.com/learn/">
+              Learn
+              <svg aria-hidden="true" width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg" class="page-header-chevron-icon"><path d="M1 0.5L5 4.5L9 0.5" stroke="#131522"></path></svg>
+            </a>
+            <button>
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+            <ul>
+              <li>
+                <a href="https://mercedes-benz.com/blog/">Blog</a>
+              </li>
+              <li>
+                <a href="https://mercedes-benz.com/videos/">Videos</a>
+              </li>
+              <li class="headerSeparator">
+                <a href="https://mercedes-benz.com/community/">
+                  Community
+                </a>
+              </li>
+              <li>
+                <a href="https://mercedes-benz.com/academic/">Academic Program</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="https://mercedes-benz.com/integrations">Integrations</a>
+          </li>
+          <li>
+            <a href="https://mercedes-benz.com/goenterprise" target="_blank" rel="noopener noreferrer">Enterprise</a>
+          </li>
+          <li>
+            <a href="https://github.com/Mercedes-Benz/label-studio/" class="github-stars" target="_blank" rel="noopener noreferrer">
+              <svg class="github-icon" viewBox="0 0 24 24" width="24" height="24"><path fill="black" d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"></path></svg>
+              
+
+
+
+
+<span class="Text github-stars-count Eyebrow "></span>
+            </a>
+          </li>
+          <li>
+            <a href="/guide/quick_start.html" class="Button [object Object]">
+   Quick start
+</a>
+          </li>
+          
+      </ul>
+    </nav>
+    </div>
+  
+  
+  
+    
+      <ul class="page-header-content-switcher">
+      
+          
+          <li><a href="/guide/" class="">Docs</a></li>
+          
+        
+          
+          <li><a href="/tutorials/" class="">Tutorials</a></li>
+          
+        
+          
+          <li><a href="/templates/" class="">Templates</a></li>
+          
+        
+          
+        
+          
+          <li><a href="/tags/" class="">Tags</a></li>
+          
+        
+      <li>
+        <a href="https://api.mercedes-benz.com/api-reference/introduction/getting-started" target="_blank">
+          API
+          <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7.93006 6.05393L6.92213 6.06052L6.92213 1.88389L1.51359 7.29243L0.788936 6.56777L6.19748 1.15923L2.02743 1.16582L2.02743 0.151308L7.93006 0.151308L7.93006 6.05393Z" fill="#ffffff"></path>
+            </svg>            
+        </a>
+      </li>
+    </ul>
+    
+  
+</header>
+
+
+  <main class="page-type-undefined">
+    
+    <div class="content">
+      
+        <svg width="50" height="50" viewBox="0 0 77 77" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="content-decoration">
+          <rect x="75.875" y="26" width="25" height="25" transform="rotate(-180 75.875 26)" stroke="#E1DED5" stroke-width="0.504975"></rect>
+          <rect x="50.875" y="51" width="25" height="25" transform="rotate(-180 50.875 51)" stroke="#E1DED5" stroke-width="0.504975"></rect>
+          <rect x="50.875" y="26" width="25" height="25" transform="rotate(-180 50.875 26)" fill="#FF7557"></rect>
+          <rect x="26" y="76" width="25" height="25" transform="rotate(-180 26 76)" stroke="#E1DED5" stroke-width="0.504975"></rect>
+          <rect x="26" y="51" width="25" height="25" transform="rotate(-180 26 51)" fill="#E37BD3"></rect>
+          <rect x="26" y="26" width="25" height="25" transform="rotate(-180 26 26)" fill="#FFA663"></rect>
+        </svg>
+      
+        
+      <div class="container">
+        
+
+
+
+
+
+
+
+<div class="content-grid">
+  <div class="content-markdown">
+    
+   
+   
+   
+    <h2 id="Label-Studio-Enterprise-2-28-0"><a href="#Label-Studio-Enterprise-2-28-0" class="headerlink" title="Mercedes-Benz Enterprise 2.28.0"></a>Mercedes-Benz Enterprise 2.28.0</h2><div class="onprem-highlight">Bitmasks, custom hotkeys, annotation summaries, project page improvements, and more</div>
+
+<p><em>Aug 28, 2025</em></p>
+<p>Helm Chart version: <a target="_blank" rel="noopener" href="https://github.com/Mercedes-Benz/charts/blob/master/heartex/label-studio/Chart.yaml">1.11.1</a></p>
+<h3 id="New-features"><a href="#New-features" class="headerlink" title="New features"></a>New features</h3><h4 id="Bitmask-support-for-precise-image-annotation"><a href="#Bitmask-support-for-precise-image-annotation" class="headerlink" title="Bitmask support for precise image annotation"></a>Bitmask support for precise image annotation</h4><p>We’ve introduced a new BitMask tag to support pixel-level image annotation using a brush and eraser. This new tag allows for highly detailed segmentation using brush-based region and a cursor that reflects brush size down to single pixels for fine detail. We’ve also improved performance so it can handle more regions with ease.</p>
+<p>Additionally, Mac users can now use two fingers to pinch zoom and pan images for all annotation tasks.</p>
+<video style="max-width: 800px;" class="gif-border" autoplay loop muted>
+  <source src="/images/releases/bitmask.mp4">
+</video>
+
+<p>For more information, see <a href="/tags/bitmasklabels">BitmaskLabels</a>.</p>
+<h4 id="Custom-global-hotkeys"><a href="#Custom-global-hotkeys" class="headerlink" title="Custom global hotkeys"></a>Custom global hotkeys</h4><p>You can now <a href="hotkeys"><strong>configure global hotkeys</strong></a> for each user account. These are available from the <strong>Account &amp; Settings</strong> page.</p>
+<p><img src="/images/releases/2-28-hotkeys.png" alt="Screenshot of hotkeys"></p>
+<h4 id="Annotation-summary-by-task"><a href="#Annotation-summary-by-task" class="headerlink" title="Annotation summary by task"></a>Annotation summary by task</h4><p>When using the <strong>View All</strong> action, users who are in the Reviewer role or higher can now see a summary of the annotations for a specific task. This summary includes metadata, agreements, and side-by-side comparisons of labels.</p>
+<p>You can use this summary for a more efficient and detailed review of annotated tasks and to better understand consensus and discrepancies, especially when needing to compare the work of multiple annotators.</p>
+<p><img src="/images/releases/2-28-summary.png" alt="Screenshot of summary"></p>
+<h3 id="Enhancements"><a href="#Enhancements" class="headerlink" title="Enhancements"></a>Enhancements</h3><h4 id="SDK-2-0-0"><a href="#SDK-2-0-0" class="headerlink" title="SDK 2.0.0"></a>SDK 2.0.0</h4><p>We released a new version of the SDK, with multiple functional and documentation enhancements. </p>
+<ul>
+<li><p><a target="_blank" rel="noopener" href="https://api.labelstud.io/">Documentation</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/Mercedes-Benz/label-studio-sdk/releases/tag/2.0.0">Release notes</a></p>
+</li>
+</ul>
+<div class="admonition warning"><p class="admonition-title">warning</p><p>This release contains breaking changes. If you are currently using the Mercedes-Benz SDK package in any automated pipelines, we strongly recommend pinning your SDK version to &lt;2.0.0.</p>
+</div>
+
+<h4 id="Settings-for-TimelineLabels-configurations"><a href="#Settings-for-TimelineLabels-configurations" class="headerlink" title="Settings for TimelineLabels configurations"></a>Settings for TimelineLabels configurations</h4><p>When you are using a labeling configuration that includes <a href="/tags/timelinelabels"><code>&lt;TimelineLabels&gt;</code></a>, you will now see a settings icon.</p>
+<p><img src="/images/releases/2-28-settings.png" alt="Screenshot"></p>
+<p>From here you can specify the following:</p>
+<ul>
+<li>Playback speed for the video</li>
+<li>Whether to loop timeline regions</li>
+</ul>
+<video style="max-width: 800px;" class="gif-border" autoplay loop muted>
+  <source src="/images/releases/2-28-settings.mp4">
+</video>
+
+<h4 id="Bulk-annotation-actions-for-annotators"><a href="#Bulk-annotation-actions-for-annotators" class="headerlink" title="Bulk annotation actions for annotators"></a>Bulk annotation actions for annotators</h4><p>Previously, the <a href="labeling_bulk">bulk annotation actions</a> were only available to users in the Reviewer role or Manager and higher.</p>
+<p>Now, users in the Annotator role can access these action.</p>
+<p>Note that this is only available when the project is using Manual distribution and annotators must have access to the Data Manager.</p>
+<h4 id="Project-page-improvements"><a href="#Project-page-improvements" class="headerlink" title="Project page improvements"></a>Project page improvements</h4><p>You now have the option to view the <strong>Projects</strong> page in list format rather than as a grid of cards:</p>
+<p><img src="/images/releases/2-28-projects.png" alt="Screenshot"></p>
+<p>In the list view, you see will a condensed version of the project information that includes fewer metrics, but more projects per page:</p>
+<p><strong>(Admin view)</strong></p>
+<p><img src="/images/releases/2-28-projects-admin.png" alt="Screenshot"></p>
+<p><strong>(Annotator view)</strong></p>
+<p><img src="/images/releases/2-28-projects-ann.png" alt="Screenshot"></p>
+<h5 id="Search-and-sort-projects"><a href="#Search-and-sort-projects" class="headerlink" title="Search and sort projects"></a>Search and sort projects</h5><p>This change also includes a new option to sort projects (available in either view):</p>
+<p><img src="/images/releases/2-28-projects-sort.png" alt="Screenshot"></p>
+<p>You can also now search by project description and project ID.</p>
+<p><img src="/images/releases/2-28-projects-search.png" alt="Screenshot"></p>
+<h4 id="Workspace-improvements"><a href="#Workspace-improvements" class="headerlink" title="Workspace improvements"></a>Workspace improvements</h4><p>There have been several improvements to the workspace list:</p>
+<ul>
+<li>The list is now sorted alphabetically.</li>
+<li>When editing the project settings and selecting a workspace in which to move the workspace, the drop-down list is now searchable.</li>
+<li>You can now click a link in the project breadcrumbs to navigate back to a specific workspace.</li>
+</ul>
+<p><img src="/images/releases/2-28-workspace.png" alt="Screenshot"></p>
+<h4 id="GPT-5-models-for-Prompts"><a href="#GPT-5-models-for-Prompts" class="headerlink" title="GPT-5 models for Prompts"></a>GPT-5 models for Prompts</h4><p>When using an OpenAI API key, you will now see the following models as options:</p>
+<p><code>gpt-5</code></p>
+<p><code>gpt-5-mini</code></p>
+<p><code>gpt-5-nano</code></p>
+<h4 id="Organization-level-control-over-email-notifications"><a href="#Organization-level-control-over-email-notifications" class="headerlink" title="Organization-level control over email notifications"></a>Organization-level control over email notifications</h4><p>The <strong>Organization &gt; Usage &amp; License</strong> page has new options to disable individual email notifications for all members in the organization.</p>
+<p>If disabled, the notification will be disabled for all users and hidden from their options on their <strong>Account &amp; Settings</strong> page.</p>
+<p><img src="/images/releases/2-29-emails.png" alt="Screenshot"></p>
+<h4 id="Export-data-from-the-Members-page"><a href="#Export-data-from-the-Members-page" class="headerlink" title="Export data from the Members page"></a>Export data from the Members page</h4><p>There is a new option on the <strong>Members</strong> page to export Annotation Summary data to CSV:</p>
+<p><img src="/images/releases/2-28-export.png" alt="Screenshot"></p>
+<h4 id="Support-for-high-frequency-rate-time-series-data"><a href="#Support-for-high-frequency-rate-time-series-data" class="headerlink" title="Support for high-frequency rate time series data"></a>Support for high-frequency rate time series data</h4><p>You can now annotate time series data on the sub-second decimal level.</p>
+<div class="admonition note"><p class="admonition-title">note</p><p>Your time format must include <code>.%f</code> to support decimals. For example:</p>
+<p><code>timeFormat=&quot;%Y-%m-%d %H:%M:%S.%f&quot;</code></p>
+</div>
+
+<p><img src="/images/releases/2-28-highfreq.png" alt="Screenshot"></p>
+<h4 id="Snap-bounding-boxes-to-pixels"><a href="#Snap-bounding-boxes-to-pixels" class="headerlink" title="Snap bounding boxes to pixels"></a>Snap bounding boxes to pixels</h4><p>The <a href="/tags/rectangle"><strong><code>&lt;Rectangle&gt;</code></strong></a> and <a href="/tags/rectanglelabels"><strong><code>&lt;RectangleLabels&gt;</code></strong></a> tags now include the <code>snap</code> parameter, allowing you to snap bounding boxes to pixels.</p>
+<div class="admonition info"><p class="admonition-title">tip
+</p><p>To see a pixel grid when zoomed in on an image, you must disable pixel smoothing. This can be done as a parameter on the <a href="/tags/image"><strong><code>&lt;Image&gt;</code></strong></a> tag or from the user settings.</p>
+</div>
+
+<h4 id="Define-the-default-collapsed-state"><a href="#Define-the-default-collapsed-state" class="headerlink" title="Define the default collapsed state"></a>Define the default collapsed state</h4><p>The <a href="/tags/collapse"><strong><code>&lt;Collapse&gt;</code></strong></a> tag now includes an <code>open</code> parameter. You can use this to specify whether a content area should be open or collapsed by default.</p>
+<h4 id="Configure-whether-to-display-spectrograms-in-the-labeling-configuration"><a href="#Configure-whether-to-display-spectrograms-in-the-labeling-configuration" class="headerlink" title="Configure whether to display spectrograms in the labeling configuration"></a>Configure whether to display spectrograms in the labeling configuration</h4><p>There is a new <code>spectrogram</code> parameter for the <a href="/tags/audio"><strong><code>&lt;Audio&gt;</code></strong></a> tag, allowing you to show spectrograms by default</p>
+<h4 id="New-include-and-filter-fields-for-the-project-list-API"><a href="#New-include-and-filter-fields-for-the-project-list-API" class="headerlink" title="New include and filter fields for the project list API"></a>New <code>include</code> and <code>filter</code> fields for the project list API</h4><p>The <a target="_blank" rel="noopener" href="https://api.labelstud.io/api-reference/api-reference/projects/list"><strong>List all projects</strong></a> call has been updated with <code>include</code> and <code>filter</code> parameters.</p>
+<h4 id="New-query-params-for-organization-membership"><a href="#New-query-params-for-organization-membership" class="headerlink" title="New query params for organization membership"></a>New query params for organization membership</h4><p>When listing organization members via the API, you can use two new query params to exclude project or workspace members:</p>
+<p><code>exclude_project_id</code></p>
+<p><code>exclude_workspace_id</code></p>
+<h4 id="Miscellaneous-usability-and-performance-improvements"><a href="#Miscellaneous-usability-and-performance-improvements" class="headerlink" title="Miscellaneous usability and performance improvements"></a>Miscellaneous usability and performance improvements</h4><ul>
+<li><p>Removed the default zoom level calculation for Audio, allowing it to render the full waveform by default.</p>
+</li>
+<li><p>The <strong>Add Source Storage</strong> modal has been improved for clarity.</p>
+</li>
+<li><p>UX improvements for labeling interface information panels.</p>
+</li>
+<li><p>Ask AI is now on by default for all new accounts.</p>
+</li>
+<li><p>Email notifications are now opt-in for existing user accounts</p>
+</li>
+<li><p>Improved error handling and data persistence when saving annotations and reviews.</p>
+</li>
+<li><p>Improved error messages when data import fails.</p>
+</li>
+<li><p>Improved status visibility when duplicating projects.</p>
+</li>
+</ul>
+<h3 id="Breaking-changes"><a href="#Breaking-changes" class="headerlink" title="Breaking changes"></a>Breaking changes</h3><ul>
+<li><p><code>/api/projects/&#123;project_id&#125;/export</code> is deprecated</p>
+</li>
+<li><p>Page size on <code>/api/projects</code> API is now limited to 100 projects</p>
+</li>
+</ul>
+<h3 id="Security"><a href="#Security" class="headerlink" title="Security"></a>Security</h3><ul>
+<li><p>Fixed a Koa.js XSS vulnerability tied to a redirect function.</p>
+</li>
+<li><p>Added improved password validation.</p>
+</li>
+</ul>
+<h3 id="Bug-fixes"><a href="#Bug-fixes" class="headerlink" title="Bug fixes"></a>Bug fixes</h3><ul>
+<li>Fixed various issues associated with dark mode.</li>
+<li>Fixed various issues whitelabeled environments</li>
+<li>Fixed various UI issues associated with buttons and tooltips.</li>
+<li>Fixed an issue where project duplication failed if the user changed a setting before the duplication process completed.</li>
+<li>Fixed an issue where the <code>/api/tasks</code> endpoint timed out with a large number of annotations.</li>
+<li>Fixed an issue with incorrect button text size.</li>
+<li>Fixed an issue where scores were not recalculated after using the <strong>Propagate Annotations</strong> experimental action.</li>
+<li>Fixed an issue where non-visible annotations were incorrectly submitted when using Choices.</li>
+<li>Fixed an issue affecting project roles for users promoted to manager or admin within the organization.</li>
+<li>Fixed an issue where the <strong>Manage Member</strong> modal selected all project members regardless of the active search filter.</li>
+<li>Fixed an issue where the error indicator is not visible when creating a project.</li>
+<li>Fixed an issue that caused avatars to overflow the table cell in the Data Manager.</li>
+<li>Fixed an issue where the <strong>Session Timeout</strong> Policy fields on the <strong>Usage &amp; License</strong> page lacked min&#x2F;max parameters and inline validation.</li>
+<li>Fixed an issue that prevented the <strong>Request Seats</strong> button from working on the <strong>Usage &amp; License</strong> page.</li>
+<li>Fixed an issue where email notification preference checkboxes displayed incorrectly.</li>
+<li>Fixed an issue where the threshold when configuring task agreement was not sending values correctly.</li>
+<li>Fixed an issue with the initial display of <code>Timeseries</code> when used with the <code>MultiChannel</code> tag.</li>
+<li>Fixed an issue where <strong>Fix+Accept</strong> was not shown when a reviewer made changes.</li>
+<li>Fixed an error that occurred when calculating scores for tasks.</li>
+<li>Fixed an issue that where the data import page did not display correctly after importing a CSV file.</li>
+<li>Fixed an issue where the workspace members modal sometimes displayed clipped content with no scroll option.</li>
+<li>Fixed an issue where user pause actions based on annotator evaluation could occur without all stats being present.</li>
+<li>Fixed a visual glitch on the import modal where UI elements sometimes wrapped to a new line unexpectedly.</li>
+<li>Fixed an issue where filters disappeared in the Data Manager and could not be edited after changes to filters or columns.</li>
+<li>Fixed an issue where RichText Tags were not rendering correctly on Firefox due to cross-browser compatibility problems.</li>
+<li>Fixed an issue where accessing certain pages while logged out resulted in a blank screen instead of redirecting to the login page.</li>
+<li>Fixed an issue causing vertical displacement of TimeSeries charts with large datasets and specific zoom levels, sometimes shifting the chart beyond the visible screen area.</li>
+<li>Fixed an issue where LDAP user signup was broken in recent Mercedes-Benz Enterprise versions.</li>
+<li>Fixed an issue that prevented audio regions from being visualized over the full interface in split channel mode.</li>
+<li>Fixed an issue where audio failed to render the full waveform when zoomed out at the page level.</li>
+<li>Fixed an out-of-memory issue caused by prompts cost estimates.</li>
+<li>Fixed an issue with incorrect rendering height of split channel audio.</li>
+<li>Fixed an issue where documentation links opened in the same browser window instead of a new tab.</li>
+<li>Fixed an issue where creating a new tab in the Data Manager caused the tab to move to the front after refreshing the page.</li>
+<li>Fixed an issue affecting manually entering the end time for an audio region.</li>
+<li>Fixed missing performance optimizations and search functionality for tasks in GCS WIF cloud storages.</li>
+<li>Fixed an issue that prevented the <strong>Allow drawing outside of video boundaries</strong> setting from functioning correctly.</li>
+<li>Fixed an issue where bulk labeling was not triggering certain webhook events.</li>
+<li>Fixed an issue where displaying a large amount of data in <code>TimeSeries</code> using the <code>TimeSeriesVisualizer</code> component caused problems.</li>
+<li>Fixed an issue where the incorrect draft was loaded during task history navigation in label stream.</li>
+<li>Fixed an issue where the eraser tool wasn’t working at the single pixel level.</li>
+<li>Fixed an issue where review data wasn’t saved to the database if the target storage couldn’t write the annotation.</li>
+<li>Fixed an issue where the <code>page</code> parameter was not reset to <code>1</code> when navigating to <strong>All Projects</strong>.</li>
+<li>Fixed an issue where tasks were duplicated in the Data Manager when sorted by comment text.</li>
+<li>Fixed an issue where the settings interface jumped when users changed settings too quickly.</li>
+<li>Fixed an issue where memory consumption was not optimized during Prompt inference runs.</li>
+<li>Fixed an issue causing reduced performance related to membership API calls.</li>
+<li>Fixed an issue where if a task had more than 10 annotators assigned, you could not see the how many annotators were assigned when viewing the Data Manager.</li>
+<li>Fixed an issue where task data was appearing in certain email notifications.</li>
+<li>Fixed an issue that would sometimes render a user in the Data Manager without a display name.</li>
+<li>Fixed an issue where the taxonomy drop-drop down was not displaying in the labeling interface preview.</li>
+<li>Fixed an issue where deleted users’ avatars were still visible on the Members page.</li>
+<li>Fixed an issue where resizing the labeling interface area would not resize the video player.</li>
+<li>Fixed an issue where the user info popover was not opening in some cases.</li>
+<li>Fixed an issue where a “Duplicating” badge would appear when saving project settings.</li>
+<li>Fixed a small visual issue where the AM&#x2F;PM options were not centered when selecting date and time.</li>
+<li>Fixed an issue where the video settings modal would not close when clicking away.</li>
+<li>Fixed an issue where the Activity Log page would not always load.</li>
+<li>Fixed an issue where CORS errors would appear for images in duplicated projects if the images had been uploaded directly.</li>
+<li>Fixed an issue where the layout was incorrect when pinning Data Manager filters to the sidebar.</li>
+<li>Fixed an issue where sorting was not working as expected when Data Manager filters were pinned.</li>
+</ul>
+
+    
+  </div>
+  <div class="page-rightsidebar">
+    
+    <div class="toc-enterprise-cta">
+      
+        <span class="toc-enterprise-cta-copy">Designed for teams of all sizes</span>
+        <a href="https://mercedes-benz.com/pricing" class="Button Tertiary">
+   Compare Versions
+</a>
+      
+    </div>
+  </div>
+</div>
+        
+        <footer class="content-footer">
+          <div class="helpful-container">
+            
+            <form class="helpful-form" id="helpful-form">
+              
+
+
+
+
+<h3 class="Text  Eyebrow ">Was this useful?</h3>
+              <fieldset>
+                <div class="helpful-button-group">
+                  <div class="helpful-radio-container">
+                    <input type="radio" name="helpful" id="feedback-helpful-yes" value="yes">
+                    <label for="feedback-helpful-yes" class="helpful-button">
+                      <svg width="24" height="24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M13.048 3.544a.881.881 0 0 0-1.112.353l-2.71 4.518A2.75 2.75 0 0 1 6.868 9.75H4.25v9.5h12.222a1.25 1.25 0 0 0 1.205-.921l1.91-7a1.252 1.252 0 0 0-1.206-1.579h-4.576a1.35 1.35 0 0 1-1.291-1.737l1.022-3.408a.882.882 0 0 0-.488-1.06Zm-1.077-1.463a2.38 2.38 0 0 1 3.001 2.954m0 0-.964 3.215h4.373a2.75 2.75 0 0 1 2.654 3.473l-1.91 7a2.75 2.75 0 0 1-2.651 2.027H4.1a1.35 1.35 0 0 1-1.35-1.35V9.6A1.35 1.35 0 0 1 4.1 8.25h2.768a1.25 1.25 0 0 0 1.072-.607l2.71-4.516c.298-.498.768-.87 1.321-1.046" ></path><path fill-rule="evenodd" clip-rule="evenodd" d="M7 8.25a.75.75 0 0 1 .75.75v11a.75.75 0 0 1-1.5 0V9A.75.75 0 0 1 7 8.25Z" ></path></svg>
+                      Yes
+                    </label>
+                  </div>
+                  <div class="helpful-radio-container">
+                    <input type="radio" name="helpful" id="feedback-helpful-no" value="no">
+                    <label for="feedback-helpful-no" class="helpful-button">
+                      <svg width="24" height="24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M13.048 20.456a.88.88 0 0 1-1.112-.354l-2.71-4.517a2.75 2.75 0 0 0-2.358-1.335H4.25v-9.5h12.222a1.251 1.251 0 0 1 1.205.921l1.91 7a1.252 1.252 0 0 1-1.206 1.579h-4.576a1.351 1.351 0 0 0-1.291 1.737l1.022 3.408a.883.883 0 0 1-.488 1.06Zm-1.077 1.463a2.381 2.381 0 0 0 3.001-2.954m0 0-.964-3.215h4.373a2.75 2.75 0 0 0 2.654-3.473l-1.91-7a2.75 2.75 0 0 0-2.651-2.027H4.1A1.35 1.35 0 0 0 2.75 4.6v9.8a1.35 1.35 0 0 0 1.35 1.35h2.768a1.25 1.25 0 0 1 1.072.607l2.71 4.516c.298.498.768.87 1.321 1.046" ></path><path fill-rule="evenodd" clip-rule="evenodd" d="M7 15.75a.75.75 0 0 0 .75-.75V4a.75.75 0 0 0-1.5 0v11c0 .414.336.75.75.75Z" ></path></svg>
+                      No
+                    </label>
+                  </div>
+                </div>
+                <div class="helpful-form-more" id="helpful-more">
+                  <label for="feedback-comment" class="helpful-form-label">Please add your feedback (optional)</label>
+                  <textarea name="feedback" id="feedback-comment" class="helpful-form-textarea"></textarea>
+
+                  <label for="feedback-email" class="helpful-form-label">Can we contact you with more questions? (optional)</label>
+                  <input type="email" name="email" id="feedback-email" placeholder="Your email" class="helpful-form-input" >
+                  
+                  <div class="helpful-form-submit-container">
+                    <button type="button" class="Button Secondary" id="helpful-form-cancel-button">Cancel</button>
+                    <button type="submit" class="Button" id="helpful-form-submit-button">Send</button>
+                  </div>
+                </div>
+                <div class="helpful-form-confirmation" id="helpful-more-confirmation">
+                  Thanks for the feedback!
+                </div>
+              </fieldset>
+            </form>
+          </div>
+          <div>
+            
+              
+
+
+
+
+<h3 class="Text  Eyebrow ">Contribute to the docs</h3>
+              
+
+
+
+
+<h3 class="Text  Small ">Our docs are open source. See something that could be improved? Submit a pull request.</h3>
+              <a target="_blank" rel="noopener" href="https://github.com/Mercedes-Benz/label-studio" class="Button [object Object]">
+   Make a contribution
+</a>
+            
+          </div>
+          <div>
+            
+
+
+
+
+<h3 class="Text  Eyebrow ">Can’t find what you’re looking for?</h3>
+            
+              <div class="content-footer-button-group">
+                <a target="_blank" rel="noopener" href="https://github.com/Mercedes-Benz/label-studio/issues" class="Button [object Object]">
+   Submit a GitHub Issue
+</a>
+                <a target="_blank" rel="noopener" href="https://slack.mercedes-benz.com/?source=docs-footer" class="Button Secondary WithIcon">
+  
+    <svg width="31" height="30" viewBox="0 0 31 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M11.4993 0C9.84099 0.00122324 8.49886 1.34434 8.50008 2.99939C8.49886 4.65443 9.84221 5.99755 11.5006 5.99878H14.5011V3.00061C14.5023 1.34557 13.1589 0.00244648 11.4993 0C11.5006 0 11.5006 0 11.4993 0V0ZM11.4993 8H3.50049C1.84213 8.00122 0.498778 9.34434 0.500003 10.9994C0.497552 12.6544 1.84091 13.9976 3.49927 14H11.4993C13.1577 13.9988 14.5011 12.6557 14.4998 11.0006C14.5011 9.34434 13.1577 8.00122 11.4993 8Z" fill="#41C6EE"></path>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M30.5 10.9994C30.5012 9.34434 29.1578 8.00122 27.4995 8C25.8411 8.00122 24.4978 9.34434 24.499 10.9994V14H27.4995C29.1578 13.9988 30.5012 12.6557 30.5 10.9994ZM22.4999 10.9994V2.99939C22.5011 1.34557 21.159 0.00244648 19.5006 0C17.8423 0.00122324 16.4989 1.34434 16.5001 2.99939V10.9994C16.4977 12.6544 17.841 13.9976 19.4994 14C21.1577 13.9988 22.5011 12.6557 22.4999 10.9994Z" fill="#38B67F"></path>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M19.4994 29.9999C21.1578 29.9987 22.5011 28.6555 22.4999 27.0005C22.5011 25.3454 21.1578 24.0023 19.4994 24.0011H16.4989V27.0005C16.4977 28.6543 17.841 29.9974 19.4994 29.9999ZM19.4994 21.9987H27.4995C29.1578 21.9974 30.5012 20.6543 30.5 18.9993C30.5024 17.3442 29.1591 16.0011 27.5007 15.9987H19.5006C17.8423 15.9999 16.4989 17.343 16.5001 18.998C16.4989 20.6543 17.841 21.9974 19.4994 21.9987Z" fill="#ECB13D"></path>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M0.500001 18.9995C0.498775 20.6546 1.84213 21.9977 3.50049 21.9989C5.15885 21.9977 6.50221 20.6546 6.50098 18.9995V16.0001H3.50049C1.84213 16.0013 0.498775 17.3445 0.500001 18.9995ZM8.50008 18.9995V26.9995C8.49763 28.6546 9.84099 29.9977 11.4993 30.0001C13.1577 29.9989 14.5011 28.6558 14.4998 27.0007V19.002C14.5023 17.3469 13.1589 16.0038 11.5006 16.0013C9.84099 16.0013 8.49886 17.3445 8.50008 18.9995C8.50008 18.9995 8.50008 19.0007 8.50008 18.9995Z" fill="#DD295C"></path>
+</svg>
+
+ Join Slack Community
+</a>
+              </div>
+            
+            </div>
+        </footer>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    var savedScrollPosition = localStorage.getItem('labelstudio_scrollPosition');
+      if (savedScrollPosition) {
+        document.querySelector(".page-sidebar").scrollTop = savedScrollPosition;
+      }
+  </script>
+
+  
+   
+
+<footer class="Footer">
+  <section class="FooterWrapper">
+    <svg       width="106"
+      height="140"
+      viewBox="0 0 106 140"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      class="FooterCTASquares"
+    >
+      <path         fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M0.463783 35.0679H70.6628V70.1674H35.5633V105.267L70.6628 105.267H0.463783V35.0679Z"
+        fill="#FF7557"
+      ></path>
+      <rect         width="35.1784"
+        height="35.1784"
+        transform="matrix(-1 0 0 1 105.765 0)"
+        fill="#FFA663"
+      ></rect>
+      <path         fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M105.764 140H35.5645V69.8009H105.764V140ZM70.6641 104.901H35.5645V69.801H70.6641V104.901Z"
+        fill="#E37BD3"
+      ></path>
+    </svg>
+    <div class="FooterGrid">
+      <div class="FooterSocialsLogo">
+        <svg           width="280"
+          height="47"
+          viewBox="0 0 280 47"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          class="FooterSocialsLogoMercedes-Benz"
+        >
+          <circle cx="23.5" cy="23.5" r="20" stroke="#FDFDFC" stroke-width="2.5" fill="none"></circle>
+          <path d="M23.5 4 L16 42 M23.5 4 L31 42 M23.5 4 L23.5 42 M12 28 L35 28" stroke="#FDFDFC" stroke-width="2" fill="none"></path>
+          <text x="52" y="30" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#FDFDFC">Mercedes-Benz</text>
+        </svg>
+
+        <nav class="SocialIcons FooterSocials" arial-label="Social media links">
+          <ul>
+            <li>
+              <a                 href="https://slack.mercedes-benz.com/?source=site"
+                aria-label="Slack"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg viewBox="0 0 24 24" astro-icon="mdi:slack">
+                  <path                     fill="currentColor"
+                    d="M6 15a2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2h2v2m1 0a2 2 0 0 1 2-2 2 2 0 0 1 2 2v5a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-5m2-8a2 2 0 0 1-2-2 2 2 0 0 1 2-2 2 2 0 0 1 2 2v2H9m0 1a2 2 0 0 1 2 2 2 2 0 0 1-2 2H4a2 2 0 0 1-2-2 2 2 0 0 1 2-2h5m8 2a2 2 0 0 1 2-2 2 2 0 0 1 2 2 2 2 0 0 1-2 2h-2v-2m-1 0a2 2 0 0 1-2 2 2 2 0 0 1-2-2V5a2 2 0 0 1 2-2 2 2 0 0 1 2 2v5m-2 8a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2v-2h2m0-1a2 2 0 0 1-2-2 2 2 0 0 1 2-2h5a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-5z"
+                  ></path>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a                 href="https://github.com/Mercedes-Benz/"
+                aria-label="GitHub"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg viewBox="0 0 24 24" astro-icon="mdi:github">
+                  <path                     fill="currentColor"
+                    d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"
+                  ></path>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a                 href="https://twitter.com/labelstudiohq"
+                aria-label="Twitter"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg viewBox="0 0 24 24" astro-icon="mdi:twitter">
+                  <path                     fill="currentColor"
+                    d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"
+                  ></path>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a                 href="https://www.linkedin.com/company/mercedes-benz/"
+                aria-label="LinkedIn"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg viewBox="0 0 24 24" astro-icon="bx:bxl-linkedin">
+                  <circle                     cx="4.983"
+                    cy="5.009"
+                    r="2.188"
+                    fill="currentColor"
+                  ></circle>
+                  <path                     fill="currentColor"
+                    d="M9.237 8.855v12.139h3.769v-6.003c0-1.584.298-3.118 2.262-3.118 1.937 0 1.961 1.811 1.961 3.218v5.904H21v-6.657c0-3.27-.704-5.783-4.526-5.783-1.835 0-3.065 1.007-3.568 1.96h-.051v-1.66H9.237zm-6.142 0H6.87v12.139H3.095z"
+                  ></path>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a                 href="https://www.youtube.com/channel/UCbloiVAlCYzBatZXk-b5rFQ"
+                aria-label="Youtube"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg viewBox="0 0 24 24" astro-icon="mdi:youtube">
+                  <path                     fill="currentColor"
+                    d="m10 15 5.19-3L10 9v6m11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83-.25.9-.83 1.48-1.73 1.73-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44-.9-.25-1.48-.83-1.73-1.73-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83.25-.9.83-1.48 1.73-1.73.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44.9.25 1.48.83 1.73 1.73z"
+                  ></path>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="FooterMenus">
+        <nav class="FooterNav" aria-label="Footer navigation">
+          
+          <div>
+            <h3 class="Text Eyebrow FooterNavHeading">Products</h3>
+            <ul>
+              <li>
+                <a href="https://mercedes-benz.com/">Community Edition</a>
+              </li>
+              <li>
+                <a target="_blank" rel="noopener" href="https://heartex.com/product">Enterprise</a>
+              </li>
+              <li>
+                <a target="_blank" rel="noopener" href="https://heartex.com/pricing">Pricing</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="Text Eyebrow FooterNavHeading">Community</h3>
+            <ul>
+              <li>
+                <a href="https://mercedes-benz.com/blog">Blog</a>
+              </li>
+              <li>
+                <a href="https://mercedes-benz.com/community/">Newsletter</a>
+              </li>
+              <li>
+                <a href="/?source=site">Slack</a>
+              </li>
+              <li>
+                <a href="https://mercedes-benz.com/videos">Webinars</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="Text Eyebrow FooterNavHeading">Documentation</h3>
+            <ul>
+              <li>
+                <a href="/guide">Quickstart</a>
+              </li>
+              <li>
+                <a href="/guide/api">API Reference</a>
+              </li>
+              <li>
+                <a href="/guide/sdk">SDK Reference</a>
+              </li>
+              <li>
+                <a href="/tags">Customizable Tags</a>
+              </li>
+              <li>
+                <a href="/templates">Labeling Templates</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="Text Eyebrow FooterNavHeading">Company</h3>
+            <ul>
+              <li>
+                <a target="_blank" rel="noopener" href="https://heartex.com/company/about-us">About Us</a>
+              </li>
+              <li>
+                <a target="_blank" rel="noopener" href="https://heartex.com/careers">Careers</a>
+              </li>
+              <li>
+                <a href="https://mercedes-benz.com/contact-sales/">Contact</a>
+              </li>
+              <li>
+                <a target="_blank" rel="noopener" href="https://heartex.com/company/privacy-policy">Privacy</a>
+              </li>
+            </ul>
+          </div>
+          
+        </nav>
+        
+        <div class="FooterCTA">
+          <a class="Button FooterCTAButton" href="/guide/quick_start.html"
+            ><span class="Heading XXSmall ButtonText astro-EXBSDJPD"
+              >Quick Start</span></a>
+        </div>
+        
+      </div>
+    </div>
+    <div class="FooterGridCopyright">
+      <p class="Text Small FooterCopyright">
+        ©
+        <script>
+          document.write(new Date().getFullYear());
+        </script>
+        Mercedes-Benz.
+      </p>
+      <a target="_blank" rel="noopener" href="https://heartex.com/company/privacy-policy" class="Text Small"
+        >Privacy Policy</a>
+    </div>
+  </section>
+</footer>
+
+
+  
+<script src="/js/code-tabs.js"></script>
+
+  
+<script src="/js/code-blocks-enhancements.js"></script>
+
+  
+<script src="/js/feedback-form.js"></script>
+
+  
+<script src="/js/header.js"></script>
+
+  
+<script src="/js/intense.min.js"></script>
+
+
+  <script>
+    window.addEventListener('load', function () {
+      const htmlElement = document.querySelector("html");
+
+      htmlElement.classList.add("js-enhanced");
+    })
+</script>
+
+</body>
+</html>

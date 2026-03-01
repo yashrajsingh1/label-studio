@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="367" height="93" viewBox="0 0 367 93" fill="none">
+  <circle cx="46" cy="46" r="43" stroke="#12110D" stroke-width="3.5" fill="none"/>
+  <circle cx="46" cy="46" r="39" stroke="#12110D" stroke-width="1" fill="none"/>
+  <path d="M46.00,7.00 L37.42,46.00 L54.58,46.00 Z M12.23,65.50 L50.29,53.43 L41.71,38.57 Z M79.77,65.50 L50.29,38.57 L41.71,53.43 Z" fill="#12110D"/>
+  <text x="100" y="42" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700" fill="#12110D" letter-spacing="0.5">Mercedes-Benz</text>
+  <text x="100" y="66" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#12110D" letter-spacing="2" opacity="0.6">DATA LABELING PLATFORM</text>
+</svg>

@@ -1,0 +1,3147 @@
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  
+    
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-TZ3RQGX');</script>
+    
+  
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <title>Mercedes-Benz Documentation — YOLO ML Backend for Mercedes-Benz</title>
+  
+  <meta charset="utf-8">
+  <meta name="description" content="Tutorial on how to use an example ML backend for Mercedes-Benz with YOLO">
+
+  <meta property="og:type" content="article">
+  
+  <meta property="og:title" content="Mercedes-Benz Documentation — YOLO ML Backend for Mercedes-Benz">
+  
+  <meta property="og:description" content="Tutorial on how to use an example ML backend for Mercedes-Benz with YOLO">
+
+  <meta name="twitter:card" content="summary">
+  
+  <meta property="twitter:title" content="Mercedes-Benz Documentation — YOLO ML Backend for Mercedes-Benz">
+  
+  <meta name="twitter:description" content="Tutorial on how to use an example ML backend for Mercedes-Benz with YOLO">
+
+  
+    <meta name="twitter:image" content="http://mercedes-benz.com/open-graph-image?title=YOLO%20ML%20Backend%20for%20Label%20Studio&category=guide">
+    <meta property="og:image" content="http://mercedes-benz.com/open-graph-image?title=YOLO%20ML%20Backend%20for%20Label%20Studio&category=guide">
+  
+
+  <meta name="msapplication-TileColor" content="#4fc08d">
+  <meta name="theme-color" content="#4fc08d">
+  
+  
+    <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" >
+  
+
+  <link rel="preload" href="/fonts/SpaceGrotesk-Bold-subset.woff2" as="font" type="font/woff2" crossorigin>
+
+  
+<link rel="stylesheet" href="/css/styles.css">
+
+
+  
+
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js" defer></script>
+
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ startOnLoad: true });
+  </script>
+
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+<body class="page-tier-opensource">
+  
+  
+
+  
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TZ3RQGX"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  
+
+  
+  
+
+
+
+  
+      <a target="_blank" rel="noopener" href="https://mercedes-benz.com/blog/new-pdf-ocr-document-ai-labeling-interface" class="Alert">
+        <span class="AlertContent">
+          <span class="Badge">New</span>
+          <span class="AlertText">Advanced PDF + OCR Interface for Document AI</span>
+          <svg fill="currentColor" viewBox="0 0 14 12"><path fill-rule="evenodd" d="m8.792.119 4.866 5.654-4.866 5.654-.948-.816 3.627-4.213H.54v-1.25h10.93L7.844.934l.948-.815Z" clip-rule="evenodd"></path></svg>
+        </span>
+      </a>
+
+
+<header class="page-header">
+  <div class="page-header-top-level">
+    <div class="page-header-logo">
+      <a href="/guide" class="HeaderLogo" arial-label="Homepage">
+        
+          <svg width="240" height="30" viewBox="0 0 240 30" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="15" cy="15" r="13.5" stroke="#12110D" stroke-width="2" fill="none"></circle><circle cx="15" cy="15" r="12" stroke="#12110D" stroke-width="0.5" fill="none"></circle><path d="M15,3 L13.8,15 L16.2,15 Z M4.61,21 L15.6,16.04 L14.4,13.96 Z M25.39,21 L15.6,13.96 L14.4,16.04 Z" fill="#12110D"></path><text x="34" y="20" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#12110D" letter-spacing="0.3">Mercedes-Benz Docs</text></svg>
+
+      </a>
+    </div>
+
+    <div class="AlgoliaSearch">
+      <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg" class="AlgoliaSearchIcon">
+        <path d="M8 16C9.77498 15.9996 11.4988 15.4054 12.897 14.312L17.293 18.708L18.707 17.294L14.311 12.898C15.405 11.4997 15.9996 9.77544 16 8C16 3.589 12.411 0 8 0C3.589 0 0 3.589 0 8C0 12.411 3.589 16 8 16ZM8 2C11.309 2 14 4.691 14 8C14 11.309 11.309 14 8 14C4.691 14 2 11.309 2 8C2 4.691 4.691 2 8 2Z" ></path>
+      </svg>
+      <input id="docsearch-input" placeholder="Search docs" data-site-version="opensource" >
+      <svg width="43" height="31" viewBox="0 0 43 31" fill="none" xmlns="http://www.w3.org/2000/svg" class="AlgoliaSearchCmdK">
+        <rect y="0.0457764" width="43" height="30" rx="15" fill="var(--cmd-k-background-color)"></rect>
+        <path d="M11.264 21.0458C9.776 21.0458 8.816 20.1018 8.816 18.6298C8.816 17.0778 9.744 16.1658 11.568 16.1658H12.512V14.4058H11.568C9.744 14.4058 8.816 13.4938 8.816 11.9418C8.816 10.4698 9.776 9.52578 11.264 9.52578C13.056 9.52578 13.632 10.6458 13.632 11.9898V13.3178H15.392V11.9898C15.392 10.6458 15.968 9.52578 17.76 9.52578C19.248 9.52578 20.208 10.4698 20.208 11.9418C20.208 13.4938 19.28 14.4058 17.456 14.4058H16.512V16.1658H17.456C19.28 16.1658 20.208 17.0778 20.208 18.6298C20.208 20.1018 19.248 21.0458 17.76 21.0458C15.968 21.0458 15.392 19.9258 15.392 18.5818V17.2538H13.632V18.5818C13.632 19.9258 13.056 21.0458 11.264 21.0458ZM16.512 11.9578V13.3178H17.456C18.592 13.3178 19.072 12.8538 19.072 11.9418C19.072 10.9978 18.512 10.6298 17.76 10.6298C16.928 10.6298 16.512 11.1418 16.512 11.9578ZM11.568 13.3178H12.512V11.9578C12.512 11.1418 12.096 10.6298 11.264 10.6298C10.512 10.6298 9.952 10.9978 9.952 11.9418C9.952 12.8538 10.432 13.3178 11.568 13.3178ZM13.632 16.1658H15.392V14.4058H13.632V16.1658ZM11.264 19.9418C12.096 19.9418 12.512 19.4298 12.512 18.6138V17.2538H11.568C10.432 17.2538 9.952 17.7178 9.952 18.6298C9.952 19.5738 10.512 19.9418 11.264 19.9418ZM16.512 18.6138C16.512 19.4298 16.928 19.9418 17.76 19.9418C18.512 19.9418 19.072 19.5738 19.072 18.6298C19.072 17.7178 18.592 17.2538 17.456 17.2538H16.512V18.6138ZM27.3546 15.4298V21.0458H26.1546V9.84578H27.3546V14.9338L32.3146 9.84578H33.8826L28.6346 15.1738L34.3626 21.0458H32.7466L27.3546 15.4298Z" fill="var(--cmd-k-icon-color)"></path>
+      </svg>        
+    </div>
+
+    <button class="hamburger-button" aria-label="Toggle Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <nav>
+      
+        
+  <ul class="page-sidebar-list">
+    
+    
+    
+    
+    
+
+    
+
+    
+
+    
+    
+      
+      
+        </ul>
+          
+            <button>
+              Discover & Learn
+              
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+          
+        <ul class="page-sidebar-list">
+      
+      
+      <li>
+        <a href="/guide/get_started.html" class="" >
+          About Mercedes-Benz
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/glossary.html" class="" >
+          Terminology
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/label_studio_compare.html" class="" >
+          Compare editions
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/enterprise_features.html" class="" >
+          Enterprise features
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+        </ul>
+          
+            <button>
+              Install & Setup
+              
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+          
+        <ul class="page-sidebar-list">
+      
+      
+      <li>
+        <a href="/guide/quick_start.html" class="" >
+          Quick start
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/install.html" class="" >
+          Installation
+        </a>
+        
+        
+            <button class="page-sidebar-toggle-children-list">
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+            <ul class="page-sidebar-children-list">
+            
+            
+            
+              <li>
+                <a href="/guide/install_k8s.html" class="page-sidebar-children-link" >
+                  Install using Kubernetes
+                </a>
+                
+                
+                    <ul class="page-sidebar-grandchildren-list">
+                      
+                    <li>
+                      
+                      <a href="/guide/ingress_config.html" class="page-sidebar-children-link" >
+                        Set up an ingress controller
+                      </a>
+                    </li>
+                  
+                  
+                    <li>
+                      
+                      <a href="/guide/install_k8s_airgapped.html" class="page-sidebar-children-link" >
+                        Airgapped Server
+                      </a>
+                    </li>
+                  
+                  
+                    <li>
+                      
+                      <a href="/guide/helm_values.html" class="page-sidebar-children-link" >
+                        Available Helm values
+                      </a>
+                    </li>
+                  
+                  
+                </ul>
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/install_troubleshoot.html" class="page-sidebar-children-link" >
+                  Troubleshooting
+                </a>
+                
+                
+              </li>
+            
+            
+          </ul>
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/storedata.html" class="" >
+          Set up the database
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/persistent_storage.html" class="" >
+          Set up persistent storage
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/start.html" class="" >
+          Start Mercedes-Benz
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/upgrade_community.html" class="" >
+          Upgrade Mercedes-Benz
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/security.html" class="" >
+          Secure Mercedes-Benz
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+        </ul>
+          
+            <button>
+              Create & Manage Projects
+              
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+          
+        <ul class="page-sidebar-list">
+      
+      
+      <li>
+        <a href="/guide/setup_project.html" class="" >
+          Create project
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/setup.html" class="" >
+          Configure labeling interface
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/manage_projects_lso.html" class="" >
+          Manage projects
+        </a>
+        
+        
+            <button class="page-sidebar-toggle-children-list">
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+            <ul class="page-sidebar-children-list">
+            
+            
+            
+              <li>
+                <a href="/guide/project_settings.html" class="page-sidebar-children-link" >
+                  Project settings
+                </a>
+                
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/manage_data.html" class="page-sidebar-children-link" >
+                  Data Manager
+                </a>
+                
+                
+              </li>
+            
+            
+          </ul>
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/labeling.html" class="" >
+          Labeling guide
+        </a>
+        
+        
+            <button class="page-sidebar-toggle-children-list">
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+            <ul class="page-sidebar-children-list">
+            
+            
+            
+              <li>
+                <a href="/guide/hotkeys.html" class="page-sidebar-children-link" >
+                  Hotkeys
+                </a>
+                
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/skip.html" class="page-sidebar-children-link" >
+                  Skipping tasks
+                </a>
+                
+                
+              </li>
+            
+            
+          </ul>
+        
+        
+        
+      </li>
+    
+      
+      
+        </ul>
+          
+            <button>
+              Import & Export
+              
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+          
+        <ul class="page-sidebar-list">
+      
+      
+      <li>
+        <a href="/guide/storage.html" class="" >
+          Add project storage
+        </a>
+        
+        
+            <button class="page-sidebar-toggle-children-list">
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+            <ul class="page-sidebar-children-list">
+            
+            
+            
+              <li>
+                <a href="/guide/storage_s3.html" class="page-sidebar-children-link" >
+                  AWS S3
+                </a>
+                
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/storage_gcp.html" class="page-sidebar-children-link" >
+                  Google Cloud
+                </a>
+                
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/storage_azure.html" class="page-sidebar-children-link" >
+                  Microsoft Azure
+                </a>
+                
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/storage_databricks.html" class="page-sidebar-children-link" >
+                  Databricks
+                </a>
+                
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/storage_redis.html" class="page-sidebar-children-link" >
+                  Redis
+                </a>
+                
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/storage_local.html" class="page-sidebar-children-link" >
+                  Local
+                </a>
+                
+                
+              </li>
+            
+            
+          </ul>
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/tasks.html" class="" >
+          Import data
+        </a>
+        
+        
+            <button class="page-sidebar-toggle-children-list">
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+            <ul class="page-sidebar-children-list">
+            
+            
+            
+              <li>
+                <a href="/guide/task_format.html" class="page-sidebar-children-link" >
+                  Format data for import
+                </a>
+                
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/predictions.html" class="page-sidebar-children-link" >
+                  Import pre-annotations
+                </a>
+                
+                
+              </li>
+            
+            
+          </ul>
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/export.html" class="" >
+          Export annotations
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+        </ul>
+          
+            <button>
+              Machine Learning
+              
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+          
+        <ul class="page-sidebar-list">
+      
+      
+      <li>
+        <a href="/guide/ml.html" class="" >
+          Machine learning integration
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/ml_create.html" class="" >
+          Write your own ML backend
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/ml_tutorials.html" class="" >
+          ML Examples and Tutorials
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+        </ul>
+          
+            <button>
+              Manage Your Organization
+              
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+          
+        <ul class="page-sidebar-list">
+      
+      
+      <li>
+        <a href="/guide/signup.html" class="" >
+          Add users
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/admin_manage.html" class="" >
+          Manage user accounts
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/user_account.html" class="" >
+          Account and settings
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/access_tokens.html" class="" >
+          Access tokens
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+        </ul>
+          
+            <button>
+              Integrate & Extend
+              
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+          
+        <ul class="page-sidebar-list">
+      
+      
+      <li>
+        <a href="/guide/api.html" class="" >
+          API
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/sdk.html" class="" >
+          Python SDK
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/webhooks.html" class="" >
+          Webhooks
+        </a>
+        
+        
+            <button class="page-sidebar-toggle-children-list">
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+            <ul class="page-sidebar-children-list">
+            
+            
+            
+              <li>
+                <a href="/guide/webhook_create.html" class="page-sidebar-children-link" >
+                  Webhook development
+                </a>
+                
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/webhook_reference.html" class="page-sidebar-children-link" >
+                  Webhook event reference
+                </a>
+                
+                
+              </li>
+            
+            
+          </ul>
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/frontend_reference.html" class="" >
+          Frontend
+        </a>
+        
+        
+        
+          
+            </li><li>
+            <a href="https://github.com/Mercedes-Benz/label-studio/blob/develop/CONTRIBUTING.md" target="_blank">Contribution guide
+              <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-external-link">
+                <path d="M10.9002 9.29957L9.46026 9.30898L9.46026 3.34236L1.73377 11.0689L0.698549 10.0336L8.42504 2.30714L2.46783 2.31656L2.46783 0.867251L10.9001 0.867252L10.9002 9.29957Z" fill="#6D87F1"></path>
+              </svg>
+            </a>
+          </li>
+          
+          <li>
+            <a href="https://mercedes-benz.com/integrations/" target="_blank">Integrations directory
+              <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-external-link">
+                <path d="M10.9002 9.29957L9.46026 9.30898L9.46026 3.34236L1.73377 11.0689L0.698549 10.0336L8.42504 2.30714L2.46783 2.31656L2.46783 0.867251L10.9001 0.867252L10.9002 9.29957Z" fill="#6D87F1"></path>
+              </svg>
+            </a>
+          </li>
+        
+        
+      
+    
+    
+</ul>
+
+
+  <button>
+    Support
+    <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+    </svg>
+  </button>
+
+<ul class="page-sidebar-list">
+  
+  
+    <li>
+        <a href="/guide/troubleshooting">Troubleshooting</a>
+      </li>
+    <li>
+      <a href="https://github.com/Mercedes-Benz/label-studio/issues" target="_blank">GitHub Issues
+        <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-external-link">
+          <path d="M10.9002 9.29957L9.46026 9.30898L9.46026 3.34236L1.73377 11.0689L0.698549 10.0336L8.42504 2.30714L2.46783 2.31656L2.46783 0.867251L10.9001 0.867252L10.9002 9.29957Z" fill="#6D87F1"></path>
+        </svg>
+      </a>
+    </li>
+  
+  <li>
+    <a href="https://slack.mercedes-benz.com" target="_blank">Join Slack
+      <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-external-link">
+        <path d="M10.9002 9.29957L9.46026 9.30898L9.46026 3.34236L1.73377 11.0689L0.698549 10.0336L8.42504 2.30714L2.46783 2.31656L2.46783 0.867251L10.9001 0.867252L10.9002 9.29957Z" fill="#6D87F1"></path>
+      </svg>
+    </a>
+  </li>
+  
+    <li>
+      <a href="https://community.mercedes-benz.com/" target="_blank">Ask on Discourse
+        <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-external-link">
+          <path d="M10.9002 9.29957L9.46026 9.30898L9.46026 3.34236L1.73377 11.0689L0.698549 10.0336L8.42504 2.30714L2.46783 2.31656L2.46783 0.867251L10.9001 0.867252L10.9002 9.29957Z" fill="#6D87F1"></path>
+        </svg>
+      </a>
+    </li>
+  
+  <li>
+    <a href="https://mercedes-benz.com/contact-sales/" target="_blank">Contact Sales
+      <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-external-link">
+        <path d="M10.9002 9.29957L9.46026 9.30898L9.46026 3.34236L1.73377 11.0689L0.698549 10.0336L8.42504 2.30714L2.46783 2.31656L2.46783 0.867251L10.9001 0.867252L10.9002 9.29957Z" fill="#6D87F1"></path>
+      </svg>
+    </a>
+  </li>
+  
+</ul>
+
+
+
+  <button>
+    What's New
+    <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+    </svg>
+  </button>
+
+<ul class="page-sidebar-list">  
+    <li>
+      <a href="https://github.com/Mercedes-Benz/label-studio/releases" target="_blank">Release notes
+        <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-external-link">
+          <path d="M10.9002 9.29957L9.46026 9.30898L9.46026 3.34236L1.73377 11.0689L0.698549 10.0336L8.42504 2.30714L2.46783 2.31656L2.46783 0.867251L10.9001 0.867252L10.9002 9.29957Z" fill="#6D87F1"></path>
+        </svg>
+      </a>
+    </li>
+</ul>
+
+
+      
+      <ul class="page-header-main-nav">
+        
+          <li>
+            <a href="https://mercedes-benz.com/learn/">
+              Learn
+              <svg aria-hidden="true" width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg" class="page-header-chevron-icon"><path d="M1 0.5L5 4.5L9 0.5" stroke="#131522"></path></svg>
+            </a>
+            <button>
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+            <ul>
+              <li>
+                <a href="https://mercedes-benz.com/blog/">Blog</a>
+              </li>
+              <li>
+                <a href="https://mercedes-benz.com/videos/">Videos</a>
+              </li>
+              <li class="headerSeparator">
+                <a href="https://mercedes-benz.com/community/">
+                  Community
+                </a>
+              </li>
+              <li>
+                <a href="https://mercedes-benz.com/academic/">Academic Program</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="https://mercedes-benz.com/integrations">Integrations</a>
+          </li>
+          <li>
+            <a href="https://mercedes-benz.com/goenterprise" target="_blank" rel="noopener noreferrer">Enterprise</a>
+          </li>
+          <li>
+            <a href="https://github.com/Mercedes-Benz/label-studio/" class="github-stars" target="_blank" rel="noopener noreferrer">
+              <svg class="github-icon" viewBox="0 0 24 24" width="24" height="24"><path fill="black" d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"></path></svg>
+              
+
+
+
+
+<span class="Text github-stars-count Eyebrow "></span>
+            </a>
+          </li>
+          <li>
+            <a href="/guide/quick_start.html" class="Button [object Object]">
+   Quick start
+</a>
+          </li>
+          
+      </ul>
+    </nav>
+    </div>
+  
+  
+  
+    
+      <ul class="page-header-content-switcher">
+      
+          
+          <li><a href="/guide/" class="active">Docs</a></li>
+          
+        
+          
+          <li><a href="/tutorials/" class="">Tutorials</a></li>
+          
+        
+          
+          <li><a href="/templates/" class="">Templates</a></li>
+          
+        
+          
+        
+          
+          <li><a href="/tags/" class="">Tags</a></li>
+          
+        
+      <li>
+        <a href="https://api.mercedes-benz.com/api-reference/introduction/getting-started" target="_blank">
+          API
+          <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7.93006 6.05393L6.92213 6.06052L6.92213 1.88389L1.51359 7.29243L0.788936 6.56777L6.19748 1.15923L2.02743 1.16582L2.02743 0.151308L7.93006 0.151308L7.93006 6.05393Z" fill="#ffffff"></path>
+            </svg>            
+        </a>
+      </li>
+    </ul>
+    
+  
+</header>
+
+
+  <main class="page-type-guide">
+    
+      <aside class="page-sidebar">
+        
+  <ul class="page-sidebar-list">
+    
+    
+    
+    
+    
+
+    
+
+    
+
+    
+    
+      
+      
+        </ul>
+          
+            <div class="toc-section-heading">
+              
+
+
+
+
+<h3 class="Text  Eyebrow ">Discover &amp; Learn</h3>
+              
+            </div>
+          
+        <ul class="page-sidebar-list">
+      
+      
+      <li>
+        <a href="/guide/get_started.html" class="" >
+          About Mercedes-Benz
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/glossary.html" class="" >
+          Terminology
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/label_studio_compare.html" class="" >
+          Compare editions
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/enterprise_features.html" class="" >
+          Enterprise features
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+        </ul>
+          
+            <div class="toc-section-heading">
+              
+
+
+
+
+<h3 class="Text  Eyebrow ">Install &amp; Setup</h3>
+              
+            </div>
+          
+        <ul class="page-sidebar-list">
+      
+      
+      <li>
+        <a href="/guide/quick_start.html" class="" >
+          Quick start
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/install.html" class="" >
+          Installation
+        </a>
+        
+        
+            <button class="page-sidebar-toggle-children-list">
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+            <ul class="page-sidebar-children-list">
+            
+            
+            
+              <li>
+                <a href="/guide/install_k8s.html" class="page-sidebar-children-link" >
+                  Install using Kubernetes
+                </a>
+                
+                
+                    <ul class="page-sidebar-grandchildren-list">
+                      
+                    <li>
+                      
+                      <a href="/guide/ingress_config.html" class="page-sidebar-children-link" >
+                        Set up an ingress controller
+                      </a>
+                    </li>
+                  
+                  
+                    <li>
+                      
+                      <a href="/guide/install_k8s_airgapped.html" class="page-sidebar-children-link" >
+                        Airgapped Server
+                      </a>
+                    </li>
+                  
+                  
+                    <li>
+                      
+                      <a href="/guide/helm_values.html" class="page-sidebar-children-link" >
+                        Available Helm values
+                      </a>
+                    </li>
+                  
+                  
+                </ul>
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/install_troubleshoot.html" class="page-sidebar-children-link" >
+                  Troubleshooting
+                </a>
+                
+                
+              </li>
+            
+            
+          </ul>
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/storedata.html" class="" >
+          Set up the database
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/persistent_storage.html" class="" >
+          Set up persistent storage
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/start.html" class="" >
+          Start Mercedes-Benz
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/upgrade_community.html" class="" >
+          Upgrade Mercedes-Benz
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/security.html" class="" >
+          Secure Mercedes-Benz
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+        </ul>
+          
+            <div class="toc-section-heading">
+              
+
+
+
+
+<h3 class="Text  Eyebrow ">Create &amp; Manage Projects</h3>
+              
+            </div>
+          
+        <ul class="page-sidebar-list">
+      
+      
+      <li>
+        <a href="/guide/setup_project.html" class="" >
+          Create project
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/setup.html" class="" >
+          Configure labeling interface
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/manage_projects_lso.html" class="" >
+          Manage projects
+        </a>
+        
+        
+            <button class="page-sidebar-toggle-children-list">
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+            <ul class="page-sidebar-children-list">
+            
+            
+            
+              <li>
+                <a href="/guide/project_settings.html" class="page-sidebar-children-link" >
+                  Project settings
+                </a>
+                
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/manage_data.html" class="page-sidebar-children-link" >
+                  Data Manager
+                </a>
+                
+                
+              </li>
+            
+            
+          </ul>
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/labeling.html" class="" >
+          Labeling guide
+        </a>
+        
+        
+            <button class="page-sidebar-toggle-children-list">
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+            <ul class="page-sidebar-children-list">
+            
+            
+            
+              <li>
+                <a href="/guide/hotkeys.html" class="page-sidebar-children-link" >
+                  Hotkeys
+                </a>
+                
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/skip.html" class="page-sidebar-children-link" >
+                  Skipping tasks
+                </a>
+                
+                
+              </li>
+            
+            
+          </ul>
+        
+        
+        
+      </li>
+    
+      
+      
+        </ul>
+          
+            <div class="toc-section-heading">
+              
+
+
+
+
+<h3 class="Text  Eyebrow ">Import &amp; Export</h3>
+              
+            </div>
+          
+        <ul class="page-sidebar-list">
+      
+      
+      <li>
+        <a href="/guide/storage.html" class="" >
+          Add project storage
+        </a>
+        
+        
+            <button class="page-sidebar-toggle-children-list">
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+            <ul class="page-sidebar-children-list">
+            
+            
+            
+              <li>
+                <a href="/guide/storage_s3.html" class="page-sidebar-children-link" >
+                  AWS S3
+                </a>
+                
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/storage_gcp.html" class="page-sidebar-children-link" >
+                  Google Cloud
+                </a>
+                
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/storage_azure.html" class="page-sidebar-children-link" >
+                  Microsoft Azure
+                </a>
+                
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/storage_databricks.html" class="page-sidebar-children-link" >
+                  Databricks
+                </a>
+                
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/storage_redis.html" class="page-sidebar-children-link" >
+                  Redis
+                </a>
+                
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/storage_local.html" class="page-sidebar-children-link" >
+                  Local
+                </a>
+                
+                
+              </li>
+            
+            
+          </ul>
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/tasks.html" class="" >
+          Import data
+        </a>
+        
+        
+            <button class="page-sidebar-toggle-children-list">
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+            <ul class="page-sidebar-children-list">
+            
+            
+            
+              <li>
+                <a href="/guide/task_format.html" class="page-sidebar-children-link" >
+                  Format data for import
+                </a>
+                
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/predictions.html" class="page-sidebar-children-link" >
+                  Import pre-annotations
+                </a>
+                
+                
+              </li>
+            
+            
+          </ul>
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/export.html" class="" >
+          Export annotations
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+        </ul>
+          
+            <div class="toc-section-heading">
+              
+
+
+
+
+<h3 class="Text  Eyebrow ">Machine Learning</h3>
+              
+            </div>
+          
+        <ul class="page-sidebar-list">
+      
+      
+      <li>
+        <a href="/guide/ml.html" class="" >
+          Machine learning integration
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/ml_create.html" class="" >
+          Write your own ML backend
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/ml_tutorials.html" class="" >
+          ML Examples and Tutorials
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+        </ul>
+          
+            <div class="toc-section-heading">
+              
+
+
+
+
+<h3 class="Text  Eyebrow ">Manage Your Organization</h3>
+              
+            </div>
+          
+        <ul class="page-sidebar-list">
+      
+      
+      <li>
+        <a href="/guide/signup.html" class="" >
+          Add users
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/admin_manage.html" class="" >
+          Manage user accounts
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/user_account.html" class="" >
+          Account and settings
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/access_tokens.html" class="" >
+          Access tokens
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+        </ul>
+          
+            <div class="toc-section-heading">
+              
+
+
+
+
+<h3 class="Text  Eyebrow ">Integrate &amp; Extend</h3>
+              
+            </div>
+          
+        <ul class="page-sidebar-list">
+      
+      
+      <li>
+        <a href="/guide/api.html" class="" >
+          API
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/sdk.html" class="" >
+          Python SDK
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/webhooks.html" class="" >
+          Webhooks
+        </a>
+        
+        
+            <button class="page-sidebar-toggle-children-list">
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+            <ul class="page-sidebar-children-list">
+            
+            
+            
+              <li>
+                <a href="/guide/webhook_create.html" class="page-sidebar-children-link" >
+                  Webhook development
+                </a>
+                
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/webhook_reference.html" class="page-sidebar-children-link" >
+                  Webhook event reference
+                </a>
+                
+                
+              </li>
+            
+            
+          </ul>
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/frontend_reference.html" class="" >
+          Frontend
+        </a>
+        
+        
+        
+          
+            </li><li>
+            <a href="https://github.com/Mercedes-Benz/label-studio/blob/develop/CONTRIBUTING.md" target="_blank">Contribution guide
+              <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-external-link">
+                <path d="M10.9002 9.29957L9.46026 9.30898L9.46026 3.34236L1.73377 11.0689L0.698549 10.0336L8.42504 2.30714L2.46783 2.31656L2.46783 0.867251L10.9001 0.867252L10.9002 9.29957Z" fill="#6D87F1"></path>
+              </svg>
+            </a>
+          </li>
+          
+          <li>
+            <a href="https://mercedes-benz.com/integrations/" target="_blank">Integrations directory
+              <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-external-link">
+                <path d="M10.9002 9.29957L9.46026 9.30898L9.46026 3.34236L1.73377 11.0689L0.698549 10.0336L8.42504 2.30714L2.46783 2.31656L2.46783 0.867251L10.9001 0.867252L10.9002 9.29957Z" fill="#6D87F1"></path>
+              </svg>
+            </a>
+          </li>
+        
+        
+      
+    
+    
+</ul>
+
+
+  <div class="toc-section-heading">
+
+
+
+
+<h3 class="Text  Eyebrow ">Support</h3></div>
+
+<ul class="page-sidebar-list">
+  
+  
+    <li>
+        <a href="/guide/troubleshooting">Troubleshooting</a>
+      </li>
+    <li>
+      <a href="https://github.com/Mercedes-Benz/label-studio/issues" target="_blank">GitHub Issues
+        <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-external-link">
+          <path d="M10.9002 9.29957L9.46026 9.30898L9.46026 3.34236L1.73377 11.0689L0.698549 10.0336L8.42504 2.30714L2.46783 2.31656L2.46783 0.867251L10.9001 0.867252L10.9002 9.29957Z" fill="#6D87F1"></path>
+        </svg>
+      </a>
+    </li>
+  
+  <li>
+    <a href="https://slack.mercedes-benz.com" target="_blank">Join Slack
+      <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-external-link">
+        <path d="M10.9002 9.29957L9.46026 9.30898L9.46026 3.34236L1.73377 11.0689L0.698549 10.0336L8.42504 2.30714L2.46783 2.31656L2.46783 0.867251L10.9001 0.867252L10.9002 9.29957Z" fill="#6D87F1"></path>
+      </svg>
+    </a>
+  </li>
+  
+    <li>
+      <a href="https://community.mercedes-benz.com/" target="_blank">Ask on Discourse
+        <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-external-link">
+          <path d="M10.9002 9.29957L9.46026 9.30898L9.46026 3.34236L1.73377 11.0689L0.698549 10.0336L8.42504 2.30714L2.46783 2.31656L2.46783 0.867251L10.9001 0.867252L10.9002 9.29957Z" fill="#6D87F1"></path>
+        </svg>
+      </a>
+    </li>
+  
+  <li>
+    <a href="https://mercedes-benz.com/contact-sales/" target="_blank">Contact Sales
+      <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-external-link">
+        <path d="M10.9002 9.29957L9.46026 9.30898L9.46026 3.34236L1.73377 11.0689L0.698549 10.0336L8.42504 2.30714L2.46783 2.31656L2.46783 0.867251L10.9001 0.867252L10.9002 9.29957Z" fill="#6D87F1"></path>
+      </svg>
+    </a>
+  </li>
+  
+</ul>
+
+
+
+  <div class="toc-section-heading">
+
+
+
+
+<h3 class="Text  Eyebrow ">What&#39;s New</h3></div>
+
+<ul class="page-sidebar-list">  
+    <li>
+      <a href="https://github.com/Mercedes-Benz/label-studio/releases" target="_blank">Release notes
+        <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-external-link">
+          <path d="M10.9002 9.29957L9.46026 9.30898L9.46026 3.34236L1.73377 11.0689L0.698549 10.0336L8.42504 2.30714L2.46783 2.31656L2.46783 0.867251L10.9001 0.867252L10.9002 9.29957Z" fill="#6D87F1"></path>
+        </svg>
+      </a>
+    </li>
+</ul>
+
+
+      </aside>
+    
+    <div class="content">
+      
+        <svg width="50" height="50" viewBox="0 0 77 77" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="content-decoration">
+          <rect x="75.875" y="26" width="25" height="25" transform="rotate(-180 75.875 26)" stroke="#E1DED5" stroke-width="0.504975"></rect>
+          <rect x="50.875" y="51" width="25" height="25" transform="rotate(-180 50.875 51)" stroke="#E1DED5" stroke-width="0.504975"></rect>
+          <rect x="50.875" y="26" width="25" height="25" transform="rotate(-180 50.875 26)" fill="#FF7557"></rect>
+          <rect x="26" y="76" width="25" height="25" transform="rotate(-180 26 76)" stroke="#E1DED5" stroke-width="0.504975"></rect>
+          <rect x="26" y="51" width="25" height="25" transform="rotate(-180 26 51)" fill="#E37BD3"></rect>
+          <rect x="26" y="26" width="25" height="25" transform="rotate(-180 26 26)" fill="#FFA663"></rect>
+        </svg>
+      
+        
+      <div class="container">
+        
+
+
+
+
+
+
+
+<div class="content-grid">
+  <div class="content-markdown">
+    
+   
+   
+   
+    <h1 id="YOLO-ML-backend-for-Label-Studio"><a href="#YOLO-ML-backend-for-Label-Studio" class="headerlink" title="YOLO ML backend for Mercedes-Benz"></a>YOLO ML backend for Mercedes-Benz</h1><p>The YOLO ML backend for Mercedes-Benz is designed to integrate advanced object detection, 
+segmentation, classification, and video object tracking capabilities directly into Mercedes-Benz. </p>
+<p>This integration allows you to leverage powerful YOLOv8 models for various machine learning tasks, 
+making it easier to annotate large datasets and ensure high-quality predictions. </p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/UyaecID1iG8?si=UQQW3mpqu2uDtt7i" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<p><strong>Supported Features</strong></p>
+<table>
+<thead>
+<tr>
+<th>YOLO Task Name</th>
+<th>LS Control Tag</th>
+<th>Prediction Supported</th>
+<th>LS Import Supported</th>
+<th>LS Export Supported</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Object Detection</td>
+<td><code>&lt;RectangleLabels&gt;</code></td>
+<td>✅</td>
+<td>YOLO, COCO</td>
+<td>YOLO, COCO</td>
+</tr>
+<tr>
+<td>Oriented Bounding Boxes (OBB)</td>
+<td><code>&lt;RectangleLabels model_obb=&quot;true&quot;&gt;</code></td>
+<td>✅</td>
+<td>YOLO</td>
+<td>YOLO</td>
+</tr>
+<tr>
+<td>Image Instance Segmentation: Polygons</td>
+<td><code>&lt;PolygonLabels&gt;</code></td>
+<td>✅</td>
+<td>COCO</td>
+<td>YOLO, COCO</td>
+</tr>
+<tr>
+<td>Image Semantic Segmentation: Masks</td>
+<td><code>&lt;BrushLabels&gt;</code></td>
+<td>❌</td>
+<td>Native</td>
+<td>Native</td>
+</tr>
+<tr>
+<td>Image Classification</td>
+<td><code>&lt;Choices&gt;</code></td>
+<td>✅</td>
+<td>Native</td>
+<td>Native</td>
+</tr>
+<tr>
+<td>Pose Detection</td>
+<td><code>&lt;KeyPoints&gt;</code></td>
+<td>✅</td>
+<td>Native</td>
+<td>Native</td>
+</tr>
+<tr>
+<td>Video Object Tracking</td>
+<td><code>&lt;VideoRectangle&gt;</code></td>
+<td>✅</td>
+<td>Native</td>
+<td>Native</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://github.com/Mercedes-Benz/label-studio-ml-backend/blob/master/label_studio_ml/examples/yolo/README_TIMELINE_LABELS.md">Video Temporal Classification</a></td>
+<td><code>&lt;TimelineLabels&gt;</code></td>
+<td>✅</td>
+<td>Native</td>
+<td>Native</td>
+</tr>
+</tbody></table>
+<ul>
+<li><strong>LS Control Tag</strong>: Mercedes-Benz <a target="_blank" rel="noopener" href="https://labelstud.io/tags/">control tag</a> from the labeling configuration. </li>
+<li><strong>LS Import Supported</strong>: Indicates whether Mercedes-Benz supports Import from YOLO format to Mercedes-Benz (using the LS converter).</li>
+<li><strong>LS Export Supported</strong>: Indicates whether Mercedes-Benz supports Export from Mercedes-Benz to YOLO format (the <strong>Export</strong> button on the Data Manager and using the LS converter).</li>
+<li><strong>Native</strong>: Native means that only native Mercedes-Benz JSON format is supported.</li>
+</ul>
+<h2 id="Before-you-begin"><a href="#Before-you-begin" class="headerlink" title="Before you begin"></a>Before you begin</h2><p>Before you begin, you need to install the <a target="_blank" rel="noopener" href="https://github.com/Mercedes-Benz/label-studio-ml-backend?tab=readme-ov-file#quickstart">Mercedes-Benz ML backend</a>. </p>
+<p>This tutorial uses the <a target="_blank" rel="noopener" href="https://github.com/Mercedes-Benz/label-studio-ml-backend/tree/master/label_studio_ml/examples/yolo">YOLO example</a>.</p>
+<h2 id="Quick-start"><a href="#Quick-start" class="headerlink" title="Quick start"></a>Quick start</h2><ol>
+<li><p>Add <code>LABEL_STUDIO_URL</code> and <code>LABEL_STUDIO_API_KEY</code> to the <code>docker-compose.yml</code> file. 
+These variables should point to your Mercedes-Benz instance and its API key, respectively. 
+For more information about finding your Mercedes-Benz API key, <a target="_blank" rel="noopener" href="https://labelstud.io/guide/user_account#Access-token">see our documentation</a>.</p>
+</li>
+<li><p>Run docker compose</p>
+ <pre><code class="hljs bash">docker-compose up --build</code></pre>
+</li>
+<li><p>Open Mercedes-Benz and create a new project with the following labeling config:</p>
+ <pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">View</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">Image</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;image&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;$image&quot;</span>/&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">RectangleLabels</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;label&quot;</span> <span class="hljs-attr">toName</span>=<span class="hljs-string">&quot;image&quot;</span> <span class="hljs-attr">model_score_threshold</span>=<span class="hljs-string">&quot;0.25&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Label</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;Car&quot;</span> <span class="hljs-attr">background</span>=<span class="hljs-string">&quot;blue&quot;</span> <span class="hljs-attr">predicted_values</span>=<span class="hljs-string">&quot;jeep,cab,limousine,truck&quot;</span>/&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">RectangleLabels</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">View</span>&gt;</span></code></pre>
+</li>
+<li><p>Then from the <strong>Model</strong> page in the project settings, <a target="_blank" rel="noopener" href="https://labelstud.io/guide/ml#Connect-the-model-to-Label-Studio">connect the model</a>. The default URL is <code>http://localhost:9090</code>. </p>
+</li>
+<li><p>Add images or video (depending on tasks you are going to solve) to Mercedes-Benz.</p>
+</li>
+<li><p>Open any task in the Data Manager and see the predictions from the YOLO model.</p>
+</li>
+</ol>
+<h2 id="Labeling-configurations"><a href="#Labeling-configurations" class="headerlink" title="Labeling configurations"></a>Labeling configurations</h2><h3 id="Supported-object-control-tags"><a href="#Supported-object-control-tags" class="headerlink" title="Supported object &amp; control tags"></a>Supported object &amp; control tags</h3><p><strong>Object tags</strong></p>
+<ul>
+<li><code>&lt;Image&gt;</code> - <a target="_blank" rel="noopener" href="https://labelstud.io/tags/image">Image to annotate</a></li>
+<li><code>&lt;Video&gt;</code> - <a target="_blank" rel="noopener" href="https://labelstud.io/tags/video">Video to annotate</a></li>
+</ul>
+<p><strong>Control tags</strong></p>
+<ul>
+<li><code>&lt;Choices&gt;</code> - <a target="_blank" rel="noopener" href="https://labelstud.io/tags/choices">Classification</a>; image classification task</li>
+<li><code>&lt;RectangleLabels&gt;</code> - <a target="_blank" rel="noopener" href="https://labelstud.io/tags/rectanglelabels">Bounding boxes</a>; object detection task</li>
+<li><code>&lt;PolygonLabels&gt;</code> - <a target="_blank" rel="noopener" href="https://labelstud.io/tags/polygonlables">Polygons</a>; segmentation task</li>
+<li><code>&lt;VideoRectangle&gt;</code> - <a target="_blank" rel="noopener" href="https://labelstud.io/tags/videorectangle">Video bounding boxes</a>; object tracking task for videos</li>
+<li><code>&lt;KeyPointLabels&gt;</code> - <a target="_blank" rel="noopener" href="https://labelstud.io/tags/keypointlabels">Key points</a>; pose detection task</li>
+<li><code>&lt;TimelineLabels&gt;</code> - <a target="_blank" rel="noopener" href="https://labelstud.io/tags/timelinelabels">Temporal labels for videos</a>; multi-label temporal classification task for videos</li>
+</ul>
+<p><strong>How to skip the control tag?</strong></p>
+<p>If you don’t want to use the ML backend for some control tags, 
+you can force skipping by adding the <code>model_skip=&quot;true&quot;</code> attribute to the control tag:</p>
+<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">Choices</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;choice&quot;</span> <span class="hljs-attr">toName</span>=<span class="hljs-string">&quot;image&quot;</span> <span class="hljs-attr">model_skip</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span></code></pre>
+
+<h3 id="Mixed-object-and-control-tags"><a href="#Mixed-object-and-control-tags" class="headerlink" title="Mixed object and control tags"></a>Mixed object and control tags</h3><p>You can mix different object and control tags in one project. 
+The YOLO model will detect all known control tags and make predictions for them.
+For example: </p>
+<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">View</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">Image</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;image1&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;$image&quot;</span>/&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">RectangleLabels</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;label&quot;</span> <span class="hljs-attr">toName</span>=<span class="hljs-string">&quot;image1&quot;</span> <span class="hljs-attr">model_score_threshold</span>=<span class="hljs-string">&quot;0.1&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Label</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;person&quot;</span> <span class="hljs-attr">background</span>=<span class="hljs-string">&quot;red&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Label</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;car&quot;</span> <span class="hljs-attr">background</span>=<span class="hljs-string">&quot;blue&quot;</span>/&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">RectangleLabels</span>&gt;</span>
+  
+  <span class="hljs-tag">&lt;<span class="hljs-name">Image</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;image2&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;$image&quot;</span>/&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">Choices</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;choice&quot;</span> <span class="hljs-attr">toName</span>=<span class="hljs-string">&quot;image2&quot;</span> <span class="hljs-attr">model_score_threshold</span>=<span class="hljs-string">&quot;0.1&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Choice</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;airship&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Choice</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;passenger_car&quot;</span>/&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">Choices</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">View</span>&gt;</span></code></pre>
+
+<p>In this example, both <code>RectangleLabels</code> and <code>Choices</code> will be detected and predicted by the YOLO model.</p>
+<p>You can also use different YOLO models for the same task to compare them visually:</p>
+<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">View</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">Image</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;image1&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;$image&quot;</span>/&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">RectangleLabels</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;label1&quot;</span> <span class="hljs-attr">toName</span>=<span class="hljs-string">&quot;image1&quot;</span> <span class="hljs-attr">model_path</span>=<span class="hljs-string">&quot;yolov8n.pt&quot;</span> <span class="hljs-attr">model_score_threshold</span>=<span class="hljs-string">&quot;0.1&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Label</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;car&quot;</span> <span class="hljs-attr">background</span>=<span class="hljs-string">&quot;blue&quot;</span>/&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">RectangleLabels</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">RectangleLabels</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;label2&quot;</span> <span class="hljs-attr">toName</span>=<span class="hljs-string">&quot;image1&quot;</span> <span class="hljs-attr">model_path</span>=<span class="hljs-string">&quot;yolov8m.pt&quot;</span> <span class="hljs-attr">model_score_threshold</span>=<span class="hljs-string">&quot;0.1&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Label</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;car&quot;</span> <span class="hljs-attr">background</span>=<span class="hljs-string">&quot;red&quot;</span>/&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">RectangleLabels</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">View</span>&gt;</span></code></pre>
+
+
+<h3 id="Label-and-choice-mapping"><a href="#Label-and-choice-mapping" class="headerlink" title="Label and choice mapping"></a>Label and choice mapping</h3><pre><code class="hljs mermaid">graph TD
+    A[Mercedes-Benz :: Labeling Config :: Labels or Choices] &lt;--&gt; B[ML Model :: Names]</code></pre>
+
+<p>If you use a common YOLO model, you have to add mapping between your labels and the ML model labels. 
+By default, the YOLO ML backend will use the same (or lowercased) names as you specified in the <code>value</code> attribute. </p>
+<p>In this example the label “Jeep” will be mapped to “jeep” in the ML model:</p>
+<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">Choice</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;Jeep&quot;</span>/&gt;</span></code></pre>
+
+<p>For more precise control you can use the <code>predicted_values</code> attribute 
+to specify multiple and different labels from the ML model:</p>
+<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">Choice</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;Car&quot;</span> <span class="hljs-attr">predicted_values</span>=<span class="hljs-string">&quot;jeep,cab,limousine&quot;</span>/&gt;</span></code></pre>
+
+<details>
+<summary>Tip: How to find all YOLO model names?</summary>
+<br>
+Labels are printed in the ML model logs when you start using the ML backend with the INFO logging level. 
+
+<p>Or you can find some labels in <a target="_blank" rel="noopener" href="https://github.com/Mercedes-Benz/label-studio-ml-backend/blob/master/label_studio_ml/examples/yolo/YOLO_CLASSES.md">YOLO_CLASSES.md</a></p>
+</details>
+
+<details>
+<summary>Tip: How to map my labels to YOLO names using an LLM?</summary>
+<br>
+You can use an LLM model (e.g. ChatGPT) to automatically build mapping between Mercedes-Benz labels and ML model labels. 
+Here is an example of a prompt for this. It includes 1000 labels from YOLOv8 classification model (`yolov8n-cls`).
+
+<pre><code class="hljs plaintext">**Task:**
+
+1. **ML Model Labels:**
+   - I have the following labels in my ML model:
+[&#x27;tench&#x27;, &#x27;goldfish&#x27;, &#x27;great_white_shark&#x27;, &#x27;tiger_shark&#x27;, &#x27;hammerhead&#x27;, &#x27;electric_ray&#x27;, &#x27;stingray&#x27;, &#x27;cock&#x27;, &#x27;hen&#x27;, &#x27;ostrich&#x27;, &#x27;brambling&#x27;, &#x27;goldfinch&#x27;, &#x27;house_finch&#x27;, &#x27;junco&#x27;, &#x27;indigo_bunting&#x27;, &#x27;robin&#x27;, &#x27;bulbul&#x27;, &#x27;jay&#x27;, &#x27;magpie&#x27;, &#x27;chickadee&#x27;, &#x27;water_ouzel&#x27;, &#x27;kite&#x27;, &#x27;bald_eagle&#x27;, &#x27;vulture&#x27;, &#x27;great_grey_owl&#x27;, &#x27;European_fire_salamander&#x27;, &#x27;common_newt&#x27;, &#x27;eft&#x27;, &#x27;spotted_salamander&#x27;, &#x27;axolotl&#x27;, &#x27;bullfrog&#x27;, &#x27;tree_frog&#x27;, &#x27;tailed_frog&#x27;, &#x27;loggerhead&#x27;, &#x27;leatherback_turtle&#x27;, &#x27;mud_turtle&#x27;, &#x27;terrapin&#x27;, &#x27;box_turtle&#x27;, &#x27;banded_gecko&#x27;, &#x27;common_iguana&#x27;, &#x27;American_chameleon&#x27;, &#x27;whiptail&#x27;, &#x27;agama&#x27;, &#x27;frilled_lizard&#x27;, &#x27;alligator_lizard&#x27;, &#x27;Gila_monster&#x27;, &#x27;green_lizard&#x27;, &#x27;African_chameleon&#x27;, &#x27;Komodo_dragon&#x27;, &#x27;African_crocodile&#x27;, &#x27;American_alligator&#x27;, &#x27;triceratops&#x27;, &#x27;thunder_snake&#x27;, &#x27;ringneck_snake&#x27;, &#x27;hognose_snake&#x27;, &#x27;green_snake&#x27;, &#x27;king_snake&#x27;, &#x27;garter_snake&#x27;, &#x27;water_snake&#x27;, &#x27;vine_snake&#x27;, &#x27;night_snake&#x27;, &#x27;boa_constrictor&#x27;, &#x27;rock_python&#x27;, &#x27;Indian_cobra&#x27;, &#x27;green_mamba&#x27;, &#x27;sea_snake&#x27;, &#x27;horned_viper&#x27;, &#x27;diamondback&#x27;, &#x27;sidewinder&#x27;, &#x27;trilobite&#x27;, &#x27;harvestman&#x27;, &#x27;scorpion&#x27;, &#x27;black_and_gold_garden_spider&#x27;, &#x27;barn_spider&#x27;, &#x27;garden_spider&#x27;, &#x27;black_widow&#x27;, &#x27;tarantula&#x27;, &#x27;wolf_spider&#x27;, &#x27;tick&#x27;, &#x27;centipede&#x27;, &#x27;black_grouse&#x27;, &#x27;ptarmigan&#x27;, &#x27;ruffed_grouse&#x27;, &#x27;prairie_chicken&#x27;, &#x27;peacock&#x27;, &#x27;quail&#x27;, &#x27;partridge&#x27;, &#x27;African_grey&#x27;, &#x27;macaw&#x27;, &#x27;sulphur-crested_cockatoo&#x27;, &#x27;lorikeet&#x27;, &#x27;coucal&#x27;, &#x27;bee_eater&#x27;, &#x27;hornbill&#x27;, &#x27;hummingbird&#x27;, &#x27;jacamar&#x27;, &#x27;toucan&#x27;, &#x27;drake&#x27;, &#x27;red-breasted_merganser&#x27;, &#x27;goose&#x27;, &#x27;black_swan&#x27;, &#x27;tusker&#x27;, &#x27;echidna&#x27;, &#x27;platypus&#x27;, &#x27;wallaby&#x27;, &#x27;koala&#x27;, &#x27;wombat&#x27;, &#x27;jellyfish&#x27;, &#x27;sea_anemone&#x27;, &#x27;brain_coral&#x27;, &#x27;flatworm&#x27;, &#x27;nematode&#x27;, &#x27;conch&#x27;, &#x27;snail&#x27;, &#x27;slug&#x27;, &#x27;sea_slug&#x27;, &#x27;chiton&#x27;, &#x27;chambered_nautilus&#x27;, &#x27;Dungeness_crab&#x27;, &#x27;rock_crab&#x27;, &#x27;fiddler_crab&#x27;, &#x27;king_crab&#x27;, &#x27;American_lobster&#x27;, &#x27;spiny_lobster&#x27;, &#x27;crayfish&#x27;, &#x27;hermit_crab&#x27;, &#x27;isopod&#x27;, &#x27;white_stork&#x27;, &#x27;black_stork&#x27;, &#x27;spoonbill&#x27;, &#x27;flamingo&#x27;, &#x27;little_blue_heron&#x27;, &#x27;American_egret&#x27;, &#x27;bittern&#x27;, &#x27;crane_(bird)&#x27;, &#x27;limpkin&#x27;, &#x27;European_gallinule&#x27;, &#x27;American_coot&#x27;, &#x27;bustard&#x27;, &#x27;ruddy_turnstone&#x27;, &#x27;red-backed_sandpiper&#x27;, &#x27;redshank&#x27;, &#x27;dowitcher&#x27;, &#x27;oystercatcher&#x27;, &#x27;pelican&#x27;, &#x27;king_penguin&#x27;, &#x27;albatross&#x27;, &#x27;grey_whale&#x27;, &#x27;killer_whale&#x27;, &#x27;dugong&#x27;, &#x27;sea_lion&#x27;, &#x27;Chihuahua&#x27;, &#x27;Japanese_spaniel&#x27;, &#x27;Maltese_dog&#x27;, &#x27;Pekinese&#x27;, &#x27;Shih-Tzu&#x27;, &#x27;Blenheim_spaniel&#x27;, &#x27;papillon&#x27;, &#x27;toy_terrier&#x27;, &#x27;Rhodesian_ridgeback&#x27;, &#x27;Afghan_hound&#x27;, &#x27;basset&#x27;, &#x27;beagle&#x27;, &#x27;bloodhound&#x27;, &#x27;bluetick&#x27;, &#x27;black-and-tan_coonhound&#x27;, &#x27;Walker_hound&#x27;, &#x27;English_foxhound&#x27;, &#x27;redbone&#x27;, &#x27;borzoi&#x27;, &#x27;Irish_wolfhound&#x27;, &#x27;Italian_greyhound&#x27;, &#x27;whippet&#x27;, &#x27;Ibizan_hound&#x27;, &#x27;Norwegian_elkhound&#x27;, &#x27;otterhound&#x27;, &#x27;Saluki&#x27;, &#x27;Scottish_deerhound&#x27;, &#x27;Weimaraner&#x27;, &#x27;Staffordshire_bullterrier&#x27;, &#x27;American_Staffordshire_terrier&#x27;, &#x27;Bedlington_terrier&#x27;, &#x27;Border_terrier&#x27;, &#x27;Kerry_blue_terrier&#x27;, &#x27;Irish_terrier&#x27;, &#x27;Norfolk_terrier&#x27;, &#x27;Norwich_terrier&#x27;, &#x27;Yorkshire_terrier&#x27;, &#x27;wire-haired_fox_terrier&#x27;, &#x27;Lakeland_terrier&#x27;, &#x27;Sealyham_terrier&#x27;, &#x27;Airedale&#x27;, &#x27;cairn&#x27;, &#x27;Australian_terrier&#x27;, &#x27;Dandie_Dinmont&#x27;, &#x27;Boston_bull&#x27;, &#x27;miniature_schnauzer&#x27;, &#x27;giant_schnauzer&#x27;, &#x27;standard_schnauzer&#x27;, &#x27;Scotch_terrier&#x27;, &#x27;Tibetan_terrier&#x27;, &#x27;silky_terrier&#x27;, &#x27;soft-coated_wheaten_terrier&#x27;, &#x27;West_Highland_white_terrier&#x27;, &#x27;Lhasa&#x27;, &#x27;flat-coated_retriever&#x27;, &#x27;curly-coated_retriever&#x27;, &#x27;golden_retriever&#x27;, &#x27;Labrador_retriever&#x27;, &#x27;Chesapeake_Bay_retriever&#x27;, &#x27;German_short-haired_pointer&#x27;, &#x27;vizsla&#x27;, &#x27;English_setter&#x27;, &#x27;Irish_setter&#x27;, &#x27;Gordon_setter&#x27;, &#x27;Brittany_spaniel&#x27;, &#x27;clumber&#x27;, &#x27;English_springer&#x27;, &#x27;Welsh_springer_spaniel&#x27;, &#x27;cocker_spaniel&#x27;, &#x27;Sussex_spaniel&#x27;, &#x27;Irish_water_spaniel&#x27;, &#x27;kuvasz&#x27;, &#x27;schipperke&#x27;, &#x27;groenendael&#x27;, &#x27;malinois&#x27;, &#x27;briard&#x27;, &#x27;kelpie&#x27;, &#x27;komondor&#x27;, &#x27;Old_English_sheepdog&#x27;, &#x27;Shetland_sheepdog&#x27;, &#x27;collie&#x27;, &#x27;Border_collie&#x27;, &#x27;Bouvier_des_Flandres&#x27;, &#x27;Rottweiler&#x27;, &#x27;German_shepherd&#x27;, &#x27;Doberman&#x27;, &#x27;miniature_pinscher&#x27;, &#x27;Greater_Swiss_Mountain_dog&#x27;, &#x27;Bernese_mountain_dog&#x27;, &#x27;Appenzeller&#x27;, &#x27;EntleBucher&#x27;, &#x27;boxer&#x27;, &#x27;bull_mastiff&#x27;, &#x27;Tibetan_mastiff&#x27;, &#x27;French_bulldog&#x27;, &#x27;Great_Dane&#x27;, &#x27;Saint_Bernard&#x27;, &#x27;Eskimo_dog&#x27;, &#x27;malamute&#x27;, &#x27;Siberian_husky&#x27;, &#x27;dalmatian&#x27;, &#x27;affenpinscher&#x27;, &#x27;basenji&#x27;, &#x27;pug&#x27;, &#x27;Leonberg&#x27;, &#x27;Newfoundland&#x27;, &#x27;Great_Pyrenees&#x27;, &#x27;Samoyed&#x27;, &#x27;Pomeranian&#x27;, &#x27;chow&#x27;, &#x27;keeshond&#x27;, &#x27;Brabancon_griffon&#x27;, &#x27;Pembroke&#x27;, &#x27;Cardigan&#x27;, &#x27;toy_poodle&#x27;, &#x27;miniature_poodle&#x27;, &#x27;standard_poodle&#x27;, &#x27;Mexican_hairless&#x27;, &#x27;timber_wolf&#x27;, &#x27;white_wolf&#x27;, &#x27;red_wolf&#x27;, &#x27;coyote&#x27;, &#x27;dingo&#x27;, &#x27;dhole&#x27;, &#x27;African_hunting_dog&#x27;, &#x27;hyena&#x27;, &#x27;red_fox&#x27;, &#x27;kit_fox&#x27;, &#x27;Arctic_fox&#x27;, &#x27;grey_fox&#x27;, &#x27;tabby&#x27;, &#x27;tiger_cat&#x27;, &#x27;Persian_cat&#x27;, &#x27;Siamese_cat&#x27;, &#x27;Egyptian_cat&#x27;, &#x27;cougar&#x27;, &#x27;lynx&#x27;, &#x27;leopard&#x27;, &#x27;snow_leopard&#x27;, &#x27;jaguar&#x27;, &#x27;lion&#x27;, &#x27;tiger&#x27;, &#x27;cheetah&#x27;, &#x27;brown_bear&#x27;, &#x27;American_black_bear&#x27;, &#x27;ice_bear&#x27;, &#x27;sloth_bear&#x27;, &#x27;mongoose&#x27;, &#x27;meerkat&#x27;, &#x27;tiger_beetle&#x27;, &#x27;ladybug&#x27;, &#x27;ground_beetle&#x27;, &#x27;long-horned_beetle&#x27;, &#x27;leaf_beetle&#x27;, &#x27;dung_beetle&#x27;, &#x27;rhinoceros_beetle&#x27;, &#x27;weevil&#x27;, &#x27;fly&#x27;, &#x27;bee&#x27;, &#x27;ant&#x27;, &#x27;grasshopper&#x27;, &#x27;cricket&#x27;, &#x27;walking_stick&#x27;, &#x27;cockroach&#x27;, &#x27;mantis&#x27;, &#x27;cicada&#x27;, &#x27;leafhopper&#x27;, &#x27;lacewing&#x27;, &#x27;dragonfly&#x27;, &#x27;damselfly&#x27;, &#x27;admiral&#x27;, &#x27;ringlet&#x27;, &#x27;monarch&#x27;, &#x27;cabbage_butterfly&#x27;, &#x27;sulphur_butterfly&#x27;, &#x27;lycaenid&#x27;, &#x27;starfish&#x27;, &#x27;sea_urchin&#x27;, &#x27;sea_cucumber&#x27;, &#x27;wood_rabbit&#x27;, &#x27;hare&#x27;, &#x27;Angora&#x27;, &#x27;hamster&#x27;, &#x27;porcupine&#x27;, &#x27;fox_squirrel&#x27;, &#x27;marmot&#x27;, &#x27;beaver&#x27;, &#x27;guinea_pig&#x27;, &#x27;sorrel&#x27;, &#x27;zebra&#x27;, &#x27;hog&#x27;, &#x27;wild_boar&#x27;, &#x27;warthog&#x27;, &#x27;hippopotamus&#x27;, &#x27;ox&#x27;, &#x27;water_buffalo&#x27;, &#x27;bison&#x27;, &#x27;ram&#x27;, &#x27;bighorn&#x27;, &#x27;ibex&#x27;, &#x27;hartebeest&#x27;, &#x27;impala&#x27;, &#x27;gazelle&#x27;, &#x27;Arabian_camel&#x27;, &#x27;llama&#x27;, &#x27;weasel&#x27;, &#x27;mink&#x27;, &#x27;polecat&#x27;, &#x27;black-footed_ferret&#x27;, &#x27;otter&#x27;, &#x27;skunk&#x27;, &#x27;badger&#x27;, &#x27;armadillo&#x27;, &#x27;three-toed_sloth&#x27;, &#x27;orangutan&#x27;, &#x27;gorilla&#x27;, &#x27;chimpanzee&#x27;, &#x27;gibbon&#x27;, &#x27;siamang&#x27;, &#x27;guenon&#x27;, &#x27;patas&#x27;, &#x27;baboon&#x27;, &#x27;macaque&#x27;, &#x27;langur&#x27;, &#x27;colobus&#x27;, &#x27;proboscis_monkey&#x27;, &#x27;marmoset&#x27;, &#x27;capuchin&#x27;, &#x27;howler_monkey&#x27;, &#x27;titi&#x27;, &#x27;spider_monkey&#x27;, &#x27;squirrel_monkey&#x27;, &#x27;Madagascar_cat&#x27;, &#x27;indri&#x27;, &#x27;Indian_elephant&#x27;, &#x27;African_elephant&#x27;, &#x27;lesser_panda&#x27;, &#x27;giant_panda&#x27;, &#x27;barracouta&#x27;, &#x27;eel&#x27;, &#x27;coho&#x27;, &#x27;rock_beauty&#x27;, &#x27;anemone_fish&#x27;, &#x27;sturgeon&#x27;, &#x27;gar&#x27;, &#x27;lionfish&#x27;, &#x27;puffer&#x27;, &#x27;abacus&#x27;, &#x27;abaya&#x27;, &#x27;academic_gown&#x27;, &#x27;accordion&#x27;, &#x27;acoustic_guitar&#x27;, &#x27;aircraft_carrier&#x27;, &#x27;airliner&#x27;, &#x27;airship&#x27;, &#x27;altar&#x27;, &#x27;ambulance&#x27;, &#x27;amphibian&#x27;, &#x27;analog_clock&#x27;, &#x27;apiary&#x27;, &#x27;apron&#x27;, &#x27;ashcan&#x27;, &#x27;assault_rifle&#x27;, &#x27;backpack&#x27;, &#x27;bakery&#x27;, &#x27;balance_beam&#x27;, &#x27;balloon&#x27;, &#x27;ballpoint&#x27;, &#x27;Band_Aid&#x27;, &#x27;banjo&#x27;, &#x27;bannister&#x27;, &#x27;barbell&#x27;, &#x27;barber_chair&#x27;, &#x27;barbershop&#x27;, &#x27;barn&#x27;, &#x27;barometer&#x27;, &#x27;barrel&#x27;, &#x27;barrow&#x27;, &#x27;baseball&#x27;, &#x27;basketball&#x27;, &#x27;bassinet&#x27;, &#x27;bassoon&#x27;, &#x27;bathing_cap&#x27;, &#x27;bath_towel&#x27;, &#x27;bathtub&#x27;, &#x27;beach_wagon&#x27;, &#x27;beacon&#x27;, &#x27;beaker&#x27;, &#x27;bearskin&#x27;, &#x27;beer_bottle&#x27;, &#x27;beer_glass&#x27;, &#x27;bell_cote&#x27;, &#x27;bib&#x27;, &#x27;bicycle-built-for-two&#x27;, &#x27;bikini&#x27;, &#x27;binder&#x27;, &#x27;binoculars&#x27;, &#x27;birdhouse&#x27;, &#x27;boathouse&#x27;, &#x27;bobsled&#x27;, &#x27;bolo_tie&#x27;, &#x27;bonnet&#x27;, &#x27;bookcase&#x27;, &#x27;bookshop&#x27;, &#x27;bottlecap&#x27;, &#x27;bow&#x27;, &#x27;bow_tie&#x27;, &#x27;brass&#x27;, &#x27;brassiere&#x27;, &#x27;breakwater&#x27;, &#x27;breastplate&#x27;, &#x27;broom&#x27;, &#x27;bucket&#x27;, &#x27;buckle&#x27;, &#x27;bulletproof_vest&#x27;, &#x27;bullet_train&#x27;, &#x27;butcher_shop&#x27;, &#x27;cab&#x27;, &#x27;caldron&#x27;, &#x27;candle&#x27;, &#x27;cannon&#x27;, &#x27;canoe&#x27;, &#x27;can_opener&#x27;, &#x27;cardigan&#x27;, &#x27;car_mirror&#x27;, &#x27;carousel&#x27;, &quot;carpenter&#x27;s_kit&quot;, &#x27;carton&#x27;, &#x27;car_wheel&#x27;, &#x27;cash_machine&#x27;, &#x27;cassette&#x27;, &#x27;cassette_player&#x27;, &#x27;castle&#x27;, &#x27;catamaran&#x27;, &#x27;CD_player&#x27;, &#x27;cello&#x27;, &#x27;cellular_telephone&#x27;, &#x27;chain&#x27;, &#x27;chainlink_fence&#x27;, &#x27;chain_mail&#x27;, &#x27;chain_saw&#x27;, &#x27;chest&#x27;, &#x27;chiffonier&#x27;, &#x27;chime&#x27;, &#x27;china_cabinet&#x27;, &#x27;Christmas_stocking&#x27;, &#x27;church&#x27;, &#x27;cinema&#x27;, &#x27;cleaver&#x27;, &#x27;cliff_dwelling&#x27;, &#x27;cloak&#x27;, &#x27;clog&#x27;, &#x27;cocktail_shaker&#x27;, &#x27;coffee_mug&#x27;, &#x27;coffeepot&#x27;, &#x27;coil&#x27;, &#x27;combination_lock&#x27;, &#x27;computer_keyboard&#x27;, &#x27;confectionery&#x27;, &#x27;container_ship&#x27;, &#x27;convertible&#x27;, &#x27;corkscrew&#x27;, &#x27;cornet&#x27;, &#x27;cowboy_boot&#x27;, &#x27;cowboy_hat&#x27;, &#x27;cradle&#x27;, &#x27;crane_(machine)&#x27;, &#x27;crash_helmet&#x27;, &#x27;crate&#x27;, &#x27;crib&#x27;, &#x27;Crock_Pot&#x27;, &#x27;croquet_ball&#x27;, &#x27;crutch&#x27;, &#x27;cuirass&#x27;, &#x27;dam&#x27;, &#x27;desk&#x27;, &#x27;desktop_computer&#x27;, &#x27;dial_telephone&#x27;, &#x27;diaper&#x27;, &#x27;digital_clock&#x27;, &#x27;digital_watch&#x27;, &#x27;dining_table&#x27;, &#x27;dishrag&#x27;, &#x27;dishwasher&#x27;, &#x27;disk_brake&#x27;, &#x27;dock&#x27;, &#x27;dogsled&#x27;, &#x27;dome&#x27;, &#x27;doormat&#x27;, &#x27;drilling_platform&#x27;, &#x27;drum&#x27;, &#x27;drumstick&#x27;, &#x27;dumbbell&#x27;, &#x27;Dutch_oven&#x27;, &#x27;electric_fan&#x27;, &#x27;electric_guitar&#x27;, &#x27;electric_locomotive&#x27;, &#x27;entertainment_center&#x27;, &#x27;envelope&#x27;, &#x27;espresso_maker&#x27;, &#x27;face_powder&#x27;, &#x27;feather_boa&#x27;, &#x27;file&#x27;, &#x27;fireboat&#x27;, &#x27;fire_engine&#x27;, &#x27;fire_screen&#x27;, &#x27;flagpole&#x27;, &#x27;flute&#x27;, &#x27;folding_chair&#x27;, &#x27;football_helmet&#x27;, &#x27;forklift&#x27;, &#x27;fountain&#x27;, &#x27;fountain_pen&#x27;, &#x27;four-poster&#x27;, &#x27;freight_car&#x27;, &#x27;French_horn&#x27;, &#x27;frying_pan&#x27;, &#x27;fur_coat&#x27;, &#x27;garbage_truck&#x27;, &#x27;gasmask&#x27;, &#x27;gas_pump&#x27;, &#x27;goblet&#x27;, &#x27;go-kart&#x27;, &#x27;golf_ball&#x27;, &#x27;golfcart&#x27;, &#x27;gondola&#x27;, &#x27;gong&#x27;, &#x27;gown&#x27;, &#x27;grand_piano&#x27;, &#x27;greenhouse&#x27;, &#x27;grille&#x27;, &#x27;grocery_store&#x27;, &#x27;guillotine&#x27;, &#x27;hair_slide&#x27;, &#x27;hair_spray&#x27;, &#x27;half_track&#x27;, &#x27;hammer&#x27;, &#x27;hamper&#x27;, &#x27;hand_blower&#x27;, &#x27;hand-held_computer&#x27;, &#x27;handkerchief&#x27;, &#x27;hard_disc&#x27;, &#x27;harmonica&#x27;, &#x27;harp&#x27;, &#x27;harvester&#x27;, &#x27;hatchet&#x27;, &#x27;holster&#x27;, &#x27;home_theater&#x27;, &#x27;honeycomb&#x27;, &#x27;hook&#x27;, &#x27;hoopskirt&#x27;, &#x27;horizontal_bar&#x27;, &#x27;horse_cart&#x27;, &#x27;hourglass&#x27;, &#x27;iPod&#x27;, &#x27;iron&#x27;, &quot;jack-o&#x27;-lantern&quot;, &#x27;jean&#x27;, &#x27;jeep&#x27;, &#x27;jersey&#x27;, &#x27;jigsaw_puzzle&#x27;, &#x27;jinrikisha&#x27;, &#x27;joystick&#x27;, &#x27;kimono&#x27;, &#x27;knee_pad&#x27;, &#x27;knot&#x27;, &#x27;lab_coat&#x27;, &#x27;ladle&#x27;, &#x27;lampshade&#x27;, &#x27;laptop&#x27;, &#x27;lawn_mower&#x27;, &#x27;lens_cap&#x27;, &#x27;letter_opener&#x27;, &#x27;library&#x27;, &#x27;lifeboat&#x27;, &#x27;lighter&#x27;, &#x27;limousine&#x27;, &#x27;liner&#x27;, &#x27;lipstick&#x27;, &#x27;Loafer&#x27;, &#x27;lotion&#x27;, &#x27;loudspeaker&#x27;, &#x27;loupe&#x27;, &#x27;lumbermill&#x27;, &#x27;magnetic_compass&#x27;, &#x27;mailbag&#x27;, &#x27;mailbox&#x27;, &#x27;maillot_(tights)&#x27;, &#x27;maillot_(tank_suit)&#x27;, &#x27;manhole_cover&#x27;, &#x27;maraca&#x27;, &#x27;marimba&#x27;, &#x27;mask&#x27;, &#x27;matchstick&#x27;, &#x27;maypole&#x27;, &#x27;maze&#x27;, &#x27;measuring_cup&#x27;, &#x27;medicine_chest&#x27;, &#x27;megalith&#x27;, &#x27;microphone&#x27;, &#x27;microwave&#x27;, &#x27;military_uniform&#x27;, &#x27;milk_can&#x27;, &#x27;minibus&#x27;, &#x27;miniskirt&#x27;, &#x27;minivan&#x27;, &#x27;missile&#x27;, &#x27;mitten&#x27;, &#x27;mixing_bowl&#x27;, &#x27;mobile_home&#x27;, &#x27;Model_T&#x27;, &#x27;modem&#x27;, &#x27;monastery&#x27;, &#x27;monitor&#x27;, &#x27;moped&#x27;, &#x27;mortar&#x27;, &#x27;mortarboard&#x27;, &#x27;mosque&#x27;, &#x27;mosquito_net&#x27;, &#x27;motor_scooter&#x27;, &#x27;mountain_bike&#x27;, &#x27;mountain_tent&#x27;, &#x27;mouse&#x27;, &#x27;mousetrap&#x27;, &#x27;moving_van&#x27;, &#x27;muzzle&#x27;, &#x27;nail&#x27;, &#x27;neck_brace&#x27;, &#x27;necklace&#x27;, &#x27;nipple&#x27;, &#x27;notebook&#x27;, &#x27;obelisk&#x27;, &#x27;oboe&#x27;, &#x27;ocarina&#x27;, &#x27;odometer&#x27;, &#x27;oil_filter&#x27;, &#x27;organ&#x27;, &#x27;oscilloscope&#x27;, &#x27;overskirt&#x27;, &#x27;oxcart&#x27;, &#x27;oxygen_mask&#x27;, &#x27;packet&#x27;, &#x27;paddle&#x27;, &#x27;paddlewheel&#x27;, &#x27;padlock&#x27;, &#x27;paintbrush&#x27;, &#x27;pajama&#x27;, &#x27;palace&#x27;, &#x27;panpipe&#x27;, &#x27;paper_towel&#x27;, &#x27;parachute&#x27;, &#x27;parallel_bars&#x27;, &#x27;park_bench&#x27;, &#x27;parking_meter&#x27;, &#x27;passenger_car&#x27;, &#x27;patio&#x27;, &#x27;pay-phone&#x27;, &#x27;pedestal&#x27;, &#x27;pencil_box&#x27;, &#x27;pencil_sharpener&#x27;, &#x27;perfume&#x27;, &#x27;Petri_dish&#x27;, &#x27;photocopier&#x27;, &#x27;pick&#x27;, &#x27;pickelhaube&#x27;, &#x27;picket_fence&#x27;, &#x27;pickup&#x27;, &#x27;pier&#x27;, &#x27;piggy_bank&#x27;, &#x27;pill_bottle&#x27;, &#x27;pillow&#x27;, &#x27;ping-pong_ball&#x27;, &#x27;pinwheel&#x27;, &#x27;pirate&#x27;, &#x27;pitcher&#x27;, &#x27;plane&#x27;, &#x27;planetarium&#x27;, &#x27;plastic_bag&#x27;, &#x27;plate_rack&#x27;, &#x27;plow&#x27;, &#x27;plunger&#x27;, &#x27;Polaroid_camera&#x27;, &#x27;pole&#x27;, &#x27;police_van&#x27;, &#x27;poncho&#x27;, &#x27;pool_table&#x27;, &#x27;pop_bottle&#x27;, &#x27;pot&#x27;, &quot;potter&#x27;s_wheel&quot;, &#x27;power_drill&#x27;, &#x27;prayer_rug&#x27;, &#x27;printer&#x27;, &#x27;prison&#x27;, &#x27;projectile&#x27;, &#x27;projector&#x27;, &#x27;puck&#x27;, &#x27;punching_bag&#x27;, &#x27;purse&#x27;, &#x27;quill&#x27;, &#x27;quilt&#x27;, &#x27;racer&#x27;, &#x27;racket&#x27;, &#x27;radiator&#x27;, &#x27;radio&#x27;, &#x27;radio_telescope&#x27;, &#x27;rain_barrel&#x27;, &#x27;recreational_vehicle&#x27;, &#x27;reel&#x27;, &#x27;reflex_camera&#x27;, &#x27;refrigerator&#x27;, &#x27;remote_control&#x27;, &#x27;restaurant&#x27;, &#x27;revolver&#x27;, &#x27;rifle&#x27;, &#x27;rocking_chair&#x27;, &#x27;rotisserie&#x27;, &#x27;rubber_eraser&#x27;, &#x27;rugby_ball&#x27;, &#x27;rule&#x27;, &#x27;running_shoe&#x27;, &#x27;safe&#x27;, &#x27;safety_pin&#x27;, &#x27;saltshaker&#x27;, &#x27;sandal&#x27;, &#x27;sarong&#x27;, &#x27;sax&#x27;, &#x27;scabbard&#x27;, &#x27;scale&#x27;, &#x27;school_bus&#x27;, &#x27;schooner&#x27;, &#x27;scoreboard&#x27;, &#x27;screen&#x27;, &#x27;screw&#x27;, &#x27;screwdriver&#x27;, &#x27;seat_belt&#x27;, &#x27;sewing_machine&#x27;, &#x27;shield&#x27;, &#x27;shoe_shop&#x27;, &#x27;shoji&#x27;, &#x27;shopping_basket&#x27;, &#x27;shopping_cart&#x27;, &#x27;shovel&#x27;, &#x27;shower_cap&#x27;, &#x27;shower_curtain&#x27;, &#x27;ski&#x27;, &#x27;ski_mask&#x27;, &#x27;sleeping_bag&#x27;, &#x27;slide_rule&#x27;, &#x27;sliding_door&#x27;, &#x27;slot&#x27;, &#x27;snorkel&#x27;, &#x27;snowmobile&#x27;, &#x27;snowplow&#x27;, &#x27;soap_dispenser&#x27;, &#x27;soccer_ball&#x27;, &#x27;sock&#x27;, &#x27;solar_dish&#x27;, &#x27;sombrero&#x27;, &#x27;soup_bowl&#x27;, &#x27;space_bar&#x27;, &#x27;space_heater&#x27;, &#x27;space_shuttle&#x27;, &#x27;spatula&#x27;, &#x27;speedboat&#x27;, &#x27;spider_web&#x27;, &#x27;spindle&#x27;, &#x27;sports_car&#x27;, &#x27;spotlight&#x27;, &#x27;stage&#x27;, &#x27;steam_locomotive&#x27;, &#x27;steel_arch_bridge&#x27;, &#x27;steel_drum&#x27;, &#x27;stethoscope&#x27;, &#x27;stole&#x27;, &#x27;stone_wall&#x27;, &#x27;stopwatch&#x27;, &#x27;stove&#x27;, &#x27;strainer&#x27;, &#x27;streetcar&#x27;, &#x27;stretcher&#x27;, &#x27;studio_couch&#x27;, &#x27;stupa&#x27;, &#x27;submarine&#x27;, &#x27;suit&#x27;, &#x27;sundial&#x27;, &#x27;sunglass&#x27;, &#x27;sunglasses&#x27;, &#x27;sunscreen&#x27;, &#x27;suspension_bridge&#x27;, &#x27;swab&#x27;, &#x27;sweatshirt&#x27;, &#x27;swimming_trunks&#x27;, &#x27;swing&#x27;, &#x27;switch&#x27;, &#x27;syringe&#x27;, &#x27;table_lamp&#x27;, &#x27;tank&#x27;, &#x27;tape_player&#x27;, &#x27;teapot&#x27;, &#x27;teddy&#x27;, &#x27;television&#x27;, &#x27;tennis_ball&#x27;, &#x27;thatch&#x27;, &#x27;theater_curtain&#x27;, &#x27;thimble&#x27;, &#x27;thresher&#x27;, &#x27;throne&#x27;, &#x27;tile_roof&#x27;, &#x27;toaster&#x27;, &#x27;tobacco_shop&#x27;, &#x27;toilet_seat&#x27;, &#x27;torch&#x27;, &#x27;totem_pole&#x27;, &#x27;tow_truck&#x27;, &#x27;toyshop&#x27;, &#x27;tractor&#x27;, &#x27;trailer_truck&#x27;, &#x27;tray&#x27;, &#x27;trench_coat&#x27;, &#x27;tricycle&#x27;, &#x27;trimaran&#x27;, &#x27;tripod&#x27;, &#x27;triumphal_arch&#x27;, &#x27;trolleybus&#x27;, &#x27;trombone&#x27;, &#x27;tub&#x27;, &#x27;turnstile&#x27;, &#x27;typewriter_keyboard&#x27;, &#x27;umbrella&#x27;, &#x27;unicycle&#x27;, &#x27;upright&#x27;, &#x27;vacuum&#x27;, &#x27;vase&#x27;, &#x27;vault&#x27;, &#x27;velvet&#x27;, &#x27;vending_machine&#x27;, &#x27;vestment&#x27;, &#x27;viaduct&#x27;, &#x27;violin&#x27;, &#x27;volleyball&#x27;, &#x27;waffle_iron&#x27;, &#x27;wall_clock&#x27;, &#x27;wallet&#x27;, &#x27;wardrobe&#x27;, &#x27;warplane&#x27;, &#x27;washbasin&#x27;, &#x27;washer&#x27;, &#x27;water_bottle&#x27;, &#x27;water_jug&#x27;, &#x27;water_tower&#x27;, &#x27;whiskey_jug&#x27;, &#x27;whistle&#x27;, &#x27;wig&#x27;, &#x27;window_screen&#x27;, &#x27;window_shade&#x27;, &#x27;Windsor_tie&#x27;, &#x27;wine_bottle&#x27;, &#x27;wing&#x27;, &#x27;wok&#x27;, &#x27;wooden_spoon&#x27;, &#x27;wool&#x27;, &#x27;worm_fence&#x27;, &#x27;wreck&#x27;, &#x27;yawl&#x27;, &#x27;yurt&#x27;, &#x27;web_site&#x27;, &#x27;comic_book&#x27;, &#x27;crossword_puzzle&#x27;, &#x27;street_sign&#x27;, &#x27;traffic_light&#x27;, &#x27;book_jacket&#x27;, &#x27;menu&#x27;, &#x27;plate&#x27;, &#x27;guacamole&#x27;, &#x27;consomme&#x27;, &#x27;hot_pot&#x27;, &#x27;trifle&#x27;, &#x27;ice_cream&#x27;, &#x27;ice_lolly&#x27;, &#x27;French_loaf&#x27;, &#x27;bagel&#x27;, &#x27;pretzel&#x27;, &#x27;cheeseburger&#x27;, &#x27;hotdog&#x27;, &#x27;mashed_potato&#x27;, &#x27;head_cabbage&#x27;, &#x27;broccoli&#x27;, &#x27;cauliflower&#x27;, &#x27;zucchini&#x27;, &#x27;spaghetti_squash&#x27;, &#x27;acorn_squash&#x27;, &#x27;butternut_squash&#x27;, &#x27;cucumber&#x27;, &#x27;artichoke&#x27;, &#x27;bell_pepper&#x27;, &#x27;cardoon&#x27;, &#x27;mushroom&#x27;, &#x27;Granny_Smith&#x27;, &#x27;strawberry&#x27;, &#x27;orange&#x27;, &#x27;lemon&#x27;, &#x27;fig&#x27;, &#x27;pineapple&#x27;, &#x27;banana&#x27;, &#x27;jackfruit&#x27;, &#x27;custard_apple&#x27;, &#x27;pomegranate&#x27;, &#x27;hay&#x27;, &#x27;carbonara&#x27;, &#x27;chocolate_sauce&#x27;, &#x27;dough&#x27;, &#x27;meat_loaf&#x27;, &#x27;pizza&#x27;, &#x27;potpie&#x27;, &#x27;burrito&#x27;, &#x27;red_wine&#x27;, &#x27;espresso&#x27;, &#x27;cup&#x27;, &#x27;eggnog&#x27;, &#x27;alp&#x27;, &#x27;bubble&#x27;, &#x27;cliff&#x27;, &#x27;coral_reef&#x27;, &#x27;geyser&#x27;, &#x27;lakeside&#x27;, &#x27;promontory&#x27;, &#x27;sandbar&#x27;, &#x27;seashore&#x27;, &#x27;valley&#x27;, &#x27;volcano&#x27;, &#x27;ballplayer&#x27;, &#x27;groom&#x27;, &#x27;scuba_diver&#x27;, &#x27;rapeseed&#x27;, &#x27;daisy&#x27;, &quot;yellow_lady&#x27;s_slipper&quot;, &#x27;corn&#x27;, &#x27;acorn&#x27;, &#x27;hip&#x27;, &#x27;buckeye&#x27;, &#x27;coral_fungus&#x27;, &#x27;agaric&#x27;, &#x27;gyromitra&#x27;, &#x27;stinkhorn&#x27;, &#x27;earthstar&#x27;, &#x27;hen-of-the-woods&#x27;, &#x27;bolete&#x27;, &#x27;ear&#x27;, &#x27;toilet_tissue&#x27;]
+
+
+2. **Labeling Config:**
+   - I have this labeling config from Mercedes-Benz:
+   &lt;View&gt;
+     &lt;Image name=&quot;image&quot; value=&quot;$image&quot;/&gt;
+     &lt;Choices name=&quot;choice&quot; toName=&quot;image&quot;&gt;
+       &lt;Choice value=&quot;Airplane&quot;/&gt;
+       &lt;Choice value=&quot;Car&quot;/&gt;
+     &lt;/Choices&gt;
+   &lt;/View&gt;
+
+3. **Mapping Instructions:**
+   - Map the labels from the Mercedes-Benz config to the closest matching ML model labels as follows:
+     1. Use the `value` attribute from each `&lt;Choice&gt;` tag to identify the label.
+     2. Find all similar and relevant labels from the ML model corresponding to each `&lt;Choice&gt;` label.
+     3. Add a `predicted_values=&quot;&lt;relevant_label1_from_ml_model&gt;,&lt;relevant_label2_from_ml_model&gt;&quot;` attribute inside each `&lt;Choice&gt;` tag using only labels from the ML model.
+
+4. **Output:**
+   - Provide the final labeling config with the `predicted_values` attribute added, using all relevant labels from the ML model, without any explanations.</code></pre>
+
+</details>
+
+<h2 id="Supported-YOLO-Versions-YOLOv5-YOLO11-and-others"><a href="#Supported-YOLO-Versions-YOLOv5-YOLO11-and-others" class="headerlink" title="Supported YOLO Versions: YOLOv5, YOLO11, and others"></a>Supported YOLO Versions: YOLOv5, YOLO11, and others</h2><ul>
+<li><p><strong>YOLOv5</strong>: This model is supported for object detection tasks. Make sure to specify <code>model_path=&quot;yolov5nu.pt&quot;</code> (don’t forget the <strong><code>u</code></strong>) to use the YOLOv5 model.</p>
+</li>
+<li><p><strong>YOLOv8</strong>: These models have been successfully tested with the current ML backend. Check the full list of <a target="_blank" rel="noopener" href="https://docs.ultralytics.com/models/yolov8/#supported-tasks-and-modes">v8 models here</a>.</p>
+</li>
+<li><p><strong>YOLO11</strong>: YOLO11 models have also been successfully tested with this ML backend. Check the full list of <a target="_blank" rel="noopener" href="https://docs.ultralytics.com/models/yolo11/#supported-tasks-and-modes">v11 models here</a>.</p>
+<p>  <strong>Warning 1</strong>: You must upgrade the <code>ultralytics</code> package to the latest version (<code>pip install -U ultralytics</code>) or rebuild the ML backend Docker from scratch (<code>docker-compose build --no-cache</code>) if you used it before the latest Ultralytics update on <strong>Monday, September 30, 2024</strong>.</p>
+<p>  <strong>Warning 2</strong>: YOLO11 models do not use the <code>v</code> in their naming convention. For example, use <strong><code>yolo11n.pt</code></strong> instead of <code>yolov11n.pt</code>, unlike the naming convention in YOLOv8.</p>
+</li>
+<li><p>For a full list of supported YOLO versions and models, refer to the Ultralytics documentation:
+<a target="_blank" rel="noopener" href="https://docs.ultralytics.com/models/">Ultralytics Supported YOLO Models</a></p>
+<p>  <strong>Note</strong>: Some YOLO models listed in the Ultralytics documentation have not been tested with this ML backend, but they might still work.</p>
+</li>
+</ul>
+<h2 id="Your-own-custom-YOLO-models"><a href="#Your-own-custom-YOLO-models" class="headerlink" title="Your own custom YOLO models"></a>Your own custom YOLO models</h2><p>You can load your own YOLO labels using the following steps:</p>
+<ol>
+<li>Mount your model as <code>/app/models/&lt;your-model&gt;.pt</code> inside of your Docker.</li>
+<li>Add <code>model_path=&quot;&lt;your-model&gt;.pt&quot;</code> to the control tag in the labeling configuration, e.g.:</li>
+</ol>
+<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">RectangleLabels</span> <span class="hljs-attr">model_path</span>=<span class="hljs-string">&quot;my_model.pt&quot;</span>&gt;</span></code></pre>
+
+<details>
+<summary><b>Step by step guide</b>: Using your own custom YOLOv8 model</summary>
+<br>
+You can integrate your own custom-trained YOLOv8 models with the YOLO ML backend for Mercedes-Benz. 
+Follow these detailed steps to set up your custom model in the ML backend Docker:
+
+<h3 id="Step-0-Install-Label-Studio-and-clone-this-Github-repository"><a href="#Step-0-Install-Label-Studio-and-clone-this-Github-repository" class="headerlink" title="Step 0: Install Mercedes-Benz and clone this Github repository"></a>Step 0: Install Mercedes-Benz and clone this Github repository</h3><ol>
+<li>Install and run Mercedes-Benz (or see <a target="_blank" rel="noopener" href="https://labelstud.io/guide/install">more ways here</a>).</li>
+</ol>
+<pre><code class="hljs plaintext">pip install label-studio
+label-studio</code></pre>
+
+<ol start="2">
+<li>Clone the Mercedes-Benz ML backend repository and go to the <code>yolo</code> example folder:</li>
+</ol>
+<pre><code class="hljs plaintext">git clone https://github.com/Mercedes-Benz/label-studio-ml-backend.git
+cd label-studio-ml-backend/examples/yolo</code></pre>
+
+<h3 id="Step-1-Prepare-your-custom-YOLOv8-model"><a href="#Step-1-Prepare-your-custom-YOLOv8-model" class="headerlink" title="Step 1: Prepare your custom YOLOv8 model"></a>Step 1: Prepare your custom YOLOv8 model</h3><p>Ensure that your custom YOLOv8 model is saved as a <code>.pt</code> file, which is the standard format for PyTorch models. 
+Let’s assume your model file is named <code>my_custom_model.pt</code>.</p>
+<h3 id="Step-2-Place-your-model"><a href="#Step-2-Place-your-model" class="headerlink" title="Step 2: Place your model"></a>Step 2: Place your model</h3><ol>
+<li><p><strong>Create a ‘models’ directory:</strong></p>
+<p>In your project root directory <code>yolo</code> (the same directory where your <code>docker-compose.yml</code> is located), 
+create a new folder named <code>models</code> and place your <code>my_custom_model.pt</code> file inside it.</p>
+<pre><code class="hljs plaintext">yolo/
+├── docker-compose.yml
+├── models/
+    └── my_custom_model.pt</code></pre>
+</li>
+<li><p><strong>Modify <code>docker-compose.yml</code> to mount the ‘models’ directory:</strong></p>
+<p>Update your <code>docker-compose.yml</code> file to include a volume that maps the local <code>models</code> directory 
+to the <code>/app/models</code> directory inside the Docker container.</p>
+<pre><code class="hljs yaml"><span class="hljs-attr">services:</span>
+  <span class="hljs-attr">yolo:</span>
+    <span class="hljs-attr">container_name:</span> <span class="hljs-string">yolo</span>
+    <span class="hljs-string">...</span>
+    <span class="hljs-attr">volumes:</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-string">./models:/app/models</span>  <span class="hljs-comment"># Mount the local &#x27;models&#x27; directory</span>
+    <span class="hljs-attr">environment:</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-string">ALLOW_CUSTOM_MODEL_PATH=true</span>
+    <span class="hljs-string">...</span></code></pre></li>
+</ol>
+<h3 id="Step-3-Ensure-environment-variables-are-set-correctly"><a href="#Step-3-Ensure-environment-variables-are-set-correctly" class="headerlink" title="Step 3: Ensure environment variables are set correctly"></a>Step 3: Ensure environment variables are set correctly</h3><ul>
+<li><strong><code>ALLOW_CUSTOM_MODEL_PATH=true</code></strong>: Ensure this is set in your Docker environment variables to allow the ML backend to load custom model paths (it’s <code>true</code> by default).</li>
+<li><strong><code>LABEL_STUDIO_URL</code></strong>: This is necessary to specify the external IP or domain of your Mercedes-Benz instance. 
+If you run Mercedes-Benz and ML backend locally, you can try setting it to <code>LABEL_STUDIO_URL=http://host.docker.internal:8080</code>.</li>
+<li><strong><code>LABEL_STUDIO_API_KEY</code></strong>: This is necessary to specify the API key of your Mercedes-Benz instance. 
+You can find it in Mercedes-Benz on the <a target="_blank" rel="noopener" href="https://labelstud.io/guide/user_account#Access-token">User Account page</a>.</li>
+<li><strong><code>LOG_LEVEL</code></strong>: (optional) Set the logging level for the ML backend. You can use <code>DEBUG</code>, <code>INFO</code>, <code>WARNING</code>, <code>ERROR</code>.</li>
+</ul>
+<p>Example <code>docker-compose.yml</code>:</p>
+<pre><code class="hljs yaml"><span class="hljs-attr">environment:</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">ALLOW_CUSTOM_MODEL_PATH=true</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">LABEL_STUDIO_URL=http://host.docker.internal:8080</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">LABEL_STUDIO_API_KEY=your_api_key</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">LOG_LEVEL=DEBUG</span>  <span class="hljs-comment"># optional </span></code></pre>
+
+<h3 id="Step-4-Update-your-Labeling-Configuration-in-Label-Studio"><a href="#Step-4-Update-your-Labeling-Configuration-in-Label-Studio" class="headerlink" title="Step 4: Update your Labeling Configuration in Mercedes-Benz"></a>Step 4: Update your Labeling Configuration in Mercedes-Benz</h3><p>In your Mercedes-Benz project, specify the path to your custom model in the labeling configuration 
+by adding the <code>model_path</code> parameter to the control tag you’re using 
+(e.g., <code>&lt;RectangleLabels&gt;</code>, <code>&lt;PolygonLabels&gt;</code>, <code>&lt;Choices&gt;</code>, etc.).</p>
+<p><strong>Example for Object Detection with <code>&lt;RectangleLabels&gt;</code>:</strong></p>
+<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">View</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">Image</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;image&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;$image&quot;</span>/&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">RectangleLabels</span> </span>
+<span class="hljs-tag">          <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;label&quot;</span> <span class="hljs-attr">toName</span>=<span class="hljs-string">&quot;image&quot;</span> </span>
+<span class="hljs-tag">          <span class="hljs-attr">model_path</span>=<span class="hljs-string">&quot;my_custom_model.pt&quot;</span> </span>
+<span class="hljs-tag">          <span class="hljs-attr">model_score_threshold</span>=<span class="hljs-string">&quot;0.25&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Label</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;Cat&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Label</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;Dog&quot;</span>/&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">RectangleLabels</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">View</span>&gt;</span></code></pre>
+
+<p><strong>Important Notes:</strong></p>
+<ul>
+<li><strong><code>model_path</code></strong>: The <strong><code>model_path</code></strong> should match the filename of your custom model and must be located in the <code>/app/models</code> directory inside the Docker container.</li>
+<li><strong>Class names mapping</strong>: Ensure that the <code>value</code> attributes in your <code>&lt;Label&gt;</code> tags correspond to the <strong>class names</strong> your model predicts. If they differ, use the <code>predicted_values</code> attribute to map them. Example:<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">Label</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;Cat&quot;</span> <span class="hljs-attr">predicted_values</span>=<span class="hljs-string">&quot;feline&quot;</span>/&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">Label</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;Dog&quot;</span> <span class="hljs-attr">predicted_values</span>=<span class="hljs-string">&quot;canine&quot;</span>/&gt;</span></code></pre></li>
+<li><strong>Where to find class names</strong>: See ML backend logs <strong>to know the exact class names</strong> your model predicts, and then 
+you can use these names in the <code>predicted_values</code> attribute and in the <code>value</code> of Label tags directly.</li>
+</ul>
+<h3 id="Step-5-Restart-the-ML-Backend"><a href="#Step-5-Restart-the-ML-Backend" class="headerlink" title="Step 5: Restart the ML Backend"></a>Step 5: Restart the ML Backend</h3><p>After making these changes, restart the ML backend to apply the new configuration.</p>
+<pre><code class="hljs bash">docker-compose down
+docker-compose up --build</code></pre>
+
+<h3 id="Step-6-Connect-the-ML-Backend-to-your-Label-Studio-project"><a href="#Step-6-Connect-the-ML-Backend-to-your-Label-Studio-project" class="headerlink" title="Step 6: Connect the ML Backend to your Mercedes-Benz project"></a>Step 6: Connect the ML Backend to your Mercedes-Benz project</h3><ol>
+<li>Open your Mercedes-Benz instance.</li>
+<li>Go to the <strong>Settings</strong> of your project.</li>
+<li>Navigate to the <strong>Model</strong> tab.</li>
+<li>Connect to the ML backend by entering the ML backend URL 
+(if you run it locally, it’s most likely <code>http://localhost:9090</code>).</li>
+</ol>
+<h3 id="Step-7-Test-your-setup"><a href="#Step-7-Test-your-setup" class="headerlink" title="Step 7: Test your setup"></a>Step 7: Test your setup</h3><p>Add some tasks (images or other data) to your Mercedes-Benz project and open a task in the labeling interface. 
+The ML backend should now use your custom model to generate predictions.</p>
+<h3 id="Common-pitfalls"><a href="#Common-pitfalls" class="headerlink" title="Common pitfalls"></a>Common pitfalls</h3><ul>
+<li><strong>Incorrect model path:</strong> Ensure that the <code>model_path</code> in your labeling configuration exactly matches the filename of your model inside <code>/app/models</code>.</li>
+<li><strong>Label mismatch:</strong> Double-check that your labels in Mercedes-Benz match the classes your model predicts, or use <code>predicted_values</code> to map them.</li>
+<li><strong>Keypoints models and model_index:</strong> If you use a keypoints model, you should specify the <code>model_index</code> parameter in each <code>Label</code> tag.</li>
+</ul>
+</details>
+
+
+<h2 id="Training"><a href="#Training" class="headerlink" title="Training"></a>Training</h2><p>The current Mercedes-Benz ML backend doesn’t support training YOLO models. You have to do it manually on your side.
+Or you can contribute to this repository and add training support for this ML backend.</p>
+<br>
+
+<hr>
+<br>
+
+
+<h2 id="Classification-using"><a href="#Classification-using" class="headerlink" title="Classification using &lt;Choices&gt;"></a>Classification using <code>&lt;Choices&gt;</code></h2><p>YOLO provides a classification model and Mercedes-Benz supports this with the <code>Choices</code> control tag.</p>
+<p>More info: <a target="_blank" rel="noopener" href="https://docs.ultralytics.com/tasks/classify/">https://docs.ultralytics.com/tasks/classify/</a></p>
+<video src="https://github.com/user-attachments/assets/30c5ce43-2c89-4ddf-a77d-9d1d75ac3419" controls="controls" style="max-width: 800px;" class="gif-border" ></video>
+
+
+<h3 id="Labeling-config"><a href="#Labeling-config" class="headerlink" title="Labeling config"></a>Labeling config</h3><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">View</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">Image</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;image&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;$image&quot;</span>/&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">Choices</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;choice&quot;</span> <span class="hljs-attr">toName</span>=<span class="hljs-string">&quot;image&quot;</span> <span class="hljs-attr">model_score_threshold</span>=<span class="hljs-string">&quot;0.25&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Choice</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;Airplane&quot;</span> <span class="hljs-attr">predicted_values</span>=<span class="hljs-string">&quot;aircraft_carrier,airliner,airship,warplane&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Choice</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;Car&quot;</span> <span class="hljs-attr">predicted_values</span>=<span class="hljs-string">&quot;limousine,minivan,jeep,sports_car,passenger_car,police_van&quot;</span>/&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">Choices</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">View</span>&gt;</span></code></pre>
+
+<h3 id="Parameters"><a href="#Parameters" class="headerlink" title="Parameters"></a>Parameters</h3><table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>model_score_threshold</code></td>
+<td>float</td>
+<td>0.5</td>
+<td>Sets the minimum confidence threshold for detections. Objects detected with confidence below this threshold will be disregarded. Adjusting this value can help reduce false positives.</td>
+</tr>
+<tr>
+<td><code>model_path</code></td>
+<td>string</td>
+<td>None</td>
+<td>Path to the custom YOLO model. See more in the section <a href="#Your-own-custom-YOLO-models">Your own custom YOLO models</a>.</td>
+</tr>
+<tr>
+<td><code>choice</code></td>
+<td>string</td>
+<td>single</td>
+<td>Possible values: <code>single</code>, <code>single-radio</code>, <code>multiple</code>. If you use <code>choice=&quot;single&quot;</code> (default) you can select only one label. The ML backend will return the label with the highest confidence using argmax strategy. If you use <code>choice=&quot;multiple&quot;</code> you can select multiple labels. The ML backend will return all labels with confidence above the <code>model_score_threshold</code>.</td>
+</tr>
+</tbody></table>
+<p>For example:</p>
+<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">Choices</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;choice&quot;</span> <span class="hljs-attr">toName</span>=<span class="hljs-string">&quot;image&quot;</span> <span class="hljs-attr">model_score_threshold</span>=<span class="hljs-string">&quot;0.25&quot;</span> <span class="hljs-attr">model_path</span>=<span class="hljs-string">&quot;my_model.pt&quot;</span>&gt;</span></code></pre>
+
+<h3 id="Default-model"><a href="#Default-model" class="headerlink" title="Default model"></a>Default model</h3><p><code>yolov8n-cls.pt</code> is the default classification model.</p>
+<br>
+
+<hr>
+<br>
+
+<h2 id="Object-detection-using-RectangleLabels"><a href="#Object-detection-using-RectangleLabels" class="headerlink" title="Object detection using RectangleLabels"></a>Object detection using <code>RectangleLabels</code></h2><p>YOLO models provide bounding box detection, also known as “object detection.” 
+Mercedes-Benz supports this with the <code>RectangleLabels</code> control tag.</p>
+<p>YOLO OBB models are also supported.</p>
+<p>More info: <a target="_blank" rel="noopener" href="https://docs.ultralytics.com/tasks/detect/">https://docs.ultralytics.com/tasks/detect/</a></p>
+<video src="https://github.com/user-attachments/assets/413b4650-422d-43dc-809d-51c08f0ad434" controls="controls" style="max-width: 800px;" class="gif-border" ></video>
+
+
+<h3 id="Labeling-config-1"><a href="#Labeling-config-1" class="headerlink" title="Labeling config"></a>Labeling config</h3><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">View</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">Image</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;image&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;$image&quot;</span>/&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">RectangleLabels</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;label&quot;</span> <span class="hljs-attr">toName</span>=<span class="hljs-string">&quot;image&quot;</span> <span class="hljs-attr">model_score_threshold</span>=<span class="hljs-string">&quot;0.25&quot;</span> <span class="hljs-attr">opacity</span>=<span class="hljs-string">&quot;0.1&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Label</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;Person&quot;</span> <span class="hljs-attr">background</span>=<span class="hljs-string">&quot;red&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Label</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;Car&quot;</span> <span class="hljs-attr">background</span>=<span class="hljs-string">&quot;blue&quot;</span>/&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">RectangleLabels</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">View</span>&gt;</span></code></pre>
+
+<h3 id="Parameters-1"><a href="#Parameters-1" class="headerlink" title="Parameters"></a>Parameters</h3><table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>model_score_threshold</code></td>
+<td>float</td>
+<td>0.5</td>
+<td>Sets the minimum confidence threshold for detections. Objects detected with confidence below this threshold will be disregarded. Adjusting this value can help reduce false positives.</td>
+</tr>
+<tr>
+<td><code>model_path</code></td>
+<td>string</td>
+<td>None</td>
+<td>Path to the custom YOLO model. See more in the section <a href="#Your-own-custom-YOLO-models">Your own custom YOLO models</a>.</td>
+</tr>
+<tr>
+<td><code>model_obb</code></td>
+<td>bool</td>
+<td>False</td>
+<td>Enables Oriented Bounding Boxes (OBB) mode. Typically it uses <code>*-obb.pt</code> yolo models.</td>
+</tr>
+</tbody></table>
+<p>For example:</p>
+<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">RectangleLabels</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;label&quot;</span> <span class="hljs-attr">toName</span>=<span class="hljs-string">&quot;image&quot;</span> <span class="hljs-attr">model_score_threshold</span>=<span class="hljs-string">&quot;0.25&quot;</span> <span class="hljs-attr">model_path</span>=<span class="hljs-string">&quot;my_model.pt&quot;</span>&gt;</span></code></pre>
+
+<h3 id="Default-model-1"><a href="#Default-model-1" class="headerlink" title="Default model"></a>Default model</h3><p><code>yolov8m.pt</code> is the default object detection model.
+<code>yolov8n-obb.pt</code> is the default OBB object detection model.</p>
+<h3 id="Oriented-Bounding-Boxes-YOLO-OBB"><a href="#Oriented-Bounding-Boxes-YOLO-OBB" class="headerlink" title="Oriented Bounding Boxes (YOLO OBB)"></a>Oriented Bounding Boxes (YOLO OBB)</h3><p>Oriented (rotated) bounding boxes will be generated automatically if you use an OBB model. 
+Specify <code>model_obb=&quot;true&quot;</code> in the <code>RectangleLabels</code> tag to enable this mode:</p>
+<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">RectangleLabels</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;label&quot;</span> <span class="hljs-attr">toName</span>=<span class="hljs-string">&quot;image&quot;</span> <span class="hljs-attr">model_score_threshold</span>=<span class="hljs-string">&quot;0.25&quot;</span> <span class="hljs-attr">model_obb</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span></code></pre>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://docs.ultralytics.com/tasks/obb/">https://docs.ultralytics.com/tasks/obb/</a></p>
+<br>
+
+<hr>
+<br>
+
+<h2 id="Segmentation-using-PolygonLabels"><a href="#Segmentation-using-PolygonLabels" class="headerlink" title="Segmentation using PolygonLabels"></a>Segmentation using <code>PolygonLabels</code></h2><p>YOLO models provide segmentation detection, also known as “instance segmentation.” 
+Mercedes-Benz supports this with the <code>PolygonLabels</code> control tag.</p>
+<p>More info: <a target="_blank" rel="noopener" href="https://docs.ultralytics.com/tasks/segment/">https://docs.ultralytics.com/tasks/segment/</a></p>
+<video src="https://github.com/user-attachments/assets/9b2447d3-392d-42be-bc7f-ef2b6c81d54c" controls="controls" style="max-width: 800px;" class="gif-border" ></video>
+
+
+<h3 id="Labeling-config-2"><a href="#Labeling-config-2" class="headerlink" title="Labeling config"></a>Labeling config</h3><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">View</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">Image</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;image&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;$image&quot;</span>/&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">PolygonLabels</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;label&quot;</span> <span class="hljs-attr">toName</span>=<span class="hljs-string">&quot;image&quot;</span> <span class="hljs-attr">model_score_threshold</span>=<span class="hljs-string">&quot;0.25&quot;</span> <span class="hljs-attr">opacity</span>=<span class="hljs-string">&quot;0.1&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Label</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;Car&quot;</span> <span class="hljs-attr">background</span>=<span class="hljs-string">&quot;blue&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Label</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;Person&quot;</span> <span class="hljs-attr">background</span>=<span class="hljs-string">&quot;red&quot;</span>/&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">PolygonLabels</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">View</span>&gt;</span></code></pre>
+
+<h3 id="Parameters-2"><a href="#Parameters-2" class="headerlink" title="Parameters"></a>Parameters</h3><table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>model_score_threshold</code></td>
+<td>float</td>
+<td>0.5</td>
+<td>Sets the minimum confidence threshold for detections. Objects detected with confidence below this threshold will be disregarded. Adjusting this value can help reduce false positives.</td>
+</tr>
+<tr>
+<td><code>model_path</code></td>
+<td>string</td>
+<td>None</td>
+<td>Path to the custom YOLO model. See more in the section <a href="#Your-own-custom-YOLO-models">Your own custom YOLO models</a>.</td>
+</tr>
+</tbody></table>
+<p>For example:</p>
+<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">PolygonLabels</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;label&quot;</span> <span class="hljs-attr">toName</span>=<span class="hljs-string">&quot;image&quot;</span> <span class="hljs-attr">model_score_threshold</span>=<span class="hljs-string">&quot;0.25&quot;</span> <span class="hljs-attr">model_path</span>=<span class="hljs-string">&quot;my_model.pt&quot;</span>&gt;</span></code></pre>
+
+<h3 id="Default-model-2"><a href="#Default-model-2" class="headerlink" title="Default model"></a>Default model</h3><p><code>yolov8n-seg.pt</code> is the default segmentation model.</p>
+<br>
+
+<hr>
+<br>
+
+<h2 id="Keypoint-detection-using-KeyPointLabels"><a href="#Keypoint-detection-using-KeyPointLabels" class="headerlink" title="Keypoint detection using KeyPointLabels"></a>Keypoint detection using <code>KeyPointLabels</code></h2><p>YOLO models provide keypoint detection, also known as “pose estimation.” 
+Mercedes-Benz supports this with the <code>KeyPointLabels</code> control tag.</p>
+<p>More info: <a target="_blank" rel="noopener" href="https://docs.ultralytics.com/tasks/pose/">Ultralytics YOLO Keypoint Documentation</a></p>
+<p><img src="https://github.com/user-attachments/assets/72e32125-ba72-47b2-bc9d-a3269d199996" alt="image"></p>
+<h3 id="Labeling-config-3"><a href="#Labeling-config-3" class="headerlink" title="Labeling config"></a>Labeling config</h3><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">View</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">RectangleLabels</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;keypoints_bbox&quot;</span> <span class="hljs-attr">toName</span>=<span class="hljs-string">&quot;image&quot;</span> <span class="hljs-attr">model_skip</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Label</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;person&quot;</span>/&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">RectangleLabels</span>&gt;</span>
+  
+  <span class="hljs-tag">&lt;<span class="hljs-name">KeyPointLabels</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;keypoints&quot;</span> <span class="hljs-attr">toName</span>=<span class="hljs-string">&quot;image&quot;</span></span>
+<span class="hljs-tag">    <span class="hljs-attr">model_score_threshold</span>=<span class="hljs-string">&quot;0.75&quot;</span> <span class="hljs-attr">model_point_threshold</span>=<span class="hljs-string">&quot;0.5&quot;</span> </span>
+<span class="hljs-tag">    <span class="hljs-attr">model_add_bboxes</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">model_point_size</span>=<span class="hljs-string">&quot;1&quot;</span></span>
+<span class="hljs-tag">    <span class="hljs-attr">model_path</span>=<span class="hljs-string">&quot;yolov8n-pose.pt&quot;</span></span>
+<span class="hljs-tag">  &gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Label</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;nose&quot;</span> <span class="hljs-attr">predicted_values</span>=<span class="hljs-string">&quot;person&quot;</span> <span class="hljs-attr">model_index</span>=<span class="hljs-string">&quot;0&quot;</span> <span class="hljs-attr">background</span>=<span class="hljs-string">&quot;red&quot;</span> /&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">Label</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;left_eye&quot;</span> <span class="hljs-attr">predicted_values</span>=<span class="hljs-string">&quot;person&quot;</span> <span class="hljs-attr">model_index</span>=<span class="hljs-string">&quot;1&quot;</span> <span class="hljs-attr">background</span>=<span class="hljs-string">&quot;yellow&quot;</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Label</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;right_eye&quot;</span> <span class="hljs-attr">predicted_values</span>=<span class="hljs-string">&quot;person&quot;</span> <span class="hljs-attr">model_index</span>=<span class="hljs-string">&quot;2&quot;</span> <span class="hljs-attr">background</span>=<span class="hljs-string">&quot;yellow&quot;</span> /&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">Label</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;left_ear&quot;</span> <span class="hljs-attr">predicted_values</span>=<span class="hljs-string">&quot;person&quot;</span> <span class="hljs-attr">model_index</span>=<span class="hljs-string">&quot;3&quot;</span> <span class="hljs-attr">background</span>=<span class="hljs-string">&quot;purple&quot;</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Label</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;right_ear&quot;</span> <span class="hljs-attr">predicted_values</span>=<span class="hljs-string">&quot;person&quot;</span> <span class="hljs-attr">model_index</span>=<span class="hljs-string">&quot;4&quot;</span> <span class="hljs-attr">background</span>=<span class="hljs-string">&quot;purple&quot;</span> /&gt;</span>
+    
+    <span class="hljs-tag">&lt;<span class="hljs-name">View</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Label</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;left_shoulder&quot;</span> <span class="hljs-attr">predicted_values</span>=<span class="hljs-string">&quot;person&quot;</span> <span class="hljs-attr">model_index</span>=<span class="hljs-string">&quot;5&quot;</span> <span class="hljs-attr">background</span>=<span class="hljs-string">&quot;green&quot;</span> /&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Label</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;left_elbow&quot;</span> <span class="hljs-attr">predicted_values</span>=<span class="hljs-string">&quot;person&quot;</span> <span class="hljs-attr">model_index</span>=<span class="hljs-string">&quot;7&quot;</span> <span class="hljs-attr">background</span>=<span class="hljs-string">&quot;green&quot;</span> /&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Label</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;left_wrist&quot;</span> <span class="hljs-attr">predicted_values</span>=<span class="hljs-string">&quot;person&quot;</span> <span class="hljs-attr">model_index</span>=<span class="hljs-string">&quot;9&quot;</span> <span class="hljs-attr">background</span>=<span class="hljs-string">&quot;green&quot;</span> /&gt;</span>
+
+      <span class="hljs-tag">&lt;<span class="hljs-name">Label</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;right_shoulder&quot;</span> <span class="hljs-attr">predicted_values</span>=<span class="hljs-string">&quot;person&quot;</span> <span class="hljs-attr">model_index</span>=<span class="hljs-string">&quot;6&quot;</span> <span class="hljs-attr">background</span>=<span class="hljs-string">&quot;blue&quot;</span> /&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Label</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;right_elbow&quot;</span> <span class="hljs-attr">predicted_values</span>=<span class="hljs-string">&quot;person&quot;</span> <span class="hljs-attr">model_index</span>=<span class="hljs-string">&quot;8&quot;</span> <span class="hljs-attr">background</span>=<span class="hljs-string">&quot;blue&quot;</span> /&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Label</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;right_wrist&quot;</span> <span class="hljs-attr">predicted_values</span>=<span class="hljs-string">&quot;person&quot;</span> <span class="hljs-attr">model_index</span>=<span class="hljs-string">&quot;10&quot;</span> <span class="hljs-attr">background</span>=<span class="hljs-string">&quot;blue&quot;</span> /&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">View</span>&gt;</span>
+    
+    <span class="hljs-tag">&lt;<span class="hljs-name">View</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Label</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;left_hip&quot;</span> <span class="hljs-attr">predicted_values</span>=<span class="hljs-string">&quot;person&quot;</span> <span class="hljs-attr">model_index</span>=<span class="hljs-string">&quot;11&quot;</span> <span class="hljs-attr">background</span>=<span class="hljs-string">&quot;brown&quot;</span> /&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Label</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;left_knee&quot;</span> <span class="hljs-attr">predicted_values</span>=<span class="hljs-string">&quot;person&quot;</span> <span class="hljs-attr">model_index</span>=<span class="hljs-string">&quot;13&quot;</span> <span class="hljs-attr">background</span>=<span class="hljs-string">&quot;brown&quot;</span> /&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Label</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;left_ankle&quot;</span> <span class="hljs-attr">predicted_values</span>=<span class="hljs-string">&quot;person&quot;</span> <span class="hljs-attr">model_index</span>=<span class="hljs-string">&quot;15&quot;</span> <span class="hljs-attr">background</span>=<span class="hljs-string">&quot;brown&quot;</span> /&gt;</span>
+
+      <span class="hljs-tag">&lt;<span class="hljs-name">Label</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;right_hip&quot;</span> <span class="hljs-attr">predicted_values</span>=<span class="hljs-string">&quot;person&quot;</span> <span class="hljs-attr">model_index</span>=<span class="hljs-string">&quot;12&quot;</span> <span class="hljs-attr">background</span>=<span class="hljs-string">&quot;orange&quot;</span> /&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Label</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;right_knee&quot;</span> <span class="hljs-attr">predicted_values</span>=<span class="hljs-string">&quot;person&quot;</span> <span class="hljs-attr">model_index</span>=<span class="hljs-string">&quot;14&quot;</span> <span class="hljs-attr">background</span>=<span class="hljs-string">&quot;orange&quot;</span> /&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Label</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;right_ankle&quot;</span> <span class="hljs-attr">predicted_values</span>=<span class="hljs-string">&quot;person&quot;</span> <span class="hljs-attr">model_index</span>=<span class="hljs-string">&quot;16&quot;</span> <span class="hljs-attr">background</span>=<span class="hljs-string">&quot;orange&quot;</span> /&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">View</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">KeyPointLabels</span>&gt;</span>
+  
+  <span class="hljs-tag">&lt;<span class="hljs-name">Image</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;image&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;$image&quot;</span> /&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">View</span>&gt;</span></code></pre>
+
+<h3 id="Parameters-3"><a href="#Parameters-3" class="headerlink" title="Parameters"></a>Parameters</h3><table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>model_path</code></td>
+<td>string</td>
+<td>None</td>
+<td>Path to the custom YOLO model. See more in the section <a href="#Your-own-custom-YOLO-models">Your own custom YOLO models</a>.</td>
+</tr>
+<tr>
+<td><code>model_score_threshold</code></td>
+<td>float</td>
+<td>0.5</td>
+<td>Sets the minimum confidence threshold for bounding box detections. Keypoints that are related to the detected bbox with a confidence below this threshold will be disregarded.</td>
+</tr>
+<tr>
+<td><code>model_point_threshold</code></td>
+<td>float</td>
+<td>0.0</td>
+<td>Minimum confidence threshold for keypoints. Keypoints with confidence below this value will be ignored.</td>
+</tr>
+<tr>
+<td><code>model_add_bboxes</code></td>
+<td>bool</td>
+<td>True</td>
+<td>Adds bounding boxes for detected keypoints. All keypoints will be grouped by parent bounding boxes on the region panel. See details in the tip below.</td>
+</tr>
+<tr>
+<td><code>model_point_size</code></td>
+<td>float</td>
+<td>1</td>
+<td>Size of the keypoints in pixels. Just a visual parameter.</td>
+</tr>
+<tr>
+<td><code>model_index</code></td>
+<td>int</td>
+<td>None</td>
+<td>Index of the keypoint in the YOLO model output starting from 0. It’s used in <code>Label</code> tags only to build mapping between a Label and an output point.</td>
+</tr>
+</tbody></table>
+<p>For example:</p>
+<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">KeyPointLabels</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;keypoints&quot;</span> <span class="hljs-attr">toName</span>=<span class="hljs-string">&quot;image&quot;</span></span>
+<span class="hljs-tag">                <span class="hljs-attr">model_path</span>=<span class="hljs-string">&quot;yolov8n-pose.pt&quot;</span></span>
+<span class="hljs-tag">                <span class="hljs-attr">model_score_threshold</span>=<span class="hljs-string">&quot;0.25&quot;</span> <span class="hljs-attr">model_point_threshold</span>=<span class="hljs-string">&quot;0.5&quot;</span> </span>
+<span class="hljs-tag">                <span class="hljs-attr">model_add_bboxes</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">model_point_size</span>=<span class="hljs-string">&quot;2&quot;</span>&gt;</span></code></pre>
+
+<h3 id="Default-model-3"><a href="#Default-model-3" class="headerlink" title="Default model"></a>Default model</h3><p><code>yolov8n-pose.pt</code> is the default keypoint detection model.</p>
+<h3 id="Grouping-keypoints-with-bounding-boxes"><a href="#Grouping-keypoints-with-bounding-boxes" class="headerlink" title="Grouping keypoints with bounding boxes"></a>Grouping keypoints with bounding boxes</h3><p>When using keypoint detection, the ML backend groups keypoints by the bounding box (bbox) associated with each detected person or object. 
+You will see the grouping under the <strong>Regions</strong> panel on the right side of Mercedes-Benz. Note that you can drag and drop region items as necessary.</p>
+<p>The bounding boxes are added to the prediction results by default. You can enable or disable this behavior by setting <code>model_add_bboxes</code>:</p>
+<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">KeyPointLabels</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;keypoints&quot;</span> <span class="hljs-attr">toName</span>=<span class="hljs-string">&quot;image&quot;</span> <span class="hljs-attr">model_add_bboxes</span>=<span class="hljs-string">&quot;false&quot;</span>&gt;</span></code></pre>
+
+<details><summary>Tip: How to only keep keypoints and discard bounding boxes?</summary>
+
+<p>To enable both keypoint detection and bounding box detection in the same task, you have to </p>
+<ol>
+<li>set <code>model_add_bboxes=&quot;false&quot;</code> in the <code>KeyPointLabels</code> tag,</li>
+<li>remove <code>RectangleLabels</code> tag.</li>
+</ol>
+<p>You can use this labeling configuration to get rid of bounding boxes and keep only keypoints:</p>
+<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">View</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">KeyPointLabels</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;keypoints&quot;</span> <span class="hljs-attr">toName</span>=<span class="hljs-string">&quot;image&quot;</span></span>
+<span class="hljs-tag">    <span class="hljs-attr">model_score_threshold</span>=<span class="hljs-string">&quot;0.75&quot;</span> <span class="hljs-attr">model_point_threshold</span>=<span class="hljs-string">&quot;0.5&quot;</span> </span>
+<span class="hljs-tag">    <span class="hljs-attr">model_path</span>=<span class="hljs-string">&quot;yolov8n-pose.pt&quot;</span> <span class="hljs-attr">model_point_size</span>=<span class="hljs-string">&quot;1&quot;</span></span>
+<span class="hljs-tag">    <span class="hljs-attr">model_add_bboxes</span>=<span class="hljs-string">&quot;false&quot;</span>              </span>
+<span class="hljs-tag">  &gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Label</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;nose&quot;</span> <span class="hljs-attr">predicted_values</span>=<span class="hljs-string">&quot;person&quot;</span> <span class="hljs-attr">model_index</span>=<span class="hljs-string">&quot;0&quot;</span> <span class="hljs-attr">background</span>=<span class="hljs-string">&quot;red&quot;</span> /&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">Label</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;left_eye&quot;</span> <span class="hljs-attr">predicted_values</span>=<span class="hljs-string">&quot;person&quot;</span> <span class="hljs-attr">model_index</span>=<span class="hljs-string">&quot;1&quot;</span> <span class="hljs-attr">background</span>=<span class="hljs-string">&quot;yellow&quot;</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Label</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;right_eye&quot;</span> <span class="hljs-attr">predicted_values</span>=<span class="hljs-string">&quot;person&quot;</span> <span class="hljs-attr">model_index</span>=<span class="hljs-string">&quot;2&quot;</span> <span class="hljs-attr">background</span>=<span class="hljs-string">&quot;yellow&quot;</span> /&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">Label</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;left_ear&quot;</span> <span class="hljs-attr">predicted_values</span>=<span class="hljs-string">&quot;person&quot;</span> <span class="hljs-attr">model_index</span>=<span class="hljs-string">&quot;3&quot;</span> <span class="hljs-attr">background</span>=<span class="hljs-string">&quot;purple&quot;</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Label</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;right_ear&quot;</span> <span class="hljs-attr">predicted_values</span>=<span class="hljs-string">&quot;person&quot;</span> <span class="hljs-attr">model_index</span>=<span class="hljs-string">&quot;4&quot;</span> <span class="hljs-attr">background</span>=<span class="hljs-string">&quot;purple&quot;</span> /&gt;</span>
+    
+    <span class="hljs-tag">&lt;<span class="hljs-name">View</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Label</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;left_shoulder&quot;</span> <span class="hljs-attr">predicted_values</span>=<span class="hljs-string">&quot;person&quot;</span> <span class="hljs-attr">model_index</span>=<span class="hljs-string">&quot;5&quot;</span> <span class="hljs-attr">background</span>=<span class="hljs-string">&quot;green&quot;</span> /&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Label</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;left_elbow&quot;</span> <span class="hljs-attr">predicted_values</span>=<span class="hljs-string">&quot;person&quot;</span> <span class="hljs-attr">model_index</span>=<span class="hljs-string">&quot;7&quot;</span> <span class="hljs-attr">background</span>=<span class="hljs-string">&quot;green&quot;</span> /&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Label</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;left_wrist&quot;</span> <span class="hljs-attr">predicted_values</span>=<span class="hljs-string">&quot;person&quot;</span> <span class="hljs-attr">model_index</span>=<span class="hljs-string">&quot;9&quot;</span> <span class="hljs-attr">background</span>=<span class="hljs-string">&quot;green&quot;</span> /&gt;</span>
+
+      <span class="hljs-tag">&lt;<span class="hljs-name">Label</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;right_shoulder&quot;</span> <span class="hljs-attr">predicted_values</span>=<span class="hljs-string">&quot;person&quot;</span> <span class="hljs-attr">model_index</span>=<span class="hljs-string">&quot;6&quot;</span> <span class="hljs-attr">background</span>=<span class="hljs-string">&quot;blue&quot;</span> /&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Label</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;right_elbow&quot;</span> <span class="hljs-attr">predicted_values</span>=<span class="hljs-string">&quot;person&quot;</span> <span class="hljs-attr">model_index</span>=<span class="hljs-string">&quot;8&quot;</span> <span class="hljs-attr">background</span>=<span class="hljs-string">&quot;blue&quot;</span> /&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Label</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;right_wrist&quot;</span> <span class="hljs-attr">predicted_values</span>=<span class="hljs-string">&quot;person&quot;</span> <span class="hljs-attr">model_index</span>=<span class="hljs-string">&quot;10&quot;</span> <span class="hljs-attr">background</span>=<span class="hljs-string">&quot;blue&quot;</span> /&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">View</span>&gt;</span>
+    
+    <span class="hljs-tag">&lt;<span class="hljs-name">View</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Label</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;left_hip&quot;</span> <span class="hljs-attr">predicted_values</span>=<span class="hljs-string">&quot;person&quot;</span> <span class="hljs-attr">model_index</span>=<span class="hljs-string">&quot;11&quot;</span> <span class="hljs-attr">background</span>=<span class="hljs-string">&quot;brown&quot;</span> /&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Label</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;left_knee&quot;</span> <span class="hljs-attr">predicted_values</span>=<span class="hljs-string">&quot;person&quot;</span> <span class="hljs-attr">model_index</span>=<span class="hljs-string">&quot;13&quot;</span> <span class="hljs-attr">background</span>=<span class="hljs-string">&quot;brown&quot;</span> /&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Label</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;left_ankle&quot;</span> <span class="hljs-attr">predicted_values</span>=<span class="hljs-string">&quot;person&quot;</span> <span class="hljs-attr">model_index</span>=<span class="hljs-string">&quot;15&quot;</span> <span class="hljs-attr">background</span>=<span class="hljs-string">&quot;brown&quot;</span> /&gt;</span>
+
+      <span class="hljs-tag">&lt;<span class="hljs-name">Label</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;right_hip&quot;</span> <span class="hljs-attr">predicted_values</span>=<span class="hljs-string">&quot;person&quot;</span> <span class="hljs-attr">model_index</span>=<span class="hljs-string">&quot;12&quot;</span> <span class="hljs-attr">background</span>=<span class="hljs-string">&quot;orange&quot;</span> /&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Label</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;right_knee&quot;</span> <span class="hljs-attr">predicted_values</span>=<span class="hljs-string">&quot;person&quot;</span> <span class="hljs-attr">model_index</span>=<span class="hljs-string">&quot;14&quot;</span> <span class="hljs-attr">background</span>=<span class="hljs-string">&quot;orange&quot;</span> /&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Label</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;right_ankle&quot;</span> <span class="hljs-attr">predicted_values</span>=<span class="hljs-string">&quot;person&quot;</span> <span class="hljs-attr">model_index</span>=<span class="hljs-string">&quot;16&quot;</span> <span class="hljs-attr">background</span>=<span class="hljs-string">&quot;orange&quot;</span> /&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">View</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">KeyPointLabels</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">Image</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;image&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;$image&quot;</span> /&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">View</span>&gt;</span></code></pre>
+
+</details>
+
+<h3 id="Point-mapping"><a href="#Point-mapping" class="headerlink" title="Point mapping"></a>Point mapping</h3><p>For precise control, you can map keypoints to specific labels in your Mercedes-Benz configuration. 
+Each keypoint can be associated with a specific part of a person or object, 
+and you can define this mapping using the <code>model_index</code> and <code>predicted_values</code> attributes.</p>
+<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">Label</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;left_eye&quot;</span> <span class="hljs-attr">predicted_values</span>=<span class="hljs-string">&quot;person&quot;</span> <span class="hljs-attr">model_index</span>=<span class="hljs-string">&quot;1&quot;</span> /&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">Label</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;right_eye&quot;</span> <span class="hljs-attr">predicted_values</span>=<span class="hljs-string">&quot;person&quot;</span> <span class="hljs-attr">model_index</span>=<span class="hljs-string">&quot;2&quot;</span> /&gt;</span></code></pre>
+
+<p>This configuration ensures that the keypoints detected by the YOLO model are correctly labeled in the Mercedes-Benz interface.
+For pose detection models, the <code>model_index</code> attribute is used to map keypoints to specific parts of the body according to the YOLO model output:</p>
+<pre><code class="hljs plaintext">0: Nose 1: Left Eye 2: Right Eye 3: Left Ear 4: Right Ear 
+5: Left Shoulder 6: Right Shoulder 7: Left Elbow 8: Right Elbow 9: Left Wrist 10: Right Wrist 
+11: Left Hip 12: Right Hip 13: Left Knee 14: Right Knee 15: Left Ankle 16: Right Ankle</code></pre>
+
+<h3 id="Recommendations"><a href="#Recommendations" class="headerlink" title="Recommendations"></a>Recommendations</h3><ul>
+<li><strong>Bounding Box Visualization</strong>: Use the <code>model_add_bboxes</code> parameter to visualize the bounding box containing the keypoints. This is especially useful when dealing with multiple detected persons or objects.</li>
+<li><strong>Threshold Adjustment</strong>: Adjust the <code>model_score_threshold</code> and <code>model_point_threshold</code> parameters based on your dataset and the confidence level required for accurate keypoint detection.</li>
+</ul>
+<br>
+
+<hr>
+<br>
+
+<h2 id="Video-object-tracking-using-VideoRectangle"><a href="#Video-object-tracking-using-VideoRectangle" class="headerlink" title="Video object tracking using VideoRectangle"></a>Video object tracking using <code>VideoRectangle</code></h2><p>YOLO models provide object tracking, also known as “multi-object tracking.”
+Mercedes-Benz supports this with the <code>VideoRectangle</code> + <code>Labels</code> control tags.</p>
+<p>More info: <a target="_blank" rel="noopener" href="https://docs.ultralytics.com/modes/track/">https://docs.ultralytics.com/modes/track/</a></p>
+<video src="https://github.com/user-attachments/assets/7b0d50e6-164a-4d66-87cf-df443b77f638" controls="controls" style="max-width: 800px;" class="gif-border" ></video>
+
+
+
+<h3 id="Labeling-config-4"><a href="#Labeling-config-4" class="headerlink" title="Labeling config"></a>Labeling config</h3><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">View</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Video</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;video&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;$video&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">VideoRectangle</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;box&quot;</span> <span class="hljs-attr">toName</span>=<span class="hljs-string">&quot;video&quot;</span> <span class="hljs-attr">model_tracker</span>=<span class="hljs-string">&quot;botsort&quot;</span> <span class="hljs-attr">model_conf</span>=<span class="hljs-string">&quot;0.25&quot;</span> <span class="hljs-attr">model_iou</span>=<span class="hljs-string">&quot;0.7&quot;</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Labels</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;label&quot;</span> <span class="hljs-attr">toName</span>=<span class="hljs-string">&quot;video&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Label</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;Person&quot;</span> <span class="hljs-attr">background</span>=<span class="hljs-string">&quot;red&quot;</span>/&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Label</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;Car&quot;</span> <span class="hljs-attr">background</span>=<span class="hljs-string">&quot;blue&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">Labels</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">View</span>&gt;</span></code></pre>
+
+<h3 id="Trackers"><a href="#Trackers" class="headerlink" title="Trackers"></a>Trackers</h3><p><a target="_blank" rel="noopener" href="https://docs.ultralytics.com/modes/track/?h=track#tracker-selection">https://docs.ultralytics.com/modes/track/?h=track#tracker-selection</a></p>
+<p>The best tracker to use with Ultralytics YOLO depends on your specific needs.</p>
+<p>The default tracker is <a target="_blank" rel="noopener" href="https://github.com/NirAharon/BoT-SORT">BoT-SORT</a>, which is generally well-suited for most scenarios. </p>
+<p>However, if you’re looking for an alternative with different strengths, 
+<a target="_blank" rel="noopener" href="https://github.com/ifzhang/ByteTrack">ByteTrack</a> is another good choice that you can easily configure. 
+ByteTrack is known for its high performance in multi-object tracking, 
+especially in situations with varying object appearances and reappearances. </p>
+<p>Both trackers can be customized using YAML configuration files to fit your specific use cases.</p>
+<p>You can specify the tracker in the control tag: </p>
+<ul>
+<li><code>&lt;VideoRectangle model_tracker=&quot;botsort&quot;&gt;</code></li>
+<li><code>&lt;VideoRectangle model_tracker=&quot;bytetrack&quot;&gt;</code></li>
+</ul>
+<h3 id="Parameters-for-bounding-boxes"><a href="#Parameters-for-bounding-boxes" class="headerlink" title="Parameters for bounding boxes"></a>Parameters for bounding boxes</h3><p>The tracker works with the object detection model (bounding boxes). </p>
+<p>The first step is to detect bounding boxes, the second step is to track them (find the same boxes among frames). 
+These parameters are related to the first step - bounding box detection.</p>
+<p>Read more about these parameters: 
+<a target="_blank" rel="noopener" href="https://docs.ultralytics.com/modes/track/?h=track#tracking-arguments">https://docs.ultralytics.com/modes/track/?h=track#tracking-arguments</a></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>model_conf</code></td>
+<td>float</td>
+<td>0.25</td>
+<td>Sets the minimum confidence threshold for detections. Objects detected with confidence below this threshold will be disregarded. Adjusting this value can help reduce false positives.</td>
+</tr>
+<tr>
+<td><code>model_iou</code></td>
+<td>float</td>
+<td>0.7</td>
+<td>Intersection Over Union (IoU) threshold for Non-Maximum Suppression (NMS). Lower values result in fewer detections by eliminating overlapping boxes, useful for reducing duplicates.</td>
+</tr>
+<tr>
+<td><code>model_tracker</code></td>
+<td>string</td>
+<td><code>botsort</code></td>
+<td>Sets the tracker to use for multi-object tracking. Options include <code>botsort</code>, <code>bytetrack</code>, or a custom YAML file.</td>
+</tr>
+<tr>
+<td><code>model_path</code></td>
+<td>string</td>
+<td>None</td>
+<td>Path to the custom YOLO model. See more in the section <a href="#Your-own-custom-YOLO-models">Your own custom YOLO models</a>.</td>
+</tr>
+</tbody></table>
+<p>For example: </p>
+<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">VideoRectangle</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;label&quot;</span> <span class="hljs-attr">toName</span>=<span class="hljs-string">&quot;video&quot;</span> <span class="hljs-attr">model_tracker</span>=<span class="hljs-string">&quot;botsort&quot;</span> <span class="hljs-attr">model_conf</span>=<span class="hljs-string">&quot;0.25&quot;</span> <span class="hljs-attr">model_iou</span>=<span class="hljs-string">&quot;0.7&quot;</span> /&gt;</span></code></pre>
+
+<h3 id="Parameters-for-trackers"><a href="#Parameters-for-trackers" class="headerlink" title="Parameters for trackers"></a>Parameters for trackers</h3><p>For an example of tracker parameters, see <a target="_blank" rel="noopener" href="https://github.com/ultralytics/ultralytics/tree/main/ultralytics/cfg/trackers">https://github.com/ultralytics/ultralytics/tree/main/ultralytics/cfg/trackers</a>. </p>
+<p>The main parameter is <code>model_tracker</code> which can be set to </p>
+<ul>
+<li><code>botsort</code> </li>
+<li><code>bytetrack</code></li>
+<li>Or the name of any custom yaml file that you place into <code>models</code> directory (do not include the file extension <code>.yaml</code> when setting this parameter).</li>
+</ul>
+<p>As long as they are available within the yaml file, you can specify tracker parameters directly from the labeling config. All parameters should be prefixed with <code>botsort_</code> or <code>bytetrack_</code>.</p>
+<p>For example: </p>
+<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">VideoRectangle</span> </span>
+<span class="hljs-tag">    <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;label&quot;</span> <span class="hljs-attr">toName</span>=<span class="hljs-string">&quot;video&quot;</span> </span>
+<span class="hljs-tag">    <span class="hljs-attr">model_tracker</span>=<span class="hljs-string">&quot;botsort&quot;</span> </span>
+<span class="hljs-tag">    <span class="hljs-attr">botsort_track_low_thresh</span>=<span class="hljs-string">&quot;0.1&quot;</span> <span class="hljs-attr">botsort_track_high_thresh</span>=<span class="hljs-string">&quot;0.2&quot;</span> </span>
+<span class="hljs-tag">/&gt;</span></code></pre>
+
+<h3 id="Default-model-4"><a href="#Default-model-4" class="headerlink" title="Default model"></a>Default model</h3><p><code>yolov8n.pt</code> is the default object detection model. </p>
+<h3 id="Recommendations-1"><a href="#Recommendations-1" class="headerlink" title="Recommendations"></a>Recommendations</h3><ul>
+<li><p>Video object tracking is a computationally intensive task. 
+Small models like <code>yolov8n.pt</code> are recommended for real-time tracking, however, they may not be as accurate as larger models.</p>
+</li>
+<li><p>Mercedes-Benz has timeout limits for ML backend requests. You can adjust the timeout in the Mercedes-Benz backend settings.</p>
+</li>
+</ul>
+
+
+<ul>
+<li>Or use the <a href="#When-to-use-the-CLI">CLI tool</a> to run predictions asynchronously.</li>
+</ul>
+<br>
+
+<hr>
+<br>
+
+
+<h2 id="Video-temporal-classification-using-TimelineLabels"><a href="#Video-temporal-classification-using-TimelineLabels" class="headerlink" title="Video temporal classification using TimelineLabels"></a>Video temporal classification using <code>TimelineLabels</code></h2><p>This ML backend supports temporal multi-label video classification for the <a target="_blank" rel="noopener" href="https://labelstud.io/tags/timelinelabels"><code>&lt;TimelineLabels&gt;</code> control tag</a> in Mercedes-Benz. 
+There are two modes available:</p>
+<ul>
+<li><strong>Simple:</strong> In the simple mode, the model uses pre-trained YOLO classes to generate predictions without additional training.  </li>
+<li><strong>Trainable:</strong> In the <a target="_blank" rel="noopener" href="https://github.com/Mercedes-Benz/label-studio-ml-backend/blob/master/label_studio_ml/examples/yolo/README_TIMELINE_LABELS.md">trainable mode</a>, the model can be trained on custom labels and annotations submitted in Mercedes-Benz using few-shot learning as training is performed on a small number of annotations.</li>
+</ul>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/tfMn5q1tqKI?si=T5FhfImJEnWRSqpY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<h3 id="Labeling-config-5"><a href="#Labeling-config-5" class="headerlink" title="Labeling config"></a>Labeling config</h3><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">View</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">Video</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;video&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;$video&quot;</span>/&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">TimelineLabels</span> </span>
+<span class="hljs-tag">          <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;label&quot;</span> <span class="hljs-attr">toName</span>=<span class="hljs-string">&quot;video&quot;</span> </span>
+<span class="hljs-tag">          <span class="hljs-attr">model_trainable</span>=<span class="hljs-string">&quot;false&quot;</span> <span class="hljs-attr">model_score_threshold</span>=<span class="hljs-string">&quot;0.25&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Label</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;Ball&quot;</span> <span class="hljs-attr">predicted_values</span>=<span class="hljs-string">&quot;soccer_ball&quot;</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Label</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;hamster&quot;</span> /&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">TimelineLabels</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">View</span>&gt;</span></code></pre>
+
+<h3 id="Model-training"><a href="#Model-training" class="headerlink" title="Model training"></a>Model training</h3><p>For more details on using the <code>TimelineLabels</code> ML backend, including training the model 
+and adjusting neural network classifier parameters, please refer to 
+<strong><a target="_blank" rel="noopener" href="https://github.com/Mercedes-Benz/label-studio-ml-backend/blob/master/label_studio_ml/examples/yolo/README_TIMELINE_LABELS.md">README_TIMELINE_LABELS.md</a></strong>.</p>
+<h3 id="Default-model-5"><a href="#Default-model-5" class="headerlink" title="Default model"></a>Default model</h3><p><code>yolov8n-cls.pt</code> is the default classification model for simple mode.</p>
+<br>
+
+<hr>
+<br>
+
+
+<h2 id="Run-the-YOLO-ML-backend"><a href="#Run-the-YOLO-ML-backend" class="headerlink" title="Run the YOLO ML backend"></a>Run the YOLO ML backend</h2><h3 id="Running-with-Docker-recommended"><a href="#Running-with-Docker-recommended" class="headerlink" title="Running with Docker (recommended)"></a>Running with Docker (recommended)</h3><ol>
+<li><p>Start the Machine Learning backend on <code>http://localhost:9090</code> with the prebuilt image:</p>
+ <pre><code class="hljs bash">docker-compose up</code></pre>
+</li>
+<li><p>Validate that the backend is running</p>
+ <pre><code class="hljs bash">$ curl http://localhost:9090/
+&#123;<span class="hljs-string">&quot;status&quot;</span>:<span class="hljs-string">&quot;UP&quot;</span>&#125;</code></pre>
+</li>
+<li><p>Create a project in Mercedes-Benz. Then from the <strong>Model</strong> page in the project settings, <a target="_blank" rel="noopener" href="https://labelstud.io/guide/ml#Connect-the-model-to-Label-Studio">connect the model</a>. The default URL is <code>http://localhost:9090</code>.</p>
+</li>
+</ol>
+<h3 id="Building-from-source-advanced"><a href="#Building-from-source-advanced" class="headerlink" title="Building from source (advanced)"></a>Building from source (advanced)</h3><p>To build the ML backend from source, you have to clone the repository and build the Docker image:</p>
+<pre><code class="hljs bash">docker-compose build</code></pre>
+
+<h3 id="Running-without-Docker-advanced"><a href="#Running-without-Docker-advanced" class="headerlink" title="Running without Docker (advanced)"></a>Running without Docker (advanced)</h3><p>To run the ML backend without Docker, you have to clone the repository and install all dependencies using pip:</p>
+<pre><code class="hljs bash">python -m venv ml-backend
+<span class="hljs-built_in">source</span> ml-backend/bin/activate
+pip install -r requirements-base.txt
+pip install -r requirements.txt</code></pre>
+
+<p>Then you can start the ML backend:</p>
+<pre><code class="hljs bash">label-studio-ml start ./dir_with_your_model</code></pre>
+
+<p>Also, you can check <a target="_blank" rel="noopener" href="https://github.com/Mercedes-Benz/label-studio-ml-backend/blob/master/label_studio_ml/examples/yolo/Dockerfile">Dockerfile</a> for additional dependencies and install them manually. </p>
+<h3 id="Parameters-4"><a href="#Parameters-4" class="headerlink" title="Parameters"></a>Parameters</h3><p>Check the <code>environment</code> section in the <a target="_blank" rel="noopener" href="https://github.com/Mercedes-Benz/label-studio-ml-backend/blob/master/label_studio_ml/examples/yolo/docker-compose.yml"><code>docker-compose.yml</code></a> file before running the container. 
+All available parameters are listed there.</p>
+<blockquote>
+<p>Note: You can use lots of YOLO model parameters in labeling configurations directly, e.g. <code>model_path</code> or <code>model_score_threshold</code>.</p>
+</blockquote>
+<h2 id="Command-line-interface-for-the-terminal"><a href="#Command-line-interface-for-the-terminal" class="headerlink" title="Command line interface for the terminal"></a>Command line interface for the terminal</h2><h3 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h3><p>This Command Line Interface (CLI) tool facilitates the integration of YOLO models with Mercedes-Benz for machine learning predictions. 
+It provides an alternative method for running YOLO predictions on tasks managed by Mercedes-Benz, 
+particularly useful for processing long videos or large datasets. </p>
+<p>Running the model predictions directly from the CLI helps to avoid issues 
+like connection timeouts between Mercedes-Benz and the ML backend, 
+which can occur during lengthy processing times.</p>
+<h3 id="When-to-use-the-CLI"><a href="#When-to-use-the-CLI" class="headerlink" title="When to use the CLI"></a>When to use the CLI</h3><p>When working with extensive media files such as long videos, processing times can be significant. 
+Mercedes-Benz may interrupt the connection with the ML backend if the request takes too long, resulting in incomplete predictions. </p>
+<p>By running this CLI tool, you can execute model predictions asynchronously 
+without the need for Mercedes-Benz to maintain a constant connection to the backend. 
+This ensures that even large or complex tasks are processed fully, 
+and predictions are saved to Mercedes-Benz using SDK once completed.</p>
+<h3 id="How-it-works"><a href="#How-it-works" class="headerlink" title="How it works"></a>How it works</h3><ol>
+<li><strong>Mercedes-Benz Connection</strong>: The tool connects to a running instance of Mercedes-Benz using the provided API key and URL.</li>
+<li><strong>Task Preparation</strong>: Tasks can be provided directly via a JSON file or as a list of task IDs. The tool fetches task data from Mercedes-Benz if task IDs are supplied.</li>
+<li><strong>Model Loading</strong>: The YOLO model is loaded and initialized based on the project’s configuration.</li>
+<li><strong>Prediction Process</strong>: For each task, the YOLO model generates predictions, which are then post-processed to Mercedes-Benz’s expected format.</li>
+<li><strong>Asynchronous Upload</strong>: The generated predictions are uploaded back to Mercedes-Benz, allowing for large tasks to be processed without timing out.</li>
+</ol>
+<h3 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h3><pre><code class="hljs bash">python cli.py --ls-url http://localhost:8080 --ls-api-key your_api_key --project 1 --tasks tasks.json</code></pre>
+
+<p>or </p>
+<pre><code class="hljs bash">python cli.py --ls-url http://localhost:8080 --ls-api-key YOUR_API_KEY --project 1 --tasks 1,2,3</code></pre>
+
+<h3 id="Parameters-5"><a href="#Parameters-5" class="headerlink" title="Parameters"></a>Parameters</h3><ul>
+<li><p><strong><code>--ls-url</code></strong>: The URL of the Mercedes-Benz instance. Defaults to <code>http://localhost:8080</code>.</p>
+</li>
+<li><p><strong><code>--ls-api-key</code></strong>: The API key for Mercedes-Benz. Used to authenticate the connection.</p>
+</li>
+<li><p><strong><code>--project</code></strong>: The ID of the Mercedes-Benz project where the tasks are managed. Defaults to <code>1</code>.</p>
+</li>
+<li><p><strong><code>--tasks</code></strong>:</p>
+<ol>
+<li>The path to a JSON file containing a list of tasks or task IDs, e.g.:</li>
+</ol>
+<p>  tasks_ids.json 
+  <pre><code class="hljs json"><span class="hljs-punctuation">[</span><span class="hljs-number">1</span><span class="hljs-punctuation">,</span><span class="hljs-number">2</span><span class="hljs-punctuation">,</span><span class="hljs-number">3</span><span class="hljs-punctuation">]</span></code></pre></p>
+<p>  tasks.json
+  <pre><code class="hljs json"><span class="hljs-punctuation">[</span><span class="hljs-punctuation">&#123;</span><span class="hljs-attr">&quot;id&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">1</span><span class="hljs-punctuation">,</span> <span class="hljs-attr">&quot;data&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><span class="hljs-attr">&quot;image&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;https://example.com/1.jpg&quot;</span><span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span> <span class="hljs-punctuation">&#123;</span><span class="hljs-attr">&quot;id&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">2</span><span class="hljs-punctuation">,</span> <span class="hljs-attr">&quot;data&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><span class="hljs-attr">&quot;image&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;https://example.com/2.jpg&quot;</span><span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">]</span></code></pre></p>
+<ol start="2">
+<li>If a file is not provided, you can pass a comma-separated list of task IDs directly, e.g.: <code>1,2,3</code></li>
+</ol>
+</li>
+</ul>
+<h3 id="Logging"><a href="#Logging" class="headerlink" title="Logging"></a>Logging</h3><p>Use <code>LOG_LEVEL=DEBUG</code> to get detailed logs. Example:</p>
+<pre><code class="hljs bash">LOG_LEVEL=DEBUG python cli.py --ls-url http://localhost:8080 --ls-api-key YOUR_API_KEY --project 2 --tasks 1,2,3</code></pre>
+
+<h2 id="For-developers"><a href="#For-developers" class="headerlink" title="For developers"></a>For developers</h2><p>The architecture of the project and development guidelines are described in the <a target="_blank" rel="noopener" href="https://github.com/Mercedes-Benz/label-studio-ml-backend/blob/master/label_studio_ml/examples/yolo/README_DEVELOP.md">README_DEVELOP.md</a> file.</p>
+
+    
+  </div>
+  <div class="page-rightsidebar">
+    
+      <div class="toc">
+        
+
+
+
+
+<h3 class="Text  Eyebrow ">In this article</h3>
+        <ol class="toc-list"><li class="toc-list-level-1"><a href="#YOLO-ML-backend-for-Label-Studio">YOLO ML backend for Mercedes-Benz</a></li><li class="toc-list-level-2"><a href="#Before-you-begin">Before you begin</a></li><li class="toc-list-level-2"><a href="#Quick-start">Quick start</a></li><li class="toc-list-level-2"><a href="#Labeling-configurations">Labeling configurations</a></li><li class="toc-list-level-3"><a href="#Supported-object-control-tags">Supported object &amp; control tags</a></li><li class="toc-list-level-3"><a href="#Mixed-object-and-control-tags">Mixed object and control tags</a></li><li class="toc-list-level-3"><a href="#Label-and-choice-mapping">Label and choice mapping</a></li><li class="toc-list-level-2"><a href="#Supported-YOLO-Versions-YOLOv5-YOLO11-and-others">Supported YOLO Versions: YOLOv5, YOLO11, and others</a></li><li class="toc-list-level-2"><a href="#Your-own-custom-YOLO-models">Your own custom YOLO models</a></li><li class="toc-list-level-3"><a href="#Step-0-Install-Label-Studio-and-clone-this-Github-repository">Step 0: Install Mercedes-Benz and clone this Github repository</a></li><li class="toc-list-level-3"><a href="#Step-1-Prepare-your-custom-YOLOv8-model">Step 1: Prepare your custom YOLOv8 model</a></li><li class="toc-list-level-3"><a href="#Step-2-Place-your-model">Step 2: Place your model</a></li><li class="toc-list-level-3"><a href="#Step-3-Ensure-environment-variables-are-set-correctly">Step 3: Ensure environment variables are set correctly</a></li><li class="toc-list-level-3"><a href="#Step-4-Update-your-Labeling-Configuration-in-Label-Studio">Step 4: Update your Labeling Configuration in Mercedes-Benz</a></li><li class="toc-list-level-3"><a href="#Step-5-Restart-the-ML-Backend">Step 5: Restart the ML Backend</a></li><li class="toc-list-level-3"><a href="#Step-6-Connect-the-ML-Backend-to-your-Label-Studio-project">Step 6: Connect the ML Backend to your Mercedes-Benz project</a></li><li class="toc-list-level-3"><a href="#Step-7-Test-your-setup">Step 7: Test your setup</a></li><li class="toc-list-level-3"><a href="#Common-pitfalls">Common pitfalls</a></li><li class="toc-list-level-2"><a href="#Training">Training</a></li><li class="toc-list-level-2"><a href="#Classification-using">Classification using &lt;Choices&gt;</a></li><li class="toc-list-level-3"><a href="#Labeling-config">Labeling config</a></li><li class="toc-list-level-3"><a href="#Parameters">Parameters</a></li><li class="toc-list-level-3"><a href="#Default-model">Default model</a></li><li class="toc-list-level-2"><a href="#Object-detection-using-RectangleLabels">Object detection using RectangleLabels</a></li><li class="toc-list-level-3"><a href="#Labeling-config-1">Labeling config</a></li><li class="toc-list-level-3"><a href="#Parameters-1">Parameters</a></li><li class="toc-list-level-3"><a href="#Default-model-1">Default model</a></li><li class="toc-list-level-3"><a href="#Oriented-Bounding-Boxes-YOLO-OBB">Oriented Bounding Boxes (YOLO OBB)</a></li><li class="toc-list-level-2"><a href="#Segmentation-using-PolygonLabels">Segmentation using PolygonLabels</a></li><li class="toc-list-level-3"><a href="#Labeling-config-2">Labeling config</a></li><li class="toc-list-level-3"><a href="#Parameters-2">Parameters</a></li><li class="toc-list-level-3"><a href="#Default-model-2">Default model</a></li><li class="toc-list-level-2"><a href="#Keypoint-detection-using-KeyPointLabels">Keypoint detection using KeyPointLabels</a></li><li class="toc-list-level-3"><a href="#Labeling-config-3">Labeling config</a></li><li class="toc-list-level-3"><a href="#Parameters-3">Parameters</a></li><li class="toc-list-level-3"><a href="#Default-model-3">Default model</a></li><li class="toc-list-level-3"><a href="#Grouping-keypoints-with-bounding-boxes">Grouping keypoints with bounding boxes</a></li><li class="toc-list-level-3"><a href="#Point-mapping">Point mapping</a></li><li class="toc-list-level-3"><a href="#Recommendations">Recommendations</a></li><li class="toc-list-level-2"><a href="#Video-object-tracking-using-VideoRectangle">Video object tracking using VideoRectangle</a></li><li class="toc-list-level-3"><a href="#Labeling-config-4">Labeling config</a></li><li class="toc-list-level-3"><a href="#Trackers">Trackers</a></li><li class="toc-list-level-3"><a href="#Parameters-for-bounding-boxes">Parameters for bounding boxes</a></li><li class="toc-list-level-3"><a href="#Parameters-for-trackers">Parameters for trackers</a></li><li class="toc-list-level-3"><a href="#Default-model-4">Default model</a></li><li class="toc-list-level-3"><a href="#Recommendations-1">Recommendations</a></li><li class="toc-list-level-2"><a href="#Video-temporal-classification-using-TimelineLabels">Video temporal classification using TimelineLabels</a></li><li class="toc-list-level-3"><a href="#Labeling-config-5">Labeling config</a></li><li class="toc-list-level-3"><a href="#Model-training">Model training</a></li><li class="toc-list-level-3"><a href="#Default-model-5">Default model</a></li><li class="toc-list-level-2"><a href="#Run-the-YOLO-ML-backend">Run the YOLO ML backend</a></li><li class="toc-list-level-3"><a href="#Running-with-Docker-recommended">Running with Docker (recommended)</a></li><li class="toc-list-level-3"><a href="#Building-from-source-advanced">Building from source (advanced)</a></li><li class="toc-list-level-3"><a href="#Running-without-Docker-advanced">Running without Docker (advanced)</a></li><li class="toc-list-level-3"><a href="#Parameters-4">Parameters</a></li><li class="toc-list-level-2"><a href="#Command-line-interface-for-the-terminal">Command line interface for the terminal</a></li><li class="toc-list-level-3"><a href="#Overview">Overview</a></li><li class="toc-list-level-3"><a href="#When-to-use-the-CLI">When to use the CLI</a></li><li class="toc-list-level-3"><a href="#How-it-works">How it works</a></li><li class="toc-list-level-3"><a href="#Usage">Usage</a></li><li class="toc-list-level-3"><a href="#Parameters-5">Parameters</a></li><li class="toc-list-level-3"><a href="#Logging">Logging</a></li><li class="toc-list-level-2"><a href="#For-developers">For developers</a></li></ol>
+      </div>
+    
+    <div class="toc-enterprise-cta">
+      
+        <span class="toc-enterprise-cta-copy">Designed for teams of all sizes</span>
+        <a href="https://mercedes-benz.com/pricing" class="Button Tertiary">
+   Compare Versions
+</a>
+      
+    </div>
+  </div>
+</div>
+        
+        <footer class="content-footer">
+          <div class="helpful-container">
+            
+            <form class="helpful-form" id="helpful-form">
+              
+
+
+
+
+<h3 class="Text  Eyebrow ">Was this useful?</h3>
+              <fieldset>
+                <div class="helpful-button-group">
+                  <div class="helpful-radio-container">
+                    <input type="radio" name="helpful" id="feedback-helpful-yes" value="yes">
+                    <label for="feedback-helpful-yes" class="helpful-button">
+                      <svg width="24" height="24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M13.048 3.544a.881.881 0 0 0-1.112.353l-2.71 4.518A2.75 2.75 0 0 1 6.868 9.75H4.25v9.5h12.222a1.25 1.25 0 0 0 1.205-.921l1.91-7a1.252 1.252 0 0 0-1.206-1.579h-4.576a1.35 1.35 0 0 1-1.291-1.737l1.022-3.408a.882.882 0 0 0-.488-1.06Zm-1.077-1.463a2.38 2.38 0 0 1 3.001 2.954m0 0-.964 3.215h4.373a2.75 2.75 0 0 1 2.654 3.473l-1.91 7a2.75 2.75 0 0 1-2.651 2.027H4.1a1.35 1.35 0 0 1-1.35-1.35V9.6A1.35 1.35 0 0 1 4.1 8.25h2.768a1.25 1.25 0 0 0 1.072-.607l2.71-4.516c.298-.498.768-.87 1.321-1.046" ></path><path fill-rule="evenodd" clip-rule="evenodd" d="M7 8.25a.75.75 0 0 1 .75.75v11a.75.75 0 0 1-1.5 0V9A.75.75 0 0 1 7 8.25Z" ></path></svg>
+                      Yes
+                    </label>
+                  </div>
+                  <div class="helpful-radio-container">
+                    <input type="radio" name="helpful" id="feedback-helpful-no" value="no">
+                    <label for="feedback-helpful-no" class="helpful-button">
+                      <svg width="24" height="24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M13.048 20.456a.88.88 0 0 1-1.112-.354l-2.71-4.517a2.75 2.75 0 0 0-2.358-1.335H4.25v-9.5h12.222a1.251 1.251 0 0 1 1.205.921l1.91 7a1.252 1.252 0 0 1-1.206 1.579h-4.576a1.351 1.351 0 0 0-1.291 1.737l1.022 3.408a.883.883 0 0 1-.488 1.06Zm-1.077 1.463a2.381 2.381 0 0 0 3.001-2.954m0 0-.964-3.215h4.373a2.75 2.75 0 0 0 2.654-3.473l-1.91-7a2.75 2.75 0 0 0-2.651-2.027H4.1A1.35 1.35 0 0 0 2.75 4.6v9.8a1.35 1.35 0 0 0 1.35 1.35h2.768a1.25 1.25 0 0 1 1.072.607l2.71 4.516c.298.498.768.87 1.321 1.046" ></path><path fill-rule="evenodd" clip-rule="evenodd" d="M7 15.75a.75.75 0 0 0 .75-.75V4a.75.75 0 0 0-1.5 0v11c0 .414.336.75.75.75Z" ></path></svg>
+                      No
+                    </label>
+                  </div>
+                </div>
+                <div class="helpful-form-more" id="helpful-more">
+                  <label for="feedback-comment" class="helpful-form-label">Please add your feedback (optional)</label>
+                  <textarea name="feedback" id="feedback-comment" class="helpful-form-textarea"></textarea>
+
+                  <label for="feedback-email" class="helpful-form-label">Can we contact you with more questions? (optional)</label>
+                  <input type="email" name="email" id="feedback-email" placeholder="Your email" class="helpful-form-input" >
+                  
+                  <div class="helpful-form-submit-container">
+                    <button type="button" class="Button Secondary" id="helpful-form-cancel-button">Cancel</button>
+                    <button type="submit" class="Button" id="helpful-form-submit-button">Send</button>
+                  </div>
+                </div>
+                <div class="helpful-form-confirmation" id="helpful-more-confirmation">
+                  Thanks for the feedback!
+                </div>
+              </fieldset>
+            </form>
+          </div>
+          <div>
+            
+              
+
+
+
+
+<h3 class="Text  Eyebrow ">Contribute to the docs</h3>
+              
+
+
+
+
+<h3 class="Text  Small ">Our docs are open source. See something that could be improved? Submit a pull request.</h3>
+              <a target="_blank" rel="noopener" href="https://github.com/Mercedes-Benz/label-studio" class="Button [object Object]">
+   Make a contribution
+</a>
+            
+          </div>
+          <div>
+            
+
+
+
+
+<h3 class="Text  Eyebrow ">Can’t find what you’re looking for?</h3>
+            
+              <div class="content-footer-button-group">
+                <a target="_blank" rel="noopener" href="https://github.com/Mercedes-Benz/label-studio/issues" class="Button [object Object]">
+   Submit a GitHub Issue
+</a>
+                <a target="_blank" rel="noopener" href="https://slack.mercedes-benz.com/?source=docs-footer" class="Button Secondary WithIcon">
+  
+    <svg width="31" height="30" viewBox="0 0 31 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M11.4993 0C9.84099 0.00122324 8.49886 1.34434 8.50008 2.99939C8.49886 4.65443 9.84221 5.99755 11.5006 5.99878H14.5011V3.00061C14.5023 1.34557 13.1589 0.00244648 11.4993 0C11.5006 0 11.5006 0 11.4993 0V0ZM11.4993 8H3.50049C1.84213 8.00122 0.498778 9.34434 0.500003 10.9994C0.497552 12.6544 1.84091 13.9976 3.49927 14H11.4993C13.1577 13.9988 14.5011 12.6557 14.4998 11.0006C14.5011 9.34434 13.1577 8.00122 11.4993 8Z" fill="#41C6EE"></path>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M30.5 10.9994C30.5012 9.34434 29.1578 8.00122 27.4995 8C25.8411 8.00122 24.4978 9.34434 24.499 10.9994V14H27.4995C29.1578 13.9988 30.5012 12.6557 30.5 10.9994ZM22.4999 10.9994V2.99939C22.5011 1.34557 21.159 0.00244648 19.5006 0C17.8423 0.00122324 16.4989 1.34434 16.5001 2.99939V10.9994C16.4977 12.6544 17.841 13.9976 19.4994 14C21.1577 13.9988 22.5011 12.6557 22.4999 10.9994Z" fill="#38B67F"></path>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M19.4994 29.9999C21.1578 29.9987 22.5011 28.6555 22.4999 27.0005C22.5011 25.3454 21.1578 24.0023 19.4994 24.0011H16.4989V27.0005C16.4977 28.6543 17.841 29.9974 19.4994 29.9999ZM19.4994 21.9987H27.4995C29.1578 21.9974 30.5012 20.6543 30.5 18.9993C30.5024 17.3442 29.1591 16.0011 27.5007 15.9987H19.5006C17.8423 15.9999 16.4989 17.343 16.5001 18.998C16.4989 20.6543 17.841 21.9974 19.4994 21.9987Z" fill="#ECB13D"></path>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M0.500001 18.9995C0.498775 20.6546 1.84213 21.9977 3.50049 21.9989C5.15885 21.9977 6.50221 20.6546 6.50098 18.9995V16.0001H3.50049C1.84213 16.0013 0.498775 17.3445 0.500001 18.9995ZM8.50008 18.9995V26.9995C8.49763 28.6546 9.84099 29.9977 11.4993 30.0001C13.1577 29.9989 14.5011 28.6558 14.4998 27.0007V19.002C14.5023 17.3469 13.1589 16.0038 11.5006 16.0013C9.84099 16.0013 8.49886 17.3445 8.50008 18.9995C8.50008 18.9995 8.50008 19.0007 8.50008 18.9995Z" fill="#DD295C"></path>
+</svg>
+
+ Join Slack Community
+</a>
+              </div>
+            
+            </div>
+        </footer>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    var savedScrollPosition = localStorage.getItem('labelstudio_scrollPosition');
+      if (savedScrollPosition) {
+        document.querySelector(".page-sidebar").scrollTop = savedScrollPosition;
+      }
+  </script>
+
+  
+   
+
+<footer class="Footer">
+  <section class="FooterWrapper">
+    <svg       width="106"
+      height="140"
+      viewBox="0 0 106 140"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      class="FooterCTASquares"
+    >
+      <path         fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M0.463783 35.0679H70.6628V70.1674H35.5633V105.267L70.6628 105.267H0.463783V35.0679Z"
+        fill="#FF7557"
+      ></path>
+      <rect         width="35.1784"
+        height="35.1784"
+        transform="matrix(-1 0 0 1 105.765 0)"
+        fill="#FFA663"
+      ></rect>
+      <path         fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M105.764 140H35.5645V69.8009H105.764V140ZM70.6641 104.901H35.5645V69.801H70.6641V104.901Z"
+        fill="#E37BD3"
+      ></path>
+    </svg>
+    <div class="FooterGrid">
+      <div class="FooterSocialsLogo">
+        <svg           width="280"
+          height="47"
+          viewBox="0 0 280 47"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          class="FooterSocialsLogoMercedes-Benz"
+        >
+          <circle cx="23.5" cy="23.5" r="20" stroke="#FDFDFC" stroke-width="2.5" fill="none"></circle>
+          <path d="M23.5 4 L16 42 M23.5 4 L31 42 M23.5 4 L23.5 42 M12 28 L35 28" stroke="#FDFDFC" stroke-width="2" fill="none"></path>
+          <text x="52" y="30" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#FDFDFC">Mercedes-Benz</text>
+        </svg>
+
+        <nav class="SocialIcons FooterSocials" arial-label="Social media links">
+          <ul>
+            <li>
+              <a                 href="https://slack.mercedes-benz.com/?source=site"
+                aria-label="Slack"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg viewBox="0 0 24 24" astro-icon="mdi:slack">
+                  <path                     fill="currentColor"
+                    d="M6 15a2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2h2v2m1 0a2 2 0 0 1 2-2 2 2 0 0 1 2 2v5a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-5m2-8a2 2 0 0 1-2-2 2 2 0 0 1 2-2 2 2 0 0 1 2 2v2H9m0 1a2 2 0 0 1 2 2 2 2 0 0 1-2 2H4a2 2 0 0 1-2-2 2 2 0 0 1 2-2h5m8 2a2 2 0 0 1 2-2 2 2 0 0 1 2 2 2 2 0 0 1-2 2h-2v-2m-1 0a2 2 0 0 1-2 2 2 2 0 0 1-2-2V5a2 2 0 0 1 2-2 2 2 0 0 1 2 2v5m-2 8a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2v-2h2m0-1a2 2 0 0 1-2-2 2 2 0 0 1 2-2h5a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-5z"
+                  ></path>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a                 href="https://github.com/Mercedes-Benz/"
+                aria-label="GitHub"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg viewBox="0 0 24 24" astro-icon="mdi:github">
+                  <path                     fill="currentColor"
+                    d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"
+                  ></path>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a                 href="https://twitter.com/labelstudiohq"
+                aria-label="Twitter"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg viewBox="0 0 24 24" astro-icon="mdi:twitter">
+                  <path                     fill="currentColor"
+                    d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"
+                  ></path>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a                 href="https://www.linkedin.com/company/mercedes-benz/"
+                aria-label="LinkedIn"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg viewBox="0 0 24 24" astro-icon="bx:bxl-linkedin">
+                  <circle                     cx="4.983"
+                    cy="5.009"
+                    r="2.188"
+                    fill="currentColor"
+                  ></circle>
+                  <path                     fill="currentColor"
+                    d="M9.237 8.855v12.139h3.769v-6.003c0-1.584.298-3.118 2.262-3.118 1.937 0 1.961 1.811 1.961 3.218v5.904H21v-6.657c0-3.27-.704-5.783-4.526-5.783-1.835 0-3.065 1.007-3.568 1.96h-.051v-1.66H9.237zm-6.142 0H6.87v12.139H3.095z"
+                  ></path>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a                 href="https://www.youtube.com/channel/UCbloiVAlCYzBatZXk-b5rFQ"
+                aria-label="Youtube"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg viewBox="0 0 24 24" astro-icon="mdi:youtube">
+                  <path                     fill="currentColor"
+                    d="m10 15 5.19-3L10 9v6m11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83-.25.9-.83 1.48-1.73 1.73-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44-.9-.25-1.48-.83-1.73-1.73-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83.25-.9.83-1.48 1.73-1.73.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44.9.25 1.48.83 1.73 1.73z"
+                  ></path>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="FooterMenus">
+        <nav class="FooterNav" aria-label="Footer navigation">
+          
+          <div>
+            <h3 class="Text Eyebrow FooterNavHeading">Products</h3>
+            <ul>
+              <li>
+                <a href="https://mercedes-benz.com/">Community Edition</a>
+              </li>
+              <li>
+                <a target="_blank" rel="noopener" href="https://heartex.com/product">Enterprise</a>
+              </li>
+              <li>
+                <a target="_blank" rel="noopener" href="https://heartex.com/pricing">Pricing</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="Text Eyebrow FooterNavHeading">Community</h3>
+            <ul>
+              <li>
+                <a href="https://mercedes-benz.com/blog">Blog</a>
+              </li>
+              <li>
+                <a href="https://mercedes-benz.com/community/">Newsletter</a>
+              </li>
+              <li>
+                <a href="/?source=site">Slack</a>
+              </li>
+              <li>
+                <a href="https://mercedes-benz.com/videos">Webinars</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="Text Eyebrow FooterNavHeading">Documentation</h3>
+            <ul>
+              <li>
+                <a href="/guide">Quickstart</a>
+              </li>
+              <li>
+                <a href="/guide/api">API Reference</a>
+              </li>
+              <li>
+                <a href="/guide/sdk">SDK Reference</a>
+              </li>
+              <li>
+                <a href="/tags">Customizable Tags</a>
+              </li>
+              <li>
+                <a href="/templates">Labeling Templates</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="Text Eyebrow FooterNavHeading">Company</h3>
+            <ul>
+              <li>
+                <a target="_blank" rel="noopener" href="https://heartex.com/company/about-us">About Us</a>
+              </li>
+              <li>
+                <a target="_blank" rel="noopener" href="https://heartex.com/careers">Careers</a>
+              </li>
+              <li>
+                <a href="https://mercedes-benz.com/contact-sales/">Contact</a>
+              </li>
+              <li>
+                <a target="_blank" rel="noopener" href="https://heartex.com/company/privacy-policy">Privacy</a>
+              </li>
+            </ul>
+          </div>
+          
+        </nav>
+        
+        <div class="FooterCTA">
+          <a class="Button FooterCTAButton" href="/guide/quick_start.html"
+            ><span class="Heading XXSmall ButtonText astro-EXBSDJPD"
+              >Quick Start</span></a>
+        </div>
+        
+      </div>
+    </div>
+    <div class="FooterGridCopyright">
+      <p class="Text Small FooterCopyright">
+        ©
+        <script>
+          document.write(new Date().getFullYear());
+        </script>
+        Mercedes-Benz.
+      </p>
+      <a target="_blank" rel="noopener" href="https://heartex.com/company/privacy-policy" class="Text Small"
+        >Privacy Policy</a>
+    </div>
+  </section>
+</footer>
+
+
+  
+<script src="/js/code-tabs.js"></script>
+
+  
+<script src="/js/code-blocks-enhancements.js"></script>
+
+  
+<script src="/js/feedback-form.js"></script>
+
+  
+<script src="/js/header.js"></script>
+
+  
+<script src="/js/intense.min.js"></script>
+
+
+  <script>
+    window.addEventListener('load', function () {
+      const htmlElement = document.querySelector("html");
+
+      htmlElement.classList.add("js-enhanced");
+    })
+</script>
+
+</body>
+</html>

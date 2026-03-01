@@ -1,0 +1,2801 @@
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  
+    
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-TZ3RQGX');</script>
+    
+  
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <title>Mercedes-Benz Documentation — Set up persistent storage with Mercedes-Benz</title>
+  
+  <meta charset="utf-8">
+  <meta name="description" content="Configure persistent storage with Mercedes-Benz hosted in the cloud to store uploaded data such as task data, user images, and more.">
+
+  <meta property="og:type" content="article">
+  
+  <meta property="og:title" content="Mercedes-Benz Documentation — Set up persistent storage with Mercedes-Benz">
+  
+  <meta property="og:description" content="Configure persistent storage with Mercedes-Benz hosted in the cloud to store uploaded data such as task data, user images, and more.">
+
+  <meta name="twitter:card" content="summary">
+  
+  <meta property="twitter:title" content="Mercedes-Benz Documentation — Set up persistent storage with Mercedes-Benz">
+  
+  <meta name="twitter:description" content="Configure persistent storage with Mercedes-Benz hosted in the cloud to store uploaded data such as task data, user images, and more.">
+
+  
+    <meta name="twitter:image" content="http://mercedes-benz.com/open-graph-image?title=Set%20up%20persistent%20storage&category=guide">
+    <meta property="og:image" content="http://mercedes-benz.com/open-graph-image?title=Set%20up%20persistent%20storage&category=guide">
+  
+
+  <meta name="msapplication-TileColor" content="#4fc08d">
+  <meta name="theme-color" content="#4fc08d">
+  
+  
+    <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" >
+  
+
+  <link rel="preload" href="/fonts/SpaceGrotesk-Bold-subset.woff2" as="font" type="font/woff2" crossorigin>
+
+  
+<link rel="stylesheet" href="/css/styles.css">
+
+
+  
+
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js" defer></script>
+
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ startOnLoad: true });
+  </script>
+
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+<body class="page-tier-opensource">
+  
+  
+
+  
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TZ3RQGX"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  
+
+  
+  
+
+
+
+  
+      <a target="_blank" rel="noopener" href="https://mercedes-benz.com/blog/new-pdf-ocr-document-ai-labeling-interface" class="Alert">
+        <span class="AlertContent">
+          <span class="Badge">New</span>
+          <span class="AlertText">Advanced PDF + OCR Interface for Document AI</span>
+          <svg fill="currentColor" viewBox="0 0 14 12"><path fill-rule="evenodd" d="m8.792.119 4.866 5.654-4.866 5.654-.948-.816 3.627-4.213H.54v-1.25h10.93L7.844.934l.948-.815Z" clip-rule="evenodd"></path></svg>
+        </span>
+      </a>
+
+
+<header class="page-header">
+  <div class="page-header-top-level">
+    <div class="page-header-logo">
+      <a href="/guide" class="HeaderLogo" arial-label="Homepage">
+        
+          <svg width="240" height="30" viewBox="0 0 240 30" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="15" cy="15" r="13.5" stroke="#12110D" stroke-width="2" fill="none"></circle><circle cx="15" cy="15" r="12" stroke="#12110D" stroke-width="0.5" fill="none"></circle><path d="M15,3 L13.8,15 L16.2,15 Z M4.61,21 L15.6,16.04 L14.4,13.96 Z M25.39,21 L15.6,13.96 L14.4,16.04 Z" fill="#12110D"></path><text x="34" y="20" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#12110D" letter-spacing="0.3">Mercedes-Benz Docs</text></svg>
+
+      </a>
+    </div>
+
+    <div class="AlgoliaSearch">
+      <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg" class="AlgoliaSearchIcon">
+        <path d="M8 16C9.77498 15.9996 11.4988 15.4054 12.897 14.312L17.293 18.708L18.707 17.294L14.311 12.898C15.405 11.4997 15.9996 9.77544 16 8C16 3.589 12.411 0 8 0C3.589 0 0 3.589 0 8C0 12.411 3.589 16 8 16ZM8 2C11.309 2 14 4.691 14 8C14 11.309 11.309 14 8 14C4.691 14 2 11.309 2 8C2 4.691 4.691 2 8 2Z" ></path>
+      </svg>
+      <input id="docsearch-input" placeholder="Search docs" data-site-version="opensource" >
+      <svg width="43" height="31" viewBox="0 0 43 31" fill="none" xmlns="http://www.w3.org/2000/svg" class="AlgoliaSearchCmdK">
+        <rect y="0.0457764" width="43" height="30" rx="15" fill="var(--cmd-k-background-color)"></rect>
+        <path d="M11.264 21.0458C9.776 21.0458 8.816 20.1018 8.816 18.6298C8.816 17.0778 9.744 16.1658 11.568 16.1658H12.512V14.4058H11.568C9.744 14.4058 8.816 13.4938 8.816 11.9418C8.816 10.4698 9.776 9.52578 11.264 9.52578C13.056 9.52578 13.632 10.6458 13.632 11.9898V13.3178H15.392V11.9898C15.392 10.6458 15.968 9.52578 17.76 9.52578C19.248 9.52578 20.208 10.4698 20.208 11.9418C20.208 13.4938 19.28 14.4058 17.456 14.4058H16.512V16.1658H17.456C19.28 16.1658 20.208 17.0778 20.208 18.6298C20.208 20.1018 19.248 21.0458 17.76 21.0458C15.968 21.0458 15.392 19.9258 15.392 18.5818V17.2538H13.632V18.5818C13.632 19.9258 13.056 21.0458 11.264 21.0458ZM16.512 11.9578V13.3178H17.456C18.592 13.3178 19.072 12.8538 19.072 11.9418C19.072 10.9978 18.512 10.6298 17.76 10.6298C16.928 10.6298 16.512 11.1418 16.512 11.9578ZM11.568 13.3178H12.512V11.9578C12.512 11.1418 12.096 10.6298 11.264 10.6298C10.512 10.6298 9.952 10.9978 9.952 11.9418C9.952 12.8538 10.432 13.3178 11.568 13.3178ZM13.632 16.1658H15.392V14.4058H13.632V16.1658ZM11.264 19.9418C12.096 19.9418 12.512 19.4298 12.512 18.6138V17.2538H11.568C10.432 17.2538 9.952 17.7178 9.952 18.6298C9.952 19.5738 10.512 19.9418 11.264 19.9418ZM16.512 18.6138C16.512 19.4298 16.928 19.9418 17.76 19.9418C18.512 19.9418 19.072 19.5738 19.072 18.6298C19.072 17.7178 18.592 17.2538 17.456 17.2538H16.512V18.6138ZM27.3546 15.4298V21.0458H26.1546V9.84578H27.3546V14.9338L32.3146 9.84578H33.8826L28.6346 15.1738L34.3626 21.0458H32.7466L27.3546 15.4298Z" fill="var(--cmd-k-icon-color)"></path>
+      </svg>        
+    </div>
+
+    <button class="hamburger-button" aria-label="Toggle Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <nav>
+      
+        
+  <ul class="page-sidebar-list">
+    
+    
+    
+    
+    
+
+    
+
+    
+
+    
+    
+      
+      
+        </ul>
+          
+            <button>
+              Discover & Learn
+              
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+          
+        <ul class="page-sidebar-list">
+      
+      
+      <li>
+        <a href="/guide/get_started.html" class="" >
+          About Mercedes-Benz
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/glossary.html" class="" >
+          Terminology
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/label_studio_compare.html" class="" >
+          Compare editions
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/enterprise_features.html" class="" >
+          Enterprise features
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+        </ul>
+          
+            <button>
+              Install & Setup
+              
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+          
+        <ul class="page-sidebar-list">
+      
+      
+      <li>
+        <a href="/guide/quick_start.html" class="" >
+          Quick start
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/install.html" class="" >
+          Installation
+        </a>
+        
+        
+            <button class="page-sidebar-toggle-children-list">
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+            <ul class="page-sidebar-children-list">
+            
+            
+            
+              <li>
+                <a href="/guide/install_k8s.html" class="page-sidebar-children-link" >
+                  Install using Kubernetes
+                </a>
+                
+                
+                    <ul class="page-sidebar-grandchildren-list">
+                      
+                    <li>
+                      
+                      <a href="/guide/ingress_config.html" class="page-sidebar-children-link" >
+                        Set up an ingress controller
+                      </a>
+                    </li>
+                  
+                  
+                    <li>
+                      
+                      <a href="/guide/install_k8s_airgapped.html" class="page-sidebar-children-link" >
+                        Airgapped Server
+                      </a>
+                    </li>
+                  
+                  
+                    <li>
+                      
+                      <a href="/guide/helm_values.html" class="page-sidebar-children-link" >
+                        Available Helm values
+                      </a>
+                    </li>
+                  
+                  
+                </ul>
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/install_troubleshoot.html" class="page-sidebar-children-link" >
+                  Troubleshooting
+                </a>
+                
+                
+              </li>
+            
+            
+          </ul>
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/storedata.html" class="" >
+          Set up the database
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/persistent_storage.html" class="" aria-current="page">
+          Set up persistent storage
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/start.html" class="" >
+          Start Mercedes-Benz
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/upgrade_community.html" class="" >
+          Upgrade Mercedes-Benz
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/security.html" class="" >
+          Secure Mercedes-Benz
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+        </ul>
+          
+            <button>
+              Create & Manage Projects
+              
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+          
+        <ul class="page-sidebar-list">
+      
+      
+      <li>
+        <a href="/guide/setup_project.html" class="" >
+          Create project
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/setup.html" class="" >
+          Configure labeling interface
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/manage_projects_lso.html" class="" >
+          Manage projects
+        </a>
+        
+        
+            <button class="page-sidebar-toggle-children-list">
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+            <ul class="page-sidebar-children-list">
+            
+            
+            
+              <li>
+                <a href="/guide/project_settings.html" class="page-sidebar-children-link" >
+                  Project settings
+                </a>
+                
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/manage_data.html" class="page-sidebar-children-link" >
+                  Data Manager
+                </a>
+                
+                
+              </li>
+            
+            
+          </ul>
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/labeling.html" class="" >
+          Labeling guide
+        </a>
+        
+        
+            <button class="page-sidebar-toggle-children-list">
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+            <ul class="page-sidebar-children-list">
+            
+            
+            
+              <li>
+                <a href="/guide/hotkeys.html" class="page-sidebar-children-link" >
+                  Hotkeys
+                </a>
+                
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/skip.html" class="page-sidebar-children-link" >
+                  Skipping tasks
+                </a>
+                
+                
+              </li>
+            
+            
+          </ul>
+        
+        
+        
+      </li>
+    
+      
+      
+        </ul>
+          
+            <button>
+              Import & Export
+              
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+          
+        <ul class="page-sidebar-list">
+      
+      
+      <li>
+        <a href="/guide/storage.html" class="" >
+          Add project storage
+        </a>
+        
+        
+            <button class="page-sidebar-toggle-children-list">
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+            <ul class="page-sidebar-children-list">
+            
+            
+            
+              <li>
+                <a href="/guide/storage_s3.html" class="page-sidebar-children-link" >
+                  AWS S3
+                </a>
+                
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/storage_gcp.html" class="page-sidebar-children-link" >
+                  Google Cloud
+                </a>
+                
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/storage_azure.html" class="page-sidebar-children-link" >
+                  Microsoft Azure
+                </a>
+                
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/storage_databricks.html" class="page-sidebar-children-link" >
+                  Databricks
+                </a>
+                
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/storage_redis.html" class="page-sidebar-children-link" >
+                  Redis
+                </a>
+                
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/storage_local.html" class="page-sidebar-children-link" >
+                  Local
+                </a>
+                
+                
+              </li>
+            
+            
+          </ul>
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/tasks.html" class="" >
+          Import data
+        </a>
+        
+        
+            <button class="page-sidebar-toggle-children-list">
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+            <ul class="page-sidebar-children-list">
+            
+            
+            
+              <li>
+                <a href="/guide/task_format.html" class="page-sidebar-children-link" >
+                  Format data for import
+                </a>
+                
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/predictions.html" class="page-sidebar-children-link" >
+                  Import pre-annotations
+                </a>
+                
+                
+              </li>
+            
+            
+          </ul>
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/export.html" class="" >
+          Export annotations
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+        </ul>
+          
+            <button>
+              Machine Learning
+              
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+          
+        <ul class="page-sidebar-list">
+      
+      
+      <li>
+        <a href="/guide/ml.html" class="" >
+          Machine learning integration
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/ml_create.html" class="" >
+          Write your own ML backend
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/ml_tutorials.html" class="" >
+          ML Examples and Tutorials
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+        </ul>
+          
+            <button>
+              Manage Your Organization
+              
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+          
+        <ul class="page-sidebar-list">
+      
+      
+      <li>
+        <a href="/guide/signup.html" class="" >
+          Add users
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/admin_manage.html" class="" >
+          Manage user accounts
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/user_account.html" class="" >
+          Account and settings
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/access_tokens.html" class="" >
+          Access tokens
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+        </ul>
+          
+            <button>
+              Integrate & Extend
+              
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+          
+        <ul class="page-sidebar-list">
+      
+      
+      <li>
+        <a href="/guide/api.html" class="" >
+          API
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/sdk.html" class="" >
+          Python SDK
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/webhooks.html" class="" >
+          Webhooks
+        </a>
+        
+        
+            <button class="page-sidebar-toggle-children-list">
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+            <ul class="page-sidebar-children-list">
+            
+            
+            
+              <li>
+                <a href="/guide/webhook_create.html" class="page-sidebar-children-link" >
+                  Webhook development
+                </a>
+                
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/webhook_reference.html" class="page-sidebar-children-link" >
+                  Webhook event reference
+                </a>
+                
+                
+              </li>
+            
+            
+          </ul>
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/frontend_reference.html" class="" >
+          Frontend
+        </a>
+        
+        
+        
+          
+            </li><li>
+            <a href="https://github.com/Mercedes-Benz/label-studio/blob/develop/CONTRIBUTING.md" target="_blank">Contribution guide
+              <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-external-link">
+                <path d="M10.9002 9.29957L9.46026 9.30898L9.46026 3.34236L1.73377 11.0689L0.698549 10.0336L8.42504 2.30714L2.46783 2.31656L2.46783 0.867251L10.9001 0.867252L10.9002 9.29957Z" fill="#6D87F1"></path>
+              </svg>
+            </a>
+          </li>
+          
+          <li>
+            <a href="https://mercedes-benz.com/integrations/" target="_blank">Integrations directory
+              <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-external-link">
+                <path d="M10.9002 9.29957L9.46026 9.30898L9.46026 3.34236L1.73377 11.0689L0.698549 10.0336L8.42504 2.30714L2.46783 2.31656L2.46783 0.867251L10.9001 0.867252L10.9002 9.29957Z" fill="#6D87F1"></path>
+              </svg>
+            </a>
+          </li>
+        
+        
+      
+    
+    
+</ul>
+
+
+  <button>
+    Support
+    <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+    </svg>
+  </button>
+
+<ul class="page-sidebar-list">
+  
+  
+    <li>
+        <a href="/guide/troubleshooting">Troubleshooting</a>
+      </li>
+    <li>
+      <a href="https://github.com/Mercedes-Benz/label-studio/issues" target="_blank">GitHub Issues
+        <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-external-link">
+          <path d="M10.9002 9.29957L9.46026 9.30898L9.46026 3.34236L1.73377 11.0689L0.698549 10.0336L8.42504 2.30714L2.46783 2.31656L2.46783 0.867251L10.9001 0.867252L10.9002 9.29957Z" fill="#6D87F1"></path>
+        </svg>
+      </a>
+    </li>
+  
+  <li>
+    <a href="https://slack.mercedes-benz.com" target="_blank">Join Slack
+      <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-external-link">
+        <path d="M10.9002 9.29957L9.46026 9.30898L9.46026 3.34236L1.73377 11.0689L0.698549 10.0336L8.42504 2.30714L2.46783 2.31656L2.46783 0.867251L10.9001 0.867252L10.9002 9.29957Z" fill="#6D87F1"></path>
+      </svg>
+    </a>
+  </li>
+  
+    <li>
+      <a href="https://community.mercedes-benz.com/" target="_blank">Ask on Discourse
+        <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-external-link">
+          <path d="M10.9002 9.29957L9.46026 9.30898L9.46026 3.34236L1.73377 11.0689L0.698549 10.0336L8.42504 2.30714L2.46783 2.31656L2.46783 0.867251L10.9001 0.867252L10.9002 9.29957Z" fill="#6D87F1"></path>
+        </svg>
+      </a>
+    </li>
+  
+  <li>
+    <a href="https://mercedes-benz.com/contact-sales/" target="_blank">Contact Sales
+      <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-external-link">
+        <path d="M10.9002 9.29957L9.46026 9.30898L9.46026 3.34236L1.73377 11.0689L0.698549 10.0336L8.42504 2.30714L2.46783 2.31656L2.46783 0.867251L10.9001 0.867252L10.9002 9.29957Z" fill="#6D87F1"></path>
+      </svg>
+    </a>
+  </li>
+  
+</ul>
+
+
+
+  <button>
+    What's New
+    <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+    </svg>
+  </button>
+
+<ul class="page-sidebar-list">  
+    <li>
+      <a href="https://github.com/Mercedes-Benz/label-studio/releases" target="_blank">Release notes
+        <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-external-link">
+          <path d="M10.9002 9.29957L9.46026 9.30898L9.46026 3.34236L1.73377 11.0689L0.698549 10.0336L8.42504 2.30714L2.46783 2.31656L2.46783 0.867251L10.9001 0.867252L10.9002 9.29957Z" fill="#6D87F1"></path>
+        </svg>
+      </a>
+    </li>
+</ul>
+
+
+      
+      <ul class="page-header-main-nav">
+        
+          <li>
+            <a href="https://mercedes-benz.com/learn/">
+              Learn
+              <svg aria-hidden="true" width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg" class="page-header-chevron-icon"><path d="M1 0.5L5 4.5L9 0.5" stroke="#131522"></path></svg>
+            </a>
+            <button>
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+            <ul>
+              <li>
+                <a href="https://mercedes-benz.com/blog/">Blog</a>
+              </li>
+              <li>
+                <a href="https://mercedes-benz.com/videos/">Videos</a>
+              </li>
+              <li class="headerSeparator">
+                <a href="https://mercedes-benz.com/community/">
+                  Community
+                </a>
+              </li>
+              <li>
+                <a href="https://mercedes-benz.com/academic/">Academic Program</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="https://mercedes-benz.com/integrations">Integrations</a>
+          </li>
+          <li>
+            <a href="https://mercedes-benz.com/goenterprise" target="_blank" rel="noopener noreferrer">Enterprise</a>
+          </li>
+          <li>
+            <a href="https://github.com/Mercedes-Benz/label-studio/" class="github-stars" target="_blank" rel="noopener noreferrer">
+              <svg class="github-icon" viewBox="0 0 24 24" width="24" height="24"><path fill="black" d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"></path></svg>
+              
+
+
+
+
+<span class="Text github-stars-count Eyebrow "></span>
+            </a>
+          </li>
+          <li>
+            <a href="/guide/quick_start.html" class="Button [object Object]">
+   Quick start
+</a>
+          </li>
+          
+      </ul>
+    </nav>
+    </div>
+  
+  
+  
+    
+      <ul class="page-header-content-switcher">
+      
+          
+          <li><a href="/guide/" class="active">Docs</a></li>
+          
+        
+          
+          <li><a href="/tutorials/" class="">Tutorials</a></li>
+          
+        
+          
+          <li><a href="/templates/" class="">Templates</a></li>
+          
+        
+          
+        
+          
+          <li><a href="/tags/" class="">Tags</a></li>
+          
+        
+      <li>
+        <a href="https://api.mercedes-benz.com/api-reference/introduction/getting-started" target="_blank">
+          API
+          <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7.93006 6.05393L6.92213 6.06052L6.92213 1.88389L1.51359 7.29243L0.788936 6.56777L6.19748 1.15923L2.02743 1.16582L2.02743 0.151308L7.93006 0.151308L7.93006 6.05393Z" fill="#ffffff"></path>
+            </svg>            
+        </a>
+      </li>
+    </ul>
+    
+  
+</header>
+
+
+  <main class="page-type-guide">
+    
+      <aside class="page-sidebar">
+        
+  <ul class="page-sidebar-list">
+    
+    
+    
+    
+    
+
+    
+
+    
+
+    
+    
+      
+      
+        </ul>
+          
+            <div class="toc-section-heading">
+              
+
+
+
+
+<h3 class="Text  Eyebrow ">Discover &amp; Learn</h3>
+              
+            </div>
+          
+        <ul class="page-sidebar-list">
+      
+      
+      <li>
+        <a href="/guide/get_started.html" class="" >
+          About Mercedes-Benz
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/glossary.html" class="" >
+          Terminology
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/label_studio_compare.html" class="" >
+          Compare editions
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/enterprise_features.html" class="" >
+          Enterprise features
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+        </ul>
+          
+            <div class="toc-section-heading">
+              
+
+
+
+
+<h3 class="Text  Eyebrow ">Install &amp; Setup</h3>
+              
+            </div>
+          
+        <ul class="page-sidebar-list">
+      
+      
+      <li>
+        <a href="/guide/quick_start.html" class="" >
+          Quick start
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/install.html" class="" >
+          Installation
+        </a>
+        
+        
+            <button class="page-sidebar-toggle-children-list">
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+            <ul class="page-sidebar-children-list">
+            
+            
+            
+              <li>
+                <a href="/guide/install_k8s.html" class="page-sidebar-children-link" >
+                  Install using Kubernetes
+                </a>
+                
+                
+                    <ul class="page-sidebar-grandchildren-list">
+                      
+                    <li>
+                      
+                      <a href="/guide/ingress_config.html" class="page-sidebar-children-link" >
+                        Set up an ingress controller
+                      </a>
+                    </li>
+                  
+                  
+                    <li>
+                      
+                      <a href="/guide/install_k8s_airgapped.html" class="page-sidebar-children-link" >
+                        Airgapped Server
+                      </a>
+                    </li>
+                  
+                  
+                    <li>
+                      
+                      <a href="/guide/helm_values.html" class="page-sidebar-children-link" >
+                        Available Helm values
+                      </a>
+                    </li>
+                  
+                  
+                </ul>
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/install_troubleshoot.html" class="page-sidebar-children-link" >
+                  Troubleshooting
+                </a>
+                
+                
+              </li>
+            
+            
+          </ul>
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/storedata.html" class="" >
+          Set up the database
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/persistent_storage.html" class="" aria-current="page">
+          Set up persistent storage
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/start.html" class="" >
+          Start Mercedes-Benz
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/upgrade_community.html" class="" >
+          Upgrade Mercedes-Benz
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/security.html" class="" >
+          Secure Mercedes-Benz
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+        </ul>
+          
+            <div class="toc-section-heading">
+              
+
+
+
+
+<h3 class="Text  Eyebrow ">Create &amp; Manage Projects</h3>
+              
+            </div>
+          
+        <ul class="page-sidebar-list">
+      
+      
+      <li>
+        <a href="/guide/setup_project.html" class="" >
+          Create project
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/setup.html" class="" >
+          Configure labeling interface
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/manage_projects_lso.html" class="" >
+          Manage projects
+        </a>
+        
+        
+            <button class="page-sidebar-toggle-children-list">
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+            <ul class="page-sidebar-children-list">
+            
+            
+            
+              <li>
+                <a href="/guide/project_settings.html" class="page-sidebar-children-link" >
+                  Project settings
+                </a>
+                
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/manage_data.html" class="page-sidebar-children-link" >
+                  Data Manager
+                </a>
+                
+                
+              </li>
+            
+            
+          </ul>
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/labeling.html" class="" >
+          Labeling guide
+        </a>
+        
+        
+            <button class="page-sidebar-toggle-children-list">
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+            <ul class="page-sidebar-children-list">
+            
+            
+            
+              <li>
+                <a href="/guide/hotkeys.html" class="page-sidebar-children-link" >
+                  Hotkeys
+                </a>
+                
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/skip.html" class="page-sidebar-children-link" >
+                  Skipping tasks
+                </a>
+                
+                
+              </li>
+            
+            
+          </ul>
+        
+        
+        
+      </li>
+    
+      
+      
+        </ul>
+          
+            <div class="toc-section-heading">
+              
+
+
+
+
+<h3 class="Text  Eyebrow ">Import &amp; Export</h3>
+              
+            </div>
+          
+        <ul class="page-sidebar-list">
+      
+      
+      <li>
+        <a href="/guide/storage.html" class="" >
+          Add project storage
+        </a>
+        
+        
+            <button class="page-sidebar-toggle-children-list">
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+            <ul class="page-sidebar-children-list">
+            
+            
+            
+              <li>
+                <a href="/guide/storage_s3.html" class="page-sidebar-children-link" >
+                  AWS S3
+                </a>
+                
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/storage_gcp.html" class="page-sidebar-children-link" >
+                  Google Cloud
+                </a>
+                
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/storage_azure.html" class="page-sidebar-children-link" >
+                  Microsoft Azure
+                </a>
+                
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/storage_databricks.html" class="page-sidebar-children-link" >
+                  Databricks
+                </a>
+                
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/storage_redis.html" class="page-sidebar-children-link" >
+                  Redis
+                </a>
+                
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/storage_local.html" class="page-sidebar-children-link" >
+                  Local
+                </a>
+                
+                
+              </li>
+            
+            
+          </ul>
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/tasks.html" class="" >
+          Import data
+        </a>
+        
+        
+            <button class="page-sidebar-toggle-children-list">
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+            <ul class="page-sidebar-children-list">
+            
+            
+            
+              <li>
+                <a href="/guide/task_format.html" class="page-sidebar-children-link" >
+                  Format data for import
+                </a>
+                
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/predictions.html" class="page-sidebar-children-link" >
+                  Import pre-annotations
+                </a>
+                
+                
+              </li>
+            
+            
+          </ul>
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/export.html" class="" >
+          Export annotations
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+        </ul>
+          
+            <div class="toc-section-heading">
+              
+
+
+
+
+<h3 class="Text  Eyebrow ">Machine Learning</h3>
+              
+            </div>
+          
+        <ul class="page-sidebar-list">
+      
+      
+      <li>
+        <a href="/guide/ml.html" class="" >
+          Machine learning integration
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/ml_create.html" class="" >
+          Write your own ML backend
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/ml_tutorials.html" class="" >
+          ML Examples and Tutorials
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+        </ul>
+          
+            <div class="toc-section-heading">
+              
+
+
+
+
+<h3 class="Text  Eyebrow ">Manage Your Organization</h3>
+              
+            </div>
+          
+        <ul class="page-sidebar-list">
+      
+      
+      <li>
+        <a href="/guide/signup.html" class="" >
+          Add users
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/admin_manage.html" class="" >
+          Manage user accounts
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/user_account.html" class="" >
+          Account and settings
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/access_tokens.html" class="" >
+          Access tokens
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+        </ul>
+          
+            <div class="toc-section-heading">
+              
+
+
+
+
+<h3 class="Text  Eyebrow ">Integrate &amp; Extend</h3>
+              
+            </div>
+          
+        <ul class="page-sidebar-list">
+      
+      
+      <li>
+        <a href="/guide/api.html" class="" >
+          API
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/sdk.html" class="" >
+          Python SDK
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/webhooks.html" class="" >
+          Webhooks
+        </a>
+        
+        
+            <button class="page-sidebar-toggle-children-list">
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+            <ul class="page-sidebar-children-list">
+            
+            
+            
+              <li>
+                <a href="/guide/webhook_create.html" class="page-sidebar-children-link" >
+                  Webhook development
+                </a>
+                
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/webhook_reference.html" class="page-sidebar-children-link" >
+                  Webhook event reference
+                </a>
+                
+                
+              </li>
+            
+            
+          </ul>
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/frontend_reference.html" class="" >
+          Frontend
+        </a>
+        
+        
+        
+          
+            </li><li>
+            <a href="https://github.com/Mercedes-Benz/label-studio/blob/develop/CONTRIBUTING.md" target="_blank">Contribution guide
+              <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-external-link">
+                <path d="M10.9002 9.29957L9.46026 9.30898L9.46026 3.34236L1.73377 11.0689L0.698549 10.0336L8.42504 2.30714L2.46783 2.31656L2.46783 0.867251L10.9001 0.867252L10.9002 9.29957Z" fill="#6D87F1"></path>
+              </svg>
+            </a>
+          </li>
+          
+          <li>
+            <a href="https://mercedes-benz.com/integrations/" target="_blank">Integrations directory
+              <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-external-link">
+                <path d="M10.9002 9.29957L9.46026 9.30898L9.46026 3.34236L1.73377 11.0689L0.698549 10.0336L8.42504 2.30714L2.46783 2.31656L2.46783 0.867251L10.9001 0.867252L10.9002 9.29957Z" fill="#6D87F1"></path>
+              </svg>
+            </a>
+          </li>
+        
+        
+      
+    
+    
+</ul>
+
+
+  <div class="toc-section-heading">
+
+
+
+
+<h3 class="Text  Eyebrow ">Support</h3></div>
+
+<ul class="page-sidebar-list">
+  
+  
+    <li>
+        <a href="/guide/troubleshooting">Troubleshooting</a>
+      </li>
+    <li>
+      <a href="https://github.com/Mercedes-Benz/label-studio/issues" target="_blank">GitHub Issues
+        <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-external-link">
+          <path d="M10.9002 9.29957L9.46026 9.30898L9.46026 3.34236L1.73377 11.0689L0.698549 10.0336L8.42504 2.30714L2.46783 2.31656L2.46783 0.867251L10.9001 0.867252L10.9002 9.29957Z" fill="#6D87F1"></path>
+        </svg>
+      </a>
+    </li>
+  
+  <li>
+    <a href="https://slack.mercedes-benz.com" target="_blank">Join Slack
+      <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-external-link">
+        <path d="M10.9002 9.29957L9.46026 9.30898L9.46026 3.34236L1.73377 11.0689L0.698549 10.0336L8.42504 2.30714L2.46783 2.31656L2.46783 0.867251L10.9001 0.867252L10.9002 9.29957Z" fill="#6D87F1"></path>
+      </svg>
+    </a>
+  </li>
+  
+    <li>
+      <a href="https://community.mercedes-benz.com/" target="_blank">Ask on Discourse
+        <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-external-link">
+          <path d="M10.9002 9.29957L9.46026 9.30898L9.46026 3.34236L1.73377 11.0689L0.698549 10.0336L8.42504 2.30714L2.46783 2.31656L2.46783 0.867251L10.9001 0.867252L10.9002 9.29957Z" fill="#6D87F1"></path>
+        </svg>
+      </a>
+    </li>
+  
+  <li>
+    <a href="https://mercedes-benz.com/contact-sales/" target="_blank">Contact Sales
+      <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-external-link">
+        <path d="M10.9002 9.29957L9.46026 9.30898L9.46026 3.34236L1.73377 11.0689L0.698549 10.0336L8.42504 2.30714L2.46783 2.31656L2.46783 0.867251L10.9001 0.867252L10.9002 9.29957Z" fill="#6D87F1"></path>
+      </svg>
+    </a>
+  </li>
+  
+</ul>
+
+
+
+  <div class="toc-section-heading">
+
+
+
+
+<h3 class="Text  Eyebrow ">What&#39;s New</h3></div>
+
+<ul class="page-sidebar-list">  
+    <li>
+      <a href="https://github.com/Mercedes-Benz/label-studio/releases" target="_blank">Release notes
+        <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-external-link">
+          <path d="M10.9002 9.29957L9.46026 9.30898L9.46026 3.34236L1.73377 11.0689L0.698549 10.0336L8.42504 2.30714L2.46783 2.31656L2.46783 0.867251L10.9001 0.867252L10.9002 9.29957Z" fill="#6D87F1"></path>
+        </svg>
+      </a>
+    </li>
+</ul>
+
+
+      </aside>
+    
+    <div class="content">
+      
+        <svg width="50" height="50" viewBox="0 0 77 77" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="content-decoration">
+          <rect x="75.875" y="26" width="25" height="25" transform="rotate(-180 75.875 26)" stroke="#E1DED5" stroke-width="0.504975"></rect>
+          <rect x="50.875" y="51" width="25" height="25" transform="rotate(-180 50.875 51)" stroke="#E1DED5" stroke-width="0.504975"></rect>
+          <rect x="50.875" y="26" width="25" height="25" transform="rotate(-180 50.875 26)" fill="#FF7557"></rect>
+          <rect x="26" y="76" width="25" height="25" transform="rotate(-180 26 76)" stroke="#E1DED5" stroke-width="0.504975"></rect>
+          <rect x="26" y="51" width="25" height="25" transform="rotate(-180 26 51)" fill="#E37BD3"></rect>
+          <rect x="26" y="26" width="25" height="25" transform="rotate(-180 26 26)" fill="#FFA663"></rect>
+        </svg>
+      
+        
+      <div class="container">
+        
+
+
+
+
+
+
+
+<div class="content-grid">
+  <div class="content-markdown">
+    
+   
+      
+
+
+
+
+<h1 class="Heading home-page-title XLarge ">Set up persistent storage</h1>
+   
+   
+   
+    <p>Set up persistent storage so that uploaded task data, user images, and other media are kept across restarts and available to all Mercedes-Benz components.</p>
+<div class="admonition note"><p class="admonition-title">note</p><p>By default, Mercedes-Benz uses nginx to serve uploaded media. For persistent storage to work correctly, run nginx alongside Mercedes-Benz. This is the recommended setup and reduces load on the Mercedes-Benz server.</p>
+<p>If you use a minimal setup without nginx, you can set <code>USE_NGINX_FOR_UPLOADS=false</code> and <code>USE_NGINX_FOR_EXPORT_DOWNLOADS=false</code>. In that case, Mercedes-Benz serves all uploads and exports. This is not recommended: it increases load on the uwsgi workers and can cause outages when users work with large files.</p>
+</div>
+
+<p>Choose one of the following according to your deployment:</p>
+<ul>
+<li><strong><a href="#Set-up-Kubernetes-PVC">Kubernetes with a PVC</a></strong> — Use a Persistent Volume Claim (ReadWriteMany) for on-cluster storage.</li>
+<li><strong><a href="#Set-up-Amazon-S3">Amazon S3</a></strong> — For AWS or Docker Compose.</li>
+<li><strong><a href="#Set-up-Google-Cloud-Storage">Google Cloud Storage (GCS)</a></strong> — For Google Cloud or Docker Compose.</li>
+<li><strong><a href="#Set-up-Microsoft-Azure-Storage">Microsoft Azure Storage</a></strong> — For Azure or Docker Compose.</li>
+</ul>
+<h2 id="Set-up-Kubernetes-PVC"><a href="#Set-up-Kubernetes-PVC" class="headerlink" title="Set up Kubernetes PVC"></a>Set up Kubernetes PVC</h2><p>When you deploy Mercedes-Benz on Kubernetes, you can use a Persistent Volume Claim (PVC) for persistent storage instead of cloud object storage. The PVC <strong>must</strong> support <strong>ReadWriteMany</strong> access mode so that multiple pods (for example, the app and rqworker) can read and write the same volume.</p>
+<p>Configure persistence in your <code>ls-values.yaml</code> using the <code>persistence.config.volume</code> section and set <code>accessModes</code> to <code>ReadWriteMany</code>:</p>
+<pre><code class="hljs yaml"><span class="hljs-attr">global:</span>
+  <span class="hljs-attr">persistence:</span>
+    <span class="hljs-attr">enabled:</span> <span class="hljs-literal">true</span>
+    <span class="hljs-attr">type:</span> <span class="hljs-string">volume</span>
+    <span class="hljs-attr">config:</span>
+      <span class="hljs-attr">volume:</span>
+        <span class="hljs-attr">size:</span> <span class="hljs-string">50Gi</span>
+        <span class="hljs-attr">accessModes:</span>
+          <span class="hljs-bullet">-</span> <span class="hljs-string">ReadWriteMany</span></code></pre>
+
+<div class="admonition note"><p class="admonition-title">note</p><p>Your cluster must provide a StorageClass or default storage that supports <code>ReadWriteMany</code> (for example, NFS, EFS, Azure Files, or other network-backed storage). Standard block storage (e.g. many default cloud disks) typically supports only ReadWriteOnce and is not suitable when multiple pods need to mount the same PVC.</p>
+</div>
+
+<h2 id="Set-up-Amazon-S3"><a href="#Set-up-Amazon-S3" class="headerlink" title="Set up Amazon S3"></a>Set up Amazon S3</h2><p>Set up Amazon S3 as the persistent storage for Mercedes-Benz hosted in AWS or using Docker Compose.</p>
+<h3 id="Create-an-S3-bucket"><a href="#Create-an-S3-bucket" class="headerlink" title="Create an S3 bucket"></a>Create an S3 bucket</h3><p>Start by <a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/create-bucket-overview.html">creating an S3 bucket</a> following the Amazon Simple Storage Service User Guide steps.</p>
+<div class="admonition note"><p class="admonition-title">note</p><p>If you want to secure the data stored in the S3 bucket at rest, you can <a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucket-encryption.html">set up default server-side encryption for Amazon S3 buckets</a> following the steps in the Amazon Simple Storage Service User Guide.</p>
+</div>
+
+<h3 id="Configure-CORS-for-the-S3-bucket"><a href="#Configure-CORS-for-the-S3-bucket" class="headerlink" title="Configure CORS for the S3 bucket"></a>Configure CORS for the S3 bucket</h3><div class="admonition note"><p class="admonition-title">note</p><p>In the case if you're going to use direct file upload feature and store media files like audio, video, csv you should complete this step.</p>
+</div>
+
+<p>Set up Cross-Origin Resource Sharing (CORS) access to your bucket. See <a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/enabling-cors-examples.html">Configuring cross-origin resource sharing (CORS)</a> in the Amazon S3 User Guide. Use or modify the following example:</p>
+<pre><code class="hljs json"><span class="hljs-punctuation">[</span>
+  <span class="hljs-punctuation">&#123;</span>
+    <span class="hljs-attr">&quot;AllowedHeaders&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+      <span class="hljs-string">&quot;*&quot;</span>
+    <span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;AllowedMethods&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+      <span class="hljs-string">&quot;GET&quot;</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-string">&quot;PUT&quot;</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-string">&quot;POST&quot;</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-string">&quot;DELETE&quot;</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-string">&quot;HEAD&quot;</span>
+    <span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;AllowedOrigins&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+      <span class="hljs-string">&quot;*&quot;</span>
+    <span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;ExposeHeaders&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+      <span class="hljs-string">&quot;x-amz-server-side-encryption&quot;</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-string">&quot;x-amz-request-id&quot;</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-string">&quot;x-amz-id-2&quot;</span>
+    <span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;MaxAgeSeconds&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">3600</span>
+  <span class="hljs-punctuation">&#125;</span>
+<span class="hljs-punctuation">]</span></code></pre>
+
+<h3 id="Configure-the-S3-bucket"><a href="#Configure-the-S3-bucket" class="headerlink" title="Configure the S3 bucket"></a>Configure the S3 bucket</h3><p>After you create an S3 bucket, set up the necessary IAM permissions to grant Mercedes-Benz access to your bucket. There are four ways that you can manage access to your S3 bucket:</p>
+<ul>
+<li>Set up an <strong>IAM role</strong> with an OIDC provider (<strong>recommended</strong>).</li>
+<li>Use <strong>access keys</strong>.</li>
+<li>Set up an <strong>IAM role</strong> without an OIDC provider.</li>
+<li>Use <strong>access keys with Docker Compose</strong>.</li>
+</ul>
+<p>Select the relevant tab and follow the steps for your desired option:</p>
+<div class="code-tabs">
+  <div data-name="IAM role (OIDC)">
+
+<div class="admonition note"><p class="admonition-title">note</p><p>To set up an IAM role using this method, you must have a configured and provisioned OIDC provider for your cluster. See <a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/eks/latest/userguide/enable-iam-roles-for-service-accounts.html">Create an IAM OIDC provider for your cluster</a> in the Amazon EKS User Guide.</p>
+</div>
+
+<ol>
+<li><p>Follow the steps to <a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/eks/latest/userguide/create-service-account-iam-policy-and-role.html">create an IAM role and policy for your service account</a> in the Amazon EKS User Guide.</p>
+</li>
+<li><p>Use the following IAM Policy, replacing <code>&lt;YOUR_S3_BUCKET&gt;</code> with the name of your bucket:</p>
+<pre><code class="hljs json"><span class="hljs-punctuation">&#123;</span>
+  <span class="hljs-attr">&quot;Version&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;2012-10-17&quot;</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">&quot;Statement&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+    <span class="hljs-punctuation">&#123;</span>
+      <span class="hljs-attr">&quot;Effect&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Allow&quot;</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">&quot;Action&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+        <span class="hljs-string">&quot;s3:ListBucket&quot;</span>
+      <span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">&quot;Resource&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+        <span class="hljs-string">&quot;arn:aws:s3:::&lt;YOUR_S3_BUCKET&gt;&quot;</span>
+      <span class="hljs-punctuation">]</span>
+    <span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-punctuation">&#123;</span>
+      <span class="hljs-attr">&quot;Effect&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Allow&quot;</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">&quot;Action&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+        <span class="hljs-string">&quot;s3:PutObject&quot;</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-string">&quot;s3:GetObject&quot;</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-string">&quot;s3:DeleteObject&quot;</span>
+      <span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">&quot;Resource&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+        <span class="hljs-string">&quot;arn:aws:s3:::&lt;YOUR_S3_BUCKET&gt;/*&quot;</span>
+      <span class="hljs-punctuation">]</span>
+    <span class="hljs-punctuation">&#125;</span>
+  <span class="hljs-punctuation">]</span>
+<span class="hljs-punctuation">&#125;</span></code></pre>
+</li>
+<li><p>Create an <strong>IAM role as a Web Identity</strong> using the cluster OIDC provider as the identity provider:</p>
+<ul>
+<li>Create a new <strong>Role</strong> from your IAM Console.</li>
+<li>Select the <strong>Web identity</strong> Tab.</li>
+<li>In the <strong>Identity Provider</strong> drop-down, select the OpenID Connect provider URL of your EKS and <code>sts.amazonaws.com</code> as the Audience.</li>
+<li>Attach the newly created permission to the Role and name it.</li>
+<li>Retrieve the Role arn for the next step.</li>
+</ul>
+</li>
+<li><p>After you create an IAM role, add it as an annotation in your <code>ls-values.yaml</code> file.
+Optionally, you can choose a folder by specifying <code>folder</code> (default is <code>&quot;&quot;</code> or omit this argument):</p>
+<pre><code class="hljs yaml"><span class="hljs-attr">global:</span>
+  <span class="hljs-attr">persistence:</span>
+    <span class="hljs-attr">enabled:</span> <span class="hljs-literal">true</span>
+    <span class="hljs-attr">type:</span> <span class="hljs-string">s3</span>
+    <span class="hljs-attr">config:</span>
+      <span class="hljs-attr">s3:</span>
+        <span class="hljs-attr">bucket:</span> <span class="hljs-string">&quot;&lt;YOUR_BUCKET_NAME&gt;&quot;</span>
+        <span class="hljs-attr">region:</span> <span class="hljs-string">&quot;&lt;YOUR_BUCKET_REGION&gt;&quot;</span>
+        <span class="hljs-attr">folder:</span> <span class="hljs-string">&quot;&quot;</span>
+<span class="hljs-attr">app:</span>
+  <span class="hljs-attr">serviceAccount:</span>
+    <span class="hljs-attr">annotations:</span>
+      <span class="hljs-attr">eks.amazonaws.com/role-arn:</span> <span class="hljs-string">arn:aws:iam::&lt;ACCOUNT_ID&gt;:role/&lt;ROLE_NAME_FROM_STEP_3&gt;</span>
+
+<span class="hljs-attr">rqworker:</span>
+  <span class="hljs-attr">serviceAccount:</span>
+    <span class="hljs-attr">annotations:</span>
+      <span class="hljs-attr">eks.amazonaws.com/role-arn:</span> <span class="hljs-string">arn:aws:iam::&lt;ACCOUNT_ID&gt;:role/&lt;ROLE_NAME_FROM_STEP_3&gt;</span></code></pre></li>
+</ol>
+  </div>
+
+  <div data-name="Access keys">
+
+<ol>
+<li><p>Create an IAM user with <strong>Programmatic access</strong>. See <a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_create.html">Creating an IAM user in your AWS account</a> in the AWS Identity and Access Management User Guide.</p>
+</li>
+<li><p>When creating the user, for the <strong>Set permissions</strong> option, choose to <strong>Attach existing policies directly</strong>.</p>
+</li>
+<li><p>Select <strong>Create policy</strong> and attach the following policy, replacing <code>&lt;YOUR_S3_BUCKET&gt;</code> with the name of your bucket:</p>
+<pre><code class="hljs json"><span class="hljs-punctuation">&#123;</span>
+  <span class="hljs-attr">&quot;Version&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;2012-10-17&quot;</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">&quot;Statement&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+    <span class="hljs-punctuation">&#123;</span>
+      <span class="hljs-attr">&quot;Effect&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Allow&quot;</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">&quot;Action&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+        <span class="hljs-string">&quot;s3:ListBucket&quot;</span>
+      <span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">&quot;Resource&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+        <span class="hljs-string">&quot;arn:aws:s3:::&lt;YOUR_S3_BUCKET&gt;&quot;</span>
+      <span class="hljs-punctuation">]</span>
+    <span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-punctuation">&#123;</span>
+      <span class="hljs-attr">&quot;Effect&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Allow&quot;</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">&quot;Action&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+        <span class="hljs-string">&quot;s3:PutObject&quot;</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-string">&quot;s3:GetObject&quot;</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-string">&quot;s3:DeleteObject&quot;</span>
+      <span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">&quot;Resource&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+        <span class="hljs-string">&quot;arn:aws:s3:::&lt;YOUR_S3_BUCKET&gt;/*&quot;</span>
+      <span class="hljs-punctuation">]</span>
+    <span class="hljs-punctuation">&#125;</span>
+  <span class="hljs-punctuation">]</span>
+<span class="hljs-punctuation">&#125;</span></code></pre>
+</li>
+<li><p>After you create the user, save the username and access key somewhere secure.</p>
+</li>
+<li><p>Update your <code>ls-values.yaml</code> file with your newly-created access key ID and secret key as <code>&lt;YOUR_ACCESS_KEY_ID&gt;</code> and <code>&lt;YOUR_SECRET_ACCESS_KEY&gt;</code>.
+Optionally, you can choose a folder by specifying <code>folder</code> (default is <code>&quot;&quot;</code> or omit this argument):</p>
+<pre><code class="hljs yaml"><span class="hljs-attr">global:</span>
+  <span class="hljs-attr">persistence:</span>
+    <span class="hljs-attr">enabled:</span> <span class="hljs-literal">true</span>
+    <span class="hljs-attr">type:</span> <span class="hljs-string">s3</span>
+    <span class="hljs-attr">config:</span>
+      <span class="hljs-attr">s3:</span>
+        <span class="hljs-attr">accessKey:</span> <span class="hljs-string">&quot;&lt;YOUR_ACCESS_KEY_ID&gt;&quot;</span>
+        <span class="hljs-attr">secretKey:</span> <span class="hljs-string">&quot;&lt;YOUR_SECRET_ACCESS_KEY&gt;&quot;</span>
+        <span class="hljs-attr">bucket:</span> <span class="hljs-string">&quot;&lt;YOUR_BUCKET_NAME&gt;&quot;</span>
+        <span class="hljs-attr">region:</span> <span class="hljs-string">&quot;&lt;YOUR_BUCKET_REGION&gt;&quot;</span>
+        <span class="hljs-attr">folder:</span> <span class="hljs-string">&quot;&quot;</span></code></pre></li>
+</ol>
+<div class="admonition note"><p class="admonition-title">note</p><p>Optionally, you can use already existing Kubernetes secret and a key.</p>
+</div>
+
+<ol>
+<li>Create a Kubernetes secret with your AWS access keys:<pre><code class="hljs shell">kubectl create secret generic &lt;YOUR_SECRET_NAME&gt; --from-literal=accesskey=&lt;YOUR_ACCESS_KEY_ID&gt; --from-literal=secretkey=&lt;YOUR_SECRET_ACCESS_KEY&gt;</code></pre></li>
+<li>Update your <code>ls-values.yaml</code> file with your newly-created kubernetes secret:<pre><code class="hljs yaml"><span class="hljs-attr">global:</span>
+  <span class="hljs-attr">persistence:</span>
+    <span class="hljs-attr">enabled:</span> <span class="hljs-literal">true</span>
+    <span class="hljs-attr">type:</span> <span class="hljs-string">s3</span>
+    <span class="hljs-attr">config:</span>
+      <span class="hljs-attr">s3:</span>
+        <span class="hljs-attr">accessKeyExistingSecret:</span> <span class="hljs-string">&quot;&lt;YOUR_SECRET_NAME&gt;&quot;</span>
+        <span class="hljs-attr">accessKeyExistingSecretKey:</span> <span class="hljs-string">&quot;accesskey&quot;</span>
+        <span class="hljs-attr">secretKeyExistingSecret:</span> <span class="hljs-string">&quot;&lt;YOUR_SECRET_NAME&gt;&quot;</span>
+        <span class="hljs-attr">secretKeyExistingSecretKey:</span> <span class="hljs-string">&quot;secretkey&quot;</span>
+        <span class="hljs-attr">bucket:</span> <span class="hljs-string">&quot;&lt;YOUR_BUCKET_NAME&gt;&quot;</span>
+        <span class="hljs-attr">region:</span> <span class="hljs-string">&quot;&lt;YOUR_BUCKET_REGION&gt;&quot;</span></code></pre></li>
+</ol>
+  </div>
+
+  <div data-name="IAM role (EKS node)">
+
+<p>To create an IAM role without using OIDC in EKS, follow these steps.</p>
+<ol>
+<li><p>In the AWS console UI, go to <strong>EKS &gt; Clusters &gt; <code>YOUR_CLUSTER_NAME</code> &gt; Node Group</strong>.</p>
+</li>
+<li><p>Select the name of <code>YOUR_NODE_GROUP</code> with Mercedes-Benz deployed.</p>
+</li>
+<li><p>On the <strong>Details</strong> page, locate and select the option for Node IAM Role ARN and choose to <strong>Attach existing policies directly</strong>.</p>
+</li>
+<li><p>Select <strong>Create policy</strong> and attach the following policy, replacing <code>&lt;YOUR_S3_BUCKET&gt;</code> with the name of your bucket:</p>
+<pre><code class="hljs json"><span class="hljs-punctuation">&#123;</span>
+  <span class="hljs-attr">&quot;Version&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;2012-10-17&quot;</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">&quot;Statement&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+    <span class="hljs-punctuation">&#123;</span>
+      <span class="hljs-attr">&quot;Effect&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Allow&quot;</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">&quot;Action&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+        <span class="hljs-string">&quot;s3:ListBucket&quot;</span>
+      <span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">&quot;Resource&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+        <span class="hljs-string">&quot;arn:aws:s3:::&lt;YOUR_S3_BUCKET&gt;&quot;</span>
+      <span class="hljs-punctuation">]</span>
+    <span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-punctuation">&#123;</span>
+      <span class="hljs-attr">&quot;Effect&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Allow&quot;</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">&quot;Action&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+        <span class="hljs-string">&quot;s3:PutObject&quot;</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-string">&quot;s3:GetObject&quot;</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-string">&quot;s3:DeleteObject&quot;</span>
+      <span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">&quot;Resource&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+        <span class="hljs-string">&quot;arn:aws:s3:::&lt;YOUR_S3_BUCKET&gt;/*&quot;</span>
+      <span class="hljs-punctuation">]</span>
+    <span class="hljs-punctuation">&#125;</span>
+  <span class="hljs-punctuation">]</span>
+<span class="hljs-punctuation">&#125;</span></code></pre>
+</li>
+<li><p>After you add an IAM policy, configure your <code>ls-values.yaml</code> file.
+Optionally, you can choose a folder by specifying <code>folder</code> (default is <code>&quot;&quot;</code> or omit this argument):</p>
+<pre><code class="hljs yaml"><span class="hljs-attr">global:</span>
+  <span class="hljs-attr">persistence:</span>
+    <span class="hljs-attr">enabled:</span> <span class="hljs-literal">true</span>
+    <span class="hljs-attr">type:</span> <span class="hljs-string">s3</span>
+    <span class="hljs-attr">config:</span>
+      <span class="hljs-attr">s3:</span>
+        <span class="hljs-attr">bucket:</span> <span class="hljs-string">&quot;&lt;YOUR_BUCKET_NAME&gt;&quot;</span>
+        <span class="hljs-attr">region:</span> <span class="hljs-string">&quot;&lt;YOUR_BUCKET_REGION&gt;&quot;</span>
+        <span class="hljs-attr">folder:</span> <span class="hljs-string">&quot;&quot;</span></code></pre></li>
+</ol>
+  </div>
+
+  <div data-name="Docker Compose">
+
+<ol>
+<li><p>Create an IAM user with <strong>Programmatic access</strong>. See <a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_create.html">Creating an IAM user in your AWS account</a> in the AWS Identity and Access Management User Guide.</p>
+</li>
+<li><p>When creating the user, for the <strong>Set permissions</strong> option, choose to <strong>Attach existing policies directly</strong>.</p>
+</li>
+<li><p>Select <strong>Create policy</strong> and attach the following policy, replacing <code>&lt;YOUR_S3_BUCKET&gt;</code> with the name of your bucket:</p>
+<pre><code class="hljs json"><span class="hljs-punctuation">&#123;</span>
+  <span class="hljs-attr">&quot;Version&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;2012-10-17&quot;</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">&quot;Statement&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+    <span class="hljs-punctuation">&#123;</span>
+      <span class="hljs-attr">&quot;Effect&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Allow&quot;</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">&quot;Action&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+        <span class="hljs-string">&quot;s3:ListBucket&quot;</span>
+      <span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">&quot;Resource&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+        <span class="hljs-string">&quot;arn:aws:s3:::&lt;YOUR_S3_BUCKET&gt;&quot;</span>
+      <span class="hljs-punctuation">]</span>
+    <span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-punctuation">&#123;</span>
+      <span class="hljs-attr">&quot;Effect&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Allow&quot;</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">&quot;Action&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+        <span class="hljs-string">&quot;s3:PutObject&quot;</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-string">&quot;s3:GetObject&quot;</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-string">&quot;s3:DeleteObject&quot;</span>
+      <span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">&quot;Resource&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+        <span class="hljs-string">&quot;arn:aws:s3:::&lt;YOUR_S3_BUCKET&gt;/*&quot;</span>
+      <span class="hljs-punctuation">]</span>
+    <span class="hljs-punctuation">&#125;</span>
+  <span class="hljs-punctuation">]</span>
+<span class="hljs-punctuation">&#125;</span></code></pre>
+</li>
+<li><p>After you create the user, save the username and access key somewhere secure.</p>
+</li>
+<li><p>Update your <code>env.list</code> file, replacing <code>&lt;YOUR_ACCESS_KEY_ID&gt;</code> and <code>&lt;YOUR_SECRET_ACCESS_KEY&gt;</code> with your newly-created access key ID and secret key. Optionally, you can specify a folder using <code>STORAGE_AWS_FOLDER</code> (default is <code>&quot;&quot;</code> or omit this argument):</p>
+<pre><code class="hljs shell">STORAGE_TYPE=s3
+STORAGE_AWS_ACCESS_KEY_ID=&quot;&lt;YOUR_ACCESS_KEY_ID&gt;&quot;
+STORAGE_AWS_SECRET_ACCESS_KEY=&quot;&lt;YOUR_SECRET_ACCESS_KEY&gt;&quot;
+STORAGE_AWS_BUCKET_NAME=&quot;&lt;YOUR_BUCKET_NAME&gt;&quot;
+STORAGE_AWS_REGION_NAME=&quot;&lt;YOUR_BUCKET_REGION&gt;&quot;
+STORAGE_AWS_FOLDER=&quot;&quot;</code></pre></li>
+</ol>
+  </div>
+</div>
+
+<h2 id="Set-up-Google-Cloud-Storage"><a href="#Set-up-Google-Cloud-Storage" class="headerlink" title="Set up Google Cloud Storage"></a>Set up Google Cloud Storage</h2><p>Set up Google Cloud Storage (GCS) as the persistent storage for Mercedes-Benz hosted in Google Cloud Platform (GCP) or Docker Compose.</p>
+<h3 id="Create-a-GCS-bucket"><a href="#Create-a-GCS-bucket" class="headerlink" title="Create a GCS bucket"></a>Create a GCS bucket</h3><ol>
+<li>Start by creating a bucket. See <a target="_blank" rel="noopener" href="https://cloud.google.com/storage/docs/creating-buckets">Creating storage buckets</a> in the Google Cloud Storage guide. For example, a bucket called <code>heartex-example-bucket-123456</code>.</li>
+<li>When choosing the <a target="_blank" rel="noopener" href="https://cloud.google.com/storage/docs/access-control">access control method for the bucket</a>, choose <strong>uniform access control</strong>.</li>
+<li>Create an IAM Service Account. See <a target="_blank" rel="noopener" href="https://cloud.google.com/iam/docs/creating-managing-service-accounts">Creating and managing service accounts</a> in the Google Cloud Storage guide.</li>
+<li>Select the predefined <strong>Storage Object Admin</strong> IAM role to add to the service account so that the account can create, access, and delete objects in the bucket.</li>
+<li>Add a condition to the role that restricts the role to access only objects that belong to the bucket you created. You can add a condition in one of two ways:<ul>
+<li>Select <strong>Add Condition</strong> when setting up the service account IAM role, then use the <strong>Condition Builder</strong> to specify the following values:<ul>
+<li>Condition type: <code>Name</code></li>
+<li>Operator: <code>Starts with</code></li>
+<li>Value: <code>projects/_/buckets/heartex-example-bucket-123456</code></li>
+</ul>
+</li>
+<li>Or, <strong>use a Common Expression Language</strong> (CEL) to specify an IAM condition. For example, set the following: <code>resource.name.startsWith(&#39;projects/_/buckets/heartex-example-bucket-123456&#39;)</code>. See <a target="_blank" rel="noopener" href="https://cloud.google.com/iam/docs/conditions-overview#cel">CEL for Conditions in Overview of IAM Conditions</a> in the Google Cloud Storage guide.</li>
+</ul>
+</li>
+</ol>
+<h3 id="Configure-CORS-for-the-GCS-bucket"><a href="#Configure-CORS-for-the-GCS-bucket" class="headerlink" title="Configure CORS for the GCS bucket"></a>Configure CORS for the GCS bucket</h3><div class="admonition note"><p class="admonition-title">note</p><p>In the case if you're going to use direct file upload feature and store media files like audio, video, csv you should complete this step.</p>
+</div>
+
+<p>Set up CORS access to your bucket. See <a target="_blank" rel="noopener" href="https://cloud.google.com/storage/docs/configuring-cors#configure-cors-bucket">Configuring cross-origin resource sharing (CORS)</a> in the Google Cloud User Guide. Use or modify the following example:</p>
+<pre><code class="hljs shell">echo &#x27;[
+   &#123;
+      &quot;origin&quot;: [&quot;*&quot;],
+      &quot;method&quot;: [&quot;GET&quot;,&quot;PUT&quot;,&quot;POST&quot;,&quot;DELETE&quot;,&quot;HEAD&quot;],
+      &quot;responseHeader&quot;: [&quot;Content-Type&quot;,&quot;Access-Control-Allow-Origin&quot;],
+      &quot;maxAgeSeconds&quot;: 3600
+   &#125;
+]&#x27; &gt; cors-config.json</code></pre>
+
+<p>Replace <code>YOUR_BUCKET_NAME</code> with your actual bucket name in the following command to update CORS for your bucket:</p>
+<pre><code class="hljs shell">gsutil cors set cors-config.json gs://YOUR_BUCKET_NAME</code></pre>
+
+<h3 id="Configure-the-GCS-bucket"><a href="#Configure-the-GCS-bucket" class="headerlink" title="Configure the GCS bucket"></a>Configure the GCS bucket</h3><p>You can connect Mercedes-Benz to your GCS bucket using <strong>Workload Identity</strong> or <strong>Access keys</strong>.</p>
+<p>After you create a bucket and set up IAM permissions, connect Mercedes-Benz to your GCS bucket. There are three ways that you can connect to your bucket:</p>
+<ul>
+<li>Use Workload Identity to allow workloads in GKE to access your GCS bucket by impersonating the service account you created (<strong>recommended</strong>).</li>
+<li>Create a service account key to use the service account outside Google Cloud.</li>
+<li>Create a service account key to use with Docker Compose.</li>
+</ul>
+<div class="code-tabs">
+<div data-name="Workload Identity">
+
+<div class="admonition note"><p class="admonition-title">note</p><p>Make sure that Workload Identity is enabled on your GKE cluster and that you meet the necessary prerequisites. See <a target="_blank" rel="noopener" href="https://cloud.google.com/kubernetes-engine/docs/how-to/workload-identity">Using Workload Identity</a> in the Google Kubernetes Engine guide.</p>
+</div>
+
+<ol>
+<li><p>Set up the following environment variables, specifying the service account you created as the <code>GCP_SA</code> variable, and replacing the other references in <code>&lt;&gt;</code> as needed:</p>
+<pre><code class="hljs shell">GCP_SA=&lt;Service-Account-You-Created&gt;
+APP_SA=&quot;serviceAccount:&lt;GCP_PROJECT_ID&gt;.svc.id.goog[&lt;K8S_NAMESPACE&gt;/&lt;HELM_RELEASE_NAME&gt;-lse-app]&quot;
+WORKER_SA=&quot;serviceAccount:&lt;GCP_PROJECT_ID&gt;.svc.id.goog[&lt;K8S_NAMESPACE&gt;/&lt;HELM_RELEASE_NAME&gt;-lse-rqworker]&quot;</code></pre>
+</li>
+<li><p>Create an IAM policy binding between the Kubernetes service account on your cluster and the GCS service account you created, allowing the K8s service account for the Mercedes-Benz app and the related rqworkers to impersonate the other service account. From the command line, run the following:</p>
+<pre><code class="hljs shell">gcloud iam service-accounts add-iam-policy-binding $&#123;GCP_SA&#125; \
+    --role roles/iam.workloadIdentityUser \
+    --member &quot;$&#123;APP_SA&#125;&quot;
+gcloud iam service-accounts add-iam-policy-binding $&#123;GCP_SA&#125; \
+    --role roles/iam.workloadIdentityUser \
+    --member &quot;$&#123;WORKER_SA&#125;&quot;</code></pre>
+</li>
+<li><p>After binding the service accounts, update your <code>ls-values.yaml</code> file to include the values for the service account and other configurations. Update the <code>projectID</code>, <code>bucket</code>, and replace the<code>&lt;GCP_SERVICE_ACCOUNT&gt;</code> with the relevant values for your deployment.
+Optionally, you can choose a folder by specifying <code>folder</code> (default is <code>&quot;&quot;</code> or omit this argument):</p>
+<pre><code class="hljs yaml"><span class="hljs-attr">global:</span>
+  <span class="hljs-attr">persistence:</span>
+    <span class="hljs-attr">enabled:</span> <span class="hljs-literal">true</span>
+    <span class="hljs-attr">type:</span> <span class="hljs-string">gcs</span>
+    <span class="hljs-attr">config:</span>
+      <span class="hljs-attr">gcs:</span>
+        <span class="hljs-attr">projectID:</span> <span class="hljs-string">&quot;&lt;YOUR_PROJECT_ID&gt;&quot;</span>
+        <span class="hljs-attr">bucket:</span> <span class="hljs-string">&quot;&lt;YOUR_BUCKET_NAME&gt;&quot;</span>
+        <span class="hljs-attr">folder:</span> <span class="hljs-string">&quot;&quot;</span>
+<span class="hljs-attr">app:</span>
+  <span class="hljs-attr">serviceAccount:</span>
+    <span class="hljs-attr">annotations:</span>
+      <span class="hljs-attr">iam.gke.io/gcp-service-account:</span> <span class="hljs-string">&quot;&lt;GCP_SERVICE_ACCOUNT&gt;&quot;</span>
+
+<span class="hljs-attr">rqworker:</span>
+  <span class="hljs-attr">serviceAccount:</span>
+    <span class="hljs-attr">annotations:</span>
+      <span class="hljs-attr">iam.gke.io/gcp-service-account:</span> <span class="hljs-string">&quot;&lt;GCP_SERVICE_ACCOUNT&gt;&quot;</span></code></pre></li>
+</ol>
+</div>
+<div data-name="Service Account Key">
+
+<p>You can use a service account key that you create, or if you already have a Kubernetes secret and key, follow <a href="#Use-an-existing-Kubernetes-secret-and-key">the steps below</a> to use those.</p>
+<h4 id="Create-a-new-service-account-key"><a href="#Create-a-new-service-account-key" class="headerlink" title="Create a new service account key"></a>Create a new service account key</h4><ol>
+<li><p>Create a service account key from the UI and download the JSON. Follow the steps for <a target="_blank" rel="noopener" href="https://cloud.google.com/iam/docs/creating-managing-service-account-keys">Creating and managing service account keys</a> in the Google Cloud Identity and Access Management guide.</p>
+</li>
+<li><p>After downloading the JSON for the service account key, update or create references to the JSON, your projectID, and your bucket in your <code>ls-values.yaml</code> file.
+Optionally, you can choose a folder by specifying <code>folder</code> (default is <code>&quot;&quot;</code> or omit this argument):</p>
+<pre><code class="hljs yaml"><span class="hljs-attr">global:</span>
+  <span class="hljs-attr">persistence:</span>
+    <span class="hljs-attr">enabled:</span> <span class="hljs-literal">true</span>
+    <span class="hljs-attr">type:</span> <span class="hljs-string">gcs</span>
+    <span class="hljs-attr">config:</span>
+      <span class="hljs-attr">gcs:</span>
+        <span class="hljs-attr">projectID:</span> <span class="hljs-string">&quot;&lt;YOUR_PROJECT_ID&gt;&quot;</span>
+        <span class="hljs-attr">applicationCredentialsJSON:</span> <span class="hljs-string">&quot;&lt;YOUR_JSON&gt;&quot;</span>
+        <span class="hljs-attr">bucket:</span> <span class="hljs-string">&quot;&lt;YOUR_BUCKET_NAME&gt;&quot;</span>
+        <span class="hljs-attr">folder:</span> <span class="hljs-string">&quot;&quot;</span></code></pre></li>
+</ol>
+<h4 id="Use-an-existing-Kubernetes-secret-and-key"><a href="#Use-an-existing-Kubernetes-secret-and-key" class="headerlink" title="Use an existing Kubernetes secret and key"></a>Use an existing Kubernetes secret and key</h4><ol>
+<li><p>Create a Kubernetes secret with your GCS service account JSON file, replacing <code>&lt;PATH_TO_JSON&gt;</code> with the path to the service account JSON file:</p>
+<pre><code class="hljs shell">kubectl create secret generic &lt;YOUR_SECRET_NAME&gt; --from-file=key_json=&lt;PATH_TO_JSON&gt;</code></pre>
+</li>
+<li><p>Update your <code>ls-values.yaml</code> file with your newly-created Kubernetes secret:</p>
+<pre><code class="hljs yaml"><span class="hljs-attr">global:</span>
+   <span class="hljs-attr">persistence:</span>
+      <span class="hljs-attr">enabled:</span> <span class="hljs-literal">true</span>
+      <span class="hljs-attr">type:</span> <span class="hljs-string">gcs</span>
+      <span class="hljs-attr">config:</span>
+         <span class="hljs-attr">gcs:</span>
+            <span class="hljs-attr">projectID:</span> <span class="hljs-string">&quot;&lt;YOUR_PROJECT_ID&gt;&quot;</span>
+            <span class="hljs-attr">applicationCredentialsJSONExistingSecret:</span> <span class="hljs-string">&quot;&lt;YOUR_SECRET_NAME&gt;&quot;</span>
+            <span class="hljs-attr">applicationCredentialsJSONExistingSecretKey:</span> <span class="hljs-string">&quot;key_json&quot;</span>
+            <span class="hljs-attr">bucket:</span> <span class="hljs-string">&quot;&lt;YOUR_BUCKET_NAME&gt;&quot;</span></code></pre></li>
+</ol>
+</div>
+<div data-name="Docker Compose">
+
+<ol>
+<li><p>Create a service account key from the UI and download the JSON. Follow the steps for <a target="_blank" rel="noopener" href="https://cloud.google.com/iam/docs/creating-managing-service-account-keys">Creating and managing service account keys</a> in the Google Cloud Identity and Access Management guide.</p>
+</li>
+<li><p>After downloading the JSON for the service account key, update or create references to the JSON, your projectID, and your bucket in your <code>env.list</code> file.
+Optionally, you can choose a folder by specifying <code>STORAGE_GCS_FOLDER</code> (default is <code>&quot;&quot;</code> or omit this argument):</p>
+<pre><code class="hljs shell">STORAGE_TYPE=gcs
+STORAGE_GCS_BUCKET_NAME=&quot;&lt;YOUR_BUCKET_NAME&gt;&quot;
+STORAGE_GCS_PROJECT_ID=&quot;&lt;YOUR_PROJECT_ID&gt;&quot;
+STORAGE_GCS_FOLDER=&quot;&quot;
+GOOGLE_APPLICATION_CREDENTIALS=&quot;/opt/heartex/secrets/key.json&quot;</code></pre>
+</li>
+<li><p>Place the downloaded JSON file from step 1 in the same directory as your <code>env.list</code> file.</p>
+</li>
+<li><p>Append the following entry in <code>docker-compose.yml</code> file as the path for <code>app.volumes</code>:</p>
+<pre><code class="hljs yaml"><span class="hljs-bullet">-</span> <span class="hljs-string">./service-account-file.json:/opt/heartex/secrets/key.json:ro</span></code></pre></li>
+</ol>
+</div>
+</div>
+
+
+<h2 id="Set-up-Microsoft-Azure-Storage"><a href="#Set-up-Microsoft-Azure-Storage" class="headerlink" title="Set up Microsoft Azure Storage"></a>Set up Microsoft Azure Storage</h2><p>Create a Microsoft Azure Storage container to use as persistent storage with Mercedes-Benz.</p>
+<h3 id="Create-a-Storage-container"><a href="#Create-a-Storage-container" class="headerlink" title="Create a Storage container"></a>Create a Storage container</h3><ol>
+<li>Create an Azure storage account. See <a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/azure/storage/common/storage-account-create?tabs=azure-portal">Create a storage account</a> in the Microsoft Azure product documentation.</li>
+</ol>
+<div class="admonition note"><p class="admonition-title">note</p><p>Make sure that you set <strong>Stock Keeping Unit (SKU)</strong> to <code>Premium_LRS</code> and the <strong>kind</strong> parameter to <code>BlockBlobStorage</code>. This configuration results in storage that uses solid state drives (SSDs) rather than standard hard disk drives (HDDs). If you set this parameter to an HDD-based storage option, your instance might be too slow and could malfunction.</p>
+</div>
+
+<ol start="2">
+<li><p>Find the generated key in the <strong>Storage accounts &gt; Access keys</strong> section in the <a target="_blank" rel="noopener" href="https://portal.azure.com/">Azure Portal</a> or by running the following command:</p>
+<pre><code class="hljs shell">az storage account keys list --account-name=$&#123;STORAGE_ACCOUNT&#125;</code></pre>
+</li>
+<li><p>Create a storage container within your storage account by following the steps to <a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/azure/storage/blobs/storage-quickstart-blobs-portal">Upload, download, and list blobs with the Azure portal</a> in the Microsoft Azure product documentation, or run the following command:</p>
+<pre><code class="hljs shell">az storage container create --name &lt;YOUR_CONTAINER_NAME&gt; \
+          --account-name &lt;YOUR_STORAGE_ACCOUNT&gt; \
+          --account-key &quot;&lt;YOUR_STORAGE_KEY&gt;&quot;</code></pre></li>
+</ol>
+<h3 id="Configure-CORS-for-the-Azure-bucket"><a href="#Configure-CORS-for-the-Azure-bucket" class="headerlink" title="Configure CORS for the Azure bucket"></a>Configure CORS for the Azure bucket</h3><div class="admonition note"><p class="admonition-title">note</p><p>In the case if you're going to use direct file upload feature and store media files like audio, video, csv you should complete this step.</p>
+</div>
+
+<p>Set up CORS access to your bucket. See <a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/rest/api/storageservices/cross-origin-resource-sharing--cors--support-for-the-azure-storage-services#enabling-cors-for-azure-storage">Configuring cross-origin resource sharing (CORS)</a> in the Azure User Guide. Use or modify the following example:</p>
+<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">Cors</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">CorsRule</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">AllowedOrigins</span>&gt;</span>*<span class="hljs-tag">&lt;/<span class="hljs-name">AllowedOrigins</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">AllowedMethods</span>&gt;</span>GET,PUT,POST,DELETE,HEAD<span class="hljs-tag">&lt;/<span class="hljs-name">AllowedMethods</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">AllowedHeaders</span>&gt;</span>x-ms-blob-content-type<span class="hljs-tag">&lt;/<span class="hljs-name">AllowedHeaders</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">ExposedHeaders</span>&gt;</span>x-ms-*<span class="hljs-tag">&lt;/<span class="hljs-name">ExposedHeaders</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">MaxAgeInSeconds</span>&gt;</span>3600<span class="hljs-tag">&lt;/<span class="hljs-name">MaxAgeInSeconds</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">CorsRule</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">Cors</span>&gt;</span></code></pre>
+
+<h3 id="Configure-the-Azure-container"><a href="#Configure-the-Azure-container" class="headerlink" title="Configure the Azure container"></a>Configure the Azure container</h3><p>You can connect Mercedes-Benz to your Azure container using account keys in Kubernetes or account keys in Docker Compose. Choose the option relevant to your Mercedes-Benz deployment.</p>
+<div class="code-tabs">
+  <div data-name="Kubernetes">
+
+<p>Update your <code>ls-values.yaml</code> file with the <code>YOUR_CONTAINER_NAME</code>, <code>YOUR_STORAGE_ACCOUNT</code>, and <code>YOUR_STORAGE_KEY</code> that you created.
+Optionally, you can choose a folder by specifying <code>folder</code> (default is <code>&quot;&quot;</code> or omit this argument):</p>
+<pre><code class="hljs yaml"><span class="hljs-attr">global:</span>
+  <span class="hljs-attr">persistence:</span>
+    <span class="hljs-attr">enabled:</span> <span class="hljs-literal">true</span>
+    <span class="hljs-attr">type:</span> <span class="hljs-string">azure</span>
+    <span class="hljs-attr">config:</span>
+      <span class="hljs-attr">azure:</span>
+        <span class="hljs-attr">storageAccountName:</span> <span class="hljs-string">&quot;&lt;YOUR_STORAGE_ACCOUNT&gt;&quot;</span>
+        <span class="hljs-attr">storageAccountKey:</span> <span class="hljs-string">&quot;&lt;YOUR_STORAGE_KEY&gt;&quot;</span>
+        <span class="hljs-attr">containerName:</span> <span class="hljs-string">&quot;&lt;YOUR_CONTAINER_NAME&gt;&quot;</span>
+        <span class="hljs-attr">folder:</span> <span class="hljs-string">&quot;&quot;</span></code></pre>
+
+<p>If you have an existing key, you can use that instead to create a Kubernetes secret.</p>
+<ol>
+<li>Create a Kubernetes secret with your Azure access key:<pre><code class="hljs shell">kubectl create secret generic &lt;YOUR_SECRET_NAME&gt; --from-literal=storageaccountname=&lt;YOUR_STORAGE_ACCOUNT&gt; --from-literal=storageaccountkey=&lt;YOUR_STORAGE_KEY&gt;</code></pre></li>
+<li>Update your <code>ls-values.yaml</code> file with your newly-created Kubernetes secret:<pre><code class="hljs yaml"><span class="hljs-attr">global:</span>
+   <span class="hljs-attr">persistence:</span>
+      <span class="hljs-attr">enabled:</span> <span class="hljs-literal">true</span>
+      <span class="hljs-attr">type:</span> <span class="hljs-string">azure</span>
+      <span class="hljs-attr">config:</span>
+         <span class="hljs-attr">azure:</span>
+            <span class="hljs-attr">storageAccountNameExistingSecret:</span> <span class="hljs-string">&quot;&lt;YOUR_SECRET_NAME&gt;&quot;</span>
+            <span class="hljs-attr">storageAccountNameExistingSecretKey:</span> <span class="hljs-string">&quot;storageaccountname&quot;</span>
+            <span class="hljs-attr">storageAccountKeyExistingSecret:</span> <span class="hljs-string">&quot;&lt;YOUR_SECRET_NAME&gt;&quot;</span>
+            <span class="hljs-attr">storageAccountKeyExistingSecretKey:</span> <span class="hljs-string">&quot;storageaccountkey&quot;</span>
+            <span class="hljs-attr">containerName:</span> <span class="hljs-string">&quot;&lt;YOUR_CONTAINER_NAME&gt;&quot;</span></code></pre></li>
+</ol>
+  </div>
+
+  <div data-name="Docker Compose">
+
+<p>Update your <code>env.list</code> file with the <code>YOUR_CONTAINER_NAME</code>, <code>YOUR_STORAGE_ACCOUNT</code>, and <code>YOUR_STORAGE_KEY</code> that you created.
+Optionally, you can choose a folder by specifying <code>STORAGE_AZURE_FOLDER</code> (default is <code>&quot;&quot;</code> or omit this argument):</p>
+<pre><code class="hljs shell">STORAGE_TYPE=azure
+STORAGE_AZURE_ACCOUNT_NAME=&quot;&lt;YOUR_STORAGE_ACCOUNT&gt;&quot;
+STORAGE_AZURE_ACCOUNT_KEY=&quot;&lt;YOUR_STORAGE_KEY&gt;&quot;
+STORAGE_AZURE_CONTAINER_NAME=&quot;&lt;YOUR_CONTAINER_NAME&gt;&quot;
+STORAGE_AZURE_FOLDER=&quot;&quot;</code></pre>
+
+  </div>
+</div>
+
+    
+  </div>
+  <div class="page-rightsidebar">
+    
+      <div class="toc">
+        
+
+
+
+
+<h3 class="Text  Eyebrow ">In this article</h3>
+        <ol class="toc-list"><li class="toc-list-level-2"><a href="#Set-up-Kubernetes-PVC">Set up Kubernetes PVC</a></li><li class="toc-list-level-2"><a href="#Set-up-Amazon-S3">Set up Amazon S3</a></li><li class="toc-list-level-3"><a href="#Create-an-S3-bucket">Create an S3 bucket</a></li><li class="toc-list-level-3"><a href="#Configure-CORS-for-the-S3-bucket">Configure CORS for the S3 bucket</a></li><li class="toc-list-level-3"><a href="#Configure-the-S3-bucket">Configure the S3 bucket</a></li><li class="toc-list-level-2"><a href="#Set-up-Google-Cloud-Storage">Set up Google Cloud Storage</a></li><li class="toc-list-level-3"><a href="#Create-a-GCS-bucket">Create a GCS bucket</a></li><li class="toc-list-level-3"><a href="#Configure-CORS-for-the-GCS-bucket">Configure CORS for the GCS bucket</a></li><li class="toc-list-level-3"><a href="#Configure-the-GCS-bucket">Configure the GCS bucket</a></li><li class="toc-list-level-2"><a href="#Set-up-Microsoft-Azure-Storage">Set up Microsoft Azure Storage</a></li><li class="toc-list-level-3"><a href="#Create-a-Storage-container">Create a Storage container</a></li><li class="toc-list-level-3"><a href="#Configure-CORS-for-the-Azure-bucket">Configure CORS for the Azure bucket</a></li><li class="toc-list-level-3"><a href="#Configure-the-Azure-container">Configure the Azure container</a></li></ol>
+      </div>
+    
+    <div class="toc-enterprise-cta">
+      
+        <span class="toc-enterprise-cta-copy">Designed for teams of all sizes</span>
+        <a href="https://mercedes-benz.com/pricing" class="Button Tertiary">
+   Compare Versions
+</a>
+      
+    </div>
+  </div>
+</div>
+        
+        <footer class="content-footer">
+          <div class="helpful-container">
+            
+            <form class="helpful-form" id="helpful-form">
+              
+
+
+
+
+<h3 class="Text  Eyebrow ">Was this useful?</h3>
+              <fieldset>
+                <div class="helpful-button-group">
+                  <div class="helpful-radio-container">
+                    <input type="radio" name="helpful" id="feedback-helpful-yes" value="yes">
+                    <label for="feedback-helpful-yes" class="helpful-button">
+                      <svg width="24" height="24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M13.048 3.544a.881.881 0 0 0-1.112.353l-2.71 4.518A2.75 2.75 0 0 1 6.868 9.75H4.25v9.5h12.222a1.25 1.25 0 0 0 1.205-.921l1.91-7a1.252 1.252 0 0 0-1.206-1.579h-4.576a1.35 1.35 0 0 1-1.291-1.737l1.022-3.408a.882.882 0 0 0-.488-1.06Zm-1.077-1.463a2.38 2.38 0 0 1 3.001 2.954m0 0-.964 3.215h4.373a2.75 2.75 0 0 1 2.654 3.473l-1.91 7a2.75 2.75 0 0 1-2.651 2.027H4.1a1.35 1.35 0 0 1-1.35-1.35V9.6A1.35 1.35 0 0 1 4.1 8.25h2.768a1.25 1.25 0 0 0 1.072-.607l2.71-4.516c.298-.498.768-.87 1.321-1.046" ></path><path fill-rule="evenodd" clip-rule="evenodd" d="M7 8.25a.75.75 0 0 1 .75.75v11a.75.75 0 0 1-1.5 0V9A.75.75 0 0 1 7 8.25Z" ></path></svg>
+                      Yes
+                    </label>
+                  </div>
+                  <div class="helpful-radio-container">
+                    <input type="radio" name="helpful" id="feedback-helpful-no" value="no">
+                    <label for="feedback-helpful-no" class="helpful-button">
+                      <svg width="24" height="24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M13.048 20.456a.88.88 0 0 1-1.112-.354l-2.71-4.517a2.75 2.75 0 0 0-2.358-1.335H4.25v-9.5h12.222a1.251 1.251 0 0 1 1.205.921l1.91 7a1.252 1.252 0 0 1-1.206 1.579h-4.576a1.351 1.351 0 0 0-1.291 1.737l1.022 3.408a.883.883 0 0 1-.488 1.06Zm-1.077 1.463a2.381 2.381 0 0 0 3.001-2.954m0 0-.964-3.215h4.373a2.75 2.75 0 0 0 2.654-3.473l-1.91-7a2.75 2.75 0 0 0-2.651-2.027H4.1A1.35 1.35 0 0 0 2.75 4.6v9.8a1.35 1.35 0 0 0 1.35 1.35h2.768a1.25 1.25 0 0 1 1.072.607l2.71 4.516c.298.498.768.87 1.321 1.046" ></path><path fill-rule="evenodd" clip-rule="evenodd" d="M7 15.75a.75.75 0 0 0 .75-.75V4a.75.75 0 0 0-1.5 0v11c0 .414.336.75.75.75Z" ></path></svg>
+                      No
+                    </label>
+                  </div>
+                </div>
+                <div class="helpful-form-more" id="helpful-more">
+                  <label for="feedback-comment" class="helpful-form-label">Please add your feedback (optional)</label>
+                  <textarea name="feedback" id="feedback-comment" class="helpful-form-textarea"></textarea>
+
+                  <label for="feedback-email" class="helpful-form-label">Can we contact you with more questions? (optional)</label>
+                  <input type="email" name="email" id="feedback-email" placeholder="Your email" class="helpful-form-input" >
+                  
+                  <div class="helpful-form-submit-container">
+                    <button type="button" class="Button Secondary" id="helpful-form-cancel-button">Cancel</button>
+                    <button type="submit" class="Button" id="helpful-form-submit-button">Send</button>
+                  </div>
+                </div>
+                <div class="helpful-form-confirmation" id="helpful-more-confirmation">
+                  Thanks for the feedback!
+                </div>
+              </fieldset>
+            </form>
+          </div>
+          <div>
+            
+              
+
+
+
+
+<h3 class="Text  Eyebrow ">Contribute to the docs</h3>
+              
+
+
+
+
+<h3 class="Text  Small ">Our docs are open source. See something that could be improved? Submit a pull request.</h3>
+              <a target="_blank" rel="noopener" href="https://github.com/Mercedes-Benz/label-studio" class="Button [object Object]">
+   Make a contribution
+</a>
+            
+          </div>
+          <div>
+            
+
+
+
+
+<h3 class="Text  Eyebrow ">Can’t find what you’re looking for?</h3>
+            
+              <div class="content-footer-button-group">
+                <a target="_blank" rel="noopener" href="https://github.com/Mercedes-Benz/label-studio/issues" class="Button [object Object]">
+   Submit a GitHub Issue
+</a>
+                <a target="_blank" rel="noopener" href="https://slack.mercedes-benz.com/?source=docs-footer" class="Button Secondary WithIcon">
+  
+    <svg width="31" height="30" viewBox="0 0 31 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M11.4993 0C9.84099 0.00122324 8.49886 1.34434 8.50008 2.99939C8.49886 4.65443 9.84221 5.99755 11.5006 5.99878H14.5011V3.00061C14.5023 1.34557 13.1589 0.00244648 11.4993 0C11.5006 0 11.5006 0 11.4993 0V0ZM11.4993 8H3.50049C1.84213 8.00122 0.498778 9.34434 0.500003 10.9994C0.497552 12.6544 1.84091 13.9976 3.49927 14H11.4993C13.1577 13.9988 14.5011 12.6557 14.4998 11.0006C14.5011 9.34434 13.1577 8.00122 11.4993 8Z" fill="#41C6EE"></path>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M30.5 10.9994C30.5012 9.34434 29.1578 8.00122 27.4995 8C25.8411 8.00122 24.4978 9.34434 24.499 10.9994V14H27.4995C29.1578 13.9988 30.5012 12.6557 30.5 10.9994ZM22.4999 10.9994V2.99939C22.5011 1.34557 21.159 0.00244648 19.5006 0C17.8423 0.00122324 16.4989 1.34434 16.5001 2.99939V10.9994C16.4977 12.6544 17.841 13.9976 19.4994 14C21.1577 13.9988 22.5011 12.6557 22.4999 10.9994Z" fill="#38B67F"></path>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M19.4994 29.9999C21.1578 29.9987 22.5011 28.6555 22.4999 27.0005C22.5011 25.3454 21.1578 24.0023 19.4994 24.0011H16.4989V27.0005C16.4977 28.6543 17.841 29.9974 19.4994 29.9999ZM19.4994 21.9987H27.4995C29.1578 21.9974 30.5012 20.6543 30.5 18.9993C30.5024 17.3442 29.1591 16.0011 27.5007 15.9987H19.5006C17.8423 15.9999 16.4989 17.343 16.5001 18.998C16.4989 20.6543 17.841 21.9974 19.4994 21.9987Z" fill="#ECB13D"></path>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M0.500001 18.9995C0.498775 20.6546 1.84213 21.9977 3.50049 21.9989C5.15885 21.9977 6.50221 20.6546 6.50098 18.9995V16.0001H3.50049C1.84213 16.0013 0.498775 17.3445 0.500001 18.9995ZM8.50008 18.9995V26.9995C8.49763 28.6546 9.84099 29.9977 11.4993 30.0001C13.1577 29.9989 14.5011 28.6558 14.4998 27.0007V19.002C14.5023 17.3469 13.1589 16.0038 11.5006 16.0013C9.84099 16.0013 8.49886 17.3445 8.50008 18.9995C8.50008 18.9995 8.50008 19.0007 8.50008 18.9995Z" fill="#DD295C"></path>
+</svg>
+
+ Join Slack Community
+</a>
+              </div>
+            
+            </div>
+        </footer>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    var savedScrollPosition = localStorage.getItem('labelstudio_scrollPosition');
+      if (savedScrollPosition) {
+        document.querySelector(".page-sidebar").scrollTop = savedScrollPosition;
+      }
+  </script>
+
+  
+   
+
+<footer class="Footer">
+  <section class="FooterWrapper">
+    <svg       width="106"
+      height="140"
+      viewBox="0 0 106 140"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      class="FooterCTASquares"
+    >
+      <path         fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M0.463783 35.0679H70.6628V70.1674H35.5633V105.267L70.6628 105.267H0.463783V35.0679Z"
+        fill="#FF7557"
+      ></path>
+      <rect         width="35.1784"
+        height="35.1784"
+        transform="matrix(-1 0 0 1 105.765 0)"
+        fill="#FFA663"
+      ></rect>
+      <path         fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M105.764 140H35.5645V69.8009H105.764V140ZM70.6641 104.901H35.5645V69.801H70.6641V104.901Z"
+        fill="#E37BD3"
+      ></path>
+    </svg>
+    <div class="FooterGrid">
+      <div class="FooterSocialsLogo">
+        <svg           width="280"
+          height="47"
+          viewBox="0 0 280 47"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          class="FooterSocialsLogoMercedes-Benz"
+        >
+          <circle cx="23.5" cy="23.5" r="20" stroke="#FDFDFC" stroke-width="2.5" fill="none"></circle>
+          <path d="M23.5 4 L16 42 M23.5 4 L31 42 M23.5 4 L23.5 42 M12 28 L35 28" stroke="#FDFDFC" stroke-width="2" fill="none"></path>
+          <text x="52" y="30" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#FDFDFC">Mercedes-Benz</text>
+        </svg>
+
+        <nav class="SocialIcons FooterSocials" arial-label="Social media links">
+          <ul>
+            <li>
+              <a                 href="https://slack.mercedes-benz.com/?source=site"
+                aria-label="Slack"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg viewBox="0 0 24 24" astro-icon="mdi:slack">
+                  <path                     fill="currentColor"
+                    d="M6 15a2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2h2v2m1 0a2 2 0 0 1 2-2 2 2 0 0 1 2 2v5a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-5m2-8a2 2 0 0 1-2-2 2 2 0 0 1 2-2 2 2 0 0 1 2 2v2H9m0 1a2 2 0 0 1 2 2 2 2 0 0 1-2 2H4a2 2 0 0 1-2-2 2 2 0 0 1 2-2h5m8 2a2 2 0 0 1 2-2 2 2 0 0 1 2 2 2 2 0 0 1-2 2h-2v-2m-1 0a2 2 0 0 1-2 2 2 2 0 0 1-2-2V5a2 2 0 0 1 2-2 2 2 0 0 1 2 2v5m-2 8a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2v-2h2m0-1a2 2 0 0 1-2-2 2 2 0 0 1 2-2h5a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-5z"
+                  ></path>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a                 href="https://github.com/Mercedes-Benz/"
+                aria-label="GitHub"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg viewBox="0 0 24 24" astro-icon="mdi:github">
+                  <path                     fill="currentColor"
+                    d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"
+                  ></path>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a                 href="https://twitter.com/labelstudiohq"
+                aria-label="Twitter"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg viewBox="0 0 24 24" astro-icon="mdi:twitter">
+                  <path                     fill="currentColor"
+                    d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"
+                  ></path>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a                 href="https://www.linkedin.com/company/mercedes-benz/"
+                aria-label="LinkedIn"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg viewBox="0 0 24 24" astro-icon="bx:bxl-linkedin">
+                  <circle                     cx="4.983"
+                    cy="5.009"
+                    r="2.188"
+                    fill="currentColor"
+                  ></circle>
+                  <path                     fill="currentColor"
+                    d="M9.237 8.855v12.139h3.769v-6.003c0-1.584.298-3.118 2.262-3.118 1.937 0 1.961 1.811 1.961 3.218v5.904H21v-6.657c0-3.27-.704-5.783-4.526-5.783-1.835 0-3.065 1.007-3.568 1.96h-.051v-1.66H9.237zm-6.142 0H6.87v12.139H3.095z"
+                  ></path>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a                 href="https://www.youtube.com/channel/UCbloiVAlCYzBatZXk-b5rFQ"
+                aria-label="Youtube"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg viewBox="0 0 24 24" astro-icon="mdi:youtube">
+                  <path                     fill="currentColor"
+                    d="m10 15 5.19-3L10 9v6m11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83-.25.9-.83 1.48-1.73 1.73-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44-.9-.25-1.48-.83-1.73-1.73-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83.25-.9.83-1.48 1.73-1.73.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44.9.25 1.48.83 1.73 1.73z"
+                  ></path>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="FooterMenus">
+        <nav class="FooterNav" aria-label="Footer navigation">
+          
+          <div>
+            <h3 class="Text Eyebrow FooterNavHeading">Products</h3>
+            <ul>
+              <li>
+                <a href="https://mercedes-benz.com/">Community Edition</a>
+              </li>
+              <li>
+                <a target="_blank" rel="noopener" href="https://heartex.com/product">Enterprise</a>
+              </li>
+              <li>
+                <a target="_blank" rel="noopener" href="https://heartex.com/pricing">Pricing</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="Text Eyebrow FooterNavHeading">Community</h3>
+            <ul>
+              <li>
+                <a href="https://mercedes-benz.com/blog">Blog</a>
+              </li>
+              <li>
+                <a href="https://mercedes-benz.com/community/">Newsletter</a>
+              </li>
+              <li>
+                <a href="/?source=site">Slack</a>
+              </li>
+              <li>
+                <a href="https://mercedes-benz.com/videos">Webinars</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="Text Eyebrow FooterNavHeading">Documentation</h3>
+            <ul>
+              <li>
+                <a href="/guide">Quickstart</a>
+              </li>
+              <li>
+                <a href="/guide/api">API Reference</a>
+              </li>
+              <li>
+                <a href="/guide/sdk">SDK Reference</a>
+              </li>
+              <li>
+                <a href="/tags">Customizable Tags</a>
+              </li>
+              <li>
+                <a href="/templates">Labeling Templates</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="Text Eyebrow FooterNavHeading">Company</h3>
+            <ul>
+              <li>
+                <a target="_blank" rel="noopener" href="https://heartex.com/company/about-us">About Us</a>
+              </li>
+              <li>
+                <a target="_blank" rel="noopener" href="https://heartex.com/careers">Careers</a>
+              </li>
+              <li>
+                <a href="https://mercedes-benz.com/contact-sales/">Contact</a>
+              </li>
+              <li>
+                <a target="_blank" rel="noopener" href="https://heartex.com/company/privacy-policy">Privacy</a>
+              </li>
+            </ul>
+          </div>
+          
+        </nav>
+        
+        <div class="FooterCTA">
+          <a class="Button FooterCTAButton" href="/guide/quick_start.html"
+            ><span class="Heading XXSmall ButtonText astro-EXBSDJPD"
+              >Quick Start</span></a>
+        </div>
+        
+      </div>
+    </div>
+    <div class="FooterGridCopyright">
+      <p class="Text Small FooterCopyright">
+        ©
+        <script>
+          document.write(new Date().getFullYear());
+        </script>
+        Mercedes-Benz.
+      </p>
+      <a target="_blank" rel="noopener" href="https://heartex.com/company/privacy-policy" class="Text Small"
+        >Privacy Policy</a>
+    </div>
+  </section>
+</footer>
+
+
+  
+<script src="/js/code-tabs.js"></script>
+
+  
+<script src="/js/code-blocks-enhancements.js"></script>
+
+  
+<script src="/js/feedback-form.js"></script>
+
+  
+<script src="/js/header.js"></script>
+
+  
+<script src="/js/intense.min.js"></script>
+
+
+  <script>
+    window.addEventListener('load', function () {
+      const htmlElement = document.querySelector("html");
+
+      htmlElement.classList.add("js-enhanced");
+    })
+</script>
+
+</body>
+</html>

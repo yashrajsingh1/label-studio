@@ -1,0 +1,2725 @@
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  
+    
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-TZ3RQGX');</script>
+    
+  
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <title>Mercedes-Benz Documentation — Import Data into Mercedes-Benz</title>
+  
+  <meta charset="utf-8">
+  <meta name="description" content="Label and annotate data for your machine learning and data science projects using common file formats or the Mercedes-Benz JSON format.">
+
+  <meta property="og:type" content="article">
+  
+  <meta property="og:title" content="Mercedes-Benz Documentation — Import Data into Mercedes-Benz">
+  
+  <meta property="og:description" content="Label and annotate data for your machine learning and data science projects using common file formats or the Mercedes-Benz JSON format.">
+
+  <meta name="twitter:card" content="summary">
+  
+  <meta property="twitter:title" content="Mercedes-Benz Documentation — Import Data into Mercedes-Benz">
+  
+  <meta name="twitter:description" content="Label and annotate data for your machine learning and data science projects using common file formats or the Mercedes-Benz JSON format.">
+
+  
+    <meta name="twitter:image" content="http://mercedes-benz.com/open-graph-image?title=Get%20data%20into%20Label%20Studio&category=guide">
+    <meta property="og:image" content="http://mercedes-benz.com/open-graph-image?title=Get%20data%20into%20Label%20Studio&category=guide">
+  
+
+  <meta name="msapplication-TileColor" content="#4fc08d">
+  <meta name="theme-color" content="#4fc08d">
+  
+  
+    <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" >
+  
+
+  <link rel="preload" href="/fonts/SpaceGrotesk-Bold-subset.woff2" as="font" type="font/woff2" crossorigin>
+
+  
+<link rel="stylesheet" href="/css/styles.css">
+
+
+  
+
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js" defer></script>
+
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ startOnLoad: true });
+  </script>
+
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+<body class="page-tier-opensource">
+  
+  
+
+  
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TZ3RQGX"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  
+
+  
+  
+
+
+
+  
+      <a target="_blank" rel="noopener" href="https://mercedes-benz.com/blog/new-pdf-ocr-document-ai-labeling-interface" class="Alert">
+        <span class="AlertContent">
+          <span class="Badge">New</span>
+          <span class="AlertText">Advanced PDF + OCR Interface for Document AI</span>
+          <svg fill="currentColor" viewBox="0 0 14 12"><path fill-rule="evenodd" d="m8.792.119 4.866 5.654-4.866 5.654-.948-.816 3.627-4.213H.54v-1.25h10.93L7.844.934l.948-.815Z" clip-rule="evenodd"></path></svg>
+        </span>
+      </a>
+
+
+<header class="page-header">
+  <div class="page-header-top-level">
+    <div class="page-header-logo">
+      <a href="/guide" class="HeaderLogo" arial-label="Homepage">
+        
+          <svg width="240" height="30" viewBox="0 0 240 30" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="15" cy="15" r="13.5" stroke="#12110D" stroke-width="2" fill="none"></circle><circle cx="15" cy="15" r="12" stroke="#12110D" stroke-width="0.5" fill="none"></circle><path d="M15,3 L13.8,15 L16.2,15 Z M4.61,21 L15.6,16.04 L14.4,13.96 Z M25.39,21 L15.6,13.96 L14.4,16.04 Z" fill="#12110D"></path><text x="34" y="20" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#12110D" letter-spacing="0.3">Mercedes-Benz Docs</text></svg>
+
+      </a>
+    </div>
+
+    <div class="AlgoliaSearch">
+      <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg" class="AlgoliaSearchIcon">
+        <path d="M8 16C9.77498 15.9996 11.4988 15.4054 12.897 14.312L17.293 18.708L18.707 17.294L14.311 12.898C15.405 11.4997 15.9996 9.77544 16 8C16 3.589 12.411 0 8 0C3.589 0 0 3.589 0 8C0 12.411 3.589 16 8 16ZM8 2C11.309 2 14 4.691 14 8C14 11.309 11.309 14 8 14C4.691 14 2 11.309 2 8C2 4.691 4.691 2 8 2Z" ></path>
+      </svg>
+      <input id="docsearch-input" placeholder="Search docs" data-site-version="opensource" >
+      <svg width="43" height="31" viewBox="0 0 43 31" fill="none" xmlns="http://www.w3.org/2000/svg" class="AlgoliaSearchCmdK">
+        <rect y="0.0457764" width="43" height="30" rx="15" fill="var(--cmd-k-background-color)"></rect>
+        <path d="M11.264 21.0458C9.776 21.0458 8.816 20.1018 8.816 18.6298C8.816 17.0778 9.744 16.1658 11.568 16.1658H12.512V14.4058H11.568C9.744 14.4058 8.816 13.4938 8.816 11.9418C8.816 10.4698 9.776 9.52578 11.264 9.52578C13.056 9.52578 13.632 10.6458 13.632 11.9898V13.3178H15.392V11.9898C15.392 10.6458 15.968 9.52578 17.76 9.52578C19.248 9.52578 20.208 10.4698 20.208 11.9418C20.208 13.4938 19.28 14.4058 17.456 14.4058H16.512V16.1658H17.456C19.28 16.1658 20.208 17.0778 20.208 18.6298C20.208 20.1018 19.248 21.0458 17.76 21.0458C15.968 21.0458 15.392 19.9258 15.392 18.5818V17.2538H13.632V18.5818C13.632 19.9258 13.056 21.0458 11.264 21.0458ZM16.512 11.9578V13.3178H17.456C18.592 13.3178 19.072 12.8538 19.072 11.9418C19.072 10.9978 18.512 10.6298 17.76 10.6298C16.928 10.6298 16.512 11.1418 16.512 11.9578ZM11.568 13.3178H12.512V11.9578C12.512 11.1418 12.096 10.6298 11.264 10.6298C10.512 10.6298 9.952 10.9978 9.952 11.9418C9.952 12.8538 10.432 13.3178 11.568 13.3178ZM13.632 16.1658H15.392V14.4058H13.632V16.1658ZM11.264 19.9418C12.096 19.9418 12.512 19.4298 12.512 18.6138V17.2538H11.568C10.432 17.2538 9.952 17.7178 9.952 18.6298C9.952 19.5738 10.512 19.9418 11.264 19.9418ZM16.512 18.6138C16.512 19.4298 16.928 19.9418 17.76 19.9418C18.512 19.9418 19.072 19.5738 19.072 18.6298C19.072 17.7178 18.592 17.2538 17.456 17.2538H16.512V18.6138ZM27.3546 15.4298V21.0458H26.1546V9.84578H27.3546V14.9338L32.3146 9.84578H33.8826L28.6346 15.1738L34.3626 21.0458H32.7466L27.3546 15.4298Z" fill="var(--cmd-k-icon-color)"></path>
+      </svg>        
+    </div>
+
+    <button class="hamburger-button" aria-label="Toggle Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <nav>
+      
+        
+  <ul class="page-sidebar-list">
+    
+    
+    
+    
+    
+
+    
+
+    
+
+    
+    
+      
+      
+        </ul>
+          
+            <button>
+              Discover & Learn
+              
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+          
+        <ul class="page-sidebar-list">
+      
+      
+      <li>
+        <a href="/guide/get_started.html" class="" >
+          About Mercedes-Benz
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/glossary.html" class="" >
+          Terminology
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/label_studio_compare.html" class="" >
+          Compare editions
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/enterprise_features.html" class="" >
+          Enterprise features
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+        </ul>
+          
+            <button>
+              Install & Setup
+              
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+          
+        <ul class="page-sidebar-list">
+      
+      
+      <li>
+        <a href="/guide/quick_start.html" class="" >
+          Quick start
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/install.html" class="" >
+          Installation
+        </a>
+        
+        
+            <button class="page-sidebar-toggle-children-list">
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+            <ul class="page-sidebar-children-list">
+            
+            
+            
+              <li>
+                <a href="/guide/install_k8s.html" class="page-sidebar-children-link" >
+                  Install using Kubernetes
+                </a>
+                
+                
+                    <ul class="page-sidebar-grandchildren-list">
+                      
+                    <li>
+                      
+                      <a href="/guide/ingress_config.html" class="page-sidebar-children-link" >
+                        Set up an ingress controller
+                      </a>
+                    </li>
+                  
+                  
+                    <li>
+                      
+                      <a href="/guide/install_k8s_airgapped.html" class="page-sidebar-children-link" >
+                        Airgapped Server
+                      </a>
+                    </li>
+                  
+                  
+                    <li>
+                      
+                      <a href="/guide/helm_values.html" class="page-sidebar-children-link" >
+                        Available Helm values
+                      </a>
+                    </li>
+                  
+                  
+                </ul>
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/install_troubleshoot.html" class="page-sidebar-children-link" >
+                  Troubleshooting
+                </a>
+                
+                
+              </li>
+            
+            
+          </ul>
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/storedata.html" class="" >
+          Set up the database
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/persistent_storage.html" class="" >
+          Set up persistent storage
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/start.html" class="" >
+          Start Mercedes-Benz
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/upgrade_community.html" class="" >
+          Upgrade Mercedes-Benz
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/security.html" class="" >
+          Secure Mercedes-Benz
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+        </ul>
+          
+            <button>
+              Create & Manage Projects
+              
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+          
+        <ul class="page-sidebar-list">
+      
+      
+      <li>
+        <a href="/guide/setup_project.html" class="" >
+          Create project
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/setup.html" class="" >
+          Configure labeling interface
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/manage_projects_lso.html" class="" >
+          Manage projects
+        </a>
+        
+        
+            <button class="page-sidebar-toggle-children-list">
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+            <ul class="page-sidebar-children-list">
+            
+            
+            
+              <li>
+                <a href="/guide/project_settings.html" class="page-sidebar-children-link" >
+                  Project settings
+                </a>
+                
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/manage_data.html" class="page-sidebar-children-link" >
+                  Data Manager
+                </a>
+                
+                
+              </li>
+            
+            
+          </ul>
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/labeling.html" class="" >
+          Labeling guide
+        </a>
+        
+        
+            <button class="page-sidebar-toggle-children-list">
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+            <ul class="page-sidebar-children-list">
+            
+            
+            
+              <li>
+                <a href="/guide/hotkeys.html" class="page-sidebar-children-link" >
+                  Hotkeys
+                </a>
+                
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/skip.html" class="page-sidebar-children-link" >
+                  Skipping tasks
+                </a>
+                
+                
+              </li>
+            
+            
+          </ul>
+        
+        
+        
+      </li>
+    
+      
+      
+        </ul>
+          
+            <button>
+              Import & Export
+              
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+          
+        <ul class="page-sidebar-list">
+      
+      
+      <li>
+        <a href="/guide/storage.html" class="" >
+          Add project storage
+        </a>
+        
+        
+            <button class="page-sidebar-toggle-children-list">
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+            <ul class="page-sidebar-children-list">
+            
+            
+            
+              <li>
+                <a href="/guide/storage_s3.html" class="page-sidebar-children-link" >
+                  AWS S3
+                </a>
+                
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/storage_gcp.html" class="page-sidebar-children-link" >
+                  Google Cloud
+                </a>
+                
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/storage_azure.html" class="page-sidebar-children-link" >
+                  Microsoft Azure
+                </a>
+                
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/storage_databricks.html" class="page-sidebar-children-link" >
+                  Databricks
+                </a>
+                
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/storage_redis.html" class="page-sidebar-children-link" >
+                  Redis
+                </a>
+                
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/storage_local.html" class="page-sidebar-children-link" >
+                  Local
+                </a>
+                
+                
+              </li>
+            
+            
+          </ul>
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/tasks.html" class="" aria-current="page">
+          Import data
+        </a>
+        
+        
+            <button class="page-sidebar-toggle-children-list">
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+            <ul class="page-sidebar-children-list">
+            
+            
+            
+              <li>
+                <a href="/guide/task_format.html" class="page-sidebar-children-link" >
+                  Format data for import
+                </a>
+                
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/predictions.html" class="page-sidebar-children-link" >
+                  Import pre-annotations
+                </a>
+                
+                
+              </li>
+            
+            
+          </ul>
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/export.html" class="" >
+          Export annotations
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+        </ul>
+          
+            <button>
+              Machine Learning
+              
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+          
+        <ul class="page-sidebar-list">
+      
+      
+      <li>
+        <a href="/guide/ml.html" class="" >
+          Machine learning integration
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/ml_create.html" class="" >
+          Write your own ML backend
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/ml_tutorials.html" class="" >
+          ML Examples and Tutorials
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+        </ul>
+          
+            <button>
+              Manage Your Organization
+              
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+          
+        <ul class="page-sidebar-list">
+      
+      
+      <li>
+        <a href="/guide/signup.html" class="" >
+          Add users
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/admin_manage.html" class="" >
+          Manage user accounts
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/user_account.html" class="" >
+          Account and settings
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/access_tokens.html" class="" >
+          Access tokens
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+        </ul>
+          
+            <button>
+              Integrate & Extend
+              
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+          
+        <ul class="page-sidebar-list">
+      
+      
+      <li>
+        <a href="/guide/api.html" class="" >
+          API
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/sdk.html" class="" >
+          Python SDK
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/webhooks.html" class="" >
+          Webhooks
+        </a>
+        
+        
+            <button class="page-sidebar-toggle-children-list">
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+            <ul class="page-sidebar-children-list">
+            
+            
+            
+              <li>
+                <a href="/guide/webhook_create.html" class="page-sidebar-children-link" >
+                  Webhook development
+                </a>
+                
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/webhook_reference.html" class="page-sidebar-children-link" >
+                  Webhook event reference
+                </a>
+                
+                
+              </li>
+            
+            
+          </ul>
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/frontend_reference.html" class="" >
+          Frontend
+        </a>
+        
+        
+        
+          
+            </li><li>
+            <a href="https://github.com/Mercedes-Benz/label-studio/blob/develop/CONTRIBUTING.md" target="_blank">Contribution guide
+              <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-external-link">
+                <path d="M10.9002 9.29957L9.46026 9.30898L9.46026 3.34236L1.73377 11.0689L0.698549 10.0336L8.42504 2.30714L2.46783 2.31656L2.46783 0.867251L10.9001 0.867252L10.9002 9.29957Z" fill="#6D87F1"></path>
+              </svg>
+            </a>
+          </li>
+          
+          <li>
+            <a href="https://mercedes-benz.com/integrations/" target="_blank">Integrations directory
+              <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-external-link">
+                <path d="M10.9002 9.29957L9.46026 9.30898L9.46026 3.34236L1.73377 11.0689L0.698549 10.0336L8.42504 2.30714L2.46783 2.31656L2.46783 0.867251L10.9001 0.867252L10.9002 9.29957Z" fill="#6D87F1"></path>
+              </svg>
+            </a>
+          </li>
+        
+        
+      
+    
+    
+</ul>
+
+
+  <button>
+    Support
+    <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+    </svg>
+  </button>
+
+<ul class="page-sidebar-list">
+  
+  
+    <li>
+        <a href="/guide/troubleshooting">Troubleshooting</a>
+      </li>
+    <li>
+      <a href="https://github.com/Mercedes-Benz/label-studio/issues" target="_blank">GitHub Issues
+        <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-external-link">
+          <path d="M10.9002 9.29957L9.46026 9.30898L9.46026 3.34236L1.73377 11.0689L0.698549 10.0336L8.42504 2.30714L2.46783 2.31656L2.46783 0.867251L10.9001 0.867252L10.9002 9.29957Z" fill="#6D87F1"></path>
+        </svg>
+      </a>
+    </li>
+  
+  <li>
+    <a href="https://slack.mercedes-benz.com" target="_blank">Join Slack
+      <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-external-link">
+        <path d="M10.9002 9.29957L9.46026 9.30898L9.46026 3.34236L1.73377 11.0689L0.698549 10.0336L8.42504 2.30714L2.46783 2.31656L2.46783 0.867251L10.9001 0.867252L10.9002 9.29957Z" fill="#6D87F1"></path>
+      </svg>
+    </a>
+  </li>
+  
+    <li>
+      <a href="https://community.mercedes-benz.com/" target="_blank">Ask on Discourse
+        <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-external-link">
+          <path d="M10.9002 9.29957L9.46026 9.30898L9.46026 3.34236L1.73377 11.0689L0.698549 10.0336L8.42504 2.30714L2.46783 2.31656L2.46783 0.867251L10.9001 0.867252L10.9002 9.29957Z" fill="#6D87F1"></path>
+        </svg>
+      </a>
+    </li>
+  
+  <li>
+    <a href="https://mercedes-benz.com/contact-sales/" target="_blank">Contact Sales
+      <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-external-link">
+        <path d="M10.9002 9.29957L9.46026 9.30898L9.46026 3.34236L1.73377 11.0689L0.698549 10.0336L8.42504 2.30714L2.46783 2.31656L2.46783 0.867251L10.9001 0.867252L10.9002 9.29957Z" fill="#6D87F1"></path>
+      </svg>
+    </a>
+  </li>
+  
+</ul>
+
+
+
+  <button>
+    What's New
+    <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+    </svg>
+  </button>
+
+<ul class="page-sidebar-list">  
+    <li>
+      <a href="https://github.com/Mercedes-Benz/label-studio/releases" target="_blank">Release notes
+        <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-external-link">
+          <path d="M10.9002 9.29957L9.46026 9.30898L9.46026 3.34236L1.73377 11.0689L0.698549 10.0336L8.42504 2.30714L2.46783 2.31656L2.46783 0.867251L10.9001 0.867252L10.9002 9.29957Z" fill="#6D87F1"></path>
+        </svg>
+      </a>
+    </li>
+</ul>
+
+
+      
+      <ul class="page-header-main-nav">
+        
+          <li>
+            <a href="https://mercedes-benz.com/learn/">
+              Learn
+              <svg aria-hidden="true" width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg" class="page-header-chevron-icon"><path d="M1 0.5L5 4.5L9 0.5" stroke="#131522"></path></svg>
+            </a>
+            <button>
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+            <ul>
+              <li>
+                <a href="https://mercedes-benz.com/blog/">Blog</a>
+              </li>
+              <li>
+                <a href="https://mercedes-benz.com/videos/">Videos</a>
+              </li>
+              <li class="headerSeparator">
+                <a href="https://mercedes-benz.com/community/">
+                  Community
+                </a>
+              </li>
+              <li>
+                <a href="https://mercedes-benz.com/academic/">Academic Program</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="https://mercedes-benz.com/integrations">Integrations</a>
+          </li>
+          <li>
+            <a href="https://mercedes-benz.com/goenterprise" target="_blank" rel="noopener noreferrer">Enterprise</a>
+          </li>
+          <li>
+            <a href="https://github.com/Mercedes-Benz/label-studio/" class="github-stars" target="_blank" rel="noopener noreferrer">
+              <svg class="github-icon" viewBox="0 0 24 24" width="24" height="24"><path fill="black" d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"></path></svg>
+              
+
+
+
+
+<span class="Text github-stars-count Eyebrow "></span>
+            </a>
+          </li>
+          <li>
+            <a href="/guide/quick_start.html" class="Button [object Object]">
+   Quick start
+</a>
+          </li>
+          
+      </ul>
+    </nav>
+    </div>
+  
+  
+  
+    
+      <ul class="page-header-content-switcher">
+      
+          
+          <li><a href="/guide/" class="active">Docs</a></li>
+          
+        
+          
+          <li><a href="/tutorials/" class="">Tutorials</a></li>
+          
+        
+          
+          <li><a href="/templates/" class="">Templates</a></li>
+          
+        
+          
+        
+          
+          <li><a href="/tags/" class="">Tags</a></li>
+          
+        
+      <li>
+        <a href="https://api.mercedes-benz.com/api-reference/introduction/getting-started" target="_blank">
+          API
+          <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7.93006 6.05393L6.92213 6.06052L6.92213 1.88389L1.51359 7.29243L0.788936 6.56777L6.19748 1.15923L2.02743 1.16582L2.02743 0.151308L7.93006 0.151308L7.93006 6.05393Z" fill="#ffffff"></path>
+            </svg>            
+        </a>
+      </li>
+    </ul>
+    
+  
+</header>
+
+
+  <main class="page-type-guide">
+    
+      <aside class="page-sidebar">
+        
+  <ul class="page-sidebar-list">
+    
+    
+    
+    
+    
+
+    
+
+    
+
+    
+    
+      
+      
+        </ul>
+          
+            <div class="toc-section-heading">
+              
+
+
+
+
+<h3 class="Text  Eyebrow ">Discover &amp; Learn</h3>
+              
+            </div>
+          
+        <ul class="page-sidebar-list">
+      
+      
+      <li>
+        <a href="/guide/get_started.html" class="" >
+          About Mercedes-Benz
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/glossary.html" class="" >
+          Terminology
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/label_studio_compare.html" class="" >
+          Compare editions
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/enterprise_features.html" class="" >
+          Enterprise features
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+        </ul>
+          
+            <div class="toc-section-heading">
+              
+
+
+
+
+<h3 class="Text  Eyebrow ">Install &amp; Setup</h3>
+              
+            </div>
+          
+        <ul class="page-sidebar-list">
+      
+      
+      <li>
+        <a href="/guide/quick_start.html" class="" >
+          Quick start
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/install.html" class="" >
+          Installation
+        </a>
+        
+        
+            <button class="page-sidebar-toggle-children-list">
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+            <ul class="page-sidebar-children-list">
+            
+            
+            
+              <li>
+                <a href="/guide/install_k8s.html" class="page-sidebar-children-link" >
+                  Install using Kubernetes
+                </a>
+                
+                
+                    <ul class="page-sidebar-grandchildren-list">
+                      
+                    <li>
+                      
+                      <a href="/guide/ingress_config.html" class="page-sidebar-children-link" >
+                        Set up an ingress controller
+                      </a>
+                    </li>
+                  
+                  
+                    <li>
+                      
+                      <a href="/guide/install_k8s_airgapped.html" class="page-sidebar-children-link" >
+                        Airgapped Server
+                      </a>
+                    </li>
+                  
+                  
+                    <li>
+                      
+                      <a href="/guide/helm_values.html" class="page-sidebar-children-link" >
+                        Available Helm values
+                      </a>
+                    </li>
+                  
+                  
+                </ul>
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/install_troubleshoot.html" class="page-sidebar-children-link" >
+                  Troubleshooting
+                </a>
+                
+                
+              </li>
+            
+            
+          </ul>
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/storedata.html" class="" >
+          Set up the database
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/persistent_storage.html" class="" >
+          Set up persistent storage
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/start.html" class="" >
+          Start Mercedes-Benz
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/upgrade_community.html" class="" >
+          Upgrade Mercedes-Benz
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/security.html" class="" >
+          Secure Mercedes-Benz
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+        </ul>
+          
+            <div class="toc-section-heading">
+              
+
+
+
+
+<h3 class="Text  Eyebrow ">Create &amp; Manage Projects</h3>
+              
+            </div>
+          
+        <ul class="page-sidebar-list">
+      
+      
+      <li>
+        <a href="/guide/setup_project.html" class="" >
+          Create project
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/setup.html" class="" >
+          Configure labeling interface
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/manage_projects_lso.html" class="" >
+          Manage projects
+        </a>
+        
+        
+            <button class="page-sidebar-toggle-children-list">
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+            <ul class="page-sidebar-children-list">
+            
+            
+            
+              <li>
+                <a href="/guide/project_settings.html" class="page-sidebar-children-link" >
+                  Project settings
+                </a>
+                
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/manage_data.html" class="page-sidebar-children-link" >
+                  Data Manager
+                </a>
+                
+                
+              </li>
+            
+            
+          </ul>
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/labeling.html" class="" >
+          Labeling guide
+        </a>
+        
+        
+            <button class="page-sidebar-toggle-children-list">
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+            <ul class="page-sidebar-children-list">
+            
+            
+            
+              <li>
+                <a href="/guide/hotkeys.html" class="page-sidebar-children-link" >
+                  Hotkeys
+                </a>
+                
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/skip.html" class="page-sidebar-children-link" >
+                  Skipping tasks
+                </a>
+                
+                
+              </li>
+            
+            
+          </ul>
+        
+        
+        
+      </li>
+    
+      
+      
+        </ul>
+          
+            <div class="toc-section-heading">
+              
+
+
+
+
+<h3 class="Text  Eyebrow ">Import &amp; Export</h3>
+              
+            </div>
+          
+        <ul class="page-sidebar-list">
+      
+      
+      <li>
+        <a href="/guide/storage.html" class="" >
+          Add project storage
+        </a>
+        
+        
+            <button class="page-sidebar-toggle-children-list">
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+            <ul class="page-sidebar-children-list">
+            
+            
+            
+              <li>
+                <a href="/guide/storage_s3.html" class="page-sidebar-children-link" >
+                  AWS S3
+                </a>
+                
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/storage_gcp.html" class="page-sidebar-children-link" >
+                  Google Cloud
+                </a>
+                
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/storage_azure.html" class="page-sidebar-children-link" >
+                  Microsoft Azure
+                </a>
+                
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/storage_databricks.html" class="page-sidebar-children-link" >
+                  Databricks
+                </a>
+                
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/storage_redis.html" class="page-sidebar-children-link" >
+                  Redis
+                </a>
+                
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/storage_local.html" class="page-sidebar-children-link" >
+                  Local
+                </a>
+                
+                
+              </li>
+            
+            
+          </ul>
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/tasks.html" class="" aria-current="page">
+          Import data
+        </a>
+        
+        
+            <button class="page-sidebar-toggle-children-list">
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+            <ul class="page-sidebar-children-list">
+            
+            
+            
+              <li>
+                <a href="/guide/task_format.html" class="page-sidebar-children-link" >
+                  Format data for import
+                </a>
+                
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/predictions.html" class="page-sidebar-children-link" >
+                  Import pre-annotations
+                </a>
+                
+                
+              </li>
+            
+            
+          </ul>
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/export.html" class="" >
+          Export annotations
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+        </ul>
+          
+            <div class="toc-section-heading">
+              
+
+
+
+
+<h3 class="Text  Eyebrow ">Machine Learning</h3>
+              
+            </div>
+          
+        <ul class="page-sidebar-list">
+      
+      
+      <li>
+        <a href="/guide/ml.html" class="" >
+          Machine learning integration
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/ml_create.html" class="" >
+          Write your own ML backend
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/ml_tutorials.html" class="" >
+          ML Examples and Tutorials
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+        </ul>
+          
+            <div class="toc-section-heading">
+              
+
+
+
+
+<h3 class="Text  Eyebrow ">Manage Your Organization</h3>
+              
+            </div>
+          
+        <ul class="page-sidebar-list">
+      
+      
+      <li>
+        <a href="/guide/signup.html" class="" >
+          Add users
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/admin_manage.html" class="" >
+          Manage user accounts
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/user_account.html" class="" >
+          Account and settings
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/access_tokens.html" class="" >
+          Access tokens
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+        </ul>
+          
+            <div class="toc-section-heading">
+              
+
+
+
+
+<h3 class="Text  Eyebrow ">Integrate &amp; Extend</h3>
+              
+            </div>
+          
+        <ul class="page-sidebar-list">
+      
+      
+      <li>
+        <a href="/guide/api.html" class="" >
+          API
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/sdk.html" class="" >
+          Python SDK
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/webhooks.html" class="" >
+          Webhooks
+        </a>
+        
+        
+            <button class="page-sidebar-toggle-children-list">
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+            <ul class="page-sidebar-children-list">
+            
+            
+            
+              <li>
+                <a href="/guide/webhook_create.html" class="page-sidebar-children-link" >
+                  Webhook development
+                </a>
+                
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/webhook_reference.html" class="page-sidebar-children-link" >
+                  Webhook event reference
+                </a>
+                
+                
+              </li>
+            
+            
+          </ul>
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/frontend_reference.html" class="" >
+          Frontend
+        </a>
+        
+        
+        
+          
+            </li><li>
+            <a href="https://github.com/Mercedes-Benz/label-studio/blob/develop/CONTRIBUTING.md" target="_blank">Contribution guide
+              <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-external-link">
+                <path d="M10.9002 9.29957L9.46026 9.30898L9.46026 3.34236L1.73377 11.0689L0.698549 10.0336L8.42504 2.30714L2.46783 2.31656L2.46783 0.867251L10.9001 0.867252L10.9002 9.29957Z" fill="#6D87F1"></path>
+              </svg>
+            </a>
+          </li>
+          
+          <li>
+            <a href="https://mercedes-benz.com/integrations/" target="_blank">Integrations directory
+              <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-external-link">
+                <path d="M10.9002 9.29957L9.46026 9.30898L9.46026 3.34236L1.73377 11.0689L0.698549 10.0336L8.42504 2.30714L2.46783 2.31656L2.46783 0.867251L10.9001 0.867252L10.9002 9.29957Z" fill="#6D87F1"></path>
+              </svg>
+            </a>
+          </li>
+        
+        
+      
+    
+    
+</ul>
+
+
+  <div class="toc-section-heading">
+
+
+
+
+<h3 class="Text  Eyebrow ">Support</h3></div>
+
+<ul class="page-sidebar-list">
+  
+  
+    <li>
+        <a href="/guide/troubleshooting">Troubleshooting</a>
+      </li>
+    <li>
+      <a href="https://github.com/Mercedes-Benz/label-studio/issues" target="_blank">GitHub Issues
+        <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-external-link">
+          <path d="M10.9002 9.29957L9.46026 9.30898L9.46026 3.34236L1.73377 11.0689L0.698549 10.0336L8.42504 2.30714L2.46783 2.31656L2.46783 0.867251L10.9001 0.867252L10.9002 9.29957Z" fill="#6D87F1"></path>
+        </svg>
+      </a>
+    </li>
+  
+  <li>
+    <a href="https://slack.mercedes-benz.com" target="_blank">Join Slack
+      <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-external-link">
+        <path d="M10.9002 9.29957L9.46026 9.30898L9.46026 3.34236L1.73377 11.0689L0.698549 10.0336L8.42504 2.30714L2.46783 2.31656L2.46783 0.867251L10.9001 0.867252L10.9002 9.29957Z" fill="#6D87F1"></path>
+      </svg>
+    </a>
+  </li>
+  
+    <li>
+      <a href="https://community.mercedes-benz.com/" target="_blank">Ask on Discourse
+        <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-external-link">
+          <path d="M10.9002 9.29957L9.46026 9.30898L9.46026 3.34236L1.73377 11.0689L0.698549 10.0336L8.42504 2.30714L2.46783 2.31656L2.46783 0.867251L10.9001 0.867252L10.9002 9.29957Z" fill="#6D87F1"></path>
+        </svg>
+      </a>
+    </li>
+  
+  <li>
+    <a href="https://mercedes-benz.com/contact-sales/" target="_blank">Contact Sales
+      <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-external-link">
+        <path d="M10.9002 9.29957L9.46026 9.30898L9.46026 3.34236L1.73377 11.0689L0.698549 10.0336L8.42504 2.30714L2.46783 2.31656L2.46783 0.867251L10.9001 0.867252L10.9002 9.29957Z" fill="#6D87F1"></path>
+      </svg>
+    </a>
+  </li>
+  
+</ul>
+
+
+
+  <div class="toc-section-heading">
+
+
+
+
+<h3 class="Text  Eyebrow ">What&#39;s New</h3></div>
+
+<ul class="page-sidebar-list">  
+    <li>
+      <a href="https://github.com/Mercedes-Benz/label-studio/releases" target="_blank">Release notes
+        <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-external-link">
+          <path d="M10.9002 9.29957L9.46026 9.30898L9.46026 3.34236L1.73377 11.0689L0.698549 10.0336L8.42504 2.30714L2.46783 2.31656L2.46783 0.867251L10.9001 0.867252L10.9002 9.29957Z" fill="#6D87F1"></path>
+        </svg>
+      </a>
+    </li>
+</ul>
+
+
+      </aside>
+    
+    <div class="content">
+      
+        <svg width="50" height="50" viewBox="0 0 77 77" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="content-decoration">
+          <rect x="75.875" y="26" width="25" height="25" transform="rotate(-180 75.875 26)" stroke="#E1DED5" stroke-width="0.504975"></rect>
+          <rect x="50.875" y="51" width="25" height="25" transform="rotate(-180 50.875 51)" stroke="#E1DED5" stroke-width="0.504975"></rect>
+          <rect x="50.875" y="26" width="25" height="25" transform="rotate(-180 50.875 26)" fill="#FF7557"></rect>
+          <rect x="26" y="76" width="25" height="25" transform="rotate(-180 26 76)" stroke="#E1DED5" stroke-width="0.504975"></rect>
+          <rect x="26" y="51" width="25" height="25" transform="rotate(-180 26 51)" fill="#E37BD3"></rect>
+          <rect x="26" y="26" width="25" height="25" transform="rotate(-180 26 26)" fill="#FFA663"></rect>
+        </svg>
+      
+        
+      <div class="container">
+        
+
+
+
+
+
+
+
+<div class="content-grid">
+  <div class="content-markdown">
+    
+   
+      
+
+
+
+
+<h1 class="Heading home-page-title XLarge ">Get data into Mercedes-Benz</h1>
+   
+   
+   
+    <p>Get data into Mercedes-Benz by importing files, referencing URLs, or syncing with cloud or database storage. </p>
+<ul>
+<li>If your data is stored in a cloud storage bucket, see <a href="storage.html">Sync data from cloud or database storage</a>.</li>
+<li>If your data is stored in a Redis database, see <a href="storage.html">Sync data from cloud or database storage</a>.</li>
+<li>If your data is stored at internet-accessible URLs, in files, or directories, <a href="#Import-data-from-the-Label-Studio-UI">import it from the Mercedes-Benz UI</a>.</li>
+<li>If your data is stored locally, <a href="#Import-data-from-a-local-directory">import it into Mercedes-Benz</a>.</li>
+<li>If your data contains predictions or pre-annotations, see <a href="predictions.html">Import pre-annotated data into Mercedes-Benz</a>.</li>
+</ul>
+<h2 id="General-guidelines-for-importing-data"><a href="#General-guidelines-for-importing-data" class="headerlink" title="General guidelines for importing data"></a>General guidelines for importing data</h2><ul>
+<li>It’s best to keep about 100k tasks &#x2F; 100k annotations per project for optimal performance.</li>
+<li>Avoid frequent imports because each new import requires lengthy background operations. One import per 30 seconds will work without overloads.</li>
+</ul>
+<div class="admonition attention"><p class="admonition-title">attention</p><p>For large projects or business critical projects, do not <a href="#Import-data-from-the-Label-Studio-UI">upload media files through the Mercedes-Benz interface</a>. This is especially true for files such as images, audio, video, timeseries, etc.</p>
+<p>Uploading data through the Mercedes-Benz UI works fine for proof of concept projects, but it is not recommended for larger projects. Mercedes-Benz is not designed as a hosting service at scale and does not have backups for imported media resources.</p>
+<p><strong>Risks when uploading through the UI</strong>:<br>
+You will face challenges when attempting to do the following:</p>
+<ul>
+<li>Importing tasks with predictions</li>
+<li>Exporting your data</li>
+<li>Moving your data to another Mercedes-Benz instance</li>
+<li>Redeploying Mercedes-Benz</li>
+</ul>
+<p>We <em><strong>strongly</strong></em> recommend that you configure <a href="storage">source storage</a> instead.</p>
+</div>
+
+<h2 id="Types-of-data-you-can-import-into-Label-Studio"><a href="#Types-of-data-you-can-import-into-Label-Studio" class="headerlink" title="Types of data you can import into Mercedes-Benz"></a>Types of data you can import into Mercedes-Benz</h2><p>You can import many types of data, including text, timeseries, audio, and image data. The file types supported depend on the type of data. </p>
+<table>
+<thead>
+<tr>
+<th>Data type</th>
+<th>Supported file types</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Audio</td>
+<td>.flac, .m4a, .mp3, .ogg, .wav</td>
+</tr>
+<tr>
+<td><a href="#Import-HTML-data">HyperText (HTML)</a></td>
+<td>.html, .htm, .xml</td>
+</tr>
+<tr>
+<td>Images</td>
+<td>.bmp, .gif, .jpg, .png, .svg, .webp</td>
+</tr>
+<tr>
+<td>Paragraphs (Dialogue)</td>
+<td>.json</td>
+</tr>
+<tr>
+<td>Structured data</td>
+<td>.csv, .tsv</td>
+</tr>
+<tr>
+<td><a href="#Plain-text">Text</a></td>
+<td>.txt, .json</td>
+</tr>
+<tr>
+<td><a href="#Import-CSV-or-TSV-data">Time series</a></td>
+<td>.csv, .tsv, .json</td>
+</tr>
+<tr>
+<td><a href="#Basic-Label-Studio-JSON-format">Tasks with multiple data types</a></td>
+<td>.csv, .tsv, .json, .jsonl*, .parquet*+</td>
+</tr>
+<tr>
+<td>Video</td>
+<td>.mp4, .webm</td>
+</tr>
+</tbody></table>
+<p>* <em>Cloud storage only</em></p>
+<p>+ <em>Mercedes-Benz Enterprise and Starter Cloud only</em></p>
+<p>If you don’t see a supported data or file type that you want to import, please let us know by submitting an issue to the <a className="no-go" target="_blank" rel="noopener" href="https://github.com/mercedes-benz/label-studio/issues">Mercedes-Benz Repository</a>.</p>
+<h3 id="How-to-import-your-data"><a href="#How-to-import-your-data" class="headerlink" title="How to import your data"></a>How to import your data</h3><p>The most secure and reliable method to import your data is to store the data outside of Mercedes-Benz and import references to the data using URLs. You can import a list of URLs in a TXT, CSV, or TSV file, or reference the URLs in <a href="#Basic-Label-Studio-JSON-format">JSON task format</a>.</p>
+<p>If you’re importing audio, image, or video data, you must use URLs to refer to those data types. </p>
+<p>If you’re importing HTML, text, dialogue, or timeseries data using the <code>&lt;HyperText&gt;</code>, <code>&lt;Text&gt;</code>, <code>&lt;Paragraphs&gt;</code>, or <code>&lt;TimeSeries&gt;</code> tags in your labeling configuration, you can either load data directly, or load data from a URL. </p>
+<ul>
+<li>To load data from a URL, specify <code>valueType=&quot;url&quot;</code> in your labeling configuration. </li>
+<li>To load data directly into the Mercedes-Benz database, specify <code>valueType=&quot;text&quot;</code> for <code>HyperText</code> or <code>Text</code> data, or <code>valueType=&quot;json&quot;</code> for <code>Paragraph</code> or <code>TimeSeries</code> data.</li>
+</ul>
+<div class="admonition note"><p class="admonition-title">note</p><p>If you load data from a URL, the data is not saved in Mercedes-Benz. If you want an annotated task export to include the data that you annotated, you must import the data into the Mercedes-Benz database without using URL references, or combine the data with the annotations after exporting.</p>
+</div>
+
+<br>
+<details><summary><b>Click to expand example configurations with each valueType</b></summary><h4 id="Example-with-valueType-”text”"><a href="#Example-with-valueType-”text”" class="headerlink" title="Example with valueType&#x3D;”text”"></a>Example with valueType&#x3D;”text”</h4><div style="margin-left: 1em;">
+
+<p>Labeling configuration:</p>
+<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">View</span>&gt;</span> 
+  <span class="hljs-tag">&lt;<span class="hljs-name">Text</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;text1&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">valueType</span>=<span class="hljs-string">&quot;text&quot;</span>&gt;</span> 
+<span class="hljs-tag">&lt;/<span class="hljs-name">View</span>&gt;</span></code></pre>
+
+<p>JSON file to import:</p>
+<pre><code class="hljs json"><span class="hljs-punctuation">&#123;</span>
+  <span class="hljs-attr">&quot;text&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;My awesome opossum&quot;</span>
+<span class="hljs-punctuation">&#125;</span></code></pre>
+
+<p>CSV file to import:</p>
+<pre><code class="hljs csv">text
+My awesome opossum</code></pre>
+
+</div>
+
+<h4 id="Example-with-valueType-”url”"><a href="#Example-with-valueType-”url”" class="headerlink" title="Example with valueType&#x3D;”url”"></a>Example with valueType&#x3D;”url”</h4><div style="margin-left: 1em;">
+
+<p>Labeling config:</p>
+<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">View</span>&gt;</span> 
+  <span class="hljs-tag">&lt;<span class="hljs-name">Text</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;text1&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">valueType</span>=<span class="hljs-string">&quot;url&quot;</span>&gt;</span> 
+<span class="hljs-tag">&lt;/<span class="hljs-name">View</span>&gt;</span></code></pre>
+
+<p>Import JSON file:</p>
+<pre><code class="hljs json"><span class="hljs-punctuation">&#123;</span>
+  <span class="hljs-attr">&quot;text&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;http://example.com/text.txt&quot;</span>
+<span class="hljs-punctuation">&#125;</span></code></pre>
+
+<p>Import CSV file:</p>
+<pre><code class="hljs csv">text
+http://example.com/text.txt</code></pre>
+
+</div>
+</details>
+
+
+<h2 id="How-to-retrieve-data"><a href="#How-to-retrieve-data" class="headerlink" title="How to retrieve data"></a>How to retrieve data</h2><p>There are several steps to retrieve the data to display in the <code>Object</code> tag. The data retrieval is also used in <a href="/templates/serp_ranking.html">dynamic choices</a> and <a href="/templates/inventory_tracking.html">labels</a>. Use the following parameters in the <code>Object</code> tag.</p>
+<h3 id="value-required"><a href="#value-required" class="headerlink" title="value (required)"></a><code>value</code> (required)</h3><p>The <code>value</code> parameter represents the source of the data. It can be plain text or a step of complex data retrieval system. It can be denoted using the following forms:
+<code>value</code> (required)</p>
+<h4 id="Variables"><a href="#Variables" class="headerlink" title="Variables"></a>Variables</h4><p>In most cases, the <code>Object</code> tag has the value with one variable (prefixed with a $) in it.</p>
+<p>For example, <code>&lt;Audio value=&quot;$audio&quot; ... /&gt;</code> seeks the “audio” field in the imported JSON object:</p>
+<pre><code class="hljs json"><span class="hljs-punctuation">&#123;</span>
+  <span class="hljs-attr">&quot;data&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span>
+    <span class="hljs-attr">&quot;audio&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;https://host.name/myaudio.wav&quot;</span>
+  <span class="hljs-punctuation">&#125;</span>
+<span class="hljs-punctuation">&#125;</span></code></pre>
+
+<h4 id="Plain-text"><a href="#Plain-text" class="headerlink" title="Plain text"></a>Plain text</h4><p>The value parameter can be a string. It is useful for <code>Header</code> and <code>Text</code>. </p>
+<p>Also, you can use the content of the tag as value. It is useful for descriptive text tags and is applied for <code>Label</code> and <code>Choice</code>.</p>
+<p>For example:</p>
+<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">Header</span>&gt;</span>Label audio:<span class="hljs-tag">&lt;/<span class="hljs-name">Header</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">Header</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;Label only fully visible cars&quot;</span> /&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">Text</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;instruction&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;Label only fully visible cars&quot;</span> /&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">Label</span>&gt;</span>cat<span class="hljs-tag">&lt;/<span class="hljs-name">Label</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">Choice</span>&gt;</span>other<span class="hljs-tag">&lt;/<span class="hljs-name">Choice</span>&gt;</span></code></pre>
+
+<h4 id="Other-cases"><a href="#Other-cases" class="headerlink" title="Other cases"></a>Other cases</h4><ol>
+<li><p>The <code>value</code> parameter can be a text containing variables prefixed by $.</p>
+<p> For example:</p>
+ <pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">Header</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;url: $image&quot;</span>/&gt;</span></code></pre>
+</li>
+<li><p>The <code>value</code> parameter can also refer to nested data in arrays and dicts (<code>$texts[2]</code> and <code>$audio.url</code>). </p>
+<p> For example: </p>
+ <pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">Image</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;image&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;$images[0]&quot;</span>/&gt;</span></code></pre></li>
+</ol>
+<h3 id="valueType-optional"><a href="#valueType-optional" class="headerlink" title="valueType (optional)"></a><code>valueType</code> (optional)</h3><p>The <code>valueType</code> parameter defines how to treat the data retrieved from the previous steps.
+There are two options such as the  “url” and raw data. Currently the raw data input can be  “text” or “json”. The  “text” is used for <code>HyperText</code> and <code>Text</code> tags and “json” is used for <code>TimeSeries</code> tag. </p>
+<p>For example:</p>
+<ul>
+<li><p>Using “url”: <code>&lt;Text name=&quot;text1&quot; value=&quot;$text&quot; valueType=&quot;url&quot;/&gt;</code> displays the text loaded by the URL.</p>
+</li>
+<li><p>Using “text”: <code>&lt;Text name=&quot;text&quot; value=&quot;$text&quot; valueType=&quot;text&quot;/&gt;</code> displays the URL without loading the text.</p>
+</li>
+</ul>
+<h3 id="resolver-optional"><a href="#resolver-optional" class="headerlink" title="resolver (optional)"></a><code>resolver</code> (optional)</h3><p>Use this parameter to retrieve data from multi-column csv on <a href="/guide/storage.html">S3 or other cloud storage</a>. Mercedes-Benz can retrieve it only in run-time, so it’s secure.</p>
+<p>If you import a file with a list of tasks, and every task in this list is a link to another file in the storage. In this case, you can use the <code>resolver</code> parameter to retrieve the content of these files from a storage. </p>
+<h4 id="Use-Case"><a href="#Use-Case" class="headerlink" title="Use Case"></a>Use Case</h4><p>There is a list of tasks, where the “remote” field of every task is a link to a CSV file in the storage. Every CSV file has a “text” column with text to be labeled. Every CSV file has a “text” column with text to be labeled. For example:</p>
+<p>Tasks:</p>
+<pre><code class="hljs json"><span class="hljs-punctuation">[</span>
+    <span class="hljs-punctuation">&#123;</span> <span class="hljs-attr">&quot;remote&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;s3://bucket/text1.csv&quot;</span> <span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-punctuation">&#123;</span> <span class="hljs-attr">&quot;remote&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;s3://bucket/text2.csv&quot;</span> <span class="hljs-punctuation">&#125;</span>
+<span class="hljs-punctuation">]</span></code></pre>
+
+<p>CSV file:</p>
+<pre><code class="hljs csv">id;text
+12;The most flexible data annotation tool. Quickly installable. Build custom UIs or use pre-built labeling templates.</code></pre>
+
+<h4 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h4><p>To retrieve the file, use the following parameters:</p>
+<ol>
+<li><p><code>value=&quot;$remote&quot;</code>: The URL to CSV on S3 is in “remote” field of task data. If you use the <code>resolver</code> parameter the <code>value</code> is always treated as URL, so you don’t need to set <code>valueType</code>.</p>
+</li>
+<li><p><code>resolver=&quot;csv|separator=;|column=text&quot;</code>: Load this file in run-time, parse it as CSV, and get the “text” column from the first row. </p>
+</li>
+<li><p>Display the result.</p>
+</li>
+</ol>
+<h4 id="Syntax"><a href="#Syntax" class="headerlink" title="Syntax"></a>Syntax</h4><p>The syntax for the <code>resolver</code> parameter consists of a list of options separated by a <code>|</code> symbol.</p>
+<p>The first option is the type of file.</p>
+<div class="admonition note"><p class="admonition-title">note</p><p>Currently, only CSV files are supported.</p>
+</div>
+
+<p>The remaining options are parameters of the specified file type with optional values. The parameters for CSV files are:</p>
+<ul>
+<li><code>headless</code>: A CSV file does not have headers (this parameter is boolean and can’t have a value).</li>
+<li><code>separator=;</code>: CSV separator, usually can be detected automatically.</li>
+<li><code>column=1</code>: In <code>headless</code> mode use zero-based index, otherwise use column name.</li>
+</ul>
+<p>For example, <code>resolver=&quot;csv|headless|separator=;|column=1&quot;</code></p>
+<h2 id="How-to-format-your-data-to-import-it"><a href="#How-to-format-your-data-to-import-it" class="headerlink" title="How to format your data to import it"></a>How to format your data to import it</h2><p>Mercedes-Benz treats different file types different ways. </p>
+<p>If you want to import multiple types of data to label at the same time, for example, images with captions or audio recordings with transcripts, you must use the <a href="#Basic-Label-Studio-JSON-format">basic Mercedes-Benz JSON format</a>. </p>
+<p><a href="#How-to-import-your-data">You can also use a CSV file or a JSON list of tasks to point to URLs with the data</a>, rather than directly importing the data if you need to import thousands of files. You can import files containing up to 250,000 tasks or up to 50MB in size into Mercedes-Benz.</p>
+<p>If you’re specifying data in a cloud storage bucket or container, and you don’t want to <a href="storage.html">sync cloud storage</a>, create and specify <a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ShareObjectPreSignedURL.html">presigned URLs for Amazon S3 storage</a>, <a target="_blank" rel="noopener" href="https://cloud.google.com/storage/docs/access-control/signed-urls">signed URLs for Google Cloud Storage</a>, or <a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/azure/storage/common/storage-sas-overview">shared access signatures for Microsoft Azure</a> in a JSON, CSV, TSV or TXT file. </p>
+<h3 id="Basic-Label-Studio-JSON-format"><a href="#Basic-Label-Studio-JSON-format" class="headerlink" title="Basic Mercedes-Benz JSON format"></a>Basic Mercedes-Benz JSON format</h3><p>The best way to import data into Mercedes-Benz is to use a JSON-formatted list of tasks. The <code>data</code> key of the JSON file references each task as an entry in a JSON dictionary. If there is no <code>data</code> key, Mercedes-Benz interprets the entire JSON file as one task. </p>
+<p>In the <code>data</code> JSON dictionary, use key-value pairs that correspond to the source key expected by the object tag in the <a href="setup.html#Customize-the-labeling-interface-for-your-project">label configuration</a> that you set up for your project. </p>
+<p>Depending on the type of object tag, Mercedes-Benz interprets field values differently:</p>
+<ul>
+<li><code>&lt;Text value=&quot;$key&quot;&gt;</code>: <code>value</code> is interpreted as plain text.</li>
+<li><code>&lt;HyperText value=&quot;$key&quot;&gt;</code>: <code>value</code> is interpreted as HTML markup.</li>
+<li><code>&lt;HyperText value=&quot;$key&quot; encoding=&quot;base64&quot;&gt;</code>: <code>value</code> is interpreted as a base64 encoded HTML markup.</li>
+<li><code>&lt;Audio value=&quot;$key&quot;&gt;</code>: <code>value</code> is interpreted as a valid URL to an audio file with CORS policy enabled on the server side.</li>
+<li><code>&lt;Image value=&quot;$key&quot;&gt;</code>: <code>value</code> is interpreted as a valid URL to an image file</li>
+<li><code>&lt;TimeSeries value=&quot;$key&quot;&gt;</code>: <code>value</code> is interpreted as a valid URL to a CSV&#x2F;TSV file if <code>valueType=&quot;url&quot;</code>, otherwise it is interpreted as a JSON dictionary with column arrays: <code>&quot;value&quot;: &#123;&quot;first_column&quot;: [...], ...&#125;</code> if <code>valueType=&quot;json&quot;</code>. See more about <a href="#How-to-import-your-data">how to use valueType</a>.</li>
+</ul>
+<p>You can add other, optional keys to the JSON file.</p>
+<table>
+<thead>
+<tr>
+<th>JSON key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>annotations</td>
+<td>Optional. List of annotations exported from Mercedes-Benz. <a href="export.html#Raw-JSON-format-of-completed-tasks">Mercedes-Benz’s annotation format</a> allows you to import annotation results in order to use them in subsequent labeling tasks.</td>
+</tr>
+<tr>
+<td>predictions</td>
+<td>Optional. List of model prediction results, where each result is saved using <a href="export.html#Raw-JSON-format-of-completed-tasks">Mercedes-Benz’s prediction format</a>. Import predictions for automatic task pre-labeling and active learning. See <a href="predictions.html">Import predicted labels into Mercedes-Benz</a></td>
+</tr>
+</tbody></table>
+<p>See <a href="export.html#Relevant-JSON-property-descriptions">Relevant JSON property descriptions</a> in the export documentation for more details about the JSON format of exported tasks.</p>
+<h3 id="Example-JSON-format"><a href="#Example-JSON-format" class="headerlink" title="Example JSON format"></a>Example JSON format</h3><p>For an example text classification project, you can set up a label config like the following:</p>
+<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">View</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">Text</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;message&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;$my_text&quot;</span>/&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">Choices</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;sentiment_class&quot;</span> <span class="hljs-attr">toName</span>=<span class="hljs-string">&quot;message&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Choice</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;Positive&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Choice</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;Neutral&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Choice</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;Negative&quot;</span>/&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">Choices</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">View</span>&gt;</span>
+</code></pre>
+
+<p>You can then import text tasks to label that match the following JSON format:</p>
+<pre><code class="hljs yaml">[&#123;
+  <span class="hljs-comment"># &quot;data&quot; must contain the &quot;my_text&quot; field defined in the text labeling config as the value and can optionally include other fields</span>
+  <span class="hljs-attr">&quot;data&quot;:</span> &#123;
+    <span class="hljs-attr">&quot;my_text&quot;:</span> <span class="hljs-string">&quot;Opossums are great&quot;</span>,
+    <span class="hljs-attr">&quot;ref_id&quot;:</span> <span class="hljs-number">456</span>,
+    <span class="hljs-attr">&quot;meta_info&quot;:</span> &#123;
+      <span class="hljs-attr">&quot;timestamp&quot;:</span> <span class="hljs-string">&quot;2020-03-09 18:15:28.212882&quot;</span>,
+      <span class="hljs-attr">&quot;location&quot;:</span> <span class="hljs-string">&quot;North Pole&quot;</span>
+    &#125; 
+  &#125;,
+
+  <span class="hljs-comment"># annotations are not required and are the list of annotation results matching the labeling config schema</span>
+  <span class="hljs-attr">&quot;annotations&quot;:</span> [&#123;
+    <span class="hljs-attr">&quot;result&quot;:</span> [&#123;
+      <span class="hljs-attr">&quot;from_name&quot;:</span> <span class="hljs-string">&quot;sentiment_class&quot;</span>,
+      <span class="hljs-attr">&quot;to_name&quot;:</span> <span class="hljs-string">&quot;message&quot;</span>,
+      <span class="hljs-attr">&quot;type&quot;:</span> <span class="hljs-string">&quot;choices&quot;</span>,
+      <span class="hljs-attr">&quot;readonly&quot;:</span> <span class="hljs-literal">false</span>,
+      <span class="hljs-attr">&quot;hidden&quot;:</span> <span class="hljs-literal">false</span>,
+      <span class="hljs-attr">&quot;value&quot;:</span> &#123;
+        <span class="hljs-attr">&quot;choices&quot;:</span> [<span class="hljs-string">&quot;Positive&quot;</span>]
+      &#125;
+    &#125;]
+  &#125;],
+
+  <span class="hljs-comment"># &quot;predictions&quot; are pretty similar to &quot;annotations&quot; </span>
+  <span class="hljs-comment"># except that they also include some ML-related fields like a prediction &quot;score&quot;</span>
+  <span class="hljs-attr">&quot;predictions&quot;:</span> [&#123;
+    <span class="hljs-attr">&quot;result&quot;:</span> [&#123;
+      <span class="hljs-attr">&quot;from_name&quot;:</span> <span class="hljs-string">&quot;sentiment_class&quot;</span>,
+      <span class="hljs-attr">&quot;to_name&quot;:</span> <span class="hljs-string">&quot;message&quot;</span>,
+      <span class="hljs-attr">&quot;type&quot;:</span> <span class="hljs-string">&quot;choices&quot;</span>,
+      <span class="hljs-attr">&quot;readonly&quot;:</span> <span class="hljs-literal">false</span>,
+      <span class="hljs-attr">&quot;hidden&quot;:</span> <span class="hljs-literal">false</span>,
+      <span class="hljs-attr">&quot;value&quot;:</span> &#123;
+        <span class="hljs-attr">&quot;choices&quot;:</span> [<span class="hljs-string">&quot;Neutral&quot;</span>]
+      &#125;
+    &#125;],
+  <span class="hljs-comment"># score is used for active learning sampling mode</span>
+    <span class="hljs-attr">&quot;score&quot;:</span> <span class="hljs-number">0.95</span>
+  &#125;]
+&#125;]</code></pre>
+
+<h4 id="Example-JSON-with-multiple-tasks"><a href="#Example-JSON-with-multiple-tasks" class="headerlink" title="Example JSON with multiple tasks"></a>Example JSON with multiple tasks</h4><p>You can place multiple tasks in one JSON file if you’re uploading the JSON file using Mercedes-Benz Import Dialog only (Data Manager &#x3D;&gt; Import button), or when importing from <a href="storage.html">cloud storage</a>. When using cloud storage, you must ensure every task in the file is formatted the same way. </p>
+<p>If you’re using <a href="storage.html">Source cloud storage</a>, you can also place multiple tasks in a newline-delimited JSON file (JSONL&#x2F;NDJSON).</p>
+<br>
+<details><summary><b>To place multiple tasks in one JSON file, use this JSON format example</b></summary><p>This example contains multiple text classification tasks with no annotations or predictions.</p>
+<p>The “data” parameter must contain the “my_text” field defined in the text labeling config and can optionally include other fields. The “id” parameter is not required.</p>
+<pre><code class="hljs json"><span class="hljs-punctuation">[</span>
+   <span class="hljs-punctuation">&#123;</span>
+      <span class="hljs-attr">&quot;id&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-number">1</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">&quot;data&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-punctuation">&#123;</span>
+         <span class="hljs-attr">&quot;my_text&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;Opossums like to be aloft in trees.&quot;</span>
+      <span class="hljs-punctuation">&#125;</span>
+   <span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span>
+   <span class="hljs-punctuation">&#123;</span>
+      <span class="hljs-attr">&quot;id&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-number">2</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">&quot;data&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-punctuation">&#123;</span>
+         <span class="hljs-attr">&quot;my_text&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;Opossums are opportunistic.&quot;</span>
+      <span class="hljs-punctuation">&#125;</span>
+   <span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span>
+   <span class="hljs-punctuation">&#123;</span>
+      <span class="hljs-attr">&quot;id&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-number">3</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">&quot;data&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-punctuation">&#123;</span>
+         <span class="hljs-attr">&quot;my_text&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;Opossums like to forage for food.&quot;</span>
+      <span class="hljs-punctuation">&#125;</span>
+   <span class="hljs-punctuation">&#125;</span>
+<span class="hljs-punctuation">]</span></code></pre>
+
+<p>You can also use the bare contents of the “data” field without nesting, as long as you have no annotations or predictions.</p>
+<pre><code class="hljs json"><span class="hljs-punctuation">[</span>
+   <span class="hljs-punctuation">&#123;</span>
+      <span class="hljs-attr">&quot;my_text&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;Opossums like to be aloft in trees.&quot;</span>
+   <span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span>
+   <span class="hljs-punctuation">&#123;</span>
+      <span class="hljs-attr">&quot;my_text&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;Opossums are opportunistic.&quot;</span>
+   <span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span>
+   <span class="hljs-punctuation">&#123;</span>
+      <span class="hljs-attr">&quot;my_text&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;Opossums like to forage for food.&quot;</span>
+   <span class="hljs-punctuation">&#125;</span>
+<span class="hljs-punctuation">]</span></code></pre></details>
+
+<h4 id="Example-JSON-for-older-versions-of-Label-Studio"><a href="#Example-JSON-for-older-versions-of-Label-Studio" class="headerlink" title="Example JSON for older versions of Mercedes-Benz"></a>Example JSON for older versions of Mercedes-Benz</h4><p>If you’re still using a Mercedes-Benz version earlier than 1.0.0, refer to this example JSON format. </p>
+<br>
+<details><summary><b>For versions of Mercedes-Benz earlier than 1.0.0, use this JSON format example.</b></summary><p>If you’re using a version of Mercedes-Benz earlier than version 1.0.0, import tasks that match the following JSON format: </p>
+<pre><code class="hljs json"><span class="hljs-punctuation">[</span><span class="hljs-punctuation">&#123;</span>
+  # <span class="hljs-string">&quot;data&quot;</span> must contain the <span class="hljs-string">&quot;my_text&quot;</span> field defined by labeling config<span class="hljs-punctuation">,</span>
+  # and can optionally include other fields
+  <span class="hljs-attr">&quot;data&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span>
+    <span class="hljs-attr">&quot;my_text&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Opossums are great&quot;</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;ref_id&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">456</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;meta_info&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span>
+      <span class="hljs-attr">&quot;timestamp&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;2020-03-09 18:15:28.212882&quot;</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">&quot;location&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;North Pole&quot;</span>
+    <span class="hljs-punctuation">&#125;</span> 
+  <span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span>
+
+  # completions are the list of annotation results matching the labeling config schema
+  <span class="hljs-attr">&quot;completions&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-punctuation">&#123;</span>
+    <span class="hljs-attr">&quot;result&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-punctuation">&#123;</span>
+      <span class="hljs-attr">&quot;from_name&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;sentiment_class&quot;</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">&quot;to_name&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;message&quot;</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">&quot;type&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;choices&quot;</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">&quot;value&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span>
+        <span class="hljs-attr">&quot;choices&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-string">&quot;Positive&quot;</span><span class="hljs-punctuation">]</span>
+      <span class="hljs-punctuation">&#125;</span>
+    <span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">]</span>
+  <span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
+
+  # <span class="hljs-string">&quot;predictions&quot;</span> are pretty similar to <span class="hljs-string">&quot;completions&quot;</span> 
+  # except that they also include some ML-related fields like a prediction <span class="hljs-string">&quot;score&quot;</span>
+  <span class="hljs-attr">&quot;predictions&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-punctuation">&#123;</span>
+    <span class="hljs-attr">&quot;result&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-punctuation">&#123;</span>
+      <span class="hljs-attr">&quot;from_name&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;sentiment_class&quot;</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">&quot;to_name&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;message&quot;</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">&quot;type&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;choices&quot;</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">&quot;value&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span>
+        <span class="hljs-attr">&quot;choices&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-string">&quot;Neutral&quot;</span><span class="hljs-punctuation">]</span>
+      <span class="hljs-punctuation">&#125;</span>
+    <span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
+  # score is used for active learning sampling mode
+    <span class="hljs-attr">&quot;score&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">0.95</span>
+  <span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">]</span>
+<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">]</span></code></pre></details>
+
+<h3 id="Import-CSV-or-TSV-data"><a href="#Import-CSV-or-TSV-data" class="headerlink" title="Import CSV or TSV data"></a>Import CSV or TSV data</h3><p>When you import a CSV &#x2F; TSV formatted text file, Mercedes-Benz interprets the column names are as task data keys that correspond to the labeling config you set up: </p>
+<pre><code class="hljs csv">my_text,optional_field
+this is a first task,123
+this is a second task,456</code></pre>
+
+<div class="admonition note"><p class="admonition-title">note</p><p>If your labeling config has a <code>TimeSeries</code> tag, Mercedes-Benz interprets the CSV/TSV as time series data when you import it. This CSV/TSV is hosted as a resource file and Mercedes-Benz automatically creates a task with a link to the uploaded CSV/TSV.</p>
+</div>
+
+<h3 id="Plain-text-1"><a href="#Plain-text-1" class="headerlink" title="Plain text"></a>Plain text</h3><p>Import data as plain text. Mercedes-Benz interprets each line in a plain text file as a separate data labeling task. </p>
+<p>You might use plain text for labeling tasks if you have only one stream of input data, and only one <a href="/tags">object tag</a> specified in your label config. </p>
+<pre><code class="hljs text">this is a first task
+this is a second task</code></pre>
+
+<p>If you want to import entire plain text files without each line becoming a new labeling task, customize the labeling configuration to specify <code>valueType=&quot;url&quot;</code> in the Text tag. See the <a href="/tags/text.html">Text tag documentation</a>. See more about <a href="#How-to-import-your-data">how to use the valueType field</a>.</p>
+<h3 id="Import-HTML-data"><a href="#Import-HTML-data" class="headerlink" title="Import HTML data"></a>Import HTML data</h3><p>You can import <code>HyperText</code> data in HTML-formatted files and annotate them in Mercedes-Benz. When you directly import HTML files, the content is minified by compressing the text, removing whitespace and other nonfunctional data in the HTML code. Annotations that you create are applied to the minified version of the HTML.</p>
+<p>If you want to label HTML files without minifying the data, you can do one of the following:</p>
+<ul>
+<li>Import the HTML files as BLOB storage from <a href="storage.html">external cloud storage such as Amazon S3 or Google Cloud Storage</a>.</li>
+<li>Update the <code>HyperText</code> tag in your labeling configuration to specify <code>valueType=&quot;url&quot;</code> as described in <a href="#How-to-import-your-data">How to import your data</a> on this page.</li>
+</ul>
+<h2 id="Import-data-from-a-local-directory"><a href="#Import-data-from-a-local-directory" class="headerlink" title="Import data from a local directory"></a>Import data from a local directory</h2><p>To import data from a local directory, you have two options:</p>
+<ul>
+<li>Run a web server to generate URLs for the files, then upload a file that references the URLs to Mercedes-Benz. </li>
+<li>Add the file directory as a source or target <a href="storage.html#Local-storage">local storage</a> connection in the Mercedes-Benz UI.</li>
+</ul>
+<h3 id="Run-a-web-server-to-generate-URLs-to-local-files"><a href="#Run-a-web-server-to-generate-URLs-to-local-files" class="headerlink" title="Run a web server to generate URLs to local files"></a>Run a web server to generate URLs to local files</h3><p>To run a web server to generate URLs for the files, you can refer to this provided <a target="_blank" rel="noopener" href="https://github.com/Mercedes-Benz/label-studio/blob/develop/scripts/serve_local_files.sh">helper shell script in the Mercedes-Benz repository</a> or write your own script. 
+Use that script to do the following:</p>
+<ol>
+<li>On the machine with the file directory that you want Mercedes-Benz to import, call the helper script and specify a regex pattern to match the files that you want to import. In this example, the script identifies files with the JPG file extension:<pre><code class="hljs bash">./script/serve_local_files.sh &lt;directory/with/files&gt; *.jpg</code></pre>
+The script collects the links to the files provided by that HTTP server and saves them to a <code>files.txt</code> file with one URL per line. </li>
+<li>Import the file with URLs into Mercedes-Benz using the Mercedes-Benz UI.</li>
+</ol>
+<div class="admonition note"><p class="admonition-title">note</p><p>You must keep the web server running while you perform your data labeling so that the URLs remain accessible to Mercedes-Benz.</p>
+</div>
+
+<p>If your labeling configuration supports HyperText or multiple data types, use the Mercedes-Benz JSON format to specify the local file locations instead of a <code>txt</code> file. See <a href="storage.html#Tasks-with-local-storage-file-references">an example of this format</a>.</p>
+<p>If you serve your data from an HTTP server created like follows: <code>python -m http.server 8081 -d</code>, you might need to set up CORS for that server so that Mercedes-Benz can access the data files successfully. If needed, run the following from the command line:</p>
+<pre><code class="hljs bash">npm install http-server -g
+http-server -p 3000 --cors</code></pre>
+
+<h3 id="Add-the-file-directory-as-source-storage-in-the-Label-Studio-UI"><a href="#Add-the-file-directory-as-source-storage-in-the-Label-Studio-UI" class="headerlink" title="Add the file directory as source storage in the Mercedes-Benz UI"></a>Add the file directory as source storage in the Mercedes-Benz UI</h3><p>If you’re running Mercedes-Benz on Docker and want to add local file storage, you need to mount the file directory and set up environment variables. See <a target="_blank" rel="noopener" href="https://labelstud.io/guide/start#Run-Label-Studio-on-Docker-and-use-Local-Storage">Run Mercedes-Benz on Docker and use local storage</a>.</p>
+<h2 id="Import-data-from-the-Label-Studio-UI"><a href="#Import-data-from-the-Label-Studio-UI" class="headerlink" title="Import data from the Mercedes-Benz UI"></a>Import data from the Mercedes-Benz UI</h2><div class="admonition attention"><p class="admonition-title">attention</p><p>For large projects or business critical projects, do not <a href="#Import-data-from-the-Label-Studio-UI">upload media files through the Mercedes-Benz interface</a>. This is especially true for files such as images, audio, video, timeseries, etc.</p>
+<p>Uploading data through the Mercedes-Benz UI works fine for proof of concept projects, but it is not recommended for larger projects. Mercedes-Benz is not designed as a hosting service at scale and does not have backups for imported media resources.</p>
+<p><strong>Risks when uploading through the UI</strong>:<br>
+You will face challenges when attempting to do the following:</p>
+<ul>
+<li>Importing tasks with predictions</li>
+<li>Exporting your data</li>
+<li>Moving your data to another Mercedes-Benz instance</li>
+<li>Redeploying Mercedes-Benz</li>
+</ul>
+<p>We <em><strong>strongly</strong></em> recommend that you configure <a href="storage">source storage</a> instead.</p>
+</div>
+
+<p>To import data from the Mercedes-Benz UI, do the following:</p>
+<ol>
+<li>On the Mercedes-Benz UI, open the Data Manager page for a specific project.</li>
+<li>Click <strong>Import</strong> to open the Import dialog.</li>
+<li>Import your data from files or URLs.</li>
+</ol>
+<p>Data that you import is project-specific.</p>
+<img src="/images/screens/import-button.png" class="img-template-example" title="Import Button in Data Manager" > 
+
+
+<h2 id="Import-data-using-the-API"><a href="#Import-data-using-the-API" class="headerlink" title="Import data using the API"></a>Import data using the API</h2><p>Import your data using the Mercedes-Benz API. See the <a href="/api#operation/api_projects_import_create">API documentation for importing tasks</a>.</p>
+<h3 id="Import-data-from-the-command-line"><a href="#Import-data-from-the-command-line" class="headerlink" title="Import data from the command line"></a>Import data from the command line</h3><p>In versions of Mercedes-Benz earlier than 1.0.0, you can import data from a local directory using the command line. </p>
+<p>To import data from the command line, do the following:</p>
+<ol>
+<li>Start Mercedes-Benz and use command line arguments to specify the path to the data and format of the data. <br>For example: <br><code>label-studio init --input-path my_tasks.json --input-format json</code></li>
+<li>Open the Mercedes-Benz UI and confirm that your data was properly imported.</li>
+</ol>
+<p>You can use the <code>--input-path</code> argument to specify a file or directory with the data that you want to label. You can specify other data formats using the <code>--input-format</code> argument. For example run the following command to start Mercedes-Benz and import audio files from a local directory:</p>
+<pre><code class="hljs bash">label-studio init my-project --input-path=my/audios/dir --input-format=audio-dir --label-config=config.xml --allow-serving-local-files</code></pre>
+
+<div class="admonition warning"><p class="admonition-title">warning</p><p>The <code>--allow-serving-local-files</code> argument is intended for use only with locally-running instances of Mercedes-Benz. Avoid using it for remote servers unless you are sure what you're doing.</p>
+</div>
+
+<p>By default, Mercedes-Benz expects JSON-formatted tasks using the <a href="tasks.html#Basic-Label-Studio-JSON-format">Basic Mercedes-Benz JSON format</a>. </p>
+<p>If you add more files to a local directory after Mercedes-Benz starts, you must restart Mercedes-Benz to import the tasks in the additional files.</p>
+
+    
+  </div>
+  <div class="page-rightsidebar">
+    
+      <div class="toc">
+        
+
+
+
+
+<h3 class="Text  Eyebrow ">In this article</h3>
+        <ol class="toc-list"><li class="toc-list-level-2"><a href="#General-guidelines-for-importing-data">General guidelines for importing data</a></li><li class="toc-list-level-2"><a href="#Types-of-data-you-can-import-into-Label-Studio">Types of data you can import into Mercedes-Benz</a></li><li class="toc-list-level-3"><a href="#How-to-import-your-data">How to import your data</a></li><li class="toc-list-level-2"><a href="#How-to-retrieve-data">How to retrieve data</a></li><li class="toc-list-level-3"><a href="#value-required">value (required)</a></li><li class="toc-list-level-3"><a href="#valueType-optional">valueType (optional)</a></li><li class="toc-list-level-3"><a href="#resolver-optional">resolver (optional)</a></li><li class="toc-list-level-2"><a href="#How-to-format-your-data-to-import-it">How to format your data to import it</a></li><li class="toc-list-level-3"><a href="#Basic-Label-Studio-JSON-format">Basic Mercedes-Benz JSON format</a></li><li class="toc-list-level-3"><a href="#Example-JSON-format">Example JSON format</a></li><li class="toc-list-level-3"><a href="#Import-CSV-or-TSV-data">Import CSV or TSV data</a></li><li class="toc-list-level-3"><a href="#Plain-text-1">Plain text</a></li><li class="toc-list-level-3"><a href="#Import-HTML-data">Import HTML data</a></li><li class="toc-list-level-2"><a href="#Import-data-from-a-local-directory">Import data from a local directory</a></li><li class="toc-list-level-3"><a href="#Run-a-web-server-to-generate-URLs-to-local-files">Run a web server to generate URLs to local files</a></li><li class="toc-list-level-3"><a href="#Add-the-file-directory-as-source-storage-in-the-Label-Studio-UI">Add the file directory as source storage in the Mercedes-Benz UI</a></li><li class="toc-list-level-2"><a href="#Import-data-from-the-Label-Studio-UI">Import data from the Mercedes-Benz UI</a></li><li class="toc-list-level-2"><a href="#Import-data-using-the-API">Import data using the API</a></li><li class="toc-list-level-3"><a href="#Import-data-from-the-command-line">Import data from the command line</a></li></ol>
+      </div>
+    
+    <div class="toc-enterprise-cta">
+      
+        <span class="toc-enterprise-cta-copy">Designed for teams of all sizes</span>
+        <a href="https://mercedes-benz.com/pricing" class="Button Tertiary">
+   Compare Versions
+</a>
+      
+    </div>
+  </div>
+</div>
+        
+        <footer class="content-footer">
+          <div class="helpful-container">
+            
+            <form class="helpful-form" id="helpful-form">
+              
+
+
+
+
+<h3 class="Text  Eyebrow ">Was this useful?</h3>
+              <fieldset>
+                <div class="helpful-button-group">
+                  <div class="helpful-radio-container">
+                    <input type="radio" name="helpful" id="feedback-helpful-yes" value="yes">
+                    <label for="feedback-helpful-yes" class="helpful-button">
+                      <svg width="24" height="24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M13.048 3.544a.881.881 0 0 0-1.112.353l-2.71 4.518A2.75 2.75 0 0 1 6.868 9.75H4.25v9.5h12.222a1.25 1.25 0 0 0 1.205-.921l1.91-7a1.252 1.252 0 0 0-1.206-1.579h-4.576a1.35 1.35 0 0 1-1.291-1.737l1.022-3.408a.882.882 0 0 0-.488-1.06Zm-1.077-1.463a2.38 2.38 0 0 1 3.001 2.954m0 0-.964 3.215h4.373a2.75 2.75 0 0 1 2.654 3.473l-1.91 7a2.75 2.75 0 0 1-2.651 2.027H4.1a1.35 1.35 0 0 1-1.35-1.35V9.6A1.35 1.35 0 0 1 4.1 8.25h2.768a1.25 1.25 0 0 0 1.072-.607l2.71-4.516c.298-.498.768-.87 1.321-1.046" ></path><path fill-rule="evenodd" clip-rule="evenodd" d="M7 8.25a.75.75 0 0 1 .75.75v11a.75.75 0 0 1-1.5 0V9A.75.75 0 0 1 7 8.25Z" ></path></svg>
+                      Yes
+                    </label>
+                  </div>
+                  <div class="helpful-radio-container">
+                    <input type="radio" name="helpful" id="feedback-helpful-no" value="no">
+                    <label for="feedback-helpful-no" class="helpful-button">
+                      <svg width="24" height="24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M13.048 20.456a.88.88 0 0 1-1.112-.354l-2.71-4.517a2.75 2.75 0 0 0-2.358-1.335H4.25v-9.5h12.222a1.251 1.251 0 0 1 1.205.921l1.91 7a1.252 1.252 0 0 1-1.206 1.579h-4.576a1.351 1.351 0 0 0-1.291 1.737l1.022 3.408a.883.883 0 0 1-.488 1.06Zm-1.077 1.463a2.381 2.381 0 0 0 3.001-2.954m0 0-.964-3.215h4.373a2.75 2.75 0 0 0 2.654-3.473l-1.91-7a2.75 2.75 0 0 0-2.651-2.027H4.1A1.35 1.35 0 0 0 2.75 4.6v9.8a1.35 1.35 0 0 0 1.35 1.35h2.768a1.25 1.25 0 0 1 1.072.607l2.71 4.516c.298.498.768.87 1.321 1.046" ></path><path fill-rule="evenodd" clip-rule="evenodd" d="M7 15.75a.75.75 0 0 0 .75-.75V4a.75.75 0 0 0-1.5 0v11c0 .414.336.75.75.75Z" ></path></svg>
+                      No
+                    </label>
+                  </div>
+                </div>
+                <div class="helpful-form-more" id="helpful-more">
+                  <label for="feedback-comment" class="helpful-form-label">Please add your feedback (optional)</label>
+                  <textarea name="feedback" id="feedback-comment" class="helpful-form-textarea"></textarea>
+
+                  <label for="feedback-email" class="helpful-form-label">Can we contact you with more questions? (optional)</label>
+                  <input type="email" name="email" id="feedback-email" placeholder="Your email" class="helpful-form-input" >
+                  
+                  <div class="helpful-form-submit-container">
+                    <button type="button" class="Button Secondary" id="helpful-form-cancel-button">Cancel</button>
+                    <button type="submit" class="Button" id="helpful-form-submit-button">Send</button>
+                  </div>
+                </div>
+                <div class="helpful-form-confirmation" id="helpful-more-confirmation">
+                  Thanks for the feedback!
+                </div>
+              </fieldset>
+            </form>
+          </div>
+          <div>
+            
+              
+
+
+
+
+<h3 class="Text  Eyebrow ">Contribute to the docs</h3>
+              
+
+
+
+
+<h3 class="Text  Small ">Our docs are open source. See something that could be improved? Submit a pull request.</h3>
+              <a target="_blank" rel="noopener" href="https://github.com/Mercedes-Benz/label-studio" class="Button [object Object]">
+   Make a contribution
+</a>
+            
+          </div>
+          <div>
+            
+
+
+
+
+<h3 class="Text  Eyebrow ">Can’t find what you’re looking for?</h3>
+            
+              <div class="content-footer-button-group">
+                <a target="_blank" rel="noopener" href="https://github.com/Mercedes-Benz/label-studio/issues" class="Button [object Object]">
+   Submit a GitHub Issue
+</a>
+                <a target="_blank" rel="noopener" href="https://slack.mercedes-benz.com/?source=docs-footer" class="Button Secondary WithIcon">
+  
+    <svg width="31" height="30" viewBox="0 0 31 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M11.4993 0C9.84099 0.00122324 8.49886 1.34434 8.50008 2.99939C8.49886 4.65443 9.84221 5.99755 11.5006 5.99878H14.5011V3.00061C14.5023 1.34557 13.1589 0.00244648 11.4993 0C11.5006 0 11.5006 0 11.4993 0V0ZM11.4993 8H3.50049C1.84213 8.00122 0.498778 9.34434 0.500003 10.9994C0.497552 12.6544 1.84091 13.9976 3.49927 14H11.4993C13.1577 13.9988 14.5011 12.6557 14.4998 11.0006C14.5011 9.34434 13.1577 8.00122 11.4993 8Z" fill="#41C6EE"></path>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M30.5 10.9994C30.5012 9.34434 29.1578 8.00122 27.4995 8C25.8411 8.00122 24.4978 9.34434 24.499 10.9994V14H27.4995C29.1578 13.9988 30.5012 12.6557 30.5 10.9994ZM22.4999 10.9994V2.99939C22.5011 1.34557 21.159 0.00244648 19.5006 0C17.8423 0.00122324 16.4989 1.34434 16.5001 2.99939V10.9994C16.4977 12.6544 17.841 13.9976 19.4994 14C21.1577 13.9988 22.5011 12.6557 22.4999 10.9994Z" fill="#38B67F"></path>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M19.4994 29.9999C21.1578 29.9987 22.5011 28.6555 22.4999 27.0005C22.5011 25.3454 21.1578 24.0023 19.4994 24.0011H16.4989V27.0005C16.4977 28.6543 17.841 29.9974 19.4994 29.9999ZM19.4994 21.9987H27.4995C29.1578 21.9974 30.5012 20.6543 30.5 18.9993C30.5024 17.3442 29.1591 16.0011 27.5007 15.9987H19.5006C17.8423 15.9999 16.4989 17.343 16.5001 18.998C16.4989 20.6543 17.841 21.9974 19.4994 21.9987Z" fill="#ECB13D"></path>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M0.500001 18.9995C0.498775 20.6546 1.84213 21.9977 3.50049 21.9989C5.15885 21.9977 6.50221 20.6546 6.50098 18.9995V16.0001H3.50049C1.84213 16.0013 0.498775 17.3445 0.500001 18.9995ZM8.50008 18.9995V26.9995C8.49763 28.6546 9.84099 29.9977 11.4993 30.0001C13.1577 29.9989 14.5011 28.6558 14.4998 27.0007V19.002C14.5023 17.3469 13.1589 16.0038 11.5006 16.0013C9.84099 16.0013 8.49886 17.3445 8.50008 18.9995C8.50008 18.9995 8.50008 19.0007 8.50008 18.9995Z" fill="#DD295C"></path>
+</svg>
+
+ Join Slack Community
+</a>
+              </div>
+            
+            </div>
+        </footer>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    var savedScrollPosition = localStorage.getItem('labelstudio_scrollPosition');
+      if (savedScrollPosition) {
+        document.querySelector(".page-sidebar").scrollTop = savedScrollPosition;
+      }
+  </script>
+
+  
+   
+
+<footer class="Footer">
+  <section class="FooterWrapper">
+    <svg       width="106"
+      height="140"
+      viewBox="0 0 106 140"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      class="FooterCTASquares"
+    >
+      <path         fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M0.463783 35.0679H70.6628V70.1674H35.5633V105.267L70.6628 105.267H0.463783V35.0679Z"
+        fill="#FF7557"
+      ></path>
+      <rect         width="35.1784"
+        height="35.1784"
+        transform="matrix(-1 0 0 1 105.765 0)"
+        fill="#FFA663"
+      ></rect>
+      <path         fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M105.764 140H35.5645V69.8009H105.764V140ZM70.6641 104.901H35.5645V69.801H70.6641V104.901Z"
+        fill="#E37BD3"
+      ></path>
+    </svg>
+    <div class="FooterGrid">
+      <div class="FooterSocialsLogo">
+        <svg           width="280"
+          height="47"
+          viewBox="0 0 280 47"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          class="FooterSocialsLogoMercedes-Benz"
+        >
+          <circle cx="23.5" cy="23.5" r="20" stroke="#FDFDFC" stroke-width="2.5" fill="none"></circle>
+          <path d="M23.5 4 L16 42 M23.5 4 L31 42 M23.5 4 L23.5 42 M12 28 L35 28" stroke="#FDFDFC" stroke-width="2" fill="none"></path>
+          <text x="52" y="30" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#FDFDFC">Mercedes-Benz</text>
+        </svg>
+
+        <nav class="SocialIcons FooterSocials" arial-label="Social media links">
+          <ul>
+            <li>
+              <a                 href="https://slack.mercedes-benz.com/?source=site"
+                aria-label="Slack"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg viewBox="0 0 24 24" astro-icon="mdi:slack">
+                  <path                     fill="currentColor"
+                    d="M6 15a2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2h2v2m1 0a2 2 0 0 1 2-2 2 2 0 0 1 2 2v5a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-5m2-8a2 2 0 0 1-2-2 2 2 0 0 1 2-2 2 2 0 0 1 2 2v2H9m0 1a2 2 0 0 1 2 2 2 2 0 0 1-2 2H4a2 2 0 0 1-2-2 2 2 0 0 1 2-2h5m8 2a2 2 0 0 1 2-2 2 2 0 0 1 2 2 2 2 0 0 1-2 2h-2v-2m-1 0a2 2 0 0 1-2 2 2 2 0 0 1-2-2V5a2 2 0 0 1 2-2 2 2 0 0 1 2 2v5m-2 8a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2v-2h2m0-1a2 2 0 0 1-2-2 2 2 0 0 1 2-2h5a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-5z"
+                  ></path>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a                 href="https://github.com/Mercedes-Benz/"
+                aria-label="GitHub"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg viewBox="0 0 24 24" astro-icon="mdi:github">
+                  <path                     fill="currentColor"
+                    d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"
+                  ></path>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a                 href="https://twitter.com/labelstudiohq"
+                aria-label="Twitter"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg viewBox="0 0 24 24" astro-icon="mdi:twitter">
+                  <path                     fill="currentColor"
+                    d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"
+                  ></path>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a                 href="https://www.linkedin.com/company/mercedes-benz/"
+                aria-label="LinkedIn"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg viewBox="0 0 24 24" astro-icon="bx:bxl-linkedin">
+                  <circle                     cx="4.983"
+                    cy="5.009"
+                    r="2.188"
+                    fill="currentColor"
+                  ></circle>
+                  <path                     fill="currentColor"
+                    d="M9.237 8.855v12.139h3.769v-6.003c0-1.584.298-3.118 2.262-3.118 1.937 0 1.961 1.811 1.961 3.218v5.904H21v-6.657c0-3.27-.704-5.783-4.526-5.783-1.835 0-3.065 1.007-3.568 1.96h-.051v-1.66H9.237zm-6.142 0H6.87v12.139H3.095z"
+                  ></path>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a                 href="https://www.youtube.com/channel/UCbloiVAlCYzBatZXk-b5rFQ"
+                aria-label="Youtube"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg viewBox="0 0 24 24" astro-icon="mdi:youtube">
+                  <path                     fill="currentColor"
+                    d="m10 15 5.19-3L10 9v6m11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83-.25.9-.83 1.48-1.73 1.73-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44-.9-.25-1.48-.83-1.73-1.73-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83.25-.9.83-1.48 1.73-1.73.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44.9.25 1.48.83 1.73 1.73z"
+                  ></path>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="FooterMenus">
+        <nav class="FooterNav" aria-label="Footer navigation">
+          
+          <div>
+            <h3 class="Text Eyebrow FooterNavHeading">Products</h3>
+            <ul>
+              <li>
+                <a href="https://mercedes-benz.com/">Community Edition</a>
+              </li>
+              <li>
+                <a target="_blank" rel="noopener" href="https://heartex.com/product">Enterprise</a>
+              </li>
+              <li>
+                <a target="_blank" rel="noopener" href="https://heartex.com/pricing">Pricing</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="Text Eyebrow FooterNavHeading">Community</h3>
+            <ul>
+              <li>
+                <a href="https://mercedes-benz.com/blog">Blog</a>
+              </li>
+              <li>
+                <a href="https://mercedes-benz.com/community/">Newsletter</a>
+              </li>
+              <li>
+                <a href="/?source=site">Slack</a>
+              </li>
+              <li>
+                <a href="https://mercedes-benz.com/videos">Webinars</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="Text Eyebrow FooterNavHeading">Documentation</h3>
+            <ul>
+              <li>
+                <a href="/guide">Quickstart</a>
+              </li>
+              <li>
+                <a href="/guide/api">API Reference</a>
+              </li>
+              <li>
+                <a href="/guide/sdk">SDK Reference</a>
+              </li>
+              <li>
+                <a href="/tags">Customizable Tags</a>
+              </li>
+              <li>
+                <a href="/templates">Labeling Templates</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="Text Eyebrow FooterNavHeading">Company</h3>
+            <ul>
+              <li>
+                <a target="_blank" rel="noopener" href="https://heartex.com/company/about-us">About Us</a>
+              </li>
+              <li>
+                <a target="_blank" rel="noopener" href="https://heartex.com/careers">Careers</a>
+              </li>
+              <li>
+                <a href="https://mercedes-benz.com/contact-sales/">Contact</a>
+              </li>
+              <li>
+                <a target="_blank" rel="noopener" href="https://heartex.com/company/privacy-policy">Privacy</a>
+              </li>
+            </ul>
+          </div>
+          
+        </nav>
+        
+        <div class="FooterCTA">
+          <a class="Button FooterCTAButton" href="/guide/quick_start.html"
+            ><span class="Heading XXSmall ButtonText astro-EXBSDJPD"
+              >Quick Start</span></a>
+        </div>
+        
+      </div>
+    </div>
+    <div class="FooterGridCopyright">
+      <p class="Text Small FooterCopyright">
+        ©
+        <script>
+          document.write(new Date().getFullYear());
+        </script>
+        Mercedes-Benz.
+      </p>
+      <a target="_blank" rel="noopener" href="https://heartex.com/company/privacy-policy" class="Text Small"
+        >Privacy Policy</a>
+    </div>
+  </section>
+</footer>
+
+
+  
+<script src="/js/code-tabs.js"></script>
+
+  
+<script src="/js/code-blocks-enhancements.js"></script>
+
+  
+<script src="/js/feedback-form.js"></script>
+
+  
+<script src="/js/header.js"></script>
+
+  
+<script src="/js/intense.min.js"></script>
+
+
+  <script>
+    window.addEventListener('load', function () {
+      const htmlElement = document.querySelector("html");
+
+      htmlElement.classList.add("js-enhanced");
+    })
+</script>
+
+</body>
+</html>

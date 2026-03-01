@@ -1,0 +1,2624 @@
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  
+    
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-TZ3RQGX');</script>
+    
+  
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <title>Mercedes-Benz Documentation — Troubleshooting Mercedes-Benz</title>
+  
+  <meta charset="utf-8">
+  <meta name="description" content="Troubleshooting issues in Mercedes-Benz Community Edition">
+
+  <meta property="og:type" content="article">
+  
+  <meta property="og:title" content="Mercedes-Benz Documentation — Troubleshooting Mercedes-Benz">
+  
+  <meta property="og:description" content="Troubleshooting issues in Mercedes-Benz Community Edition">
+
+  <meta name="twitter:card" content="summary">
+  
+  <meta property="twitter:title" content="Mercedes-Benz Documentation — Troubleshooting Mercedes-Benz">
+  
+  <meta name="twitter:description" content="Troubleshooting issues in Mercedes-Benz Community Edition">
+
+  
+    <meta name="twitter:image" content="http://mercedes-benz.com/open-graph-image?title=Troubleshooting%20Label%20Studio&category=guide">
+    <meta property="og:image" content="http://mercedes-benz.com/open-graph-image?title=Troubleshooting%20Label%20Studio&category=guide">
+  
+
+  <meta name="msapplication-TileColor" content="#4fc08d">
+  <meta name="theme-color" content="#4fc08d">
+  
+  
+    <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" >
+  
+
+  <link rel="preload" href="/fonts/SpaceGrotesk-Bold-subset.woff2" as="font" type="font/woff2" crossorigin>
+
+  
+<link rel="stylesheet" href="/css/styles.css">
+
+
+  
+
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js" defer></script>
+
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ startOnLoad: true });
+  </script>
+
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+<body class="page-tier-opensource">
+  
+  
+
+  
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TZ3RQGX"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  
+
+  
+  
+
+
+
+  
+      <a target="_blank" rel="noopener" href="https://mercedes-benz.com/blog/new-pdf-ocr-document-ai-labeling-interface" class="Alert">
+        <span class="AlertContent">
+          <span class="Badge">New</span>
+          <span class="AlertText">Advanced PDF + OCR Interface for Document AI</span>
+          <svg fill="currentColor" viewBox="0 0 14 12"><path fill-rule="evenodd" d="m8.792.119 4.866 5.654-4.866 5.654-.948-.816 3.627-4.213H.54v-1.25h10.93L7.844.934l.948-.815Z" clip-rule="evenodd"></path></svg>
+        </span>
+      </a>
+
+
+<header class="page-header">
+  <div class="page-header-top-level">
+    <div class="page-header-logo">
+      <a href="/guide" class="HeaderLogo" arial-label="Homepage">
+        
+          <svg width="240" height="30" viewBox="0 0 240 30" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="15" cy="15" r="13.5" stroke="#12110D" stroke-width="2" fill="none"></circle><circle cx="15" cy="15" r="12" stroke="#12110D" stroke-width="0.5" fill="none"></circle><path d="M15,3 L13.8,15 L16.2,15 Z M4.61,21 L15.6,16.04 L14.4,13.96 Z M25.39,21 L15.6,13.96 L14.4,16.04 Z" fill="#12110D"></path><text x="34" y="20" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#12110D" letter-spacing="0.3">Mercedes-Benz Docs</text></svg>
+
+      </a>
+    </div>
+
+    <div class="AlgoliaSearch">
+      <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg" class="AlgoliaSearchIcon">
+        <path d="M8 16C9.77498 15.9996 11.4988 15.4054 12.897 14.312L17.293 18.708L18.707 17.294L14.311 12.898C15.405 11.4997 15.9996 9.77544 16 8C16 3.589 12.411 0 8 0C3.589 0 0 3.589 0 8C0 12.411 3.589 16 8 16ZM8 2C11.309 2 14 4.691 14 8C14 11.309 11.309 14 8 14C4.691 14 2 11.309 2 8C2 4.691 4.691 2 8 2Z" ></path>
+      </svg>
+      <input id="docsearch-input" placeholder="Search docs" data-site-version="opensource" >
+      <svg width="43" height="31" viewBox="0 0 43 31" fill="none" xmlns="http://www.w3.org/2000/svg" class="AlgoliaSearchCmdK">
+        <rect y="0.0457764" width="43" height="30" rx="15" fill="var(--cmd-k-background-color)"></rect>
+        <path d="M11.264 21.0458C9.776 21.0458 8.816 20.1018 8.816 18.6298C8.816 17.0778 9.744 16.1658 11.568 16.1658H12.512V14.4058H11.568C9.744 14.4058 8.816 13.4938 8.816 11.9418C8.816 10.4698 9.776 9.52578 11.264 9.52578C13.056 9.52578 13.632 10.6458 13.632 11.9898V13.3178H15.392V11.9898C15.392 10.6458 15.968 9.52578 17.76 9.52578C19.248 9.52578 20.208 10.4698 20.208 11.9418C20.208 13.4938 19.28 14.4058 17.456 14.4058H16.512V16.1658H17.456C19.28 16.1658 20.208 17.0778 20.208 18.6298C20.208 20.1018 19.248 21.0458 17.76 21.0458C15.968 21.0458 15.392 19.9258 15.392 18.5818V17.2538H13.632V18.5818C13.632 19.9258 13.056 21.0458 11.264 21.0458ZM16.512 11.9578V13.3178H17.456C18.592 13.3178 19.072 12.8538 19.072 11.9418C19.072 10.9978 18.512 10.6298 17.76 10.6298C16.928 10.6298 16.512 11.1418 16.512 11.9578ZM11.568 13.3178H12.512V11.9578C12.512 11.1418 12.096 10.6298 11.264 10.6298C10.512 10.6298 9.952 10.9978 9.952 11.9418C9.952 12.8538 10.432 13.3178 11.568 13.3178ZM13.632 16.1658H15.392V14.4058H13.632V16.1658ZM11.264 19.9418C12.096 19.9418 12.512 19.4298 12.512 18.6138V17.2538H11.568C10.432 17.2538 9.952 17.7178 9.952 18.6298C9.952 19.5738 10.512 19.9418 11.264 19.9418ZM16.512 18.6138C16.512 19.4298 16.928 19.9418 17.76 19.9418C18.512 19.9418 19.072 19.5738 19.072 18.6298C19.072 17.7178 18.592 17.2538 17.456 17.2538H16.512V18.6138ZM27.3546 15.4298V21.0458H26.1546V9.84578H27.3546V14.9338L32.3146 9.84578H33.8826L28.6346 15.1738L34.3626 21.0458H32.7466L27.3546 15.4298Z" fill="var(--cmd-k-icon-color)"></path>
+      </svg>        
+    </div>
+
+    <button class="hamburger-button" aria-label="Toggle Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <nav>
+      
+        
+  <ul class="page-sidebar-list">
+    
+    
+    
+    
+    
+
+    
+
+    
+
+    
+    
+      
+      
+        </ul>
+          
+            <button>
+              Discover & Learn
+              
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+          
+        <ul class="page-sidebar-list">
+      
+      
+      <li>
+        <a href="/guide/get_started.html" class="" >
+          About Mercedes-Benz
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/glossary.html" class="" >
+          Terminology
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/label_studio_compare.html" class="" >
+          Compare editions
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/enterprise_features.html" class="" >
+          Enterprise features
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+        </ul>
+          
+            <button>
+              Install & Setup
+              
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+          
+        <ul class="page-sidebar-list">
+      
+      
+      <li>
+        <a href="/guide/quick_start.html" class="" >
+          Quick start
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/install.html" class="" >
+          Installation
+        </a>
+        
+        
+            <button class="page-sidebar-toggle-children-list">
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+            <ul class="page-sidebar-children-list">
+            
+            
+            
+              <li>
+                <a href="/guide/install_k8s.html" class="page-sidebar-children-link" >
+                  Install using Kubernetes
+                </a>
+                
+                
+                    <ul class="page-sidebar-grandchildren-list">
+                      
+                    <li>
+                      
+                      <a href="/guide/ingress_config.html" class="page-sidebar-children-link" >
+                        Set up an ingress controller
+                      </a>
+                    </li>
+                  
+                  
+                    <li>
+                      
+                      <a href="/guide/install_k8s_airgapped.html" class="page-sidebar-children-link" >
+                        Airgapped Server
+                      </a>
+                    </li>
+                  
+                  
+                    <li>
+                      
+                      <a href="/guide/helm_values.html" class="page-sidebar-children-link" >
+                        Available Helm values
+                      </a>
+                    </li>
+                  
+                  
+                </ul>
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/install_troubleshoot.html" class="page-sidebar-children-link" >
+                  Troubleshooting
+                </a>
+                
+                
+              </li>
+            
+            
+          </ul>
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/storedata.html" class="" >
+          Set up the database
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/persistent_storage.html" class="" >
+          Set up persistent storage
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/start.html" class="" >
+          Start Mercedes-Benz
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/upgrade_community.html" class="" >
+          Upgrade Mercedes-Benz
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/security.html" class="" >
+          Secure Mercedes-Benz
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+        </ul>
+          
+            <button>
+              Create & Manage Projects
+              
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+          
+        <ul class="page-sidebar-list">
+      
+      
+      <li>
+        <a href="/guide/setup_project.html" class="" >
+          Create project
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/setup.html" class="" >
+          Configure labeling interface
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/manage_projects_lso.html" class="" >
+          Manage projects
+        </a>
+        
+        
+            <button class="page-sidebar-toggle-children-list">
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+            <ul class="page-sidebar-children-list">
+            
+            
+            
+              <li>
+                <a href="/guide/project_settings.html" class="page-sidebar-children-link" >
+                  Project settings
+                </a>
+                
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/manage_data.html" class="page-sidebar-children-link" >
+                  Data Manager
+                </a>
+                
+                
+              </li>
+            
+            
+          </ul>
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/labeling.html" class="" >
+          Labeling guide
+        </a>
+        
+        
+            <button class="page-sidebar-toggle-children-list">
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+            <ul class="page-sidebar-children-list">
+            
+            
+            
+              <li>
+                <a href="/guide/hotkeys.html" class="page-sidebar-children-link" >
+                  Hotkeys
+                </a>
+                
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/skip.html" class="page-sidebar-children-link" >
+                  Skipping tasks
+                </a>
+                
+                
+              </li>
+            
+            
+          </ul>
+        
+        
+        
+      </li>
+    
+      
+      
+        </ul>
+          
+            <button>
+              Import & Export
+              
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+          
+        <ul class="page-sidebar-list">
+      
+      
+      <li>
+        <a href="/guide/storage.html" class="" >
+          Add project storage
+        </a>
+        
+        
+            <button class="page-sidebar-toggle-children-list">
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+            <ul class="page-sidebar-children-list">
+            
+            
+            
+              <li>
+                <a href="/guide/storage_s3.html" class="page-sidebar-children-link" >
+                  AWS S3
+                </a>
+                
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/storage_gcp.html" class="page-sidebar-children-link" >
+                  Google Cloud
+                </a>
+                
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/storage_azure.html" class="page-sidebar-children-link" >
+                  Microsoft Azure
+                </a>
+                
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/storage_databricks.html" class="page-sidebar-children-link" >
+                  Databricks
+                </a>
+                
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/storage_redis.html" class="page-sidebar-children-link" >
+                  Redis
+                </a>
+                
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/storage_local.html" class="page-sidebar-children-link" >
+                  Local
+                </a>
+                
+                
+              </li>
+            
+            
+          </ul>
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/tasks.html" class="" >
+          Import data
+        </a>
+        
+        
+            <button class="page-sidebar-toggle-children-list">
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+            <ul class="page-sidebar-children-list">
+            
+            
+            
+              <li>
+                <a href="/guide/task_format.html" class="page-sidebar-children-link" >
+                  Format data for import
+                </a>
+                
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/predictions.html" class="page-sidebar-children-link" >
+                  Import pre-annotations
+                </a>
+                
+                
+              </li>
+            
+            
+          </ul>
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/export.html" class="" >
+          Export annotations
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+        </ul>
+          
+            <button>
+              Machine Learning
+              
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+          
+        <ul class="page-sidebar-list">
+      
+      
+      <li>
+        <a href="/guide/ml.html" class="" >
+          Machine learning integration
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/ml_create.html" class="" >
+          Write your own ML backend
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/ml_tutorials.html" class="" >
+          ML Examples and Tutorials
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+        </ul>
+          
+            <button>
+              Manage Your Organization
+              
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+          
+        <ul class="page-sidebar-list">
+      
+      
+      <li>
+        <a href="/guide/signup.html" class="" >
+          Add users
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/admin_manage.html" class="" >
+          Manage user accounts
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/user_account.html" class="" >
+          Account and settings
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/access_tokens.html" class="" >
+          Access tokens
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+        </ul>
+          
+            <button>
+              Integrate & Extend
+              
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+          
+        <ul class="page-sidebar-list">
+      
+      
+      <li>
+        <a href="/guide/api.html" class="" >
+          API
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/sdk.html" class="" >
+          Python SDK
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/webhooks.html" class="" >
+          Webhooks
+        </a>
+        
+        
+            <button class="page-sidebar-toggle-children-list">
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+            <ul class="page-sidebar-children-list">
+            
+            
+            
+              <li>
+                <a href="/guide/webhook_create.html" class="page-sidebar-children-link" >
+                  Webhook development
+                </a>
+                
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/webhook_reference.html" class="page-sidebar-children-link" >
+                  Webhook event reference
+                </a>
+                
+                
+              </li>
+            
+            
+          </ul>
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/frontend_reference.html" class="" >
+          Frontend
+        </a>
+        
+        
+        
+          
+            </li><li>
+            <a href="https://github.com/Mercedes-Benz/label-studio/blob/develop/CONTRIBUTING.md" target="_blank">Contribution guide
+              <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-external-link">
+                <path d="M10.9002 9.29957L9.46026 9.30898L9.46026 3.34236L1.73377 11.0689L0.698549 10.0336L8.42504 2.30714L2.46783 2.31656L2.46783 0.867251L10.9001 0.867252L10.9002 9.29957Z" fill="#6D87F1"></path>
+              </svg>
+            </a>
+          </li>
+          
+          <li>
+            <a href="https://mercedes-benz.com/integrations/" target="_blank">Integrations directory
+              <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-external-link">
+                <path d="M10.9002 9.29957L9.46026 9.30898L9.46026 3.34236L1.73377 11.0689L0.698549 10.0336L8.42504 2.30714L2.46783 2.31656L2.46783 0.867251L10.9001 0.867252L10.9002 9.29957Z" fill="#6D87F1"></path>
+              </svg>
+            </a>
+          </li>
+        
+        
+      
+    
+    
+</ul>
+
+
+  <button>
+    Support
+    <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+    </svg>
+  </button>
+
+<ul class="page-sidebar-list">
+  
+  
+    <li>
+        <a href="/guide/troubleshooting">Troubleshooting</a>
+      </li>
+    <li>
+      <a href="https://github.com/Mercedes-Benz/label-studio/issues" target="_blank">GitHub Issues
+        <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-external-link">
+          <path d="M10.9002 9.29957L9.46026 9.30898L9.46026 3.34236L1.73377 11.0689L0.698549 10.0336L8.42504 2.30714L2.46783 2.31656L2.46783 0.867251L10.9001 0.867252L10.9002 9.29957Z" fill="#6D87F1"></path>
+        </svg>
+      </a>
+    </li>
+  
+  <li>
+    <a href="https://slack.mercedes-benz.com" target="_blank">Join Slack
+      <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-external-link">
+        <path d="M10.9002 9.29957L9.46026 9.30898L9.46026 3.34236L1.73377 11.0689L0.698549 10.0336L8.42504 2.30714L2.46783 2.31656L2.46783 0.867251L10.9001 0.867252L10.9002 9.29957Z" fill="#6D87F1"></path>
+      </svg>
+    </a>
+  </li>
+  
+    <li>
+      <a href="https://community.mercedes-benz.com/" target="_blank">Ask on Discourse
+        <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-external-link">
+          <path d="M10.9002 9.29957L9.46026 9.30898L9.46026 3.34236L1.73377 11.0689L0.698549 10.0336L8.42504 2.30714L2.46783 2.31656L2.46783 0.867251L10.9001 0.867252L10.9002 9.29957Z" fill="#6D87F1"></path>
+        </svg>
+      </a>
+    </li>
+  
+  <li>
+    <a href="https://mercedes-benz.com/contact-sales/" target="_blank">Contact Sales
+      <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-external-link">
+        <path d="M10.9002 9.29957L9.46026 9.30898L9.46026 3.34236L1.73377 11.0689L0.698549 10.0336L8.42504 2.30714L2.46783 2.31656L2.46783 0.867251L10.9001 0.867252L10.9002 9.29957Z" fill="#6D87F1"></path>
+      </svg>
+    </a>
+  </li>
+  
+</ul>
+
+
+
+  <button>
+    What's New
+    <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+    </svg>
+  </button>
+
+<ul class="page-sidebar-list">  
+    <li>
+      <a href="https://github.com/Mercedes-Benz/label-studio/releases" target="_blank">Release notes
+        <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-external-link">
+          <path d="M10.9002 9.29957L9.46026 9.30898L9.46026 3.34236L1.73377 11.0689L0.698549 10.0336L8.42504 2.30714L2.46783 2.31656L2.46783 0.867251L10.9001 0.867252L10.9002 9.29957Z" fill="#6D87F1"></path>
+        </svg>
+      </a>
+    </li>
+</ul>
+
+
+      
+      <ul class="page-header-main-nav">
+        
+          <li>
+            <a href="https://mercedes-benz.com/learn/">
+              Learn
+              <svg aria-hidden="true" width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg" class="page-header-chevron-icon"><path d="M1 0.5L5 4.5L9 0.5" stroke="#131522"></path></svg>
+            </a>
+            <button>
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+            <ul>
+              <li>
+                <a href="https://mercedes-benz.com/blog/">Blog</a>
+              </li>
+              <li>
+                <a href="https://mercedes-benz.com/videos/">Videos</a>
+              </li>
+              <li class="headerSeparator">
+                <a href="https://mercedes-benz.com/community/">
+                  Community
+                </a>
+              </li>
+              <li>
+                <a href="https://mercedes-benz.com/academic/">Academic Program</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="https://mercedes-benz.com/integrations">Integrations</a>
+          </li>
+          <li>
+            <a href="https://mercedes-benz.com/goenterprise" target="_blank" rel="noopener noreferrer">Enterprise</a>
+          </li>
+          <li>
+            <a href="https://github.com/Mercedes-Benz/label-studio/" class="github-stars" target="_blank" rel="noopener noreferrer">
+              <svg class="github-icon" viewBox="0 0 24 24" width="24" height="24"><path fill="black" d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"></path></svg>
+              
+
+
+
+
+<span class="Text github-stars-count Eyebrow "></span>
+            </a>
+          </li>
+          <li>
+            <a href="/guide/quick_start.html" class="Button [object Object]">
+   Quick start
+</a>
+          </li>
+          
+      </ul>
+    </nav>
+    </div>
+  
+  
+  
+    
+      <ul class="page-header-content-switcher">
+      
+          
+          <li><a href="/guide/" class="active">Docs</a></li>
+          
+        
+          
+          <li><a href="/tutorials/" class="">Tutorials</a></li>
+          
+        
+          
+          <li><a href="/templates/" class="">Templates</a></li>
+          
+        
+          
+        
+          
+          <li><a href="/tags/" class="">Tags</a></li>
+          
+        
+      <li>
+        <a href="https://api.mercedes-benz.com/api-reference/introduction/getting-started" target="_blank">
+          API
+          <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7.93006 6.05393L6.92213 6.06052L6.92213 1.88389L1.51359 7.29243L0.788936 6.56777L6.19748 1.15923L2.02743 1.16582L2.02743 0.151308L7.93006 0.151308L7.93006 6.05393Z" fill="#ffffff"></path>
+            </svg>            
+        </a>
+      </li>
+    </ul>
+    
+  
+</header>
+
+
+  <main class="page-type-guide">
+    
+      <aside class="page-sidebar">
+        
+  <ul class="page-sidebar-list">
+    
+    
+    
+    
+    
+
+    
+
+    
+
+    
+    
+      
+      
+        </ul>
+          
+            <div class="toc-section-heading">
+              
+
+
+
+
+<h3 class="Text  Eyebrow ">Discover &amp; Learn</h3>
+              
+            </div>
+          
+        <ul class="page-sidebar-list">
+      
+      
+      <li>
+        <a href="/guide/get_started.html" class="" >
+          About Mercedes-Benz
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/glossary.html" class="" >
+          Terminology
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/label_studio_compare.html" class="" >
+          Compare editions
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/enterprise_features.html" class="" >
+          Enterprise features
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+        </ul>
+          
+            <div class="toc-section-heading">
+              
+
+
+
+
+<h3 class="Text  Eyebrow ">Install &amp; Setup</h3>
+              
+            </div>
+          
+        <ul class="page-sidebar-list">
+      
+      
+      <li>
+        <a href="/guide/quick_start.html" class="" >
+          Quick start
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/install.html" class="" >
+          Installation
+        </a>
+        
+        
+            <button class="page-sidebar-toggle-children-list">
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+            <ul class="page-sidebar-children-list">
+            
+            
+            
+              <li>
+                <a href="/guide/install_k8s.html" class="page-sidebar-children-link" >
+                  Install using Kubernetes
+                </a>
+                
+                
+                    <ul class="page-sidebar-grandchildren-list">
+                      
+                    <li>
+                      
+                      <a href="/guide/ingress_config.html" class="page-sidebar-children-link" >
+                        Set up an ingress controller
+                      </a>
+                    </li>
+                  
+                  
+                    <li>
+                      
+                      <a href="/guide/install_k8s_airgapped.html" class="page-sidebar-children-link" >
+                        Airgapped Server
+                      </a>
+                    </li>
+                  
+                  
+                    <li>
+                      
+                      <a href="/guide/helm_values.html" class="page-sidebar-children-link" >
+                        Available Helm values
+                      </a>
+                    </li>
+                  
+                  
+                </ul>
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/install_troubleshoot.html" class="page-sidebar-children-link" >
+                  Troubleshooting
+                </a>
+                
+                
+              </li>
+            
+            
+          </ul>
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/storedata.html" class="" >
+          Set up the database
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/persistent_storage.html" class="" >
+          Set up persistent storage
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/start.html" class="" >
+          Start Mercedes-Benz
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/upgrade_community.html" class="" >
+          Upgrade Mercedes-Benz
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/security.html" class="" >
+          Secure Mercedes-Benz
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+        </ul>
+          
+            <div class="toc-section-heading">
+              
+
+
+
+
+<h3 class="Text  Eyebrow ">Create &amp; Manage Projects</h3>
+              
+            </div>
+          
+        <ul class="page-sidebar-list">
+      
+      
+      <li>
+        <a href="/guide/setup_project.html" class="" >
+          Create project
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/setup.html" class="" >
+          Configure labeling interface
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/manage_projects_lso.html" class="" >
+          Manage projects
+        </a>
+        
+        
+            <button class="page-sidebar-toggle-children-list">
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+            <ul class="page-sidebar-children-list">
+            
+            
+            
+              <li>
+                <a href="/guide/project_settings.html" class="page-sidebar-children-link" >
+                  Project settings
+                </a>
+                
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/manage_data.html" class="page-sidebar-children-link" >
+                  Data Manager
+                </a>
+                
+                
+              </li>
+            
+            
+          </ul>
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/labeling.html" class="" >
+          Labeling guide
+        </a>
+        
+        
+            <button class="page-sidebar-toggle-children-list">
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+            <ul class="page-sidebar-children-list">
+            
+            
+            
+              <li>
+                <a href="/guide/hotkeys.html" class="page-sidebar-children-link" >
+                  Hotkeys
+                </a>
+                
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/skip.html" class="page-sidebar-children-link" >
+                  Skipping tasks
+                </a>
+                
+                
+              </li>
+            
+            
+          </ul>
+        
+        
+        
+      </li>
+    
+      
+      
+        </ul>
+          
+            <div class="toc-section-heading">
+              
+
+
+
+
+<h3 class="Text  Eyebrow ">Import &amp; Export</h3>
+              
+            </div>
+          
+        <ul class="page-sidebar-list">
+      
+      
+      <li>
+        <a href="/guide/storage.html" class="" >
+          Add project storage
+        </a>
+        
+        
+            <button class="page-sidebar-toggle-children-list">
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+            <ul class="page-sidebar-children-list">
+            
+            
+            
+              <li>
+                <a href="/guide/storage_s3.html" class="page-sidebar-children-link" >
+                  AWS S3
+                </a>
+                
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/storage_gcp.html" class="page-sidebar-children-link" >
+                  Google Cloud
+                </a>
+                
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/storage_azure.html" class="page-sidebar-children-link" >
+                  Microsoft Azure
+                </a>
+                
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/storage_databricks.html" class="page-sidebar-children-link" >
+                  Databricks
+                </a>
+                
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/storage_redis.html" class="page-sidebar-children-link" >
+                  Redis
+                </a>
+                
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/storage_local.html" class="page-sidebar-children-link" >
+                  Local
+                </a>
+                
+                
+              </li>
+            
+            
+          </ul>
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/tasks.html" class="" >
+          Import data
+        </a>
+        
+        
+            <button class="page-sidebar-toggle-children-list">
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+            <ul class="page-sidebar-children-list">
+            
+            
+            
+              <li>
+                <a href="/guide/task_format.html" class="page-sidebar-children-link" >
+                  Format data for import
+                </a>
+                
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/predictions.html" class="page-sidebar-children-link" >
+                  Import pre-annotations
+                </a>
+                
+                
+              </li>
+            
+            
+          </ul>
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/export.html" class="" >
+          Export annotations
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+        </ul>
+          
+            <div class="toc-section-heading">
+              
+
+
+
+
+<h3 class="Text  Eyebrow ">Machine Learning</h3>
+              
+            </div>
+          
+        <ul class="page-sidebar-list">
+      
+      
+      <li>
+        <a href="/guide/ml.html" class="" >
+          Machine learning integration
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/ml_create.html" class="" >
+          Write your own ML backend
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/ml_tutorials.html" class="" >
+          ML Examples and Tutorials
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+        </ul>
+          
+            <div class="toc-section-heading">
+              
+
+
+
+
+<h3 class="Text  Eyebrow ">Manage Your Organization</h3>
+              
+            </div>
+          
+        <ul class="page-sidebar-list">
+      
+      
+      <li>
+        <a href="/guide/signup.html" class="" >
+          Add users
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/admin_manage.html" class="" >
+          Manage user accounts
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/user_account.html" class="" >
+          Account and settings
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/access_tokens.html" class="" >
+          Access tokens
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+        </ul>
+          
+            <div class="toc-section-heading">
+              
+
+
+
+
+<h3 class="Text  Eyebrow ">Integrate &amp; Extend</h3>
+              
+            </div>
+          
+        <ul class="page-sidebar-list">
+      
+      
+      <li>
+        <a href="/guide/api.html" class="" >
+          API
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/sdk.html" class="" >
+          Python SDK
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/webhooks.html" class="" >
+          Webhooks
+        </a>
+        
+        
+            <button class="page-sidebar-toggle-children-list">
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+            <ul class="page-sidebar-children-list">
+            
+            
+            
+              <li>
+                <a href="/guide/webhook_create.html" class="page-sidebar-children-link" >
+                  Webhook development
+                </a>
+                
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/webhook_reference.html" class="page-sidebar-children-link" >
+                  Webhook event reference
+                </a>
+                
+                
+              </li>
+            
+            
+          </ul>
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/frontend_reference.html" class="" >
+          Frontend
+        </a>
+        
+        
+        
+          
+            </li><li>
+            <a href="https://github.com/Mercedes-Benz/label-studio/blob/develop/CONTRIBUTING.md" target="_blank">Contribution guide
+              <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-external-link">
+                <path d="M10.9002 9.29957L9.46026 9.30898L9.46026 3.34236L1.73377 11.0689L0.698549 10.0336L8.42504 2.30714L2.46783 2.31656L2.46783 0.867251L10.9001 0.867252L10.9002 9.29957Z" fill="#6D87F1"></path>
+              </svg>
+            </a>
+          </li>
+          
+          <li>
+            <a href="https://mercedes-benz.com/integrations/" target="_blank">Integrations directory
+              <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-external-link">
+                <path d="M10.9002 9.29957L9.46026 9.30898L9.46026 3.34236L1.73377 11.0689L0.698549 10.0336L8.42504 2.30714L2.46783 2.31656L2.46783 0.867251L10.9001 0.867252L10.9002 9.29957Z" fill="#6D87F1"></path>
+              </svg>
+            </a>
+          </li>
+        
+        
+      
+    
+    
+</ul>
+
+
+  <div class="toc-section-heading">
+
+
+
+
+<h3 class="Text  Eyebrow ">Support</h3></div>
+
+<ul class="page-sidebar-list">
+  
+  
+    <li>
+        <a href="/guide/troubleshooting">Troubleshooting</a>
+      </li>
+    <li>
+      <a href="https://github.com/Mercedes-Benz/label-studio/issues" target="_blank">GitHub Issues
+        <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-external-link">
+          <path d="M10.9002 9.29957L9.46026 9.30898L9.46026 3.34236L1.73377 11.0689L0.698549 10.0336L8.42504 2.30714L2.46783 2.31656L2.46783 0.867251L10.9001 0.867252L10.9002 9.29957Z" fill="#6D87F1"></path>
+        </svg>
+      </a>
+    </li>
+  
+  <li>
+    <a href="https://slack.mercedes-benz.com" target="_blank">Join Slack
+      <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-external-link">
+        <path d="M10.9002 9.29957L9.46026 9.30898L9.46026 3.34236L1.73377 11.0689L0.698549 10.0336L8.42504 2.30714L2.46783 2.31656L2.46783 0.867251L10.9001 0.867252L10.9002 9.29957Z" fill="#6D87F1"></path>
+      </svg>
+    </a>
+  </li>
+  
+    <li>
+      <a href="https://community.mercedes-benz.com/" target="_blank">Ask on Discourse
+        <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-external-link">
+          <path d="M10.9002 9.29957L9.46026 9.30898L9.46026 3.34236L1.73377 11.0689L0.698549 10.0336L8.42504 2.30714L2.46783 2.31656L2.46783 0.867251L10.9001 0.867252L10.9002 9.29957Z" fill="#6D87F1"></path>
+        </svg>
+      </a>
+    </li>
+  
+  <li>
+    <a href="https://mercedes-benz.com/contact-sales/" target="_blank">Contact Sales
+      <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-external-link">
+        <path d="M10.9002 9.29957L9.46026 9.30898L9.46026 3.34236L1.73377 11.0689L0.698549 10.0336L8.42504 2.30714L2.46783 2.31656L2.46783 0.867251L10.9001 0.867252L10.9002 9.29957Z" fill="#6D87F1"></path>
+      </svg>
+    </a>
+  </li>
+  
+</ul>
+
+
+
+  <div class="toc-section-heading">
+
+
+
+
+<h3 class="Text  Eyebrow ">What&#39;s New</h3></div>
+
+<ul class="page-sidebar-list">  
+    <li>
+      <a href="https://github.com/Mercedes-Benz/label-studio/releases" target="_blank">Release notes
+        <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-external-link">
+          <path d="M10.9002 9.29957L9.46026 9.30898L9.46026 3.34236L1.73377 11.0689L0.698549 10.0336L8.42504 2.30714L2.46783 2.31656L2.46783 0.867251L10.9001 0.867252L10.9002 9.29957Z" fill="#6D87F1"></path>
+        </svg>
+      </a>
+    </li>
+</ul>
+
+
+      </aside>
+    
+    <div class="content">
+      
+        <svg width="50" height="50" viewBox="0 0 77 77" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="content-decoration">
+          <rect x="75.875" y="26" width="25" height="25" transform="rotate(-180 75.875 26)" stroke="#E1DED5" stroke-width="0.504975"></rect>
+          <rect x="50.875" y="51" width="25" height="25" transform="rotate(-180 50.875 51)" stroke="#E1DED5" stroke-width="0.504975"></rect>
+          <rect x="50.875" y="26" width="25" height="25" transform="rotate(-180 50.875 26)" fill="#FF7557"></rect>
+          <rect x="26" y="76" width="25" height="25" transform="rotate(-180 26 76)" stroke="#E1DED5" stroke-width="0.504975"></rect>
+          <rect x="26" y="51" width="25" height="25" transform="rotate(-180 26 51)" fill="#E37BD3"></rect>
+          <rect x="26" y="26" width="25" height="25" transform="rotate(-180 26 26)" fill="#FFA663"></rect>
+        </svg>
+      
+        
+      <div class="container">
+        
+
+
+
+
+
+
+
+<div class="content-grid">
+  <div class="content-markdown">
+    
+   
+      
+
+
+
+
+<h1 class="Heading home-page-title XLarge ">Troubleshooting Mercedes-Benz</h1>
+   
+   
+   
+    <div class="admonition error"><p class="admonition-title">Enterprise
+</p><p>This page covers common user troubleshooting scenarios for Mercedes-Benz Community version. For information specific to Mercedes-Benz Enterprise, see our <a target="_blank" rel="noopener" href="https://support.mercedes-benz.com/hc/en-us">support center articles</a>.</p>
+</div>
+
+<h2 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h2><p>See <a href="install_troubleshoot">Troubleshoot installation issues</a>.</p>
+<h2 id="Projects"><a href="#Projects" class="headerlink" title="Projects"></a>Projects</h2><h3 id="Blank-page-when-loading-a-project"><a href="#Blank-page-when-loading-a-project" class="headerlink" title="Blank page when loading a project"></a>Blank page when loading a project</h3><p>After starting Mercedes-Benz and opening a project, you see a blank page. Several possible issues could be the cause.</p>
+<p>If you specify a host without a protocol such as <code>http://</code> or <code>https://</code> when starting Mercedes-Benz, Mercedes-Benz can fail to locate the correct files to load the project page.</p>
+<p>To resolve this issue, update the host specified as an environment variable or when starting Mercedes-Benz. See <a href="start">Start Mercedes-Benz</a>.</p>
+<h2 id="Labeling"><a href="#Labeling" class="headerlink" title="Labeling"></a>Labeling</h2><h3 id="Slowness-while-labeling"><a href="#Slowness-while-labeling" class="headerlink" title="Slowness while labeling"></a>Slowness while labeling</h3><ul>
+<li><p>If you’re using the SQLite database and another user imports a large volume of data, labeling might slow down for other users on the server due to the database load. </p>
+</li>
+<li><p>If you want to upload a large volume of data (thousands of items), consider doing that at a time when people are not labeling or use a different database backend such as PostgreSQL or Redis. You can run Docker Compose from the root directory of Mercedes-Benz to use PostgreSQL: <code>docker-compose up -d</code>, or see <a href="storage">Sync data from cloud or database storage</a>. </p>
+</li>
+<li><p>If you are using a labeling schema that has many thousands of labels, consider using an <a href="/tags/taxonomy.html">external taxonomy</a> instead.</p>
+</li>
+</ul>
+<h3 id="Image-audio-resource-loading-error-while-labeling"><a href="#Image-audio-resource-loading-error-while-labeling" class="headerlink" title="Image&#x2F;audio&#x2F;resource loading error while labeling"></a>Image&#x2F;audio&#x2F;resource loading error while labeling</h3><p>The most common mistake while resource loading is <b>CORS</b> (Cross-Origin Resource Sharing) problem or Cross Domain. When you are trying to fetch a picture from external hosting it could be blocked by security reasons. </p>
+<p>Open your browser console and check errors there. Typically, this problem is solved by the external host setup.</p>
+<ul>
+<li>If you have access to the hosting server as admin then you need to allow CORS for the web server. For example, on nginx, you can try adding the following lines to <code>/etc/nginx/nginx.conf</code> under your <code>location</code> section:</li>
+</ul>
+<details><summary><b>Click for details</b></summary><pre><code class="hljs conf">location &lt;YOUR_LOCATION&gt; &#123;
+     if ($request_method = &#x27;OPTIONS&#x27;) &#123;
+        add_header &#x27;Access-Control-Allow-Origin&#x27; &#x27;*&#x27;;
+        add_header &#x27;Access-Control-Allow-Methods&#x27; &#x27;GET, POST, OPTIONS&#x27;;
+        #
+        # Custom headers and headers various browsers *should* be OK with but aren&#x27;t
+        #
+        add_header &#x27;Access-Control-Allow-Headers&#x27; &#x27;DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range&#x27;;
+        #
+        # Tell client that this pre-flight info is valid for 20 days
+        #
+        add_header &#x27;Access-Control-Max-Age&#x27; 1728000;
+        add_header &#x27;Content-Type&#x27; &#x27;text/plain; charset=utf-8&#x27;;
+        add_header &#x27;Content-Length&#x27; 0;
+        return 204;
+     &#125;
+     if ($request_method = &#x27;POST&#x27;) &#123;
+        add_header &#x27;Access-Control-Allow-Origin&#x27; &#x27;*&#x27;;
+        add_header &#x27;Access-Control-Allow-Methods&#x27; &#x27;GET, POST, OPTIONS&#x27;;
+        add_header &#x27;Access-Control-Allow-Headers&#x27; &#x27;DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range&#x27;;
+        add_header &#x27;Access-Control-Expose-Headers&#x27; &#x27;Content-Length,Content-Range&#x27;;
+     &#125;
+     if ($request_method = &#x27;GET&#x27;) &#123;
+        add_header &#x27;Access-Control-Allow-Origin&#x27; &#x27;*&#x27;;
+        add_header &#x27;Access-Control-Allow-Methods&#x27; &#x27;GET, POST, OPTIONS&#x27;;
+        add_header &#x27;Access-Control-Allow-Headers&#x27; &#x27;DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range&#x27;;
+        add_header &#x27;Access-Control-Expose-Headers&#x27; &#x27;Content-Length,Content-Range&#x27;;
+     &#125;
+&#125;</code></pre></details>
+<ul>
+<li>For Amazon S3, see <a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/cors.html">Configuring and using cross-origin resource sharing (CORS)</a> in the Amazon S3 User Guide.</li>
+<li>For GCS, see <a target="_blank" rel="noopener" href="https://cloud.google.com/storage/docs/configuring-cors">Configuring cross-origin resource sharing (CORS)</a> in the Google Cloud Storage documentation.</li>
+<li>For Microsoft Azure, see <a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/rest/api/storageservices/cross-origin-resource-sharing--cors--support-for-the-azure-storage-services">Cross-Origin Resource Sharing (CORS) support for Azure Storage</a> in the Microsoft Azure documentation. </li>
+<li>If you serve your data from an HTTP server created like follows: <code>python -m http.server 8081 -d</code>, run the following from the command line:<pre><code class="hljs bash">npm install http-server -g
+http-server -p 3000 --cors</code></pre></li>
+</ul>
+<p>Not every host supports CORS setup, but you can to try locate CORS settings in the admin area of your host configuration.      </p>
+<h3 id="Audio-wave-doesn’t-match-annotations"><a href="#Audio-wave-doesn’t-match-annotations" class="headerlink" title="Audio wave doesn’t match annotations"></a>Audio wave doesn’t match annotations</h3><p>If you find that after annotating audio data, the visible audio wave doesn’t match the timestamps and the sound, try converting the audio to a different format. For example, if you are annotating mp3 files, try converting them to wav files.</p>
+<pre><code class="hljs bash">ffmpeg -y -i audio.mp3 -ar 8k -ac 1 audio.wav</code></pre>
+
+<h3 id="Predictions-aren’t-visible-to-annotators"><a href="#Predictions-aren’t-visible-to-annotators" class="headerlink" title="Predictions aren’t visible to annotators"></a>Predictions aren’t visible to annotators</h3><p>See <a href="#Pre-annotations">Pre-annotations</a> below. </p>
+<h2 id="Cloud-and-local-storage"><a href="#Cloud-and-local-storage" class="headerlink" title="Cloud and local storage"></a>Cloud and local storage</h2><p>When working with an external Cloud Storage connection (S3, GCS, Azure), keep the following in mind:</p>
+<ul>
+<li>For Source storage:<ul>
+<li>When <strong>Files</strong> import method is selected, Mercedes-Benz doesn’t import the data stored in the bucket, but instead creates <em>references</em> to the objects. Therefore, you have full access control on the data to be synced and shown on the labeling screen.</li>
+<li>When <strong>Tasks</strong> import method is selected, bucket files are assumed to be immutable; the only way to push an updated file’s state to Mercedes-Benz is to upload it with a new filename to storage or delete all tasks that are associated with that file and resync.</li>
+</ul>
+</li>
+<li>Sync operations with external buckets only goes one way. It either creates tasks from objects on the bucket (Source storage) or pushes annotations to the output bucket (Target storage). Changing something on the bucket side doesn’t guarantee consistency in results.</li>
+<li>We recommend using a separate bucket folder for each Mercedes-Benz project.</li>
+</ul>
+<h3 id="CORS-errors"><a href="#CORS-errors" class="headerlink" title="CORS errors"></a>CORS errors</h3><p>If you have not set up CORS, you cannot view cloud storage data from Mercedes-Benz. You might see a link to the data rather than a preview of the data, or you might see a CORS error in your web browser console:</p>
+<ul>
+<li>For Amazon S3, see <a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/cors.html">Configuring and using cross-origin resource sharing (CORS)</a> in the Amazon S3 User Guide.</li>
+<li>For GCS, see <a target="_blank" rel="noopener" href="https://cloud.google.com/storage/docs/configuring-cors">Configuring cross-origin resource sharing (CORS)</a> in the Google Cloud Storage documentation.</li>
+<li>For Microsoft Azure, see <a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/rest/api/storageservices/cross-origin-resource-sharing--cors--support-for-the-azure-storage-services">Cross-Origin Resource Sharing (CORS) support for Azure Storage</a> in the Microsoft Azure documentation.</li>
+</ul>
+<div class="admonition note"><p class="admonition-title">note</p><ol>
+<li>
+<p>Make sure to apply the correct role and permissions for your Service Account. For example, Service Account Role &quot;roles/iam.serviceAccountTokenCreator&quot; to the Service Account.</p>
+</li>
+<li>
+<p>If the name of the Service Account <code>labelstudio</code> is using the error displayed in the DEBUG logs, then you can enable them using the <code>--log-level DEBUG</code> flag in the <code>label-studio start</code> command.</p>
+</li>
+</ol>
+</div>
+
+<h3 id="403-errors"><a href="#403-errors" class="headerlink" title="403 errors"></a>403 errors</h3><p>If you see 403 errors in your web browser console, make sure you configured the correct credentials. </p>
+<details><summary><b> Google Cloud Storage credentials</b></summary><p>See <a target="_blank" rel="noopener" href="https://cloud.google.com/storage/docs/reference/libraries#setting_up_authentication">Setting up authentication</a> and <a target="_blank" rel="noopener" href="https://cloud.google.com/storage/docs/access-control/iam-permissions">IAM permissions for Cloud Storage</a> in the Google Cloud Storage documentation. </p>
+<p>Your account must have the <strong>Service Account Token Creator</strong> role, <strong>Storage Object Viewer</strong> role, and <strong>storage.buckets.get</strong> access permission.</p>
+<p>Also, if you’re using a service account to authorize access to the Google Cloud Platform, make sure to activate it. See <a target="_blank" rel="noopener" href="https://cloud.google.com/sdk/gcloud/reference/auth/activate-service-account">gcloud auth activate-service-account</a> in the Google Cloud SDK: Command Line Interface documentation.</p>
+</details>
+
+<details><summary><b>Amazon S3 credentials</b></summary><p>For Amazon S3, see <a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html">Configuration and credential file settings</a> in the Amazon AWS Command Line Interface User Guide. Also check that your credentials work from the <a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html">aws client</a>.</p>
+<ul>
+<li><p>Ensure that you specified the correct region when creating a bucket. If needed, change the region in your source or target storage settings or the <code>.aws/config</code> file, otherwise you might have problems accessing your bucket objects.
+ For example, update the following: <code>~/.aws/config</code></p>
+ <pre><code class="hljs plaintext">[default]
+region=us-east-2  # change to the region of your bucket</code></pre></li>
+</ul>
+<ul>
+<li>Ensure that the credentials you used to set up the source or target storage connection are still valid. If you see 403 errors in the browser console, and you set up the correct permissions for the bucket, you might need to update the Access Key ID, Secret Access Key, and Session ID. See the AWS Identity and Access Management documentation on <a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html">Requesting temporary security credentials</a>.</li>
+</ul>
+</details>
+
+<h3 id="Clicking-Sync-does-not-update-my-data"><a href="#Clicking-Sync-does-not-update-my-data" class="headerlink" title="Clicking Sync does not update my data"></a>Clicking Sync does not update my data</h3><p>Sometimes the sync process doesn’t start immediately. That is because syncing process is based on internal job scheduler. If after a period of time nothing happens, follow the steps below.</p>
+<p>First, check that you have specified the correct credentials (see the sections above).</p>
+<p>Then go to the cloud storage settings page and click <strong>Edit</strong> next to the cloud connection. From here, you can check the following:</p>
+<ul>
+<li><p>The <strong>File Filter Regex</strong> is set and correct. When no filters are specified, all found items are skipped. The filter should be a valid regular expression, not a wildcard (e.g. <code>.*</code> is a valid, <code>*.</code> is not valid)</p>
+</li>
+<li><p><strong>Import method</strong> should be set to <code>Files</code> for simple cases if you work with images, audio, text files or any other binary content stored in the bucket.</p>
+<p>  This instructs Mercedes-Benz to create tasks automatically with URI links (like <code>s3://bucket/1.jpg</code>), and resolve them into presigned <code>https</code> URLs when opening the labeling screen. </p>
+<p>  If you store JSON&#x2F;JSONL tasks in the Mercedes-Benz format or Parquet files in your bucket - set this option to “Tasks”. </p>
+</li>
+<li><p>Check for rq worker failures. An easy way to check rq workers is complete an export operation. </p>
+<p>  From the Data manager, click <strong>Export</strong>, and create a new snapshot and download the JSON file. If you see an Error, most likely your rq workers are having problems. Another way to check rq workers is to login as a superuser and go to the <code>/django-rq</code> page. You should see a <code>workers</code> column. If the values are <code>0</code> or the column is empty, this can indicate a failure.</p>
+</li>
+</ul>
+<h3 id="JSON-files-from-a-cloud-storage-are-not-synced-and-the-Data-Manager-is-empty"><a href="#JSON-files-from-a-cloud-storage-are-not-synced-and-the-Data-Manager-is-empty" class="headerlink" title="JSON files from a cloud storage are not synced and the Data Manager is empty"></a>JSON files from a cloud storage are not synced and the Data Manager is empty</h3><ol>
+<li><p>Edit the storage settings. If you see tasks in the Data Manager, proceed to step 2. </p>
+</li>
+<li><p>Set <strong>Import method</strong> to “Tasks”. </p>
+<p> If you don’t see tasks in the Data Manager, your bucket doesn’t have GET permissions, only LIST permissions.</p>
+</li>
+</ol>
+<p>If there is only LIST permission, Mercedes-Benz can scan the bucket for the existence of objects without actually reading them. With GET permissions, Mercedes-Benz can read the data and extract your JSON files appropriately. </p>
+<h3 id="Tasks-don’t-load-the-way-I-expect"><a href="#Tasks-don’t-load-the-way-I-expect" class="headerlink" title="Tasks don’t load the way I expect"></a>Tasks don’t load the way I expect</h3><p>If the tasks sync to Mercedes-Benz but don’t appear the way that you expect, maybe with URLs instead of images or with one task where you expect to see many, check the following:</p>
+<ul>
+<li>If you’re placing JSON files in <a href="storage.html">cloud storage</a>, ensure that if you have multiple tasks in the same file, they are all formatted the same way (for example, you cannot have 1 task with the raw contents of the <code>data</code> field and another task that contains annotations and predictions in the same file).</li>
+<li>If you’re syncing image or audio files, make sure <strong>Import method</strong> is set to “Files”.</li>
+</ul>
+<h3 id="Unable-to-access-local-storage-when-using-Windows"><a href="#Unable-to-access-local-storage-when-using-Windows" class="headerlink" title="Unable to access local storage when using Windows"></a>Unable to access local storage when using Windows</h3><p>If you are using Windows:</p>
+<ol>
+<li>Ensure you use double backslashes (<code>\\</code>) when setting the environment variable <code>LABEL_STUDIO_LOCAL_FILES_DOCUMENT_ROOT</code>. This is necessary because you have to escape the backslash ().</li>
+<li>Ensure you use single backslashes (<code>\</code>) when entering the <strong>Absolute local path</strong> when configuring local storage for a project. </li>
+<li>Do not use spaces or non-latin symbols in <code>LABEL_STUDIO_LOCAL_FILES_DOCUMENT_ROOT</code> or in the <strong>Absolute local path</strong>.</li>
+</ol>
+<p>Example:</p>
+<pre><code class="hljs bash">LABEL_STUDIO_LOCAL_FILES_DOCUMENT_ROOT=c:\\data\\media
+Absolute <span class="hljs-built_in">local</span> path from Local Storage settings = c:\data\media\subpath</code></pre>
+
+<h2 id="Pre-annotations"><a href="#Pre-annotations" class="headerlink" title="Pre-annotations"></a>Pre-annotations</h2><p>Check that you are using the correct annotation units. </p>
+<details><summary><b>Image annotation units</b></summary></details>
+
+<h3 id="Annotators-cannot-see-predictions"><a href="#Annotators-cannot-see-predictions" class="headerlink" title="Annotators cannot see predictions"></a>Annotators cannot see predictions</h3><p>If annotators can’t see predictions or if you encounter unexpected behavior after you <a href="predictions">import pre-annotations into Mercedes-Benz</a>, review this guidance to resolve the issues.</p>
+<p>First, in the <strong>Settings &gt; Annotation</strong> section for your project, ensure that <strong>Use predictions to pre-label tasks</strong> is enabled.</p>
+<h4 id="Check-the-configuration-values-of-the-labeling-configuration-and-tasks"><a href="#Check-the-configuration-values-of-the-labeling-configuration-and-tasks" class="headerlink" title="Check the configuration values of the labeling configuration and tasks"></a>Check the configuration values of the labeling configuration and tasks</h4><p>The <code>from_name</code> of the pre-annotation task JSON must match the value of <code>name</code> in the <code>&lt;Labels name=&quot;label&quot; toName=&quot;text&quot;&gt;</code> portion of the labeling configuration. The <code>to_name</code> must match the <code>toName</code> value. </p>
+<p>For example, the following XML:
+  <pre><code class="hljs xml">...
+<span class="hljs-tag">&lt;<span class="hljs-name">Choices</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;choice&quot;</span> <span class="hljs-attr">toName</span>=<span class="hljs-string">&quot;image&quot;</span> <span class="hljs-attr">showInLine</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span>`
+...
+<span class="hljs-tag">&lt;<span class="hljs-name">RectangleLabels</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;label&quot;</span> <span class="hljs-attr">toName</span>=<span class="hljs-string">&quot;image&quot;</span>&gt;</span>
+...</code></pre></p>
+<p>Should correspond with the following portions of the example JSON:</p>
+<pre><code class="hljs json">...
+<span class="hljs-attr">&quot;type&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;rectanglelabels&quot;</span><span class="hljs-punctuation">,</span>        
+<span class="hljs-attr">&quot;from_name&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;label&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-attr">&quot;to_name&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;image&quot;</span><span class="hljs-punctuation">,</span>
+...
+type<span class="hljs-string">&quot;: &quot;</span>choices<span class="hljs-string">&quot;,</span>
+<span class="hljs-string">&quot;</span>from_name<span class="hljs-string">&quot;: &quot;</span>choice<span class="hljs-string">&quot;, &quot;</span>to_name<span class="hljs-string">&quot;: &quot;</span>image<span class="hljs-string">&quot;,</span>
+<span class="hljs-string">...</span></code></pre>
+
+<h4 id="Check-the-labels-in-your-configuration-and-your-tasks"><a href="#Check-the-labels-in-your-configuration-and-your-tasks" class="headerlink" title="Check the labels in your configuration and your tasks"></a>Check the labels in your configuration and your tasks</h4><p>Make sure that you have a labeling configuration set up for the labeling interface, and that the labels in your JSON file exactly match the labels in your configuration. If you’re using a <a target="_blank" rel="noopener" href="https://github.com/Mercedes-Benz/label-studio-transformers">tool to transform your model output</a>, make sure that the labels aren’t altered by the tool. </p>
+<h4 id="Check-the-IDs-and-toName-values"><a href="#Check-the-IDs-and-toName-values" class="headerlink" title="Check the IDs and toName values"></a>Check the IDs and toName values</h4><p>If you’re performing nested labeling, such as displaying a TextArea tag for specific Label or Choice values, the IDs for those results must match. </p>
+<p>For example, if you want to transcribe text alongside a named entity resolution task, you might have the following labeling configuration:</p>
+<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">View</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">Labels</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;label&quot;</span> <span class="hljs-attr">toName</span>=<span class="hljs-string">&quot;text&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Label</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;PER&quot;</span> <span class="hljs-attr">background</span>=<span class="hljs-string">&quot;red&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Label</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;ORG&quot;</span> <span class="hljs-attr">background</span>=<span class="hljs-string">&quot;darkorange&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Label</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;LOC&quot;</span> <span class="hljs-attr">background</span>=<span class="hljs-string">&quot;orange&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Label</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;MISC&quot;</span> <span class="hljs-attr">background</span>=<span class="hljs-string">&quot;green&quot;</span>/&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">Labels</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">Text</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;$text&quot;</span>/&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">TextArea</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;entity&quot;</span> <span class="hljs-attr">toName</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">perRegion</span>=<span class="hljs-string">&quot;true&quot;</span>/&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">View</span>&gt;</span></code></pre>
+
+<p>If you wanted to add predicted text and suggested transcriptions for this labeling configuration, you might use the following example JSON. </p>
+<details><summary><b>Click for details</b></summary><pre><code class="hljs json"><span class="hljs-punctuation">&#123;</span>
+<span class="hljs-attr">&quot;data&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-punctuation">&#123;</span>
+         <span class="hljs-attr">&quot;text&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;The world that we live in is a broad expanse of nothingness, said the existential philosopher, before he rode away with his cat on his motorbike. &quot;</span>
+      <span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span>
+   <span class="hljs-attr">&quot;predictions&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-punctuation">[</span>
+      <span class="hljs-punctuation">&#123;</span>
+            <span class="hljs-attr">&quot;result&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-punctuation">[</span>
+               <span class="hljs-punctuation">&#123;</span>
+                  <span class="hljs-attr">&quot;value&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-punctuation">&#123;</span>
+                     <span class="hljs-attr">&quot;start&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-number">135</span><span class="hljs-punctuation">,</span>
+                     <span class="hljs-attr">&quot;end&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-number">144</span><span class="hljs-punctuation">,</span>
+                     <span class="hljs-attr">&quot;text&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;motorbike&quot;</span><span class="hljs-punctuation">,</span>
+                     <span class="hljs-attr">&quot;labels&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-punctuation">[</span>
+                        <span class="hljs-string">&quot;ORG&quot;</span>
+                     <span class="hljs-punctuation">]</span>
+                  <span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span>
+                  <span class="hljs-attr">&quot;id&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;def&quot;</span><span class="hljs-punctuation">,</span>
+                  <span class="hljs-attr">&quot;from_name&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;ner&quot;</span><span class="hljs-punctuation">,</span>
+                  <span class="hljs-attr">&quot;to_name&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;text&quot;</span><span class="hljs-punctuation">,</span>
+                  <span class="hljs-attr">&quot;type&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;labels&quot;</span>
+               <span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span>
+               <span class="hljs-punctuation">&#123;</span>
+                  <span class="hljs-attr">&quot;value&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-punctuation">&#123;</span>
+                     <span class="hljs-attr">&quot;start&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-number">135</span><span class="hljs-punctuation">,</span>
+                     <span class="hljs-attr">&quot;end&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-number">144</span><span class="hljs-punctuation">,</span>
+                     <span class="hljs-attr">&quot;text&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-punctuation">[</span>
+                        <span class="hljs-string">&quot;yay&quot;</span>
+                     <span class="hljs-punctuation">]</span>
+                  <span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span>
+                  <span class="hljs-attr">&quot;id&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;def&quot;</span><span class="hljs-punctuation">,</span>
+                  <span class="hljs-attr">&quot;from_name&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;entity&quot;</span><span class="hljs-punctuation">,</span>
+                  <span class="hljs-attr">&quot;to_name&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;text&quot;</span><span class="hljs-punctuation">,</span>
+                  <span class="hljs-attr">&quot;type&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;textarea&quot;</span>
+               <span class="hljs-punctuation">&#125;</span>
+            <span class="hljs-punctuation">]</span>
+      <span class="hljs-punctuation">&#125;</span>
+   <span class="hljs-punctuation">]</span>
+<span class="hljs-punctuation">&#125;</span></code></pre>
+</details>
+
+<p>Because the TextArea tag applies to each labeled region, the IDs for the label results and the textarea results must match. </p>
+<h4 id="Read-only-and-hidden-regions"><a href="#Read-only-and-hidden-regions" class="headerlink" title="Read only and hidden regions"></a>Read only and hidden regions</h4><p>In some situations it’s very helpful to hide or to make <code>read-only</code> bounding boxes, text spans, audio segments, etc. You can put <code>&quot;readonly&quot;: true</code> or <code>&quot;hidden&quot;: true</code> in regions to achieve this (the dict inside of <code>annotations.result</code> list).  </p>
+<h2 id="Exports"><a href="#Exports" class="headerlink" title="Exports"></a>Exports</h2><h3 id="HTML-label-offsets-are-in-the-wrong-places"><a href="#HTML-label-offsets-are-in-the-wrong-places" class="headerlink" title="HTML label offsets are in the wrong places"></a>HTML label offsets are in the wrong places</h3><p>If the offsets for exported HTML labels don’t match your expected output, such as with HTML named entity recognition (NER) tasks, the most common reason why is due to HTML minification. When you upload HTML files to Mercedes-Benz for labeling, the HTML is minified to remove whitespace. When you annotate those tasks, the offsets for the labels apply to the minified version of the HTML, rather than the original unmodified HTML files. </p>
+<p>To prevent the HTML files from being minified, you can use a different import method. See <a href="tasks.html#Import-HTML-data">Import HTML data</a> for more.</p>
+<p>If you want to correct existing annotations, you can minify your source HTML files in the same way that Mercedes-Benz does. The minification is performed with the following script:</p>
+<pre><code class="hljs python"><span class="hljs-keyword">import</span> htmlmin
+
+<span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(<span class="hljs-string">&quot;sample.html&quot;</span>, <span class="hljs-string">&quot;r&quot;</span>) <span class="hljs-keyword">as</span> f:
+html_doc = f.read()
+
+minified_html_doc = htmlmin.minify(html_doc, remove_all_empty_space=<span class="hljs-literal">True</span>)</code></pre>
+
+<p>If minification does not seem to be affecting the offset placements, complex CSS or other reasons could be the cause.</p>
+<h2 id="ML-backends"><a href="#ML-backends" class="headerlink" title="ML backends"></a>ML backends</h2><p>You can investigate most problems using the server console log. The machine learning backend runs as a separate server from Mercedes-Benz, so make sure you check the correct server console logs while troubleshooting. To see more detailed logs, start the ML backend server with the <code>--debug</code> option. </p>
+<p>If you’re running an ML backend: </p>
+<ul>
+<li>Production training logs are located in <code>my_backend/logs/rq.log</code></li>
+<li>Production runtime logs are located in <code>my_backend/logs/uwsgi.log</code>
+In development mode, training logs appear in the web browser console.</li>
+</ul>
+<p>If you’re running an ML backend using Docker Compose:</p>
+<ul>
+<li>Training logs are located in <code>logs/rq.log</code></li>
+<li>Main process and inference logs are located in <code>logs/uwsgi.log</code></li>
+</ul>
+<h3 id="Label-Studio-default-timeout-settings-for-ML-server-requests"><a href="#Label-Studio-default-timeout-settings-for-ML-server-requests" class="headerlink" title="Mercedes-Benz default timeout settings for ML server requests"></a>Mercedes-Benz default timeout settings for ML server requests</h3><p>Label studio has default timeouts for all types of requests to ML server. </p>
+<p>Label studio has several different requests to ML server:</p>
+<ol>
+<li>Health - request to check ML backend health status when adding new ML backend (env variable <code>ML_TIMEOUT_HEALTH</code>)</li>
+<li>Setup - request to setup ML backend, initialize ML model (env variable ML_TIMEOUT_SETUP)</li>
+<li>Predict - prediction request when Mercedes-Benz gets predictions from ML backend (env variable <code>ML_TIMEOUT_PREDICT</code>)</li>
+<li>Train - request to train ML backend  (env variable <code>ML_TIMEOUT_PREDICT</code>)</li>
+<li>Duplicate model - duplicate model request to ML backend (env variable <code>ML_TIMEOUT_PREDICT</code>)</li>
+<li>Delete - send delete request to ML backend (env variable <code>ML_TIMEOUT_PREDICT</code>)</li>
+<li>Train job status - request train job status from ML backend (env variable <code>ML_TIMEOUT_PREDICT</code>)</li>
+</ol>
+<p>You can adjust the timeout by setting an environment variables for each request or modify in Mercedes-Benz variables. These are the variables section in Mercedes-Benz (in seconds):</p>
+<pre><code class="hljs python">CONNECTION_TIMEOUT = <span class="hljs-built_in">float</span>(get_env(<span class="hljs-string">&#x27;ML_CONNECTION_TIMEOUT&#x27;</span>, <span class="hljs-number">1</span>))  
+TIMEOUT_DEFAULT = <span class="hljs-built_in">float</span>(get_env(<span class="hljs-string">&#x27;ML_TIMEOUT_DEFAULT&#x27;</span>, <span class="hljs-number">100</span>))  
+TIMEOUT_TRAIN = <span class="hljs-built_in">float</span>(get_env(<span class="hljs-string">&#x27;ML_TIMEOUT_TRAIN&#x27;</span>, <span class="hljs-number">30</span>))
+TIMEOUT_PREDICT = <span class="hljs-built_in">float</span>(get_env(<span class="hljs-string">&#x27;ML_TIMEOUT_PREDICT&#x27;</span>, <span class="hljs-number">100</span>))
+TIMEOUT_HEALTH = <span class="hljs-built_in">float</span>(get_env(<span class="hljs-string">&#x27;ML_TIMEOUT_HEALTH&#x27;</span>, <span class="hljs-number">1</span>))
+TIMEOUT_SETUP = <span class="hljs-built_in">float</span>(get_env(<span class="hljs-string">&#x27;ML_TIMEOUT_SETUP&#x27;</span>, <span class="hljs-number">3</span>))
+TIMEOUT_DUPLICATE_MODEL = <span class="hljs-built_in">float</span>(get_env(<span class="hljs-string">&#x27;ML_TIMEOUT_DUPLICATE_MODEL&#x27;</span>, <span class="hljs-number">1</span>))
+TIMEOUT_DELETE = <span class="hljs-built_in">float</span>(get_env(<span class="hljs-string">&#x27;ML_TIMEOUT_DELETE&#x27;</span>, <span class="hljs-number">1</span>))
+TIMEOUT_TRAIN_JOB_STATUS = <span class="hljs-built_in">float</span>(get_env(<span class="hljs-string">&#x27;ML_TIMEOUT_TRAIN_JOB_STATUS&#x27;</span>, <span class="hljs-number">1</span>))</code></pre>
+
+<p>You can modify them in <a target="_blank" rel="noopener" href="https://github.com/Mercedes-Benz/label-studio/blob/develop/label_studio/ml/api_connector.py#L22..L31">ml&#x2F;api_connector.py</a>.</p>
+<h3 id="I-launched-the-ML-backend-but-it-appears-as-Disconnected-after-adding-it-in-the-Label-Studio-UI"><a href="#I-launched-the-ML-backend-but-it-appears-as-Disconnected-after-adding-it-in-the-Label-Studio-UI" class="headerlink" title="I launched the ML backend, but it appears as Disconnected after adding it in the Mercedes-Benz UI"></a>I launched the ML backend, but it appears as <strong>Disconnected</strong> after adding it in the Mercedes-Benz UI</h3><p>Your ML backend server might not have started properly. </p>
+<ol>
+<li>Check whether the ML backend server is running. Run the following health check:<br> <code>curl -X GET http://localhost:9090/health</code></li>
+<li>If the health check doesn’t respond, or you see errors, check the server logs.</li>
+<li>If you used Docker Compose to start the ML backend, check for requirements missing from the <code>requirements.txt</code> file used to set up the environment inside Docker.</li>
+</ol>
+<h3 id="The-ML-backend-seems-to-be-connected-but-after-I-click-“Start-Training”-I-see-“Error-Click-here-for-details-”-message"><a href="#The-ML-backend-seems-to-be-connected-but-after-I-click-“Start-Training”-I-see-“Error-Click-here-for-details-”-message" class="headerlink" title="The ML backend seems to be connected, but after I click “Start Training”, I see “Error. Click here for details.” message"></a>The ML backend seems to be connected, but after I click “Start Training”, I see “Error. Click here for details.” message</h3><p>Click the error message to review the traceback. Common errors that you might see include:</p>
+<ul>
+<li>Insufficient number of annotations completed for training to begin.</li>
+<li>Memory issues on the server. 
+If you can’t resolve the traceback issues by yourself, <a target="_blank" rel="noopener" href="https://slack.labelstud.io/?source=docs-ML">contact us on Slack</a>.</li>
+</ul>
+<h3 id="My-predictions-are-wrong-or-I-don’t-see-the-model-prediction-results-on-the-labeling-page"><a href="#My-predictions-are-wrong-or-I-don’t-see-the-model-prediction-results-on-the-labeling-page" class="headerlink" title="My predictions are wrong or I don’t see the model prediction results on the labeling page"></a>My predictions are wrong or I don’t see the model prediction results on the labeling page</h3><p>Your ML backend might be producing predictions in the wrong format. </p>
+<ul>
+<li>Check to see whether the ML backend predictions format follows the same structure as <a href="predictions.html">predictions in imported pre-annotations</a>.</li>
+<li>Confirm that your project’s label configuration matches the output produced by your ML backend. For example, use the <code>&lt;Choices&gt;</code> tag to create a class of predictions for text. See more <a href="/tags">Mercedes-Benz tags</a>.</li>
+</ul>
+<h3 id="The-model-backend-fails-to-start-or-run-properly"><a href="#The-model-backend-fails-to-start-or-run-properly" class="headerlink" title="The model backend fails to start or run properly"></a>The model backend fails to start or run properly</h3><p>If you see errors about missing packages in the terminal after starting your ML backend server, or in the logs, you might need to specify additional packages in the <code>requirements.txt</code> file for your ML backend.</p>
+<h3 id="ML-backend-is-unable-to-access-tasks"><a href="#ML-backend-is-unable-to-access-tasks" class="headerlink" title="ML backend is unable to access tasks"></a>ML backend is unable to access tasks</h3><p>Because the ML backend and Mercedes-Benz are different services, the assets (images, audio, etc.) that you label must be hosted and be accessible with URLs by the machine learning backend, otherwise it might fail to create predictions.</p>
+<h3 id="I-get-a-validation-error-when-adding-the-ML-backend"><a href="#I-get-a-validation-error-when-adding-the-ML-backend" class="headerlink" title="I get a validation error when adding the ML backend"></a>I get a validation error when adding the ML backend</h3><p>If you get a validation error when adding the ML backend URL to your Mercedes-Benz project, check the following:</p>
+<ul>
+<li>Is the labeling interface set up with a valid configuration?</li>
+<li>Is the machine learning backend running? Run the following health check:<br> <code>curl -X GET http://localhost:9090/health</code></li>
+<li>Is your machine learning backend available from your Mercedes-Benz instance? It must be available to the instance running Mercedes-Benz.</li>
+</ul>
+<p>If you’re running Mercedes-Benz in Docker, you must run the machine learning backend inside the same Docker container, or otherwise make it available to the Docker container running Mercedes-Benz. You can use the <code>docker exec</code> command to run commands inside the Docker container, or use <code>docker exec -it &lt;container_id&gt; /bin/sh</code> to start a shell in the context of the container. See the <a target="_blank" rel="noopener" href="https://docs.docker.com/engine/reference/commandline/exec/">docker exec documentation</a>. </p>
+<h3 id="No-such-file-or-directory-error-on-Windows"><a href="#No-such-file-or-directory-error-on-Windows" class="headerlink" title="No such file or directory error on Windows"></a>No such file or directory error on Windows</h3><p>If you encounter an error similar to the following when running <code>docker-compose up --build</code> on Windows:</p>
+<pre><code class="hljs plaintext">exec /app/start.sh : No such file or directory
+exited with code 1</code></pre>
+
+<p>This issue is likely caused by Windows’ handling of line endings in text files, which can affect scripts
+like <code>start.sh</code>. To resolve this issue, follow the steps below:</p>
+<h4 id="Step-1-Adjust-Git-Configuration"><a href="#Step-1-Adjust-Git-Configuration" class="headerlink" title="Step 1: Adjust Git Configuration"></a>Step 1: Adjust Git Configuration</h4><p>Before cloning the repository, ensure your Git is configured to not automatically convert line endings to
+Windows-style (CRLF) when checking out files. This can be achieved by setting <code>core.autocrlf</code> to <code>false</code>. Open Git Bash
+or your preferred terminal and execute the following command:</p>
+<pre><code class="hljs plaintext">git config --global core.autocrlf false</code></pre>
+
+<h4 id="Step-2-Clone-the-Repository-Again"><a href="#Step-2-Clone-the-Repository-Again" class="headerlink" title="Step 2: Clone the Repository Again"></a>Step 2: Clone the Repository Again</h4><p>If you have already cloned the repository before adjusting your Git configuration, you’ll need to clone it again to
+ensure that the line endings are preserved correctly:</p>
+<ol>
+<li><strong>Delete the existing local repository.</strong> Ensure you have backed up any changes or work in progress.</li>
+<li><strong>Clone the repository again.</strong> Use the standard Git clone command to clone the repository to your local machine.</li>
+</ol>
+<h4 id="Step-3-Build-and-Run-the-Docker-Containers"><a href="#Step-3-Build-and-Run-the-Docker-Containers" class="headerlink" title="Step 3: Build and Run the Docker Containers"></a>Step 3: Build and Run the Docker Containers</h4><p>Navigate to the appropriate directory within your cloned repository that contains the Dockerfile
+and <code>docker-compose.yml</code>. Then, proceed with the Docker commands:</p>
+<ol>
+<li><p><strong>Build the Docker containers:</strong> Run <code>docker-compose build</code> to build the Docker containers based on the configuration
+specified in <code>docker-compose.yml</code>.</p>
+</li>
+<li><p><strong>Start the Docker containers:</strong> Once the build process is complete, start the containers using <code>docker-compose up</code>.</p>
+</li>
+</ol>
+<h4 id="Additional-Notes"><a href="#Additional-Notes" class="headerlink" title="Additional Notes"></a>Additional Notes</h4><ul>
+<li>This solution specifically addresses issues encountered on Windows due to the automatic conversion of line endings. If
+you’re using another operating system, this solution may not apply.</li>
+<li>Remember to check your project’s <code>.gitattributes</code> file, if it exists, as it can also influence how Git handles line
+endings in your files.</li>
+</ul>
+<p>By following these steps, you should be able to resolve issues related to Docker not recognizing the <code>start.sh</code> script
+on Windows due to line ending conversions.</p>
+<h3 id="Pip-Cache-Reset-in-Docker-Images"><a href="#Pip-Cache-Reset-in-Docker-Images" class="headerlink" title="Pip Cache Reset in Docker Images"></a>Pip Cache Reset in Docker Images</h3><p>Sometimes, you want to reset the pip cache to ensure that the latest versions of the dependencies are installed. 
+For example, Mercedes-Benz ML Backend library is used as 
+<code>label-studio-ml @ git+https://github.com/Mercedes-Benz/label-studio-ml-backend.git</code> in requirements.txt. Let’s assume that it
+is updated, and you want to jump on the latest version in your docker image with the ML model. </p>
+<p>You can rebuild a docker image from scratch with the following command:</p>
+<pre><code class="hljs bash">docker compose build --no-cache</code></pre>
+
+<h3 id="Bad-Gateway-and-Service-Unavailable-errors"><a href="#Bad-Gateway-and-Service-Unavailable-errors" class="headerlink" title="Bad Gateway and Service Unavailable errors"></a><code>Bad Gateway</code> and <code>Service Unavailable</code> errors</h3><p>You might see these errors if you send multiple concurrent requests. </p>
+<p>Note that the provided ML backend examples are offered in development mode, and do not support production-level inference serving. </p>
+<h3 id="ML-backend-fails-to-make-simple-auto-annotations-or-unable-to-see-predictions"><a href="#ML-backend-fails-to-make-simple-auto-annotations-or-unable-to-see-predictions" class="headerlink" title="ML backend fails to make simple auto-annotations or unable to see predictions"></a>ML backend fails to make simple auto-annotations or unable to see predictions</h3><p>You must ensure that the ML backend can access your Mercedes-Benz data. If it can’t, you might encounter the following issues:</p>
+<ul>
+<li><code>no such file or directory</code> errors in the server logs.</li>
+<li>You are unable to see predictions when loading tasks in Mercedes-Benz.</li>
+<li>Your ML backend appears to be connected properly, but cannot seem to complete any auto annotations within tasks.</li>
+</ul>
+<p>To remedy this, ensure you have set the <code>LABEL_STUDIO_URL</code> and <code>LABEL_STUDIO_API_KEY</code> environment variables. For more information, see <a href="ml#Allow-the-ML-backend-to-access-Label-Studio-data">Allow the ML backend to access Mercedes-Benz data</a>.</p>
+
+    
+  </div>
+  <div class="page-rightsidebar">
+    
+      <div class="toc">
+        
+
+
+
+
+<h3 class="Text  Eyebrow ">In this article</h3>
+        <ol class="toc-list"><li class="toc-list-level-2"><a href="#Installation">Installation</a></li><li class="toc-list-level-2"><a href="#Projects">Projects</a></li><li class="toc-list-level-3"><a href="#Blank-page-when-loading-a-project">Blank page when loading a project</a></li><li class="toc-list-level-2"><a href="#Labeling">Labeling</a></li><li class="toc-list-level-3"><a href="#Slowness-while-labeling">Slowness while labeling</a></li><li class="toc-list-level-3"><a href="#Image-audio-resource-loading-error-while-labeling">Image&#x2F;audio&#x2F;resource loading error while labeling</a></li><li class="toc-list-level-3"><a href="#Audio-wave-doesn’t-match-annotations">Audio wave doesn’t match annotations</a></li><li class="toc-list-level-3"><a href="#Predictions-aren’t-visible-to-annotators">Predictions aren’t visible to annotators</a></li><li class="toc-list-level-2"><a href="#Cloud-and-local-storage">Cloud and local storage</a></li><li class="toc-list-level-3"><a href="#CORS-errors">CORS errors</a></li><li class="toc-list-level-3"><a href="#403-errors">403 errors</a></li><li class="toc-list-level-3"><a href="#Clicking-Sync-does-not-update-my-data">Clicking Sync does not update my data</a></li><li class="toc-list-level-3"><a href="#JSON-files-from-a-cloud-storage-are-not-synced-and-the-Data-Manager-is-empty">JSON files from a cloud storage are not synced and the Data Manager is empty</a></li><li class="toc-list-level-3"><a href="#Tasks-don’t-load-the-way-I-expect">Tasks don’t load the way I expect</a></li><li class="toc-list-level-3"><a href="#Unable-to-access-local-storage-when-using-Windows">Unable to access local storage when using Windows</a></li><li class="toc-list-level-2"><a href="#Pre-annotations">Pre-annotations</a></li><li class="toc-list-level-3"><a href="#Annotators-cannot-see-predictions">Annotators cannot see predictions</a></li><li class="toc-list-level-2"><a href="#Exports">Exports</a></li><li class="toc-list-level-3"><a href="#HTML-label-offsets-are-in-the-wrong-places">HTML label offsets are in the wrong places</a></li><li class="toc-list-level-2"><a href="#ML-backends">ML backends</a></li><li class="toc-list-level-3"><a href="#Label-Studio-default-timeout-settings-for-ML-server-requests">Mercedes-Benz default timeout settings for ML server requests</a></li><li class="toc-list-level-3"><a href="#I-launched-the-ML-backend-but-it-appears-as-Disconnected-after-adding-it-in-the-Label-Studio-UI">I launched the ML backend, but it appears as Disconnected after adding it in the Mercedes-Benz UI</a></li><li class="toc-list-level-3"><a href="#The-ML-backend-seems-to-be-connected-but-after-I-click-“Start-Training”-I-see-“Error-Click-here-for-details-”-message">The ML backend seems to be connected, but after I click “Start Training”, I see “Error. Click here for details.” message</a></li><li class="toc-list-level-3"><a href="#My-predictions-are-wrong-or-I-don’t-see-the-model-prediction-results-on-the-labeling-page">My predictions are wrong or I don’t see the model prediction results on the labeling page</a></li><li class="toc-list-level-3"><a href="#The-model-backend-fails-to-start-or-run-properly">The model backend fails to start or run properly</a></li><li class="toc-list-level-3"><a href="#ML-backend-is-unable-to-access-tasks">ML backend is unable to access tasks</a></li><li class="toc-list-level-3"><a href="#I-get-a-validation-error-when-adding-the-ML-backend">I get a validation error when adding the ML backend</a></li><li class="toc-list-level-3"><a href="#No-such-file-or-directory-error-on-Windows">No such file or directory error on Windows</a></li><li class="toc-list-level-3"><a href="#Pip-Cache-Reset-in-Docker-Images">Pip Cache Reset in Docker Images</a></li><li class="toc-list-level-3"><a href="#Bad-Gateway-and-Service-Unavailable-errors">Bad Gateway and Service Unavailable errors</a></li><li class="toc-list-level-3"><a href="#ML-backend-fails-to-make-simple-auto-annotations-or-unable-to-see-predictions">ML backend fails to make simple auto-annotations or unable to see predictions</a></li></ol>
+      </div>
+    
+    <div class="toc-enterprise-cta">
+      
+        <span class="toc-enterprise-cta-copy">Designed for teams of all sizes</span>
+        <a href="https://mercedes-benz.com/pricing" class="Button Tertiary">
+   Compare Versions
+</a>
+      
+    </div>
+  </div>
+</div>
+        
+        <footer class="content-footer">
+          <div class="helpful-container">
+            
+            <form class="helpful-form" id="helpful-form">
+              
+
+
+
+
+<h3 class="Text  Eyebrow ">Was this useful?</h3>
+              <fieldset>
+                <div class="helpful-button-group">
+                  <div class="helpful-radio-container">
+                    <input type="radio" name="helpful" id="feedback-helpful-yes" value="yes">
+                    <label for="feedback-helpful-yes" class="helpful-button">
+                      <svg width="24" height="24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M13.048 3.544a.881.881 0 0 0-1.112.353l-2.71 4.518A2.75 2.75 0 0 1 6.868 9.75H4.25v9.5h12.222a1.25 1.25 0 0 0 1.205-.921l1.91-7a1.252 1.252 0 0 0-1.206-1.579h-4.576a1.35 1.35 0 0 1-1.291-1.737l1.022-3.408a.882.882 0 0 0-.488-1.06Zm-1.077-1.463a2.38 2.38 0 0 1 3.001 2.954m0 0-.964 3.215h4.373a2.75 2.75 0 0 1 2.654 3.473l-1.91 7a2.75 2.75 0 0 1-2.651 2.027H4.1a1.35 1.35 0 0 1-1.35-1.35V9.6A1.35 1.35 0 0 1 4.1 8.25h2.768a1.25 1.25 0 0 0 1.072-.607l2.71-4.516c.298-.498.768-.87 1.321-1.046" ></path><path fill-rule="evenodd" clip-rule="evenodd" d="M7 8.25a.75.75 0 0 1 .75.75v11a.75.75 0 0 1-1.5 0V9A.75.75 0 0 1 7 8.25Z" ></path></svg>
+                      Yes
+                    </label>
+                  </div>
+                  <div class="helpful-radio-container">
+                    <input type="radio" name="helpful" id="feedback-helpful-no" value="no">
+                    <label for="feedback-helpful-no" class="helpful-button">
+                      <svg width="24" height="24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M13.048 20.456a.88.88 0 0 1-1.112-.354l-2.71-4.517a2.75 2.75 0 0 0-2.358-1.335H4.25v-9.5h12.222a1.251 1.251 0 0 1 1.205.921l1.91 7a1.252 1.252 0 0 1-1.206 1.579h-4.576a1.351 1.351 0 0 0-1.291 1.737l1.022 3.408a.883.883 0 0 1-.488 1.06Zm-1.077 1.463a2.381 2.381 0 0 0 3.001-2.954m0 0-.964-3.215h4.373a2.75 2.75 0 0 0 2.654-3.473l-1.91-7a2.75 2.75 0 0 0-2.651-2.027H4.1A1.35 1.35 0 0 0 2.75 4.6v9.8a1.35 1.35 0 0 0 1.35 1.35h2.768a1.25 1.25 0 0 1 1.072.607l2.71 4.516c.298.498.768.87 1.321 1.046" ></path><path fill-rule="evenodd" clip-rule="evenodd" d="M7 15.75a.75.75 0 0 0 .75-.75V4a.75.75 0 0 0-1.5 0v11c0 .414.336.75.75.75Z" ></path></svg>
+                      No
+                    </label>
+                  </div>
+                </div>
+                <div class="helpful-form-more" id="helpful-more">
+                  <label for="feedback-comment" class="helpful-form-label">Please add your feedback (optional)</label>
+                  <textarea name="feedback" id="feedback-comment" class="helpful-form-textarea"></textarea>
+
+                  <label for="feedback-email" class="helpful-form-label">Can we contact you with more questions? (optional)</label>
+                  <input type="email" name="email" id="feedback-email" placeholder="Your email" class="helpful-form-input" >
+                  
+                  <div class="helpful-form-submit-container">
+                    <button type="button" class="Button Secondary" id="helpful-form-cancel-button">Cancel</button>
+                    <button type="submit" class="Button" id="helpful-form-submit-button">Send</button>
+                  </div>
+                </div>
+                <div class="helpful-form-confirmation" id="helpful-more-confirmation">
+                  Thanks for the feedback!
+                </div>
+              </fieldset>
+            </form>
+          </div>
+          <div>
+            
+              
+
+
+
+
+<h3 class="Text  Eyebrow ">Contribute to the docs</h3>
+              
+
+
+
+
+<h3 class="Text  Small ">Our docs are open source. See something that could be improved? Submit a pull request.</h3>
+              <a target="_blank" rel="noopener" href="https://github.com/Mercedes-Benz/label-studio" class="Button [object Object]">
+   Make a contribution
+</a>
+            
+          </div>
+          <div>
+            
+
+
+
+
+<h3 class="Text  Eyebrow ">Can’t find what you’re looking for?</h3>
+            
+              <div class="content-footer-button-group">
+                <a target="_blank" rel="noopener" href="https://github.com/Mercedes-Benz/label-studio/issues" class="Button [object Object]">
+   Submit a GitHub Issue
+</a>
+                <a target="_blank" rel="noopener" href="https://slack.mercedes-benz.com/?source=docs-footer" class="Button Secondary WithIcon">
+  
+    <svg width="31" height="30" viewBox="0 0 31 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M11.4993 0C9.84099 0.00122324 8.49886 1.34434 8.50008 2.99939C8.49886 4.65443 9.84221 5.99755 11.5006 5.99878H14.5011V3.00061C14.5023 1.34557 13.1589 0.00244648 11.4993 0C11.5006 0 11.5006 0 11.4993 0V0ZM11.4993 8H3.50049C1.84213 8.00122 0.498778 9.34434 0.500003 10.9994C0.497552 12.6544 1.84091 13.9976 3.49927 14H11.4993C13.1577 13.9988 14.5011 12.6557 14.4998 11.0006C14.5011 9.34434 13.1577 8.00122 11.4993 8Z" fill="#41C6EE"></path>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M30.5 10.9994C30.5012 9.34434 29.1578 8.00122 27.4995 8C25.8411 8.00122 24.4978 9.34434 24.499 10.9994V14H27.4995C29.1578 13.9988 30.5012 12.6557 30.5 10.9994ZM22.4999 10.9994V2.99939C22.5011 1.34557 21.159 0.00244648 19.5006 0C17.8423 0.00122324 16.4989 1.34434 16.5001 2.99939V10.9994C16.4977 12.6544 17.841 13.9976 19.4994 14C21.1577 13.9988 22.5011 12.6557 22.4999 10.9994Z" fill="#38B67F"></path>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M19.4994 29.9999C21.1578 29.9987 22.5011 28.6555 22.4999 27.0005C22.5011 25.3454 21.1578 24.0023 19.4994 24.0011H16.4989V27.0005C16.4977 28.6543 17.841 29.9974 19.4994 29.9999ZM19.4994 21.9987H27.4995C29.1578 21.9974 30.5012 20.6543 30.5 18.9993C30.5024 17.3442 29.1591 16.0011 27.5007 15.9987H19.5006C17.8423 15.9999 16.4989 17.343 16.5001 18.998C16.4989 20.6543 17.841 21.9974 19.4994 21.9987Z" fill="#ECB13D"></path>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M0.500001 18.9995C0.498775 20.6546 1.84213 21.9977 3.50049 21.9989C5.15885 21.9977 6.50221 20.6546 6.50098 18.9995V16.0001H3.50049C1.84213 16.0013 0.498775 17.3445 0.500001 18.9995ZM8.50008 18.9995V26.9995C8.49763 28.6546 9.84099 29.9977 11.4993 30.0001C13.1577 29.9989 14.5011 28.6558 14.4998 27.0007V19.002C14.5023 17.3469 13.1589 16.0038 11.5006 16.0013C9.84099 16.0013 8.49886 17.3445 8.50008 18.9995C8.50008 18.9995 8.50008 19.0007 8.50008 18.9995Z" fill="#DD295C"></path>
+</svg>
+
+ Join Slack Community
+</a>
+              </div>
+            
+            </div>
+        </footer>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    var savedScrollPosition = localStorage.getItem('labelstudio_scrollPosition');
+      if (savedScrollPosition) {
+        document.querySelector(".page-sidebar").scrollTop = savedScrollPosition;
+      }
+  </script>
+
+  
+   
+
+<footer class="Footer">
+  <section class="FooterWrapper">
+    <svg       width="106"
+      height="140"
+      viewBox="0 0 106 140"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      class="FooterCTASquares"
+    >
+      <path         fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M0.463783 35.0679H70.6628V70.1674H35.5633V105.267L70.6628 105.267H0.463783V35.0679Z"
+        fill="#FF7557"
+      ></path>
+      <rect         width="35.1784"
+        height="35.1784"
+        transform="matrix(-1 0 0 1 105.765 0)"
+        fill="#FFA663"
+      ></rect>
+      <path         fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M105.764 140H35.5645V69.8009H105.764V140ZM70.6641 104.901H35.5645V69.801H70.6641V104.901Z"
+        fill="#E37BD3"
+      ></path>
+    </svg>
+    <div class="FooterGrid">
+      <div class="FooterSocialsLogo">
+        <svg           width="280"
+          height="47"
+          viewBox="0 0 280 47"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          class="FooterSocialsLogoMercedes-Benz"
+        >
+          <circle cx="23.5" cy="23.5" r="20" stroke="#FDFDFC" stroke-width="2.5" fill="none"></circle>
+          <path d="M23.5 4 L16 42 M23.5 4 L31 42 M23.5 4 L23.5 42 M12 28 L35 28" stroke="#FDFDFC" stroke-width="2" fill="none"></path>
+          <text x="52" y="30" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#FDFDFC">Mercedes-Benz</text>
+        </svg>
+
+        <nav class="SocialIcons FooterSocials" arial-label="Social media links">
+          <ul>
+            <li>
+              <a                 href="https://slack.mercedes-benz.com/?source=site"
+                aria-label="Slack"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg viewBox="0 0 24 24" astro-icon="mdi:slack">
+                  <path                     fill="currentColor"
+                    d="M6 15a2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2h2v2m1 0a2 2 0 0 1 2-2 2 2 0 0 1 2 2v5a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-5m2-8a2 2 0 0 1-2-2 2 2 0 0 1 2-2 2 2 0 0 1 2 2v2H9m0 1a2 2 0 0 1 2 2 2 2 0 0 1-2 2H4a2 2 0 0 1-2-2 2 2 0 0 1 2-2h5m8 2a2 2 0 0 1 2-2 2 2 0 0 1 2 2 2 2 0 0 1-2 2h-2v-2m-1 0a2 2 0 0 1-2 2 2 2 0 0 1-2-2V5a2 2 0 0 1 2-2 2 2 0 0 1 2 2v5m-2 8a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2v-2h2m0-1a2 2 0 0 1-2-2 2 2 0 0 1 2-2h5a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-5z"
+                  ></path>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a                 href="https://github.com/Mercedes-Benz/"
+                aria-label="GitHub"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg viewBox="0 0 24 24" astro-icon="mdi:github">
+                  <path                     fill="currentColor"
+                    d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"
+                  ></path>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a                 href="https://twitter.com/labelstudiohq"
+                aria-label="Twitter"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg viewBox="0 0 24 24" astro-icon="mdi:twitter">
+                  <path                     fill="currentColor"
+                    d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"
+                  ></path>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a                 href="https://www.linkedin.com/company/mercedes-benz/"
+                aria-label="LinkedIn"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg viewBox="0 0 24 24" astro-icon="bx:bxl-linkedin">
+                  <circle                     cx="4.983"
+                    cy="5.009"
+                    r="2.188"
+                    fill="currentColor"
+                  ></circle>
+                  <path                     fill="currentColor"
+                    d="M9.237 8.855v12.139h3.769v-6.003c0-1.584.298-3.118 2.262-3.118 1.937 0 1.961 1.811 1.961 3.218v5.904H21v-6.657c0-3.27-.704-5.783-4.526-5.783-1.835 0-3.065 1.007-3.568 1.96h-.051v-1.66H9.237zm-6.142 0H6.87v12.139H3.095z"
+                  ></path>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a                 href="https://www.youtube.com/channel/UCbloiVAlCYzBatZXk-b5rFQ"
+                aria-label="Youtube"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg viewBox="0 0 24 24" astro-icon="mdi:youtube">
+                  <path                     fill="currentColor"
+                    d="m10 15 5.19-3L10 9v6m11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83-.25.9-.83 1.48-1.73 1.73-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44-.9-.25-1.48-.83-1.73-1.73-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83.25-.9.83-1.48 1.73-1.73.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44.9.25 1.48.83 1.73 1.73z"
+                  ></path>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="FooterMenus">
+        <nav class="FooterNav" aria-label="Footer navigation">
+          
+          <div>
+            <h3 class="Text Eyebrow FooterNavHeading">Products</h3>
+            <ul>
+              <li>
+                <a href="https://mercedes-benz.com/">Community Edition</a>
+              </li>
+              <li>
+                <a target="_blank" rel="noopener" href="https://heartex.com/product">Enterprise</a>
+              </li>
+              <li>
+                <a target="_blank" rel="noopener" href="https://heartex.com/pricing">Pricing</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="Text Eyebrow FooterNavHeading">Community</h3>
+            <ul>
+              <li>
+                <a href="https://mercedes-benz.com/blog">Blog</a>
+              </li>
+              <li>
+                <a href="https://mercedes-benz.com/community/">Newsletter</a>
+              </li>
+              <li>
+                <a href="/?source=site">Slack</a>
+              </li>
+              <li>
+                <a href="https://mercedes-benz.com/videos">Webinars</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="Text Eyebrow FooterNavHeading">Documentation</h3>
+            <ul>
+              <li>
+                <a href="/guide">Quickstart</a>
+              </li>
+              <li>
+                <a href="/guide/api">API Reference</a>
+              </li>
+              <li>
+                <a href="/guide/sdk">SDK Reference</a>
+              </li>
+              <li>
+                <a href="/tags">Customizable Tags</a>
+              </li>
+              <li>
+                <a href="/templates">Labeling Templates</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="Text Eyebrow FooterNavHeading">Company</h3>
+            <ul>
+              <li>
+                <a target="_blank" rel="noopener" href="https://heartex.com/company/about-us">About Us</a>
+              </li>
+              <li>
+                <a target="_blank" rel="noopener" href="https://heartex.com/careers">Careers</a>
+              </li>
+              <li>
+                <a href="https://mercedes-benz.com/contact-sales/">Contact</a>
+              </li>
+              <li>
+                <a target="_blank" rel="noopener" href="https://heartex.com/company/privacy-policy">Privacy</a>
+              </li>
+            </ul>
+          </div>
+          
+        </nav>
+        
+        <div class="FooterCTA">
+          <a class="Button FooterCTAButton" href="/guide/quick_start.html"
+            ><span class="Heading XXSmall ButtonText astro-EXBSDJPD"
+              >Quick Start</span></a>
+        </div>
+        
+      </div>
+    </div>
+    <div class="FooterGridCopyright">
+      <p class="Text Small FooterCopyright">
+        ©
+        <script>
+          document.write(new Date().getFullYear());
+        </script>
+        Mercedes-Benz.
+      </p>
+      <a target="_blank" rel="noopener" href="https://heartex.com/company/privacy-policy" class="Text Small"
+        >Privacy Policy</a>
+    </div>
+  </section>
+</footer>
+
+
+  
+<script src="/js/code-tabs.js"></script>
+
+  
+<script src="/js/code-blocks-enhancements.js"></script>
+
+  
+<script src="/js/feedback-form.js"></script>
+
+  
+<script src="/js/header.js"></script>
+
+  
+<script src="/js/intense.min.js"></script>
+
+
+  <script>
+    window.addEventListener('load', function () {
+      const htmlElement = document.querySelector("html");
+
+      htmlElement.classList.add("js-enhanced");
+    })
+</script>
+
+</body>
+</html>

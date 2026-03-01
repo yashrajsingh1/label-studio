@@ -1,0 +1,1788 @@
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  
+    
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-TZ3RQGX');</script>
+    
+  
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <title>Mercedes-Benz — How to Debug Agents with LangSmith and Mercedes-Benz</title>
+  
+  <meta charset="utf-8">
+  <meta name="description" content="Learn how LangSmith and Mercedes-Benz can work together to debug and evaluate AI Agents.">
+
+  <meta property="og:type" content="article">
+  
+  <meta property="og:title" content="Mercedes-Benz — How to Debug Agents with LangSmith and Mercedes-Benz">
+  
+  <meta property="og:description" content="Learn how LangSmith and Mercedes-Benz can work together to debug and evaluate AI Agents.">
+
+  <meta name="twitter:card" content="summary">
+  
+  <meta property="twitter:title" content="Mercedes-Benz — How to Debug Agents with LangSmith and Mercedes-Benz">
+  
+  <meta name="twitter:description" content="Learn how LangSmith and Mercedes-Benz can work together to debug and evaluate AI Agents.">
+
+  
+    <meta name="twitter:image" content="http://mercedes-benz.com/open-graph-image?title=How%20to%20Debug%20Agents%20with%20LangSmith%20and%20Label%20Studio&category=tutorials">
+    <meta property="og:image" content="http://mercedes-benz.com/open-graph-image?title=How%20to%20Debug%20Agents%20with%20LangSmith%20and%20Label%20Studio&category=tutorials">
+  
+
+  <meta name="msapplication-TileColor" content="#4fc08d">
+  <meta name="theme-color" content="#4fc08d">
+  
+  
+    <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" >
+  
+
+  <link rel="preload" href="/fonts/SpaceGrotesk-Bold-subset.woff2" as="font" type="font/woff2" crossorigin>
+
+  
+<link rel="stylesheet" href="/css/styles.css">
+
+
+  
+
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js" defer></script>
+
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ startOnLoad: true });
+  </script>
+
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+<body class="page-tier-opensource">
+  
+  
+
+  
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TZ3RQGX"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  
+
+  
+  
+
+
+
+  
+      <a target="_blank" rel="noopener" href="https://mercedes-benz.com/blog/new-pdf-ocr-document-ai-labeling-interface" class="Alert">
+        <span class="AlertContent">
+          <span class="Badge">New</span>
+          <span class="AlertText">Advanced PDF + OCR Interface for Document AI</span>
+          <svg fill="currentColor" viewBox="0 0 14 12"><path fill-rule="evenodd" d="m8.792.119 4.866 5.654-4.866 5.654-.948-.816 3.627-4.213H.54v-1.25h10.93L7.844.934l.948-.815Z" clip-rule="evenodd"></path></svg>
+        </span>
+      </a>
+
+
+<header class="page-header">
+  <div class="page-header-top-level">
+    <div class="page-header-logo">
+      <a href="/guide" class="HeaderLogo" arial-label="Homepage">
+        
+          <svg width="240" height="30" viewBox="0 0 240 30" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="15" cy="15" r="13.5" stroke="#12110D" stroke-width="2" fill="none"></circle><circle cx="15" cy="15" r="12" stroke="#12110D" stroke-width="0.5" fill="none"></circle><path d="M15,3 L13.8,15 L16.2,15 Z M4.61,21 L15.6,16.04 L14.4,13.96 Z M25.39,21 L15.6,13.96 L14.4,16.04 Z" fill="#12110D"></path><text x="34" y="20" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#12110D" letter-spacing="0.3">Mercedes-Benz Docs</text></svg>
+
+      </a>
+    </div>
+
+    <div class="AlgoliaSearch">
+      <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg" class="AlgoliaSearchIcon">
+        <path d="M8 16C9.77498 15.9996 11.4988 15.4054 12.897 14.312L17.293 18.708L18.707 17.294L14.311 12.898C15.405 11.4997 15.9996 9.77544 16 8C16 3.589 12.411 0 8 0C3.589 0 0 3.589 0 8C0 12.411 3.589 16 8 16ZM8 2C11.309 2 14 4.691 14 8C14 11.309 11.309 14 8 14C4.691 14 2 11.309 2 8C2 4.691 4.691 2 8 2Z" ></path>
+      </svg>
+      <input id="docsearch-input" placeholder="Search docs" data-site-version="opensource" >
+      <svg width="43" height="31" viewBox="0 0 43 31" fill="none" xmlns="http://www.w3.org/2000/svg" class="AlgoliaSearchCmdK">
+        <rect y="0.0457764" width="43" height="30" rx="15" fill="var(--cmd-k-background-color)"></rect>
+        <path d="M11.264 21.0458C9.776 21.0458 8.816 20.1018 8.816 18.6298C8.816 17.0778 9.744 16.1658 11.568 16.1658H12.512V14.4058H11.568C9.744 14.4058 8.816 13.4938 8.816 11.9418C8.816 10.4698 9.776 9.52578 11.264 9.52578C13.056 9.52578 13.632 10.6458 13.632 11.9898V13.3178H15.392V11.9898C15.392 10.6458 15.968 9.52578 17.76 9.52578C19.248 9.52578 20.208 10.4698 20.208 11.9418C20.208 13.4938 19.28 14.4058 17.456 14.4058H16.512V16.1658H17.456C19.28 16.1658 20.208 17.0778 20.208 18.6298C20.208 20.1018 19.248 21.0458 17.76 21.0458C15.968 21.0458 15.392 19.9258 15.392 18.5818V17.2538H13.632V18.5818C13.632 19.9258 13.056 21.0458 11.264 21.0458ZM16.512 11.9578V13.3178H17.456C18.592 13.3178 19.072 12.8538 19.072 11.9418C19.072 10.9978 18.512 10.6298 17.76 10.6298C16.928 10.6298 16.512 11.1418 16.512 11.9578ZM11.568 13.3178H12.512V11.9578C12.512 11.1418 12.096 10.6298 11.264 10.6298C10.512 10.6298 9.952 10.9978 9.952 11.9418C9.952 12.8538 10.432 13.3178 11.568 13.3178ZM13.632 16.1658H15.392V14.4058H13.632V16.1658ZM11.264 19.9418C12.096 19.9418 12.512 19.4298 12.512 18.6138V17.2538H11.568C10.432 17.2538 9.952 17.7178 9.952 18.6298C9.952 19.5738 10.512 19.9418 11.264 19.9418ZM16.512 18.6138C16.512 19.4298 16.928 19.9418 17.76 19.9418C18.512 19.9418 19.072 19.5738 19.072 18.6298C19.072 17.7178 18.592 17.2538 17.456 17.2538H16.512V18.6138ZM27.3546 15.4298V21.0458H26.1546V9.84578H27.3546V14.9338L32.3146 9.84578H33.8826L28.6346 15.1738L34.3626 21.0458H32.7466L27.3546 15.4298Z" fill="var(--cmd-k-icon-color)"></path>
+      </svg>        
+    </div>
+
+    <button class="hamburger-button" aria-label="Toggle Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <nav>
+      
+        
+  <ul class="page-sidebar-list">
+    
+    
+    
+    
+    
+
+    
+
+    
+
+    
+    
+      
+      
+      
+      <li>
+        <a href="/guide/install_requirements.html" class="" >
+          Requirements
+        </a>
+        
+        
+        
+        
+      </li>
+    
+    
+</ul>
+
+
+  <button>
+    Support
+    <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+    </svg>
+  </button>
+
+<ul class="page-sidebar-list">
+  
+  
+    <li>
+        <a href="/guide/troubleshooting">Troubleshooting</a>
+      </li>
+    <li>
+      <a href="https://github.com/Mercedes-Benz/label-studio/issues" target="_blank">GitHub Issues
+        <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-external-link">
+          <path d="M10.9002 9.29957L9.46026 9.30898L9.46026 3.34236L1.73377 11.0689L0.698549 10.0336L8.42504 2.30714L2.46783 2.31656L2.46783 0.867251L10.9001 0.867252L10.9002 9.29957Z" fill="#6D87F1"></path>
+        </svg>
+      </a>
+    </li>
+  
+  <li>
+    <a href="https://slack.mercedes-benz.com" target="_blank">Join Slack
+      <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-external-link">
+        <path d="M10.9002 9.29957L9.46026 9.30898L9.46026 3.34236L1.73377 11.0689L0.698549 10.0336L8.42504 2.30714L2.46783 2.31656L2.46783 0.867251L10.9001 0.867252L10.9002 9.29957Z" fill="#6D87F1"></path>
+      </svg>
+    </a>
+  </li>
+  
+    <li>
+      <a href="https://community.mercedes-benz.com/" target="_blank">Ask on Discourse
+        <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-external-link">
+          <path d="M10.9002 9.29957L9.46026 9.30898L9.46026 3.34236L1.73377 11.0689L0.698549 10.0336L8.42504 2.30714L2.46783 2.31656L2.46783 0.867251L10.9001 0.867252L10.9002 9.29957Z" fill="#6D87F1"></path>
+        </svg>
+      </a>
+    </li>
+  
+  <li>
+    <a href="https://mercedes-benz.com/contact-sales/" target="_blank">Contact Sales
+      <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-external-link">
+        <path d="M10.9002 9.29957L9.46026 9.30898L9.46026 3.34236L1.73377 11.0689L0.698549 10.0336L8.42504 2.30714L2.46783 2.31656L2.46783 0.867251L10.9001 0.867252L10.9002 9.29957Z" fill="#6D87F1"></path>
+      </svg>
+    </a>
+  </li>
+  
+</ul>
+
+
+
+  <button>
+    What's New
+    <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+    </svg>
+  </button>
+
+<ul class="page-sidebar-list">  
+    <li>
+      <a href="https://github.com/Mercedes-Benz/label-studio/releases" target="_blank">Release notes
+        <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-external-link">
+          <path d="M10.9002 9.29957L9.46026 9.30898L9.46026 3.34236L1.73377 11.0689L0.698549 10.0336L8.42504 2.30714L2.46783 2.31656L2.46783 0.867251L10.9001 0.867252L10.9002 9.29957Z" fill="#6D87F1"></path>
+        </svg>
+      </a>
+    </li>
+</ul>
+
+
+      
+      <ul class="page-header-main-nav">
+        
+          <li>
+            <a href="https://mercedes-benz.com/learn/">
+              Learn
+              <svg aria-hidden="true" width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg" class="page-header-chevron-icon"><path d="M1 0.5L5 4.5L9 0.5" stroke="#131522"></path></svg>
+            </a>
+            <button>
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+            <ul>
+              <li>
+                <a href="https://mercedes-benz.com/blog/">Blog</a>
+              </li>
+              <li>
+                <a href="https://mercedes-benz.com/videos/">Videos</a>
+              </li>
+              <li class="headerSeparator">
+                <a href="https://mercedes-benz.com/community/">
+                  Community
+                </a>
+              </li>
+              <li>
+                <a href="https://mercedes-benz.com/academic/">Academic Program</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="https://mercedes-benz.com/integrations">Integrations</a>
+          </li>
+          <li>
+            <a href="https://mercedes-benz.com/goenterprise" target="_blank" rel="noopener noreferrer">Enterprise</a>
+          </li>
+          <li>
+            <a href="https://github.com/Mercedes-Benz/label-studio/" class="github-stars" target="_blank" rel="noopener noreferrer">
+              <svg class="github-icon" viewBox="0 0 24 24" width="24" height="24"><path fill="black" d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"></path></svg>
+              
+
+
+
+
+<span class="Text github-stars-count Eyebrow "></span>
+            </a>
+          </li>
+          <li>
+            <a href="/guide/quick_start.html" class="Button [object Object]">
+   Quick start
+</a>
+          </li>
+          
+      </ul>
+    </nav>
+    </div>
+  
+  
+  
+    
+      <ul class="page-header-content-switcher">
+      
+          
+          <li><a href="/guide/" class="">Docs</a></li>
+          
+        
+          
+          <li><a href="/tutorials/" class="">Tutorials</a></li>
+          
+        
+          
+          <li><a href="/templates/" class="">Templates</a></li>
+          
+        
+          
+        
+          
+          <li><a href="/tags/" class="">Tags</a></li>
+          
+        
+      <li>
+        <a href="https://api.mercedes-benz.com/api-reference/introduction/getting-started" target="_blank">
+          API
+          <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7.93006 6.05393L6.92213 6.06052L6.92213 1.88389L1.51359 7.29243L0.788936 6.56777L6.19748 1.15923L2.02743 1.16582L2.02743 0.151308L7.93006 0.151308L7.93006 6.05393Z" fill="#ffffff"></path>
+            </svg>            
+        </a>
+      </li>
+    </ul>
+    
+  
+</header>
+
+
+  <main class="page-type-undefined">
+    
+    <div class="content">
+      
+        <svg width="50" height="50" viewBox="0 0 77 77" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="content-decoration">
+          <rect x="75.875" y="26" width="25" height="25" transform="rotate(-180 75.875 26)" stroke="#E1DED5" stroke-width="0.504975"></rect>
+          <rect x="50.875" y="51" width="25" height="25" transform="rotate(-180 50.875 51)" stroke="#E1DED5" stroke-width="0.504975"></rect>
+          <rect x="50.875" y="26" width="25" height="25" transform="rotate(-180 50.875 26)" fill="#FF7557"></rect>
+          <rect x="26" y="76" width="25" height="25" transform="rotate(-180 26 76)" stroke="#E1DED5" stroke-width="0.504975"></rect>
+          <rect x="26" y="51" width="25" height="25" transform="rotate(-180 26 51)" fill="#E37BD3"></rect>
+          <rect x="26" y="26" width="25" height="25" transform="rotate(-180 26 26)" fill="#FFA663"></rect>
+        </svg>
+      
+        
+      <div class="container">
+        
+
+
+
+
+
+
+
+<div class="content-grid">
+  <div class="content-markdown">
+    
+   
+      
+
+
+
+
+<h1 class="Heading home-page-title XLarge ">How to Debug Agents with LangSmith and Mercedes-Benz</h1>
+   
+   
+      <div class="open-in-collab-header">
+        <a target="_blank"
+          href="https://colab.research.google.com/github/mercedes-benz/awesome-label-studio-tutorials/blob/main/tutorials/how-to-debug-agents-with-LangSmith-and-Label-Studio/how_to_debug_agents_with_LangSmith_and_Label_Studio.ipynb">
+          <img src="https://colab.research.google.com/assets/colab-badge.svg"
+            alt="Open In Colab" >
+        </a>
+      </div>
+   
+   
+      <div class="community-header">
+          
+            <span class="community-badge">Tutorial</span>
+          
+        <div class="template-author">
+          
+            <div class="community-people">
+              <a href="https://github.com/niklub" target="_blank" class="person author">
+                
+                  <img src="/images/github/avatars/niklub.png" alt="niklub" class="person-avatar" >
+                
+                <span class="person-name">@niklub</span>
+              </a>
+              
+              
+            </div>
+          
+          <div class="repo-links">
+            <a href="https://github.com/Mercedes-Benz/awesome-label-studio-tutorials/issues/new" target="_blank" class="issue-icon" title="Report an issue">
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm9 3a1 1 0 11-2 0 1 1 0 012 0zm-.25-6.25a.75.75 0 00-1.5 0v3.5a.75.75 0 001.5 0v-3.5z"></path></svg>
+            </a>
+            <a href="https://github.com/Mercedes-Benz/awesome-label-studio-tutorials/tree/main/tutorials/how-to-debug-agents-with-LangSmith-and-Label-Studio" target="_blank" class="github-icon" title="View on GitHub">
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+   
+    <h2 id="0-Label-Studio-Requirements"><a href="#0-Label-Studio-Requirements" class="headerlink" title="0. Mercedes-Benz Requirements"></a>0. Mercedes-Benz Requirements</h2><p>After section 5, this tutorial showcases one or more features available only in Mercedes-Benz paid products. We recommend <a target="_blank" rel="noopener" href="https://app.mercedes-benz.com/user/cloud-trial?offer=d9a5&">creating a Starter Cloud trial</a> to follow the tutorial.</p>
+<h2 id="1-Installation-Setup"><a href="#1-Installation-Setup" class="headerlink" title="1. Installation &amp; Setup"></a>1. Installation &amp; Setup</h2><p>First, install the required dependencies:</p>
+<pre><code class="hljs python">!pip install langchain langchain-openai langchain-community langsmith label-studio-sdk python-dotenv arxiv</code></pre>
+
+<h3 id="Environment-Configuration"><a href="#Environment-Configuration" class="headerlink" title="Environment Configuration"></a>Environment Configuration</h3><p>You’ll need to configure the following environment variables in a <code>.env</code> file:</p>
+<pre><code class="hljs bash"><span class="hljs-comment"># Langsmith Configuration</span>
+<span class="hljs-comment"># Get your API key and setup project at: https://docs.langchain.com/langsmith/home</span>
+LANGSMITH_API_KEY=your_langsmith_api_key
+LANGSMITH_PROJECT=your_project_name
+LANGSMITH_TRACING=<span class="hljs-literal">true</span>
+
+<span class="hljs-comment"># Mercedes-Benz Configuration  </span>
+<span class="hljs-comment"># Get your API key from Mercedes-Benz settings: https://docs.mercedes-benz.com/</span>
+LABEL_STUDIO_URL=https://app.mercedes-benz.com  <span class="hljs-comment"># or your Mercedes-Benz instance URL</span>
+LABEL_STUDIO_API_KEY=your_label_studio_api_key
+
+<span class="hljs-comment"># OpenAI Configuration (for the agent)</span>
+OPENAI_API_KEY=your_openai_api_key</code></pre>
+
+<p><strong>LangSmith Setup</strong>: Visit <a target="_blank" rel="noopener" href="https://docs.langchain.com/langsmith/home">LangSmith Documentation</a>
+to create an account, get your API key, and set up a project for tracing.</p>
+<p><strong>Mercedes-Benz Setup</strong>: Visit <a target="_blank" rel="noopener" href="https://docs.mercedes-benz.com/">Mercedes-Benz Documentation</a>
+for installation instructions and how to generate an API token from your account settings.</p>
+<h1 id="Two-Ways-to-Look-at-Your-Data-in-Agentic-Apps"><a href="#Two-Ways-to-Look-at-Your-Data-in-Agentic-Apps" class="headerlink" title="Two Ways to Look at Your Data in Agentic Apps"></a>Two Ways to Look at Your Data in Agentic Apps</h1><table>
+<thead>
+<tr>
+<th>👁️ AI Engineer</th>
+<th>👁️ AI Domain Expert</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><img src="https://hs-sandbox-pub.s3.us-east-1.amazonaws.com/blogs-draft/smith-trace.jpg" alt="Langsmith trace view for AI engineers" ></td>
+<td><img src="https://hs-sandbox-pub.s3.us-east-1.amazonaws.com/blogs-draft/ls-trace.jpg" alt="Mercedes-Benz trace view for domain experts" ></td>
+</tr>
+</tbody></table>
+<h2 id="Problem-Where-Did-My-Agent-Fail"><a href="#Problem-Where-Did-My-Agent-Fail" class="headerlink" title="Problem: Where Did My Agent Fail?"></a>Problem: Where Did My Agent Fail?</h2><p>AI agent apps become hard to debug and improve as they grow more complex. Teams commonly struggle with:</p>
+<ul>
+<li>Too much complexity: RAG pipelines, LLM calls, and multi-step conversations make it hard to know where problems occur</li>
+<li>Getting stuck: After building prototypes, teams can’t figure out what works, what breaks, or what to fix first</li>
+<li>Missing expertise: Engineers often don’t have the domain knowledge needed to properly evaluate their app’s performance</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="https://hamel.dev/blog/posts/evals-faq/">The core activity proposed to address these issues is simply <strong>“Look at your data”</strong>.</a></p>
+<p>However, who should look at the data is often unclear, yet this determines project success.</p>
+<h2 id="Our-Solution-Give-it-to-your-Domain-Expert"><a href="#Our-Solution-Give-it-to-your-Domain-Expert" class="headerlink" title="Our Solution: Give it to your Domain Expert"></a>Our Solution: Give it to your Domain Expert</h2><p>We bridge this gap with a domain expert-centric UI that enables non-technical subject matter experts to systematically evaluate agent performance, complementing existing observability tools. This tutorial shows how to create an intuitive evaluation interface that transforms domain expertise into actionable improvements for your AI agents.</p>
+<h2 id="Setup-Build-Your-Agent-Evaluation-Pipeline"><a href="#Setup-Build-Your-Agent-Evaluation-Pipeline" class="headerlink" title="Setup: Build Your Agent Evaluation Pipeline"></a>Setup: Build Your Agent Evaluation Pipeline</h2><div style="text-align: center; margin: 20px 0;">
+  <img src="https://hs-sandbox-pub.s3.us-east-1.amazonaws.com/blogs-draft/traces.jpg" alt="Agent evaluation pipeline overview" style="max-width: 600px; width: 100%; height: auto; border: 1px solid #ddd; border-radius: 8px;">
+</div>
+
+<p>This tutorial demonstrates a complementary pipeline design for AI agent evaluation:</p>
+<p><strong>Step 1: Observability &amp; Trace Collection</strong></p>
+<ul>
+<li>Use observability tools (like Langsmith in this demo) for trace storage and collection</li>
+<li>Engineer-centric interface for technical debugging and development iteration</li>
+<li>Captures detailed execution traces, timing, and system-level metrics</li>
+<li>Provides immediate feedback during development cycles</li>
+</ul>
+<p><strong>Step 2: Expert-Centric Evaluation in Mercedes-Benz</strong></p>
+<ul>
+<li>Import traces from observability tools into Mercedes-Benz for human evaluation</li>
+<li>Expert-centric, multi-user collaborative platform designed for domain specialists</li>
+<li>Detailed UI for systematic assessment of each step in agentic workflows</li>
+<li>Enables domain experts (SMEs) to identify and annotate failure modes</li>
+<li>Supports team-based annotation workflows with inter-annotator agreement</li>
+<li>Quality control features including annotation review and consensus building</li>
+<li>Generates structured evaluation data for reports and LLM-as-a-Judge training</li>
+</ul>
+<p><strong>Pipeline Benefits:</strong></p>
+<ul>
+<li>Engineers get technical observability while domain experts get intuitive evaluation tools</li>
+<li>Traces flow seamlessly from development (observability) to evaluation (Mercedes-Benz)</li>
+<li>Combines technical metrics with human domain expertise for comprehensive assessment</li>
+<li>Note: While we use Langsmith as our demo observability tool, this approach works with any trace collection system</li>
+</ul>
+<pre><code class="hljs python"><span class="hljs-keyword">import</span> os
+<span class="hljs-keyword">from</span> dotenv <span class="hljs-keyword">import</span> load_dotenv
+
+load_dotenv()
+
+<span class="hljs-comment"># Verify environment variables are loaded</span>
+required_vars = [<span class="hljs-string">&#x27;LANGSMITH_API_KEY&#x27;</span>, <span class="hljs-string">&#x27;LANGSMITH_PROJECT&#x27;</span>, <span class="hljs-string">&#x27;LABEL_STUDIO_URL&#x27;</span>, <span class="hljs-string">&#x27;LABEL_STUDIO_API_KEY&#x27;</span>, <span class="hljs-string">&#x27;OPENAI_API_KEY&#x27;</span>]
+missing_vars = [var <span class="hljs-keyword">for</span> var <span class="hljs-keyword">in</span> required_vars <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> os.getenv(var)]
+
+<span class="hljs-keyword">if</span> missing_vars:
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;⚠️  Missing environment variables: <span class="hljs-subst">&#123;<span class="hljs-string">&#x27;, &#x27;</span>.join(missing_vars)&#125;</span>&quot;</span>)
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Please configure these in your .env file before proceeding.&quot;</span>)
+<span class="hljs-keyword">else</span>:
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;✓ All environment variables loaded successfully&quot;</span>)</code></pre>
+
+<pre><code>✓ All environment variables loaded successfully
+</code></pre>
+<h2 id="2-Running-the-Agent"><a href="#2-Running-the-Agent" class="headerlink" title="2. Running the Agent"></a>2. Running the Agent</h2><p>We’ll create a simple ReAct agent that can search academic papers on Arxiv.
+This agent simulates a production use case where we help researchers find
+relevant papers on specific topics.</p>
+<p>The agent uses:</p>
+<ul>
+<li><strong>GPT-4o</strong> as the reasoning engine</li>
+<li><strong>Arxiv tool</strong> to search academic papers</li>
+<li><strong>LangSmith tracing</strong> to capture all interactions automatically</li>
+</ul>
+<pre><code class="hljs python"><span class="hljs-keyword">from</span> langchain <span class="hljs-keyword">import</span> hub
+<span class="hljs-keyword">from</span> langchain.agents <span class="hljs-keyword">import</span> AgentExecutor, create_react_agent, load_tools
+<span class="hljs-keyword">from</span> langchain_openai <span class="hljs-keyword">import</span> ChatOpenAI
+<span class="hljs-keyword">from</span> langchain_core.runnables <span class="hljs-keyword">import</span> RunnableConfig
+<span class="hljs-keyword">from</span> uuid <span class="hljs-keyword">import</span> uuid4
+
+<span class="hljs-comment"># Initialize LLM and Tools</span>
+llm = ChatOpenAI(model=<span class="hljs-string">&#x27;gpt-4o&#x27;</span>)
+tools = load_tools([<span class="hljs-string">&quot;arxiv&quot;</span>])
+
+<span class="hljs-comment"># Pull the ReAct prompt template</span>
+prompt = hub.pull(<span class="hljs-string">&quot;hwchase17/react&quot;</span>)
+
+<span class="hljs-comment"># Create the agent</span>
+agent = create_react_agent(llm, tools, prompt)
+agent_executor = AgentExecutor(
+    agent=agent,
+    tools=tools,
+    verbose=<span class="hljs-literal">True</span>,
+    handle_parsing_errors=<span class="hljs-literal">True</span>,
+)
+
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;✓ Agent initialized and ready&quot;</span>)</code></pre>
+
+<pre><code>✓ Agent initialized and ready
+</code></pre>
+<h3 id="Running-Agent-Examples"><a href="#Running-Agent-Examples" class="headerlink" title="Running Agent Examples"></a>Running Agent Examples</h3><p>Let’s simulate a user asking questions about latest research:</p>
+<pre><code class="hljs python">questions = [
+    <span class="hljs-string">&quot;What is the latest research on Visual Language Models?&quot;</span>,
+    <span class="hljs-string">&quot;Find papers about reinforcement learning in robotics from the last year&quot;</span>,
+    <span class="hljs-string">&quot;Explain the latest innovations in transformer architectures based on recent papers&quot;</span>
+]
+
+<span class="hljs-keyword">for</span> i, question <span class="hljs-keyword">in</span> <span class="hljs-built_in">enumerate</span>(questions, <span class="hljs-number">1</span>):
+    config = RunnableConfig(run_id=<span class="hljs-built_in">str</span>(uuid4()))
+    result = agent_executor.invoke(&#123;<span class="hljs-string">&quot;input&quot;</span>: question&#125;, config=config)
+
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;\n✓ Run <span class="hljs-subst">&#123;i&#125;</span> completed. Run ID: <span class="hljs-subst">&#123;config.get(<span class="hljs-string">&#x27;run_id&#x27;</span>)&#125;</span>&quot;</span>)
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;Question: <span class="hljs-subst">&#123;question&#125;</span>&quot;</span>)
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;Response: <span class="hljs-subst">&#123;result[<span class="hljs-string">&#x27;output&#x27;</span>][:<span class="hljs-number">200</span>]&#125;</span>...&quot;</span>)</code></pre>
+
+<pre><code class="hljs plaintext">[1m&gt; Entering new AgentExecutor chain...[0m
+[32;1m[1;3mTo answer this question, I should search for the latest research articles on Visual Language Models on arXiv. This will provide me with the most recent developments and studies in this field.
+Action: arxiv
+Action Input: &quot;Visual Language Models&quot; latest[0m[36;1m[1;3mNo good Arxiv Result was found[0m[32;1m[1;3mIt seems that the search query needs to be adjusted to find relevant and recent papers on Visual Language Models. I should try using related terms or recent developments in Visual Language Models to refine the search.
+
+Action: arxiv
+Action Input: &quot;Visual Grounding Language Models 2023&quot;[0m[36;1m[1;3mPublished: 2024-01-09
+Title: Expand BERT Representation with Visual Information via Grounded Language Learning with Multimodal Partial Alignment
+Authors: Cong-Duy Nguyen, The-Anh Vu-Le, Thong Nguyen, Tho Quan, Luu Anh Tuan
+Summary: Language models have been supervised with both language-only objective and
+visual grounding in existing studies of visual-grounded language learning.
+However, due to differences in the distribution and scale of visual-grounded
+datasets and language corpora, the language model tends to mix up the context
+of the tokens that occurred in the grounded data with those that do not. As a
+result, during representation learning, there is a mismatch between the visual
+information and the contextual meaning of the sentence. To overcome this
+limitation, we propose GroundedBERT - a grounded language learning method that
+enhances the BERT representation with visually grounded information.
+GroundedBERT comprises two components: (i) the original BERT which captures the
+contextual representation of words learned from the language corpora, and (ii)
+a visual grounding module which captures visual information learned from
+visual-grounded datasets. Moreover, we employ Optimal Transport (OT),
+specifically its partial variant, to solve the fractional alignment problem
+between the two modalities. Our proposed method significantly outperforms the
+baseline language models on various language tasks of the GLUE and SQuAD
+datasets.
+
+Published: 2023-02-25
+Title: Visually-Augmented Language Modeling
+Authors: Weizhi Wang, Li Dong, Hao Cheng, Haoyu Song, Xiaodong Liu, Xifeng Yan, Jianfeng Gao, Furu Wei
+Summary: Human language is grounded on multimodal knowledge including visual knowledge
+like colors, sizes, and shapes. However, current large-scale pre-trained
+language models rely on text-only self-supervised training with massive text
+data, which precludes them from utilizing relevant visual information when
+necessary. To address this, we propose a novel pre-training framework, named
+VaLM, to Visually-augment text tokens with retrieved relevant images for
+Language Modeling. Specifically, VaLM builds on a novel latent text-image
+alignment method via an image retrieval module to fetch corresponding images
+given a textual context. With the visually-augmented context, VaLM uses a
+visual knowledge fusion layer to enable multimodal grounded language modeling
+by attending to both text context and visual knowledge in images. We evaluate
+VaLM on various visual knowledge-intensive commonsense reasoning tasks, which
+require visual information to excel. The experimental results illustrate that
+VaLM outperforms all strong language-only and vision-language baselines with
+substantial gains in reasoning object commonsense including color, size, and
+shape. Our code is available at https://github.com/Victorwz/VaLM.
+
+Published: 2023-02-13
+Title: Like a bilingual baby: The advantage of visually grounding a bilingual language model
+Authors: Khai-Nguyen Nguyen, Zixin Tang, Ankur Mali, Alex Kelly
+Summary: Unlike most neural language models, humans learn language in a rich,
+multi-sensory and, often, multi-lingual environment. Current language models
+typically fail to fully capture the complexities of multilingual language use.
+We train an LSTM language model on images and captions in English and Spanish
+from MS-COCO-ES. We find that the visual grounding improves the model&#x27;s
+understanding of semantic similarity both within and across languages and
+improves perplexity. However, we find no significant advantage of visual
+grounding for abstract words. Our results provide additional evidence of the
+advantages of visually grounded language models and point to the need for more
+naturalistic language data from multilingual speakers and multilingual datasets
+with perceptual grounding.[0m[32;1m[1;3mThe latest research on Visual Language Models explores various methods to enhance and ground language models with visual information. Here are some recent developments:
+
+1. **GroundedBERT**: This study proposes a method to enhance BERT representations with visually grounded information. It combines BERT&#x27;s contextual word representations with a visual grounding module that captures visual data. The approach uses Optimal Transport for partial alignment between these modalities and shows improved performance on language tasks compared to baseline models.
+
+2. **VaLM (Visually-Augmented Language Modeling)**: This framework augments text tokens with images retrieved based on the textual context to enrich language models with visual knowledge such as colors, sizes, and shapes. The visually augmented context is processed using a visual knowledge fusion layer. VaLM has shown substantial improvements in visual commonsense reasoning tasks over traditional language-only models and vision-language baselines.
+
+3. **Bilingual Language Modeling with Visual Grounding**: This research trains an LSTM model using bilingual (English and Spanish) datasets with visual grounding. It finds that visual grounding enhances the model&#x27;s semantic understanding across languages and improves perplexity but does not significantly benefit the comprehension of abstract terms. This highlights the potential of visually grounded models but also their limitations with abstract language.
+
+These studies indicate ongoing efforts to integrate visual information into language models for improved performance in multimodal and multilingual contexts.[0mInvalid Format: Missing &#x27;Action:&#x27; after &#x27;Thought:&#x27;[32;1m[1;3mFinal Answer: The latest research in Visual Language Models includes several innovative approaches:
+
+1. **GroundedBERT**: This method enhances BERT with visually grounded information to improve the contextual understanding of text by addressing misalignments between text and visual data using Optimal Transport. It has shown superior performance on language tasks like GLUE and SQuAD.
+
+2. **VaLM (Visually-Augmented Language Modeling)**: VaLM incorporates visual information by augmenting text with context-relevant images, using a visual knowledge fusion layer. It has demonstrated improved performance in visual commonsense reasoning tasks, surpassing both language-only and vision-language models.
+
+3. **Bilingual Language Modeling with Visual Grounding**: This research employs visual grounding in bilingual (English-Spanish) language models to enhance semantic similarity understanding across languages, although it shows less impact on abstract concepts. It underscores the benefits and limitations of using visual data in multilingual contexts. 
+
+These studies illustrate the significant impact of integrating visual information into language models, optimizing them for varied and complex tasks by providing them with additional contextual data from images.[0m
+
+[1m&gt; Finished chain.[0m
+
+✓ Run 1 completed. Run ID: 2401fa2a-9e96-4bbb-9441-f48375729d2a
+Question: What is the latest research on Visual Language Models?
+Response: The latest research in Visual Language Models includes several innovative approaches:
+
+1. **GroundedBERT**: This method enhances BERT with visually grounded information to improve the contextual under...
+
+
+[1m&gt; Entering new AgentExecutor chain...[0m
+[32;1m[1;3mTo find papers about reinforcement learning in robotics from the last year, I should search the arXiv database with a query that includes &quot;reinforcement learning&quot;, &quot;robotics&quot;, and filters the results to the last year. This should provide relevant and recent academic papers on the topic.
+
+Action: arxiv
+Action Input: reinforcement learning robotics submittedDate:[2022-10-01 TO 2023-10-01][0m[36;1m[1;3mPublished: 2022-10-13
+Title: A Concise Introduction to Reinforcement Learning in Robotics
+Authors: Akash Nagaraj, Mukund Sood, Bhagya M Patil
+Summary: One of the biggest hurdles robotics faces is the facet of sophisticated and
+hard-to-engineer behaviors. Reinforcement learning offers a set of tools, and a
+framework to address this problem. In parallel, the misgivings of robotics
+offer a solid testing ground and evaluation metric for advancements in
+reinforcement learning. The two disciplines go hand-in-hand, much like the
+fields of Mathematics and Physics. By means of this survey paper, we aim to
+invigorate links between the research communities of the two disciplines by
+focusing on the work done in reinforcement learning for locomotive and control
+aspects of robotics. Additionally, we aim to highlight not only the notable
+successes but also the key challenges of the application of Reinforcement
+Learning in Robotics. This paper aims to serve as a reference guide for
+researchers in reinforcement learning applied to the field of robotics. The
+literature survey is at a fairly introductory level, aimed at aspiring
+researchers. Appropriately, we have covered the most essential concepts
+required for research in the field of reinforcement learning, with robotics in
+mind. Through a thorough analysis of this problem, we are able to manifest how
+reinforcement learning could be applied profitably, and also focus on
+open-ended questions, as well as the potential for future research.
+
+Published: 2022-09-07
+Title: A Deep Reinforcement Learning Strategy for UAV Autonomous Landing on a Platform
+Authors: Z. Jiang, G. Song
+Summary: With the development of industry, drones are appearing in various field. In
+recent years, deep reinforcement learning has made impressive gains in games,
+and we are committed to applying deep reinforcement learning algorithms to the
+field of robotics, moving reinforcement learning algorithms from game scenarios
+to real-world application scenarios. We are inspired by the LunarLander of
+OpenAI Gym, we decided to make a bold attempt in the field of reinforcement
+learning to control drones. At present, there is still a lack of work applying
+reinforcement learning algorithms to robot control, the physical simulation
+platform related to robot control is only suitable for the verification of
+classical algorithms, and is not suitable for accessing reinforcement learning
+algorithms for the training. In this paper, we will face this problem, bridging
+the gap between physical simulation platforms and intelligent agent, connecting
+intelligent agents to a physical simulation platform, allowing agents to learn
+and complete drone flight tasks in a simulator that approximates the real
+world. We proposed a reinforcement learning framework based on Gazebo that is a
+kind of physical simulation platform (ROS-RL), and used three continuous action
+space reinforcement learning algorithms in the framework to dealing with the
+problem of autonomous landing of drones. Experiments show the effectiveness of
+the algorithm, the task of autonomous landing of drones based on reinforcement
+learning achieved full success.
+
+Published: 2022-05-20
+Title: Adversarial joint attacks on legged robots
+Authors: Takuto Otomo, Hiroshi Kera, Kazuhiko Kawamoto
+Summary: We address adversarial attacks on the actuators at the joints of legged
+robots trained by deep reinforcement learning. The vulnerability to the joint
+attacks can significantly impact the safety and robustness of legged robots. In
+this study, we demonstrate that the adversarial perturbations to the torque
+control signals of the actuators can significantly reduce the rewards and cause
+walking instability in robots. To find the adversarial torque perturbations, we
+develop black-box adversarial attacks, where, the adversary cannot access the
+neural networks trained by deep reinforcement learning. The black box attack
+can be applied to legged robots regardless of the architecture and algorithms
+of deep r[0m[32;1m[1;3mThe search returned relevant papers on reinforcement learning in robotics, published within the last year. Here are the details of the papers identified:
+
+1. **A Concise Introduction to Reinforcement Learning in Robotics**
+   - **Published:** 2022-10-13
+   - **Authors:** Akash Nagaraj, Mukund Sood, Bhagya M Patil
+   - **Summary:** This paper provides a survey of reinforcement learning in robotics, discussing its potential to address complex behaviors in robotics and evaluating its successes and challenges. It&#x27;s aimed at aspiring researchers and provides essential concepts needed for research in this field.
+
+2. **A Deep Reinforcement Learning Strategy for UAV Autonomous Landing on a Platform**
+   - **Published:** 2022-09-07
+   - **Authors:** Z. Jiang, G. Song
+   - **Summary:** This paper explores the application of deep reinforcement learning for the autonomous landing of drones. The authors propose a framework using a physical simulation platform and demonstrate the effectiveness of continuous action space reinforcement learning algorithms for this task.
+
+3. **Adversarial Joint Attacks on Legged Robots**
+   - **Published:** 2022-05-20
+   - **Authors:** Takuto Otomo, Hiroshi Kera, Kazuhiko Kawamoto
+   - **Summary:** This study addresses adversarial attacks on the actuators of legged robots trained by deep reinforcement learning. The paper explores black-box adversarial attacks to demonstrate the vulnerability of robots and the impact on their stability and safety.
+
+These papers provide a broad insight into recent research and developments in the use of reinforcement learning in robotics.[0mInvalid Format: Missing &#x27;Action:&#x27; after &#x27;Thought:&#x27;[32;1m[1;3mThe search returned relevant papers on reinforcement learning in robotics, published within the last year. Here are the details of the papers identified:
+
+1. **A Concise Introduction to Reinforcement Learning in Robotics**
+   - **Published:** 2022-10-13
+   - **Authors:** Akash Nagaraj, Mukund Sood, Bhagya M Patil
+   - **Summary:** This paper provides a survey of reinforcement learning in robotics, discussing its potential to address complex behaviors in robotics and evaluating its successes and challenges. It&#x27;s aimed at aspiring researchers and provides essential concepts needed for research in this field.
+
+2. **A Deep Reinforcement Learning Strategy for UAV Autonomous Landing on a Platform**
+   - **Published:** 2022-09-07
+   - **Authors:** Z. Jiang, G. Song
+   - **Summary:** This paper explores the application of deep reinforcement learning for the autonomous landing of drones. The authors propose a framework using a physical simulation platform and demonstrate the effectiveness of continuous action space reinforcement learning algorithms for this task.
+
+3. **Adversarial Joint Attacks on Legged Robots**
+   - **Published:** 2022-05-20
+   - **Authors:** Takuto Otomo, Hiroshi Kera, Kazuhiko Kawamoto
+   - **Summary:** This study addresses adversarial attacks on the actuators of legged robots trained by deep reinforcement learning. The paper explores black-box adversarial attacks to demonstrate the vulnerability of robots and the impact on their stability and safety.
+
+These papers provide a broad insight into recent research and developments in the use of reinforcement learning in robotics.[0mInvalid Format: Missing &#x27;Action:&#x27; after &#x27;Thought:&#x27;[32;1m[1;3mHere are the recent papers on reinforcement learning in robotics from the last year:
+
+1. **A Concise Introduction to Reinforcement Learning in Robotics**
+   - **Published:** 2022-10-13
+   - **Authors:** Akash Nagaraj, Mukund Sood, Bhagya M Patil
+   - **Summary:** This paper surveys the field of reinforcement learning in robotics, focusing on its application in addressing sophisticated behaviors in robotics and evaluating both its successes and challenges. It serves as a reference for aspiring researchers by introducing essential concepts needed for research in this area.
+
+2. **A Deep Reinforcement Learning Strategy for UAV Autonomous Landing on a Platform**
+   - **Published:** 2022-09-07
+   - **Authors:** Z. Jiang, G. Song
+   - **Summary:** The paper discusses using deep reinforcement learning for the autonomous landing of drones. It presents a framework utilizing physical simulation platforms, demonstrating the effectiveness of continuous action space reinforcement learning algorithms in achieving successful drone landings.
+
+These papers highlight ongoing research and developments in the application of reinforcement learning techniques to robotics.[0mInvalid Format: Missing &#x27;Action:&#x27; after &#x27;Thought:&#x27;[32;1m[1;3mI found some recent papers related to reinforcement learning in robotics. Here are the details:
+
+1. **A Concise Introduction to Reinforcement Learning in Robotics**
+   - **Published:** 2022-10-13
+   - **Authors:** Akash Nagaraj, Mukund Sood, Bhagya M Patil
+   - **Summary:** This paper surveys the field of reinforcement learning in robotics, highlighting its potential to address complex behaviors and challenges in robotics. It serves as an introductory reference for researchers interested in reinforcement learning applications in robotics.
+
+2. **A Deep Reinforcement Learning Strategy for UAV Autonomous Landing on a Platform**
+   - **Published:** 2022-09-07
+   - **Authors:** Z. Jiang, G. Song
+   - **Summary:** This study explores the use of deep reinforcement learning for the autonomous landing of drones, demonstrating the effectiveness of continuous action space reinforcement learning algorithms when integrated with a physical simulation platform.
+
+These papers offer insights into the current research landscape of reinforcement learning in robotics from the last year.[0mInvalid Format: Missing &#x27;Action:&#x27; after &#x27;Thought:&#x27;[32;1m[1;3mI now know the final answer.
+
+Final Answer: Here are some recent papers on reinforcement learning in robotics from the last year:
+
+1. **A Concise Introduction to Reinforcement Learning in Robotics**
+   - **Published:** 2022-10-13
+   - **Authors:** Akash Nagaraj, Mukund Sood, Bhagya M Patil
+   - **Summary:** This paper provides a survey of reinforcement learning in robotics, focusing on its potential to address complex behaviors and evaluating both successes and challenges. It serves as a reference guide for aspiring researchers.
+
+2. **A Deep Reinforcement Learning Strategy for UAV Autonomous Landing on a Platform**
+   - **Published:** 2022-09-07
+   - **Authors:** Z. Jiang, G. Song
+   - **Summary:** The study applies deep reinforcement learning to the autonomous landing of drones using a physical simulation platform, demonstrating the effectiveness of continuous action space reinforcement learning algorithms.
+
+These papers highlight ongoing research and developments in applying reinforcement learning techniques to robotics.[0m
+
+[1m&gt; Finished chain.[0m
+
+✓ Run 2 completed. Run ID: e92abdf7-c2c0-4acf-b26f-f0cf18745595
+Question: Find papers about reinforcement learning in robotics from the last year
+Response: Here are some recent papers on reinforcement learning in robotics from the last year:
+
+1. **A Concise Introduction to Reinforcement Learning in Robotics**
+   - **Published:** 2022-10-13
+   - **Authors...
+
+
+[1m&gt; Entering new AgentExecutor chain...[0m
+[32;1m[1;3mTo answer this question, I will search for recent papers on transformer architectures on arXiv to get the latest innovations and developments. 
+Action: arxiv
+Action Input: &quot;latest innovations transformer architectures 2023&quot;[0m[36;1m[1;3mPublished: 2023-06-02
+Title: Transforming ECG Diagnosis:An In-depth Review of Transformer-based DeepLearning Models in Cardiovascular Disease Detection
+Authors: Zibin Zhao
+Summary: The emergence of deep learning has significantly enhanced the analysis of
+electrocardiograms (ECGs), a non-invasive method that is essential for
+assessing heart health. Despite the complexity of ECG interpretation, advanced
+deep learning models outperform traditional methods. However, the increasing
+complexity of ECG data and the need for real-time and accurate diagnosis
+necessitate exploring more robust architectures, such as transformers. Here, we
+present an in-depth review of transformer architectures that are applied to ECG
+classification. Originally developed for natural language processing, these
+models capture complex temporal relationships in ECG signals that other models
+might overlook. We conducted an extensive search of the latest
+transformer-based models and summarize them to discuss the advances and
+challenges in their application and suggest potential future improvements. This
+review serves as a valuable resource for researchers and practitioners and aims
+to shed light on this innovative application in ECG interpretation.
+
+Published: 2023-09-13
+Title: Edge-MoE: Memory-Efficient Multi-Task Vision Transformer Architecture with Task-level Sparsity via Mixture-of-Experts
+Authors: Rishov Sarkar, Hanxue Liang, Zhiwen Fan, Zhangyang Wang, Cong Hao
+Summary: Computer vision researchers are embracing two promising paradigms: Vision
+Transformers (ViTs) and Multi-task Learning (MTL), which both show great
+performance but are computation-intensive, given the quadratic complexity of
+self-attention in ViT and the need to activate an entire large MTL model for
+one task. M$^3$ViT is the latest multi-task ViT model that introduces
+mixture-of-experts (MoE), where only a small portion of subnetworks (&quot;experts&quot;)
+are sparsely and dynamically activated based on the current task. M$^3$ViT
+achieves better accuracy and over 80% computation reduction but leaves
+challenges for efficient deployment on FPGA.
+  Our work, dubbed Edge-MoE, solves the challenges to introduce the first
+end-to-end FPGA accelerator for multi-task ViT with a collection of
+architectural innovations, including (1) a novel reordering mechanism for
+self-attention, which requires only constant bandwidth regardless of the target
+parallelism; (2) a fast single-pass softmax approximation; (3) an accurate and
+low-cost GELU approximation; (4) a unified and flexible computing unit that is
+shared by almost all computational layers to maximally reduce resource usage;
+and (5) uniquely for M$^3$ViT, a novel patch reordering method to eliminate
+memory access overhead. Edge-MoE achieves 2.24x and 4.90x better energy
+efficiency comparing with GPU and CPU, respectively. A real-time video
+demonstration is available online, along with our open-source code written
+using High-Level Synthesis.
+
+Published: 2025-08-04
+Title: YOLOv1 to YOLOv11: A Comprehensive Survey of Real-Time Object Detection Innovations and Challenges
+Authors: Manikanta Kotthapalli, Deepika Ravipati, Reshma Bhatia
+Summary: Over the past decade, object detection has advanced significantly, with the
+YOLO (You Only Look Once) family of models transforming the landscape of
+real-time vision applications through unified, end-to-end detection frameworks.
+From YOLOv1&#x27;s pioneering regression-based detection to the latest YOLOv9, each
+version has systematically enhanced the balance between speed, accuracy, and
+deployment efficiency through continuous architectural and algorithmic
+advancements.. Beyond core object detection, modern YOLO architectures have
+expanded to support tasks such as instance segmentation, pose estimation,
+object tracking, and domain-specific applications including medical imaging and
+industrial automation. This paper offers a comprehensive review of the YOLO
+family, highlighting architectural innovations, performance benchmarks,
+ext[0m[32;1m[1;3mWhile not directly applicable, the provided paper on YOLO highlights innovations in real-time object detection rather than transformers. It is clear I should focus on details specifically concerning transformers, especially in new roles or applications.
+
+Here are some significant innovations from the retrieved papers on transformer architectures:
+
+1. **Transformers in ECG Diagnosis**: Transformers, originally developed for natural language processing, have found new applications in ECG data analysis due to their ability to capture complex temporal relationships within biological signals. These models surpass traditional methods in real-time and accurate diagnostics, suggesting new potential for improving cardiovascular disease detection.
+
+2. **Edge-MoE Vision Transformers**: Innovations like Edge-MoE reflect an effort to enhance the computational efficiency of Vision Transformers. This architecture combines multi-task learning with sparse activation of subnetworks, yielding performance gains while necessitating architectural innovations for hardware like FPGA. The methods utilized here, like reordering and approximations for softmax, illustrate ongoing efforts to balance performance with resource efficiency in transformers.
+
+These examples demonstrate transformers stretching beyond natural language to domains like medical data analysis, with adaptations in hardware for efficiency. This expansion into diverse tasks showcases their adaptability and the continuous evolution of their architectures. 
+
+Final Answer: Recent innovations in transformer architectures include their application to ECG diagnostics for better capturing temporal relationships, and advancements like Edge-MoE, which enhance computational efficiency in Vision Transformers through novel FPGA architectural techniques.[0m
+
+[1m&gt; Finished chain.[0m
+
+✓ Run 3 completed. Run ID: ae390f69-6922-43f1-a98a-36c5da9f1af8
+Question: Explain the latest innovations in transformer architectures based on recent papers
+Response: Recent innovations in transformer architectures include their application to ECG diagnostics for better capturing temporal relationships, and advancements like Edge-MoE, which enhance computational ef...</code></pre>
+
+<h2 id="3-Collecting-Traces"><a href="#3-Collecting-Traces" class="headerlink" title="3. Collecting Traces"></a>3. Collecting Traces</h2><p>Now that we’ve generated several agent interactions, we’ll:</p>
+<ol>
+<li>Connect to LangSmith and <a target="_blank" rel="noopener" href="https://docs.langchain.com/langsmith/export-traces">query Agent traces</a></li>
+<li>Filter for relevant run types (AgentExecutor, LLM, Tool, Retriever)</li>
+<li>Convert traces to <a target="_blank" rel="noopener" href="https://docs.mercedes-benz.com/guide/predictions">Mercedes-Benz format with predictions</a></li>
+</ol>
+<pre><code class="hljs python"><span class="hljs-keyword">from</span> langsmith <span class="hljs-keyword">import</span> Client
+<span class="hljs-keyword">import</span> json
+<span class="hljs-keyword">from</span> datetime <span class="hljs-keyword">import</span> datetime
+<span class="hljs-keyword">import</span> uuid
+<span class="hljs-keyword">import</span> random
+<span class="hljs-keyword">import</span> string
+
+<span class="hljs-comment"># Initialize Langsmith client</span>
+client = Client()
+
+<span class="hljs-comment"># Define filter to get relevant run types</span>
+<span class="hljs-comment"># We want to capture the complete agent execution flow</span>
+filter_string = <span class="hljs-string">&#x27;or(and(eq(name, &quot;AgentExecutor&quot;), eq(run_type, &quot;chain&quot;)), eq(run_type, &quot;llm&quot;), eq(run_type, &quot;tool&quot;), eq(run_type, &quot;retriever&quot;))&#x27;</span>
+
+<span class="hljs-comment"># Fetch all runs from the project</span>
+runs = client.list_runs(
+    project_name=os.getenv(<span class="hljs-string">&#x27;LANGSMITH_PROJECT&#x27;</span>),
+    <span class="hljs-built_in">filter</span>=filter_string
+)
+
+<span class="hljs-comment"># Sort runs by start_time for chronological processing</span>
+runs = <span class="hljs-built_in">sorted</span>(runs, key=<span class="hljs-keyword">lambda</span> run: run.start_time)
+
+<span class="hljs-comment"># Group runs by trace_id</span>
+traces = &#123;&#125;
+<span class="hljs-keyword">for</span> run <span class="hljs-keyword">in</span> runs:
+    <span class="hljs-keyword">if</span> run.trace_id <span class="hljs-keyword">not</span> <span class="hljs-keyword">in</span> traces:
+        traces[run.trace_id] = []
+    traces[run.trace_id].append(run.<span class="hljs-built_in">dict</span>())
+
+<span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;✓ Collected <span class="hljs-subst">&#123;<span class="hljs-built_in">len</span>(traces)&#125;</span> traces from Langsmith&quot;</span>)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;  Total runs: <span class="hljs-subst">&#123;<span class="hljs-built_in">len</span>(runs)&#125;</span>&quot;</span>)</code></pre>
+
+<pre><code>✓ Collected 24 traces from Langsmith
+  Total runs: 149
+</code></pre>
+<h3 id="4-Handler-Functions-for-Different-Run-Types"><a href="#4-Handler-Functions-for-Different-Run-Types" class="headerlink" title="4. Handler Functions for Different Run Types"></a>4. Handler Functions for Different Run Types</h3><p>These functions convert different types of Langsmith runs into Mercedes-Benz’s
+chat message format. Each run type has specific data structures that need to be
+transformed appropriately.</p>
+<pre><code class="hljs python"><span class="hljs-comment"># Agent requests LLM provider</span>
+AGENT_LLM_CALL = <span class="hljs-string">&#x27;agent_llm_call&#x27;</span>
+<span class="hljs-comment"># Agent receives response from LLM provider</span>
+AGENT_LLM_RESPONSE = <span class="hljs-string">&#x27;agent_llm_response&#x27;</span>
+<span class="hljs-comment"># Agent calls tool (e.g. API call)</span>
+AGENT_TOOL_CALL = <span class="hljs-string">&#x27;agent_tool_call&#x27;</span>
+<span class="hljs-comment"># Agent calls retriever</span>
+AGENT_RETRIEVER_CALL = <span class="hljs-string">&#x27;agent_retriever_call&#x27;</span></code></pre>
+
+
+<pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">handle_llm</span>(<span class="hljs-params">run, messages</span>):
+    <span class="hljs-string">&quot;&quot;&quot;</span>
+<span class="hljs-string">    Handler for LLM runs (run_type: &quot;llm&quot;).</span>
+<span class="hljs-string">    Extracts user messages from inputs and assistant responses from outputs.</span>
+<span class="hljs-string">    &quot;&quot;&quot;</span>
+    <span class="hljs-comment"># Extract user message from inputs if present</span>
+    <span class="hljs-keyword">if</span> <span class="hljs-string">&#x27;inputs&#x27;</span> <span class="hljs-keyword">in</span> run <span class="hljs-keyword">and</span> <span class="hljs-string">&#x27;messages&#x27;</span> <span class="hljs-keyword">in</span> run[<span class="hljs-string">&#x27;inputs&#x27;</span>]:
+        messages_input = run[<span class="hljs-string">&#x27;inputs&#x27;</span>][<span class="hljs-string">&#x27;messages&#x27;</span>]
+        <span class="hljs-keyword">if</span> messages_input <span class="hljs-keyword">and</span> <span class="hljs-built_in">len</span>(messages_input) &gt; <span class="hljs-number">0</span>:
+            message_array = messages_input[<span class="hljs-number">0</span>]
+            <span class="hljs-keyword">if</span> message_array <span class="hljs-keyword">and</span> <span class="hljs-built_in">len</span>(message_array) &gt; <span class="hljs-number">0</span>:
+                message = message_array[<span class="hljs-number">0</span>]
+                <span class="hljs-keyword">if</span> <span class="hljs-string">&#x27;kwargs&#x27;</span> <span class="hljs-keyword">in</span> message <span class="hljs-keyword">and</span> <span class="hljs-string">&#x27;content&#x27;</span> <span class="hljs-keyword">in</span> message[<span class="hljs-string">&#x27;kwargs&#x27;</span>]:
+                    messages.append(&#123;
+                        <span class="hljs-string">&quot;content&quot;</span>: message[<span class="hljs-string">&#x27;kwargs&#x27;</span>][<span class="hljs-string">&#x27;content&#x27;</span>],
+                        <span class="hljs-string">&quot;role&quot;</span>: <span class="hljs-string">&quot;user&quot;</span>,
+                        <span class="hljs-string">&quot;_hs_meta&quot;</span>: &#123;
+                            <span class="hljs-string">&quot;role&quot;</span>: AGENT_LLM_CALL
+                        &#125;
+                    &#125;)
+
+    <span class="hljs-comment"># Extract assistant response from outputs</span>
+    <span class="hljs-keyword">if</span> <span class="hljs-string">&#x27;outputs&#x27;</span> <span class="hljs-keyword">in</span> run <span class="hljs-keyword">and</span> <span class="hljs-string">&#x27;generations&#x27;</span> <span class="hljs-keyword">in</span> run[<span class="hljs-string">&#x27;outputs&#x27;</span>]:
+        generations = run[<span class="hljs-string">&#x27;outputs&#x27;</span>][<span class="hljs-string">&#x27;generations&#x27;</span>]
+        <span class="hljs-keyword">if</span> generations <span class="hljs-keyword">and</span> <span class="hljs-built_in">len</span>(generations) &gt; <span class="hljs-number">0</span>:
+            generation = generations[<span class="hljs-number">0</span>]
+            <span class="hljs-keyword">if</span> <span class="hljs-string">&#x27;text&#x27;</span> <span class="hljs-keyword">in</span> generation:
+                messages.append(&#123;
+                    <span class="hljs-string">&quot;content&quot;</span>: generation[<span class="hljs-string">&#x27;text&#x27;</span>],
+                    <span class="hljs-string">&quot;role&quot;</span>: <span class="hljs-string">&quot;assistant&quot;</span>,
+                    <span class="hljs-string">&quot;_hs_meta&quot;</span>: &#123;
+                        <span class="hljs-string">&quot;role&quot;</span>: AGENT_LLM_RESPONSE
+                    &#125;
+                &#125;)
+            <span class="hljs-keyword">elif</span> <span class="hljs-string">&#x27;message&#x27;</span> <span class="hljs-keyword">in</span> generation:
+                message = generation[<span class="hljs-string">&#x27;message&#x27;</span>]
+                <span class="hljs-keyword">if</span> <span class="hljs-string">&#x27;kwargs&#x27;</span> <span class="hljs-keyword">in</span> message <span class="hljs-keyword">and</span> <span class="hljs-string">&#x27;content&#x27;</span> <span class="hljs-keyword">in</span> message[<span class="hljs-string">&#x27;kwargs&#x27;</span>]:
+                    messages.append(&#123;
+                        <span class="hljs-string">&quot;content&quot;</span>: message[<span class="hljs-string">&#x27;kwargs&#x27;</span>][<span class="hljs-string">&#x27;content&#x27;</span>],
+                        <span class="hljs-string">&quot;role&quot;</span>: <span class="hljs-string">&quot;assistant&quot;</span>,
+                        <span class="hljs-string">&quot;_hs_meta&quot;</span>: &#123;
+                          <span class="hljs-string">&quot;role&quot;</span>: AGENT_LLM_RESPONSE
+                        &#125;
+                    &#125;)
+
+
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">handle_tool</span>(<span class="hljs-params">run, messages</span>):
+    <span class="hljs-string">&quot;&quot;&quot;</span>
+<span class="hljs-string">    Handler for Tool runs (run_type: &quot;tool&quot;).</span>
+<span class="hljs-string">    Creates assistant message with tool call and tool response message.</span>
+<span class="hljs-string">    &quot;&quot;&quot;</span>
+    <span class="hljs-comment"># Tool metadata</span>
+    tool_name = run.get(<span class="hljs-string">&#x27;name&#x27;</span>, <span class="hljs-string">&#x27;unknown_tool&#x27;</span>)
+    tool_call_id = <span class="hljs-built_in">str</span>(uuid.uuid4())[:<span class="hljs-number">8</span>]
+
+    <span class="hljs-comment"># Extract tool input</span>
+    tool_input = <span class="hljs-string">&quot;&quot;</span>
+    <span class="hljs-keyword">if</span> <span class="hljs-string">&#x27;inputs&#x27;</span> <span class="hljs-keyword">in</span> run <span class="hljs-keyword">and</span> <span class="hljs-string">&#x27;input&#x27;</span> <span class="hljs-keyword">in</span> run[<span class="hljs-string">&#x27;inputs&#x27;</span>]:
+        tool_input = run[<span class="hljs-string">&#x27;inputs&#x27;</span>][<span class="hljs-string">&#x27;input&#x27;</span>]
+
+    <span class="hljs-comment"># Add assistant message with tool call</span>
+    messages.append(&#123;
+        <span class="hljs-string">&quot;role&quot;</span>: <span class="hljs-string">&quot;assistant&quot;</span>,
+        <span class="hljs-string">&quot;tool_calls&quot;</span>: [
+            &#123;
+                <span class="hljs-string">&quot;id&quot;</span>: tool_call_id,
+                <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;custom&quot;</span>,
+                <span class="hljs-string">&quot;custom&quot;</span>: &#123;
+                    <span class="hljs-string">&quot;name&quot;</span>: tool_name,
+                    <span class="hljs-string">&quot;input&quot;</span>: tool_input
+                &#125;
+            &#125;
+        ],
+        <span class="hljs-string">&quot;_hs_meta&quot;</span>: &#123;
+            <span class="hljs-string">&quot;role&quot;</span>: AGENT_TOOL_CALL
+        &#125;
+    &#125;)
+
+    <span class="hljs-comment"># Add tool response message</span>
+    <span class="hljs-keyword">if</span> <span class="hljs-string">&#x27;outputs&#x27;</span> <span class="hljs-keyword">in</span> run <span class="hljs-keyword">and</span> <span class="hljs-string">&#x27;output&#x27;</span> <span class="hljs-keyword">in</span> run[<span class="hljs-string">&#x27;outputs&#x27;</span>]:
+        messages.append(&#123;
+            <span class="hljs-string">&quot;content&quot;</span>: run[<span class="hljs-string">&#x27;outputs&#x27;</span>][<span class="hljs-string">&#x27;output&#x27;</span>],
+            <span class="hljs-string">&quot;role&quot;</span>: <span class="hljs-string">&quot;tool&quot;</span>,
+            <span class="hljs-string">&quot;tool_call_id&quot;</span>: tool_call_id
+        &#125;)
+
+
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">handle_retriever</span>(<span class="hljs-params">run, messages</span>):
+    <span class="hljs-string">&quot;&quot;&quot;</span>
+<span class="hljs-string">    Handler for Retriever runs (run_type: &quot;retriever&quot;).</span>
+<span class="hljs-string">    Extracts retrieval results and formats them as tool messages.</span>
+<span class="hljs-string">    &quot;&quot;&quot;</span>
+    <span class="hljs-keyword">if</span> <span class="hljs-string">&#x27;outputs&#x27;</span> <span class="hljs-keyword">in</span> run:
+        output_content = <span class="hljs-built_in">str</span>(run[<span class="hljs-string">&#x27;outputs&#x27;</span>])
+        messages.append(&#123;
+            <span class="hljs-string">&quot;content&quot;</span>: <span class="hljs-string">f&quot;Retriever result: <span class="hljs-subst">&#123;output_content&#125;</span>&quot;</span>,
+            <span class="hljs-string">&quot;role&quot;</span>: <span class="hljs-string">&quot;tool&quot;</span>,
+            <span class="hljs-string">&quot;_hs_meta&quot;</span>: &#123;
+                <span class="hljs-string">&quot;role&quot;</span>: AGENT_RETRIEVER_CALL
+            &#125;
+        &#125;)
+
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;✓ Handler functions defined&quot;</span>)</code></pre>
+
+<pre><code>✓ Handler functions defined
+</code></pre>
+<h3 id="5-Convert-Traces-to-Label-Studio-Format"><a href="#5-Convert-Traces-to-Label-Studio-Format" class="headerlink" title="5. Convert Traces to Mercedes-Benz Format"></a>5. Convert Traces to Mercedes-Benz Format</h3><p>This function transforms Langsmith traces into Mercedes-Benz’s task format.
+The <code>mode=&quot;predictions&quot;</code> parameter creates pre-annotations that annotators
+can review and modify, speeding up the evaluation process.</p>
+<h3 id="Key-Features"><a href="#Key-Features" class="headerlink" title="Key Features:"></a>Key Features:</h3><ul>
+<li>Preserves chronological order of agent interactions</li>
+<li>Maintains timestamps for temporal analysis</li>
+<li>Structures data to match <a target="_blank" rel="noopener" href="https://labelstud.io/tags/chat">Mercedes-Benz’s Chat interface</a></li>
+<li>Creates predictions for each message (except the initial user query)</li>
+</ul>
+<pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">convert_trace_to_messages</span>(<span class="hljs-params">trace_id, trace_runs, mode=<span class="hljs-string">&quot;input&quot;</span>, from_name=<span class="hljs-string">&quot;chat&quot;</span></span>):
+    <span class="hljs-string">&quot;&quot;&quot;</span>
+<span class="hljs-string">    Converts a trace (list of runs) to Mercedes-Benz format.</span>
+<span class="hljs-string"></span>
+<span class="hljs-string">    Args:</span>
+<span class="hljs-string">        trace_id: Unique identifier for the trace</span>
+<span class="hljs-string">        trace_runs: List of run dictionaries from a single trace</span>
+<span class="hljs-string">        mode: Either &quot;input&quot; or &quot;predictions&quot;</span>
+<span class="hljs-string">              - &quot;input&quot;: Returns simple message list</span>
+<span class="hljs-string">              - &quot;predictions&quot;: Returns Mercedes-Benz task format with predictions</span>
+<span class="hljs-string">        from_name: The from_name field for Mercedes-Benz predictions</span>
+<span class="hljs-string"></span>
+<span class="hljs-string">    Returns:</span>
+<span class="hljs-string">        Dict with trace_id and either messages or Mercedes-Benz task structure</span>
+<span class="hljs-string">    &quot;&quot;&quot;</span>
+    messages = []
+    agent_executor_run = <span class="hljs-literal">None</span>
+
+    <span class="hljs-comment"># Sort runs chronologically</span>
+    sorted_runs = <span class="hljs-built_in">sorted</span>(trace_runs, key=<span class="hljs-keyword">lambda</span> r: r.get(<span class="hljs-string">&#x27;start_time&#x27;</span>, <span class="hljs-string">&#x27;&#x27;</span>))
+
+    <span class="hljs-comment"># Find AgentExecutor run (the main chain)</span>
+    trace_id_str = <span class="hljs-literal">None</span>
+    <span class="hljs-keyword">for</span> run <span class="hljs-keyword">in</span> sorted_runs:
+        <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> trace_id_str <span class="hljs-keyword">and</span> <span class="hljs-string">&#x27;trace_id&#x27;</span> <span class="hljs-keyword">in</span> run:
+            trace_id_str = <span class="hljs-built_in">str</span>(run[<span class="hljs-string">&#x27;trace_id&#x27;</span>])
+        <span class="hljs-keyword">if</span> run.get(<span class="hljs-string">&#x27;name&#x27;</span>) == <span class="hljs-string">&#x27;AgentExecutor&#x27;</span> <span class="hljs-keyword">and</span> run.get(<span class="hljs-string">&#x27;run_type&#x27;</span>) == <span class="hljs-string">&#x27;chain&#x27;</span>:
+            agent_executor_run = run
+            <span class="hljs-keyword">break</span>
+
+    <span class="hljs-comment"># Extract initial user message from AgentExecutor</span>
+    first_user_timestamp = <span class="hljs-literal">None</span>
+    <span class="hljs-keyword">if</span> agent_executor_run:
+        <span class="hljs-keyword">if</span> <span class="hljs-string">&#x27;inputs&#x27;</span> <span class="hljs-keyword">in</span> agent_executor_run <span class="hljs-keyword">and</span> <span class="hljs-string">&#x27;input&#x27;</span> <span class="hljs-keyword">in</span> agent_executor_run[<span class="hljs-string">&#x27;inputs&#x27;</span>]:
+            first_user_timestamp = agent_executor_run.get(<span class="hljs-string">&#x27;start_time&#x27;</span>)
+            messages.append(&#123;
+                <span class="hljs-string">&quot;content&quot;</span>: agent_executor_run[<span class="hljs-string">&#x27;inputs&#x27;</span>][<span class="hljs-string">&#x27;input&#x27;</span>],
+                <span class="hljs-string">&quot;role&quot;</span>: <span class="hljs-string">&quot;user&quot;</span>,
+                <span class="hljs-string">&quot;_timestamp&quot;</span>: first_user_timestamp
+            &#125;)
+
+    <span class="hljs-comment"># Process intermediate runs (llm, tool, retriever)</span>
+    <span class="hljs-keyword">for</span> run <span class="hljs-keyword">in</span> sorted_runs:
+        run_type = run.get(<span class="hljs-string">&#x27;run_type&#x27;</span>)
+        name = run.get(<span class="hljs-string">&#x27;name&#x27;</span>)
+
+        <span class="hljs-comment"># Skip the AgentExecutor itself</span>
+        <span class="hljs-keyword">if</span> name == <span class="hljs-string">&#x27;AgentExecutor&#x27;</span> <span class="hljs-keyword">and</span> run_type == <span class="hljs-string">&#x27;chain&#x27;</span>:
+            <span class="hljs-keyword">continue</span>
+
+        <span class="hljs-comment"># Track messages before processing</span>
+        messages_before = <span class="hljs-built_in">len</span>(messages)
+
+        <span class="hljs-comment"># Apply appropriate handler</span>
+        <span class="hljs-keyword">if</span> run_type == <span class="hljs-string">&#x27;llm&#x27;</span>:
+            handle_llm(run, messages)
+        <span class="hljs-keyword">elif</span> run_type == <span class="hljs-string">&#x27;tool&#x27;</span>:
+            handle_tool(run, messages)
+        <span class="hljs-keyword">elif</span> run_type == <span class="hljs-string">&#x27;retriever&#x27;</span>:
+            handle_retriever(run, messages)
+
+        <span class="hljs-comment"># Attach timestamp to new messages</span>
+        messages_after = <span class="hljs-built_in">len</span>(messages)
+        run_timestamp = run.get(<span class="hljs-string">&#x27;start_time&#x27;</span>)
+        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(messages_before, messages_after):
+            <span class="hljs-keyword">if</span> <span class="hljs-string">&#x27;_timestamp&#x27;</span> <span class="hljs-keyword">not</span> <span class="hljs-keyword">in</span> messages[i]:
+                messages[i][<span class="hljs-string">&#x27;_timestamp&#x27;</span>] = run_timestamp
+
+    <span class="hljs-comment"># Add final assistant message from AgentExecutor output</span>
+    <span class="hljs-keyword">if</span> agent_executor_run:
+        <span class="hljs-keyword">if</span> agent_executor_run.get(<span class="hljs-string">&#x27;outputs&#x27;</span>) <span class="hljs-keyword">and</span> <span class="hljs-string">&#x27;output&#x27;</span> <span class="hljs-keyword">in</span> agent_executor_run[<span class="hljs-string">&#x27;outputs&#x27;</span>]:
+            final_output = agent_executor_run[<span class="hljs-string">&#x27;outputs&#x27;</span>][<span class="hljs-string">&#x27;output&#x27;</span>]
+            <span class="hljs-comment"># Only add if different from last message</span>
+            <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> messages <span class="hljs-keyword">or</span> messages[-<span class="hljs-number">1</span>][<span class="hljs-string">&#x27;content&#x27;</span>] != final_output:
+                messages.append(&#123;
+                    <span class="hljs-string">&quot;content&quot;</span>: final_output,
+                    <span class="hljs-string">&quot;role&quot;</span>: <span class="hljs-string">&quot;assistant&quot;</span>,
+                    <span class="hljs-string">&quot;_timestamp&quot;</span>: agent_executor_run.get(<span class="hljs-string">&#x27;end_time&#x27;</span>) <span class="hljs-keyword">or</span> agent_executor_run.get(<span class="hljs-string">&#x27;start_time&#x27;</span>)
+                &#125;)
+
+    <span class="hljs-comment"># Return format depends on mode</span>
+    <span class="hljs-keyword">if</span> mode == <span class="hljs-string">&quot;input&quot;</span>:
+        <span class="hljs-comment"># Clean format without timestamps</span>
+        clean_messages = []
+        <span class="hljs-keyword">for</span> msg <span class="hljs-keyword">in</span> messages:
+            clean_msg = &#123;k: v <span class="hljs-keyword">for</span> k, v <span class="hljs-keyword">in</span> msg.items() <span class="hljs-keyword">if</span> k != <span class="hljs-string">&#x27;_timestamp&#x27;</span>&#125;
+            clean_messages.append(clean_msg)
+        <span class="hljs-keyword">return</span> &#123;<span class="hljs-string">&quot;trace_id&quot;</span>: <span class="hljs-built_in">str</span>(trace_id_str), <span class="hljs-string">&quot;messages&quot;</span>: clean_messages&#125;
+
+    <span class="hljs-comment"># Mode is &quot;predictions&quot; - convert to Mercedes-Benz format</span>
+    <span class="hljs-keyword">if</span> mode == <span class="hljs-string">&quot;predictions&quot;</span>:
+        <span class="hljs-comment"># Separate first user message from remaining messages</span>
+        first_user_message = <span class="hljs-literal">None</span>
+        remaining_messages = []
+
+        <span class="hljs-keyword">for</span> msg <span class="hljs-keyword">in</span> messages:
+            <span class="hljs-keyword">if</span> msg.get(<span class="hljs-string">&#x27;role&#x27;</span>) == <span class="hljs-string">&#x27;user&#x27;</span> <span class="hljs-keyword">and</span> first_user_message <span class="hljs-keyword">is</span> <span class="hljs-literal">None</span>:
+                first_user_message = &#123;k: v <span class="hljs-keyword">for</span> k, v <span class="hljs-keyword">in</span> msg.items() <span class="hljs-keyword">if</span> k != <span class="hljs-string">&#x27;_timestamp&#x27;</span>&#125;
+            <span class="hljs-keyword">elif</span> first_user_message <span class="hljs-keyword">is</span> <span class="hljs-keyword">not</span> <span class="hljs-literal">None</span>:
+                remaining_messages.append(msg)
+
+        <span class="hljs-comment"># Convert remaining messages to predictions</span>
+        predictions_result = []
+
+        <span class="hljs-keyword">for</span> msg <span class="hljs-keyword">in</span> remaining_messages:
+            <span class="hljs-comment"># Generate unique ID for prediction</span>
+            prediction_id = <span class="hljs-string">&#x27;&#x27;</span>.join(random.choices(string.ascii_letters + string.digits, k=<span class="hljs-number">10</span>))
+
+            <span class="hljs-comment"># Parse timestamp</span>
+            created_at = <span class="hljs-literal">None</span>
+            timestamp_value = msg.get(<span class="hljs-string">&#x27;_timestamp&#x27;</span>)
+
+            <span class="hljs-keyword">if</span> timestamp_value:
+                <span class="hljs-keyword">try</span>:
+                    <span class="hljs-keyword">if</span> <span class="hljs-built_in">isinstance</span>(timestamp_value, datetime):
+                        dt = timestamp_value
+                    <span class="hljs-keyword">elif</span> <span class="hljs-built_in">isinstance</span>(timestamp_value, <span class="hljs-built_in">str</span>):
+                        <span class="hljs-keyword">if</span> <span class="hljs-string">&#x27;T&#x27;</span> <span class="hljs-keyword">in</span> timestamp_value:
+                            dt = datetime.fromisoformat(timestamp_value.replace(<span class="hljs-string">&#x27;Z&#x27;</span>, <span class="hljs-string">&#x27;+00:00&#x27;</span>))
+                        <span class="hljs-keyword">else</span>:
+                            dt = datetime.fromisoformat(timestamp_value)
+                    <span class="hljs-keyword">else</span>:
+                        dt = <span class="hljs-literal">None</span>
+
+                    <span class="hljs-keyword">if</span> dt:
+                        created_at = <span class="hljs-built_in">int</span>(dt.timestamp() * <span class="hljs-number">1000</span>)
+                <span class="hljs-keyword">except</span> Exception <span class="hljs-keyword">as</span> e:
+                    <span class="hljs-built_in">print</span>(<span class="hljs-string">f&#x27;Warning: Error parsing timestamp: <span class="hljs-subst">&#123;timestamp_value&#125;</span> - <span class="hljs-subst">&#123;e&#125;</span>&#x27;</span>)
+
+            <span class="hljs-comment"># Fallback to current timestamp</span>
+            <span class="hljs-keyword">if</span> created_at <span class="hljs-keyword">is</span> <span class="hljs-literal">None</span>:
+                created_at = <span class="hljs-built_in">int</span>(datetime.now().timestamp() * <span class="hljs-number">1000</span>)
+
+            <span class="hljs-comment"># Build prediction item</span>
+            prediction_item = &#123;
+                <span class="hljs-string">&quot;id&quot;</span>: prediction_id,
+                <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;chatmessage&quot;</span>,
+                <span class="hljs-string">&quot;value&quot;</span>: &#123;
+                    <span class="hljs-string">&quot;chatmessage&quot;</span>: &#123;
+                        <span class="hljs-string">&quot;role&quot;</span>: msg.get(<span class="hljs-string">&#x27;role&#x27;</span>, <span class="hljs-string">&#x27;assistant&#x27;</span>),
+                        <span class="hljs-string">&quot;content&quot;</span>: msg.get(<span class="hljs-string">&#x27;content&#x27;</span>, <span class="hljs-string">&#x27;&#x27;</span>),
+                        <span class="hljs-string">&quot;createdAt&quot;</span>: created_at
+                    &#125;
+                &#125;,
+                <span class="hljs-string">&quot;origin&quot;</span>: <span class="hljs-string">&quot;manual&quot;</span>,
+                <span class="hljs-string">&quot;to_name&quot;</span>: <span class="hljs-string">&quot;chat&quot;</span>,
+                <span class="hljs-string">&quot;from_name&quot;</span>: from_name
+            &#125;
+
+            <span class="hljs-comment"># Include tool_calls if present</span>
+            <span class="hljs-keyword">if</span> <span class="hljs-string">&#x27;tool_calls&#x27;</span> <span class="hljs-keyword">in</span> msg:
+                prediction_item[<span class="hljs-string">&#x27;value&#x27;</span>][<span class="hljs-string">&#x27;chatmessage&#x27;</span>][<span class="hljs-string">&#x27;tool_calls&#x27;</span>] = msg[<span class="hljs-string">&#x27;tool_calls&#x27;</span>]
+                <span class="hljs-comment"># prediction_item[&#x27;value&#x27;][&#x27;chatmessage&#x27;].pop(&#x27;content&#x27;, None)</span>
+
+            <span class="hljs-comment"># Include tool_call_id if present</span>
+            <span class="hljs-keyword">if</span> <span class="hljs-string">&#x27;tool_call_id&#x27;</span> <span class="hljs-keyword">in</span> msg:
+                prediction_item[<span class="hljs-string">&#x27;value&#x27;</span>][<span class="hljs-string">&#x27;chatmessage&#x27;</span>][<span class="hljs-string">&#x27;tool_call_id&#x27;</span>] = msg[<span class="hljs-string">&#x27;tool_call_id&#x27;</span>]
+
+            <span class="hljs-comment"># Include _hs_meta if present</span>
+            <span class="hljs-keyword">if</span> <span class="hljs-string">&#x27;_hs_meta&#x27;</span> <span class="hljs-keyword">in</span> msg:
+                prediction_item[<span class="hljs-string">&#x27;value&#x27;</span>][<span class="hljs-string">&#x27;chatmessage&#x27;</span>][<span class="hljs-string">&#x27;_hs_meta&#x27;</span>] = msg[<span class="hljs-string">&#x27;_hs_meta&#x27;</span>]
+
+            predictions_result.append(prediction_item)
+
+        <span class="hljs-comment"># Build final task structure</span>
+        task_data = &#123;
+            <span class="hljs-string">&quot;data&quot;</span>: &#123;
+                <span class="hljs-string">&quot;trace_id&quot;</span>: <span class="hljs-built_in">str</span>(trace_id_str),
+                <span class="hljs-string">&quot;messages&quot;</span>: [first_user_message] <span class="hljs-keyword">if</span> first_user_message <span class="hljs-keyword">else</span> []
+            &#125;,
+            <span class="hljs-string">&quot;predictions&quot;</span>: [&#123;
+                <span class="hljs-string">&quot;result&quot;</span>: predictions_result
+            &#125;]
+        &#125;
+
+        <span class="hljs-keyword">return</span> task_data
+
+    <span class="hljs-keyword">return</span> &#123;<span class="hljs-string">&quot;trace_id&quot;</span>: <span class="hljs-built_in">str</span>(trace_id_str), <span class="hljs-string">&quot;messages&quot;</span>: messages&#125;
+
+
+<span class="hljs-comment"># Convert all traces to Mercedes-Benz format</span>
+tasks = []
+<span class="hljs-keyword">for</span> trace_id, trace_data <span class="hljs-keyword">in</span> traces.items():
+    task = convert_trace_to_messages(trace_id, trace_data, mode=<span class="hljs-string">&quot;predictions&quot;</span>)
+    tasks.append(task)
+
+<span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;✓ Converted <span class="hljs-subst">&#123;<span class="hljs-built_in">len</span>(tasks)&#125;</span> traces to Mercedes-Benz format&quot;</span>)</code></pre>
+
+<pre><code>✓ Converted 24 traces to Mercedes-Benz format
+</code></pre>
+<h2 id="6-Evaluate-Traces"><a href="#6-Evaluate-Traces" class="headerlink" title="6. Evaluate Traces"></a>6. Evaluate Traces</h2><p>To run evaluation on the collected agent traces, use <a target="_blank" rel="noopener" href="https://docs.mercedes-benz.com/guide/setup">Mercedes-Benz XML configuration</a> to provide a specialized UI with:</p>
+<ul>
+<li><strong>Chat Display</strong>: Shows the full conversation with all agent interactions</li>
+<li><strong>Message-Level Annotation</strong>: Click any message to annotate specific errors</li>
+<li><strong>Role-Specific Error Categories</strong>:<ul>
+<li>User errors (request issues)</li>
+<li>Assistant errors (hallucination, bias, format, etc.)</li>
+<li>Tool errors (tool malfunction or incorrect output)</li>
+</ul>
+</li>
+<li><strong>Overall Assessment</strong>: Rate the entire conversation</li>
+<li><strong>Notes Fields</strong>: Capture detailed feedback from annotators</li>
+</ul>
+<p>This configuration enables Subject Matter Experts (SMEs) to perform detailed
+failure mode analysis on each step of the agent’s reasoning process.</p>
+<pre><code class="hljs python">label_config = <span class="hljs-string">&quot;&quot;&quot;&lt;View&gt;</span>
+<span class="hljs-string">  &lt;Style&gt;</span>
+<span class="hljs-string">    .htx-chat&#123;flex-grow:1&#125;</span>
+<span class="hljs-string">    .htx-chat-sidepanel&#123;flex:300px 0 0;display:flex;flex-direction:column;border-left:2px solid #ccc;padding-left:16px&#125;</span>
+<span class="hljs-string">    .htx-chat-container&#123;display:flex;flex-direction:column;flex-grow:1&#125;</span>
+<span class="hljs-string">    .htx-overall-assessment&#123;margin-top:16px;padding:16px;border:1px solid #e0e0e0;border-radius:8px;background:#fafafa&#125;</span>
+<span class="hljs-string">  &lt;/Style&gt;</span>
+<span class="hljs-string">  &lt;View style=&quot;display:flex;width:100%;gap:1em&quot;&gt;</span>
+<span class="hljs-string">    &lt;View className=&quot;htx-chat-container&quot;&gt;</span>
+<span class="hljs-string">      &lt;Chat name=&quot;chat&quot;</span>
+<span class="hljs-string">                value=&quot;$messages&quot;</span>
+<span class="hljs-string">                llm=&quot;openai/gpt-5-mini&quot;</span>
+<span class="hljs-string">                editable=&quot;true&quot;</span>
+<span class="hljs-string">                messageroles=&quot;user,assistant,tool&quot;</span>
+<span class="hljs-string">                /&gt;</span>
+<span class="hljs-string">      &lt;!-- Evaluate the whole conversation --&gt;</span>
+<span class="hljs-string">      &lt;View className=&quot;htx-overall-assessment&quot;&gt;</span>
+<span class="hljs-string">              &lt;Header value=&quot;Overall Assessment:&quot;/&gt;</span>
+<span class="hljs-string">              &lt;Choices name=&quot;overall_assessment&quot; toName=&quot;chat&quot; choice=&quot;single-radio&quot; showInLine=&quot;true&quot; required=&quot;true&quot;&gt;</span>
+<span class="hljs-string">                  &lt;Choice value=&quot;Contains Errors&quot; hint=&quot;The conversation contains errors.&quot;/&gt;</span>
+<span class="hljs-string">                  &lt;Choice value=&quot;No Errors&quot; hint=&quot;The conversation contains no errors.&quot;/&gt;</span>
+<span class="hljs-string">              &lt;/Choices&gt;</span>
+<span class="hljs-string">              &lt;Header value=&quot;Leave notes:&quot;/&gt;</span>
+<span class="hljs-string">        &lt;TextArea name=&quot;overall_assessment_note&quot; toName=&quot;chat&quot; rows=&quot;10&quot; maxSubmissions=&quot;1&quot; showSubmitButton=&quot;false&quot; /&gt;</span>
+<span class="hljs-string">      &lt;/View&gt;</span>
+<span class="hljs-string">    &lt;/View&gt;</span>
+<span class="hljs-string">    &lt;View className=&quot;htx-chat-sidepanel&quot;&gt;</span>
+<span class="hljs-string">      &lt;View style=&quot;position:sticky;top:14px&quot;&gt;</span>
+<span class="hljs-string">        &lt;View visibleWhen=&quot;region-selected&quot; whenRole=&quot;user&quot;&gt;</span>
+<span class="hljs-string">                    &lt;Header value=&quot;Select errors:&quot;/&gt;</span>
+<span class="hljs-string">                    &lt;Choices name=&quot;user_errors&quot; toName=&quot;chat&quot; choice=&quot;multiple&quot;&gt;</span>
+<span class="hljs-string">                        &lt;Choice value=&quot;Request Error&quot; hint=&quot;Agent request is not correct or contains errors.&quot;/&gt;</span>
+<span class="hljs-string">                        &lt;Choice value=&quot;Other&quot; hint=&quot;Other errors.&quot;/&gt;</span>
+<span class="hljs-string">                    &lt;/Choices&gt;</span>
+<span class="hljs-string">                    &lt;Header value=&quot;Leave notes:&quot;/&gt;</span>
+<span class="hljs-string">          &lt;TextArea perRegion=&quot;true&quot; name=&quot;user_errors_note&quot; toName=&quot;chat&quot; rows=&quot;10&quot; /&gt;</span>
+<span class="hljs-string">                &lt;/View&gt;</span>
+<span class="hljs-string">        &lt;View visibleWhen=&quot;region-selected&quot; whenRole=&quot;assistant&quot;&gt;</span>
+<span class="hljs-string">                    &lt;Header value=&quot;Select errors:&quot;/&gt;</span>
+<span class="hljs-string">                    &lt;Choices name=&quot;llm_errors&quot; toName=&quot;chat&quot; choice=&quot;multiple&quot;&gt;</span>
+<span class="hljs-string">                        &lt;Choice value=&quot;Instruction Adherence&quot; hint=&quot;The agent did not follow the instructions provided in the user prompt.&quot;/&gt;</span>
+<span class="hljs-string">                        &lt;Choice value=&quot;Format&quot; hint=&quot;The message format is not correct or contains errors.&quot;/&gt;</span>
+<span class="hljs-string">                        &lt;Choice value=&quot;Hallucination&quot; hint=&quot;The response contains information that is not supported by the provided context.&quot;/&gt;</span>
+<span class="hljs-string">                        &lt;Choice value=&quot;Bias&quot; hint=&quot;The response contains bias or discrimination.&quot;/&gt;</span>
+<span class="hljs-string">                        &lt;Choice value=&quot;Toxicity&quot; hint=&quot;The response contains toxic or offensive content.&quot;/&gt;</span>
+<span class="hljs-string">                        &lt;Choice value=&quot;PII&quot; hint=&quot;The response contains Personally Identifiable Information (PII) or any other sensitive information.&quot;/&gt;</span>
+<span class="hljs-string">                        &lt;Choice value=&quot;Other&quot; hint=&quot;Other errors.&quot;/&gt;</span>
+<span class="hljs-string">                    &lt;/Choices&gt;</span>
+<span class="hljs-string">                    &lt;Header value=&quot;Leave notes:&quot;/&gt;</span>
+<span class="hljs-string">          &lt;TextArea perRegion=&quot;true&quot; name=&quot;llm_errors_note&quot; toName=&quot;chat&quot; rows=&quot;10&quot; /&gt;</span>
+<span class="hljs-string">        &lt;/View&gt;</span>
+<span class="hljs-string">                &lt;View visibleWhen=&quot;region-selected&quot; whenRole=&quot;tool&quot;&gt;</span>
+<span class="hljs-string">                    &lt;Header value=&quot;Select errors:&quot;/&gt;</span>
+<span class="hljs-string">                    &lt;Choices name=&quot;tool_errors&quot; toName=&quot;chat&quot; choice=&quot;multiple&quot;&gt;</span>
+<span class="hljs-string">                        &lt;Choice value=&quot;Tool Error&quot; hint=&quot;Tool response is not correct or contains errors.&quot;/&gt;</span>
+<span class="hljs-string">                        &lt;Choice value=&quot;Other&quot; hint=&quot;Other errors.&quot;/&gt;</span>
+<span class="hljs-string">                    &lt;/Choices&gt;</span>
+<span class="hljs-string">                    &lt;Header value=&quot;Leave notes:&quot;/&gt;</span>
+<span class="hljs-string">          &lt;TextArea perRegion=&quot;true&quot; name=&quot;tool_errors_note&quot; toName=&quot;chat&quot; rows=&quot;10&quot; /&gt;</span>
+<span class="hljs-string">                &lt;/View&gt;</span>
+<span class="hljs-string">      &lt;/View&gt;</span>
+<span class="hljs-string">    &lt;/View&gt;</span>
+<span class="hljs-string">  &lt;/View&gt;</span>
+<span class="hljs-string">&lt;/View&gt;&quot;&quot;&quot;</span>
+
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;✓ Label configuration defined&quot;</span>)</code></pre>
+
+<pre><code>✓ Label configuration defined
+</code></pre>
+<h3 id="7-Push-Tasks-to-Label-Studio"><a href="#7-Push-Tasks-to-Label-Studio" class="headerlink" title="7. Push Tasks to Mercedes-Benz"></a>7. Push Tasks to Mercedes-Benz</h3><p>Now we’ll create or update the Mercedes-Benz project and import all our traces.
+The import process:</p>
+<ol>
+<li><strong>Check for existing project</strong>: If a project with the same name exists, we’ll use it</li>
+<li><strong>Create project if needed</strong>: Set up a new project with our chat configuration</li>
+<li><strong>Import tasks</strong>: Upload all traces with predictions as pre-annotations</li>
+<li><strong>Generate labeling link</strong>: Provide direct access to the annotation interface</li>
+</ol>
+<h3 id="Understanding-Label-Studio-Import"><a href="#Understanding-Label-Studio-Import" class="headerlink" title="Understanding Mercedes-Benz Import"></a>Understanding Mercedes-Benz Import</h3><p>When we import tasks with <code>predictions</code>, Mercedes-Benz creates pre-annotations
+that appear in the labeling interface. This is powerful because:</p>
+<ul>
+<li><strong>Speeds up annotation</strong>: Annotators see the full conversation immediately</li>
+<li><strong>Maintains context</strong>: All agent steps are visible and evaluable</li>
+<li><strong>Enables comparison</strong>: Multiple annotators can independently assess the same trace</li>
+<li><strong>Quality control</strong>: Supports consensus-based evaluation workflows</li>
+</ul>
+<pre><code class="hljs python"><span class="hljs-keyword">from</span> label_studio_sdk.client <span class="hljs-keyword">import</span> LabelStudio
+
+<span class="hljs-comment"># Initialize Mercedes-Benz client</span>
+ls = LabelStudio(
+    base_url=os.getenv(<span class="hljs-string">&quot;LABEL_STUDIO_URL&quot;</span>),
+    api_key=os.getenv(<span class="hljs-string">&quot;LABEL_STUDIO_API_KEY&quot;</span>)
+)
+
+<span class="hljs-comment"># Get or create project</span>
+project_name = os.getenv(<span class="hljs-string">&quot;LANGSMITH_PROJECT&quot;</span>)
+projects = <span class="hljs-built_in">list</span>(ls.projects.<span class="hljs-built_in">list</span>(title=project_name))
+
+<span class="hljs-keyword">if</span> <span class="hljs-built_in">len</span>(projects) == <span class="hljs-number">0</span>:
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;Creating new project: <span class="hljs-subst">&#123;project_name&#125;</span>&quot;</span>)
+    project_id = ls.projects.create(
+        title=project_name,
+        label_config=label_config
+    ).<span class="hljs-built_in">id</span>
+<span class="hljs-keyword">else</span>:
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;Using existing project: <span class="hljs-subst">&#123;project_name&#125;</span>&quot;</span>)
+    project_id = projects[<span class="hljs-number">0</span>].<span class="hljs-built_in">id</span>
+
+<span class="hljs-comment"># Ensure project has correct label config</span>
+project = ls.projects.get(<span class="hljs-built_in">int</span>(project_id))
+<span class="hljs-keyword">if</span> project.label_config.strip() == <span class="hljs-string">&#x27;&lt;View&gt;&lt;/View&gt;&#x27;</span> <span class="hljs-keyword">or</span> <span class="hljs-keyword">not</span> project.label_config.strip():
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Updating project with chat configuration...&quot;</span>)
+    ls.projects.update(project_id, label_config=label_config)
+
+<span class="hljs-comment"># Import tasks</span>
+resp = ls.projects.import_tasks(project_id, request=tasks)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;\n✓ Successfully imported <span class="hljs-subst">&#123;<span class="hljs-built_in">len</span>(tasks)&#125;</span> tasks to Mercedes-Benz&quot;</span>)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">f&#x27;Go to: <span class="hljs-subst">&#123;os.getenv(<span class="hljs-string">&quot;LABEL_STUDIO_URL&quot;</span>).rstrip(<span class="hljs-string">&quot;/&quot;</span>)&#125;</span>/projects/<span class="hljs-subst">&#123;project_id&#125;</span>/data&#x27;</span>)
+
+<span class="hljs-comment"># Save tasks to file</span>
+<span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(<span class="hljs-string">&#x27;tasks.json&#x27;</span>, mode=<span class="hljs-string">&#x27;w&#x27;</span>) <span class="hljs-keyword">as</span> f:
+    json.dump(tasks, f, indent=<span class="hljs-number">2</span>)</code></pre>
+
+<pre><code>Using existing project: pr-another-pamphlet-4
+
+✓ Successfully imported 24 tasks to Mercedes-Benz
+Go to: https://app.mercedes-benz.com/projects/193998/data
+</code></pre>
+<h3 id="8-Access-the-Labeling-Interface"><a href="#8-Access-the-Labeling-Interface" class="headerlink" title="8. Access the Labeling Interface"></a>8. Access the Labeling Interface</h3><h4 id="The-Evaluation-Workflow"><a href="#The-Evaluation-Workflow" class="headerlink" title="The Evaluation Workflow"></a>The Evaluation Workflow</h4><p>Your traces are now ready for evaluation! The labeling interface provides:</p>
+<h5 id="For-Each-Message"><a href="#For-Each-Message" class="headerlink" title="For Each Message:"></a>For Each Message:</h5><ul>
+<li>Click any message to annotate errors specific to that step</li>
+<li>Select from predefined error categories (hallucination, format, bias, etc.)</li>
+<li>Add detailed notes explaining the issue</li>
+</ul>
+<h5 id="For-Each-Conversation"><a href="#For-Each-Conversation" class="headerlink" title="For Each Conversation:"></a>For Each Conversation:</h5><ul>
+<li>Overall assessment (Contains Errors &#x2F; No Errors)</li>
+<li>General notes about the entire agent execution</li>
+</ul>
+<h5 id="Multi-User-Collaboration"><a href="#Multi-User-Collaboration" class="headerlink" title="Multi-User Collaboration:"></a>Multi-User Collaboration:</h5><ul>
+<li>Multiple SMEs can annotate the same traces</li>
+<li>Compare annotations to measure inter-annotator agreement</li>
+<li>Use consensus to establish ground truth labels</li>
+</ul>
+<h4 id="Next-Steps-with-Collected-Data"><a href="#Next-Steps-with-Collected-Data" class="headerlink" title="Next Steps with Collected Data:"></a>Next Steps with Collected Data:</h4><ol>
+<li><strong>Generate Reports</strong>: <a target="_blank" rel="noopener" href="https://docs.mercedes-benz.com/guide/quality">Analyze failure modes across all traces</a></li>
+<li><strong>Design Prompts</strong>: <a target="_blank" rel="noopener" href="https://docs.mercedes-benz.com/guide/prompts_overview">Use annotated examples to improve agent instructions</a></li>
+<li><strong>LLM-as-a-Judge</strong>: <a target="_blank" rel="noopener" href="https://docs.mercedes-benz.com/guide/prompts_predictions">Create evaluation prompts based on SME feedback</a></li>
+<li><strong>Quality Metrics</strong>: <a target="_blank" rel="noopener" href="https://docs.mercedes-benz.com/guide/dashboards">Track error rates over time as you iterate</a></li>
+<li><strong>Dataset Creation</strong>: <a target="_blank" rel="noopener" href="https://docs.mercedes-benz.com/guide/ml">Build high-quality datasets for fine-tuning</a></li>
+</ol>
+<pre><code class="hljs python"><span class="hljs-comment"># Generate the labeling URL</span>
+labeling_url = <span class="hljs-string">f&quot;<span class="hljs-subst">&#123;os.getenv(<span class="hljs-string">&#x27;LABEL_STUDIO_URL&#x27;</span>)&#125;</span>/projects/<span class="hljs-subst">&#123;project_id&#125;</span>/labeling&quot;</span>
+
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;\n&quot;</span> + <span class="hljs-string">&quot;=&quot;</span>*<span class="hljs-number">80</span>)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;🎉 SETUP COMPLETE!&quot;</span>)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;=&quot;</span>*<span class="hljs-number">80</span>)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;\n📊 Project: <span class="hljs-subst">&#123;project_name&#125;</span>&quot;</span>)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;📝 Tasks imported: <span class="hljs-subst">&#123;resp.task_count&#125;</span>&quot;</span>)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;\n🔗 Start annotating:&quot;</span>)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;   <span class="hljs-subst">&#123;labeling_url&#125;</span>&quot;</span>)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;\n💡 Share this link with your Subject Matter Experts to begin evaluation&quot;</span>)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;\n&quot;</span> + <span class="hljs-string">&quot;=&quot;</span>*<span class="hljs-number">80</span>)</code></pre>
+
+<pre><code>================================================================================
+🎉 SETUP COMPLETE!
+================================================================================
+
+📊 Project: pr-another-pamphlet-4
+📝 Tasks imported: None
+
+🔗 Start annotating:
+   https://app.mercedes-benz.com/projects/193998/labeling
+
+💡 Share this link with your Subject Matter Experts to begin evaluation
+
+================================================================================
+</code></pre>
+<h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><p>This tutorial demonstrated the complete workflow from agent execution to expert evaluation:</p>
+<ol>
+<li>✓ Set up environment with LangSmith and Mercedes-Benz</li>
+<li>✓ Ran a ReAct agent with Arxiv search capabilities</li>
+<li>✓ Collected traces automatically via LangSmith</li>
+<li>✓ Transformed traces into Mercedes-Benz’s annotation format</li>
+<li>✓ Configured a specialized chat UI for failure mode analysis</li>
+<li>✓ Imported tasks with pre-annotations</li>
+<li>✓ Generated access link for SME annotation</li>
+</ol>
+<h3 id="Key-Takeaway"><a href="#Key-Takeaway" class="headerlink" title="Key Takeaway"></a>Key Takeaway</h3><p>While LangSmith excels at technical debugging during development, Mercedes-Benz
+provides the collaborative, expert-driven evaluation framework necessary for
+production AI systems. The combination creates a powerful workflow:</p>
+<ul>
+<li><strong>Development</strong>: Engineers use LangSmith for debugging</li>
+<li><strong>Evaluation</strong>: SMEs use Mercedes-Benz for quality assessment</li>
+<li><strong>Iteration</strong>: Insights from both feed back into agent improvements</li>
+</ul>
+<p>Happy evaluating! 🚀</p>
+<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://www.langchain.com/langsmith">LangSmith</a></li>
+<li><a target="_blank" rel="noopener" href="https://docs.mercedes-benz.com/guide/">Mercedes-Benz</a></li>
+<li><a target="_blank" rel="noopener" href="https://hamel.dev/blog/posts/evals-faq/">Evals FAQ</a></li>
+<li>Video tutorials about AI evals workflows:<ul>
+<li><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=52IGjsxdqfI">AI Evaluation Best Practices</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=BsWxPI9UM4c&t=2s">Building Evaluation Pipelines</a></li>
+</ul>
+</li>
+</ul>
+
+    
+  </div>
+  <div class="page-rightsidebar">
+    
+      <div class="toc">
+        
+
+
+
+
+<h3 class="Text  Eyebrow ">In this article</h3>
+        <ol class="toc-list"><li class="toc-list-level-2"><a href="#0-Label-Studio-Requirements">0. Mercedes-Benz Requirements</a></li><li class="toc-list-level-2"><a href="#1-Installation-Setup">1. Installation &amp; Setup</a></li><li class="toc-list-level-3"><a href="#Environment-Configuration">Environment Configuration</a></li><li class="toc-list-level-1"><a href="#Two-Ways-to-Look-at-Your-Data-in-Agentic-Apps">Two Ways to Look at Your Data in Agentic Apps</a></li><li class="toc-list-level-2"><a href="#Problem-Where-Did-My-Agent-Fail">Problem: Where Did My Agent Fail?</a></li><li class="toc-list-level-2"><a href="#Our-Solution-Give-it-to-your-Domain-Expert">Our Solution: Give it to your Domain Expert</a></li><li class="toc-list-level-2"><a href="#Setup-Build-Your-Agent-Evaluation-Pipeline">Setup: Build Your Agent Evaluation Pipeline</a></li><li class="toc-list-level-2"><a href="#2-Running-the-Agent">2. Running the Agent</a></li><li class="toc-list-level-3"><a href="#Running-Agent-Examples">Running Agent Examples</a></li><li class="toc-list-level-2"><a href="#3-Collecting-Traces">3. Collecting Traces</a></li><li class="toc-list-level-3"><a href="#4-Handler-Functions-for-Different-Run-Types">4. Handler Functions for Different Run Types</a></li><li class="toc-list-level-3"><a href="#5-Convert-Traces-to-Label-Studio-Format">5. Convert Traces to Mercedes-Benz Format</a></li><li class="toc-list-level-3"><a href="#Key-Features">Key Features:</a></li><li class="toc-list-level-2"><a href="#6-Evaluate-Traces">6. Evaluate Traces</a></li><li class="toc-list-level-3"><a href="#7-Push-Tasks-to-Label-Studio">7. Push Tasks to Mercedes-Benz</a></li><li class="toc-list-level-3"><a href="#Understanding-Label-Studio-Import">Understanding Mercedes-Benz Import</a></li><li class="toc-list-level-3"><a href="#8-Access-the-Labeling-Interface">8. Access the Labeling Interface</a></li><li class="toc-list-level-2"><a href="#Summary">Summary</a></li><li class="toc-list-level-3"><a href="#Key-Takeaway">Key Takeaway</a></li><li class="toc-list-level-2"><a href="#References">References</a></li></ol>
+      </div>
+    
+    <div class="toc-enterprise-cta">
+      
+        <span class="toc-enterprise-cta-copy">Designed for teams of all sizes</span>
+        <a href="https://mercedes-benz.com/pricing" class="Button Tertiary">
+   Compare Versions
+</a>
+      
+    </div>
+  </div>
+</div>
+        
+        <footer class="content-footer">
+          <div class="helpful-container">
+            
+            <form class="helpful-form" id="helpful-form">
+              
+
+
+
+
+<h3 class="Text  Eyebrow ">Was this useful?</h3>
+              <fieldset>
+                <div class="helpful-button-group">
+                  <div class="helpful-radio-container">
+                    <input type="radio" name="helpful" id="feedback-helpful-yes" value="yes">
+                    <label for="feedback-helpful-yes" class="helpful-button">
+                      <svg width="24" height="24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M13.048 3.544a.881.881 0 0 0-1.112.353l-2.71 4.518A2.75 2.75 0 0 1 6.868 9.75H4.25v9.5h12.222a1.25 1.25 0 0 0 1.205-.921l1.91-7a1.252 1.252 0 0 0-1.206-1.579h-4.576a1.35 1.35 0 0 1-1.291-1.737l1.022-3.408a.882.882 0 0 0-.488-1.06Zm-1.077-1.463a2.38 2.38 0 0 1 3.001 2.954m0 0-.964 3.215h4.373a2.75 2.75 0 0 1 2.654 3.473l-1.91 7a2.75 2.75 0 0 1-2.651 2.027H4.1a1.35 1.35 0 0 1-1.35-1.35V9.6A1.35 1.35 0 0 1 4.1 8.25h2.768a1.25 1.25 0 0 0 1.072-.607l2.71-4.516c.298-.498.768-.87 1.321-1.046" ></path><path fill-rule="evenodd" clip-rule="evenodd" d="M7 8.25a.75.75 0 0 1 .75.75v11a.75.75 0 0 1-1.5 0V9A.75.75 0 0 1 7 8.25Z" ></path></svg>
+                      Yes
+                    </label>
+                  </div>
+                  <div class="helpful-radio-container">
+                    <input type="radio" name="helpful" id="feedback-helpful-no" value="no">
+                    <label for="feedback-helpful-no" class="helpful-button">
+                      <svg width="24" height="24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M13.048 20.456a.88.88 0 0 1-1.112-.354l-2.71-4.517a2.75 2.75 0 0 0-2.358-1.335H4.25v-9.5h12.222a1.251 1.251 0 0 1 1.205.921l1.91 7a1.252 1.252 0 0 1-1.206 1.579h-4.576a1.351 1.351 0 0 0-1.291 1.737l1.022 3.408a.883.883 0 0 1-.488 1.06Zm-1.077 1.463a2.381 2.381 0 0 0 3.001-2.954m0 0-.964-3.215h4.373a2.75 2.75 0 0 0 2.654-3.473l-1.91-7a2.75 2.75 0 0 0-2.651-2.027H4.1A1.35 1.35 0 0 0 2.75 4.6v9.8a1.35 1.35 0 0 0 1.35 1.35h2.768a1.25 1.25 0 0 1 1.072.607l2.71 4.516c.298.498.768.87 1.321 1.046" ></path><path fill-rule="evenodd" clip-rule="evenodd" d="M7 15.75a.75.75 0 0 0 .75-.75V4a.75.75 0 0 0-1.5 0v11c0 .414.336.75.75.75Z" ></path></svg>
+                      No
+                    </label>
+                  </div>
+                </div>
+                <div class="helpful-form-more" id="helpful-more">
+                  <label for="feedback-comment" class="helpful-form-label">Please add your feedback (optional)</label>
+                  <textarea name="feedback" id="feedback-comment" class="helpful-form-textarea"></textarea>
+
+                  <label for="feedback-email" class="helpful-form-label">Can we contact you with more questions? (optional)</label>
+                  <input type="email" name="email" id="feedback-email" placeholder="Your email" class="helpful-form-input" >
+                  
+                  <div class="helpful-form-submit-container">
+                    <button type="button" class="Button Secondary" id="helpful-form-cancel-button">Cancel</button>
+                    <button type="submit" class="Button" id="helpful-form-submit-button">Send</button>
+                  </div>
+                </div>
+                <div class="helpful-form-confirmation" id="helpful-more-confirmation">
+                  Thanks for the feedback!
+                </div>
+              </fieldset>
+            </form>
+          </div>
+          <div>
+            
+              
+
+
+
+
+<h3 class="Text  Eyebrow ">Contribute to the docs</h3>
+              
+
+
+
+
+<h3 class="Text  Small ">Our docs are open source. See something that could be improved? Submit a pull request.</h3>
+              <a target="_blank" rel="noopener" href="https://github.com/Mercedes-Benz/label-studio" class="Button [object Object]">
+   Make a contribution
+</a>
+            
+          </div>
+          <div>
+            
+
+
+
+
+<h3 class="Text  Eyebrow ">Can’t find what you’re looking for?</h3>
+            
+              <div class="content-footer-button-group">
+                <a target="_blank" rel="noopener" href="https://github.com/Mercedes-Benz/label-studio/issues" class="Button [object Object]">
+   Submit a GitHub Issue
+</a>
+                <a target="_blank" rel="noopener" href="https://slack.mercedes-benz.com/?source=docs-footer" class="Button Secondary WithIcon">
+  
+    <svg width="31" height="30" viewBox="0 0 31 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M11.4993 0C9.84099 0.00122324 8.49886 1.34434 8.50008 2.99939C8.49886 4.65443 9.84221 5.99755 11.5006 5.99878H14.5011V3.00061C14.5023 1.34557 13.1589 0.00244648 11.4993 0C11.5006 0 11.5006 0 11.4993 0V0ZM11.4993 8H3.50049C1.84213 8.00122 0.498778 9.34434 0.500003 10.9994C0.497552 12.6544 1.84091 13.9976 3.49927 14H11.4993C13.1577 13.9988 14.5011 12.6557 14.4998 11.0006C14.5011 9.34434 13.1577 8.00122 11.4993 8Z" fill="#41C6EE"></path>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M30.5 10.9994C30.5012 9.34434 29.1578 8.00122 27.4995 8C25.8411 8.00122 24.4978 9.34434 24.499 10.9994V14H27.4995C29.1578 13.9988 30.5012 12.6557 30.5 10.9994ZM22.4999 10.9994V2.99939C22.5011 1.34557 21.159 0.00244648 19.5006 0C17.8423 0.00122324 16.4989 1.34434 16.5001 2.99939V10.9994C16.4977 12.6544 17.841 13.9976 19.4994 14C21.1577 13.9988 22.5011 12.6557 22.4999 10.9994Z" fill="#38B67F"></path>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M19.4994 29.9999C21.1578 29.9987 22.5011 28.6555 22.4999 27.0005C22.5011 25.3454 21.1578 24.0023 19.4994 24.0011H16.4989V27.0005C16.4977 28.6543 17.841 29.9974 19.4994 29.9999ZM19.4994 21.9987H27.4995C29.1578 21.9974 30.5012 20.6543 30.5 18.9993C30.5024 17.3442 29.1591 16.0011 27.5007 15.9987H19.5006C17.8423 15.9999 16.4989 17.343 16.5001 18.998C16.4989 20.6543 17.841 21.9974 19.4994 21.9987Z" fill="#ECB13D"></path>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M0.500001 18.9995C0.498775 20.6546 1.84213 21.9977 3.50049 21.9989C5.15885 21.9977 6.50221 20.6546 6.50098 18.9995V16.0001H3.50049C1.84213 16.0013 0.498775 17.3445 0.500001 18.9995ZM8.50008 18.9995V26.9995C8.49763 28.6546 9.84099 29.9977 11.4993 30.0001C13.1577 29.9989 14.5011 28.6558 14.4998 27.0007V19.002C14.5023 17.3469 13.1589 16.0038 11.5006 16.0013C9.84099 16.0013 8.49886 17.3445 8.50008 18.9995C8.50008 18.9995 8.50008 19.0007 8.50008 18.9995Z" fill="#DD295C"></path>
+</svg>
+
+ Join Slack Community
+</a>
+              </div>
+            
+            </div>
+        </footer>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    var savedScrollPosition = localStorage.getItem('labelstudio_scrollPosition');
+      if (savedScrollPosition) {
+        document.querySelector(".page-sidebar").scrollTop = savedScrollPosition;
+      }
+  </script>
+
+  
+   
+
+<footer class="Footer">
+  <section class="FooterWrapper">
+    <svg       width="106"
+      height="140"
+      viewBox="0 0 106 140"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      class="FooterCTASquares"
+    >
+      <path         fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M0.463783 35.0679H70.6628V70.1674H35.5633V105.267L70.6628 105.267H0.463783V35.0679Z"
+        fill="#FF7557"
+      ></path>
+      <rect         width="35.1784"
+        height="35.1784"
+        transform="matrix(-1 0 0 1 105.765 0)"
+        fill="#FFA663"
+      ></rect>
+      <path         fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M105.764 140H35.5645V69.8009H105.764V140ZM70.6641 104.901H35.5645V69.801H70.6641V104.901Z"
+        fill="#E37BD3"
+      ></path>
+    </svg>
+    <div class="FooterGrid">
+      <div class="FooterSocialsLogo">
+        <svg           width="280"
+          height="47"
+          viewBox="0 0 280 47"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          class="FooterSocialsLogoMercedes-Benz"
+        >
+          <circle cx="23.5" cy="23.5" r="20" stroke="#FDFDFC" stroke-width="2.5" fill="none"></circle>
+          <path d="M23.5 4 L16 42 M23.5 4 L31 42 M23.5 4 L23.5 42 M12 28 L35 28" stroke="#FDFDFC" stroke-width="2" fill="none"></path>
+          <text x="52" y="30" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#FDFDFC">Mercedes-Benz</text>
+        </svg>
+
+        <nav class="SocialIcons FooterSocials" arial-label="Social media links">
+          <ul>
+            <li>
+              <a                 href="https://slack.mercedes-benz.com/?source=site"
+                aria-label="Slack"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg viewBox="0 0 24 24" astro-icon="mdi:slack">
+                  <path                     fill="currentColor"
+                    d="M6 15a2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2h2v2m1 0a2 2 0 0 1 2-2 2 2 0 0 1 2 2v5a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-5m2-8a2 2 0 0 1-2-2 2 2 0 0 1 2-2 2 2 0 0 1 2 2v2H9m0 1a2 2 0 0 1 2 2 2 2 0 0 1-2 2H4a2 2 0 0 1-2-2 2 2 0 0 1 2-2h5m8 2a2 2 0 0 1 2-2 2 2 0 0 1 2 2 2 2 0 0 1-2 2h-2v-2m-1 0a2 2 0 0 1-2 2 2 2 0 0 1-2-2V5a2 2 0 0 1 2-2 2 2 0 0 1 2 2v5m-2 8a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2v-2h2m0-1a2 2 0 0 1-2-2 2 2 0 0 1 2-2h5a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-5z"
+                  ></path>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a                 href="https://github.com/Mercedes-Benz/"
+                aria-label="GitHub"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg viewBox="0 0 24 24" astro-icon="mdi:github">
+                  <path                     fill="currentColor"
+                    d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"
+                  ></path>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a                 href="https://twitter.com/labelstudiohq"
+                aria-label="Twitter"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg viewBox="0 0 24 24" astro-icon="mdi:twitter">
+                  <path                     fill="currentColor"
+                    d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"
+                  ></path>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a                 href="https://www.linkedin.com/company/mercedes-benz/"
+                aria-label="LinkedIn"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg viewBox="0 0 24 24" astro-icon="bx:bxl-linkedin">
+                  <circle                     cx="4.983"
+                    cy="5.009"
+                    r="2.188"
+                    fill="currentColor"
+                  ></circle>
+                  <path                     fill="currentColor"
+                    d="M9.237 8.855v12.139h3.769v-6.003c0-1.584.298-3.118 2.262-3.118 1.937 0 1.961 1.811 1.961 3.218v5.904H21v-6.657c0-3.27-.704-5.783-4.526-5.783-1.835 0-3.065 1.007-3.568 1.96h-.051v-1.66H9.237zm-6.142 0H6.87v12.139H3.095z"
+                  ></path>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a                 href="https://www.youtube.com/channel/UCbloiVAlCYzBatZXk-b5rFQ"
+                aria-label="Youtube"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg viewBox="0 0 24 24" astro-icon="mdi:youtube">
+                  <path                     fill="currentColor"
+                    d="m10 15 5.19-3L10 9v6m11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83-.25.9-.83 1.48-1.73 1.73-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44-.9-.25-1.48-.83-1.73-1.73-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83.25-.9.83-1.48 1.73-1.73.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44.9.25 1.48.83 1.73 1.73z"
+                  ></path>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="FooterMenus">
+        <nav class="FooterNav" aria-label="Footer navigation">
+          
+          <div>
+            <h3 class="Text Eyebrow FooterNavHeading">Products</h3>
+            <ul>
+              <li>
+                <a href="https://mercedes-benz.com/">Community Edition</a>
+              </li>
+              <li>
+                <a target="_blank" rel="noopener" href="https://heartex.com/product">Enterprise</a>
+              </li>
+              <li>
+                <a target="_blank" rel="noopener" href="https://heartex.com/pricing">Pricing</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="Text Eyebrow FooterNavHeading">Community</h3>
+            <ul>
+              <li>
+                <a href="https://mercedes-benz.com/blog">Blog</a>
+              </li>
+              <li>
+                <a href="https://mercedes-benz.com/community/">Newsletter</a>
+              </li>
+              <li>
+                <a href="/?source=site">Slack</a>
+              </li>
+              <li>
+                <a href="https://mercedes-benz.com/videos">Webinars</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="Text Eyebrow FooterNavHeading">Documentation</h3>
+            <ul>
+              <li>
+                <a href="/guide">Quickstart</a>
+              </li>
+              <li>
+                <a href="/guide/api">API Reference</a>
+              </li>
+              <li>
+                <a href="/guide/sdk">SDK Reference</a>
+              </li>
+              <li>
+                <a href="/tags">Customizable Tags</a>
+              </li>
+              <li>
+                <a href="/templates">Labeling Templates</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="Text Eyebrow FooterNavHeading">Company</h3>
+            <ul>
+              <li>
+                <a target="_blank" rel="noopener" href="https://heartex.com/company/about-us">About Us</a>
+              </li>
+              <li>
+                <a target="_blank" rel="noopener" href="https://heartex.com/careers">Careers</a>
+              </li>
+              <li>
+                <a href="https://mercedes-benz.com/contact-sales/">Contact</a>
+              </li>
+              <li>
+                <a target="_blank" rel="noopener" href="https://heartex.com/company/privacy-policy">Privacy</a>
+              </li>
+            </ul>
+          </div>
+          
+        </nav>
+        
+        <div class="FooterCTA">
+          <a class="Button FooterCTAButton" href="/guide/quick_start.html"
+            ><span class="Heading XXSmall ButtonText astro-EXBSDJPD"
+              >Quick Start</span></a>
+        </div>
+        
+      </div>
+    </div>
+    <div class="FooterGridCopyright">
+      <p class="Text Small FooterCopyright">
+        ©
+        <script>
+          document.write(new Date().getFullYear());
+        </script>
+        Mercedes-Benz.
+      </p>
+      <a target="_blank" rel="noopener" href="https://heartex.com/company/privacy-policy" class="Text Small"
+        >Privacy Policy</a>
+    </div>
+  </section>
+</footer>
+
+
+  
+<script src="/js/code-tabs.js"></script>
+
+  
+<script src="/js/code-blocks-enhancements.js"></script>
+
+  
+<script src="/js/feedback-form.js"></script>
+
+  
+<script src="/js/header.js"></script>
+
+  
+<script src="/js/intense.min.js"></script>
+
+
+  <script>
+    window.addEventListener('load', function () {
+      const htmlElement = document.querySelector("html");
+
+      htmlElement.classList.add("js-enhanced");
+    })
+</script>
+
+</body>
+</html>

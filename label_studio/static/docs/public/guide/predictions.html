@@ -1,0 +1,3076 @@
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  
+    
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-TZ3RQGX');</script>
+    
+  
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <title>Mercedes-Benz Documentation — Import pre-annotated data into Mercedes-Benz</title>
+  
+  <meta charset="utf-8">
+  <meta name="description" content="Import predicted labels, predictions, pre-annotations, or pre-labels into Mercedes-Benz for your data labeling, machine learning, and data science projects.">
+
+  <meta property="og:type" content="article">
+  
+  <meta property="og:title" content="Mercedes-Benz Documentation — Import pre-annotated data into Mercedes-Benz">
+  
+  <meta property="og:description" content="Import predicted labels, predictions, pre-annotations, or pre-labels into Mercedes-Benz for your data labeling, machine learning, and data science projects.">
+
+  <meta name="twitter:card" content="summary">
+  
+  <meta property="twitter:title" content="Mercedes-Benz Documentation — Import pre-annotated data into Mercedes-Benz">
+  
+  <meta name="twitter:description" content="Import predicted labels, predictions, pre-annotations, or pre-labels into Mercedes-Benz for your data labeling, machine learning, and data science projects.">
+
+  
+    <meta name="twitter:image" content="http://mercedes-benz.com/open-graph-image?title=Import%20pre-annotated%20data%20into%20Label%20Studio&category=guide">
+    <meta property="og:image" content="http://mercedes-benz.com/open-graph-image?title=Import%20pre-annotated%20data%20into%20Label%20Studio&category=guide">
+  
+
+  <meta name="msapplication-TileColor" content="#4fc08d">
+  <meta name="theme-color" content="#4fc08d">
+  
+  
+    <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" >
+  
+
+  <link rel="preload" href="/fonts/SpaceGrotesk-Bold-subset.woff2" as="font" type="font/woff2" crossorigin>
+
+  
+<link rel="stylesheet" href="/css/styles.css">
+
+
+  
+
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js" defer></script>
+
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ startOnLoad: true });
+  </script>
+
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+<body class="page-tier-opensource">
+  
+  
+
+  
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TZ3RQGX"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  
+
+  
+  
+
+
+
+  
+      <a target="_blank" rel="noopener" href="https://mercedes-benz.com/blog/new-pdf-ocr-document-ai-labeling-interface" class="Alert">
+        <span class="AlertContent">
+          <span class="Badge">New</span>
+          <span class="AlertText">Advanced PDF + OCR Interface for Document AI</span>
+          <svg fill="currentColor" viewBox="0 0 14 12"><path fill-rule="evenodd" d="m8.792.119 4.866 5.654-4.866 5.654-.948-.816 3.627-4.213H.54v-1.25h10.93L7.844.934l.948-.815Z" clip-rule="evenodd"></path></svg>
+        </span>
+      </a>
+
+
+<header class="page-header">
+  <div class="page-header-top-level">
+    <div class="page-header-logo">
+      <a href="/guide" class="HeaderLogo" arial-label="Homepage">
+        
+          <svg width="240" height="30" viewBox="0 0 240 30" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="15" cy="15" r="13.5" stroke="#12110D" stroke-width="2" fill="none"></circle><circle cx="15" cy="15" r="12" stroke="#12110D" stroke-width="0.5" fill="none"></circle><path d="M15,3 L13.8,15 L16.2,15 Z M4.61,21 L15.6,16.04 L14.4,13.96 Z M25.39,21 L15.6,13.96 L14.4,16.04 Z" fill="#12110D"></path><text x="34" y="20" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#12110D" letter-spacing="0.3">Mercedes-Benz Docs</text></svg>
+
+      </a>
+    </div>
+
+    <div class="AlgoliaSearch">
+      <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg" class="AlgoliaSearchIcon">
+        <path d="M8 16C9.77498 15.9996 11.4988 15.4054 12.897 14.312L17.293 18.708L18.707 17.294L14.311 12.898C15.405 11.4997 15.9996 9.77544 16 8C16 3.589 12.411 0 8 0C3.589 0 0 3.589 0 8C0 12.411 3.589 16 8 16ZM8 2C11.309 2 14 4.691 14 8C14 11.309 11.309 14 8 14C4.691 14 2 11.309 2 8C2 4.691 4.691 2 8 2Z" ></path>
+      </svg>
+      <input id="docsearch-input" placeholder="Search docs" data-site-version="opensource" >
+      <svg width="43" height="31" viewBox="0 0 43 31" fill="none" xmlns="http://www.w3.org/2000/svg" class="AlgoliaSearchCmdK">
+        <rect y="0.0457764" width="43" height="30" rx="15" fill="var(--cmd-k-background-color)"></rect>
+        <path d="M11.264 21.0458C9.776 21.0458 8.816 20.1018 8.816 18.6298C8.816 17.0778 9.744 16.1658 11.568 16.1658H12.512V14.4058H11.568C9.744 14.4058 8.816 13.4938 8.816 11.9418C8.816 10.4698 9.776 9.52578 11.264 9.52578C13.056 9.52578 13.632 10.6458 13.632 11.9898V13.3178H15.392V11.9898C15.392 10.6458 15.968 9.52578 17.76 9.52578C19.248 9.52578 20.208 10.4698 20.208 11.9418C20.208 13.4938 19.28 14.4058 17.456 14.4058H16.512V16.1658H17.456C19.28 16.1658 20.208 17.0778 20.208 18.6298C20.208 20.1018 19.248 21.0458 17.76 21.0458C15.968 21.0458 15.392 19.9258 15.392 18.5818V17.2538H13.632V18.5818C13.632 19.9258 13.056 21.0458 11.264 21.0458ZM16.512 11.9578V13.3178H17.456C18.592 13.3178 19.072 12.8538 19.072 11.9418C19.072 10.9978 18.512 10.6298 17.76 10.6298C16.928 10.6298 16.512 11.1418 16.512 11.9578ZM11.568 13.3178H12.512V11.9578C12.512 11.1418 12.096 10.6298 11.264 10.6298C10.512 10.6298 9.952 10.9978 9.952 11.9418C9.952 12.8538 10.432 13.3178 11.568 13.3178ZM13.632 16.1658H15.392V14.4058H13.632V16.1658ZM11.264 19.9418C12.096 19.9418 12.512 19.4298 12.512 18.6138V17.2538H11.568C10.432 17.2538 9.952 17.7178 9.952 18.6298C9.952 19.5738 10.512 19.9418 11.264 19.9418ZM16.512 18.6138C16.512 19.4298 16.928 19.9418 17.76 19.9418C18.512 19.9418 19.072 19.5738 19.072 18.6298C19.072 17.7178 18.592 17.2538 17.456 17.2538H16.512V18.6138ZM27.3546 15.4298V21.0458H26.1546V9.84578H27.3546V14.9338L32.3146 9.84578H33.8826L28.6346 15.1738L34.3626 21.0458H32.7466L27.3546 15.4298Z" fill="var(--cmd-k-icon-color)"></path>
+      </svg>        
+    </div>
+
+    <button class="hamburger-button" aria-label="Toggle Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <nav>
+      
+        
+  <ul class="page-sidebar-list">
+    
+    
+    
+    
+    
+
+    
+
+    
+
+    
+    
+      
+      
+        </ul>
+          
+            <button>
+              Discover & Learn
+              
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+          
+        <ul class="page-sidebar-list">
+      
+      
+      <li>
+        <a href="/guide/get_started.html" class="" >
+          About Mercedes-Benz
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/glossary.html" class="" >
+          Terminology
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/label_studio_compare.html" class="" >
+          Compare editions
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/enterprise_features.html" class="" >
+          Enterprise features
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+        </ul>
+          
+            <button>
+              Install & Setup
+              
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+          
+        <ul class="page-sidebar-list">
+      
+      
+      <li>
+        <a href="/guide/quick_start.html" class="" >
+          Quick start
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/install.html" class="" >
+          Installation
+        </a>
+        
+        
+            <button class="page-sidebar-toggle-children-list">
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+            <ul class="page-sidebar-children-list">
+            
+            
+            
+              <li>
+                <a href="/guide/install_k8s.html" class="page-sidebar-children-link" >
+                  Install using Kubernetes
+                </a>
+                
+                
+                    <ul class="page-sidebar-grandchildren-list">
+                      
+                    <li>
+                      
+                      <a href="/guide/ingress_config.html" class="page-sidebar-children-link" >
+                        Set up an ingress controller
+                      </a>
+                    </li>
+                  
+                  
+                    <li>
+                      
+                      <a href="/guide/install_k8s_airgapped.html" class="page-sidebar-children-link" >
+                        Airgapped Server
+                      </a>
+                    </li>
+                  
+                  
+                    <li>
+                      
+                      <a href="/guide/helm_values.html" class="page-sidebar-children-link" >
+                        Available Helm values
+                      </a>
+                    </li>
+                  
+                  
+                </ul>
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/install_troubleshoot.html" class="page-sidebar-children-link" >
+                  Troubleshooting
+                </a>
+                
+                
+              </li>
+            
+            
+          </ul>
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/storedata.html" class="" >
+          Set up the database
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/persistent_storage.html" class="" >
+          Set up persistent storage
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/start.html" class="" >
+          Start Mercedes-Benz
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/upgrade_community.html" class="" >
+          Upgrade Mercedes-Benz
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/security.html" class="" >
+          Secure Mercedes-Benz
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+        </ul>
+          
+            <button>
+              Create & Manage Projects
+              
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+          
+        <ul class="page-sidebar-list">
+      
+      
+      <li>
+        <a href="/guide/setup_project.html" class="" >
+          Create project
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/setup.html" class="" >
+          Configure labeling interface
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/manage_projects_lso.html" class="" >
+          Manage projects
+        </a>
+        
+        
+            <button class="page-sidebar-toggle-children-list">
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+            <ul class="page-sidebar-children-list">
+            
+            
+            
+              <li>
+                <a href="/guide/project_settings.html" class="page-sidebar-children-link" >
+                  Project settings
+                </a>
+                
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/manage_data.html" class="page-sidebar-children-link" >
+                  Data Manager
+                </a>
+                
+                
+              </li>
+            
+            
+          </ul>
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/labeling.html" class="" >
+          Labeling guide
+        </a>
+        
+        
+            <button class="page-sidebar-toggle-children-list">
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+            <ul class="page-sidebar-children-list">
+            
+            
+            
+              <li>
+                <a href="/guide/hotkeys.html" class="page-sidebar-children-link" >
+                  Hotkeys
+                </a>
+                
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/skip.html" class="page-sidebar-children-link" >
+                  Skipping tasks
+                </a>
+                
+                
+              </li>
+            
+            
+          </ul>
+        
+        
+        
+      </li>
+    
+      
+      
+        </ul>
+          
+            <button>
+              Import & Export
+              
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+          
+        <ul class="page-sidebar-list">
+      
+      
+      <li>
+        <a href="/guide/storage.html" class="" >
+          Add project storage
+        </a>
+        
+        
+            <button class="page-sidebar-toggle-children-list">
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+            <ul class="page-sidebar-children-list">
+            
+            
+            
+              <li>
+                <a href="/guide/storage_s3.html" class="page-sidebar-children-link" >
+                  AWS S3
+                </a>
+                
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/storage_gcp.html" class="page-sidebar-children-link" >
+                  Google Cloud
+                </a>
+                
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/storage_azure.html" class="page-sidebar-children-link" >
+                  Microsoft Azure
+                </a>
+                
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/storage_databricks.html" class="page-sidebar-children-link" >
+                  Databricks
+                </a>
+                
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/storage_redis.html" class="page-sidebar-children-link" >
+                  Redis
+                </a>
+                
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/storage_local.html" class="page-sidebar-children-link" >
+                  Local
+                </a>
+                
+                
+              </li>
+            
+            
+          </ul>
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/tasks.html" class="" >
+          Import data
+        </a>
+        
+        
+            <button class="page-sidebar-toggle-children-list">
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+            <ul class="page-sidebar-children-list">
+            
+            
+            
+              <li>
+                <a href="/guide/task_format.html" class="page-sidebar-children-link" >
+                  Format data for import
+                </a>
+                
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/predictions.html" class="page-sidebar-children-link" aria-current="page">
+                  Import pre-annotations
+                </a>
+                
+                
+              </li>
+            
+            
+          </ul>
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/export.html" class="" >
+          Export annotations
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+        </ul>
+          
+            <button>
+              Machine Learning
+              
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+          
+        <ul class="page-sidebar-list">
+      
+      
+      <li>
+        <a href="/guide/ml.html" class="" >
+          Machine learning integration
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/ml_create.html" class="" >
+          Write your own ML backend
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/ml_tutorials.html" class="" >
+          ML Examples and Tutorials
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+        </ul>
+          
+            <button>
+              Manage Your Organization
+              
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+          
+        <ul class="page-sidebar-list">
+      
+      
+      <li>
+        <a href="/guide/signup.html" class="" >
+          Add users
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/admin_manage.html" class="" >
+          Manage user accounts
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/user_account.html" class="" >
+          Account and settings
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/access_tokens.html" class="" >
+          Access tokens
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+        </ul>
+          
+            <button>
+              Integrate & Extend
+              
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+          
+        <ul class="page-sidebar-list">
+      
+      
+      <li>
+        <a href="/guide/api.html" class="" >
+          API
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/sdk.html" class="" >
+          Python SDK
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/webhooks.html" class="" >
+          Webhooks
+        </a>
+        
+        
+            <button class="page-sidebar-toggle-children-list">
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+            <ul class="page-sidebar-children-list">
+            
+            
+            
+              <li>
+                <a href="/guide/webhook_create.html" class="page-sidebar-children-link" >
+                  Webhook development
+                </a>
+                
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/webhook_reference.html" class="page-sidebar-children-link" >
+                  Webhook event reference
+                </a>
+                
+                
+              </li>
+            
+            
+          </ul>
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/frontend_reference.html" class="" >
+          Frontend
+        </a>
+        
+        
+        
+          
+            </li><li>
+            <a href="https://github.com/Mercedes-Benz/label-studio/blob/develop/CONTRIBUTING.md" target="_blank">Contribution guide
+              <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-external-link">
+                <path d="M10.9002 9.29957L9.46026 9.30898L9.46026 3.34236L1.73377 11.0689L0.698549 10.0336L8.42504 2.30714L2.46783 2.31656L2.46783 0.867251L10.9001 0.867252L10.9002 9.29957Z" fill="#6D87F1"></path>
+              </svg>
+            </a>
+          </li>
+          
+          <li>
+            <a href="https://mercedes-benz.com/integrations/" target="_blank">Integrations directory
+              <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-external-link">
+                <path d="M10.9002 9.29957L9.46026 9.30898L9.46026 3.34236L1.73377 11.0689L0.698549 10.0336L8.42504 2.30714L2.46783 2.31656L2.46783 0.867251L10.9001 0.867252L10.9002 9.29957Z" fill="#6D87F1"></path>
+              </svg>
+            </a>
+          </li>
+        
+        
+      
+    
+    
+</ul>
+
+
+  <button>
+    Support
+    <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+    </svg>
+  </button>
+
+<ul class="page-sidebar-list">
+  
+  
+    <li>
+        <a href="/guide/troubleshooting">Troubleshooting</a>
+      </li>
+    <li>
+      <a href="https://github.com/Mercedes-Benz/label-studio/issues" target="_blank">GitHub Issues
+        <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-external-link">
+          <path d="M10.9002 9.29957L9.46026 9.30898L9.46026 3.34236L1.73377 11.0689L0.698549 10.0336L8.42504 2.30714L2.46783 2.31656L2.46783 0.867251L10.9001 0.867252L10.9002 9.29957Z" fill="#6D87F1"></path>
+        </svg>
+      </a>
+    </li>
+  
+  <li>
+    <a href="https://slack.mercedes-benz.com" target="_blank">Join Slack
+      <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-external-link">
+        <path d="M10.9002 9.29957L9.46026 9.30898L9.46026 3.34236L1.73377 11.0689L0.698549 10.0336L8.42504 2.30714L2.46783 2.31656L2.46783 0.867251L10.9001 0.867252L10.9002 9.29957Z" fill="#6D87F1"></path>
+      </svg>
+    </a>
+  </li>
+  
+    <li>
+      <a href="https://community.mercedes-benz.com/" target="_blank">Ask on Discourse
+        <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-external-link">
+          <path d="M10.9002 9.29957L9.46026 9.30898L9.46026 3.34236L1.73377 11.0689L0.698549 10.0336L8.42504 2.30714L2.46783 2.31656L2.46783 0.867251L10.9001 0.867252L10.9002 9.29957Z" fill="#6D87F1"></path>
+        </svg>
+      </a>
+    </li>
+  
+  <li>
+    <a href="https://mercedes-benz.com/contact-sales/" target="_blank">Contact Sales
+      <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-external-link">
+        <path d="M10.9002 9.29957L9.46026 9.30898L9.46026 3.34236L1.73377 11.0689L0.698549 10.0336L8.42504 2.30714L2.46783 2.31656L2.46783 0.867251L10.9001 0.867252L10.9002 9.29957Z" fill="#6D87F1"></path>
+      </svg>
+    </a>
+  </li>
+  
+</ul>
+
+
+
+  <button>
+    What's New
+    <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+    </svg>
+  </button>
+
+<ul class="page-sidebar-list">  
+    <li>
+      <a href="https://github.com/Mercedes-Benz/label-studio/releases" target="_blank">Release notes
+        <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-external-link">
+          <path d="M10.9002 9.29957L9.46026 9.30898L9.46026 3.34236L1.73377 11.0689L0.698549 10.0336L8.42504 2.30714L2.46783 2.31656L2.46783 0.867251L10.9001 0.867252L10.9002 9.29957Z" fill="#6D87F1"></path>
+        </svg>
+      </a>
+    </li>
+</ul>
+
+
+      
+      <ul class="page-header-main-nav">
+        
+          <li>
+            <a href="https://mercedes-benz.com/learn/">
+              Learn
+              <svg aria-hidden="true" width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg" class="page-header-chevron-icon"><path d="M1 0.5L5 4.5L9 0.5" stroke="#131522"></path></svg>
+            </a>
+            <button>
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+            <ul>
+              <li>
+                <a href="https://mercedes-benz.com/blog/">Blog</a>
+              </li>
+              <li>
+                <a href="https://mercedes-benz.com/videos/">Videos</a>
+              </li>
+              <li class="headerSeparator">
+                <a href="https://mercedes-benz.com/community/">
+                  Community
+                </a>
+              </li>
+              <li>
+                <a href="https://mercedes-benz.com/academic/">Academic Program</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="https://mercedes-benz.com/integrations">Integrations</a>
+          </li>
+          <li>
+            <a href="https://mercedes-benz.com/goenterprise" target="_blank" rel="noopener noreferrer">Enterprise</a>
+          </li>
+          <li>
+            <a href="https://github.com/Mercedes-Benz/label-studio/" class="github-stars" target="_blank" rel="noopener noreferrer">
+              <svg class="github-icon" viewBox="0 0 24 24" width="24" height="24"><path fill="black" d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"></path></svg>
+              
+
+
+
+
+<span class="Text github-stars-count Eyebrow "></span>
+            </a>
+          </li>
+          <li>
+            <a href="/guide/quick_start.html" class="Button [object Object]">
+   Quick start
+</a>
+          </li>
+          
+      </ul>
+    </nav>
+    </div>
+  
+  
+  
+    
+      <ul class="page-header-content-switcher">
+      
+          
+          <li><a href="/guide/" class="active">Docs</a></li>
+          
+        
+          
+          <li><a href="/tutorials/" class="">Tutorials</a></li>
+          
+        
+          
+          <li><a href="/templates/" class="">Templates</a></li>
+          
+        
+          
+        
+          
+          <li><a href="/tags/" class="">Tags</a></li>
+          
+        
+      <li>
+        <a href="https://api.mercedes-benz.com/api-reference/introduction/getting-started" target="_blank">
+          API
+          <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7.93006 6.05393L6.92213 6.06052L6.92213 1.88389L1.51359 7.29243L0.788936 6.56777L6.19748 1.15923L2.02743 1.16582L2.02743 0.151308L7.93006 0.151308L7.93006 6.05393Z" fill="#ffffff"></path>
+            </svg>            
+        </a>
+      </li>
+    </ul>
+    
+  
+</header>
+
+
+  <main class="page-type-guide">
+    
+      <aside class="page-sidebar">
+        
+  <ul class="page-sidebar-list">
+    
+    
+    
+    
+    
+
+    
+
+    
+
+    
+    
+      
+      
+        </ul>
+          
+            <div class="toc-section-heading">
+              
+
+
+
+
+<h3 class="Text  Eyebrow ">Discover &amp; Learn</h3>
+              
+            </div>
+          
+        <ul class="page-sidebar-list">
+      
+      
+      <li>
+        <a href="/guide/get_started.html" class="" >
+          About Mercedes-Benz
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/glossary.html" class="" >
+          Terminology
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/label_studio_compare.html" class="" >
+          Compare editions
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/enterprise_features.html" class="" >
+          Enterprise features
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+        </ul>
+          
+            <div class="toc-section-heading">
+              
+
+
+
+
+<h3 class="Text  Eyebrow ">Install &amp; Setup</h3>
+              
+            </div>
+          
+        <ul class="page-sidebar-list">
+      
+      
+      <li>
+        <a href="/guide/quick_start.html" class="" >
+          Quick start
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/install.html" class="" >
+          Installation
+        </a>
+        
+        
+            <button class="page-sidebar-toggle-children-list">
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+            <ul class="page-sidebar-children-list">
+            
+            
+            
+              <li>
+                <a href="/guide/install_k8s.html" class="page-sidebar-children-link" >
+                  Install using Kubernetes
+                </a>
+                
+                
+                    <ul class="page-sidebar-grandchildren-list">
+                      
+                    <li>
+                      
+                      <a href="/guide/ingress_config.html" class="page-sidebar-children-link" >
+                        Set up an ingress controller
+                      </a>
+                    </li>
+                  
+                  
+                    <li>
+                      
+                      <a href="/guide/install_k8s_airgapped.html" class="page-sidebar-children-link" >
+                        Airgapped Server
+                      </a>
+                    </li>
+                  
+                  
+                    <li>
+                      
+                      <a href="/guide/helm_values.html" class="page-sidebar-children-link" >
+                        Available Helm values
+                      </a>
+                    </li>
+                  
+                  
+                </ul>
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/install_troubleshoot.html" class="page-sidebar-children-link" >
+                  Troubleshooting
+                </a>
+                
+                
+              </li>
+            
+            
+          </ul>
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/storedata.html" class="" >
+          Set up the database
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/persistent_storage.html" class="" >
+          Set up persistent storage
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/start.html" class="" >
+          Start Mercedes-Benz
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/upgrade_community.html" class="" >
+          Upgrade Mercedes-Benz
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/security.html" class="" >
+          Secure Mercedes-Benz
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+        </ul>
+          
+            <div class="toc-section-heading">
+              
+
+
+
+
+<h3 class="Text  Eyebrow ">Create &amp; Manage Projects</h3>
+              
+            </div>
+          
+        <ul class="page-sidebar-list">
+      
+      
+      <li>
+        <a href="/guide/setup_project.html" class="" >
+          Create project
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/setup.html" class="" >
+          Configure labeling interface
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/manage_projects_lso.html" class="" >
+          Manage projects
+        </a>
+        
+        
+            <button class="page-sidebar-toggle-children-list">
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+            <ul class="page-sidebar-children-list">
+            
+            
+            
+              <li>
+                <a href="/guide/project_settings.html" class="page-sidebar-children-link" >
+                  Project settings
+                </a>
+                
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/manage_data.html" class="page-sidebar-children-link" >
+                  Data Manager
+                </a>
+                
+                
+              </li>
+            
+            
+          </ul>
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/labeling.html" class="" >
+          Labeling guide
+        </a>
+        
+        
+            <button class="page-sidebar-toggle-children-list">
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+            <ul class="page-sidebar-children-list">
+            
+            
+            
+              <li>
+                <a href="/guide/hotkeys.html" class="page-sidebar-children-link" >
+                  Hotkeys
+                </a>
+                
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/skip.html" class="page-sidebar-children-link" >
+                  Skipping tasks
+                </a>
+                
+                
+              </li>
+            
+            
+          </ul>
+        
+        
+        
+      </li>
+    
+      
+      
+        </ul>
+          
+            <div class="toc-section-heading">
+              
+
+
+
+
+<h3 class="Text  Eyebrow ">Import &amp; Export</h3>
+              
+            </div>
+          
+        <ul class="page-sidebar-list">
+      
+      
+      <li>
+        <a href="/guide/storage.html" class="" >
+          Add project storage
+        </a>
+        
+        
+            <button class="page-sidebar-toggle-children-list">
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+            <ul class="page-sidebar-children-list">
+            
+            
+            
+              <li>
+                <a href="/guide/storage_s3.html" class="page-sidebar-children-link" >
+                  AWS S3
+                </a>
+                
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/storage_gcp.html" class="page-sidebar-children-link" >
+                  Google Cloud
+                </a>
+                
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/storage_azure.html" class="page-sidebar-children-link" >
+                  Microsoft Azure
+                </a>
+                
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/storage_databricks.html" class="page-sidebar-children-link" >
+                  Databricks
+                </a>
+                
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/storage_redis.html" class="page-sidebar-children-link" >
+                  Redis
+                </a>
+                
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/storage_local.html" class="page-sidebar-children-link" >
+                  Local
+                </a>
+                
+                
+              </li>
+            
+            
+          </ul>
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/tasks.html" class="" >
+          Import data
+        </a>
+        
+        
+            <button class="page-sidebar-toggle-children-list">
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+            <ul class="page-sidebar-children-list">
+            
+            
+            
+              <li>
+                <a href="/guide/task_format.html" class="page-sidebar-children-link" >
+                  Format data for import
+                </a>
+                
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/predictions.html" class="page-sidebar-children-link" aria-current="page">
+                  Import pre-annotations
+                </a>
+                
+                
+              </li>
+            
+            
+          </ul>
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/export.html" class="" >
+          Export annotations
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+        </ul>
+          
+            <div class="toc-section-heading">
+              
+
+
+
+
+<h3 class="Text  Eyebrow ">Machine Learning</h3>
+              
+            </div>
+          
+        <ul class="page-sidebar-list">
+      
+      
+      <li>
+        <a href="/guide/ml.html" class="" >
+          Machine learning integration
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/ml_create.html" class="" >
+          Write your own ML backend
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/ml_tutorials.html" class="" >
+          ML Examples and Tutorials
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+        </ul>
+          
+            <div class="toc-section-heading">
+              
+
+
+
+
+<h3 class="Text  Eyebrow ">Manage Your Organization</h3>
+              
+            </div>
+          
+        <ul class="page-sidebar-list">
+      
+      
+      <li>
+        <a href="/guide/signup.html" class="" >
+          Add users
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/admin_manage.html" class="" >
+          Manage user accounts
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/user_account.html" class="" >
+          Account and settings
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/access_tokens.html" class="" >
+          Access tokens
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+        </ul>
+          
+            <div class="toc-section-heading">
+              
+
+
+
+
+<h3 class="Text  Eyebrow ">Integrate &amp; Extend</h3>
+              
+            </div>
+          
+        <ul class="page-sidebar-list">
+      
+      
+      <li>
+        <a href="/guide/api.html" class="" >
+          API
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/sdk.html" class="" >
+          Python SDK
+        </a>
+        
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/webhooks.html" class="" >
+          Webhooks
+        </a>
+        
+        
+            <button class="page-sidebar-toggle-children-list">
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 0.805007L1.00008 0.0979004L6.64652 5.74435L12.293 0.0979004L13.0001 0.805007L6.64652 7.15856L0.292969 0.805007Z" ></path>
+              </svg>
+            </button>
+            <ul class="page-sidebar-children-list">
+            
+            
+            
+              <li>
+                <a href="/guide/webhook_create.html" class="page-sidebar-children-link" >
+                  Webhook development
+                </a>
+                
+                
+              </li>
+            
+            
+            
+            
+              <li>
+                <a href="/guide/webhook_reference.html" class="page-sidebar-children-link" >
+                  Webhook event reference
+                </a>
+                
+                
+              </li>
+            
+            
+          </ul>
+        
+        
+        
+      </li>
+    
+      
+      
+      
+      <li>
+        <a href="/guide/frontend_reference.html" class="" >
+          Frontend
+        </a>
+        
+        
+        
+          
+            </li><li>
+            <a href="https://github.com/Mercedes-Benz/label-studio/blob/develop/CONTRIBUTING.md" target="_blank">Contribution guide
+              <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-external-link">
+                <path d="M10.9002 9.29957L9.46026 9.30898L9.46026 3.34236L1.73377 11.0689L0.698549 10.0336L8.42504 2.30714L2.46783 2.31656L2.46783 0.867251L10.9001 0.867252L10.9002 9.29957Z" fill="#6D87F1"></path>
+              </svg>
+            </a>
+          </li>
+          
+          <li>
+            <a href="https://mercedes-benz.com/integrations/" target="_blank">Integrations directory
+              <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-external-link">
+                <path d="M10.9002 9.29957L9.46026 9.30898L9.46026 3.34236L1.73377 11.0689L0.698549 10.0336L8.42504 2.30714L2.46783 2.31656L2.46783 0.867251L10.9001 0.867252L10.9002 9.29957Z" fill="#6D87F1"></path>
+              </svg>
+            </a>
+          </li>
+        
+        
+      
+    
+    
+</ul>
+
+
+  <div class="toc-section-heading">
+
+
+
+
+<h3 class="Text  Eyebrow ">Support</h3></div>
+
+<ul class="page-sidebar-list">
+  
+  
+    <li>
+        <a href="/guide/troubleshooting">Troubleshooting</a>
+      </li>
+    <li>
+      <a href="https://github.com/Mercedes-Benz/label-studio/issues" target="_blank">GitHub Issues
+        <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-external-link">
+          <path d="M10.9002 9.29957L9.46026 9.30898L9.46026 3.34236L1.73377 11.0689L0.698549 10.0336L8.42504 2.30714L2.46783 2.31656L2.46783 0.867251L10.9001 0.867252L10.9002 9.29957Z" fill="#6D87F1"></path>
+        </svg>
+      </a>
+    </li>
+  
+  <li>
+    <a href="https://slack.mercedes-benz.com" target="_blank">Join Slack
+      <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-external-link">
+        <path d="M10.9002 9.29957L9.46026 9.30898L9.46026 3.34236L1.73377 11.0689L0.698549 10.0336L8.42504 2.30714L2.46783 2.31656L2.46783 0.867251L10.9001 0.867252L10.9002 9.29957Z" fill="#6D87F1"></path>
+      </svg>
+    </a>
+  </li>
+  
+    <li>
+      <a href="https://community.mercedes-benz.com/" target="_blank">Ask on Discourse
+        <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-external-link">
+          <path d="M10.9002 9.29957L9.46026 9.30898L9.46026 3.34236L1.73377 11.0689L0.698549 10.0336L8.42504 2.30714L2.46783 2.31656L2.46783 0.867251L10.9001 0.867252L10.9002 9.29957Z" fill="#6D87F1"></path>
+        </svg>
+      </a>
+    </li>
+  
+  <li>
+    <a href="https://mercedes-benz.com/contact-sales/" target="_blank">Contact Sales
+      <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-external-link">
+        <path d="M10.9002 9.29957L9.46026 9.30898L9.46026 3.34236L1.73377 11.0689L0.698549 10.0336L8.42504 2.30714L2.46783 2.31656L2.46783 0.867251L10.9001 0.867252L10.9002 9.29957Z" fill="#6D87F1"></path>
+      </svg>
+    </a>
+  </li>
+  
+</ul>
+
+
+
+  <div class="toc-section-heading">
+
+
+
+
+<h3 class="Text  Eyebrow ">What&#39;s New</h3></div>
+
+<ul class="page-sidebar-list">  
+    <li>
+      <a href="https://github.com/Mercedes-Benz/label-studio/releases" target="_blank">Release notes
+        <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-external-link">
+          <path d="M10.9002 9.29957L9.46026 9.30898L9.46026 3.34236L1.73377 11.0689L0.698549 10.0336L8.42504 2.30714L2.46783 2.31656L2.46783 0.867251L10.9001 0.867252L10.9002 9.29957Z" fill="#6D87F1"></path>
+        </svg>
+      </a>
+    </li>
+</ul>
+
+
+      </aside>
+    
+    <div class="content">
+      
+        <svg width="50" height="50" viewBox="0 0 77 77" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="content-decoration">
+          <rect x="75.875" y="26" width="25" height="25" transform="rotate(-180 75.875 26)" stroke="#E1DED5" stroke-width="0.504975"></rect>
+          <rect x="50.875" y="51" width="25" height="25" transform="rotate(-180 50.875 51)" stroke="#E1DED5" stroke-width="0.504975"></rect>
+          <rect x="50.875" y="26" width="25" height="25" transform="rotate(-180 50.875 26)" fill="#FF7557"></rect>
+          <rect x="26" y="76" width="25" height="25" transform="rotate(-180 26 76)" stroke="#E1DED5" stroke-width="0.504975"></rect>
+          <rect x="26" y="51" width="25" height="25" transform="rotate(-180 26 51)" fill="#E37BD3"></rect>
+          <rect x="26" y="26" width="25" height="25" transform="rotate(-180 26 26)" fill="#FFA663"></rect>
+        </svg>
+      
+        
+      <div class="container">
+        
+
+
+
+
+
+
+
+<div class="content-grid">
+  <div class="content-markdown">
+    
+      
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/guide/tasks.html">Import data</a>
+        <svg width="6" height="9" viewBox="0 0 6 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1 8.5L5 4.5L1 0.5" stroke="#646676"></path>
+        </svg>
+        <span>Import pre-annotated data into Mercedes-Benz</span>
+      </nav>
+    
+   
+   
+      
+
+
+
+
+<h1 class="Heading home-page-title XLarge ">Import pre-annotated data into Mercedes-Benz</h1>
+   
+   
+   
+    <p>If you have predictions generated for your dataset from a model, either as pre-annotated tasks or pre-labeled tasks, you can import the predictions with your dataset into Mercedes-Benz for review and correction. Mercedes-Benz automatically displays the pre-annotations that you import on the Labeling page for each task. </p>
+<p>You can import pre-annotated tasks into Mercedes-Benz <a href="tasks.html#Import-data-from-the-Label-Studio-UI">using the UI</a> or <a href="/api#operation/projects_import_create">using the API</a>. </p>
+<div class="admonition note"><p class="admonition-title">note</p><p>To generate interactive pre-annotations with a machine learning model while labeling, see <a href="ml.html">Set up machine learning with Mercedes-Benz</a>.</p>
+</div>
+
+<div class="opensource-only">
+
+<div class="admonition error"><p class="admonition-title">enterprise
+</p><p>Mercedes-Benz Enterprise customers have access to a powerful tool called Prompts. With Prompts, you can leverage LLMs to automatically generate predictions for your Mercedes-Benz tasks. For more information, see <a target="_blank" rel="noopener" href="https://docs.mercedes-benz.com/guide/prompts_overview">Prompts</a>.</p>
+</div>
+
+</div>
+
+
+
+
+<h2 id="Prepare-pre-annotations-for-Label-Studio"><a href="#Prepare-pre-annotations-for-Label-Studio" class="headerlink" title="Prepare pre-annotations for Mercedes-Benz"></a>Prepare pre-annotations for Mercedes-Benz</h2><p>To import predicted labels into Mercedes-Benz, you must use the <a href="tasks.html#Basic-Label-Studio-JSON-format">Basic Mercedes-Benz JSON format</a> and set up your tasks with the <code>predictions</code> JSON key. The Mercedes-Benz ML backend also outputs tasks in this format. Check this common video tutorial showing how to convert a submitted annotation to a prediction:</p>
+<iframe class="video-border" width="100%" height="400vh" src="https://www.youtube.com/embed/CyRe73VD4EE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<h3 id="JSON-format-for-pre-annotations"><a href="#JSON-format-for-pre-annotations" class="headerlink" title="JSON format for pre-annotations"></a>JSON format for pre-annotations</h3><p>Mercedes-Benz JSON format for pre-annotations must contain two sections:</p>
+<ul>
+<li>A <code>data</code> object which references the source of the data that the pre-annotations apply to. This can be a URL to an audio file, a pre-signed cloud storage link to an image, plain text, a reference to a CSV file stored in Mercedes-Benz, or something else. See how to <a href="#Specify-the-data-object">specify the data object</a>.</li>
+<li>A <code>predictions</code> array that contains the pre-annotation results for the different types of labeling. See how to <a href="#Add-results-to-the-predictions-array">add results to the predictions array</a>.</li>
+</ul>
+<p>The JSON format for pre-annotations must match the labeling configuration used for your data labeling project. </p>
+<h4 id="Specify-the-data-object"><a href="#Specify-the-data-object" class="headerlink" title="Specify the data object"></a>Specify the data object</h4><p>Use the <code>data</code> object to reference the <code>value</code> of the data specified by the <a href="/tags">Object tag</a> in your labeling configuration. For example, the following excerpt of a time series labeling configuration:</p>
+<pre><code class="hljs xml">...
+  <span class="hljs-tag">&lt;<span class="hljs-name">TimeSeries</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;ts&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;$csv&quot;</span> <span class="hljs-attr">valueType</span>=<span class="hljs-string">&quot;url&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Channel</span> <span class="hljs-attr">column</span>=<span class="hljs-string">&quot;first_column&quot;</span>/&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">TimeSeries</span>&gt;</span>
+...</code></pre>
+<p>This excerpt specifies <code>value=&quot;$csv&quot;</code> in the TimeSeries Object tag. As a result, the data object for the pre-annotations JSON file for this labeling configuration must use “csv” to specify the location of the CSV data for the time series pre-annotations, like in the following example:</p>
+<pre><code class="hljs json"><span class="hljs-punctuation">[</span>
+  <span class="hljs-punctuation">&#123;</span>
+    <span class="hljs-attr">&quot;data&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span>
+      <span class="hljs-attr">&quot;csv&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;https://app.heartex.ai/samples/time-series.csv?time=None&amp;values=first_column&quot;</span>
+    <span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;predictions&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span> <span class="hljs-punctuation">]</span>
+  <span class="hljs-punctuation">&#125;</span>
+<span class="hljs-punctuation">]</span></code></pre>
+
+<h4 id="Add-results-to-the-predictions-array"><a href="#Add-results-to-the-predictions-array" class="headerlink" title="Add results to the predictions array"></a>Add results to the predictions array</h4><p>The <code>predictions</code> array also depends on the labeling configuration. Some pre-annotation fields are only relevant for certain types of labeling. The following table describes the JSON objects and arrays that exist for all pre-annotations: </p>
+<table>
+<thead>
+<tr>
+<th>JSON key</th>
+<th>type</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>predictions</code></td>
+<td>array</td>
+<td>Contains all pre-annotations for a specific task.</td>
+</tr>
+<tr>
+<td><code>predictions.model_version</code></td>
+<td>string</td>
+<td>Specifies the model version that produced the prediction.</td>
+</tr>
+<tr>
+<td><code>predictions.result</code></td>
+<td>array</td>
+<td>Contains all pre-annotated results for a specific task in a JSON object.</td>
+</tr>
+<tr>
+<td><code>result.value</code></td>
+<td>object</td>
+<td>Contains details for a specific labeled region.</td>
+</tr>
+<tr>
+<td><code>result.id</code></td>
+<td>string</td>
+<td>Arbitrary string used to identify a labeled region. Must match related regions, such as in <a href="#Import-OCR-pre-annotations">OCR pre-annotations</a>.</td>
+</tr>
+<tr>
+<td><code>result.from_name</code></td>
+<td>string</td>
+<td>String used to reference the labeling configuration <code>from_name</code> for the type of labeling being performed. Must match the labeling configuration.</td>
+</tr>
+<tr>
+<td><code>result.to_name</code></td>
+<td>string</td>
+<td>String used to reference the labeling configuration <code>to_name</code> for the type of labeling being performed. Must match the labeling configuration.</td>
+</tr>
+<tr>
+<td><code>result.type</code></td>
+<td>string</td>
+<td>Specify the labeling tag for the type of labeling being performed. For example, a named entity recognition task has a type of <code>labels</code>.</td>
+</tr>
+<tr>
+<td><code>result.readonly</code></td>
+<td>bool</td>
+<td>readonly mode for a specific region</td>
+</tr>
+<tr>
+<td><code>result.hidden</code></td>
+<td>bool</td>
+<td>default visibility (eye icon) for a specific region</td>
+</tr>
+</tbody></table>
+<p>Other types of annotation contain specific fields. You can review the <a href="#Specific-examples-for-pre-annotations">examples on this page</a>, or review the <a href="/tags">tag documentation for the Object and Control tags</a> in your labeling configuration labeling-specific <code>result</code> objects. For example, the <a href="/tags/audio.html">Audio tag</a>, <a href="/tags/hypertext.html">HyperText tag</a>, <a href="/tags/paragraphs.html">Paragraphs tag</a>, <a href="/tags/keypointlabels.html">KeyPointLabels</a> and more all contain sample <code>result</code> JSON examples.</p>
+<div class="admonition info"><p class="admonition-title">info</p><p>If you're generating pre-annotations for a <a href="ml_create.html">custom ML backend</a>, you can use the <code>self.parsed_label_config</code> variable to retrieve the labeling configuration for a project and generate pre-annotations. See the <a href="ml_create.html">custom ML backend</a> documentation for more details.</p>
+</div>
+
+<h3 id="Predictions-are-read-only"><a href="#Predictions-are-read-only" class="headerlink" title="Predictions are read-only"></a>Predictions are read-only</h3><p>Predictions cannot be modified and are always read-only.</p>
+<p>If the “Show predictions to annotators in the Label Stream and Quick View” toggle in the project settings (Machine Learning section) is enabled, predictions will be automatically copied to newly created annotations. In Quick View mode, annotations can be created from predictions by using the special copy button on the editor tool panel: 
+<img src="/images/quickview-copy-button.png" class="gif-border"></p>
+<h3 id="Specific-examples-for-pre-annotations"><a href="#Specific-examples-for-pre-annotations" class="headerlink" title="Specific examples for pre-annotations"></a>Specific examples for pre-annotations</h3><p>Refer to the following examples for sample pre-annotation formats:</p>
+<ul>
+<li><a href="#Import-bbox-and-choice-pre-annotations-for-images">Import bbox and choice pre-annotations for images</a></li>
+<li><a href="#Import-pre-annotated-rectangle-polygon-ellipse-amp-keypoint-regions-without-labels-for-images">Import pre-annotated rectangle, polygon, ellipse &amp; keypoint regions without labels for images</a></li>
+<li><a href="#Import-span-pre-annotations-for-text">Text pre-annotations with NER spans</a></li>
+<li><a href="#Import-brush-segmentation-pre-annotations-in-RLE-format">Brush pre-annotations for segmentation with masks</a></li>
+<li><a href="#Import-OCR-pre-annotations">OCR pre-annotations with bounding boxes, labels, and text transcriptions</a></li>
+</ul>
+<p>To format pre-annotations for Mercedes-Benz not represented in these examples, refer to the sample results JSON for the relevant object and control tags for your labeling configuration, such as the <a href="/tags/audio.html">Audio tag</a> for audio classification tasks. Each tag must be represented in the JSON pre-annotations format to render predictions in the Mercedes-Benz UI. Not all object and control tags list sample results JSON. </p>
+<p>You can also use the <a href="/playground">Mercedes-Benz Playground</a> to preview the output JSON for a specific labeling configuration.</p>
+<h2 id="Import-bbox-and-choice-pre-annotations-for-images"><a href="#Import-bbox-and-choice-pre-annotations-for-images" class="headerlink" title="Import bbox and choice pre-annotations for images"></a>Import bbox and choice pre-annotations for images</h2><p>For example, import predicted <strong>bounding box regions (rectangles)</strong> and <strong>choices</strong> for tasks to determine whether an item in an image is an airplane or a car. </p>
+<p>For image pre-annotations, Mercedes-Benz expects the x, y, width, and height of image annotations to be provided in percentages of overall image dimension. See <a href="predictions.html#Units_for_image_annotations">Units for image annotations</a> on this page for more about how to convert formats.</p>
+<p>Use the following labeling configuration: </p>
+<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">View</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">Choices</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;choice&quot;</span> <span class="hljs-attr">toName</span>=<span class="hljs-string">&quot;image&quot;</span> <span class="hljs-attr">showInLine</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Choice</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;Boeing&quot;</span> <span class="hljs-attr">background</span>=<span class="hljs-string">&quot;blue&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Choice</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;Airbus&quot;</span> <span class="hljs-attr">background</span>=<span class="hljs-string">&quot;green&quot;</span> /&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">Choices</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-name">RectangleLabels</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;label&quot;</span> <span class="hljs-attr">toName</span>=<span class="hljs-string">&quot;image&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Label</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;Airplane&quot;</span> <span class="hljs-attr">background</span>=<span class="hljs-string">&quot;green&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Label</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;Car&quot;</span> <span class="hljs-attr">background</span>=<span class="hljs-string">&quot;blue&quot;</span>/&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">RectangleLabels</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-name">Image</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;image&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;$image&quot;</span>/&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">View</span>&gt;</span></code></pre>
+
+<p>After you set up an example project, create example tasks that match the following format:</p>
+<details><summary><b>Click to expand the JSON example with predictions</b></summary><p>Save this example JSON as a file to import it into Mercedes-Benz, for example, <code>example_prediction_task.json</code>.</p>
+<pre><code class="hljs json"><span class="hljs-punctuation">[</span><span class="hljs-punctuation">&#123;</span>
+  <span class="hljs-attr">&quot;data&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span>
+    <span class="hljs-attr">&quot;image&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;/static/samples/sample.jpg&quot;</span> 
+  <span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span>
+
+  <span class="hljs-attr">&quot;predictions&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-punctuation">&#123;</span>
+    <span class="hljs-attr">&quot;model_version&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;one&quot;</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;score&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">0.5</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;result&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+      <span class="hljs-punctuation">&#123;</span>
+        <span class="hljs-attr">&quot;id&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;result1&quot;</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">&quot;type&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;rectanglelabels&quot;</span><span class="hljs-punctuation">,</span>        
+        <span class="hljs-attr">&quot;from_name&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;label&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-attr">&quot;to_name&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;image&quot;</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">&quot;original_width&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">600</span><span class="hljs-punctuation">,</span> <span class="hljs-attr">&quot;original_height&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">403</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">&quot;image_rotation&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">0</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">&quot;value&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span>
+          <span class="hljs-attr">&quot;rotation&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">0</span><span class="hljs-punctuation">,</span>          
+          <span class="hljs-attr">&quot;x&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">4.98</span><span class="hljs-punctuation">,</span> <span class="hljs-attr">&quot;y&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">12.82</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;width&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">32.52</span><span class="hljs-punctuation">,</span> <span class="hljs-attr">&quot;height&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">44.91</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;rectanglelabels&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-string">&quot;Airplane&quot;</span><span class="hljs-punctuation">]</span>
+        <span class="hljs-punctuation">&#125;</span>
+      <span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-punctuation">&#123;</span>
+        <span class="hljs-attr">&quot;id&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;result2&quot;</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">&quot;type&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;rectanglelabels&quot;</span><span class="hljs-punctuation">,</span>        
+        <span class="hljs-attr">&quot;from_name&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;label&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-attr">&quot;to_name&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;image&quot;</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">&quot;original_width&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">600</span><span class="hljs-punctuation">,</span> <span class="hljs-attr">&quot;original_height&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">403</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">&quot;image_rotation&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">0</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">&quot;value&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span>
+          <span class="hljs-attr">&quot;rotation&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">0</span><span class="hljs-punctuation">,</span>          
+          <span class="hljs-attr">&quot;x&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">75.47</span><span class="hljs-punctuation">,</span> <span class="hljs-attr">&quot;y&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">82.33</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;width&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">5.74</span><span class="hljs-punctuation">,</span> <span class="hljs-attr">&quot;height&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">7.40</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;rectanglelabels&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-string">&quot;Car&quot;</span><span class="hljs-punctuation">]</span>
+        <span class="hljs-punctuation">&#125;</span>
+      <span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-punctuation">&#123;</span>
+        <span class="hljs-attr">&quot;id&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;result3&quot;</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">&quot;type&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;choices&quot;</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">&quot;from_name&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;choice&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-attr">&quot;to_name&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;image&quot;</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">&quot;value&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span>
+          <span class="hljs-attr">&quot;choices&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-string">&quot;Airbus&quot;</span><span class="hljs-punctuation">]</span>
+      <span class="hljs-punctuation">&#125;</span>
+    <span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">]</span>
+  <span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">]</span>
+<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">]</span></code></pre>
+
+<p>In this example there are 3 results inside 1 prediction, or pre-annotation: </p>
+<ul>
+<li><code>result1</code> - the first bounding box</li>
+<li><code>result2</code> - the second bounding box</li>
+<li><code>result3</code> - choice selection
+The prediction score applies to the entire prediction.</li>
+</ul>
+</details>
+<br>
+
+<p>Import pre-annotated tasks into Mercedes-Benz <a href="tasks.html#Import-data-from-the-Label-Studio-UI">using the UI</a> or <a href="/api#operation/projects_import_create">using the API</a>. </p>
+<p>In the Mercedes-Benz UI, the imported prediction for this task looks like the following: 
+<img src="../images/predictions_loaded.png" alt="screenshot of the Mercedes-Benz UI showing an image of airplanes with bounding boxes covering each airplane." style="max-width: 600px;" class="gif-border"></p>
+<h2 id="Import-pre-annotated-rectangle-polygon-ellipse-keypoint-regions-without-labels-for-images"><a href="#Import-pre-annotated-rectangle-polygon-ellipse-keypoint-regions-without-labels-for-images" class="headerlink" title="Import pre-annotated rectangle, polygon, ellipse &amp; keypoint regions without labels for images"></a>Import pre-annotated rectangle, polygon, ellipse &amp; keypoint regions without labels for images</h2><p>If you want to import images with pre-annotated regions without labels assigned to them, follow this example.</p>
+<p>Use the following labeling configuration: </p>
+<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">View</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">Image</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;image&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;$image&quot;</span> <span class="hljs-attr">zoom</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">zoomControl</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">rotateControl</span>=<span class="hljs-string">&quot;false&quot;</span>/&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-name">Rectangle</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;rect&quot;</span> <span class="hljs-attr">toName</span>=<span class="hljs-string">&quot;image&quot;</span> <span class="hljs-attr">showInline</span>=<span class="hljs-string">&quot;false&quot;</span>/&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">Polygon</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;polygon&quot;</span> <span class="hljs-attr">toName</span>=<span class="hljs-string">&quot;image&quot;</span>/&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">Ellipse</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;ellipse&quot;</span> <span class="hljs-attr">toName</span>=<span class="hljs-string">&quot;image&quot;</span>/&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">KeyPoint</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;kp&quot;</span> <span class="hljs-attr">toName</span>=<span class="hljs-string">&quot;image&quot;</span>/&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-name">Labels</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;labels&quot;</span> <span class="hljs-attr">toName</span>=<span class="hljs-string">&quot;image&quot;</span> <span class="hljs-attr">fillOpacity</span>=<span class="hljs-string">&quot;0.5&quot;</span> <span class="hljs-attr">strokeWidth</span>=<span class="hljs-string">&quot;5&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Label</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;Vehicle&quot;</span> <span class="hljs-attr">background</span>=<span class="hljs-string">&quot;green&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Label</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;Building&quot;</span> <span class="hljs-attr">background</span>=<span class="hljs-string">&quot;blue&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Label</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;Pavement&quot;</span> <span class="hljs-attr">background</span>=<span class="hljs-string">&quot;red&quot;</span>/&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">Labels</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">View</span>&gt;</span></code></pre>
+
+<p>After you set up an example project, create example tasks that match the following format: </p>
+<details><summary><b>Click to expand the JSON example</b></summary><p>Save this example JSON as a file to import it into Mercedes-Benz, for example, <code>example_prediction_task.json</code>.</p>
+<pre><code class="hljs json"><span class="hljs-punctuation">[</span><span class="hljs-punctuation">&#123;</span>
+  <span class="hljs-attr">&quot;data&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span>
+    <span class="hljs-attr">&quot;image&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;/static/samples/sample.jpg&quot;</span>
+  <span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span>
+  
+  <span class="hljs-attr">&quot;predictions&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+    <span class="hljs-punctuation">&#123;</span>
+      <span class="hljs-attr">&quot;model_version&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;one&quot;</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">&quot;score&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">0.5</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">&quot;result&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+        <span class="hljs-punctuation">&#123;</span>
+          <span class="hljs-attr">&quot;original_width&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">800</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;original_height&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">450</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;image_rotation&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">0</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;value&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span>
+            <span class="hljs-attr">&quot;x&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">55.46</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">&quot;y&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">2.36</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">&quot;width&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">35.86</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">&quot;height&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">46.9</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">&quot;rotation&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">0</span>
+          <span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;id&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;ABC&quot;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;from_name&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;rect&quot;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;to_name&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;image&quot;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;type&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;rectangle&quot;</span>
+        <span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-punctuation">&#123;</span>
+          <span class="hljs-attr">&quot;original_width&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">800</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;original_height&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">450</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;image_rotation&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">0</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;value&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span>
+            <span class="hljs-attr">&quot;points&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+              <span class="hljs-punctuation">[</span>
+                <span class="hljs-number">20.93</span><span class="hljs-punctuation">,</span>
+                <span class="hljs-number">28.90</span>
+              <span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
+              <span class="hljs-punctuation">[</span>
+                <span class="hljs-number">25.86</span><span class="hljs-punctuation">,</span>
+                <span class="hljs-number">64.69</span>
+              <span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
+              <span class="hljs-punctuation">[</span>
+                <span class="hljs-number">38.40</span><span class="hljs-punctuation">,</span>
+                <span class="hljs-number">62.79</span>
+              <span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
+              <span class="hljs-punctuation">[</span>
+                <span class="hljs-number">34.13</span><span class="hljs-punctuation">,</span>
+                <span class="hljs-number">27.48</span>
+              <span class="hljs-punctuation">]</span>
+            <span class="hljs-punctuation">]</span>
+          <span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;id&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;GHI&quot;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;from_name&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;polygon&quot;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;to_name&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;image&quot;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;type&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;polygon&quot;</span>
+        <span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-punctuation">&#123;</span>
+          <span class="hljs-attr">&quot;original_width&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">800</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;original_height&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">450</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;image_rotation&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">0</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;value&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span>
+            <span class="hljs-attr">&quot;x&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">8.4</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">&quot;y&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">20.14</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">&quot;radiusX&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">4</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">&quot;radiusY&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">7.10</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">&quot;rotation&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">0</span>
+          <span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;id&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;JKL&quot;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;from_name&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;ellipse&quot;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;to_name&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;image&quot;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;type&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;ellipse&quot;</span>
+        <span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-punctuation">&#123;</span>
+          <span class="hljs-attr">&quot;original_width&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">800</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;original_height&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">450</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;image_rotation&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">0</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;value&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span>
+            <span class="hljs-attr">&quot;x&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">38.40</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">&quot;y&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">34.21</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">&quot;width&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">1.0</span>
+          <span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;id&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;DEF&quot;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;from_name&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;rect&quot;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;to_name&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;image&quot;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;type&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;keypoint&quot;</span>
+        <span class="hljs-punctuation">&#125;</span>
+      <span class="hljs-punctuation">]</span>
+    <span class="hljs-punctuation">&#125;</span>
+  <span class="hljs-punctuation">]</span>
+<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">]</span></code></pre>
+
+<p>In this example there are 3 regions inside 1 result field for a prediction, or pre-annotation: </p>
+<ul>
+<li>region <code>ABC</code> - a rectangle bounding box</li>
+<li>region <code>DEF</code> - a second rectangle bounding box</li>
+<li>region <code>GHI</code> - a polygonal segmentation</li>
+<li>region <code>JKL</code> - an ellipse
+None of the regions have labels applied. The labeling configuration must use the <code>Rectangle</code> tag instead of the <code>RectangleLabels</code> tag to support this type of prediction. Even though the labeling configuration for this example has a <code>Labels</code> tag, the predictions do not need to specify labels for the regions.</li>
+</ul>
+</details>
+<br>
+
+<h2 id="Import-span-pre-annotations-for-text"><a href="#Import-span-pre-annotations-for-text" class="headerlink" title="Import span pre-annotations for text"></a>Import span pre-annotations for text</h2><p>In this example, import pre-annotations for text using the <a href="/templates/named_entity.html">named entity recognition template</a> (NER):</p>
+<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">View</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">Labels</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;label&quot;</span> <span class="hljs-attr">toName</span>=<span class="hljs-string">&quot;text&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Label</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;Person&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">Label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Label</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;Organization&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">Label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Label</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;Fact&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">Label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Label</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;Money&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">Label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Label</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;Date&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">Label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Label</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;Time&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">Label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Label</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;Ordinal&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">Label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Label</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;Percent&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">Label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Label</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;Product&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">Label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Label</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;Language&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">Label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Label</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;Location&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">Label</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">Labels</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">Text</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;$text&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">Text</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">View</span>&gt;</span></code></pre>
+
+<p>This example JSON file contains two tasks, each with two sets of pre-annotations from different models. The first task also contains prediction scores for each NER span: </p>
+<details><summary><b>Click to expand the NER JSON example</b></summary><p>Save this example JSON as a file, for example: <code>example_preannotated_ner_tasks.json</code>.</p>
+<pre><code class="hljs json"><span class="hljs-punctuation">[</span>
+  <span class="hljs-punctuation">&#123;</span>
+    <span class="hljs-attr">&quot;data&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span>
+      <span class="hljs-attr">&quot;text&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;All that changed when he was 27 and he came to Jerusalem. It was the weekend of both Easter and Passover, and the city was flooded with tourists.&quot;</span>
+    <span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;predictions&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+      <span class="hljs-punctuation">&#123;</span>
+        <span class="hljs-attr">&quot;model_version&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;one&quot;</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">&quot;score&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">0.5</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">&quot;result&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+          <span class="hljs-punctuation">&#123;</span>
+            <span class="hljs-attr">&quot;id&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;abc&quot;</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">&quot;from_name&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;label&quot;</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">&quot;to_name&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;text&quot;</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">&quot;type&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;labels&quot;</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">&quot;value&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span>
+              <span class="hljs-attr">&quot;start&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">29</span><span class="hljs-punctuation">,</span>
+              <span class="hljs-attr">&quot;end&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">31</span><span class="hljs-punctuation">,</span>
+              <span class="hljs-attr">&quot;score&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">0.70</span><span class="hljs-punctuation">,</span>
+              <span class="hljs-attr">&quot;text&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;27&quot;</span><span class="hljs-punctuation">,</span>
+              <span class="hljs-attr">&quot;labels&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+                <span class="hljs-string">&quot;Date&quot;</span>
+              <span class="hljs-punctuation">]</span>
+            <span class="hljs-punctuation">&#125;</span>
+          <span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-punctuation">&#123;</span>
+            <span class="hljs-attr">&quot;id&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;def&quot;</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">&quot;from_name&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;label&quot;</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">&quot;to_name&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;text&quot;</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">&quot;type&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;labels&quot;</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">&quot;value&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span>
+              <span class="hljs-attr">&quot;start&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">47</span><span class="hljs-punctuation">,</span>
+              <span class="hljs-attr">&quot;end&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">56</span><span class="hljs-punctuation">,</span>
+              <span class="hljs-attr">&quot;score&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">0.65</span><span class="hljs-punctuation">,</span>
+              <span class="hljs-attr">&quot;text&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Jerusalem&quot;</span><span class="hljs-punctuation">,</span>
+              <span class="hljs-attr">&quot;labels&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+                <span class="hljs-string">&quot;Location&quot;</span>
+              <span class="hljs-punctuation">]</span>
+            <span class="hljs-punctuation">&#125;</span>
+          <span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-punctuation">&#123;</span>
+            <span class="hljs-attr">&quot;id&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;ghi&quot;</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">&quot;from_name&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;label&quot;</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">&quot;to_name&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;text&quot;</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">&quot;type&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;labels&quot;</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">&quot;value&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span>
+              <span class="hljs-attr">&quot;start&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">65</span><span class="hljs-punctuation">,</span>
+              <span class="hljs-attr">&quot;end&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">76</span><span class="hljs-punctuation">,</span>
+              <span class="hljs-attr">&quot;score&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">0.95</span><span class="hljs-punctuation">,</span>
+              <span class="hljs-attr">&quot;text&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;the weekend&quot;</span><span class="hljs-punctuation">,</span>
+              <span class="hljs-attr">&quot;labels&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+                <span class="hljs-string">&quot;Date&quot;</span>
+              <span class="hljs-punctuation">]</span>
+            <span class="hljs-punctuation">&#125;</span>
+          <span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-punctuation">&#123;</span>
+            <span class="hljs-attr">&quot;id&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;jkl&quot;</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">&quot;from_name&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;label&quot;</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">&quot;to_name&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;text&quot;</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">&quot;type&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;labels&quot;</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">&quot;value&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span>
+              <span class="hljs-attr">&quot;start&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">85</span><span class="hljs-punctuation">,</span>
+              <span class="hljs-attr">&quot;end&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">91</span><span class="hljs-punctuation">,</span>
+              <span class="hljs-attr">&quot;score&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">0.50</span><span class="hljs-punctuation">,</span>
+              <span class="hljs-attr">&quot;text&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Easter&quot;</span><span class="hljs-punctuation">,</span>
+              <span class="hljs-attr">&quot;labels&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+                <span class="hljs-string">&quot;Date&quot;</span>
+              <span class="hljs-punctuation">]</span>
+            <span class="hljs-punctuation">&#125;</span>
+          <span class="hljs-punctuation">&#125;</span>
+        <span class="hljs-punctuation">]</span>
+      <span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-punctuation">&#123;</span>
+        <span class="hljs-attr">&quot;model_version&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;two&quot;</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">&quot;score&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">0.42</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">&quot;result&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+          <span class="hljs-punctuation">&#123;</span>
+            <span class="hljs-attr">&quot;id&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;mno&quot;</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">&quot;from_name&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;label&quot;</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">&quot;to_name&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;text&quot;</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">&quot;type&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;labels&quot;</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">&quot;value&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span>
+              <span class="hljs-attr">&quot;start&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">29</span><span class="hljs-punctuation">,</span>
+              <span class="hljs-attr">&quot;end&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">31</span><span class="hljs-punctuation">,</span>
+              <span class="hljs-attr">&quot;score&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">0.55</span><span class="hljs-punctuation">,</span>
+              <span class="hljs-attr">&quot;text&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;27&quot;</span><span class="hljs-punctuation">,</span>
+              <span class="hljs-attr">&quot;labels&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+                <span class="hljs-string">&quot;Date&quot;</span>
+              <span class="hljs-punctuation">]</span>
+            <span class="hljs-punctuation">&#125;</span>
+          <span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-punctuation">&#123;</span>
+            <span class="hljs-attr">&quot;id&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;pqr&quot;</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">&quot;from_name&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;label&quot;</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">&quot;to_name&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;text&quot;</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">&quot;type&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;labels&quot;</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">&quot;value&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span>
+              <span class="hljs-attr">&quot;start&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">47</span><span class="hljs-punctuation">,</span>
+              <span class="hljs-attr">&quot;end&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">56</span><span class="hljs-punctuation">,</span>
+              <span class="hljs-attr">&quot;score&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">0.40</span><span class="hljs-punctuation">,</span>
+              <span class="hljs-attr">&quot;text&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Jerusalem&quot;</span><span class="hljs-punctuation">,</span>
+              <span class="hljs-attr">&quot;labels&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+                <span class="hljs-string">&quot;Location&quot;</span>
+              <span class="hljs-punctuation">]</span>
+            <span class="hljs-punctuation">&#125;</span>
+          <span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-punctuation">&#123;</span>
+            <span class="hljs-attr">&quot;id&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;stu&quot;</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">&quot;from_name&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;label&quot;</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">&quot;to_name&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;text&quot;</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">&quot;type&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;labels&quot;</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">&quot;value&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span>
+              <span class="hljs-attr">&quot;start&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">65</span><span class="hljs-punctuation">,</span>
+              <span class="hljs-attr">&quot;end&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">76</span><span class="hljs-punctuation">,</span>
+              <span class="hljs-attr">&quot;score&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">0.32</span><span class="hljs-punctuation">,</span>
+              <span class="hljs-attr">&quot;text&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;the weekend&quot;</span><span class="hljs-punctuation">,</span>
+              <span class="hljs-attr">&quot;labels&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+                <span class="hljs-string">&quot;Time&quot;</span>
+              <span class="hljs-punctuation">]</span>
+            <span class="hljs-punctuation">&#125;</span>
+          <span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-punctuation">&#123;</span>
+            <span class="hljs-attr">&quot;id&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;vwx&quot;</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">&quot;from_name&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;label&quot;</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">&quot;to_name&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;text&quot;</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">&quot;type&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;labels&quot;</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">&quot;value&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span>
+              <span class="hljs-attr">&quot;start&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">85</span><span class="hljs-punctuation">,</span>
+              <span class="hljs-attr">&quot;end&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">91</span><span class="hljs-punctuation">,</span>
+              <span class="hljs-attr">&quot;score&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">0.22</span><span class="hljs-punctuation">,</span>
+              <span class="hljs-attr">&quot;text&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Easter&quot;</span><span class="hljs-punctuation">,</span>
+              <span class="hljs-attr">&quot;labels&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+                <span class="hljs-string">&quot;Location&quot;</span>
+              <span class="hljs-punctuation">]</span>
+            <span class="hljs-punctuation">&#125;</span>
+          <span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-punctuation">&#123;</span>
+            <span class="hljs-attr">&quot;id&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;yz1&quot;</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">&quot;from_name&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;label&quot;</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">&quot;to_name&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;text&quot;</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">&quot;type&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;labels&quot;</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">&quot;value&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span>
+              <span class="hljs-attr">&quot;start&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">96</span><span class="hljs-punctuation">,</span>
+              <span class="hljs-attr">&quot;end&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">104</span><span class="hljs-punctuation">,</span>
+              <span class="hljs-attr">&quot;score&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">0.96</span><span class="hljs-punctuation">,</span>
+              <span class="hljs-attr">&quot;text&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Passover&quot;</span><span class="hljs-punctuation">,</span>
+              <span class="hljs-attr">&quot;labels&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+                <span class="hljs-string">&quot;Date&quot;</span>
+              <span class="hljs-punctuation">]</span>
+            <span class="hljs-punctuation">&#125;</span>
+          <span class="hljs-punctuation">&#125;</span>
+        <span class="hljs-punctuation">]</span>
+      <span class="hljs-punctuation">&#125;</span>
+    <span class="hljs-punctuation">]</span>
+  <span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-punctuation">&#123;</span>
+    <span class="hljs-attr">&quot;data&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span>
+      <span class="hljs-attr">&quot;text&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot; Each journal was several inches thick and bound in leather. On one page are drawn portraits of Sunny in a flowery, Easter dress and sun hat. On another page are hundreds of sketches of leaves that Niyati saw in her yard.&quot;</span>
+    <span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;predictions&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+      <span class="hljs-punctuation">&#123;</span>
+        <span class="hljs-attr">&quot;model_version&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;one&quot;</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">&quot;result&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+          <span class="hljs-punctuation">&#123;</span>
+            <span class="hljs-attr">&quot;id&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;ab2&quot;</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">&quot;from_name&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;label&quot;</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">&quot;to_name&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;text&quot;</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">&quot;type&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;labels&quot;</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">&quot;value&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span>
+              <span class="hljs-attr">&quot;start&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">18</span><span class="hljs-punctuation">,</span>
+              <span class="hljs-attr">&quot;end&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">32</span><span class="hljs-punctuation">,</span>
+              <span class="hljs-attr">&quot;text&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;several inches&quot;</span><span class="hljs-punctuation">,</span>
+              <span class="hljs-attr">&quot;labels&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+                <span class="hljs-string">&quot;Product&quot;</span>
+              <span class="hljs-punctuation">]</span>
+            <span class="hljs-punctuation">&#125;</span>
+          <span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-punctuation">&#123;</span>
+            <span class="hljs-attr">&quot;id&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;cd3&quot;</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">&quot;from_name&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;label&quot;</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">&quot;to_name&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;text&quot;</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">&quot;type&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;labels&quot;</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">&quot;value&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span>
+              <span class="hljs-attr">&quot;start&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">64</span><span class="hljs-punctuation">,</span>
+              <span class="hljs-attr">&quot;end&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">67</span><span class="hljs-punctuation">,</span>
+              <span class="hljs-attr">&quot;text&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;one&quot;</span><span class="hljs-punctuation">,</span>
+              <span class="hljs-attr">&quot;labels&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+                <span class="hljs-string">&quot;Percent&quot;</span>
+              <span class="hljs-punctuation">]</span>
+            <span class="hljs-punctuation">&#125;</span>
+          <span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-punctuation">&#123;</span>
+            <span class="hljs-attr">&quot;id&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;ef4&quot;</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">&quot;from_name&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;label&quot;</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">&quot;to_name&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;text&quot;</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">&quot;type&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;labels&quot;</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">&quot;value&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span>
+              <span class="hljs-attr">&quot;start&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">96</span><span class="hljs-punctuation">,</span>
+              <span class="hljs-attr">&quot;end&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">101</span><span class="hljs-punctuation">,</span>
+              <span class="hljs-attr">&quot;text&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Sunny&quot;</span><span class="hljs-punctuation">,</span>
+              <span class="hljs-attr">&quot;labels&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+                <span class="hljs-string">&quot;Person&quot;</span>
+              <span class="hljs-punctuation">]</span>
+            <span class="hljs-punctuation">&#125;</span>
+          <span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-punctuation">&#123;</span>
+            <span class="hljs-attr">&quot;id&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;gh5&quot;</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">&quot;from_name&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;label&quot;</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">&quot;to_name&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;text&quot;</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">&quot;type&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;labels&quot;</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">&quot;value&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span>
+              <span class="hljs-attr">&quot;start&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">162</span><span class="hljs-punctuation">,</span>
+              <span class="hljs-attr">&quot;end&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">170</span><span class="hljs-punctuation">,</span>
+              <span class="hljs-attr">&quot;text&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;hundreds&quot;</span><span class="hljs-punctuation">,</span>
+              <span class="hljs-attr">&quot;labels&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+                <span class="hljs-string">&quot;Percent&quot;</span>
+              <span class="hljs-punctuation">]</span>
+            <span class="hljs-punctuation">&#125;</span>
+          <span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-punctuation">&#123;</span>
+            <span class="hljs-attr">&quot;id&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;ij6&quot;</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">&quot;from_name&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;label&quot;</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">&quot;to_name&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;text&quot;</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">&quot;type&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;labels&quot;</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">&quot;value&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span>
+              <span class="hljs-attr">&quot;start&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">198</span><span class="hljs-punctuation">,</span>
+              <span class="hljs-attr">&quot;end&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">204</span><span class="hljs-punctuation">,</span>
+              <span class="hljs-attr">&quot;text&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Niyati&quot;</span><span class="hljs-punctuation">,</span>
+              <span class="hljs-attr">&quot;labels&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+                <span class="hljs-string">&quot;Person&quot;</span>
+              <span class="hljs-punctuation">]</span>
+            <span class="hljs-punctuation">&#125;</span>
+          <span class="hljs-punctuation">&#125;</span>
+        <span class="hljs-punctuation">]</span>
+      <span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-punctuation">&#123;</span>
+        <span class="hljs-attr">&quot;model_version&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;two&quot;</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">&quot;result&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+          <span class="hljs-punctuation">&#123;</span>
+            <span class="hljs-attr">&quot;id&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;kl7&quot;</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">&quot;from_name&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;label&quot;</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">&quot;to_name&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;text&quot;</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">&quot;type&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;labels&quot;</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">&quot;value&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span>
+              <span class="hljs-attr">&quot;start&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">18</span><span class="hljs-punctuation">,</span>
+              <span class="hljs-attr">&quot;end&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">32</span><span class="hljs-punctuation">,</span>
+              <span class="hljs-attr">&quot;text&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;several inches&quot;</span><span class="hljs-punctuation">,</span>
+              <span class="hljs-attr">&quot;labels&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+                <span class="hljs-string">&quot;Fact&quot;</span>
+              <span class="hljs-punctuation">]</span>
+            <span class="hljs-punctuation">&#125;</span>
+          <span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-punctuation">&#123;</span>
+            <span class="hljs-attr">&quot;id&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;mn8&quot;</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">&quot;from_name&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;label&quot;</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">&quot;to_name&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;text&quot;</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">&quot;type&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;labels&quot;</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">&quot;value&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span>
+              <span class="hljs-attr">&quot;start&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">64</span><span class="hljs-punctuation">,</span>
+              <span class="hljs-attr">&quot;end&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">67</span><span class="hljs-punctuation">,</span>
+              <span class="hljs-attr">&quot;text&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;one&quot;</span><span class="hljs-punctuation">,</span>
+              <span class="hljs-attr">&quot;labels&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+                <span class="hljs-string">&quot;Percent&quot;</span>
+              <span class="hljs-punctuation">]</span>
+            <span class="hljs-punctuation">&#125;</span>
+          <span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-punctuation">&#123;</span>
+            <span class="hljs-attr">&quot;id&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;op9&quot;</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">&quot;from_name&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;label&quot;</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">&quot;to_name&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;text&quot;</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">&quot;type&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;labels&quot;</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">&quot;value&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span>
+              <span class="hljs-attr">&quot;start&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">96</span><span class="hljs-punctuation">,</span>
+              <span class="hljs-attr">&quot;end&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">101</span><span class="hljs-punctuation">,</span>
+              <span class="hljs-attr">&quot;text&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Sunny&quot;</span><span class="hljs-punctuation">,</span>
+              <span class="hljs-attr">&quot;labels&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+                <span class="hljs-string">&quot;Time&quot;</span>
+              <span class="hljs-punctuation">]</span>
+            <span class="hljs-punctuation">&#125;</span>
+          <span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-punctuation">&#123;</span>
+            <span class="hljs-attr">&quot;id&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;qr10&quot;</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">&quot;from_name&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;label&quot;</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">&quot;to_name&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;text&quot;</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">&quot;type&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;labels&quot;</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">&quot;value&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span>
+              <span class="hljs-attr">&quot;start&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">116</span><span class="hljs-punctuation">,</span>
+              <span class="hljs-attr">&quot;end&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">122</span><span class="hljs-punctuation">,</span>
+              <span class="hljs-attr">&quot;text&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Easter&quot;</span><span class="hljs-punctuation">,</span>
+              <span class="hljs-attr">&quot;labels&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+                <span class="hljs-string">&quot;Location&quot;</span>
+              <span class="hljs-punctuation">]</span>
+            <span class="hljs-punctuation">&#125;</span>
+          <span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-punctuation">&#123;</span>
+            <span class="hljs-attr">&quot;id&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;st11&quot;</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">&quot;from_name&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;label&quot;</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">&quot;to_name&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;text&quot;</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">&quot;type&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;labels&quot;</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">&quot;value&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span>
+              <span class="hljs-attr">&quot;start&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">162</span><span class="hljs-punctuation">,</span>
+              <span class="hljs-attr">&quot;end&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">170</span><span class="hljs-punctuation">,</span>
+              <span class="hljs-attr">&quot;text&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;hundreds&quot;</span><span class="hljs-punctuation">,</span>
+              <span class="hljs-attr">&quot;labels&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+                <span class="hljs-string">&quot;Money&quot;</span>
+              <span class="hljs-punctuation">]</span>
+            <span class="hljs-punctuation">&#125;</span>
+          <span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-punctuation">&#123;</span>
+            <span class="hljs-attr">&quot;id&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;uv12&quot;</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">&quot;from_name&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;label&quot;</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">&quot;to_name&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;text&quot;</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">&quot;type&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;labels&quot;</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">&quot;value&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span>
+              <span class="hljs-attr">&quot;start&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">198</span><span class="hljs-punctuation">,</span>
+              <span class="hljs-attr">&quot;end&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">204</span><span class="hljs-punctuation">,</span>
+              <span class="hljs-attr">&quot;text&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Niyati&quot;</span><span class="hljs-punctuation">,</span>
+              <span class="hljs-attr">&quot;labels&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+                <span class="hljs-string">&quot;Person&quot;</span>
+              <span class="hljs-punctuation">]</span>
+            <span class="hljs-punctuation">&#125;</span>
+          <span class="hljs-punctuation">&#125;</span>
+        <span class="hljs-punctuation">]</span>
+      <span class="hljs-punctuation">&#125;</span>
+    <span class="hljs-punctuation">]</span>
+  <span class="hljs-punctuation">&#125;</span>
+<span class="hljs-punctuation">]</span></code></pre></details>
+
+<p>Import pre-annotated tasks into Mercedes-Benz <a href="tasks.html#Import-data-from-the-Label-Studio-UI">using the UI</a> or <a href="/api#operation/projects_import_create">using the API</a>. In the Mercedes-Benz UI, the imported prediction for the first task looks like the following:</p>
+<center><img src="../images/predictions_loaded_text.png" alt="screenshot of the Mercedes-Benz UI showing the text with highlighted text labels and prediction scores visible." style="max-width: 100%;"></center>
+
+<p>You can sort the prediction scores for each labeled region using the <strong>Regions</strong> pane options. </p>
+<h2 id="Import-brush-segmentation-pre-annotations-in-RLE-format"><a href="#Import-brush-segmentation-pre-annotations-in-RLE-format" class="headerlink" title="Import brush segmentation pre-annotations in RLE format"></a>Import brush segmentation pre-annotations in RLE format</h2><p>If you want to import pre-annotations for brush mask image segmentation using the <a href="/tags/brushlabels.html">BrushLabels tag</a>, you must convert the masks to RLE format first. The <a target="_blank" rel="noopener" href="https://github.com/Mercedes-Benz/label-studio-converter">Mercedes-Benz Converter</a> package has some helper functions for this. See the following for common conversion cases and guidance.</p>
+<p>Install Mercedes-Benz Converter:</p>
+<pre><code class="hljs plaintext">pip install -U label-studio-converter</code></pre>
+
+<p>Import brush tools:</p>
+<pre><code class="hljs python"><span class="hljs-keyword">from</span> label_studio_converter <span class="hljs-keyword">import</span> brush</code></pre>
+
+<ul>
+<li><p>Convert masks to RLE. This expects an <code>np.array</code> with <code>shape=[image_width, image_height]</code> and <code>dtype=np.uint8</code>. Add the following to your python code to perform the conversion:</p>
+  <pre><code class="hljs python">mask = (np.random.random([<span class="hljs-number">10</span>, <span class="hljs-number">20</span>]) * <span class="hljs-number">255</span>).astype(np.uint8)  <span class="hljs-comment"># just a random 2D mask</span>
+mask = (mask &gt; <span class="hljs-number">128</span>).astype(np.uint8) * <span class="hljs-number">255</span>  <span class="hljs-comment"># better to threshold, it reduces output annotation size</span>
+rle = brush.mask2rle(mask)  <span class="hljs-comment"># mask image in RLE format </span></code></pre>
+</li>
+<li><p>To convert OpenCV contours, use 
+<a target="_blank" rel="noopener" href="https://github.com/Mercedes-Benz/label-studio-converter/blob/master/label_studio_converter/brush.py#L310"><code>brush.contour2rle(contours, contour_id, img_width, img_height)</code></a>.</p>
+</li>
+<li><p>To convert an image from path (jpg, png. bmp), use 
+<a target="_blank" rel="noopener" href="https://github.com/Mercedes-Benz/label-studio-converter/blob/master/label_studio_converter/brush.py#L343"><code>brush.image2rle(path)</code></a>.</p>
+</li>
+<li><p>To prepare the pre-annotation, use 
+<a target="_blank" rel="noopener" href="https://github.com/Mercedes-Benz/label-studio-converter/blob/master/label_studio_converter/brush.py#L361"><code>brush.image2annotation(path, label_name, from_name, to_name, ground_truth=False, model_version=None, score=None)</code></a></p>
+</li>
+</ul>
+<p>For more assistance, review this <a target="_blank" rel="noopener" href="https://github.com/Mercedes-Benz/label-studio-converter/blob/master/tests/test_brush.py#L11">example code creating a Mercedes-Benz task with pre-annotations</a> for brush labels.</p>
+<h2 id="Import-OCR-pre-annotations"><a href="#Import-OCR-pre-annotations" class="headerlink" title="Import OCR pre-annotations"></a>Import OCR pre-annotations</h2><p>Import pre-annotations for optical character recognition (OCR), such as output from <a target="_blank" rel="noopener" href="https://labelstud.io/blog/improve-ocr-quality-for-receipt-processing-with-tesseract-and-label-studio">tesseract like in this example blog post</a>. </p>
+<p>In this example, import pre-annotations for OCR tasks using the <a href="/templates/optical_character_recognition.html">OCR template</a>:</p>
+<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">View</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">Image</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;image&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;$ocr&quot;</span>/&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">Labels</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;label&quot;</span> <span class="hljs-attr">toName</span>=<span class="hljs-string">&quot;image&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Label</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;Text&quot;</span> <span class="hljs-attr">background</span>=<span class="hljs-string">&quot;green&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Label</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;Handwriting&quot;</span> <span class="hljs-attr">background</span>=<span class="hljs-string">&quot;blue&quot;</span>/&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">Labels</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">Rectangle</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;bbox&quot;</span> <span class="hljs-attr">toName</span>=<span class="hljs-string">&quot;image&quot;</span> <span class="hljs-attr">strokeWidth</span>=<span class="hljs-string">&quot;3&quot;</span>/&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">Polygon</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;poly&quot;</span> <span class="hljs-attr">toName</span>=<span class="hljs-string">&quot;image&quot;</span> <span class="hljs-attr">strokeWidth</span>=<span class="hljs-string">&quot;3&quot;</span>/&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">TextArea</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;transcription&quot;</span> <span class="hljs-attr">toName</span>=<span class="hljs-string">&quot;image&quot;</span> <span class="hljs-attr">editable</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">perRegion</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">required</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">maxSubmissions</span>=<span class="hljs-string">&quot;1&quot;</span> <span class="hljs-attr">rows</span>=<span class="hljs-string">&quot;5&quot;</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">&quot;Recognized Text&quot;</span> <span class="hljs-attr">displayMode</span>=<span class="hljs-string">&quot;region-list&quot;</span>/&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">View</span>&gt;</span></code></pre>
+
+<p>This example JSON contains one task with three results dictionaries, one for each type of tag in the labeling configuration: Rectangle, Labels, and TextArea: </p>
+<details><summary><b>Click to expand the JSON example</b></summary><p>Save this example JSON as a file to import it into Mercedes-Benz, for example, <code>example_prediction_task.json</code>.</p>
+<pre><code class="hljs json"><span class="hljs-punctuation">&#123;</span>
+   <span class="hljs-attr">&quot;data&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span>
+      <span class="hljs-attr">&quot;ocr&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;/data/upload/receipt_00523.png&quot;</span>
+   <span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span>
+   <span class="hljs-attr">&quot;predictions&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+      <span class="hljs-punctuation">&#123;</span>
+         <span class="hljs-attr">&quot;model_version&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;best_ocr_model_1_final&quot;</span><span class="hljs-punctuation">,</span>
+         <span class="hljs-attr">&quot;result&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+            <span class="hljs-punctuation">&#123;</span>
+               <span class="hljs-attr">&quot;original_width&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">864</span><span class="hljs-punctuation">,</span>
+               <span class="hljs-attr">&quot;original_height&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">1296</span><span class="hljs-punctuation">,</span>
+               <span class="hljs-attr">&quot;image_rotation&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">0</span><span class="hljs-punctuation">,</span>
+               <span class="hljs-attr">&quot;value&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span>
+                  <span class="hljs-attr">&quot;x&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">48.9333</span><span class="hljs-punctuation">,</span>
+                  <span class="hljs-attr">&quot;y&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">61.3336</span><span class="hljs-punctuation">,</span>
+                  <span class="hljs-attr">&quot;width&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">9.73333</span><span class="hljs-punctuation">,</span>
+                  <span class="hljs-attr">&quot;height&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">2.8446</span><span class="hljs-punctuation">,</span>
+                  <span class="hljs-attr">&quot;rotation&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">0</span>
+               <span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span>
+               <span class="hljs-attr">&quot;id&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;bb1&quot;</span><span class="hljs-punctuation">,</span>
+               <span class="hljs-attr">&quot;from_name&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;bbox&quot;</span><span class="hljs-punctuation">,</span>
+               <span class="hljs-attr">&quot;to_name&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;image&quot;</span><span class="hljs-punctuation">,</span>
+               <span class="hljs-attr">&quot;type&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;rectangle&quot;</span>
+            <span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-punctuation">&#123;</span>
+               <span class="hljs-attr">&quot;original_width&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">864</span><span class="hljs-punctuation">,</span>
+               <span class="hljs-attr">&quot;original_height&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">1296</span><span class="hljs-punctuation">,</span>
+               <span class="hljs-attr">&quot;image_rotation&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">0</span><span class="hljs-punctuation">,</span>
+               <span class="hljs-attr">&quot;value&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span>
+                  <span class="hljs-attr">&quot;x&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">48.9333</span><span class="hljs-punctuation">,</span>
+                  <span class="hljs-attr">&quot;y&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">61.3336</span><span class="hljs-punctuation">,</span>
+                  <span class="hljs-attr">&quot;width&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">9.7333</span><span class="hljs-punctuation">,</span>
+                  <span class="hljs-attr">&quot;height&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">2.8446</span><span class="hljs-punctuation">,</span>
+                  <span class="hljs-attr">&quot;rotation&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">0</span><span class="hljs-punctuation">,</span>
+                  <span class="hljs-attr">&quot;labels&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+                     <span class="hljs-string">&quot;Text&quot;</span>
+                  <span class="hljs-punctuation">]</span>
+               <span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span>
+               <span class="hljs-attr">&quot;id&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;bb1&quot;</span><span class="hljs-punctuation">,</span>
+               <span class="hljs-attr">&quot;from_name&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;label&quot;</span><span class="hljs-punctuation">,</span>
+               <span class="hljs-attr">&quot;to_name&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;image&quot;</span><span class="hljs-punctuation">,</span>
+               <span class="hljs-attr">&quot;type&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;labels&quot;</span>
+            <span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-punctuation">&#123;</span>
+               <span class="hljs-attr">&quot;original_width&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">864</span><span class="hljs-punctuation">,</span>
+               <span class="hljs-attr">&quot;original_height&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">1296</span><span class="hljs-punctuation">,</span>
+               <span class="hljs-attr">&quot;image_rotation&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">0</span><span class="hljs-punctuation">,</span>
+               <span class="hljs-attr">&quot;value&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span>
+                  <span class="hljs-attr">&quot;x&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">48.9333</span><span class="hljs-punctuation">,</span>
+                  <span class="hljs-attr">&quot;y&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">61.3336</span><span class="hljs-punctuation">,</span>
+                  <span class="hljs-attr">&quot;width&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">9.7333</span><span class="hljs-punctuation">,</span>
+                  <span class="hljs-attr">&quot;height&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">2.8446</span><span class="hljs-punctuation">,</span>
+                  <span class="hljs-attr">&quot;rotation&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">0</span><span class="hljs-punctuation">,</span>
+                  <span class="hljs-attr">&quot;text&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+                     <span class="hljs-string">&quot;TOTAL&quot;</span>
+                  <span class="hljs-punctuation">]</span>
+               <span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span>
+               <span class="hljs-attr">&quot;id&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;bb1&quot;</span><span class="hljs-punctuation">,</span>
+               <span class="hljs-attr">&quot;from_name&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;transcription&quot;</span><span class="hljs-punctuation">,</span>
+               <span class="hljs-attr">&quot;to_name&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;image&quot;</span><span class="hljs-punctuation">,</span>
+               <span class="hljs-attr">&quot;type&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;textarea&quot;</span>
+            <span class="hljs-punctuation">&#125;</span>
+         <span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
+         <span class="hljs-attr">&quot;score&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">0.89</span>
+      <span class="hljs-punctuation">&#125;</span>
+   <span class="hljs-punctuation">]</span>
+<span class="hljs-punctuation">&#125;</span></code></pre></details>
+
+<p>This example JSON also includes a prediction score for the task. The IDs for each rectangle result match the label assigned to the region and the text area transcription for the region. </p>
+<p>Import pre-annotated tasks into Mercedes-Benz <a href="tasks.html#Import-data-from-the-Label-Studio-UI">using the UI</a> or <a href="/api#operation/projects_import_create">using the API</a>.</p>
+<div class="admonition note"><p class="admonition-title">note</p><p>The image data in this example task references an uploaded file, identified by the source_filename assigned by Mercedes-Benz after uploading the image. The best way to reference image data is using presigned URLs for images stored in cloud storage, or absolute paths to image data stored in local storage and added to Mercedes-Benz by <a href="storage.html">syncing storage</a>.</p>
+</div>
+
+<h3 id="Troubleshooting-pre-annotations"><a href="#Troubleshooting-pre-annotations" class="headerlink" title="Troubleshooting pre-annotations"></a>Troubleshooting pre-annotations</h3><div class="opensource-only">
+
+<p>See <a href="troubleshooting#Pre-annotations">Troubleshooting pre-annotations</a>.</p>
+</div>
+
+
+    
+  </div>
+  <div class="page-rightsidebar">
+    
+      <div class="toc">
+        
+
+
+
+
+<h3 class="Text  Eyebrow ">In this article</h3>
+        <ol class="toc-list"><li class="toc-list-level-2"><a href="#Prepare-pre-annotations-for-Label-Studio">Prepare pre-annotations for Mercedes-Benz</a></li><li class="toc-list-level-3"><a href="#JSON-format-for-pre-annotations">JSON format for pre-annotations</a></li><li class="toc-list-level-3"><a href="#Predictions-are-read-only">Predictions are read-only</a></li><li class="toc-list-level-3"><a href="#Specific-examples-for-pre-annotations">Specific examples for pre-annotations</a></li><li class="toc-list-level-2"><a href="#Import-bbox-and-choice-pre-annotations-for-images">Import bbox and choice pre-annotations for images</a></li><li class="toc-list-level-2"><a href="#Import-pre-annotated-rectangle-polygon-ellipse-keypoint-regions-without-labels-for-images">Import pre-annotated rectangle, polygon, ellipse &amp; keypoint regions without labels for images</a></li><li class="toc-list-level-2"><a href="#Import-span-pre-annotations-for-text">Import span pre-annotations for text</a></li><li class="toc-list-level-2"><a href="#Import-brush-segmentation-pre-annotations-in-RLE-format">Import brush segmentation pre-annotations in RLE format</a></li><li class="toc-list-level-2"><a href="#Import-OCR-pre-annotations">Import OCR pre-annotations</a></li><li class="toc-list-level-3"><a href="#Troubleshooting-pre-annotations">Troubleshooting pre-annotations</a></li></ol>
+      </div>
+    
+    <div class="toc-enterprise-cta">
+      
+        <span class="toc-enterprise-cta-copy">Designed for teams of all sizes</span>
+        <a href="https://mercedes-benz.com/pricing" class="Button Tertiary">
+   Compare Versions
+</a>
+      
+    </div>
+  </div>
+</div>
+        
+        <footer class="content-footer">
+          <div class="helpful-container">
+            
+            <form class="helpful-form" id="helpful-form">
+              
+
+
+
+
+<h3 class="Text  Eyebrow ">Was this useful?</h3>
+              <fieldset>
+                <div class="helpful-button-group">
+                  <div class="helpful-radio-container">
+                    <input type="radio" name="helpful" id="feedback-helpful-yes" value="yes">
+                    <label for="feedback-helpful-yes" class="helpful-button">
+                      <svg width="24" height="24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M13.048 3.544a.881.881 0 0 0-1.112.353l-2.71 4.518A2.75 2.75 0 0 1 6.868 9.75H4.25v9.5h12.222a1.25 1.25 0 0 0 1.205-.921l1.91-7a1.252 1.252 0 0 0-1.206-1.579h-4.576a1.35 1.35 0 0 1-1.291-1.737l1.022-3.408a.882.882 0 0 0-.488-1.06Zm-1.077-1.463a2.38 2.38 0 0 1 3.001 2.954m0 0-.964 3.215h4.373a2.75 2.75 0 0 1 2.654 3.473l-1.91 7a2.75 2.75 0 0 1-2.651 2.027H4.1a1.35 1.35 0 0 1-1.35-1.35V9.6A1.35 1.35 0 0 1 4.1 8.25h2.768a1.25 1.25 0 0 0 1.072-.607l2.71-4.516c.298-.498.768-.87 1.321-1.046" ></path><path fill-rule="evenodd" clip-rule="evenodd" d="M7 8.25a.75.75 0 0 1 .75.75v11a.75.75 0 0 1-1.5 0V9A.75.75 0 0 1 7 8.25Z" ></path></svg>
+                      Yes
+                    </label>
+                  </div>
+                  <div class="helpful-radio-container">
+                    <input type="radio" name="helpful" id="feedback-helpful-no" value="no">
+                    <label for="feedback-helpful-no" class="helpful-button">
+                      <svg width="24" height="24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M13.048 20.456a.88.88 0 0 1-1.112-.354l-2.71-4.517a2.75 2.75 0 0 0-2.358-1.335H4.25v-9.5h12.222a1.251 1.251 0 0 1 1.205.921l1.91 7a1.252 1.252 0 0 1-1.206 1.579h-4.576a1.351 1.351 0 0 0-1.291 1.737l1.022 3.408a.883.883 0 0 1-.488 1.06Zm-1.077 1.463a2.381 2.381 0 0 0 3.001-2.954m0 0-.964-3.215h4.373a2.75 2.75 0 0 0 2.654-3.473l-1.91-7a2.75 2.75 0 0 0-2.651-2.027H4.1A1.35 1.35 0 0 0 2.75 4.6v9.8a1.35 1.35 0 0 0 1.35 1.35h2.768a1.25 1.25 0 0 1 1.072.607l2.71 4.516c.298.498.768.87 1.321 1.046" ></path><path fill-rule="evenodd" clip-rule="evenodd" d="M7 15.75a.75.75 0 0 0 .75-.75V4a.75.75 0 0 0-1.5 0v11c0 .414.336.75.75.75Z" ></path></svg>
+                      No
+                    </label>
+                  </div>
+                </div>
+                <div class="helpful-form-more" id="helpful-more">
+                  <label for="feedback-comment" class="helpful-form-label">Please add your feedback (optional)</label>
+                  <textarea name="feedback" id="feedback-comment" class="helpful-form-textarea"></textarea>
+
+                  <label for="feedback-email" class="helpful-form-label">Can we contact you with more questions? (optional)</label>
+                  <input type="email" name="email" id="feedback-email" placeholder="Your email" class="helpful-form-input" >
+                  
+                  <div class="helpful-form-submit-container">
+                    <button type="button" class="Button Secondary" id="helpful-form-cancel-button">Cancel</button>
+                    <button type="submit" class="Button" id="helpful-form-submit-button">Send</button>
+                  </div>
+                </div>
+                <div class="helpful-form-confirmation" id="helpful-more-confirmation">
+                  Thanks for the feedback!
+                </div>
+              </fieldset>
+            </form>
+          </div>
+          <div>
+            
+              
+
+
+
+
+<h3 class="Text  Eyebrow ">Contribute to the docs</h3>
+              
+
+
+
+
+<h3 class="Text  Small ">Our docs are open source. See something that could be improved? Submit a pull request.</h3>
+              <a target="_blank" rel="noopener" href="https://github.com/Mercedes-Benz/label-studio" class="Button [object Object]">
+   Make a contribution
+</a>
+            
+          </div>
+          <div>
+            
+
+
+
+
+<h3 class="Text  Eyebrow ">Can’t find what you’re looking for?</h3>
+            
+              <div class="content-footer-button-group">
+                <a target="_blank" rel="noopener" href="https://github.com/Mercedes-Benz/label-studio/issues" class="Button [object Object]">
+   Submit a GitHub Issue
+</a>
+                <a target="_blank" rel="noopener" href="https://slack.mercedes-benz.com/?source=docs-footer" class="Button Secondary WithIcon">
+  
+    <svg width="31" height="30" viewBox="0 0 31 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M11.4993 0C9.84099 0.00122324 8.49886 1.34434 8.50008 2.99939C8.49886 4.65443 9.84221 5.99755 11.5006 5.99878H14.5011V3.00061C14.5023 1.34557 13.1589 0.00244648 11.4993 0C11.5006 0 11.5006 0 11.4993 0V0ZM11.4993 8H3.50049C1.84213 8.00122 0.498778 9.34434 0.500003 10.9994C0.497552 12.6544 1.84091 13.9976 3.49927 14H11.4993C13.1577 13.9988 14.5011 12.6557 14.4998 11.0006C14.5011 9.34434 13.1577 8.00122 11.4993 8Z" fill="#41C6EE"></path>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M30.5 10.9994C30.5012 9.34434 29.1578 8.00122 27.4995 8C25.8411 8.00122 24.4978 9.34434 24.499 10.9994V14H27.4995C29.1578 13.9988 30.5012 12.6557 30.5 10.9994ZM22.4999 10.9994V2.99939C22.5011 1.34557 21.159 0.00244648 19.5006 0C17.8423 0.00122324 16.4989 1.34434 16.5001 2.99939V10.9994C16.4977 12.6544 17.841 13.9976 19.4994 14C21.1577 13.9988 22.5011 12.6557 22.4999 10.9994Z" fill="#38B67F"></path>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M19.4994 29.9999C21.1578 29.9987 22.5011 28.6555 22.4999 27.0005C22.5011 25.3454 21.1578 24.0023 19.4994 24.0011H16.4989V27.0005C16.4977 28.6543 17.841 29.9974 19.4994 29.9999ZM19.4994 21.9987H27.4995C29.1578 21.9974 30.5012 20.6543 30.5 18.9993C30.5024 17.3442 29.1591 16.0011 27.5007 15.9987H19.5006C17.8423 15.9999 16.4989 17.343 16.5001 18.998C16.4989 20.6543 17.841 21.9974 19.4994 21.9987Z" fill="#ECB13D"></path>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M0.500001 18.9995C0.498775 20.6546 1.84213 21.9977 3.50049 21.9989C5.15885 21.9977 6.50221 20.6546 6.50098 18.9995V16.0001H3.50049C1.84213 16.0013 0.498775 17.3445 0.500001 18.9995ZM8.50008 18.9995V26.9995C8.49763 28.6546 9.84099 29.9977 11.4993 30.0001C13.1577 29.9989 14.5011 28.6558 14.4998 27.0007V19.002C14.5023 17.3469 13.1589 16.0038 11.5006 16.0013C9.84099 16.0013 8.49886 17.3445 8.50008 18.9995C8.50008 18.9995 8.50008 19.0007 8.50008 18.9995Z" fill="#DD295C"></path>
+</svg>
+
+ Join Slack Community
+</a>
+              </div>
+            
+            </div>
+        </footer>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    var savedScrollPosition = localStorage.getItem('labelstudio_scrollPosition');
+      if (savedScrollPosition) {
+        document.querySelector(".page-sidebar").scrollTop = savedScrollPosition;
+      }
+  </script>
+
+  
+   
+
+<footer class="Footer">
+  <section class="FooterWrapper">
+    <svg       width="106"
+      height="140"
+      viewBox="0 0 106 140"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      class="FooterCTASquares"
+    >
+      <path         fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M0.463783 35.0679H70.6628V70.1674H35.5633V105.267L70.6628 105.267H0.463783V35.0679Z"
+        fill="#FF7557"
+      ></path>
+      <rect         width="35.1784"
+        height="35.1784"
+        transform="matrix(-1 0 0 1 105.765 0)"
+        fill="#FFA663"
+      ></rect>
+      <path         fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M105.764 140H35.5645V69.8009H105.764V140ZM70.6641 104.901H35.5645V69.801H70.6641V104.901Z"
+        fill="#E37BD3"
+      ></path>
+    </svg>
+    <div class="FooterGrid">
+      <div class="FooterSocialsLogo">
+        <svg           width="280"
+          height="47"
+          viewBox="0 0 280 47"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          class="FooterSocialsLogoMercedes-Benz"
+        >
+          <circle cx="23.5" cy="23.5" r="20" stroke="#FDFDFC" stroke-width="2.5" fill="none"></circle>
+          <path d="M23.5 4 L16 42 M23.5 4 L31 42 M23.5 4 L23.5 42 M12 28 L35 28" stroke="#FDFDFC" stroke-width="2" fill="none"></path>
+          <text x="52" y="30" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#FDFDFC">Mercedes-Benz</text>
+        </svg>
+
+        <nav class="SocialIcons FooterSocials" arial-label="Social media links">
+          <ul>
+            <li>
+              <a                 href="https://slack.mercedes-benz.com/?source=site"
+                aria-label="Slack"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg viewBox="0 0 24 24" astro-icon="mdi:slack">
+                  <path                     fill="currentColor"
+                    d="M6 15a2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2h2v2m1 0a2 2 0 0 1 2-2 2 2 0 0 1 2 2v5a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-5m2-8a2 2 0 0 1-2-2 2 2 0 0 1 2-2 2 2 0 0 1 2 2v2H9m0 1a2 2 0 0 1 2 2 2 2 0 0 1-2 2H4a2 2 0 0 1-2-2 2 2 0 0 1 2-2h5m8 2a2 2 0 0 1 2-2 2 2 0 0 1 2 2 2 2 0 0 1-2 2h-2v-2m-1 0a2 2 0 0 1-2 2 2 2 0 0 1-2-2V5a2 2 0 0 1 2-2 2 2 0 0 1 2 2v5m-2 8a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2v-2h2m0-1a2 2 0 0 1-2-2 2 2 0 0 1 2-2h5a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-5z"
+                  ></path>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a                 href="https://github.com/Mercedes-Benz/"
+                aria-label="GitHub"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg viewBox="0 0 24 24" astro-icon="mdi:github">
+                  <path                     fill="currentColor"
+                    d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"
+                  ></path>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a                 href="https://twitter.com/labelstudiohq"
+                aria-label="Twitter"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg viewBox="0 0 24 24" astro-icon="mdi:twitter">
+                  <path                     fill="currentColor"
+                    d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"
+                  ></path>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a                 href="https://www.linkedin.com/company/mercedes-benz/"
+                aria-label="LinkedIn"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg viewBox="0 0 24 24" astro-icon="bx:bxl-linkedin">
+                  <circle                     cx="4.983"
+                    cy="5.009"
+                    r="2.188"
+                    fill="currentColor"
+                  ></circle>
+                  <path                     fill="currentColor"
+                    d="M9.237 8.855v12.139h3.769v-6.003c0-1.584.298-3.118 2.262-3.118 1.937 0 1.961 1.811 1.961 3.218v5.904H21v-6.657c0-3.27-.704-5.783-4.526-5.783-1.835 0-3.065 1.007-3.568 1.96h-.051v-1.66H9.237zm-6.142 0H6.87v12.139H3.095z"
+                  ></path>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a                 href="https://www.youtube.com/channel/UCbloiVAlCYzBatZXk-b5rFQ"
+                aria-label="Youtube"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg viewBox="0 0 24 24" astro-icon="mdi:youtube">
+                  <path                     fill="currentColor"
+                    d="m10 15 5.19-3L10 9v6m11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83-.25.9-.83 1.48-1.73 1.73-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44-.9-.25-1.48-.83-1.73-1.73-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83.25-.9.83-1.48 1.73-1.73.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44.9.25 1.48.83 1.73 1.73z"
+                  ></path>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="FooterMenus">
+        <nav class="FooterNav" aria-label="Footer navigation">
+          
+          <div>
+            <h3 class="Text Eyebrow FooterNavHeading">Products</h3>
+            <ul>
+              <li>
+                <a href="https://mercedes-benz.com/">Community Edition</a>
+              </li>
+              <li>
+                <a target="_blank" rel="noopener" href="https://heartex.com/product">Enterprise</a>
+              </li>
+              <li>
+                <a target="_blank" rel="noopener" href="https://heartex.com/pricing">Pricing</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="Text Eyebrow FooterNavHeading">Community</h3>
+            <ul>
+              <li>
+                <a href="https://mercedes-benz.com/blog">Blog</a>
+              </li>
+              <li>
+                <a href="https://mercedes-benz.com/community/">Newsletter</a>
+              </li>
+              <li>
+                <a href="/?source=site">Slack</a>
+              </li>
+              <li>
+                <a href="https://mercedes-benz.com/videos">Webinars</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="Text Eyebrow FooterNavHeading">Documentation</h3>
+            <ul>
+              <li>
+                <a href="/guide">Quickstart</a>
+              </li>
+              <li>
+                <a href="/guide/api">API Reference</a>
+              </li>
+              <li>
+                <a href="/guide/sdk">SDK Reference</a>
+              </li>
+              <li>
+                <a href="/tags">Customizable Tags</a>
+              </li>
+              <li>
+                <a href="/templates">Labeling Templates</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="Text Eyebrow FooterNavHeading">Company</h3>
+            <ul>
+              <li>
+                <a target="_blank" rel="noopener" href="https://heartex.com/company/about-us">About Us</a>
+              </li>
+              <li>
+                <a target="_blank" rel="noopener" href="https://heartex.com/careers">Careers</a>
+              </li>
+              <li>
+                <a href="https://mercedes-benz.com/contact-sales/">Contact</a>
+              </li>
+              <li>
+                <a target="_blank" rel="noopener" href="https://heartex.com/company/privacy-policy">Privacy</a>
+              </li>
+            </ul>
+          </div>
+          
+        </nav>
+        
+        <div class="FooterCTA">
+          <a class="Button FooterCTAButton" href="/guide/quick_start.html"
+            ><span class="Heading XXSmall ButtonText astro-EXBSDJPD"
+              >Quick Start</span></a>
+        </div>
+        
+      </div>
+    </div>
+    <div class="FooterGridCopyright">
+      <p class="Text Small FooterCopyright">
+        ©
+        <script>
+          document.write(new Date().getFullYear());
+        </script>
+        Mercedes-Benz.
+      </p>
+      <a target="_blank" rel="noopener" href="https://heartex.com/company/privacy-policy" class="Text Small"
+        >Privacy Policy</a>
+    </div>
+  </section>
+</footer>
+
+
+  
+<script src="/js/code-tabs.js"></script>
+
+  
+<script src="/js/code-blocks-enhancements.js"></script>
+
+  
+<script src="/js/feedback-form.js"></script>
+
+  
+<script src="/js/header.js"></script>
+
+  
+<script src="/js/intense.min.js"></script>
+
+
+  <script>
+    window.addEventListener('load', function () {
+      const htmlElement = document.querySelector("html");
+
+      htmlElement.classList.add("js-enhanced");
+    })
+</script>
+
+</body>
+</html>
